@@ -8,7 +8,12 @@ import re
 import subprocess
 import sys
 
-from inspect_firmware import TRANSPORT_CONFIG_KEYS, read_artifact
+from inspect_firmware import (
+    BTC_PARAMETER_KEY,
+    TRANSPORT_CONFIG_KEYS,
+    decode_btc_parameters,
+    read_artifact,
+)
 
 
 DRIVER_BUNDLE = Path("/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext")
@@ -196,6 +201,8 @@ def collect():
 
     platform = "shikoku-PlatformConfig.plist"
     platform_bundle = DRIVER_BUNDLE / "PlatformConfig" / "macOS" / platform
+    coexistence_data = bus.get(BTC_PARAMETER_KEY)
+    coexistence = decode_btc_parameters(coexistence_data) if isinstance(coexistence_data, bytes) else None
     report = {
         "host": {"model": model, "macos_version": version, "macos_build": build},
         "default_ipv4_interface": default_route.group(1) if default_route else None,
@@ -205,6 +212,7 @@ def collect():
             "running_firmware": core.get("FirmwareVersion"),
             "interface_roles": interface_roles(entries),
             "capability_inputs": wifi_capability_inputs(core, bus),
+            "coexistence_parameters": coexistence,
             "transport_config_properties": {
                 key: bus[key] for key in TRANSPORT_CONFIG_KEYS if type(bus.get(key)) is int
             },
