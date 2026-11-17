@@ -1,0 +1,3059 @@
+{
+  "images": [
+    {
+      "bytes_outside_uniform_runs_and_detected_reuse": 686966,
+      "file": {
+        "bytes": 1497470,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+      },
+      "literal_magic_counts": {
+        "ELF": 0,
+        "HDR0": 0,
+        "RAMS": 0
+      },
+      "reference_ram_size_tag_present": false,
+      "reused_bytes_by_other_image": {
+        "1": 810357,
+        "2": 301757
+      },
+      "reused_bytes_in_any_other_image": 810504,
+      "reused_bytes_in_every_other_image": 301610,
+      "uniform_run_bytes": 85222,
+      "uniform_runs": [
+        {
+          "byte_hex": "00",
+          "bytes": 56941,
+          "offset": 403
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 311,
+          "offset": 1018569
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 6694,
+          "offset": 1030858
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 2058,
+          "offset": 1239026
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 4108,
+          "offset": 1247012
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 527,
+          "offset": 1278677
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 11281,
+          "offset": 1279223
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 595,
+          "offset": 1385242
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 2707,
+          "offset": 1473246
+        }
+      ]
+    },
+    {
+      "bytes_outside_uniform_runs_and_detected_reuse": 686148,
+      "file": {
+        "bytes": 1496769,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6"
+      },
+      "literal_magic_counts": {
+        "ELF": 0,
+        "HDR0": 0,
+        "RAMS": 0
+      },
+      "reference_ram_size_tag_present": false,
+      "reused_bytes_by_other_image": {
+        "0": 810357,
+        "2": 301670
+      },
+      "reused_bytes_in_any_other_image": 810417,
+      "reused_bytes_in_every_other_image": 301610,
+      "uniform_run_bytes": 85486,
+      "uniform_runs": [
+        {
+          "byte_hex": "00",
+          "bytes": 56941,
+          "offset": 403
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 575,
+          "offset": 1018305
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 6694,
+          "offset": 1030858
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 2058,
+          "offset": 1238418
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 4108,
+          "offset": 1246404
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 527,
+          "offset": 1278069
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 11281,
+          "offset": 1278615
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 595,
+          "offset": 1384530
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 2707,
+          "offset": 1472534
+        }
+      ]
+    },
+    {
+      "bytes_outside_uniform_runs_and_detected_reuse": 845175,
+      "file": {
+        "bytes": 1226142,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a"
+      },
+      "literal_magic_counts": {
+        "ELF": 0,
+        "HDR0": 0,
+        "RAMS": 0
+      },
+      "reference_ram_size_tag_present": false,
+      "reused_bytes_by_other_image": {
+        "0": 301756,
+        "1": 301669
+      },
+      "reused_bytes_in_any_other_image": 301816,
+      "reused_bytes_in_every_other_image": 301609,
+      "uniform_run_bytes": 88990,
+      "uniform_runs": [
+        {
+          "byte_hex": "00",
+          "bytes": 56941,
+          "offset": 403
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 3152,
+          "offset": 60336
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 371,
+          "offset": 750221
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 7250,
+          "offset": 762574
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 2058,
+          "offset": 970946
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 4108,
+          "offset": 978932
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 527,
+          "offset": 1010597
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 11281,
+          "offset": 1011143
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 595,
+          "offset": 1117066
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 2707,
+          "offset": 1205070
+        }
+      ]
+    }
+  ],
+  "method": {
+    "anchor_bytes": 256,
+    "anchor_positions": "Aligned blocks from every input. Search for each at any file offset.",
+    "coverage": "Union of detected byte ranges. A lower bound on byte reuse.",
+    "match": "Both files contain the anchor once. Extend matches by exact equality.",
+    "minimum_distinct_byte_values": 12,
+    "offsets": "Zero-based file offsets."
+  },
+  "pairs": [
+    {
+      "left_image": 0,
+      "regions": [
+        {
+          "bytes": 341,
+          "left_offset": 0,
+          "right_offset": 0
+        },
+        {
+          "bytes": 57536,
+          "left_offset": 342,
+          "right_offset": 342
+        },
+        {
+          "bytes": 783,
+          "left_offset": 58771,
+          "right_offset": 58771
+        },
+        {
+          "bytes": 346,
+          "left_offset": 63674,
+          "right_offset": 63674
+        },
+        {
+          "bytes": 2923,
+          "left_offset": 66378,
+          "right_offset": 66378
+        },
+        {
+          "bytes": 516,
+          "left_offset": 69414,
+          "right_offset": 69414
+        },
+        {
+          "bytes": 1009,
+          "left_offset": 69932,
+          "right_offset": 69932
+        },
+        {
+          "bytes": 638,
+          "left_offset": 70950,
+          "right_offset": 70950
+        },
+        {
+          "bytes": 940,
+          "left_offset": 71920,
+          "right_offset": 71920
+        },
+        {
+          "bytes": 538,
+          "left_offset": 72862,
+          "right_offset": 72862
+        },
+        {
+          "bytes": 1408,
+          "left_offset": 74460,
+          "right_offset": 74460
+        },
+        {
+          "bytes": 1485,
+          "left_offset": 75869,
+          "right_offset": 75869
+        },
+        {
+          "bytes": 397,
+          "left_offset": 78209,
+          "right_offset": 78209
+        },
+        {
+          "bytes": 2091,
+          "left_offset": 79115,
+          "right_offset": 79115
+        },
+        {
+          "bytes": 686,
+          "left_offset": 81208,
+          "right_offset": 81208
+        },
+        {
+          "bytes": 1964,
+          "left_offset": 81926,
+          "right_offset": 81926
+        },
+        {
+          "bytes": 569,
+          "left_offset": 84015,
+          "right_offset": 84015
+        },
+        {
+          "bytes": 1122,
+          "left_offset": 86356,
+          "right_offset": 86356
+        },
+        {
+          "bytes": 331,
+          "left_offset": 87479,
+          "right_offset": 87479
+        },
+        {
+          "bytes": 350,
+          "left_offset": 88750,
+          "right_offset": 88750
+        },
+        {
+          "bytes": 645,
+          "left_offset": 89257,
+          "right_offset": 89257
+        },
+        {
+          "bytes": 429,
+          "left_offset": 93089,
+          "right_offset": 93089
+        },
+        {
+          "bytes": 715,
+          "left_offset": 95043,
+          "right_offset": 95043
+        },
+        {
+          "bytes": 395,
+          "left_offset": 95935,
+          "right_offset": 95935
+        },
+        {
+          "bytes": 371,
+          "left_offset": 96403,
+          "right_offset": 96403
+        },
+        {
+          "bytes": 1062,
+          "left_offset": 97418,
+          "right_offset": 97418
+        },
+        {
+          "bytes": 8555,
+          "left_offset": 98550,
+          "right_offset": 98550
+        },
+        {
+          "bytes": 787,
+          "left_offset": 107106,
+          "right_offset": 107106
+        },
+        {
+          "bytes": 8475,
+          "left_offset": 108098,
+          "right_offset": 108098
+        },
+        {
+          "bytes": 771,
+          "left_offset": 116574,
+          "right_offset": 116574
+        },
+        {
+          "bytes": 2443,
+          "left_offset": 117346,
+          "right_offset": 117346
+        },
+        {
+          "bytes": 2434,
+          "left_offset": 119790,
+          "right_offset": 119790
+        },
+        {
+          "bytes": 499,
+          "left_offset": 122226,
+          "right_offset": 122226
+        },
+        {
+          "bytes": 1351,
+          "left_offset": 122734,
+          "right_offset": 122734
+        },
+        {
+          "bytes": 855,
+          "left_offset": 124090,
+          "right_offset": 124090
+        },
+        {
+          "bytes": 1935,
+          "left_offset": 125458,
+          "right_offset": 125458
+        },
+        {
+          "bytes": 299,
+          "left_offset": 127482,
+          "right_offset": 127482
+        },
+        {
+          "bytes": 1078,
+          "left_offset": 127831,
+          "right_offset": 127831
+        },
+        {
+          "bytes": 975,
+          "left_offset": 129202,
+          "right_offset": 129202
+        },
+        {
+          "bytes": 391,
+          "left_offset": 130194,
+          "right_offset": 130194
+        },
+        {
+          "bytes": 4230,
+          "left_offset": 130831,
+          "right_offset": 130831
+        },
+        {
+          "bytes": 4372,
+          "left_offset": 135062,
+          "right_offset": 135062
+        },
+        {
+          "bytes": 2243,
+          "left_offset": 139550,
+          "right_offset": 139550
+        },
+        {
+          "bytes": 2000,
+          "left_offset": 141798,
+          "right_offset": 141798
+        },
+        {
+          "bytes": 2533,
+          "left_offset": 143981,
+          "right_offset": 143981
+        },
+        {
+          "bytes": 1878,
+          "left_offset": 146515,
+          "right_offset": 146515
+        },
+        {
+          "bytes": 7960,
+          "left_offset": 148962,
+          "right_offset": 148962
+        },
+        {
+          "bytes": 2539,
+          "left_offset": 156923,
+          "right_offset": 156923
+        },
+        {
+          "bytes": 4827,
+          "left_offset": 159835,
+          "right_offset": 159835
+        },
+        {
+          "bytes": 531,
+          "left_offset": 164663,
+          "right_offset": 164663
+        },
+        {
+          "bytes": 1888,
+          "left_offset": 165196,
+          "right_offset": 165196
+        },
+        {
+          "bytes": 678,
+          "left_offset": 167088,
+          "right_offset": 167088
+        },
+        {
+          "bytes": 694,
+          "left_offset": 168135,
+          "right_offset": 168135
+        },
+        {
+          "bytes": 1118,
+          "left_offset": 168830,
+          "right_offset": 168830
+        },
+        {
+          "bytes": 439,
+          "left_offset": 170321,
+          "right_offset": 170321
+        },
+        {
+          "bytes": 611,
+          "left_offset": 170774,
+          "right_offset": 170774
+        },
+        {
+          "bytes": 6283,
+          "left_offset": 171394,
+          "right_offset": 171394
+        },
+        {
+          "bytes": 1195,
+          "left_offset": 177690,
+          "right_offset": 177690
+        },
+        {
+          "bytes": 5471,
+          "left_offset": 178886,
+          "right_offset": 178886
+        },
+        {
+          "bytes": 724,
+          "left_offset": 184358,
+          "right_offset": 184358
+        },
+        {
+          "bytes": 6820,
+          "left_offset": 185317,
+          "right_offset": 185317
+        },
+        {
+          "bytes": 3857,
+          "left_offset": 192430,
+          "right_offset": 192430
+        },
+        {
+          "bytes": 2094,
+          "left_offset": 196296,
+          "right_offset": 196296
+        },
+        {
+          "bytes": 3321,
+          "left_offset": 198617,
+          "right_offset": 198617
+        },
+        {
+          "bytes": 1997,
+          "left_offset": 201939,
+          "right_offset": 201939
+        },
+        {
+          "bytes": 965,
+          "left_offset": 203938,
+          "right_offset": 203938
+        },
+        {
+          "bytes": 323,
+          "left_offset": 205279,
+          "right_offset": 205279
+        },
+        {
+          "bytes": 1310,
+          "left_offset": 205603,
+          "right_offset": 205603
+        },
+        {
+          "bytes": 604,
+          "left_offset": 206914,
+          "right_offset": 206914
+        },
+        {
+          "bytes": 1519,
+          "left_offset": 207520,
+          "right_offset": 207520
+        },
+        {
+          "bytes": 1522,
+          "left_offset": 209040,
+          "right_offset": 209040
+        },
+        {
+          "bytes": 4162,
+          "left_offset": 210564,
+          "right_offset": 210564
+        },
+        {
+          "bytes": 421,
+          "left_offset": 214727,
+          "right_offset": 214727
+        },
+        {
+          "bytes": 1279,
+          "left_offset": 215169,
+          "right_offset": 215169
+        },
+        {
+          "bytes": 492,
+          "left_offset": 216449,
+          "right_offset": 216449
+        },
+        {
+          "bytes": 541,
+          "left_offset": 217248,
+          "right_offset": 217248
+        },
+        {
+          "bytes": 714,
+          "left_offset": 218310,
+          "right_offset": 218310
+        },
+        {
+          "bytes": 1585,
+          "left_offset": 219366,
+          "right_offset": 219366
+        },
+        {
+          "bytes": 1353,
+          "left_offset": 221052,
+          "right_offset": 221052
+        },
+        {
+          "bytes": 783,
+          "left_offset": 222406,
+          "right_offset": 222406
+        },
+        {
+          "bytes": 1571,
+          "left_offset": 223190,
+          "right_offset": 223190
+        },
+        {
+          "bytes": 1910,
+          "left_offset": 224762,
+          "right_offset": 224762
+        },
+        {
+          "bytes": 838,
+          "left_offset": 226822,
+          "right_offset": 226822
+        },
+        {
+          "bytes": 729,
+          "left_offset": 227661,
+          "right_offset": 227661
+        },
+        {
+          "bytes": 443,
+          "left_offset": 228833,
+          "right_offset": 228833
+        },
+        {
+          "bytes": 1679,
+          "left_offset": 229919,
+          "right_offset": 229919
+        },
+        {
+          "bytes": 795,
+          "left_offset": 231765,
+          "right_offset": 231765
+        },
+        {
+          "bytes": 519,
+          "left_offset": 232943,
+          "right_offset": 232943
+        },
+        {
+          "bytes": 1039,
+          "left_offset": 233463,
+          "right_offset": 233463
+        },
+        {
+          "bytes": 589,
+          "left_offset": 234504,
+          "right_offset": 234504
+        },
+        {
+          "bytes": 990,
+          "left_offset": 235834,
+          "right_offset": 235834
+        },
+        {
+          "bytes": 1484,
+          "left_offset": 237346,
+          "right_offset": 237346
+        },
+        {
+          "bytes": 8719,
+          "left_offset": 239334,
+          "right_offset": 239334
+        },
+        {
+          "bytes": 455,
+          "left_offset": 248054,
+          "right_offset": 248054
+        },
+        {
+          "bytes": 3115,
+          "left_offset": 248510,
+          "right_offset": 248510
+        },
+        {
+          "bytes": 2031,
+          "left_offset": 251630,
+          "right_offset": 251630
+        },
+        {
+          "bytes": 1415,
+          "left_offset": 253662,
+          "right_offset": 253662
+        },
+        {
+          "bytes": 2263,
+          "left_offset": 255078,
+          "right_offset": 255078
+        },
+        {
+          "bytes": 2287,
+          "left_offset": 257342,
+          "right_offset": 257342
+        },
+        {
+          "bytes": 711,
+          "left_offset": 259630,
+          "right_offset": 259630
+        },
+        {
+          "bytes": 2859,
+          "left_offset": 260342,
+          "right_offset": 260342
+        },
+        {
+          "bytes": 587,
+          "left_offset": 263298,
+          "right_offset": 263298
+        },
+        {
+          "bytes": 2199,
+          "left_offset": 264278,
+          "right_offset": 264278
+        },
+        {
+          "bytes": 555,
+          "left_offset": 266490,
+          "right_offset": 266490
+        },
+        {
+          "bytes": 1771,
+          "left_offset": 267050,
+          "right_offset": 267050
+        },
+        {
+          "bytes": 746,
+          "left_offset": 268822,
+          "right_offset": 268822
+        },
+        {
+          "bytes": 2122,
+          "left_offset": 270015,
+          "right_offset": 270015
+        },
+        {
+          "bytes": 3047,
+          "left_offset": 272154,
+          "right_offset": 272154
+        },
+        {
+          "bytes": 11334,
+          "left_offset": 275530,
+          "right_offset": 275530
+        },
+        {
+          "bytes": 2723,
+          "left_offset": 286926,
+          "right_offset": 286926
+        },
+        {
+          "bytes": 1383,
+          "left_offset": 289654,
+          "right_offset": 289654
+        },
+        {
+          "bytes": 2103,
+          "left_offset": 291054,
+          "right_offset": 291054
+        },
+        {
+          "bytes": 2603,
+          "left_offset": 293158,
+          "right_offset": 293158
+        },
+        {
+          "bytes": 787,
+          "left_offset": 295762,
+          "right_offset": 295762
+        },
+        {
+          "bytes": 3931,
+          "left_offset": 296550,
+          "right_offset": 296550
+        },
+        {
+          "bytes": 603,
+          "left_offset": 300482,
+          "right_offset": 300482
+        },
+        {
+          "bytes": 683,
+          "left_offset": 301098,
+          "right_offset": 301098
+        },
+        {
+          "bytes": 7431,
+          "left_offset": 301782,
+          "right_offset": 301782
+        },
+        {
+          "bytes": 971,
+          "left_offset": 309214,
+          "right_offset": 309214
+        },
+        {
+          "bytes": 431,
+          "left_offset": 310186,
+          "right_offset": 310186
+        },
+        {
+          "bytes": 2819,
+          "left_offset": 310618,
+          "right_offset": 310618
+        },
+        {
+          "bytes": 8427,
+          "left_offset": 313442,
+          "right_offset": 313442
+        },
+        {
+          "bytes": 1287,
+          "left_offset": 321870,
+          "right_offset": 321870
+        },
+        {
+          "bytes": 5571,
+          "left_offset": 323158,
+          "right_offset": 323158
+        },
+        {
+          "bytes": 1339,
+          "left_offset": 328762,
+          "right_offset": 328762
+        },
+        {
+          "bytes": 1611,
+          "left_offset": 330110,
+          "right_offset": 330110
+        },
+        {
+          "bytes": 463,
+          "left_offset": 331722,
+          "right_offset": 331722
+        },
+        {
+          "bytes": 1206,
+          "left_offset": 332186,
+          "right_offset": 332186
+        },
+        {
+          "bytes": 307,
+          "left_offset": 333553,
+          "right_offset": 333553
+        },
+        {
+          "bytes": 4505,
+          "left_offset": 333861,
+          "right_offset": 333861
+        },
+        {
+          "bytes": 3861,
+          "left_offset": 338437,
+          "right_offset": 338437
+        },
+        {
+          "bytes": 624,
+          "left_offset": 342374,
+          "right_offset": 342374
+        },
+        {
+          "bytes": 4103,
+          "left_offset": 343478,
+          "right_offset": 343478
+        },
+        {
+          "bytes": 8499,
+          "left_offset": 347582,
+          "right_offset": 347582
+        },
+        {
+          "bytes": 667,
+          "left_offset": 356254,
+          "right_offset": 356254
+        },
+        {
+          "bytes": 1259,
+          "left_offset": 357654,
+          "right_offset": 357654
+        },
+        {
+          "bytes": 627,
+          "left_offset": 359202,
+          "right_offset": 359202
+        },
+        {
+          "bytes": 5071,
+          "left_offset": 359834,
+          "right_offset": 359834
+        },
+        {
+          "bytes": 1063,
+          "left_offset": 364906,
+          "right_offset": 364906
+        },
+        {
+          "bytes": 515,
+          "left_offset": 365978,
+          "right_offset": 365978
+        },
+        {
+          "bytes": 559,
+          "left_offset": 366502,
+          "right_offset": 366502
+        },
+        {
+          "bytes": 799,
+          "left_offset": 367610,
+          "right_offset": 367610
+        },
+        {
+          "bytes": 527,
+          "left_offset": 368834,
+          "right_offset": 368834
+        },
+        {
+          "bytes": 407,
+          "left_offset": 369374,
+          "right_offset": 369374
+        },
+        {
+          "bytes": 2115,
+          "left_offset": 369786,
+          "right_offset": 369786
+        },
+        {
+          "bytes": 1968,
+          "left_offset": 371914,
+          "right_offset": 371914
+        },
+        {
+          "bytes": 1094,
+          "left_offset": 373883,
+          "right_offset": 373883
+        },
+        {
+          "bytes": 452,
+          "left_offset": 374978,
+          "right_offset": 374978
+        },
+        {
+          "bytes": 775,
+          "left_offset": 375451,
+          "right_offset": 375451
+        },
+        {
+          "bytes": 2606,
+          "left_offset": 377283,
+          "right_offset": 377283
+        },
+        {
+          "bytes": 375,
+          "left_offset": 379890,
+          "right_offset": 379890
+        },
+        {
+          "bytes": 439,
+          "left_offset": 380510,
+          "right_offset": 380510
+        },
+        {
+          "bytes": 350,
+          "left_offset": 381426,
+          "right_offset": 381426
+        },
+        {
+          "bytes": 398,
+          "left_offset": 381818,
+          "right_offset": 381818
+        },
+        {
+          "bytes": 759,
+          "left_offset": 382234,
+          "right_offset": 382234
+        },
+        {
+          "bytes": 628,
+          "left_offset": 383526,
+          "right_offset": 383526
+        },
+        {
+          "bytes": 987,
+          "left_offset": 384230,
+          "right_offset": 384230
+        },
+        {
+          "bytes": 423,
+          "left_offset": 385218,
+          "right_offset": 385218
+        },
+        {
+          "bytes": 1054,
+          "left_offset": 386166,
+          "right_offset": 386166
+        },
+        {
+          "bytes": 812,
+          "left_offset": 387389,
+          "right_offset": 387389
+        },
+        {
+          "bytes": 407,
+          "left_offset": 388210,
+          "right_offset": 388210
+        },
+        {
+          "bytes": 843,
+          "left_offset": 389074,
+          "right_offset": 389074
+        },
+        {
+          "bytes": 871,
+          "left_offset": 389922,
+          "right_offset": 389922
+        },
+        {
+          "bytes": 1075,
+          "left_offset": 390794,
+          "right_offset": 390794
+        },
+        {
+          "bytes": 443,
+          "left_offset": 391870,
+          "right_offset": 391870
+        },
+        {
+          "bytes": 963,
+          "left_offset": 392318,
+          "right_offset": 392318
+        },
+        {
+          "bytes": 482,
+          "left_offset": 393510,
+          "right_offset": 393510
+        },
+        {
+          "bytes": 1064,
+          "left_offset": 394210,
+          "right_offset": 394210
+        },
+        {
+          "bytes": 2723,
+          "left_offset": 396403,
+          "right_offset": 396403
+        },
+        {
+          "bytes": 4000,
+          "left_offset": 399281,
+          "right_offset": 399281
+        },
+        {
+          "bytes": 3470,
+          "left_offset": 403294,
+          "right_offset": 403294
+        },
+        {
+          "bytes": 4982,
+          "left_offset": 406930,
+          "right_offset": 406930
+        },
+        {
+          "bytes": 711,
+          "left_offset": 411913,
+          "right_offset": 411913
+        },
+        {
+          "bytes": 493,
+          "left_offset": 412833,
+          "right_offset": 412833
+        },
+        {
+          "bytes": 1014,
+          "left_offset": 415870,
+          "right_offset": 415870
+        },
+        {
+          "bytes": 921,
+          "left_offset": 417207,
+          "right_offset": 417207
+        },
+        {
+          "bytes": 463,
+          "left_offset": 418219,
+          "right_offset": 418219
+        },
+        {
+          "bytes": 403,
+          "left_offset": 418987,
+          "right_offset": 418987
+        },
+        {
+          "bytes": 347,
+          "left_offset": 420043,
+          "right_offset": 420043
+        },
+        {
+          "bytes": 381,
+          "left_offset": 436613,
+          "right_offset": 436577
+        },
+        {
+          "bytes": 287,
+          "left_offset": 441271,
+          "right_offset": 441235
+        },
+        {
+          "bytes": 1293,
+          "left_offset": 451529,
+          "right_offset": 451493
+        },
+        {
+          "bytes": 396,
+          "left_offset": 462566,
+          "right_offset": 462530
+        },
+        {
+          "bytes": 603,
+          "left_offset": 462963,
+          "right_offset": 462927
+        },
+        {
+          "bytes": 326,
+          "left_offset": 471040,
+          "right_offset": 471004
+        },
+        {
+          "bytes": 514,
+          "left_offset": 481342,
+          "right_offset": 481306
+        },
+        {
+          "bytes": 429,
+          "left_offset": 495733,
+          "right_offset": 495697
+        },
+        {
+          "bytes": 275,
+          "left_offset": 496379,
+          "right_offset": 496343
+        },
+        {
+          "bytes": 443,
+          "left_offset": 530339,
+          "right_offset": 530303
+        },
+        {
+          "bytes": 1153,
+          "left_offset": 543459,
+          "right_offset": 543423
+        },
+        {
+          "bytes": 753,
+          "left_offset": 545089,
+          "right_offset": 545053
+        },
+        {
+          "bytes": 371,
+          "left_offset": 550599,
+          "right_offset": 550563
+        },
+        {
+          "bytes": 281,
+          "left_offset": 557587,
+          "right_offset": 557551
+        },
+        {
+          "bytes": 386,
+          "left_offset": 567554,
+          "right_offset": 567518
+        },
+        {
+          "bytes": 511,
+          "left_offset": 585873,
+          "right_offset": 585837
+        },
+        {
+          "bytes": 593,
+          "left_offset": 588379,
+          "right_offset": 588343
+        },
+        {
+          "bytes": 469,
+          "left_offset": 590819,
+          "right_offset": 590783
+        },
+        {
+          "bytes": 393,
+          "left_offset": 595477,
+          "right_offset": 595441
+        },
+        {
+          "bytes": 349,
+          "left_offset": 596397,
+          "right_offset": 596361
+        },
+        {
+          "bytes": 433,
+          "left_offset": 596889,
+          "right_offset": 596853
+        },
+        {
+          "bytes": 1099,
+          "left_offset": 598209,
+          "right_offset": 598173
+        },
+        {
+          "bytes": 318,
+          "left_offset": 599314,
+          "right_offset": 599278
+        },
+        {
+          "bytes": 432,
+          "left_offset": 616450,
+          "right_offset": 616414
+        },
+        {
+          "bytes": 426,
+          "left_offset": 637770,
+          "right_offset": 637734
+        },
+        {
+          "bytes": 571,
+          "left_offset": 640613,
+          "right_offset": 640577
+        },
+        {
+          "bytes": 609,
+          "left_offset": 641185,
+          "right_offset": 641149
+        },
+        {
+          "bytes": 1661,
+          "left_offset": 642259,
+          "right_offset": 642223
+        },
+        {
+          "bytes": 437,
+          "left_offset": 646273,
+          "right_offset": 646237
+        },
+        {
+          "bytes": 635,
+          "left_offset": 650863,
+          "right_offset": 650827
+        },
+        {
+          "bytes": 459,
+          "left_offset": 670931,
+          "right_offset": 670895
+        },
+        {
+          "bytes": 399,
+          "left_offset": 673169,
+          "right_offset": 673133
+        },
+        {
+          "bytes": 503,
+          "left_offset": 675463,
+          "right_offset": 675427
+        },
+        {
+          "bytes": 802,
+          "left_offset": 716618,
+          "right_offset": 716362
+        },
+        {
+          "bytes": 474,
+          "left_offset": 720035,
+          "right_offset": 719779
+        },
+        {
+          "bytes": 604,
+          "left_offset": 724018,
+          "right_offset": 723762
+        },
+        {
+          "bytes": 321,
+          "left_offset": 735999,
+          "right_offset": 735743
+        },
+        {
+          "bytes": 423,
+          "left_offset": 799583,
+          "right_offset": 799327
+        },
+        {
+          "bytes": 574,
+          "left_offset": 805716,
+          "right_offset": 805460
+        },
+        {
+          "bytes": 353,
+          "left_offset": 858085,
+          "right_offset": 857829
+        },
+        {
+          "bytes": 563,
+          "left_offset": 892371,
+          "right_offset": 892115
+        },
+        {
+          "bytes": 1122,
+          "left_offset": 893178,
+          "right_offset": 892922
+        },
+        {
+          "bytes": 310,
+          "left_offset": 896216,
+          "right_offset": 895960
+        },
+        {
+          "bytes": 413,
+          "left_offset": 896837,
+          "right_offset": 896581
+        },
+        {
+          "bytes": 518,
+          "left_offset": 897366,
+          "right_offset": 897110
+        },
+        {
+          "bytes": 388,
+          "left_offset": 909186,
+          "right_offset": 908930
+        },
+        {
+          "bytes": 435,
+          "left_offset": 910849,
+          "right_offset": 910593
+        },
+        {
+          "bytes": 287,
+          "left_offset": 913147,
+          "right_offset": 912891
+        },
+        {
+          "bytes": 448,
+          "left_offset": 919186,
+          "right_offset": 918930
+        },
+        {
+          "bytes": 374,
+          "left_offset": 921406,
+          "right_offset": 921150
+        },
+        {
+          "bytes": 502,
+          "left_offset": 921782,
+          "right_offset": 921526
+        },
+        {
+          "bytes": 454,
+          "left_offset": 926320,
+          "right_offset": 926064
+        },
+        {
+          "bytes": 528,
+          "left_offset": 937302,
+          "right_offset": 937046
+        },
+        {
+          "bytes": 319,
+          "left_offset": 942303,
+          "right_offset": 942047
+        },
+        {
+          "bytes": 395,
+          "left_offset": 957867,
+          "right_offset": 957611
+        },
+        {
+          "bytes": 488,
+          "left_offset": 958517,
+          "right_offset": 958261
+        },
+        {
+          "bytes": 3030,
+          "left_offset": 959010,
+          "right_offset": 958754
+        },
+        {
+          "bytes": 503,
+          "left_offset": 962098,
+          "right_offset": 961842
+        },
+        {
+          "bytes": 627,
+          "left_offset": 962614,
+          "right_offset": 962358
+        },
+        {
+          "bytes": 1311,
+          "left_offset": 963438,
+          "right_offset": 963182
+        },
+        {
+          "bytes": 363,
+          "left_offset": 965014,
+          "right_offset": 964758
+        },
+        {
+          "bytes": 319,
+          "left_offset": 967378,
+          "right_offset": 967122
+        },
+        {
+          "bytes": 6867,
+          "left_offset": 967778,
+          "right_offset": 967522
+        },
+        {
+          "bytes": 16090,
+          "left_offset": 975367,
+          "right_offset": 975111
+        },
+        {
+          "bytes": 503,
+          "left_offset": 991514,
+          "right_offset": 991258
+        },
+        {
+          "bytes": 3199,
+          "left_offset": 992138,
+          "right_offset": 991882
+        },
+        {
+          "bytes": 2675,
+          "left_offset": 995362,
+          "right_offset": 995106
+        },
+        {
+          "bytes": 1115,
+          "left_offset": 998038,
+          "right_offset": 997782
+        },
+        {
+          "bytes": 511,
+          "left_offset": 999346,
+          "right_offset": 999090
+        },
+        {
+          "bytes": 563,
+          "left_offset": 999866,
+          "right_offset": 999610
+        },
+        {
+          "bytes": 319,
+          "left_offset": 1000442,
+          "right_offset": 1000186
+        },
+        {
+          "bytes": 638,
+          "left_offset": 1001282,
+          "right_offset": 1001026
+        },
+        {
+          "bytes": 395,
+          "left_offset": 1002621,
+          "right_offset": 1002357
+        },
+        {
+          "bytes": 282,
+          "left_offset": 1004526,
+          "right_offset": 1004262
+        },
+        {
+          "bytes": 930,
+          "left_offset": 1005374,
+          "right_offset": 1005110
+        },
+        {
+          "bytes": 550,
+          "left_offset": 1006330,
+          "right_offset": 1006066
+        },
+        {
+          "bytes": 2298,
+          "left_offset": 1007702,
+          "right_offset": 1007438
+        },
+        {
+          "bytes": 1018,
+          "left_offset": 1010542,
+          "right_offset": 1010278
+        },
+        {
+          "bytes": 566,
+          "left_offset": 1011610,
+          "right_offset": 1011346
+        },
+        {
+          "bytes": 434,
+          "left_offset": 1012634,
+          "right_offset": 1012370
+        },
+        {
+          "bytes": 1502,
+          "left_offset": 1013142,
+          "right_offset": 1012878
+        },
+        {
+          "bytes": 1730,
+          "left_offset": 1014718,
+          "right_offset": 1014454
+        },
+        {
+          "bytes": 2298,
+          "left_offset": 1016582,
+          "right_offset": 1016318
+        },
+        {
+          "bytes": 395,
+          "left_offset": 1019010,
+          "right_offset": 1019010
+        },
+        {
+          "bytes": 7994,
+          "left_offset": 1022526,
+          "right_offset": 1022526
+        },
+        {
+          "bytes": 6964,
+          "left_offset": 1030806,
+          "right_offset": 1030806
+        },
+        {
+          "bytes": 570,
+          "left_offset": 1038979,
+          "right_offset": 1038979
+        },
+        {
+          "bytes": 685,
+          "left_offset": 1040555,
+          "right_offset": 1040555
+        },
+        {
+          "bytes": 1050,
+          "left_offset": 1041578,
+          "right_offset": 1041578
+        },
+        {
+          "bytes": 461,
+          "left_offset": 1042629,
+          "right_offset": 1042629
+        },
+        {
+          "bytes": 638,
+          "left_offset": 1043182,
+          "right_offset": 1043182
+        },
+        {
+          "bytes": 604,
+          "left_offset": 1043830,
+          "right_offset": 1043830
+        },
+        {
+          "bytes": 1954,
+          "left_offset": 1048194,
+          "right_offset": 1048194
+        },
+        {
+          "bytes": 4087,
+          "left_offset": 1050154,
+          "right_offset": 1050154
+        },
+        {
+          "bytes": 715,
+          "left_offset": 1054514,
+          "right_offset": 1054514
+        },
+        {
+          "bytes": 506,
+          "left_offset": 1055698,
+          "right_offset": 1055698
+        },
+        {
+          "bytes": 1466,
+          "left_offset": 1056226,
+          "right_offset": 1056226
+        },
+        {
+          "bytes": 738,
+          "left_offset": 1057766,
+          "right_offset": 1057766
+        },
+        {
+          "bytes": 730,
+          "left_offset": 1058554,
+          "right_offset": 1058554
+        },
+        {
+          "bytes": 754,
+          "left_offset": 1059350,
+          "right_offset": 1059350
+        },
+        {
+          "bytes": 630,
+          "left_offset": 1060226,
+          "right_offset": 1060226
+        },
+        {
+          "bytes": 690,
+          "left_offset": 1060950,
+          "right_offset": 1060950
+        },
+        {
+          "bytes": 670,
+          "left_offset": 1061706,
+          "right_offset": 1061706
+        },
+        {
+          "bytes": 650,
+          "left_offset": 1062462,
+          "right_offset": 1062462
+        },
+        {
+          "bytes": 526,
+          "left_offset": 1063158,
+          "right_offset": 1063158
+        },
+        {
+          "bytes": 582,
+          "left_offset": 1063738,
+          "right_offset": 1063738
+        },
+        {
+          "bytes": 534,
+          "left_offset": 1064362,
+          "right_offset": 1064362
+        },
+        {
+          "bytes": 654,
+          "left_offset": 1064922,
+          "right_offset": 1064922
+        },
+        {
+          "bytes": 718,
+          "left_offset": 1065614,
+          "right_offset": 1065614
+        },
+        {
+          "bytes": 698,
+          "left_offset": 1066354,
+          "right_offset": 1066354
+        },
+        {
+          "bytes": 430,
+          "left_offset": 1067126,
+          "right_offset": 1067126
+        },
+        {
+          "bytes": 662,
+          "left_offset": 1067574,
+          "right_offset": 1067574
+        },
+        {
+          "bytes": 526,
+          "left_offset": 1068270,
+          "right_offset": 1068270
+        },
+        {
+          "bytes": 838,
+          "left_offset": 1069270,
+          "right_offset": 1069270
+        },
+        {
+          "bytes": 2742,
+          "left_offset": 1070662,
+          "right_offset": 1070662
+        },
+        {
+          "bytes": 1558,
+          "left_offset": 1073430,
+          "right_offset": 1073430
+        },
+        {
+          "bytes": 1394,
+          "left_offset": 1074990,
+          "right_offset": 1074990
+        },
+        {
+          "bytes": 626,
+          "left_offset": 1076386,
+          "right_offset": 1076386
+        },
+        {
+          "bytes": 730,
+          "left_offset": 1077274,
+          "right_offset": 1077274
+        },
+        {
+          "bytes": 1050,
+          "left_offset": 1078734,
+          "right_offset": 1078734
+        },
+        {
+          "bytes": 418,
+          "left_offset": 1079806,
+          "right_offset": 1079806
+        },
+        {
+          "bytes": 322,
+          "left_offset": 1080274,
+          "right_offset": 1080274
+        },
+        {
+          "bytes": 809,
+          "left_offset": 1081769,
+          "right_offset": 1081769
+        },
+        {
+          "bytes": 277,
+          "left_offset": 1084407,
+          "right_offset": 1084407
+        },
+        {
+          "bytes": 551,
+          "left_offset": 1086105,
+          "right_offset": 1086105
+        },
+        {
+          "bytes": 1222,
+          "left_offset": 1086658,
+          "right_offset": 1086658
+        },
+        {
+          "bytes": 1070,
+          "left_offset": 1087894,
+          "right_offset": 1087894
+        },
+        {
+          "bytes": 658,
+          "left_offset": 1089150,
+          "right_offset": 1089150
+        },
+        {
+          "bytes": 778,
+          "left_offset": 1090110,
+          "right_offset": 1090110
+        },
+        {
+          "bytes": 1398,
+          "left_offset": 1090898,
+          "right_offset": 1090898
+        },
+        {
+          "bytes": 1130,
+          "left_offset": 1092302,
+          "right_offset": 1092302
+        },
+        {
+          "bytes": 731,
+          "left_offset": 1094621,
+          "right_offset": 1094621
+        },
+        {
+          "bytes": 415,
+          "left_offset": 1095353,
+          "right_offset": 1095353
+        },
+        {
+          "bytes": 4209,
+          "left_offset": 1095769,
+          "right_offset": 1095769
+        },
+        {
+          "bytes": 715,
+          "left_offset": 1100406,
+          "right_offset": 1100406
+        },
+        {
+          "bytes": 559,
+          "left_offset": 1101166,
+          "right_offset": 1101166
+        },
+        {
+          "bytes": 482,
+          "left_offset": 1101742,
+          "right_offset": 1101742
+        },
+        {
+          "bytes": 1630,
+          "left_offset": 1102242,
+          "right_offset": 1102242
+        },
+        {
+          "bytes": 602,
+          "left_offset": 1104246,
+          "right_offset": 1104246
+        },
+        {
+          "bytes": 341,
+          "left_offset": 1105855,
+          "right_offset": 1105855
+        },
+        {
+          "bytes": 2562,
+          "left_offset": 1106530,
+          "right_offset": 1106530
+        },
+        {
+          "bytes": 522,
+          "left_offset": 1109810,
+          "right_offset": 1109810
+        },
+        {
+          "bytes": 740,
+          "left_offset": 1110602,
+          "right_offset": 1110602
+        },
+        {
+          "bytes": 974,
+          "left_offset": 1111482,
+          "right_offset": 1111482
+        },
+        {
+          "bytes": 506,
+          "left_offset": 1112462,
+          "right_offset": 1112462
+        },
+        {
+          "bytes": 4724,
+          "left_offset": 1113318,
+          "right_offset": 1113318
+        },
+        {
+          "bytes": 842,
+          "left_offset": 1118043,
+          "right_offset": 1118043
+        },
+        {
+          "bytes": 823,
+          "left_offset": 1119222,
+          "right_offset": 1119222
+        },
+        {
+          "bytes": 525,
+          "left_offset": 1120447,
+          "right_offset": 1120447
+        },
+        {
+          "bytes": 906,
+          "left_offset": 1121122,
+          "right_offset": 1121122
+        },
+        {
+          "bytes": 778,
+          "left_offset": 1122142,
+          "right_offset": 1122142
+        },
+        {
+          "bytes": 674,
+          "left_offset": 1123098,
+          "right_offset": 1123098
+        },
+        {
+          "bytes": 834,
+          "left_offset": 1123778,
+          "right_offset": 1123778
+        },
+        {
+          "bytes": 512,
+          "left_offset": 1124710,
+          "right_offset": 1124710
+        },
+        {
+          "bytes": 723,
+          "left_offset": 1125250,
+          "right_offset": 1125250
+        },
+        {
+          "bytes": 870,
+          "left_offset": 1127322,
+          "right_offset": 1127322
+        },
+        {
+          "bytes": 802,
+          "left_offset": 1128230,
+          "right_offset": 1128230
+        },
+        {
+          "bytes": 682,
+          "left_offset": 1129174,
+          "right_offset": 1129174
+        },
+        {
+          "bytes": 350,
+          "left_offset": 1129890,
+          "right_offset": 1129890
+        },
+        {
+          "bytes": 646,
+          "left_offset": 1130278,
+          "right_offset": 1130278
+        },
+        {
+          "bytes": 618,
+          "left_offset": 1131154,
+          "right_offset": 1131154
+        },
+        {
+          "bytes": 592,
+          "left_offset": 1131874,
+          "right_offset": 1131874
+        },
+        {
+          "bytes": 943,
+          "left_offset": 1132554,
+          "right_offset": 1132554
+        },
+        {
+          "bytes": 554,
+          "left_offset": 1133654,
+          "right_offset": 1133654
+        },
+        {
+          "bytes": 814,
+          "left_offset": 1134210,
+          "right_offset": 1134210
+        },
+        {
+          "bytes": 508,
+          "left_offset": 1135366,
+          "right_offset": 1135366
+        },
+        {
+          "bytes": 459,
+          "left_offset": 1138627,
+          "right_offset": 1138627
+        },
+        {
+          "bytes": 402,
+          "left_offset": 1139114,
+          "right_offset": 1139114
+        },
+        {
+          "bytes": 933,
+          "left_offset": 1139565,
+          "right_offset": 1139565
+        },
+        {
+          "bytes": 433,
+          "left_offset": 1140831,
+          "right_offset": 1140831
+        },
+        {
+          "bytes": 793,
+          "left_offset": 1141511,
+          "right_offset": 1141511
+        },
+        {
+          "bytes": 1057,
+          "left_offset": 1143939,
+          "right_offset": 1143939
+        },
+        {
+          "bytes": 810,
+          "left_offset": 1145210,
+          "right_offset": 1145210
+        },
+        {
+          "bytes": 374,
+          "left_offset": 1147358,
+          "right_offset": 1147358
+        },
+        {
+          "bytes": 460,
+          "left_offset": 1147794,
+          "right_offset": 1147794
+        },
+        {
+          "bytes": 408,
+          "left_offset": 1149684,
+          "right_offset": 1149684
+        },
+        {
+          "bytes": 586,
+          "left_offset": 1150522,
+          "right_offset": 1150522
+        },
+        {
+          "bytes": 2098,
+          "left_offset": 1151110,
+          "right_offset": 1151110
+        },
+        {
+          "bytes": 1138,
+          "left_offset": 1154018,
+          "right_offset": 1154018
+        },
+        {
+          "bytes": 466,
+          "left_offset": 1155158,
+          "right_offset": 1155158
+        },
+        {
+          "bytes": 1334,
+          "left_offset": 1155778,
+          "right_offset": 1155778
+        },
+        {
+          "bytes": 423,
+          "left_offset": 1157626,
+          "right_offset": 1157626
+        },
+        {
+          "bytes": 478,
+          "left_offset": 1158322,
+          "right_offset": 1158322
+        },
+        {
+          "bytes": 370,
+          "left_offset": 1158822,
+          "right_offset": 1158822
+        },
+        {
+          "bytes": 467,
+          "left_offset": 1159486,
+          "right_offset": 1159486
+        },
+        {
+          "bytes": 1302,
+          "left_offset": 1160622,
+          "right_offset": 1160622
+        },
+        {
+          "bytes": 618,
+          "left_offset": 1161970,
+          "right_offset": 1161970
+        },
+        {
+          "bytes": 619,
+          "left_offset": 1166575,
+          "right_offset": 1166575
+        },
+        {
+          "bytes": 375,
+          "left_offset": 1169653,
+          "right_offset": 1169637
+        },
+        {
+          "bytes": 515,
+          "left_offset": 1175177,
+          "right_offset": 1175157
+        },
+        {
+          "bytes": 612,
+          "left_offset": 1176130,
+          "right_offset": 1176110
+        },
+        {
+          "bytes": 333,
+          "left_offset": 1181427,
+          "right_offset": 1181407
+        },
+        {
+          "bytes": 573,
+          "left_offset": 1202151,
+          "right_offset": 1202131
+        },
+        {
+          "bytes": 12575,
+          "left_offset": 1238562,
+          "right_offset": 1237954
+        },
+        {
+          "bytes": 27922,
+          "left_offset": 1263954,
+          "right_offset": 1263346
+        },
+        {
+          "bytes": 2802,
+          "left_offset": 1291922,
+          "right_offset": 1291314
+        },
+        {
+          "bytes": 201010,
+          "left_offset": 1295710,
+          "right_offset": 1294998
+        },
+        {
+          "bytes": 342,
+          "left_offset": 1496787,
+          "right_offset": 1496075
+        }
+      ],
+      "right_image": 1
+    },
+    {
+      "left_image": 0,
+      "regions": [
+        {
+          "bytes": 1247,
+          "left_offset": 67385,
+          "right_offset": 68057
+        },
+        {
+          "bytes": 319,
+          "left_offset": 122227,
+          "right_offset": 99283
+        },
+        {
+          "bytes": 561,
+          "left_offset": 126793,
+          "right_offset": 103801
+        },
+        {
+          "bytes": 310,
+          "left_offset": 151540,
+          "right_offset": 119348
+        },
+        {
+          "bytes": 646,
+          "left_offset": 192628,
+          "right_offset": 147540
+        },
+        {
+          "bytes": 324,
+          "left_offset": 193294,
+          "right_offset": 148206
+        },
+        {
+          "bytes": 302,
+          "left_offset": 195604,
+          "right_offset": 150516
+        },
+        {
+          "bytes": 798,
+          "left_offset": 199274,
+          "right_offset": 154186
+        },
+        {
+          "bytes": 530,
+          "left_offset": 205714,
+          "right_offset": 160626
+        },
+        {
+          "bytes": 340,
+          "left_offset": 207038,
+          "right_offset": 161950
+        },
+        {
+          "bytes": 392,
+          "left_offset": 209286,
+          "right_offset": 164198
+        },
+        {
+          "bytes": 308,
+          "left_offset": 211150,
+          "right_offset": 166062
+        },
+        {
+          "bytes": 677,
+          "left_offset": 259631,
+          "right_offset": 202663
+        },
+        {
+          "bytes": 381,
+          "left_offset": 284421,
+          "right_offset": 218295
+        },
+        {
+          "bytes": 406,
+          "left_offset": 315456,
+          "right_offset": 237484
+        },
+        {
+          "bytes": 356,
+          "left_offset": 322440,
+          "right_offset": 244464
+        },
+        {
+          "bytes": 456,
+          "left_offset": 332644,
+          "right_offset": 247684
+        },
+        {
+          "bytes": 501,
+          "left_offset": 365191,
+          "right_offset": 273627
+        },
+        {
+          "bytes": 393,
+          "left_offset": 365979,
+          "right_offset": 274415
+        },
+        {
+          "bytes": 553,
+          "left_offset": 366503,
+          "right_offset": 274939
+        },
+        {
+          "bytes": 793,
+          "left_offset": 367611,
+          "right_offset": 276047
+        },
+        {
+          "bytes": 638,
+          "left_offset": 391082,
+          "right_offset": 293202
+        },
+        {
+          "bytes": 378,
+          "left_offset": 436614,
+          "right_offset": 325506
+        },
+        {
+          "bytes": 282,
+          "left_offset": 441274,
+          "right_offset": 328172
+        },
+        {
+          "bytes": 314,
+          "left_offset": 451558,
+          "right_offset": 334786
+        },
+        {
+          "bytes": 338,
+          "left_offset": 543996,
+          "right_offset": 381860
+        },
+        {
+          "bytes": 460,
+          "left_offset": 585922,
+          "right_offset": 405234
+        },
+        {
+          "bytes": 574,
+          "left_offset": 588396,
+          "right_offset": 407256
+        },
+        {
+          "bytes": 384,
+          "left_offset": 590820,
+          "right_offset": 409680
+        },
+        {
+          "bytes": 430,
+          "left_offset": 596890,
+          "right_offset": 413238
+        },
+        {
+          "bytes": 374,
+          "left_offset": 616450,
+          "right_offset": 420206
+        },
+        {
+          "bytes": 423,
+          "left_offset": 637771,
+          "right_offset": 431247
+        },
+        {
+          "bytes": 632,
+          "left_offset": 650864,
+          "right_offset": 438840
+        },
+        {
+          "bytes": 333,
+          "left_offset": 805739,
+          "right_offset": 504035
+        },
+        {
+          "bytes": 391,
+          "left_offset": 892541,
+          "right_offset": 632753
+        },
+        {
+          "bytes": 281,
+          "left_offset": 896967,
+          "right_offset": 637179
+        },
+        {
+          "bytes": 516,
+          "left_offset": 897366,
+          "right_offset": 637578
+        },
+        {
+          "bytes": 393,
+          "left_offset": 910889,
+          "right_offset": 651129
+        },
+        {
+          "bytes": 284,
+          "left_offset": 913148,
+          "right_offset": 653388
+        },
+        {
+          "bytes": 336,
+          "left_offset": 919186,
+          "right_offset": 659426
+        },
+        {
+          "bytes": 372,
+          "left_offset": 921406,
+          "right_offset": 661646
+        },
+        {
+          "bytes": 454,
+          "left_offset": 921782,
+          "right_offset": 662022
+        },
+        {
+          "bytes": 518,
+          "left_offset": 937310,
+          "right_offset": 677398
+        },
+        {
+          "bytes": 1513,
+          "left_offset": 960208,
+          "right_offset": 699648
+        },
+        {
+          "bytes": 539,
+          "left_offset": 962653,
+          "right_offset": 701957
+        },
+        {
+          "bytes": 439,
+          "left_offset": 964216,
+          "right_offset": 702741
+        },
+        {
+          "bytes": 6579,
+          "left_offset": 967779,
+          "right_offset": 706019
+        },
+        {
+          "bytes": 15493,
+          "left_offset": 975367,
+          "right_offset": 713203
+        },
+        {
+          "bytes": 393,
+          "left_offset": 990863,
+          "right_offset": 728695
+        },
+        {
+          "bytes": 2285,
+          "left_offset": 992911,
+          "right_offset": 729971
+        },
+        {
+          "bytes": 696,
+          "left_offset": 998456,
+          "right_offset": 732552
+        },
+        {
+          "bytes": 448,
+          "left_offset": 999347,
+          "right_offset": 733351
+        },
+        {
+          "bytes": 654,
+          "left_offset": 1001413,
+          "right_offset": 735147
+        },
+        {
+          "bytes": 388,
+          "left_offset": 1002623,
+          "right_offset": 736163
+        },
+        {
+          "bytes": 619,
+          "left_offset": 1005375,
+          "right_offset": 740947
+        },
+        {
+          "bytes": 367,
+          "left_offset": 1006513,
+          "right_offset": 741801
+        },
+        {
+          "bytes": 1900,
+          "left_offset": 1008100,
+          "right_offset": 742600
+        },
+        {
+          "bytes": 769,
+          "left_offset": 1010543,
+          "right_offset": 745043
+        },
+        {
+          "bytes": 1092,
+          "left_offset": 1015356,
+          "right_offset": 747008
+        },
+        {
+          "bytes": 2297,
+          "left_offset": 1016583,
+          "right_offset": 748235
+        },
+        {
+          "bytes": 358,
+          "left_offset": 1023719,
+          "right_offset": 755431
+        },
+        {
+          "bytes": 478,
+          "left_offset": 1024679,
+          "right_offset": 756391
+        },
+        {
+          "bytes": 4545,
+          "left_offset": 1025327,
+          "right_offset": 757039
+        },
+        {
+          "bytes": 385,
+          "left_offset": 1030135,
+          "right_offset": 761855
+        },
+        {
+          "bytes": 464,
+          "left_offset": 1057128,
+          "right_offset": 789376
+        },
+        {
+          "bytes": 363,
+          "left_offset": 1057767,
+          "right_offset": 790015
+        },
+        {
+          "bytes": 679,
+          "left_offset": 1059351,
+          "right_offset": 791599
+        },
+        {
+          "bytes": 629,
+          "left_offset": 1060227,
+          "right_offset": 792475
+        },
+        {
+          "bytes": 689,
+          "left_offset": 1060951,
+          "right_offset": 793199
+        },
+        {
+          "bytes": 669,
+          "left_offset": 1061707,
+          "right_offset": 793955
+        },
+        {
+          "bytes": 649,
+          "left_offset": 1062463,
+          "right_offset": 794711
+        },
+        {
+          "bytes": 525,
+          "left_offset": 1063159,
+          "right_offset": 795407
+        },
+        {
+          "bytes": 581,
+          "left_offset": 1063739,
+          "right_offset": 795987
+        },
+        {
+          "bytes": 533,
+          "left_offset": 1064363,
+          "right_offset": 796611
+        },
+        {
+          "bytes": 653,
+          "left_offset": 1064923,
+          "right_offset": 797171
+        },
+        {
+          "bytes": 717,
+          "left_offset": 1065615,
+          "right_offset": 797863
+        },
+        {
+          "bytes": 548,
+          "left_offset": 1066504,
+          "right_offset": 798752
+        },
+        {
+          "bytes": 429,
+          "left_offset": 1067127,
+          "right_offset": 799375
+        },
+        {
+          "bytes": 523,
+          "left_offset": 1067575,
+          "right_offset": 799823
+        },
+        {
+          "bytes": 319,
+          "left_offset": 1068271,
+          "right_offset": 800519
+        },
+        {
+          "bytes": 370,
+          "left_offset": 1098280,
+          "right_offset": 830460
+        },
+        {
+          "bytes": 3380,
+          "left_offset": 1114386,
+          "right_offset": 846566
+        },
+        {
+          "bytes": 498,
+          "left_offset": 1120474,
+          "right_offset": 852654
+        },
+        {
+          "bytes": 458,
+          "left_offset": 1132826,
+          "right_offset": 865014
+        },
+        {
+          "bytes": 314,
+          "left_offset": 1181428,
+          "right_offset": 913088
+        },
+        {
+          "bytes": 390,
+          "left_offset": 1238566,
+          "right_offset": 970486
+        },
+        {
+          "bytes": 12094,
+          "left_offset": 1239026,
+          "right_offset": 970946
+        },
+        {
+          "bytes": 4969,
+          "left_offset": 1263955,
+          "right_offset": 995875
+        },
+        {
+          "bytes": 840,
+          "left_offset": 1268928,
+          "right_offset": 1000848
+        },
+        {
+          "bytes": 8401,
+          "left_offset": 1270215,
+          "right_offset": 1002135
+        },
+        {
+          "bytes": 1090,
+          "left_offset": 1290710,
+          "right_offset": 1022494
+        },
+        {
+          "bytes": 2798,
+          "left_offset": 1291926,
+          "right_offset": 1023706
+        },
+        {
+          "bytes": 195250,
+          "left_offset": 1295710,
+          "right_offset": 1027534
+        }
+      ],
+      "right_image": 2
+    },
+    {
+      "left_image": 1,
+      "regions": [
+        {
+          "bytes": 1247,
+          "left_offset": 67385,
+          "right_offset": 68057
+        },
+        {
+          "bytes": 319,
+          "left_offset": 122227,
+          "right_offset": 99283
+        },
+        {
+          "bytes": 561,
+          "left_offset": 126793,
+          "right_offset": 103801
+        },
+        {
+          "bytes": 310,
+          "left_offset": 151540,
+          "right_offset": 119348
+        },
+        {
+          "bytes": 646,
+          "left_offset": 192628,
+          "right_offset": 147540
+        },
+        {
+          "bytes": 324,
+          "left_offset": 193294,
+          "right_offset": 148206
+        },
+        {
+          "bytes": 302,
+          "left_offset": 195604,
+          "right_offset": 150516
+        },
+        {
+          "bytes": 798,
+          "left_offset": 199274,
+          "right_offset": 154186
+        },
+        {
+          "bytes": 530,
+          "left_offset": 205714,
+          "right_offset": 160626
+        },
+        {
+          "bytes": 340,
+          "left_offset": 207038,
+          "right_offset": 161950
+        },
+        {
+          "bytes": 392,
+          "left_offset": 209286,
+          "right_offset": 164198
+        },
+        {
+          "bytes": 308,
+          "left_offset": 211150,
+          "right_offset": 166062
+        },
+        {
+          "bytes": 677,
+          "left_offset": 259631,
+          "right_offset": 202663
+        },
+        {
+          "bytes": 381,
+          "left_offset": 284421,
+          "right_offset": 218295
+        },
+        {
+          "bytes": 406,
+          "left_offset": 315456,
+          "right_offset": 237484
+        },
+        {
+          "bytes": 356,
+          "left_offset": 322440,
+          "right_offset": 244464
+        },
+        {
+          "bytes": 456,
+          "left_offset": 332644,
+          "right_offset": 247684
+        },
+        {
+          "bytes": 501,
+          "left_offset": 365191,
+          "right_offset": 273627
+        },
+        {
+          "bytes": 393,
+          "left_offset": 365979,
+          "right_offset": 274415
+        },
+        {
+          "bytes": 553,
+          "left_offset": 366503,
+          "right_offset": 274939
+        },
+        {
+          "bytes": 793,
+          "left_offset": 367611,
+          "right_offset": 276047
+        },
+        {
+          "bytes": 638,
+          "left_offset": 391082,
+          "right_offset": 293202
+        },
+        {
+          "bytes": 378,
+          "left_offset": 436578,
+          "right_offset": 325506
+        },
+        {
+          "bytes": 282,
+          "left_offset": 441238,
+          "right_offset": 328172
+        },
+        {
+          "bytes": 314,
+          "left_offset": 451522,
+          "right_offset": 334786
+        },
+        {
+          "bytes": 338,
+          "left_offset": 543960,
+          "right_offset": 381860
+        },
+        {
+          "bytes": 460,
+          "left_offset": 585886,
+          "right_offset": 405234
+        },
+        {
+          "bytes": 574,
+          "left_offset": 588360,
+          "right_offset": 407256
+        },
+        {
+          "bytes": 384,
+          "left_offset": 590784,
+          "right_offset": 409680
+        },
+        {
+          "bytes": 430,
+          "left_offset": 596854,
+          "right_offset": 413238
+        },
+        {
+          "bytes": 374,
+          "left_offset": 616414,
+          "right_offset": 420206
+        },
+        {
+          "bytes": 423,
+          "left_offset": 637735,
+          "right_offset": 431247
+        },
+        {
+          "bytes": 632,
+          "left_offset": 650828,
+          "right_offset": 438840
+        },
+        {
+          "bytes": 333,
+          "left_offset": 805483,
+          "right_offset": 504035
+        },
+        {
+          "bytes": 391,
+          "left_offset": 892285,
+          "right_offset": 632753
+        },
+        {
+          "bytes": 281,
+          "left_offset": 896711,
+          "right_offset": 637179
+        },
+        {
+          "bytes": 516,
+          "left_offset": 897110,
+          "right_offset": 637578
+        },
+        {
+          "bytes": 393,
+          "left_offset": 910633,
+          "right_offset": 651129
+        },
+        {
+          "bytes": 284,
+          "left_offset": 912892,
+          "right_offset": 653388
+        },
+        {
+          "bytes": 336,
+          "left_offset": 918930,
+          "right_offset": 659426
+        },
+        {
+          "bytes": 372,
+          "left_offset": 921150,
+          "right_offset": 661646
+        },
+        {
+          "bytes": 454,
+          "left_offset": 921526,
+          "right_offset": 662022
+        },
+        {
+          "bytes": 518,
+          "left_offset": 937054,
+          "right_offset": 677398
+        },
+        {
+          "bytes": 1513,
+          "left_offset": 959952,
+          "right_offset": 699648
+        },
+        {
+          "bytes": 539,
+          "left_offset": 962397,
+          "right_offset": 701957
+        },
+        {
+          "bytes": 439,
+          "left_offset": 963960,
+          "right_offset": 702741
+        },
+        {
+          "bytes": 6579,
+          "left_offset": 967523,
+          "right_offset": 706019
+        },
+        {
+          "bytes": 15493,
+          "left_offset": 975111,
+          "right_offset": 713203
+        },
+        {
+          "bytes": 393,
+          "left_offset": 990607,
+          "right_offset": 728695
+        },
+        {
+          "bytes": 2285,
+          "left_offset": 992655,
+          "right_offset": 729971
+        },
+        {
+          "bytes": 696,
+          "left_offset": 998200,
+          "right_offset": 732552
+        },
+        {
+          "bytes": 448,
+          "left_offset": 999091,
+          "right_offset": 733351
+        },
+        {
+          "bytes": 507,
+          "left_offset": 1001157,
+          "right_offset": 735147
+        },
+        {
+          "bytes": 388,
+          "left_offset": 1002359,
+          "right_offset": 736163
+        },
+        {
+          "bytes": 619,
+          "left_offset": 1005111,
+          "right_offset": 740947
+        },
+        {
+          "bytes": 367,
+          "left_offset": 1006249,
+          "right_offset": 741801
+        },
+        {
+          "bytes": 1900,
+          "left_offset": 1007836,
+          "right_offset": 742600
+        },
+        {
+          "bytes": 769,
+          "left_offset": 1010279,
+          "right_offset": 745043
+        },
+        {
+          "bytes": 1092,
+          "left_offset": 1015092,
+          "right_offset": 747008
+        },
+        {
+          "bytes": 2357,
+          "left_offset": 1016319,
+          "right_offset": 748235
+        },
+        {
+          "bytes": 358,
+          "left_offset": 1023719,
+          "right_offset": 755431
+        },
+        {
+          "bytes": 478,
+          "left_offset": 1024679,
+          "right_offset": 756391
+        },
+        {
+          "bytes": 4545,
+          "left_offset": 1025327,
+          "right_offset": 757039
+        },
+        {
+          "bytes": 385,
+          "left_offset": 1030135,
+          "right_offset": 761855
+        },
+        {
+          "bytes": 464,
+          "left_offset": 1057128,
+          "right_offset": 789376
+        },
+        {
+          "bytes": 363,
+          "left_offset": 1057767,
+          "right_offset": 790015
+        },
+        {
+          "bytes": 679,
+          "left_offset": 1059351,
+          "right_offset": 791599
+        },
+        {
+          "bytes": 629,
+          "left_offset": 1060227,
+          "right_offset": 792475
+        },
+        {
+          "bytes": 689,
+          "left_offset": 1060951,
+          "right_offset": 793199
+        },
+        {
+          "bytes": 669,
+          "left_offset": 1061707,
+          "right_offset": 793955
+        },
+        {
+          "bytes": 649,
+          "left_offset": 1062463,
+          "right_offset": 794711
+        },
+        {
+          "bytes": 525,
+          "left_offset": 1063159,
+          "right_offset": 795407
+        },
+        {
+          "bytes": 581,
+          "left_offset": 1063739,
+          "right_offset": 795987
+        },
+        {
+          "bytes": 533,
+          "left_offset": 1064363,
+          "right_offset": 796611
+        },
+        {
+          "bytes": 653,
+          "left_offset": 1064923,
+          "right_offset": 797171
+        },
+        {
+          "bytes": 717,
+          "left_offset": 1065615,
+          "right_offset": 797863
+        },
+        {
+          "bytes": 548,
+          "left_offset": 1066504,
+          "right_offset": 798752
+        },
+        {
+          "bytes": 429,
+          "left_offset": 1067127,
+          "right_offset": 799375
+        },
+        {
+          "bytes": 523,
+          "left_offset": 1067575,
+          "right_offset": 799823
+        },
+        {
+          "bytes": 319,
+          "left_offset": 1068271,
+          "right_offset": 800519
+        },
+        {
+          "bytes": 370,
+          "left_offset": 1098280,
+          "right_offset": 830460
+        },
+        {
+          "bytes": 3380,
+          "left_offset": 1114386,
+          "right_offset": 846566
+        },
+        {
+          "bytes": 498,
+          "left_offset": 1120474,
+          "right_offset": 852654
+        },
+        {
+          "bytes": 458,
+          "left_offset": 1132826,
+          "right_offset": 865014
+        },
+        {
+          "bytes": 314,
+          "left_offset": 1181408,
+          "right_offset": 913088
+        },
+        {
+          "bytes": 390,
+          "left_offset": 1237958,
+          "right_offset": 970486
+        },
+        {
+          "bytes": 12094,
+          "left_offset": 1238418,
+          "right_offset": 970946
+        },
+        {
+          "bytes": 4969,
+          "left_offset": 1263347,
+          "right_offset": 995875
+        },
+        {
+          "bytes": 840,
+          "left_offset": 1268320,
+          "right_offset": 1000848
+        },
+        {
+          "bytes": 8401,
+          "left_offset": 1269607,
+          "right_offset": 1002135
+        },
+        {
+          "bytes": 1090,
+          "left_offset": 1290102,
+          "right_offset": 1022494
+        },
+        {
+          "bytes": 2798,
+          "left_offset": 1291318,
+          "right_offset": 1023706
+        },
+        {
+          "bytes": 195250,
+          "left_offset": 1294998,
+          "right_offset": 1027534
+        }
+      ],
+      "right_image": 2
+    }
+  ]
+}

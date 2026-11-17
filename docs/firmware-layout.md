@@ -13,6 +13,12 @@
 
 The board aliases encode chip stepping, board identifier, antenna profile and radio module selector. Linux's published Apple-platform implementation and the Asahi extractor use those selectors. Published CLM documentation describes channel and regulatory power constraints. Linux loads TxCap and per-device calibration as separate inputs. The file request and hash evidence here establishes the selected files. Applied live per-device calibration values remain unmeasured. [Apple board selection patch](https://lists.openwall.net/netdev/2022/01/04/80), [Asahi parser](https://github.com/AsahiLinux/asahi-installer/blob/main/asahi_firmware/wifi.py#L28-L91), [Infineon Wi-Fi glossary](https://www.infineon.com/assets/row/public/documents/30/96/infineon-wi-fi-glossary-software-en.pdf#page=4), [Linux Wi-Fi configuration](https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/common.c), [Apple device-tree calibration support](https://github.com/AsahiLinux/m1n1/blob/main/src/kboot.c#L937-L974)
 
+## Packaging and integrity
+
+The four selected files each resolve to the same filesystem object through the dext and `/usr/share/firmware/wifi` paths. All four hashes match the earlier inventory. `codesign` strict verification passed for both architectures of the installed DriverKit bundle. Its `files` and `files2` resource records were both empty, and the system reported authenticated root enabled. File identities here come from the resolved objects and their digests. [Local evidence](../evidence/2026-11-17-firmware-loader-evidence.json), [Apple code-signing resources](https://developer.apple.com/documentation/technotes/tn3126-inside-code-signing-hashes#Resources), [Apple signed system volume](https://support.apple.com/guide/security/signed-system-volume-security-secd698747c9/web)
+
+The separate `com.apple.driver.BCMWLANFirmware4378.Hashstore` package declares an `IOImageLoader` personality matching the `com.apple.driver.AppleBCMWLANCore` consumer. Its declared executable is absent from the loose bundle. The runtime verification outcome for the selected files remains unmeasured. [Hashstore metadata](../evidence/2026-11-17-firmware-loader-evidence.json)
+
 ## Installed package
 
 | Stepping | Executable names / unique payloads | CLM | TxCap | NVRAM |
@@ -32,7 +38,30 @@ The 45 B1 Shikoku NVRAM names collapse to two payloads, one for each vendor toke
 
 The three builds report version `18.20.511.0.7.8.207`. All three repeat their first 32-byte block and have a 56,941-byte zero run beginning at file offset 403. Rizin's offline Thumb-2 interpretation of the Honshu opening produces two copies of eight wide branch instructions. The likely vector block and adjacent padding are observable on disk. Their runtime role, load address and memory layout remain open. [Firmware comparison evidence](../evidence/2026-11-17-firmware-comparison.json)
 
+### Reference loading model
+
+Asahi transfers the `.trx` bytes unchanged into the files it packages as `.bin`. The Linux BCM4378 PCIe driver treats the firmware as a flat payload, copies it into device RAM and passes the first little-endian word to reset setup. It handles NVRAM separately. These three files contain no literal `HDR0`, ELF or `RAMS` magic. The optional Linux RAM-size field contains eight bytes of `fa` in every image, so the reference driver's size override does not apply. [Asahi exporter](https://github.com/AsahiLinux/asahi-installer/blob/main/asahi_firmware/wifi.py#L74-L87), [Linux loader](https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c#L1490-L1655), [Linux reset setup](https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c#L1774-L1779), [Image checks](../evidence/2026-11-17-firmware-loader-evidence.json)
+
+Rizin decoded all sixteen opening words in each image as Thumb-2 wide branches. The first branch, interpreted at reset origin zero, reaches a location within the uploaded bytes under Linux's BCM4378 base model. All sixteen destinations fit under the same hypothetical vector placement. The public loader establishes reset use only for the first word. Actual placement of the other entries and macOS runtime mapping remain open. [Linux BCM4378 RAM base](https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c#L738-L747), [Image checks](../evidence/2026-11-17-firmware-loader-evidence.json)
+
+### Byte reuse across images
+
 The B1 pair has 678,203 equal bytes out of 1,496,769 at the same offsets. Searching for unique exact 4 KiB anchors independently of alignment and extending the strongest matches revealed a **201,010-byte** common region in B1 and a **195,250-byte** region in all three. The three-way span starts at file offsets 1,295,710, 1,294,998 and 1,027,534 respectively. Its byte pattern distinguishes it from the common zero run. Its internal role remains unresolved. [Offline comparison method and results](../evidence/2026-11-17-firmware-comparison.json)
+
+An additional 256-byte anchor survey found **810,357 bytes** of exact reuse between the B1 pair. Honshu contains **301,610 bytes** with verified matches in both other files. The mapper indexes anchors gathered from each file, searches for them at every offset, and expands unique matches by byte equality. The results exclude repeats that lack unique anchors and report a lower bound on reuse. Every reported region was independently slice-checked. Semantic roles remain open. [Complete byte region map](../evidence/2026-11-17-firmware-region-map.json)
+
+| Image | Spans with matches in every other image | Bytes outside long uniform runs and detected reuse |
+| --- | ---: | ---: |
+| Honshu | 301,610 | 686,966 |
+| Capri | 301,610 | 686,148 |
+| Kyushu | 301,609 | 845,175 |
+
+```sh
+python3 tools/map_firmware_regions.py \
+  /usr/share/firmware/wifi/C-4378__s-B1/honshu.trx \
+  /usr/share/firmware/wifi/C-4378__s-B1/capri.trx \
+  /usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx
+```
 
 Both B1 images contain the selected literal `wnm_btm_rssi_thresh`. The B3 image contains other WNM labels and has zero exact hits for this one. This corrects the earlier count of ten shared positive markers. Runtime roaming policy remains unmeasured. [Literal counts](../evidence/2026-11-17-firmware-comparison.json)
 

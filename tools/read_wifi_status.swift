@@ -11,12 +11,15 @@ struct WiFiStatus: Encodable {
     let interface: String?
     let api_visible_interfaces: [String]?
     let interface_mode: String
+    let radio_power_on: Bool
     let phy_mode: String
+    let band: String?
     let channel: Int?
     let channel_width_mhz: Int?
     let rssi_dbm: Int?
     let noise_dbm: Int?
     let tx_rate_mbps: Double?
+    let corewlan_transmit_power: Int?
     let sampled_at_unix_seconds: Double
     let reported_channel_widths_mhz_by_band: [String: [Int]]?
     let reported_channel_numbers_by_band_and_width_mhz: [String: [Int: [Int]]]?
@@ -53,18 +56,22 @@ func readStatus(includeCapabilities: Bool) -> WiFiStatus {
     let rssi = wifi.rssiValue()
     let noise = wifi.noiseMeasurement()
     let rate = wifi.transmitRate()
+    let power = wifi.transmitPower()
     let channels = includeCapabilities ? wifi.supportedWLANChannels().map(channelsByBandAndWidth) : nil
     let apiInterfaces = includeCapabilities ? (client.interfaces() ?? []).compactMap { $0.interfaceName }.sorted() : nil
     return WiFiStatus(
         interface: wifi.interfaceName,
         api_visible_interfaces: apiInterfaces,
         interface_mode: modeNames[wifi.interfaceMode()] ?? "unknown",
+        radio_power_on: wifi.powerOn(),
         phy_mode: phyNames[wifi.activePHYMode()] ?? "unknown",
+        band: channel.flatMap { bandNames[$0.channelBand] },
         channel: channel?.channelNumber,
         channel_width_mhz: channel.flatMap { channelWidths[$0.channelWidth] },
         rssi_dbm: rssi < 0 ? rssi : nil,
         noise_dbm: noise < 0 ? noise : nil,
         tx_rate_mbps: rate.isFinite && rate > 0 ? rate : nil,
+        corewlan_transmit_power: power > 0 ? power : nil,
         sampled_at_unix_seconds: timestamp,
         reported_channel_widths_mhz_by_band: channels?.mapValues { $0.keys.sorted() },
         reported_channel_numbers_by_band_and_width_mhz: channels
