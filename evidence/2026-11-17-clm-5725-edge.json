@@ -1,0 +1,96 @@
+{
+  "absent_a2337_test_blocks": [
+    {
+      "center_channel_number": 144,
+      "center_mhz": 5720,
+      "expected_primary_channels": [
+        144
+      ],
+      "mhz_above_edge": 5,
+      "nominal_lower_edge_mhz": 5710,
+      "nominal_upper_edge_mhz": 5730,
+      "primary_channels_reported_at_width": [],
+      "width_mhz": 20
+    },
+    {
+      "center_channel_number": 142,
+      "center_mhz": 5710,
+      "expected_primary_channels": [
+        140,
+        144
+      ],
+      "mhz_above_edge": 5,
+      "nominal_lower_edge_mhz": 5690,
+      "nominal_upper_edge_mhz": 5730,
+      "primary_channels_reported_at_width": [],
+      "width_mhz": 40
+    },
+    {
+      "center_channel_number": 138,
+      "center_mhz": 5690,
+      "expected_primary_channels": [
+        132,
+        136,
+        140,
+        144
+      ],
+      "mhz_above_edge": 5,
+      "nominal_lower_edge_mhz": 5650,
+      "nominal_upper_edge_mhz": 5730,
+      "primary_channels_reported_at_width": [],
+      "width_mhz": 80
+    }
+  ],
+  "btk_examples": {
+    "rlan_range_mhz": [
+      5470,
+      5725
+    ],
+    "separate_short_range_range_mhz": [
+      5725,
+      5875
+    ]
+  },
+  "current_corewlan_recheck": {
+    "country": "TR",
+    "interface": "en0",
+    "list_matches_previous_clm_audit": true,
+    "observed_utc": "2026-11-17T15:38:15.999+00:00"
+  },
+  "driver_response_processing": {
+    "arm64e": {
+      "apple_channel_conversion_call": "0x1002338d8",
+      "dfs_flag_check": "0x100233934",
+      "passive_flag_check": "0x100233908",
+      "requested_flag_mask_reads": [
+        "0x100233960",
+        "0x10023396c"
+      ]
+    },
+    "arm64e.x1": {
+      "apple_channel_conversion_call": "0x10022d494",
+      "dfs_flag_check": "0x10022d4f0",
+      "passive_flag_check": "0x10022d4c4",
+      "requested_flag_mask_reads": [
+        "0x10022d51c",
+        "0x10022d528"
+      ]
+    }
+  },
+  "regulatory_example": "TR",
+  "same_opaque_tr_suffix_rows": {
+    "count_in_shikoku": 87,
+    "selected_shared_examples": [
+      "DE",
+      "FR",
+      "GB",
+      "TR"
+    ]
+  },
+  "scope": "The regulatory edge and absent lab blocks align. The stock firmware channel-permission calculation is still untraced.",
+  "source": {
+    "a2337_test_centers": "https://device.report/m/9dbefd8fa57734334f25d9b4c27352a2b1333e4a7384c14f77fb813ec85822d7.pdf#page=5",
+    "independent_linux_country_table": "https://kernel.googlesource.com/pub/scm/linux/kernel/git/wens/wireless-regdb/+/refs/heads/master/db.txt#2021",
+    "technical_criteria_btk": "https://www.btk.gov.tr/uploads/pages/frekans-tahsisinden-muaf-telsiz-cihaz-sistemleri-olcutler-633d4ca68c0b1.pdf?trk=public_post_comment-text"
+  }
+}

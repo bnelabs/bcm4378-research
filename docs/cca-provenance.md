@@ -1,5 +1,7 @@
 # BCM4378 clear-channel assessment reporting
 
+The [live airtime sampler](live-wifi-airtime.md) verified 98 numeric and state reports on the connected Mac, including station, AWDL, and per-channel values. The traces below explain the event, cache, and update paths behind them.
+
 The running `IO80211ReporterProxy` marked its registry legend public. The sample contained 602 legend rows and 2,761 channel entries across all groups. Within that metadata, the CCA last-reported and state groups each listed **38 channel numbers**. The public CoreWLAN getter listed **37 primary 20 MHz channels**. All appeared in both CCA groups, which also include channel 144 at 5,720 MHz. Noise labels were present for channel 40, the primary channel of the active 80 MHz association. Legend entries describe the available reports. The sample establishes label presence and leaves the reported values, measurement times, and channel 144 operation unverified. [Registry and association evidence](../evidence/2026-11-17-cca-provenance.json), [Apple DriverKit legend API](https://developer.apple.com/documentation/driverkit/ioreporter/createlegend), [Stock channel-plan comparison](spectrum-sensing.md#match-to-the-stock-channel-list)
 
 The `en0` and `awdl0` groups each have average, IBSS, OBSS, and interference CCA report labels. The legend also lists `CCA (%) excluding own traffic` under link-quality measurements and a QBSS channel-utilization field under `en0`. The DriverKit image associates the QBSS label with its separate `setInterfaceQBSS` updater. [Registry labels and code references](../evidence/2026-11-17-cca-provenance.json)
@@ -25,7 +27,7 @@ The channel monitor creates four states per channel. Its comparisons assign vali
 | `50  75` | 50–74% |
 | `75 100` | 75–100% |
 
-`IOReportCreateSamples` requests a kernel report update. The live reporter proxy belongs to `AppleBCMWLANCore`. Its update dispatch resolves to the core's override in both installed driver slices. When the core accepts commands, its gated path dispatches power statistics and diagnostics before the report collectors. The inspected paths include firmware power-duration reads and conditional event-counter enable and disable calls. The active-Mac test covered catalog access. Sample values and the effects of the full update path remain open for a separately managed device. [Sample path evidence](../evidence/2026-11-17-ioreport-access.json), [DriverKit report update dispatch](https://github.com/apple-oss-distributions/xnu/blob/main/iokit/Kernel/IOUserServer.cpp#L313-L342)
+`IOReportCreateSamples` requests a kernel report update. The live reporter proxy belongs to `AppleBCMWLANCore`. Its update dispatch resolves to the core's override in both installed driver slices. When the core accepts commands, its gated path dispatches power statistics and diagnostics before the report collectors. The inspected paths include firmware power-duration reads and conditional event-counter enable and disable calls. The later live test used this standard update with the airtime channel subset and kept the existing station association. [Sample path evidence](../evidence/2026-11-17-ioreport-access.json), [Observed sample behavior](live-wifi-airtime.md), [DriverKit report update dispatch](https://github.com/apple-oss-distributions/xnu/blob/main/iokit/Kernel/IOUserServer.cpp#L313-L342)
 
 ## Linux survey behavior
 
@@ -40,7 +42,7 @@ python3 tools/read_cca_legend.py
 swift tools/read_wifi_status.swift
 ```
 
-The inventory emits channel numbers, selected labels, and aggregate counts. The existing native status investigation identifies a CCA status field behind the root-gated diagnostic command. A test on a separately managed device can compare actual CCA and QBSS values with a synchronized RF receiver. The Linux survey belongs on that independently managed radio because it changes channels. [Registry reader](../tools/read_cca_legend.py), [Native station status](live-access.md#station-diagnostic-fields)
+The inventory emits channel numbers, selected labels, and aggregate counts. The [numeric sampler](live-wifi-airtime.md#run-the-sampler) uses the native report path. A synchronized RF receiver can compare the CCA and QBSS values against independent airtime observations. The Linux survey belongs on that independently managed radio because it changes channels. [Registry reader](../tools/read_cca_legend.py), [Native station status](live-access.md#station-diagnostic-fields)
 
 The catalog reader uses the `libIOReport` signatures verified on this system. It reports publisher-matched count and format metadata. [Catalog reader](../tools/read_ioreport_catalog.c)
 
