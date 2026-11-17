@@ -1,0 +1,212 @@
+{
+  "field_byte_offsets_from_fault_calls": {
+    "entry_pointer": 68,
+    "name_pointer": 40,
+    "printed_timer_object": 76,
+    "run_count": 4,
+    "stack_end": 16,
+    "stack_pointer": 8,
+    "stack_size": 20,
+    "stack_start": 12,
+    "thread_id": 0
+  },
+  "images": [
+    {
+      "file": {
+        "bytes": 1497470,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+      },
+      "initialization_log": {
+        "call_address": "0x003b02ec",
+        "format": "ThreadX v%d.%d initialized\n",
+        "log_routine_address": "0x56b4",
+        "major_in_r1": 5,
+        "minor_in_r2": 6
+      },
+      "strings": [
+        {
+          "load_candidates": [
+            {
+              "file_offset": 385770,
+              "pointer_file_offset": 385848,
+              "virtual_address": "0x3b02ea"
+            }
+          ],
+          "marker": "ThreadX v%d.%d initialized",
+          "pointers": [
+            385848
+          ],
+          "string_address": "0x4461c8",
+          "string_offset": 999880
+        },
+        {
+          "load_candidates": [
+            {
+              "file_offset": 393432,
+              "pointer_file_offset": 393492,
+              "virtual_address": "0x3b20d8"
+            }
+          ],
+          "marker": "THREADX TRAP INFO:",
+          "pointers": [
+            393492
+          ],
+          "string_address": "0x446332",
+          "string_offset": 1000242
+        }
+      ]
+    },
+    {
+      "file": {
+        "bytes": 1496769,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6"
+      },
+      "initialization_log": {
+        "call_address": "0x003b02ec",
+        "format": "ThreadX v%d.%d initialized\n",
+        "log_routine_address": "0x56b4",
+        "major_in_r1": 5,
+        "minor_in_r2": 6
+      },
+      "strings": [
+        {
+          "load_candidates": [
+            {
+              "file_offset": 385770,
+              "pointer_file_offset": 385848,
+              "virtual_address": "0x3b02ea"
+            }
+          ],
+          "marker": "ThreadX v%d.%d initialized",
+          "pointers": [
+            385848
+          ],
+          "string_address": "0x4460c8",
+          "string_offset": 999624
+        },
+        {
+          "load_candidates": [
+            {
+              "file_offset": 393432,
+              "pointer_file_offset": 393492,
+              "virtual_address": "0x3b20d8"
+            }
+          ],
+          "marker": "THREADX TRAP INFO:",
+          "pointers": [
+            393492
+          ],
+          "string_address": "0x446232",
+          "string_offset": 999986
+        }
+      ]
+    },
+    {
+      "file": {
+        "bytes": 1226142,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a"
+      },
+      "initialization_log": {
+        "call_address": "0x00398b88",
+        "format": "ThreadX v%d.%d initialized\n",
+        "log_routine_address": "0x9b8c",
+        "major_in_r1": 5,
+        "minor_in_r2": 6
+      },
+      "strings": [
+        {
+          "load_candidates": [
+            {
+              "file_offset": 289670,
+              "pointer_file_offset": 289748,
+              "virtual_address": "0x398b86"
+            }
+          ],
+          "marker": "ThreadX v%d.%d initialized",
+          "pointers": [
+            289748
+          ],
+          "string_address": "0x4052a4",
+          "string_offset": 733860
+        },
+        {
+          "load_candidates": [
+            {
+              "file_offset": 295352,
+              "pointer_file_offset": 295412,
+              "virtual_address": "0x39a1b8"
+            }
+          ],
+          "marker": "THREADX TRAP INFO:",
+          "pointers": [
+            295412
+          ],
+          "string_address": "0x4053ba",
+          "string_offset": 734138
+        }
+      ]
+    }
+  ],
+  "live_selected_capability_words": {
+    "arpoe": true,
+    "bdo": true,
+    "lpas": true,
+    "mchan": false,
+    "ndoe": true,
+    "p2p": false,
+    "pktfltr2": true,
+    "rsdb": true,
+    "sta": true,
+    "tko": true
+  },
+  "published_requested_image": "/usr/share/firmware/wifi/C-4378__s-B1/shikoku.trx",
+  "published_selected_firmware_version": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a",
+  "reference_ram_base": "0x352000",
+  "resolved_active_image": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+  "retained_thread_decoder_validation": {
+    "bad_addresses_rejected": 6,
+    "capture_scope": "synthetic raw and event-prefixed fixtures with installed image bytes",
+    "layouts_checked": [
+      {
+        "captured_bytes": 1888256,
+        "prefix_bytes": 0,
+        "readout_matched": true
+      },
+      {
+        "captured_bytes": 1888256,
+        "prefix_bytes": 24,
+        "readout_matched": true
+      }
+    ],
+    "tool": "tools/compare_ram_capture.py --threadx-timer"
+  },
+  "scope": "Offline Thumb-2 literals and call sites under the Linux flat-file mapping, plus published stock identity and capability reads.",
+  "system_build": "26B131",
+  "trap_routine_fields_verified_in_honshu_and_kyushu": [
+    "thread name",
+    "thread ID",
+    "run count",
+    "stack pointer",
+    "stack start/end",
+    "stack size",
+    "entry function",
+    "timer object address"
+  ],
+  "upstream_release_comparison": {
+    "checked_utc": "2026-11-17T15:52:41+00:00",
+    "compared_header_sha256": "f55d61d15ed1749c0799091e85e6e0128fdef3e767b6dbf2aad57994dce467c5",
+    "compared_header_tag": "v6.5.2.202603b_rel",
+    "layout_assumptions": "32-bit words and pointer fields with an empty first port extension in TX_THREAD",
+    "listed_release_count": 28,
+    "newest_listed_tag": "v6.5.2.202603b_rel",
+    "oldest_listed_tag": "v6.0_rel",
+    "public_url": "https://github.com/eclipse-threadx/threadx/releases",
+    "threadx_5_6_release_listed": false
+  }
+}

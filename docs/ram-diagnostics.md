@@ -31,3 +31,5 @@ python3 tools/compare_ram_capture.py "$capture_file" "$firmware_file" \
 ```
 
 For a watchdog capture with known framing, supply its event length using `--prefix-bytes`. Matching bytes establish correspondence at the compared offsets. Differences need the capture's boot or runtime state for interpretation. Synthetic fixtures exercised both layouts with the installed Shikoku image, including a one-byte change and rejected length mismatches. Physical RAM remains unmeasured on the active Mac. [Comparator](../tools/compare_ram_capture.py), [Fixture results and scope](../evidence/2026-11-17-ram-diagnostics.json)
+
+With a paired BCM4378 `THREADX TRAP INFO` log, `--threadx-timer` reads the thread record identified by the logged timer address from the retained file. The decoded fields and the test cases are documented with the [RTOS source comparison](rtos-threadx.md#use-the-public-source-to-read-a-saved-thread-record).

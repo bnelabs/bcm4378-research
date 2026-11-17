@@ -4,6 +4,8 @@
 
 `AppleBCMWLANCore.RequestedFiles` returned one set for BCM4378 B1. It names Shikoku X3 and the RASP NVRAM profile with vendor token `m` and revision `6.11`. Each file in the active driver bundle is byte-identical to its counterpart under `/usr/share/firmware/wifi`. The firmware build tag matches the running driver version and firmware ID `01-2606388a`. [Host snapshot](../evidence/2026-11-17-macos-inventory.json), [Firmware tag and digest](../evidence/2026-11-17-firmware.json)
 
+All three distinct executables include the code that announces ThreadX 5.6. [Initialization and thread fault-report disassembly](rtos-threadx.md)
+
 | Role | Requested name under `C-4378__s-B1/` | Resolved file | Bytes |
 | --- | --- | --- | ---: |
 | Executable | `shikoku.trx` | `honshu.trx` | 1,497,470 |

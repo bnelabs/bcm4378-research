@@ -1,0 +1,622 @@
+{
+  "all_samples_unprivileged": true,
+  "corewifi_default_service_probe": {
+    "measurement": {
+      "cached_link_quality": {
+        "available": 0,
+        "cca": null,
+        "rx_rate": null,
+        "sample_time_unix_seconds": null,
+        "tx_packet_error_rate": null,
+        "tx_rate": null
+      },
+      "cca_current": null,
+      "corewifi_interface": null,
+      "corewlan_channel": 40,
+      "corewlan_channel_width_enum": 3,
+      "corewlan_interface": "en0",
+      "guard_interval_raw": null,
+      "mcs": null,
+      "sampled_at_unix_seconds": 1794928772.087539,
+      "spatial_streams": null,
+      "uid": 501
+    },
+    "route_after": "en0",
+    "route_before": "en0"
+  },
+  "last_reported_values_by_channel_from_last_snapshot": {
+    "1": 5,
+    "2": 33,
+    "3": 38,
+    "4": 43,
+    "5": 39,
+    "6": 11,
+    "7": 43,
+    "8": 31,
+    "9": 39,
+    "10": 29,
+    "11": 15,
+    "12": 20,
+    "13": 27,
+    "36": 0,
+    "40": 18,
+    "44": 7,
+    "48": 0,
+    "52": 0,
+    "56": 0,
+    "60": 0,
+    "64": 0,
+    "100": 0,
+    "104": 1,
+    "108": 0,
+    "112": 0,
+    "116": 0,
+    "120": 0,
+    "124": 0,
+    "128": 0,
+    "132": 0,
+    "136": 0,
+    "140": 0,
+    "144": 0,
+    "149": 0,
+    "153": 0,
+    "157": 0,
+    "161": 0,
+    "165": 0
+  },
+  "first_snapshot_utc": "2026-11-17T15:27:48.023+00:00",
+  "host_timebase_ticks_per_second": 24000000,
+  "interface_average_cca_state_integer_percent_bounds": [
+    [
+      0,
+      11
+    ],
+    [
+      12,
+      24
+    ],
+    [
+      25,
+      36
+    ],
+    [
+      37,
+      49
+    ],
+    [
+      50,
+      61
+    ],
+    [
+      62,
+      74
+    ],
+    [
+      75,
+      86
+    ],
+    [
+      87,
+      99
+    ],
+    [
+      100,
+      100
+    ]
+  ],
+  "interval_seconds": 22.019517,
+  "last_snapshot_utc": "2026-11-17T15:28:10.043+00:00",
+  "link_after": {
+    "link": {
+      "channel": 40,
+      "channel_width_mhz": 80,
+      "interface": "en0",
+      "interface_mode": "station",
+      "noise_dbm": -90,
+      "rssi_dbm": -56,
+      "tx_rate_mbps": 648
+    },
+    "route": "en0"
+  },
+  "link_before": {
+    "link": {
+      "channel": 40,
+      "channel_width_mhz": 80,
+      "interface": "en0",
+      "interface_mode": "station",
+      "noise_dbm": -90,
+      "rssi_dbm": -57,
+      "tx_rate_mbps": 648
+    },
+    "route": "en0"
+  },
+  "pilot": {
+    "awdl0_integers": {
+      "Interface Average CCA": 7,
+      "Interface IBSS CCA": 1,
+      "Interface Interference CCA": 1,
+      "Interface OBSS CCA": 7
+    },
+    "en0_integers": {
+      "Available Admission Capacity": 0,
+      "CCA (%) excluding own traffic": 14,
+      "Channel Utilization": 0,
+      "Interface Average CCA": 17,
+      "Interface IBSS CCA": 2,
+      "Interface Interference CCA": 3,
+      "Interface OBSS CCA": 11,
+      "Station Count": 0
+    },
+    "observed_utc": "2026-11-17T15:23:08.482+00:00"
+  },
+  "qbss_state_labels": {
+    "Channel Utilization State": [
+      "0.0%",
+      "12.5%",
+      "25.0%",
+      "37.5%",
+      "50.0%",
+      "62.5%",
+      "75.0%",
+      "87.5%",
+      "100.0%"
+    ],
+    "Station Count State": [
+      "OFF",
+      "1- 4",
+      "5- 8",
+      "9-12",
+      "13-16",
+      "17-20",
+      "21-24",
+      "25-28",
+      "29-32",
+      "MORE 32"
+    ]
+  },
+  "report_counts": {
+    "Channel": {
+      "simple": 38,
+      "state": 38
+    },
+    "Interface awdl0": {
+      "simple": 4,
+      "state": 4
+    },
+    "Interface en0": {
+      "simple": 8,
+      "state": 6
+    }
+  },
+  "reported_percent_series": [
+    {
+      "average_cca": 18,
+      "cca_excluding_own_traffic": 10,
+      "channel_144_cca": 0,
+      "channel_40_cca": 18,
+      "ibss_cca": 6,
+      "interference_cca": 3,
+      "obss_cca": 7,
+      "qbss_available_admission_capacity_raw": 0,
+      "qbss_channel_utilization_raw": 0,
+      "qbss_station_count": 0,
+      "seconds_from_first_snapshot": 0.0
+    },
+    {
+      "average_cca": 18,
+      "cca_excluding_own_traffic": 10,
+      "channel_144_cca": 0,
+      "channel_40_cca": 18,
+      "ibss_cca": 6,
+      "interference_cca": 3,
+      "obss_cca": 7,
+      "qbss_available_admission_capacity_raw": 0,
+      "qbss_channel_utilization_raw": 0,
+      "qbss_station_count": 0,
+      "seconds_from_first_snapshot": 2.030461
+    },
+    {
+      "average_cca": 18,
+      "cca_excluding_own_traffic": 10,
+      "channel_144_cca": 0,
+      "channel_40_cca": 18,
+      "ibss_cca": 6,
+      "interference_cca": 3,
+      "obss_cca": 7,
+      "qbss_available_admission_capacity_raw": 0,
+      "qbss_channel_utilization_raw": 0,
+      "qbss_station_count": 0,
+      "seconds_from_first_snapshot": 4.014837
+    },
+    {
+      "average_cca": 18,
+      "cca_excluding_own_traffic": 10,
+      "channel_144_cca": 0,
+      "channel_40_cca": 18,
+      "ibss_cca": 6,
+      "interference_cca": 3,
+      "obss_cca": 7,
+      "qbss_available_admission_capacity_raw": 0,
+      "qbss_channel_utilization_raw": 0,
+      "qbss_station_count": 0,
+      "seconds_from_first_snapshot": 6.021835
+    },
+    {
+      "average_cca": 18,
+      "cca_excluding_own_traffic": 10,
+      "channel_144_cca": 0,
+      "channel_40_cca": 18,
+      "ibss_cca": 6,
+      "interference_cca": 3,
+      "obss_cca": 7,
+      "qbss_available_admission_capacity_raw": 0,
+      "qbss_channel_utilization_raw": 0,
+      "qbss_station_count": 0,
+      "seconds_from_first_snapshot": 8.017706
+    },
+    {
+      "average_cca": 18,
+      "cca_excluding_own_traffic": 10,
+      "channel_144_cca": 0,
+      "channel_40_cca": 18,
+      "ibss_cca": 6,
+      "interference_cca": 3,
+      "obss_cca": 7,
+      "qbss_available_admission_capacity_raw": 0,
+      "qbss_channel_utilization_raw": 0,
+      "qbss_station_count": 0,
+      "seconds_from_first_snapshot": 10.019546
+    },
+    {
+      "average_cca": 18,
+      "cca_excluding_own_traffic": 10,
+      "channel_144_cca": 0,
+      "channel_40_cca": 18,
+      "ibss_cca": 6,
+      "interference_cca": 3,
+      "obss_cca": 7,
+      "qbss_available_admission_capacity_raw": 0,
+      "qbss_channel_utilization_raw": 0,
+      "qbss_station_count": 0,
+      "seconds_from_first_snapshot": 12.030784
+    },
+    {
+      "average_cca": 18,
+      "cca_excluding_own_traffic": 10,
+      "channel_144_cca": 0,
+      "channel_40_cca": 18,
+      "ibss_cca": 6,
+      "interference_cca": 3,
+      "obss_cca": 7,
+      "qbss_available_admission_capacity_raw": 0,
+      "qbss_channel_utilization_raw": 0,
+      "qbss_station_count": 0,
+      "seconds_from_first_snapshot": 14.020822
+    },
+    {
+      "average_cca": 18,
+      "cca_excluding_own_traffic": 10,
+      "channel_144_cca": 0,
+      "channel_40_cca": 18,
+      "ibss_cca": 6,
+      "interference_cca": 3,
+      "obss_cca": 7,
+      "qbss_available_admission_capacity_raw": 0,
+      "qbss_channel_utilization_raw": 0,
+      "qbss_station_count": 0,
+      "seconds_from_first_snapshot": 16.016192
+    },
+    {
+      "average_cca": 18,
+      "cca_excluding_own_traffic": 10,
+      "channel_144_cca": 0,
+      "channel_40_cca": 18,
+      "ibss_cca": 6,
+      "interference_cca": 3,
+      "obss_cca": 7,
+      "qbss_available_admission_capacity_raw": 0,
+      "qbss_channel_utilization_raw": 0,
+      "qbss_station_count": 0,
+      "seconds_from_first_snapshot": 18.02127
+    },
+    {
+      "average_cca": 18,
+      "cca_excluding_own_traffic": 10,
+      "channel_144_cca": 0,
+      "channel_40_cca": 18,
+      "ibss_cca": 6,
+      "interference_cca": 3,
+      "obss_cca": 7,
+      "qbss_available_admission_capacity_raw": 0,
+      "qbss_channel_utilization_raw": 0,
+      "qbss_station_count": 0,
+      "seconds_from_first_snapshot": 20.017939
+    },
+    {
+      "average_cca": 18,
+      "cca_excluding_own_traffic": 10,
+      "channel_144_cca": 0,
+      "channel_40_cca": 18,
+      "ibss_cca": 6,
+      "interference_cca": 3,
+      "obss_cca": 7,
+      "qbss_available_admission_capacity_raw": 0,
+      "qbss_channel_utilization_raw": 0,
+      "qbss_station_count": 0,
+      "seconds_from_first_snapshot": 22.019517
+    }
+  ],
+  "requested_records_per_sample": 98,
+  "sample_count": 12,
+  "scope": "Normal IOReport sampling on the associated station, with link status checks around the sequence.",
+  "source": "tools/read_wifi_airtime.m",
+  "state_bounds_reference": {
+    "function": "IO80211InterfaceMonitor::setInterfaceAverageCCA",
+    "image": "IO80211DriverKit",
+    "inclusive_max_comparisons": "0x18085d4f4 through 0x18085d54c",
+    "uuid": "f0ba88aa-2977-307d-b8c6-ddcec8e76f9e"
+  },
+  "state_examples": [
+    {
+      "entry_count_changes": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "first_state_entries": [
+        1952,
+        2125,
+        199,
+        2
+      ],
+      "group": "Channel",
+      "name": "Channel CCA State  40",
+      "residency_tick_changes": [
+        528484280,
+        0,
+        0,
+        0
+      ],
+      "state_labels": [
+        "00  25",
+        "25  50",
+        "50  75",
+        "75 100"
+      ],
+      "total_residency_change_seconds_using_host_timebase": 22.020178,
+      "unit_raw_hex": "0x100007980000018"
+    },
+    {
+      "entry_count_changes": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "first_state_entries": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "group": "Channel",
+      "name": "Channel CCA State 144",
+      "residency_tick_changes": [
+        528484299,
+        0,
+        0,
+        0
+      ],
+      "state_labels": [
+        "00  25",
+        "25  50",
+        "50  75",
+        "75 100"
+      ],
+      "total_residency_change_seconds_using_host_timebase": 22.020179,
+      "unit_raw_hex": "0x100007980000018"
+    },
+    {
+      "entry_count_changes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first_state_entries": [
+        1276,
+        1876,
+        2255,
+        1020,
+        188,
+        17,
+        2,
+        0,
+        0
+      ],
+      "group": "Interface en0",
+      "name": "Interface Average CCA State",
+      "residency_tick_changes": [
+        0,
+        528483683,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_labels": [
+        "0.0%",
+        "12.5%",
+        "25.0%",
+        "37.5%",
+        "50.0%",
+        "62.5%",
+        "75.0%",
+        "87.5%",
+        "100.0%"
+      ],
+      "total_residency_change_seconds_using_host_timebase": 22.020153,
+      "unit_raw_hex": "0x100007980000018"
+    },
+    {
+      "entry_count_changes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first_state_entries": [
+        982,
+        1144,
+        275,
+        37,
+        14,
+        4,
+        1,
+        0,
+        0
+      ],
+      "group": "Interface en0",
+      "name": "Interface IBSS CCA State",
+      "residency_tick_changes": [
+        528483694,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_labels": [
+        "0.0%",
+        "12.5%",
+        "25.0%",
+        "37.5%",
+        "50.0%",
+        "62.5%",
+        "75.0%",
+        "87.5%",
+        "100.0%"
+      ],
+      "total_residency_change_seconds_using_host_timebase": 22.020154,
+      "unit_raw_hex": "0x100007980000018"
+    },
+    {
+      "entry_count_changes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first_state_entries": [
+        1398,
+        1366,
+        71,
+        8,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "group": "Interface en0",
+      "name": "Interface OBSS CCA State",
+      "residency_tick_changes": [
+        528483695,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_labels": [
+        "0.0%",
+        "12.5%",
+        "25.0%",
+        "37.5%",
+        "50.0%",
+        "62.5%",
+        "75.0%",
+        "87.5%",
+        "100.0%"
+      ],
+      "total_residency_change_seconds_using_host_timebase": 22.020154,
+      "unit_raw_hex": "0x100007980000018"
+    },
+    {
+      "entry_count_changes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first_state_entries": [
+        980,
+        939,
+        69,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "group": "Interface en0",
+      "name": "Interface Interference CCA State",
+      "residency_tick_changes": [
+        528483701,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_labels": [
+        "0.0%",
+        "12.5%",
+        "25.0%",
+        "37.5%",
+        "50.0%",
+        "62.5%",
+        "75.0%",
+        "87.5%",
+        "100.0%"
+      ],
+      "total_residency_change_seconds_using_host_timebase": 22.020154,
+      "unit_raw_hex": "0x100007980000018"
+    }
+  ],
+  "system_build": "26B131"
+}
