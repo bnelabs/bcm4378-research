@@ -1,0 +1,79 @@
+{
+  "observed_date": "2026-11-17",
+  "registry_checked_at_utc": "2026-11-17T06:38:08Z",
+  "host": {
+    "model": "MacBookAir10,1",
+    "macos_version": "27.2.1",
+    "macos_build": "26B131"
+  },
+  "method": {
+    "pmset": ["pmset -g live", "pmset -g custom", "pmset -g cap", "pmset -g ps"],
+    "retained_values": "Allowlisted numeric policies, allowlisted capability names, and the active power source",
+    "registry": "IORegistryEntryCreateCFProperty for IOPowerManagement on services matched by name and class. Retained CurrentPowerState, DevicePowerState and MaxPowerState. Null denotes an unavailable field.",
+    "sleep_or_wake_triggered": false,
+    "diagnostics_or_logs_collected": false,
+    "settings_changed": false,
+    "device_node_opened": false
+  },
+  "pmset": {
+    "active_power_source": "AC Power",
+    "live_matches_profile": "AC Power for all retained policies",
+    "settings_by_source": {
+      "AC Power": {
+        "displaysleep": 10,
+        "hibernatemode": 3,
+        "lowpowermode": 0,
+        "networkoversleep": 0,
+        "powernap": 1,
+        "sleep": 1,
+        "standby": 1,
+        "tcpkeepalive": 1,
+        "womp": 1
+      },
+      "Battery Power": {
+        "displaysleep": 2,
+        "hibernatemode": 3,
+        "lowpowermode": 1,
+        "networkoversleep": 0,
+        "powernap": 1,
+        "sleep": 1,
+        "standby": 1,
+        "tcpkeepalive": 1,
+        "womp": 0
+      }
+    },
+    "allowlisted_capabilities_reported": [
+      "displaysleep", "sleep", "womp", "standby", "powernap", "hibernatemode", "tcpkeepalive", "lowpowermode"
+    ]
+  },
+  "registry_power_management": [
+    {
+      "name": "wlan",
+      "class": "IOPCIDevice",
+      "CurrentPowerState": 2,
+      "DevicePowerState": 2,
+      "MaxPowerState": 3
+    },
+    {
+      "name": "AppleBCMWLANCore",
+      "class": "IOUserService",
+      "CurrentPowerState": 3,
+      "DevicePowerState": null,
+      "MaxPowerState": 3
+    }
+  ],
+  "limits": [
+    "The snapshot records host preferences and power-state ordinals for two named registry entries.",
+    "BCM4378 RF doze, WMM Power Save, negotiated Target Wake Time, TCP session continuity and actual wake outcomes remain unverified."
+  ],
+  "sources": {
+    "bundled_power_management_manual": "pmset(1), SETTINGS and GETTING",
+    "apple_power_management_source": "https://github.com/apple-oss-distributions/PowerManagement/blob/d415e45501842834a280930c3eed9186544a67f0/pmset/pmset.m#L307-L333",
+    "apple_network_wake": "https://support.apple.com/en-gb/guide/mac-help/mh27905/mac",
+    "apple_power_nap": "https://support.apple.com/en-ie/guide/mac-help/mh40774/mac",
+    "apple_iokit_power_states": "https://developer.apple.com/library/archive/documentation/DeviceDrivers/Conceptual/IOKitFundamentals/PowerMgmt/PowerMgmt.html",
+    "apple_xnu_pm_registry_serialization": "https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/iokit/Kernel/IOServicePM.cpp#L9489-L9504",
+    "apple_wmm_guidance": "https://support.apple.com/en-us/102766",
+    "ieee_target_wake_time": "https://www.ieee802.org/11/Liaisons/2022-12-20-802-11%20liaison%20to%20802-1%20re%20TSN%20support.pdf"
+  }
+}

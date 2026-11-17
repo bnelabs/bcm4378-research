@@ -4,9 +4,11 @@
 
 The IPv4 default route uses `en0`, which macOS lists as Wi-Fi. The Ethernet adapters `en3` and `en4` reported inactive links. Keeping this Mac online depends on the active Apple Wi-Fi driver and the BCM4378.
 
-I/O Registry exposes a live-access path for specific standard PCIe properties. Its `IOPCIExpressLinkStatus` value on `wlan@0` was `0x1012`. Apple's published IOPCIFamily source reads or refreshes the underlying link-status register on behalf of the registry using the system driver. This establishes access to the reported standard PCIe value. The public CoreWLAN API provides a separate driver-reported view of current PHY, channel, signal and transmit rate. [Apple IOPCIFamily implementation](https://github.com/apple-oss-distributions/IOPCIFamily/blob/main/IOPCIDevice.cpp), [CoreWLAN CWInterface](https://developer.apple.com/documentation/corewlan/cwinterface)
+I/O Registry exposes specific standard PCIe properties through the system driver. The earlier `wlan@0` inventory reported `IOPCIExpressLinkStatus = 0x1012`. Paired individual and bulk reads later returned `0xb012` on both radio functions and `0x1011` at their shared host port. The PCIe report decodes the field differences and links the published driver paths and power settings. The public CoreWLAN API supplies the current Wi-Fi PHY, channel, signal and transmit rate. [PCIe link and power properties](pcie-link-properties.md), [CoreWLAN CWInterface](https://developer.apple.com/documentation/corewlan/cwinterface)
 
 Two `IODeviceMemory` descriptors report **64 KiB and 8 MiB** of mapped aperture length. The upstream Linux driver uses separate mappings for registers and device memory. The aperture sizes leave actual on-chip RAM capacity and contents unmeasured. macOS also published numeric current, device and maximum power states of 2, 2 and 3 at the time of sampling. [Local inventory](../evidence/2026-11-17-macos-inventory.json), [Linux PCIe driver](https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c)
+
+macOS publishes separate policy for network wake and keepalive by power source. The on-battery profile disables network wake and retains TCP keepalive. Link-level radio sleep and wake behavior require a separate measurement. [Host power policy](host-power-policy.md)
 
 These queries reproduce the host view using system commands.
 
@@ -17,6 +19,7 @@ ioreg -p IOService -r -n wlan -d 1 -w 0 |
 ioreg -p IOService -r -n AppleBCMWLANCore -d 1 -w 0 |
   rg '^\s+"FirmwareVersion"'
 swift tools/read_wifi_status.swift
+swift tools/read_pcie_link.swift
 ```
 
 ### WLAN serial metadata

@@ -1,0 +1,202 @@
+{
+  "active_channel": {
+    "inferred_center_mhz": 5210,
+    "primary_number": 40,
+    "width_mhz": 80
+  },
+  "channel_listing_matches_earlier_snapshot": true,
+  "default_route_after": "en0",
+  "default_route_before": "en0",
+  "fcc_5_ghz_comparison_by_width_mhz": {
+    "20": {
+      "incomplete_tested_centers": [
+        {
+          "center_mhz": 5720,
+          "expected_primary_numbers": [
+            144
+          ],
+          "reported_primary_numbers_at_this_width": []
+        }
+      ],
+      "matching_centers_mhz": [
+        5180,
+        5200,
+        5220,
+        5240,
+        5260,
+        5280,
+        5300,
+        5320,
+        5500,
+        5520,
+        5540,
+        5560,
+        5580,
+        5600,
+        5620,
+        5640,
+        5660,
+        5680,
+        5700,
+        5745,
+        5765,
+        5785,
+        5805,
+        5825
+      ],
+      "reported_channel_count": 24,
+      "tested_center_count": 25,
+      "unassigned_reported_channel_numbers": []
+    },
+    "40": {
+      "incomplete_tested_centers": [
+        {
+          "center_mhz": 5710,
+          "expected_primary_numbers": [
+            140,
+            144
+          ],
+          "reported_primary_numbers_at_this_width": []
+        }
+      ],
+      "matching_centers_mhz": [
+        5190,
+        5230,
+        5270,
+        5310,
+        5510,
+        5550,
+        5590,
+        5630,
+        5670,
+        5755,
+        5795
+      ],
+      "reported_channel_count": 22,
+      "tested_center_count": 12,
+      "unassigned_reported_channel_numbers": []
+    },
+    "80": {
+      "incomplete_tested_centers": [
+        {
+          "center_mhz": 5690,
+          "expected_primary_numbers": [
+            132,
+            136,
+            140,
+            144
+          ],
+          "reported_primary_numbers_at_this_width": []
+        }
+      ],
+      "matching_centers_mhz": [
+        5210,
+        5290,
+        5530,
+        5610,
+        5775
+      ],
+      "reported_channel_count": 20,
+      "tested_center_count": 6,
+      "unassigned_reported_channel_numbers": []
+    }
+  },
+  "lab_source": "https://device.report/m/9dbefd8fa57734334f25d9b4c27352a2b1333e4a7384c14f77fb813ec85822d7.pdf#page=5",
+  "method": "For each 5 GHz lab center C and width W, infer W/20 possible primary frequencies at 20 MHz intervals centered at C. Each primary number is (frequency in MHz - 5000) / 5. A match requires every inferred primary number in the CoreWLAN list for that width.",
+  "reported_channel_numbers_by_band_and_width_mhz": {
+    "2.4 GHz": {
+      "20": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    "5 GHz": {
+      "20": [
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        100,
+        104,
+        108,
+        112,
+        116,
+        120,
+        124,
+        128,
+        132,
+        136,
+        140,
+        149,
+        153,
+        157,
+        161,
+        165
+      ],
+      "40": [
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        100,
+        104,
+        108,
+        112,
+        116,
+        120,
+        124,
+        128,
+        132,
+        136,
+        149,
+        153,
+        157,
+        161
+      ],
+      "80": [
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        100,
+        104,
+        108,
+        112,
+        116,
+        120,
+        124,
+        128,
+        149,
+        153,
+        157,
+        161
+      ]
+    }
+  },
+  "sampled_at_unix_seconds": 1794897961.338798,
+  "scope": "CoreWLAN advertisements in the current stock operating context and inferred blocks among A2337 test centers. No association or RF test on unlisted frequencies.",
+  "system_build": "26B131"
+}
