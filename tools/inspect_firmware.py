@@ -72,8 +72,7 @@ def read_artifact(path):
     return data, identity
 
 
-def inspect_image(path):
-    data, identity = read_artifact(path)
+def inspect_image_bytes(data, identity):
     build_tags = [
         {key: value.decode("ascii") for key, value in match.groupdict().items()}
         for match in FIRMWARE_TAG.finditer(data)
@@ -88,6 +87,10 @@ def inspect_image(path):
         "build_tags": build_tags,
         "selected_literal_counts": {marker: marker_counts[marker] for marker in MARKERS},
     }
+
+
+def inspect_image(path):
+    return inspect_image_bytes(*read_artifact(path))
 
 
 def inspect_platform_config(path):

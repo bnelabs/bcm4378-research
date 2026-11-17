@@ -1,0 +1,168 @@
+{
+  "bluetooth": {
+    "chipset": "BCM_4378",
+    "firmware_version": "24.2.551.4122",
+    "pci_child_services": [
+      "AppleConvergedPCI"
+    ],
+    "pci_id": "14e4:5f69",
+    "product_id": "0x4A02",
+    "reported_services": "0x1390039 < HFP AVRCP A2DP HID LEA AACP GATT SerialPort SCO >",
+    "transport": "PCIe",
+    "vendor_id": "0x004C (Apple)"
+  },
+  "default_ipv4_interface": "en0",
+  "host": {
+    "macos_build": "26B131",
+    "macos_version": "27.2.1",
+    "model": "MacBookAir10,1"
+  },
+  "wifi": {
+    "interface_roles": [
+      {
+        "driver_class": "AppleBCMWLANIO80211APSTAInterface",
+        "flags": [
+          "UP",
+          "BROADCAST",
+          "SMART",
+          "RUNNING",
+          "SIMPLEX",
+          "MULTICAST"
+        ],
+        "link_status": "inactive",
+        "name": "ap1",
+        "role": "SoftAP"
+      },
+      {
+        "driver_class": "AppleBCMWLANProximityInterface",
+        "flags": [
+          "UP",
+          "BROADCAST",
+          "SMART",
+          "RUNNING",
+          "SIMPLEX",
+          "MULTICAST"
+        ],
+        "link_status": "active",
+        "name": "awdl0",
+        "role": "AirLink"
+      },
+      {
+        "driver_class": "AppleBCMWLANSkywalkInterface",
+        "flags": [
+          "UP",
+          "BROADCAST",
+          "SMART",
+          "RUNNING",
+          "SIMPLEX",
+          "MULTICAST"
+        ],
+        "link_status": "active",
+        "name": "en0",
+        "role": "Infrastructure"
+      },
+      {
+        "driver_class": "AppleBCMWLANLowLatencyInterface",
+        "flags": [
+          "UP",
+          "BROADCAST",
+          "SMART",
+          "RUNNING",
+          "SIMPLEX",
+          "MULTICAST"
+        ],
+        "link_status": null,
+        "name": "llw0",
+        "role": "LowLatency"
+      },
+      {
+        "driver_class": "AppleBCMWLANNANInterface",
+        "flags": [
+          "BROADCAST",
+          "SMART",
+          "SIMPLEX",
+          "MULTICAST"
+        ],
+        "link_status": null,
+        "name": "nan0",
+        "role": "WiFi-Aware Discovery+Data"
+      }
+    ],
+    "pci": {
+      "id": "14e4:4425",
+      "link_capabilities": {
+        "rate_gt_s": 5,
+        "raw": "0x46f812",
+        "width_lanes": 1
+      },
+      "link_status": {
+        "rate_gt_s": 5,
+        "raw": "0x1012",
+        "width_lanes": 1
+      },
+      "memory_aperture_lengths_bytes": [
+        65536,
+        8388608
+      ],
+      "reported_power_states": {
+        "CurrentPowerState": 2,
+        "DevicePowerState": 2,
+        "MaxPowerState": 3
+      }
+    },
+    "platform_config": {
+      "driver_bundle": {
+        "bytes": 2647,
+        "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/PlatformConfig/macOS/shikoku-PlatformConfig.plist",
+        "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/PlatformConfig/macOS/shikoku-PlatformConfig.plist",
+        "sha256": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547"
+      },
+      "matches_shared_copy": true
+    },
+    "requested_files": [
+      {
+        "Firmware": {
+          "driver_bundle": {
+            "bytes": 1497470,
+            "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/shikoku.trx",
+            "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/honshu.trx",
+            "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+          },
+          "matches_shared_copy": true,
+          "requested_name": "C-4378__s-B1/shikoku.trx"
+        },
+        "NVRAM": {
+          "driver_bundle": {
+            "bytes": 7690,
+            "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/P-shikoku-X3_M-RASP_V-m__m-6.11.txt",
+            "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.11.txt",
+            "sha256": "2e15b8551b3cbf945247a6e25a8efbfb392476d799e81cbc61f659b55dc049b4"
+          },
+          "matches_shared_copy": true,
+          "requested_name": "C-4378__s-B1/P-shikoku-X3_M-RASP_V-m__m-6.11.txt"
+        },
+        "Regulatory": {
+          "driver_bundle": {
+            "bytes": 35973,
+            "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/shikoku-X3.clmb",
+            "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/shikoku.clmb",
+            "sha256": "3202b0cd073d89b13955762acf42442483873a46ff0d426da618f04ec2184140"
+          },
+          "matches_shared_copy": true,
+          "requested_name": "C-4378__s-B1/shikoku-X3.clmb"
+        },
+        "TxCap": {
+          "driver_bundle": {
+            "bytes": 697,
+            "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/shikoku-X3.txcb",
+            "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/shikoku.txcb",
+            "sha256": "43d76d167e3fb833535e7e43ff28b77d1c07fa5d7ec730eaae8bce549cd9b059"
+          },
+          "matches_shared_copy": true,
+          "requested_name": "C-4378__s-B1/shikoku-X3.txcb"
+        }
+      }
+    ],
+    "running_firmware": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a"
+  }
+}

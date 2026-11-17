@@ -1,0 +1,178 @@
+[
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889434.158709,
+    "tx_rate_mbps": 432
+  },
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889434.665987,
+    "tx_rate_mbps": 432
+  },
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889435.1798491,
+    "tx_rate_mbps": 432
+  },
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889435.690346,
+    "tx_rate_mbps": 432
+  },
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889436.200393,
+    "tx_rate_mbps": 432
+  },
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889436.7095308,
+    "tx_rate_mbps": 432
+  },
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889437.220221,
+    "tx_rate_mbps": 432
+  },
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889437.73211,
+    "tx_rate_mbps": 432
+  },
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889438.2450361,
+    "tx_rate_mbps": 432
+  },
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889438.759618,
+    "tx_rate_mbps": 432
+  },
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889439.274096,
+    "tx_rate_mbps": 432
+  },
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889439.780915,
+    "tx_rate_mbps": 432
+  },
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889440.294711,
+    "tx_rate_mbps": 432
+  },
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889440.805849,
+    "tx_rate_mbps": 432
+  },
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889441.317285,
+    "tx_rate_mbps": 432
+  },
+  {
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "interface_mode": "station",
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794889441.827771,
+    "tx_rate_mbps": 432
+  }
+]
