@@ -1,0 +1,552 @@
+{
+  "date": "2026-11-17",
+  "scope": "Read-only stock BCM4378 calibration and signed AppleBCMWLAN ranging result trace, retained log counts and offline fixtures.",
+  "macos_version": "27.2.1",
+  "macos_build": "26B131",
+  "driver": {
+    "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "bytes": 10564944,
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "strict_codesign_verification_exit_status": 0,
+    "symbol": "__ZN16AppleBCMWLANCore18handleRangingEventEP14wl_event_msg_t",
+    "slices": [
+      {
+        "architecture": "arm64e",
+        "handler_entry": "0x10010c9e4",
+        "class_5_comparison": "0x10010cc04",
+        "type_read": "0x10010cd68",
+        "v3_log_call": "0x10010edd8",
+        "records": {
+          "0x203": {
+            "type_dispatch": "0x10010cdf0",
+            "minimum_available_value_bytes_comparison": "0x10010cdf8",
+            "raw_distance_load": "0x10010dc70",
+            "distance_to_signed_millimeters_multiply": "0x10010dcd0",
+            "log_session_id_load": "0x10010ee08",
+            "log_sample_counts_begin": "0x10010f028",
+            "diagnostic_format_reference": "0x10010f06c"
+          },
+          "0x208": {
+            "type_dispatch": "0x10010cde8",
+            "minimum_available_value_bytes_comparison": "0x10010cfb8",
+            "raw_distance_load": "0x10010d08c",
+            "distance_to_signed_millimeters_multiply": "0x10010d0f8",
+            "log_session_id_load": "0x10010eda0",
+            "log_sample_counts_begin": "0x10010ef90",
+            "diagnostic_format_reference": "0x10010efd4",
+            "conditional_negation": "0x10010d098"
+          },
+          "0x209": {
+            "type_dispatch": "0x10010cde0",
+            "minimum_available_value_bytes_comparison": "0x10010d020",
+            "raw_distance_load": "0x10010d678",
+            "distance_to_signed_millimeters_multiply": "0x10010d6d8",
+            "log_session_id_load": "0x100250ccc",
+            "log_sample_counts_begin": "0x100250d50",
+            "diagnostic_format_reference": "0x100250d8c"
+          }
+        }
+      },
+      {
+        "architecture": "arm64e.x1",
+        "handler_entry": "0x100109220",
+        "class_5_comparison": "0x100109440",
+        "type_read": "0x1001095a4",
+        "v3_log_call": "0x10010b598",
+        "records": {
+          "0x203": {
+            "type_dispatch": "0x10010962c",
+            "minimum_available_value_bytes_comparison": "0x100109634",
+            "raw_distance_load": "0x10010a47c",
+            "distance_to_signed_millimeters_multiply": "0x10010a4dc",
+            "log_session_id_load": "0x10010b5c8",
+            "log_sample_counts_begin": "0x10010b7e8",
+            "diagnostic_format_reference": "0x10010b82c"
+          },
+          "0x208": {
+            "type_dispatch": "0x100109624",
+            "minimum_available_value_bytes_comparison": "0x1001097f4",
+            "raw_distance_load": "0x1001098c8",
+            "distance_to_signed_millimeters_multiply": "0x100109934",
+            "log_session_id_load": "0x10010b560",
+            "log_sample_counts_begin": "0x10010b750",
+            "diagnostic_format_reference": "0x10010b794",
+            "conditional_negation": "0x1001098d4"
+          },
+          "0x209": {
+            "type_dispatch": "0x10010961c",
+            "minimum_available_value_bytes_comparison": "0x10010985c",
+            "raw_distance_load": "0x100109e9c",
+            "distance_to_signed_millimeters_multiply": "0x100109efc",
+            "log_session_id_load": "0x10024a6c4",
+            "log_sample_counts_begin": "0x10024a748",
+            "diagnostic_format_reference": "0x10024a784"
+          }
+        }
+      }
+    ]
+  },
+  "stock_nvram": {
+    "root": "/usr/share/firmware/wifi",
+    "stock_names": 250,
+    "unique_payloads": 10,
+    "present_by_key": {
+      "proxd_seq_2g_kval_chan_offset_core0": 250,
+      "proxd_seq_2g_kval_chan_offset_core1": 250,
+      "proxd_seq_2g_rx_win_adj": 250,
+      "proxd_seq_5g_kval_chan_offset_core0": 0,
+      "proxd_seq_5g_kval_chan_offset_core1": 0
+    },
+    "identical_core0_and_core1_arrays": true,
+    "rx_window_adjustment_value_in_all_names": 1,
+    "names_by_array_and_board": {
+      "0,150,0,0": {
+        "atlantisb": 50,
+        "honshu": 50,
+        "kyushu": 15,
+        "shikoku": 45
+      },
+      "0,50,0,0": {
+        "capri": 45,
+        "santorini": 45
+      }
+    }
+  },
+  "firmware_thumb_traces": [
+    {
+      "artifact": {
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "bytes": 1497470,
+        "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+      },
+      "image_ram_base": "0x352000",
+      "2.4_ghz_arrays": {
+        "core0_key": {
+          "instruction": "0x4659f0",
+          "pointer_slot": "0x465ad0",
+          "string": "0x489445",
+          "key": "proxd_seq_2g_kval_chan_offset_core0"
+        },
+        "core1_key": {
+          "instruction": "0x4659f8",
+          "pointer_slot": "0x465ad4",
+          "string": "0x489469",
+          "key": "proxd_seq_2g_kval_chan_offset_core1"
+        },
+        "indexed_lookup_address_below_image": "0x7092c",
+        "sign_extended_entries_each": 4,
+        "destination_offsets": [
+          "0x234",
+          "0x244"
+        ],
+        "store_and_loop_instructions": [
+          "0x465a14",
+          "0x465a22",
+          "0x465a24"
+        ]
+      },
+      "5_ghz_arrays": {
+        "core0_key": {
+          "instruction": "0x4659ba",
+          "pointer_slot": "0x465ac8",
+          "string": "0x4894c0",
+          "key": "proxd_seq_5g_kval_chan_offset_core0"
+        },
+        "core1_key": {
+          "instruction": "0x4659c2",
+          "pointer_slot": "0x465acc",
+          "string": "0x4894e4",
+          "key": "proxd_seq_5g_kval_chan_offset_core1"
+        },
+        "indexed_lookup_address_below_image": "0x7092c",
+        "sign_extended_entries_each": 4,
+        "destination_offsets": [
+          "0x214",
+          "0x224"
+        ],
+        "store_and_loop_instructions": [
+          "0x4659de",
+          "0x4659ec",
+          "0x4659ee"
+        ]
+      },
+      "receive_window_setup": {
+        "instruction": "0x465a30",
+        "pointer_slot": "0x465a50",
+        "string": "0x4894a8",
+        "key": "proxd_seq_2g_rx_win_adj",
+        "byte_store": "0x465a3e",
+        "destination_offset": "0x255"
+      },
+      "receive_window_callback": {
+        "constructor": "0x465ad8",
+        "callback_load": "0x465b46",
+        "callback_pointer": "0x3a2311",
+        "callback_within_image": true,
+        "calibration_setup_call": "0x465b78",
+        "callback_registration_call": "0x465b80",
+        "band_mask_instruction": "0x3a2376",
+        "calibration_byte_read": "0x3a2396",
+        "destination_offset": "0x104",
+        "copied_bytes": 20,
+        "template_address_if_clear": "0x445bb4",
+        "template_address_if_set": "0x445bc8"
+      }
+    },
+    {
+      "artifact": {
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "bytes": 1496769,
+        "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6"
+      },
+      "image_ram_base": "0x352000",
+      "2.4_ghz_arrays": {
+        "core0_key": {
+          "instruction": "0x4659f0",
+          "pointer_slot": "0x465ad0",
+          "string": "0x4891e5",
+          "key": "proxd_seq_2g_kval_chan_offset_core0"
+        },
+        "core1_key": {
+          "instruction": "0x4659f8",
+          "pointer_slot": "0x465ad4",
+          "string": "0x489209",
+          "key": "proxd_seq_2g_kval_chan_offset_core1"
+        },
+        "indexed_lookup_address_below_image": "0x7092c",
+        "sign_extended_entries_each": 4,
+        "destination_offsets": [
+          "0x234",
+          "0x244"
+        ],
+        "store_and_loop_instructions": [
+          "0x465a14",
+          "0x465a22",
+          "0x465a24"
+        ]
+      },
+      "5_ghz_arrays": {
+        "core0_key": {
+          "instruction": "0x4659ba",
+          "pointer_slot": "0x465ac8",
+          "string": "0x489260",
+          "key": "proxd_seq_5g_kval_chan_offset_core0"
+        },
+        "core1_key": {
+          "instruction": "0x4659c2",
+          "pointer_slot": "0x465acc",
+          "string": "0x489284",
+          "key": "proxd_seq_5g_kval_chan_offset_core1"
+        },
+        "indexed_lookup_address_below_image": "0x7092c",
+        "sign_extended_entries_each": 4,
+        "destination_offsets": [
+          "0x214",
+          "0x224"
+        ],
+        "store_and_loop_instructions": [
+          "0x4659de",
+          "0x4659ec",
+          "0x4659ee"
+        ]
+      },
+      "receive_window_setup": {
+        "instruction": "0x465a30",
+        "pointer_slot": "0x465a50",
+        "string": "0x489248",
+        "key": "proxd_seq_2g_rx_win_adj",
+        "byte_store": "0x465a3e",
+        "destination_offset": "0x255"
+      },
+      "receive_window_callback": {
+        "constructor": "0x465ad8",
+        "callback_load": "0x465b46",
+        "callback_pointer": "0x3a2311",
+        "callback_within_image": true,
+        "calibration_setup_call": "0x465b78",
+        "callback_registration_call": "0x465b80",
+        "band_mask_instruction": "0x3a2376",
+        "calibration_byte_read": "0x3a2396",
+        "destination_offset": "0x104",
+        "copied_bytes": 20,
+        "template_address_if_clear": "0x445ab4",
+        "template_address_if_set": "0x445ac8"
+      }
+    },
+    {
+      "artifact": {
+        "path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "bytes": 1226142,
+        "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a"
+      },
+      "image_ram_base": "0x352000",
+      "2.4_ghz_arrays": {
+        "core0_key": {
+          "instruction": "0x4243c4",
+          "pointer_slot": "0x4244a4",
+          "string": "0x447d15",
+          "key": "proxd_seq_2g_kval_chan_offset_core0"
+        },
+        "core1_key": {
+          "instruction": "0x4243cc",
+          "pointer_slot": "0x4244a8",
+          "string": "0x447d39",
+          "key": "proxd_seq_2g_kval_chan_offset_core1"
+        },
+        "indexed_lookup_address_below_image": "0x6f0cc",
+        "sign_extended_entries_each": 4,
+        "destination_offsets": [
+          "0x234",
+          "0x244"
+        ],
+        "store_and_loop_instructions": [
+          "0x4243e8",
+          "0x4243f6",
+          "0x4243f8"
+        ]
+      },
+      "5_ghz_arrays": {
+        "core0_key": {
+          "instruction": "0x42438e",
+          "pointer_slot": "0x42449c",
+          "string": "0x447d90",
+          "key": "proxd_seq_5g_kval_chan_offset_core0"
+        },
+        "core1_key": {
+          "instruction": "0x424396",
+          "pointer_slot": "0x4244a0",
+          "string": "0x447db4",
+          "key": "proxd_seq_5g_kval_chan_offset_core1"
+        },
+        "indexed_lookup_address_below_image": "0x6f0cc",
+        "sign_extended_entries_each": 4,
+        "destination_offsets": [
+          "0x214",
+          "0x224"
+        ],
+        "store_and_loop_instructions": [
+          "0x4243b2",
+          "0x4243c0",
+          "0x4243c2"
+        ]
+      },
+      "receive_window_setup": {
+        "instruction": "0x424404",
+        "pointer_slot": "0x424424",
+        "string": "0x447d78",
+        "key": "proxd_seq_2g_rx_win_adj",
+        "byte_store": "0x424412",
+        "destination_offset": "0x255"
+      },
+      "receive_window_callback": {
+        "constructor": "0x4244ac",
+        "callback_load": "0x42451a",
+        "callback_pointer": "0x6316d",
+        "callback_within_image": false
+      }
+    }
+  ],
+  "decoder": {
+    "file": "tools/inspect_ranging_result.py",
+    "synthetic_cli_fixtures": {
+      "v1_minimum": {
+        "type": "0x203",
+        "version": 1,
+        "value_bytes": 128,
+        "session_id": 314,
+        "flags": 0,
+        "status": -3,
+        "state": -7,
+        "raw_average_distance_q8": 640,
+        "average_distance_m": 2.5,
+        "driver_distance_mm": 2500,
+        "distance_issue": null,
+        "valid_samples": 5,
+        "ftm_frames": 9,
+        "burst_number": 3,
+        "rtt_samples": 8
+      },
+      "v2_minimum": {
+        "type": "0x208",
+        "version": 2,
+        "value_bytes": 96,
+        "session_id": 314,
+        "flags": 0,
+        "status": -3,
+        "state": -7,
+        "raw_average_distance_q8": 640,
+        "average_distance_m": 2.5,
+        "driver_distance_mm": 2500,
+        "distance_issue": null,
+        "valid_samples": 5,
+        "ftm_frames": 9,
+        "burst_number": 3,
+        "rtt_samples": 8
+      },
+      "v2_negative_flag": {
+        "type": "0x208",
+        "version": 2,
+        "value_bytes": 96,
+        "session_id": 314,
+        "flags": 128,
+        "status": -3,
+        "state": -7,
+        "raw_average_distance_q8": 1,
+        "average_distance_m": -0.00390625,
+        "driver_distance_mm": -4,
+        "distance_issue": null,
+        "valid_samples": 5,
+        "ftm_frames": 9,
+        "burst_number": 3,
+        "rtt_samples": 8
+      },
+      "v3_same_flag_does_not_negate": {
+        "type": "0x209",
+        "version": 3,
+        "value_bytes": 44,
+        "session_id": 314,
+        "flags": 128,
+        "status": -3,
+        "state": -7,
+        "raw_average_distance_q8": 640,
+        "average_distance_m": 2.5,
+        "driver_distance_mm": 2500,
+        "distance_issue": null,
+        "valid_samples": 5,
+        "ftm_frames": 9,
+        "burst_number": 3,
+        "rtt_samples": 8
+      },
+      "v3_aligned_padding": {
+        "type": "0x209",
+        "version": 3,
+        "value_bytes": 45,
+        "session_id": 314,
+        "flags": 0,
+        "status": -3,
+        "state": -7,
+        "raw_average_distance_q8": 1,
+        "average_distance_m": 0.00390625,
+        "driver_distance_mm": 3,
+        "distance_issue": null,
+        "valid_samples": 5,
+        "ftm_frames": 9,
+        "burst_number": 3,
+        "rtt_samples": 8
+      },
+      "v3_unavailable": {
+        "type": "0x209",
+        "version": 3,
+        "value_bytes": 44,
+        "session_id": 314,
+        "flags": 0,
+        "status": -3,
+        "state": -7,
+        "raw_average_distance_q8": 4294967295,
+        "average_distance_m": null,
+        "driver_distance_mm": null,
+        "distance_issue": "unavailable_marker",
+        "valid_samples": 5,
+        "ftm_frames": 9,
+        "burst_number": 3,
+        "rtt_samples": 8
+      },
+      "v3_signed_and_overflow": {
+        "type": "0x209",
+        "version": 3,
+        "value_bytes": 44,
+        "session_id": 314,
+        "flags": 0,
+        "status": -3,
+        "state": -7,
+        "raw_average_distance_q8": 2147483648,
+        "average_distance_m": null,
+        "driver_distance_mm": null,
+        "distance_issue": "driver_conversion_overflow",
+        "valid_samples": 5,
+        "ftm_frames": 9,
+        "burst_number": 3,
+        "rtt_samples": 8
+      },
+      "short_header": {
+        "rejected": true
+      },
+      "short_value": {
+        "rejected": true
+      },
+      "truncated_value": {
+        "rejected": true
+      },
+      "unrecognized_type": {
+        "rejected": true
+      },
+      "unexplained_trailer": {
+        "rejected": true
+      }
+    }
+  },
+  "native_nearby_interaction_typecheck": {
+    "sdk": "27.2",
+    "target": "arm64-apple-macos27.0",
+    "source": [
+      "import NearbyInteraction",
+      "let session = NISession()"
+    ],
+    "exit_status": 1,
+    "diagnostic": "'NISession' is unavailable in macOS"
+  },
+  "registry": {
+    "firmware_capability_words": {
+      "proxd": true,
+      "nanrange": true,
+      "csi": false
+    },
+    "bus_reports_ranging": true,
+    "top_level_core_property_names_matching_ranging_distance_or_round_trip": []
+  },
+  "retained_log_query": {
+    "checked_at": "2026-11-17T22:04:44.908428+03:00",
+    "lookback_hours": 6,
+    "predicate": "(eventMessage CONTAINS[c] \"handleRangingEvent\") AND (eventMessage CONTAINS[c] \"Ranging result V1:\" OR eventMessage CONTAINS[c] \"Ranging result V2:\" OR eventMessage CONTAINS[c] \"Ranging result V3:\" OR eventMessage CONTAINS[c] \"Proxd: Burst Status\" OR eventMessage CONTAINS[c] \"Proxd: Session Status\")",
+    "exit_status": 0,
+    "matching_rendered_diagnostics": {
+      "Ranging result V1:": 0,
+      "Ranging result V2:": 0,
+      "Ranging result V3:": 0,
+      "Proxd: Burst Status": 0,
+      "Proxd: Session Status": 1
+    },
+    "candidate_messages": 3,
+    "excluded_log_query_messages": 2,
+    "excluded_other_messages_without_driver_format": 0,
+    "query_outcome": "completed",
+    "session_status_numeric_fields": [
+      {
+        "state": 9,
+        "status": 0,
+        "burst_number": 4,
+        "core_supported": 0,
+        "core_id": 0
+      }
+    ],
+    "selection": "Exclude /usr/bin/log entries. Require a rendered handleRangingEvent@<line>: prefix and the diagnostic name. Retain selected numeric fields from the session status.",
+    "raw_distance_records_retained": 0,
+    "session_and_peer_identifiers_retained": false
+  },
+  "connection_checks": {
+    "before": {
+      "default_ipv4_interface": "en0",
+      "interface": "en0",
+      "band": "5 GHz",
+      "channel": 40,
+      "channel_width_mhz": 80
+    },
+    "after": {
+      "default_ipv4_interface": "en0",
+      "interface": "en0",
+      "band": "5 GHz",
+      "channel": 40,
+      "channel_width_mhz": 80
+    }
+  }
+}
