@@ -3,6 +3,7 @@
 
 import argparse
 from collections import Counter
+from itertools import product
 import json
 import math
 from pathlib import Path
@@ -28,6 +29,13 @@ TIMESTAMP = "sampled_at_unix_seconds"
 TRAFFIC_FIELD = "interface_traffic"
 COUNTER_FIELDS = ("rx_bytes", "tx_bytes", "rx_packets", "tx_packets")
 MAX_UINT64 = (1 << 64) - 1
+HE_DATA_TONES = {20: 234, 40: 468, 80: 980}
+HE_SYMBOL_NS = 12_800
+HE_GUARD_INTERVALS_NS = (800, 1600, 3200)
+HE_DATA_BITS_PER_TONE = (
+    (1, 2), (1, 1), (3, 2), (2, 1), (3, 1), (4, 1),
+    (9, 2), (5, 1), (6, 1), (20, 3), (15, 2), (25, 3),
+)
 
 
 def read_samples(text):
@@ -147,7 +155,53 @@ def summarize_traffic(samples):
     }
 
 
-def summarize(samples):
+def nominal_he_candidates(width_mhz, reported_mbps):
+    tones = HE_DATA_TONES[width_mhz]
+    candidates = []
+    for (mcs, (numerator, denominator)), streams, guard_ns in product(
+        enumerate(HE_DATA_BITS_PER_TONE), (1, 2), HE_GUARD_INTERVALS_NS
+    ):
+        rate_top = tones * numerator * streams * 1000
+        rate_bottom = denominator * (HE_SYMBOL_NS + guard_ns)
+        if rate_top // rate_bottom == reported_mbps:
+            candidates.append({
+                "mcs_index": mcs,
+                "spatial_streams": streams,
+                "guard_interval_ns": guard_ns,
+                "nominal_mbps": round(rate_top / rate_bottom, 3),
+            })
+    return candidates
+
+
+def summarize_he_candidates(samples):
+    groups = Counter()
+    for sample in samples:
+        rate = sample.get("tx_rate_mbps")
+        width = sample.get("channel_width_mhz")
+        if (
+            sample.get("phy_mode") == "802.11ax"
+            and width in HE_DATA_TONES
+            and rate is not None
+            and rate > 0
+            and int(rate) == rate
+        ):
+            groups[width, int(rate)] += 1
+    return {
+        "assumptions": "Full channel, one or two streams, DCM disabled and whole-Mb/s truncation.",
+        "unmodeled_samples": len(samples) - sum(groups.values()),
+        "groups": [
+            {
+                "channel_width_mhz": width,
+                "tx_rate_mbps": rate,
+                "sample_count": count,
+                "candidates": nominal_he_candidates(width, rate),
+            }
+            for (width, rate), count in sorted(groups.items())
+        ],
+    }
+
+
+def summarize(samples, include_he_candidates=False):
     timestamps = [sample[TIMESTAMP] for sample in samples if sample.get(TIMESTAMP) is not None]
     duration = round(max(timestamps) - min(timestamps), 6) if len(timestamps) >= 2 else None
     configurations = Counter(
@@ -172,6 +226,8 @@ def summarize(samples):
     }
     if any(sample.get(TRAFFIC_FIELD) is not None for sample in samples):
         summary[TRAFFIC_FIELD] = summarize_traffic(samples)
+    if include_he_candidates:
+        summary["he_nominal_rate_candidates"] = summarize_he_candidates(samples)
     return summary
 
 
@@ -187,13 +243,16 @@ def main():
     parser.add_argument(
         "input", nargs="?", default="-", help="JSON array, object, or lines. Use - for stdin."
     )
+    parser.add_argument(
+        "--he-candidates", action="store_true", help="Show nominal full-channel Wi-Fi 6 modes compatible with each whole-Mb/s rate."
+    )
     args = parser.parse_args()
     try:
         if args.input == "-":
             text = sys.stdin.read()
         else:
             text = Path(args.input).read_text(encoding="utf-8")
-        summary = summarize(read_samples(text))
+        summary = summarize(read_samples(text), include_he_candidates=args.he_candidates)
         report = json.dumps(summary, indent=2, sort_keys=True, allow_nan=False)
     except (OSError, OverflowError, ValueError) as error:
         parser.error(str(error))

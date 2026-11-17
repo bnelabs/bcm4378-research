@@ -23,7 +23,7 @@ The FCC filing and TÜV SÜD exhibits document these channel centers in MHz on A
 | U-NII-2C/3 straddle | 5720 | 5710 | 5690 |
 | U-NII-3 | 5745–5825 in 20 MHz steps | 5755, 5795 | 5775 |
 
-The 2.4 GHz lab report includes HE20 measurements at 2,412, 2,442 and 2,472 MHz. Simultaneous dual-band WLAN was tested on one A2337 in a lab mode. Additional tests paired one WLAN band with classic Bluetooth. Dual association under stock macOS and transmission combining both WLAN bands with Bluetooth remain unverified. [2.4 GHz HE20 exhibit](https://fccid.io/BCGA2337/Test-Report/Test-report-BT-LE-part1-4983143.pdf#page=33), [Simultaneous-transmission exhibit](https://fccid.io/BCGA2337/Test-Report/Simultaneous-transmission-report-4983630.pdf#page=7)
+The lab measured simultaneous dual-band Wi-Fi in HT20 diversity modes. Separate pairings combined one Wi-Fi band with Classic Bluetooth. The single-band HE tests include HE80 MCS 7 with two streams at 5,210 MHz, both in single-user operation and with a 26-tone resource unit. Dual-band HE, triple transmission and dual association under stock macOS remain unverified. [A2337 RF tests and exhibit citations](a2337-rf-tests.md)
 
 Bluetooth is authorized at 2,402–2,480 MHz. The classic Bluetooth test counted 79 hopping channels. The report also measured LE 1M and 2M, and two π/4-DQPSK lab modes called **HDR4** and **HDR8** at 2,404, 2,441 and 2,478 MHz. The reported 99% occupied bandwidths were 2.344 MHz and 4.550–4.560 MHz respectively. A separate Apple Watch report associates the same labels with 4 and 8 Mb/s. Rate and public access on this Mac remain unverified. [Classic Bluetooth test](https://device.report/m/f23d693e4f80d60e381d4984b15fc5007810b0506fba5d24963e328a6cb83c37.pdf#page=18), [A2337 HDR4](https://fccid.io/BCGA2337/Test-Report/Test-report-part1-4983141.pdf#page=8), [A2337 HDR8](https://fccid.io/BCGA2337/Test-Report/Test-report-part1-4983141.pdf#page=20), [A1978 comparison report](https://fccid.io/m/24fafd375904a7455de233e95862c736d9036949653151c13ecf93d0aa116c00.pdf)
 
@@ -45,6 +45,19 @@ The sampler's optional `--traffic` mode pairs CoreWLAN with the stock `netstat` 
 The live run had 21 station-mode samples on `en0`, channel 40 at 80 MHz. Across 11.87 seconds of comparable intervals, the interface received 25,981,651 bytes and sent 1,256,886 bytes. The receive and transmit averages were 17.51 and 0.85 Mb/s. CoreWLAN returned 432 Mb/s transmit PHY rate, −67 dBm RSSI and raw transmit-power integer `1496` on every poll. A bounded HTTPS request during the run returned HTTP 200 with a 67,838-byte body. The counter interval bracketing that request included 7,491,093 received bytes. These totals describe all traffic observed at the interface, including activity outside that request. [Paired samples](../evidence/2026-11-17-link-activity-sample.json), [Transfer and interval summary](../evidence/2026-11-17-link-activity-observation.json), [CoreWLAN rate getter](https://developer.apple.com/documentation/corewlan/cwinterface/transmitrate%28%29)
 
 Aggregate activity helps distinguish an idle connection from a connection moving data with steady radio readouts. A controlled workload and independent RF measurement are needed to relate rate and traffic changes to an obstruction or source of interference.
+
+### Wi-Fi 6 rate ambiguity
+
+The installed driver's transmit-rate handler delegates to its link-quality module. On an associated interface, both binary slices divide an unsigned 32-bit rate metric by 1,000 with integer truncation. CoreWLAN dispatches the public query through CoreWiFi. The metric's update age and the per-frame source remain unmeasured. [Driver and wrapper evidence](../evidence/2026-11-17-tx-rate-provenance.json), [CoreWLAN rate getter](https://developer.apple.com/documentation/corewlan/cwinterface/transmitrate%28%29)
+
+The optional offline rate model enumerates MCS 0–11, one or two spatial streams and the three HE guard intervals. It assumes full-channel HE transmission, no dual-carrier modulation and whole-Mb/s truncation. All 21 saved HE80 samples and nine fresh reads reported 432 Mb/s on channel 40. That rate admits two nominal modes in the model. [Mode calculation and observations](../evidence/2026-11-17-tx-rate-provenance.json), [Cisco 802.11ax tone and symbol timing](https://www.cisco.com/c/en/us/products/collateral/wireless/white-paper-c11-740788.html), [Cisco rate table](https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-wlan/212892-802-11ac-wireless-throughput-testing-and.html)
+
+| MCS | Modulation | Spatial streams | Guard interval | Nominal PHY rate |
+| ---: | --- | ---: | ---: | ---: |
+| 4 | 16-QAM | 2 | 800 ns | 432.353 Mb/s |
+| 8 | 256-QAM | 1 | 800 ns | 432.353 Mb/s |
+
+An association's reported width can exceed the bandwidth of an individual transmission. A timestamped uplink MCS and stream-count observation from the owned AP or the separate test station can distinguish the two candidates and detect cases where the full-channel model does not apply.
 
 ## Experiments worth doing
 

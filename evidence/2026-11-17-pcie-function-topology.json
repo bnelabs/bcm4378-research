@@ -1,0 +1,88 @@
+{
+  "linux_reference": {
+    "bluetooth_function": "01:00.1",
+    "board_source": "https://github.com/torvalds/linux/blob/v6.12/arch/arm64/boot/dts/apple/t8103-j313.dts#L32-L37",
+    "board_type": "apple,shikoku",
+    "internal_core_discovery": "https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c#L849-L893",
+    "model": "J313",
+    "port_source": "https://github.com/torvalds/linux/blob/v6.12/arch/arm64/boot/dts/apple/t8103-jxxx.dtsi#L64-L83",
+    "shared_port": "pcie0/port00",
+    "wifi_function": "01:00.0"
+  },
+  "macos_registry": {
+    "IODeviceTree": {
+      "child_functions": {
+        "14e4:4425": {
+          "class": "IOPCIDevice",
+          "name": "wlan"
+        },
+        "14e4:5f69": {
+          "class": "IOPCIDevice",
+          "name": "bluetooth-pcie"
+        }
+      },
+      "common_path_tail": [
+        {
+          "class": "IOPlatformExpertDevice",
+          "name": "device-tree"
+        },
+        {
+          "class": "IOPlatformDevice",
+          "name": "arm-io"
+        },
+        {
+          "class": "AppleARMIODevice",
+          "name": "apcie"
+        },
+        {
+          "class": "IOPCIDevice",
+          "name": "pci-bridge0"
+        }
+      ],
+      "shared_parent": {
+        "class": "IOPCIDevice",
+        "name": "pci-bridge0"
+      }
+    },
+    "IOService": {
+      "child_functions": {
+        "14e4:4425": {
+          "class": "IOPCIDevice",
+          "name": "wlan"
+        },
+        "14e4:5f69": {
+          "class": "IOPCIDevice",
+          "name": "bluetooth-pcie"
+        }
+      },
+      "common_path_tail": [
+        {
+          "class": "AppleARMIODevice",
+          "name": "apcie"
+        },
+        {
+          "class": "AppleT8103PCIe",
+          "name": "AppleT8103PCIe"
+        },
+        {
+          "class": "IOPCIDevice",
+          "name": "pci-bridge0"
+        },
+        {
+          "class": "ApplePCIEHostBridge",
+          "name": "IOPP"
+        }
+      ],
+      "shared_parent": {
+        "class": "ApplePCIEHostBridge",
+        "name": "IOPP"
+      }
+    }
+  },
+  "method": "Traverse ioreg plist provider and device-tree paths. Match only the two Broadcom PCI vendor/device IDs and retain names and classes.",
+  "observed_utc": "2026-11-17T06:09:29+00:00",
+  "route_after": "en0",
+  "route_before": "en0",
+  "scope": "Host PCIe provider topology. Exact D11 core count and board RF path routing remain unverified.",
+  "system_build": "26B131"
+}
