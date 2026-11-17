@@ -1,0 +1,306 @@
+{
+  "channel_label_comparison": {
+    "cca_only_channel_numbers": [
+      144
+    ],
+    "corewlan_only_channel_numbers": []
+  },
+  "default_route_after": "en0",
+  "default_route_before": "en0",
+  "firmware_reference_images": [
+    {
+      "image": "shikoku.trx",
+      "nul_delimited_literal_counts": {
+        "cca_stats": 1,
+        "chanim_stats": 0,
+        "dump_obss": 0,
+        "spectral_scan": 0
+      },
+      "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06",
+      "stepping": "B1",
+      "verified_thumb_loads_of_cca_stats": 1
+    },
+    {
+      "image": "capri.trx",
+      "nul_delimited_literal_counts": {
+        "cca_stats": 1,
+        "chanim_stats": 0,
+        "dump_obss": 0,
+        "spectral_scan": 0
+      },
+      "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6",
+      "stepping": "B1",
+      "verified_thumb_loads_of_cca_stats": 1
+    },
+    {
+      "image": "kyushu.trx",
+      "nul_delimited_literal_counts": {
+        "cca_stats": 1,
+        "chanim_stats": 0,
+        "dump_obss": 0,
+        "spectral_scan": 0
+      },
+      "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a",
+      "stepping": "B3",
+      "verified_thumb_loads_of_cca_stats": 1
+    }
+  ],
+  "io80211_driverkit_cache": {
+    "channel_report_update": "IO80211Controller forwards the channel update to IO80211ControllerMonitor::setChanCCA, where reporter legends are added.",
+    "current_value_getter": "IO80211BssManager::getCurrentCCA delegates to IO80211BSSBeacon::getCCA, which copies a cached byte when its validity flag is set.",
+    "image_uuid": "f0ba88aa-2977-307d-b8c6-ddcec8e76f9e",
+    "matched_legend_label_references": {
+      "Average CCA": {
+        "IO80211InterfaceMonitor::setInterfaceAverageCCA": 1,
+        "IO80211InterfaceMonitor::setInterfaceAverageExtendedCCA": 1
+      },
+      "CCA Last Reported": {
+        "IO80211ControllerMonitor::setChanCCA": 2
+      },
+      "CCA State": {
+        "IO80211ControllerMonitor::setChanCCA": 2
+      },
+      "IBSS CCA": {
+        "IO80211InterfaceMonitor::setInterfaceAverageExtendedCCA": 1
+      },
+      "Interference CCA": {
+        "IO80211InterfaceMonitor::setInterfaceAverageExtendedCCA": 1
+      },
+      "OBSS CCA": {
+        "IO80211InterfaceMonitor::setInterfaceAverageExtendedCCA": 1
+      },
+      "QBSS Values": {
+        "IO80211InterfaceMonitor::setInterfaceQBSS": 1
+      }
+    },
+    "static_analysis": "File-backed shared cache inspection and Rizin disassembly",
+    "values_sampled": false
+  },
+  "linux_survey": {
+    "busy": "nominal duration minus parsed idle",
+    "callback_bytes_identical": true,
+    "checks_primary_interface_connected_or_connecting": true,
+    "noise_failure_fallback_dbm": -80,
+    "nominal_measurement_ms": 80,
+    "retunes_when_measurement_proceeds": true,
+    "rx": "parsed OBSS, IBSS, no-category and no-packet durations summed",
+    "survey_callback_executed": false,
+    "verified_commit_pins": {
+      "asahi": "201be96df5654336bdcbe1da2103f193d7a0b940",
+      "upstream": "7595a62d45ee1a2297eafa5f2ef5d0a45142d84d"
+    },
+    "wait_before_result_ms": 90
+  },
+  "public_association": {
+    "channel_number": 40,
+    "channel_width_mhz": 80,
+    "primary_20mhz_channels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      36,
+      40,
+      44,
+      48,
+      52,
+      56,
+      60,
+      64,
+      100,
+      104,
+      108,
+      112,
+      116,
+      120,
+      124,
+      128,
+      132,
+      136,
+      140,
+      149,
+      153,
+      157,
+      161,
+      165
+    ]
+  },
+  "published_legend": {
+    "channel_number_labels": {
+      "cca_last_reported": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        100,
+        104,
+        108,
+        112,
+        116,
+        120,
+        124,
+        128,
+        132,
+        136,
+        140,
+        144,
+        149,
+        153,
+        157,
+        161,
+        165
+      ],
+      "cca_state": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        100,
+        104,
+        108,
+        112,
+        116,
+        120,
+        124,
+        128,
+        132,
+        136,
+        140,
+        144,
+        149,
+        153,
+        157,
+        161,
+        165
+      ],
+      "noise_last_reported": [
+        40
+      ],
+      "noise_state": [
+        40
+      ]
+    },
+    "en0_qbss_channel_utilization_label": true,
+    "interface_subgroups": {
+      "awdl0": [
+        "Average CCA",
+        "Average CCA State",
+        "IBSS CCA",
+        "IBSS CCA State",
+        "Interference CCA",
+        "Interference CCA State",
+        "OBSS CCA",
+        "OBSS CCA State"
+      ],
+      "en0": [
+        "Average CCA",
+        "Average CCA State",
+        "IBSS CCA",
+        "IBSS CCA State",
+        "Interference CCA",
+        "Interference CCA State",
+        "Noise Floor",
+        "Noise Floor State",
+        "OBSS CCA",
+        "OBSS CCA State",
+        "QBSS Channel Utilitzation",
+        "QBSS Values"
+      ]
+    },
+    "legend_channel_entries": 2761,
+    "legend_marked_public": true,
+    "legend_rows": 602,
+    "link_quality_excluding_own_traffic_labels": 1,
+    "scope": "Published I/O Registry metadata only"
+  },
+  "scope": "Registry label and public CoreWLAN observations plus static code and file evidence. CCA sample values, airtime and 144 operation remain unverified.",
+  "signed_host_binary": {
+    "codesign_strict_result": "passed",
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "slices": [
+      {
+        "architecture": "arm64e",
+        "associated_simple_update_writes_bss_cache": true,
+        "extended_congestion_labels": [
+          "self",
+          "other",
+          "interference"
+        ],
+        "extended_window_labels": [
+          "total",
+          "wake",
+          "sleep"
+        ],
+        "has_extended_channel_report_forwarding": true,
+        "host_post_guard_microseconds": 5000000,
+        "simple_integer_percent_congestion_over_duration": true
+      },
+      {
+        "architecture": "arm64e.x1",
+        "associated_simple_update_writes_bss_cache": true,
+        "extended_congestion_labels": [
+          "self",
+          "other",
+          "interference"
+        ],
+        "extended_window_labels": [
+          "total",
+          "wake",
+          "sleep"
+        ],
+        "has_extended_channel_report_forwarding": true,
+        "host_post_guard_microseconds": 5000000,
+        "simple_integer_percent_congestion_over_duration": true
+      }
+    ],
+    "tools": [
+      "REA",
+      "nm",
+      "Xcode llvm-objdump"
+    ]
+  },
+  "system_build": "26B131"
+}
