@@ -2,6 +2,7 @@
 
 This repository records the Wi-Fi hardware, driver and firmware of the 2020 M1 MacBook Air (`MacBookAir10,1`). The research started on 17 November 2026. This Mac relies on Wi-Fi for internet access, so on-host measurements use stock macOS readouts and local file analysis.
 
+- [Complete discovery catalog](docs/capability-catalog.md) collects the uncovered processes, features, controls, evidence, and use cases. The [firmware feature index](docs/firmware-feature-index.md) gives the exact words and driver bit mappings.
 - [Hardware and capability findings](docs/findings.md) records the M1 Air baseline and model-specific lab observations.
 - [Firmware layout and board selection](docs/firmware-layout.md) records the selected files, antenna and chain declarations, TxCap profiles, stored microcode candidates and the probable ARM ROM overlay map.
 - [Running firmware capabilities](docs/firmware-capabilities.md) records the live firmware words and traces the macOS ranging and CSI gates.
