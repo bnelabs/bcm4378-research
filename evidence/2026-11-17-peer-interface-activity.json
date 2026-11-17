@@ -1,0 +1,250 @@
+{
+  "default_interface_after": "en0",
+  "default_interface_before": "en0",
+  "elapsed_seconds": 45.000259,
+  "ended_utc": "2026-11-17T06:19:53+00:00",
+  "interfaces": {
+    "ap1": {
+      "average_mbps": {
+        "rx": 0.0,
+        "tx": 0.0
+      },
+      "initial_counter_nonzero": false,
+      "intervals": {
+        "comparable": 45,
+        "invalid": 0,
+        "missing": 0,
+        "reset": 0
+      },
+      "link_layer_row_samples": 46,
+      "observed_deltas": {
+        "rx_bytes": 0,
+        "rx_packets": 0,
+        "tx_bytes": 0,
+        "tx_packets": 0
+      },
+      "observed_seconds": 45.00025916099548,
+      "positive_delta_intervals": 0,
+      "same_interval_as_en0_activity": 0
+    },
+    "awdl0": {
+      "average_mbps": {
+        "rx": 0.0,
+        "tx": 0.0
+      },
+      "initial_counter_nonzero": true,
+      "intervals": {
+        "comparable": 45,
+        "invalid": 0,
+        "missing": 0,
+        "reset": 0
+      },
+      "link_layer_row_samples": 46,
+      "observed_deltas": {
+        "rx_bytes": 0,
+        "rx_packets": 0,
+        "tx_bytes": 0,
+        "tx_packets": 0
+      },
+      "observed_seconds": 45.00025916099548,
+      "positive_delta_intervals": 0,
+      "same_interval_as_en0_activity": 0
+    },
+    "en0": {
+      "average_mbps": {
+        "rx": 1.7280967143274493,
+        "tx": 17.567840868908267
+      },
+      "initial_counter_nonzero": true,
+      "intervals": {
+        "comparable": 45,
+        "invalid": 0,
+        "missing": 0,
+        "reset": 0
+      },
+      "link_layer_row_samples": 46,
+      "observed_deltas": {
+        "rx_bytes": 9720600,
+        "rx_packets": 84285,
+        "tx_bytes": 98819674,
+        "tx_packets": 83868
+      },
+      "observed_seconds": 45.00025916099548,
+      "positive_delta_intervals": 45,
+      "same_interval_as_en0_activity": null
+    },
+    "llw0": {
+      "average_mbps": {
+        "rx": 0.0,
+        "tx": 0.0
+      },
+      "initial_counter_nonzero": false,
+      "intervals": {
+        "comparable": 45,
+        "invalid": 0,
+        "missing": 0,
+        "reset": 0
+      },
+      "link_layer_row_samples": 46,
+      "observed_deltas": {
+        "rx_bytes": 0,
+        "rx_packets": 0,
+        "tx_bytes": 0,
+        "tx_packets": 0
+      },
+      "observed_seconds": 45.00025916099548,
+      "positive_delta_intervals": 0,
+      "same_interval_as_en0_activity": 0
+    },
+    "nan0": {
+      "average_mbps": {
+        "rx": 0.0,
+        "tx": 0.0
+      },
+      "initial_counter_nonzero": false,
+      "intervals": {
+        "comparable": 45,
+        "invalid": 0,
+        "missing": 0,
+        "reset": 0
+      },
+      "link_layer_row_samples": 46,
+      "observed_deltas": {
+        "rx_bytes": 0,
+        "rx_packets": 0,
+        "tx_bytes": 0,
+        "tx_packets": 0
+      },
+      "observed_seconds": 45.00025916099548,
+      "positive_delta_intervals": 0,
+      "same_interval_as_en0_activity": 0
+    }
+  },
+  "limitations": "Counters describe the host interfaces. Peer identity, packet contents, exact transmission timing, channels and simultaneous RF use remain unmeasured.",
+  "method": "Poll only link-layer netstat rows for five known interfaces every second. Compare byte and packet deltas between pairs of adjacent snapshots. Positive changes inside a shared interval establish host counter activity for those interfaces.",
+  "reproduction_with_cli": {
+    "default_interface_after": "en0",
+    "default_interface_before": "en0",
+    "elapsed_seconds": 5.017961,
+    "interfaces": {
+      "ap1": {
+        "average_mbps": {
+          "rx": 0.0,
+          "tx": 0.0
+        },
+        "initial_counter_nonzero": false,
+        "intervals": {
+          "comparable": 10,
+          "invalid": 0,
+          "missing": 0,
+          "reset": 0
+        },
+        "link_layer_row_samples": 11,
+        "observed_deltas": {
+          "rx_bytes": 0,
+          "rx_packets": 0,
+          "tx_bytes": 0,
+          "tx_packets": 0
+        },
+        "observed_seconds": 5.017960786819458,
+        "positive_delta_intervals": 0,
+        "same_interval_as_en0_activity": 0
+      },
+      "awdl0": {
+        "average_mbps": {
+          "rx": 0.0,
+          "tx": 0.0
+        },
+        "initial_counter_nonzero": true,
+        "intervals": {
+          "comparable": 10,
+          "invalid": 0,
+          "missing": 0,
+          "reset": 0
+        },
+        "link_layer_row_samples": 11,
+        "observed_deltas": {
+          "rx_bytes": 0,
+          "rx_packets": 0,
+          "tx_bytes": 0,
+          "tx_packets": 0
+        },
+        "observed_seconds": 5.017960786819458,
+        "positive_delta_intervals": 0,
+        "same_interval_as_en0_activity": 0
+      },
+      "en0": {
+        "average_mbps": {
+          "rx": 1.9663653063845696,
+          "tx": 19.77936062408114
+        },
+        "initial_counter_nonzero": true,
+        "intervals": {
+          "comparable": 10,
+          "invalid": 0,
+          "missing": 0,
+          "reset": 0
+        },
+        "link_layer_row_samples": 11,
+        "observed_deltas": {
+          "rx_bytes": 1233393,
+          "rx_packets": 10633,
+          "tx_bytes": 12406507,
+          "tx_packets": 10630
+        },
+        "observed_seconds": 5.017960786819458,
+        "positive_delta_intervals": 10
+      },
+      "llw0": {
+        "average_mbps": {
+          "rx": 0.0,
+          "tx": 0.0
+        },
+        "initial_counter_nonzero": false,
+        "intervals": {
+          "comparable": 10,
+          "invalid": 0,
+          "missing": 0,
+          "reset": 0
+        },
+        "link_layer_row_samples": 11,
+        "observed_deltas": {
+          "rx_bytes": 0,
+          "rx_packets": 0,
+          "tx_bytes": 0,
+          "tx_packets": 0
+        },
+        "observed_seconds": 5.017960786819458,
+        "positive_delta_intervals": 0,
+        "same_interval_as_en0_activity": 0
+      },
+      "nan0": {
+        "average_mbps": {
+          "rx": 0.0,
+          "tx": 0.0
+        },
+        "initial_counter_nonzero": false,
+        "intervals": {
+          "comparable": 10,
+          "invalid": 0,
+          "missing": 0,
+          "reset": 0
+        },
+        "link_layer_row_samples": 11,
+        "observed_deltas": {
+          "rx_bytes": 0,
+          "rx_packets": 0,
+          "tx_bytes": 0,
+          "tx_packets": 0
+        },
+        "observed_seconds": 5.017960786819458,
+        "positive_delta_intervals": 0,
+        "same_interval_as_en0_activity": 0
+      }
+    },
+    "snapshot_count": 11
+  },
+  "snapshot_count": 46,
+  "started_utc": "2026-11-17T06:19:08+00:00",
+  "traffic_stimulus": "Ambient host activity during the investigation."
+}

@@ -38,6 +38,14 @@ Bluetooth is authorized at 2,402–2,480 MHz. The classic Bluetooth test counted
 | Wi-Fi ranging | FTM ranging requires a supported timing exchange at both ends. Researchers measured accuracy with supported commercial devices. [Measured FTM accuracy](https://www.jstage.jst.go.jp/article/comex/9/12/9_2020COL0001/_article) | A public BCM4378 macOS FTM API and ranging result remain unverified. |
 | WLAN sensing standard | IEEE published 802.11bf-2025 in September 2025. It defines sensing procedures across several bands. [IEEE working group](https://ieee802.org/11/overview.html), [NIST sensing study](https://www.nist.gov/publications/ieee-80211bf-enabling-widespread-adoption-wi-fi-sensing) | The M1 Air has a documented Wi-Fi 6 radio. An 802.11bf capability claim for the BCM4378 would require new evidence. |
 
+### Timing and ranging evidence
+
+All three installed BCM4378 images contain the same 19 proximity-related printable strings. The 250 stock NVRAM paths include three proximity assignments across all board variants, including a scalar and two four-entry offset arrays for cores 0 and 1. This establishes board-provisioned proximity data on Shikoku. The units, protocol, firmware use and actual ranging results remain open. Broadcom's published BCM4383 host code checks firmware capabilities separately before advertising Fine Timing Measurement (FTM). [Stock firmware and profile evidence](../evidence/2026-11-17-wifi-timing-capabilities.json), [Broadcom capability check](https://android.googlesource.com/kernel/google-modules/wlan/bcmdhd/bcm4383/+/3b1a081640892e16ac658f66a0b0d026735922fe/dhd_rtt.c#6078)
+
+Both signed Apple host driver slices contain FTM and Target Wake Time (TWT) markers. Asahi sets four TWT bits in its shared HE table after the general HE gate. The reviewed `cfg80211.c` and `core.c` for both pinned `brcmfmac` trees contain no registration for the standard peer measurement path. Live BCM4378 FTM exchanges and TWT scheduling remain unverified. [Scoped source and artifact checks](../evidence/2026-11-17-wifi-timing-capabilities.json), [Asahi HE table](https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L7392-L7410), [Linux peer measurement gate](https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/net/wireless/pmsr.c#L414-L428)
+
+Apple documents a 56-bit random starting Timing Synchronization Function (TSF) offset in peer-to-peer and access point modes on late-2020 and newer Macs with macOS 12.0.1 or later. The offset changes when the interface MAC address changes. Align receiver captures against a common observer clock when comparing timing across peer sessions. [Apple Platform Security](https://support.apple.com/en-ca/guide/security/sec31e483abf/web)
+
 ## Interface activity and PHY rate
 
 The sampler's optional `--traffic` mode pairs CoreWLAN with the stock `netstat` link-layer row for the same interface. Apple sources its interface totals from unsigned 64-bit byte and packet fields. The analyzer uses adjacent samples from the same interface with increasing timestamps and nondecreasing counters. It totals bytes and divides by the elapsed time covered by those intervals. Missing samples, counter decreases and incomparable intervals have separate counts. [Apple netstat implementation](https://github.com/apple-oss-distributions/network_cmds/blob/main/netstat.tproj/if.c), [Apple interface counter definitions](https://github.com/apple-oss-distributions/xnu/blob/main/bsd/net/if_var.h)
@@ -58,6 +66,12 @@ The optional offline rate model enumerates MCS 0–11, one or two spatial stream
 | 8 | 256-QAM | 1 | 800 ns | 432.353 Mb/s |
 
 An association's reported width can exceed the bandwidth of an individual transmission. A timestamped uplink MCS and stream-count observation from the owned AP or the separate test station can distinguish the two candidates and detect cases where the full-channel model does not apply.
+
+### What RSSI and noise measure
+
+In both installed driver slices, the infrastructure RSSI handler receives four signed antenna slots from a firmware getter. It averages the nonzero slots with signed integer truncation. CoreWiFi reads the first value in its single-value case and the aggregate field otherwise. For example, a pair of −64 and −71 dBm truncates to the same −67 dBm reported for two −67 dBm values. The four-slot format establishes the reply layout, and the physical chain count comes from separate board evidence. [Signal provenance](../evidence/2026-11-17-signal-provenance.json), [Board chain declarations](firmware-layout.md#nvram-chain-declarations), [Apple RSSI documentation](https://developer.apple.com/documentation/corewlan/cwinterface/rssivalue%28%29)
+
+The driver's noise getter goes through the associated BSS manager. CoreWiFi requests noise separately. Across sixteen pairs of public calls, RSSI was −68 dBm in fourteen and −69 dBm in two. Noise remained −91 dBm. The median host call durations were 3.779 ms for RSSI and 0.948 ms for noise. The call durations establish the polling overhead. RF acquisition time, freshness and alignment of the two values remain unknown, so the link diary reports their difference as a link-margin estimate. [Live getter timing](../evidence/2026-11-17-signal-provenance.json), [Apple noise documentation](https://developer.apple.com/documentation/corewlan/cwinterface/noisemeasurement%28%29)
 
 ## Experiments worth doing
 

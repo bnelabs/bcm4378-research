@@ -10,7 +10,7 @@ The running version matches one installed image, `BCM4378B1_24.2.551.4122_PCIE_m
 
 The installed directory contains 11 distinct BCM4378 binaries and 11 PTB names resolving to five distinct payloads. B1 has MUR and USI variants for AtlantisB, Capri, Honshu, Santorini and Shikoku. B3 has Kyushu USI. The two Shikoku PTB names resolve to the same 520-byte file. The Kyushu B3 and Honshu B1 PTB names also resolve to the same file. Asahi groups the stock artifacts by chip, stepping, board and vendor. The Linux reference driver uses the PTB as regulatory and calibration data alongside the firmware and handles additional device calibration separately. [Catalog](../evidence/2026-11-17-bluetooth-catalog.json), [Asahi package parser](https://github.com/AsahiLinux/asahi-installer/blob/main/asahi_firmware/bluetooth.py#L17-L116), [Linux firmware selection](https://github.com/torvalds/linux/blob/v6.12/drivers/bluetooth/hci_bcm4377.c#L1212-L1238), [Linux PTB setup](https://github.com/torvalds/linux/blob/v6.12/drivers/bluetooth/hci_bcm4377.c#L1444-L1465)
 
-All eleven binaries fit a 256-byte header followed by three regions sized by little-endian fields in that header. The third begins with `BRCMcfgS`, followed by `BRCMcfgD` at region-relative offset 66. The embedded identity at offset 92 names the chip stepping, board, vendor and version. Removing leading zeroes from the decimal version components reproduces each filename version. AtlantisB, Capri and Santorini have a `3ANT` label. Actual antenna use remains unmeasured. [Region digests and embedded identities](../evidence/2026-11-17-bluetooth-catalog.json)
+All eleven binaries fit a 256-byte header followed by three regions sized by little-endian fields in that header. The third begins with `BRCMcfgS`, followed by `BRCMcfgD` at region-relative offset 66. The byte at offset 91 matches the length of the following NUL-terminated identity, including the terminator, in every file. The identity names the chip stepping, board, vendor and version. Removing leading zeroes from its decimal version components reproduces the filename version. AtlantisB, Capri and Santorini have a `3ANT` label. Actual antenna use remains unmeasured. [Embedded identities](../evidence/2026-11-17-bluetooth-catalog.json), [Identity length checks](../evidence/2026-11-17-bluetooth-ptb-layout.json)
 
 | Build group | First region | Second region | Configuration region |
 | --- | ---: | ---: | ---: |
@@ -23,6 +23,12 @@ The two Shikoku binaries match at 355,970 of 357,738 same-offset bytes. Both com
 ```sh
 python3 tools/inspect_bluetooth_firmware.py --controller-version 24.2.551.4122
 ```
+
+### PTB record structure
+
+The two 520-byte PTB payloads each contain two aligned 260-byte spans. The three 786-byte payloads each contain two aligned 393-byte spans. Each span has five 47-byte rows beginning at relative offset 24. Each row starts with its ordinal from zero to four. The longer spans add five 24-byte rows at relative offset 272 with the same ordinal pattern. The row fields and the meaning of the paired spans remain open. [PTB digests and layout](../evidence/2026-11-17-bluetooth-ptb-layout.json)
+
+A byte-for-byte search returned zero matches for the five whole PTBs or their ten spans in any of the eleven embedded firmware configuration regions. Linux and Asahi pass or package PTB as a separate payload. [Recorded comparisons](../evidence/2026-11-17-bluetooth-ptb-layout.json), [Linux Bluetooth driver](https://github.com/torvalds/linux/blob/v6.12/drivers/bluetooth/hci_bcm4377.c#L1199-L1219), [Asahi package handling](https://github.com/AsahiLinux/asahi-installer/blob/main/asahi_firmware/bluetooth.py#L37-L60)
 
 ## Native macOS controls
 
