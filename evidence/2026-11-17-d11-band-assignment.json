@@ -1,0 +1,1348 @@
+{
+  "collected_utc": "2026-11-17T18:08:46.385387+00:00",
+  "disassemblers": {
+    "llvm_mc": "Homebrew LLVM version 23.1.4",
+    "rizin": "rizin 0.9.1 @ darwin-arm-64, package: 0.9.1_2 (Homebrew)"
+  },
+  "firmware": [
+    {
+      "d11_components": [
+        {
+          "sha256": "1e4f3621f53a3782535c4444761099583bbef98bd53bf9e5cbe145ef34b07991",
+          "unit": 0
+        },
+        {
+          "sha256": "1ab6713282f34e873dc98f48cf1489f8bafd82fd76d3811d3e078f8bb5e65813",
+          "unit": 1
+        }
+      ],
+      "file": {
+        "bytes": 1497470,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+      },
+      "firmware_id": "01-2606388a",
+      "llvm_mc_checks": [
+        "movs r2, #3",
+        "strb r0, [r4, #8]",
+        "ubfx r3, r6, #1, #1",
+        "and r3, r6, #1"
+      ],
+      "reference_ram_base": "0x352000",
+      "rizin_thumb_trace": {
+        "coexistence_board_keys": {
+          "clb2gslice0core0": {
+            "address": "0x460d8e",
+            "instruction": "ldr   r1, [0x00460ef0]"
+          },
+          "clb2gslice0core1": {
+            "address": "0x460dbc",
+            "instruction": "ldr   r1, [0x00460ef8]"
+          },
+          "clb2gslice1core0": {
+            "address": "0x460d9a",
+            "instruction": "ldr   r1, [0x00460ef4]"
+          },
+          "clb2gslice1core1": {
+            "address": "0x460dc6",
+            "instruction": "ldr   r1, [0x00460efc]"
+          },
+          "clb5gslice0core0": {
+            "address": "0x460de0",
+            "instruction": "ldr   r1, [0x00460f00]"
+          },
+          "clb5gslice0core1": {
+            "address": "0x460e0c",
+            "instruction": "ldr   r1, [0x00460f08]"
+          },
+          "clb5gslice1core0": {
+            "address": "0x460dea",
+            "instruction": "ldr   r1, [0x00460f04]"
+          },
+          "clb5gslice1core1": {
+            "address": "0x460e16",
+            "instruction": "ldr   r1, [0x00460f0c]"
+          }
+        },
+        "pass_radio_settings": {
+          "attach_radio": {
+            "address": "0x45da66",
+            "instruction": "bl    0x468974"
+          },
+          "copy_prefix_into_shared_state": {
+            "address": "0x45d434",
+            "instruction": "bl    0x5894"
+          },
+          "copy_prefix_into_stack_args": {
+            "address": "0x47496e",
+            "instruction": "bl    0x5894"
+          },
+          "create_phy_context": {
+            "address": "0x474ac6",
+            "instruction": "bl    0x45d650"
+          },
+          "create_shared_phy_state": {
+            "address": "0x474978",
+            "instruction": "bl    0x45d358"
+          },
+          "load_d11_prefix": {
+            "address": "0x47490e",
+            "instruction": "add.w r1, r4, 0x198"
+          },
+          "make_shared_state_available_to_radio": {
+            "address": "0x45d6fa",
+            "instruction": "str   r5, [r0, 8]"
+          },
+          "prefix_offset_in_shared_state": {
+            "address": "0x45d3ec",
+            "instruction": "add.w r0, r4, 0x90"
+          },
+          "prefix_offset_in_stack_args": {
+            "address": "0x45d3e6",
+            "instruction": "add.w r1, r5, 0x4c"
+          },
+          "radio_attach_argument": {
+            "address": "0x45da64",
+            "instruction": "mov   r0, r4"
+          },
+          "reload_shared_state": {
+            "address": "0x474abe",
+            "instruction": "ldr.w r0, [r4, 0x98]"
+          },
+          "save_argument_in_r5": {
+            "address": "0x45d65a",
+            "instruction": "mov   r5, r0"
+          },
+          "save_shared_state": {
+            "address": "0x47497c",
+            "instruction": "str.w r0, [r4, 0x98]"
+          },
+          "stack_arg_start": {
+            "address": "0x474976",
+            "instruction": "add   r0, sp, 0x34"
+          },
+          "stack_prefix_destination": {
+            "address": "0x474956",
+            "instruction": "add   r0, sp, 0x80"
+          }
+        },
+        "read_and_describe_mask": {
+          "emit_log": {
+            "address": "0x4689de",
+            "instruction": "bl    0x56b4"
+          },
+          "extract_2_4_ghz_bit": {
+            "address": "0x4689d6",
+            "instruction": "and   r3, r6, 1"
+          },
+          "extract_5_ghz_bit": {
+            "address": "0x4689cc",
+            "instruction": "ubfx  r3, r6, 1, 1"
+          },
+          "fallback_argument": {
+            "address": "0x4689a0",
+            "instruction": "movs  r2, 3"
+          },
+          "log_template": {
+            "address": "0x4689da",
+            "instruction": "ldr   r0, [0x00468a1c]",
+            "value": "wl%d: %s: RF Band Cap: 2G:%d 5G:%d\n"
+          },
+          "lookup_in_resident_code": {
+            "address": "0x4689ac",
+            "instruction": "bl    0x708e4"
+          },
+          "mask_key": {
+            "address": "0x4689a2",
+            "instruction": "ldr   r1, [0x00468a10]",
+            "value": "bandcap"
+          },
+          "retain_mask_in_r6": {
+            "address": "0x4689b6",
+            "instruction": "mov   r6, r0"
+          },
+          "save_5_ghz_log_argument": {
+            "address": "0x4689d4",
+            "instruction": "str   r3, [sp]"
+          },
+          "save_phy_context_in_r5": {
+            "address": "0x468976",
+            "instruction": "mov   r5, r0"
+          },
+          "store_mask_in_radio_state": {
+            "address": "0x4689b4",
+            "instruction": "strb  r0, [r4, 8]"
+          },
+          "use_phy_context": {
+            "address": "0x4689aa",
+            "instruction": "mov   r0, r5"
+          }
+        },
+        "select_prefix": {
+          "compare_d11_unit": {
+            "address": "0x474612",
+            "instruction": "cmp   r3, 1"
+          },
+          "compare_slice_count": {
+            "address": "0x47460c",
+            "instruction": "cmp   r3, 1"
+          },
+          "copy_prefix": {
+            "address": "0x47461e",
+            "instruction": "bl    0x5894"
+          },
+          "d11_prefix_destination": {
+            "address": "0x474618",
+            "instruction": "add.w r0, r4, 0x198"
+          },
+          "prefix_literal": {
+            "address": "0x47461c",
+            "instruction": "ldr   r1, [0x0047475c]",
+            "value": "slice/1/"
+          },
+          "read_d11_unit": {
+            "address": "0x474610",
+            "instruction": "ldr   r3, [r4, 0x48]"
+          },
+          "read_slice_count": {
+            "address": "0x47460a",
+            "instruction": "ldr   r3, [r3, 8]"
+          },
+          "skip_unless_unit_is_one": {
+            "address": "0x474614",
+            "instruction": "bne   0x474626"
+          },
+          "skip_when_one_or_fewer": {
+            "address": "0x47460e",
+            "instruction": "bls   0x474626"
+          },
+          "terminate_prefix": {
+            "address": "0x474622",
+            "instruction": "strb.w fp, [r4, 0x1a1]"
+          }
+        }
+      }
+    },
+    {
+      "d11_components": [
+        {
+          "sha256": "1e4f3621f53a3782535c4444761099583bbef98bd53bf9e5cbe145ef34b07991",
+          "unit": 0
+        },
+        {
+          "sha256": "1ab6713282f34e873dc98f48cf1489f8bafd82fd76d3811d3e078f8bb5e65813",
+          "unit": 1
+        }
+      ],
+      "file": {
+        "bytes": 1496769,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6"
+      },
+      "firmware_id": "01-8acd757c",
+      "llvm_mc_checks": [
+        "movs r2, #3",
+        "strb r0, [r4, #8]",
+        "ubfx r3, r6, #1, #1",
+        "and r3, r6, #1"
+      ],
+      "reference_ram_base": "0x352000",
+      "rizin_thumb_trace": {
+        "coexistence_board_keys": {
+          "clb2gslice0core0": {
+            "address": "0x460d8e",
+            "instruction": "ldr   r1, [0x00460ef0]"
+          },
+          "clb2gslice0core1": {
+            "address": "0x460dbc",
+            "instruction": "ldr   r1, [0x00460ef8]"
+          },
+          "clb2gslice1core0": {
+            "address": "0x460d9a",
+            "instruction": "ldr   r1, [0x00460ef4]"
+          },
+          "clb2gslice1core1": {
+            "address": "0x460dc6",
+            "instruction": "ldr   r1, [0x00460efc]"
+          },
+          "clb5gslice0core0": {
+            "address": "0x460de0",
+            "instruction": "ldr   r1, [0x00460f00]"
+          },
+          "clb5gslice0core1": {
+            "address": "0x460e0c",
+            "instruction": "ldr   r1, [0x00460f08]"
+          },
+          "clb5gslice1core0": {
+            "address": "0x460dea",
+            "instruction": "ldr   r1, [0x00460f04]"
+          },
+          "clb5gslice1core1": {
+            "address": "0x460e16",
+            "instruction": "ldr   r1, [0x00460f0c]"
+          }
+        },
+        "pass_radio_settings": {
+          "attach_radio": {
+            "address": "0x45da66",
+            "instruction": "bl    0x468974"
+          },
+          "copy_prefix_into_shared_state": {
+            "address": "0x45d434",
+            "instruction": "bl    0x5894"
+          },
+          "copy_prefix_into_stack_args": {
+            "address": "0x47495a",
+            "instruction": "bl    0x5894"
+          },
+          "create_phy_context": {
+            "address": "0x474ab2",
+            "instruction": "bl    0x45d650"
+          },
+          "create_shared_phy_state": {
+            "address": "0x474964",
+            "instruction": "bl    0x45d358"
+          },
+          "load_d11_prefix": {
+            "address": "0x4748fa",
+            "instruction": "add.w r1, r4, 0x198"
+          },
+          "make_shared_state_available_to_radio": {
+            "address": "0x45d6fa",
+            "instruction": "str   r5, [r0, 8]"
+          },
+          "prefix_offset_in_shared_state": {
+            "address": "0x45d3ec",
+            "instruction": "add.w r0, r4, 0x90"
+          },
+          "prefix_offset_in_stack_args": {
+            "address": "0x45d3e6",
+            "instruction": "add.w r1, r5, 0x4c"
+          },
+          "radio_attach_argument": {
+            "address": "0x45da64",
+            "instruction": "mov   r0, r4"
+          },
+          "reload_shared_state": {
+            "address": "0x474aaa",
+            "instruction": "ldr.w r0, [r4, 0x98]"
+          },
+          "save_argument_in_r5": {
+            "address": "0x45d65a",
+            "instruction": "mov   r5, r0"
+          },
+          "save_shared_state": {
+            "address": "0x474968",
+            "instruction": "str.w r0, [r4, 0x98]"
+          },
+          "stack_arg_start": {
+            "address": "0x474962",
+            "instruction": "add   r0, sp, 0x34"
+          },
+          "stack_prefix_destination": {
+            "address": "0x474942",
+            "instruction": "add   r0, sp, 0x80"
+          }
+        },
+        "read_and_describe_mask": {
+          "emit_log": {
+            "address": "0x4689de",
+            "instruction": "bl    0x56b4"
+          },
+          "extract_2_4_ghz_bit": {
+            "address": "0x4689d6",
+            "instruction": "and   r3, r6, 1"
+          },
+          "extract_5_ghz_bit": {
+            "address": "0x4689cc",
+            "instruction": "ubfx  r3, r6, 1, 1"
+          },
+          "fallback_argument": {
+            "address": "0x4689a0",
+            "instruction": "movs  r2, 3"
+          },
+          "log_template": {
+            "address": "0x4689da",
+            "instruction": "ldr   r0, [0x00468a1c]",
+            "value": "wl%d: %s: RF Band Cap: 2G:%d 5G:%d\n"
+          },
+          "lookup_in_resident_code": {
+            "address": "0x4689ac",
+            "instruction": "bl    0x708e4"
+          },
+          "mask_key": {
+            "address": "0x4689a2",
+            "instruction": "ldr   r1, [0x00468a10]",
+            "value": "bandcap"
+          },
+          "retain_mask_in_r6": {
+            "address": "0x4689b6",
+            "instruction": "mov   r6, r0"
+          },
+          "save_5_ghz_log_argument": {
+            "address": "0x4689d4",
+            "instruction": "str   r3, [sp]"
+          },
+          "save_phy_context_in_r5": {
+            "address": "0x468976",
+            "instruction": "mov   r5, r0"
+          },
+          "store_mask_in_radio_state": {
+            "address": "0x4689b4",
+            "instruction": "strb  r0, [r4, 8]"
+          },
+          "use_phy_context": {
+            "address": "0x4689aa",
+            "instruction": "mov   r0, r5"
+          }
+        },
+        "select_prefix": {
+          "compare_d11_unit": {
+            "address": "0x4745fe",
+            "instruction": "cmp   r3, 1"
+          },
+          "compare_slice_count": {
+            "address": "0x4745f8",
+            "instruction": "cmp   r3, 1"
+          },
+          "copy_prefix": {
+            "address": "0x47460a",
+            "instruction": "bl    0x5894"
+          },
+          "d11_prefix_destination": {
+            "address": "0x474604",
+            "instruction": "add.w r0, r4, 0x198"
+          },
+          "prefix_literal": {
+            "address": "0x474608",
+            "instruction": "ldr   r1, [0x00474748]",
+            "value": "slice/1/"
+          },
+          "read_d11_unit": {
+            "address": "0x4745fc",
+            "instruction": "ldr   r3, [r4, 0x48]"
+          },
+          "read_slice_count": {
+            "address": "0x4745f6",
+            "instruction": "ldr   r3, [r3, 8]"
+          },
+          "skip_unless_unit_is_one": {
+            "address": "0x474600",
+            "instruction": "bne   0x474612"
+          },
+          "skip_when_one_or_fewer": {
+            "address": "0x4745fa",
+            "instruction": "bls   0x474612"
+          },
+          "terminate_prefix": {
+            "address": "0x47460e",
+            "instruction": "strb.w fp, [r4, 0x1a1]"
+          }
+        }
+      }
+    },
+    {
+      "d11_components": [
+        {
+          "sha256": "1e4f3621f53a3782535c4444761099583bbef98bd53bf9e5cbe145ef34b07991",
+          "unit": 0
+        },
+        {
+          "sha256": "1ab6713282f34e873dc98f48cf1489f8bafd82fd76d3811d3e078f8bb5e65813",
+          "unit": 1
+        }
+      ],
+      "file": {
+        "bytes": 1226142,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a"
+      },
+      "firmware_id": "01-f2cc5189",
+      "llvm_mc_checks": [
+        "movs r2, #3",
+        "strb r0, [r4, #8]",
+        "ubfx r3, r6, #1, #1",
+        "and r3, r6, #1"
+      ],
+      "reference_ram_base": "0x352000",
+      "rizin_thumb_trace": {
+        "coexistence_board_keys": {
+          "clb2gslice0core0": {
+            "address": "0x41f762",
+            "instruction": "ldr   r1, [0x0041f8c4]"
+          },
+          "clb2gslice0core1": {
+            "address": "0x41f790",
+            "instruction": "ldr   r1, [0x0041f8cc]"
+          },
+          "clb2gslice1core0": {
+            "address": "0x41f76e",
+            "instruction": "ldr   r1, [0x0041f8c8]"
+          },
+          "clb2gslice1core1": {
+            "address": "0x41f79a",
+            "instruction": "ldr   r1, [0x0041f8d0]"
+          },
+          "clb5gslice0core0": {
+            "address": "0x41f7b4",
+            "instruction": "ldr   r1, [0x0041f8d4]"
+          },
+          "clb5gslice0core1": {
+            "address": "0x41f7e0",
+            "instruction": "ldr   r1, [0x0041f8dc]"
+          },
+          "clb5gslice1core0": {
+            "address": "0x41f7be",
+            "instruction": "ldr   r1, [0x0041f8d8]"
+          },
+          "clb5gslice1core1": {
+            "address": "0x41f7ea",
+            "instruction": "ldr   r1, [0x0041f8e0]"
+          }
+        },
+        "pass_radio_settings": {
+          "attach_radio": {
+            "address": "0x41c43a",
+            "instruction": "bl    0x427350"
+          },
+          "copy_prefix_into_shared_state": {
+            "address": "0x41be08",
+            "instruction": "bl    0x9d6c"
+          },
+          "copy_prefix_into_stack_args": {
+            "address": "0x4330c6",
+            "instruction": "bl    0x9d6c"
+          },
+          "create_phy_context": {
+            "address": "0x43321e",
+            "instruction": "bl    0x41c024"
+          },
+          "create_shared_phy_state": {
+            "address": "0x4330d0",
+            "instruction": "bl    0x41bd2c"
+          },
+          "load_d11_prefix": {
+            "address": "0x433066",
+            "instruction": "add.w r1, r4, 0x198"
+          },
+          "make_shared_state_available_to_radio": {
+            "address": "0x41c0ce",
+            "instruction": "str   r5, [r0, 8]"
+          },
+          "prefix_offset_in_shared_state": {
+            "address": "0x41bdc0",
+            "instruction": "add.w r0, r4, 0x90"
+          },
+          "prefix_offset_in_stack_args": {
+            "address": "0x41bdba",
+            "instruction": "add.w r1, r5, 0x4c"
+          },
+          "radio_attach_argument": {
+            "address": "0x41c438",
+            "instruction": "mov   r0, r4"
+          },
+          "reload_shared_state": {
+            "address": "0x433216",
+            "instruction": "ldr.w r0, [r4, 0x98]"
+          },
+          "save_argument_in_r5": {
+            "address": "0x41c02e",
+            "instruction": "mov   r5, r0"
+          },
+          "save_shared_state": {
+            "address": "0x4330d4",
+            "instruction": "str.w r0, [r4, 0x98]"
+          },
+          "stack_arg_start": {
+            "address": "0x4330ce",
+            "instruction": "add   r0, sp, 0x34"
+          },
+          "stack_prefix_destination": {
+            "address": "0x4330ae",
+            "instruction": "add   r0, sp, 0x80"
+          }
+        },
+        "read_and_describe_mask": {
+          "emit_log": {
+            "address": "0x4273ba",
+            "instruction": "bl    0x9b8c"
+          },
+          "extract_2_4_ghz_bit": {
+            "address": "0x4273b2",
+            "instruction": "and   r3, r6, 1"
+          },
+          "extract_5_ghz_bit": {
+            "address": "0x4273a8",
+            "instruction": "ubfx  r3, r6, 1, 1"
+          },
+          "fallback_argument": {
+            "address": "0x42737c",
+            "instruction": "movs  r2, 3"
+          },
+          "log_template": {
+            "address": "0x4273b6",
+            "instruction": "ldr   r0, [0x004273f8]",
+            "value": "wl%d: %s: RF Band Cap: 2G:%d 5G:%d\n"
+          },
+          "lookup_in_resident_code": {
+            "address": "0x427388",
+            "instruction": "bl    0x6f084"
+          },
+          "mask_key": {
+            "address": "0x42737e",
+            "instruction": "ldr   r1, [0x004273ec]",
+            "value": "bandcap"
+          },
+          "retain_mask_in_r6": {
+            "address": "0x427392",
+            "instruction": "mov   r6, r0"
+          },
+          "save_5_ghz_log_argument": {
+            "address": "0x4273b0",
+            "instruction": "str   r3, [sp]"
+          },
+          "save_phy_context_in_r5": {
+            "address": "0x427352",
+            "instruction": "mov   r5, r0"
+          },
+          "store_mask_in_radio_state": {
+            "address": "0x427390",
+            "instruction": "strb  r0, [r4, 8]"
+          },
+          "use_phy_context": {
+            "address": "0x427386",
+            "instruction": "mov   r0, r5"
+          }
+        },
+        "select_prefix": {
+          "compare_d11_unit": {
+            "address": "0x432d6a",
+            "instruction": "cmp   r3, 1"
+          },
+          "compare_slice_count": {
+            "address": "0x432d64",
+            "instruction": "cmp   r3, 1"
+          },
+          "copy_prefix": {
+            "address": "0x432d76",
+            "instruction": "bl    0x9d6c"
+          },
+          "d11_prefix_destination": {
+            "address": "0x432d70",
+            "instruction": "add.w r0, r4, 0x198"
+          },
+          "prefix_literal": {
+            "address": "0x432d74",
+            "instruction": "ldr   r1, [0x00432eb4]",
+            "value": "slice/1/"
+          },
+          "read_d11_unit": {
+            "address": "0x432d68",
+            "instruction": "ldr   r3, [r4, 0x48]"
+          },
+          "read_slice_count": {
+            "address": "0x432d62",
+            "instruction": "ldr   r3, [r3, 8]"
+          },
+          "skip_unless_unit_is_one": {
+            "address": "0x432d6c",
+            "instruction": "bne   0x432d7e"
+          },
+          "skip_when_one_or_fewer": {
+            "address": "0x432d66",
+            "instruction": "bls   0x432d7e"
+          },
+          "terminate_prefix": {
+            "address": "0x432d7a",
+            "instruction": "strb.w fp, [r4, 0x1a1]"
+          }
+        }
+      }
+    }
+  ],
+  "host_after": {
+    "ipv4_default_interface": "en0",
+    "published_rsdb_capability": true,
+    "registry_firmware_id": "01-2606388a",
+    "related_top_level_keys": [
+      "FWCap"
+    ],
+    "wifi": {
+      "band": "5 GHz",
+      "channel": 40,
+      "channel_width_mhz": 80,
+      "interface": "en0",
+      "phy_mode": "802.11ax"
+    }
+  },
+  "host_before": {
+    "ipv4_default_interface": "en0",
+    "published_rsdb_capability": true,
+    "registry_firmware_id": "01-2606388a",
+    "related_top_level_keys": [
+      "FWCap"
+    ],
+    "wifi": {
+      "band": "5 GHz",
+      "channel": 40,
+      "channel_width_mhz": 80,
+      "interface": "en0",
+      "phy_mode": "802.11ax"
+    }
+  },
+  "host_driver_summary": {
+    "dext_executable_sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "format_fields_in_order": [
+      {
+        "byte_offset_in_receive_buffer": 12,
+        "field": "SDB",
+        "reply": "capabilities",
+        "type": "uint8"
+      },
+      {
+        "byte_offset_in_receive_buffer": 13,
+        "field": "cores",
+        "reply": "capabilities",
+        "type": "uint8"
+      },
+      {
+        "byte_offset_in_receive_buffer": 24,
+        "field": "curMode",
+        "reply": "configuration",
+        "type": "uint8"
+      },
+      {
+        "slice_field_order": [
+          {
+            "byte_offsets_in_receive_buffer": [
+              14,
+              15
+            ],
+            "reply": "bands",
+            "type": "int8"
+          },
+          {
+            "byte_offsets_in_receive_buffer": [
+              16,
+              17
+            ],
+            "reply": "capabilities",
+            "type": "uint8"
+          },
+          {
+            "byte_offsets_in_receive_buffer": [
+              16,
+              20
+            ],
+            "reply": "configuration",
+            "type": "uint32_hex"
+          }
+        ]
+      }
+    ],
+    "log_template": "SDB Capabilities: SDB:%d cores:%d curMode:%d Slice0 [%d %d %0X] Slice1 [%d %d %0X]",
+    "slices": [
+      {
+        "architecture": "arm64e",
+        "run_iovar_get_calls": [
+          "0x10009ef20",
+          "0x10009efe8",
+          "0x10009f0e8",
+          "0x10009f1b8"
+        ],
+        "summary_log_call_operands": [
+          {
+            "address": "0x10009f0a4",
+            "instruction": "ldrb w23, [x19, #0xc]"
+          },
+          {
+            "address": "0x10009f0a8",
+            "instruction": "ldrb w24, [x19, #0xd]"
+          },
+          {
+            "address": "0x10009f0ac",
+            "instruction": "ldrb w25, [x19, #0x10]"
+          },
+          {
+            "address": "0x10009f0b0",
+            "instruction": "ldrb w26, [x19, #0x11]"
+          },
+          {
+            "address": "0x10009f18c",
+            "instruction": "ldrsb w27, [x19, #0xe]"
+          },
+          {
+            "address": "0x10009f190",
+            "instruction": "ldrsb w28, [x19, #0xf]"
+          },
+          {
+            "address": "0x10009f2a4",
+            "instruction": "ldrb w8, [x19, #0x18]"
+          },
+          {
+            "address": "0x10009f2ac",
+            "instruction": "ldp w8, w22, [x19, #0x10]"
+          },
+          {
+            "address": "0x10009f2a8",
+            "instruction": "str x8, [sp, #0x60]"
+          },
+          {
+            "address": "0x10009f2b0",
+            "instruction": "str x8, [sp, #0x58]"
+          },
+          {
+            "address": "0x10009f2c8",
+            "instruction": "stp x26, x22, [sp, #0x48]"
+          },
+          {
+            "address": "0x10009f2cc",
+            "instruction": "ldp x9, x8, [sp, #0x58]"
+          },
+          {
+            "address": "0x10009f2d0",
+            "instruction": "stp x9, x28, [sp, #0x38]"
+          },
+          {
+            "address": "0x10009f2d4",
+            "instruction": "stp x27, x25, [sp, #0x28]"
+          },
+          {
+            "address": "0x10009f2d8",
+            "instruction": "stp x24, x8, [sp, #0x18]"
+          },
+          {
+            "address": "0x10009f2f0",
+            "instruction": "stp x8, x23, [sp, #0x8]"
+          }
+        ],
+        "symbol": "__ZN25AppleBCMWLANConfigManager16querySDBPoliciesEv"
+      },
+      {
+        "architecture": "arm64e.x1",
+        "run_iovar_get_calls": [
+          "0x10009d138",
+          "0x10009d200",
+          "0x10009d300",
+          "0x10009d3d0"
+        ],
+        "summary_log_call_operands": [
+          {
+            "address": "0x10009d2bc",
+            "instruction": "ldrb w23, [x19, #0xc]"
+          },
+          {
+            "address": "0x10009d2c0",
+            "instruction": "ldrb w24, [x19, #0xd]"
+          },
+          {
+            "address": "0x10009d2c4",
+            "instruction": "ldrb w25, [x19, #0x10]"
+          },
+          {
+            "address": "0x10009d2c8",
+            "instruction": "ldrb w26, [x19, #0x11]"
+          },
+          {
+            "address": "0x10009d3a4",
+            "instruction": "ldrsb w27, [x19, #0xe]"
+          },
+          {
+            "address": "0x10009d3a8",
+            "instruction": "ldrsb w28, [x19, #0xf]"
+          },
+          {
+            "address": "0x10009d4bc",
+            "instruction": "ldrb w8, [x19, #0x18]"
+          },
+          {
+            "address": "0x10009d4c4",
+            "instruction": "ldp w8, w22, [x19, #0x10]"
+          },
+          {
+            "address": "0x10009d4c0",
+            "instruction": "str x8, [sp, #0x60]"
+          },
+          {
+            "address": "0x10009d4c8",
+            "instruction": "str x8, [sp, #0x58]"
+          },
+          {
+            "address": "0x10009d4e0",
+            "instruction": "stp x26, x22, [sp, #0x48]"
+          },
+          {
+            "address": "0x10009d4e4",
+            "instruction": "ldp x9, x8, [sp, #0x58]"
+          },
+          {
+            "address": "0x10009d4e8",
+            "instruction": "stp x9, x28, [sp, #0x38]"
+          },
+          {
+            "address": "0x10009d4ec",
+            "instruction": "stp x27, x25, [sp, #0x28]"
+          },
+          {
+            "address": "0x10009d4f0",
+            "instruction": "stp x24, x8, [sp, #0x18]"
+          },
+          {
+            "address": "0x10009d508",
+            "instruction": "stp x8, x23, [sp, #0x8]"
+          }
+        ],
+        "symbol": "__ZN25AppleBCMWLANConfigManager16querySDBPoliciesEv"
+      }
+    ],
+    "strict_signature_verified": true
+  },
+  "macos_build": "26B131",
+  "offline_validation": {
+    "combined_stock_profile_and_readback_fixture": {
+      "exact_program_unit": 1,
+      "unit_0_mask": 2,
+      "unit_1_mask": 1
+    },
+    "old_cli_json_equal_with_saved_readback_fixtures": 6,
+    "rejected_bad_profile_fixtures": [
+      "duplicate",
+      "invalid_number",
+      "missing",
+      "negative",
+      "unrecognized_bits"
+    ],
+    "tested_both_bits_and_zero_mask": true
+  },
+  "retained_log_search": {
+    "include_debug": true,
+    "include_info": true,
+    "radio_mask_records": 0,
+    "summary_records": 0,
+    "window_minutes": 20
+  },
+  "scope": "Stock profile and firmware analysis with read-only host snapshots before and after collection. The active firmware band-policy reply, peer role allocation and per-band airtime remain unmeasured.",
+  "stock_profiles": {
+    "name_count": 250,
+    "profiles": [
+      {
+        "clb_key_counts": {
+          "clb2gslice0core0": 0,
+          "clb2gslice0core1": 0,
+          "clb2gslice1core0": 1,
+          "clb2gslice1core1": 1,
+          "clb5gslice0core0": 1,
+          "clb5gslice0core1": 1,
+          "clb5gslice1core0": 0,
+          "clb5gslice1core1": 0
+        },
+        "names_by_stepping": {
+          "B1": 20
+        },
+        "representative_path": "/usr/share/firmware/wifi/C-4378__s-B1/P-capri_M-RASP_V-u__m-3.7.txt",
+        "rf_switch_key_counts": {
+          "slice/1/swctrlmap_2g": 1,
+          "slice/1/swctrlmap_5g": 0,
+          "swctrlmap_2g": 0,
+          "swctrlmap_5g": 1
+        },
+        "sha256": "28740651d40a9754a2b2b082ab1aa4eb91d0f0ab4bd4e3e8eceff369c977bd36",
+        "units": [
+          {
+            "configured_bands_ghz": [
+              5
+            ],
+            "mask": 2,
+            "nvram_key": "bandcap",
+            "unit": 0
+          },
+          {
+            "configured_bands_ghz": [
+              2.4
+            ],
+            "mask": 1,
+            "nvram_key": "slice/1/bandcap",
+            "unit": 1
+          }
+        ]
+      },
+      {
+        "clb_key_counts": {
+          "clb2gslice0core0": 0,
+          "clb2gslice0core1": 0,
+          "clb2gslice1core0": 1,
+          "clb2gslice1core1": 1,
+          "clb5gslice0core0": 1,
+          "clb5gslice0core1": 1,
+          "clb5gslice1core0": 0,
+          "clb5gslice1core1": 0
+        },
+        "names_by_stepping": {
+          "B1": 25
+        },
+        "representative_path": "/usr/share/firmware/wifi/C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.1.txt",
+        "rf_switch_key_counts": {
+          "slice/1/swctrlmap_2g": 1,
+          "slice/1/swctrlmap_5g": 0,
+          "swctrlmap_2g": 0,
+          "swctrlmap_5g": 1
+        },
+        "sha256": "2e15b8551b3cbf945247a6e25a8efbfb392476d799e81cbc61f659b55dc049b4",
+        "units": [
+          {
+            "configured_bands_ghz": [
+              5
+            ],
+            "mask": 2,
+            "nvram_key": "bandcap",
+            "unit": 0
+          },
+          {
+            "configured_bands_ghz": [
+              2.4
+            ],
+            "mask": 1,
+            "nvram_key": "slice/1/bandcap",
+            "unit": 1
+          }
+        ]
+      },
+      {
+        "clb_key_counts": {
+          "clb2gslice0core0": 0,
+          "clb2gslice0core1": 0,
+          "clb2gslice1core0": 1,
+          "clb2gslice1core1": 1,
+          "clb5gslice0core0": 1,
+          "clb5gslice0core1": 1,
+          "clb5gslice1core0": 0,
+          "clb5gslice1core1": 0
+        },
+        "names_by_stepping": {
+          "B1": 20
+        },
+        "representative_path": "/usr/share/firmware/wifi/C-4378__s-B1/P-santorini_M-RASP_V-u__m-3.7.txt",
+        "rf_switch_key_counts": {
+          "slice/1/swctrlmap_2g": 1,
+          "slice/1/swctrlmap_5g": 0,
+          "swctrlmap_2g": 0,
+          "swctrlmap_5g": 1
+        },
+        "sha256": "32d7747549903a2e222030abc75ef5dfd7fcd6879da125b3b41ac7885a8d45f3",
+        "units": [
+          {
+            "configured_bands_ghz": [
+              5
+            ],
+            "mask": 2,
+            "nvram_key": "bandcap",
+            "unit": 0
+          },
+          {
+            "configured_bands_ghz": [
+              2.4
+            ],
+            "mask": 1,
+            "nvram_key": "slice/1/bandcap",
+            "unit": 1
+          }
+        ]
+      },
+      {
+        "clb_key_counts": {
+          "clb2gslice0core0": 0,
+          "clb2gslice0core1": 0,
+          "clb2gslice1core0": 1,
+          "clb2gslice1core1": 1,
+          "clb5gslice0core0": 1,
+          "clb5gslice0core1": 1,
+          "clb5gslice1core0": 0,
+          "clb5gslice1core1": 0
+        },
+        "names_by_stepping": {
+          "B1": 25
+        },
+        "representative_path": "/usr/share/firmware/wifi/C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-3.7.txt",
+        "rf_switch_key_counts": {
+          "slice/1/swctrlmap_2g": 1,
+          "slice/1/swctrlmap_5g": 0,
+          "swctrlmap_2g": 0,
+          "swctrlmap_5g": 1
+        },
+        "sha256": "417a6014f4dad80d92f160748f43d2c50314ba67eefc15fa5eace378d82d943e",
+        "units": [
+          {
+            "configured_bands_ghz": [
+              5
+            ],
+            "mask": 2,
+            "nvram_key": "bandcap",
+            "unit": 0
+          },
+          {
+            "configured_bands_ghz": [
+              2.4
+            ],
+            "mask": 1,
+            "nvram_key": "slice/1/bandcap",
+            "unit": 1
+          }
+        ]
+      },
+      {
+        "clb_key_counts": {
+          "clb2gslice0core0": 0,
+          "clb2gslice0core1": 0,
+          "clb2gslice1core0": 1,
+          "clb2gslice1core1": 1,
+          "clb5gslice0core0": 1,
+          "clb5gslice0core1": 1,
+          "clb5gslice1core0": 0,
+          "clb5gslice1core1": 0
+        },
+        "names_by_stepping": {
+          "B1": 25
+        },
+        "representative_path": "/usr/share/firmware/wifi/C-4378__s-B1/P-capri_M-RASP_V-m__m-6.1.txt",
+        "rf_switch_key_counts": {
+          "slice/1/swctrlmap_2g": 1,
+          "slice/1/swctrlmap_5g": 0,
+          "swctrlmap_2g": 0,
+          "swctrlmap_5g": 1
+        },
+        "sha256": "44bec369f1c81ddd72f9c331e02d54c004dc94ea4171cc5515cf0dcf0baa87fb",
+        "units": [
+          {
+            "configured_bands_ghz": [
+              5
+            ],
+            "mask": 2,
+            "nvram_key": "bandcap",
+            "unit": 0
+          },
+          {
+            "configured_bands_ghz": [
+              2.4
+            ],
+            "mask": 1,
+            "nvram_key": "slice/1/bandcap",
+            "unit": 1
+          }
+        ]
+      },
+      {
+        "clb_key_counts": {
+          "clb2gslice0core0": 0,
+          "clb2gslice0core1": 0,
+          "clb2gslice1core0": 1,
+          "clb2gslice1core1": 1,
+          "clb5gslice0core0": 1,
+          "clb5gslice0core1": 1,
+          "clb5gslice1core0": 0,
+          "clb5gslice1core1": 0
+        },
+        "names_by_stepping": {
+          "B1": 25
+        },
+        "representative_path": "/usr/share/firmware/wifi/C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.1.txt",
+        "rf_switch_key_counts": {
+          "slice/1/swctrlmap_2g": 1,
+          "slice/1/swctrlmap_5g": 0,
+          "swctrlmap_2g": 0,
+          "swctrlmap_5g": 1
+        },
+        "sha256": "4f280abe427460cba4891522c9e69e02725fa99710fdf024574c87f3cf0ba585",
+        "units": [
+          {
+            "configured_bands_ghz": [
+              5
+            ],
+            "mask": 2,
+            "nvram_key": "bandcap",
+            "unit": 0
+          },
+          {
+            "configured_bands_ghz": [
+              2.4
+            ],
+            "mask": 1,
+            "nvram_key": "slice/1/bandcap",
+            "unit": 1
+          }
+        ]
+      },
+      {
+        "clb_key_counts": {
+          "clb2gslice0core0": 0,
+          "clb2gslice0core1": 0,
+          "clb2gslice1core0": 1,
+          "clb2gslice1core1": 1,
+          "clb5gslice0core0": 1,
+          "clb5gslice0core1": 1,
+          "clb5gslice1core0": 0,
+          "clb5gslice1core1": 0
+        },
+        "names_by_stepping": {
+          "B1": 25
+        },
+        "representative_path": "/usr/share/firmware/wifi/C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.1.txt",
+        "rf_switch_key_counts": {
+          "slice/1/swctrlmap_2g": 1,
+          "slice/1/swctrlmap_5g": 0,
+          "swctrlmap_2g": 0,
+          "swctrlmap_5g": 1
+        },
+        "sha256": "5e8c0449664fa47d57f220aa75dd04ad6d5558adf157ddf20f447a9f4f5fb19e",
+        "units": [
+          {
+            "configured_bands_ghz": [
+              5
+            ],
+            "mask": 2,
+            "nvram_key": "bandcap",
+            "unit": 0
+          },
+          {
+            "configured_bands_ghz": [
+              2.4
+            ],
+            "mask": 1,
+            "nvram_key": "slice/1/bandcap",
+            "unit": 1
+          }
+        ]
+      },
+      {
+        "clb_key_counts": {
+          "clb2gslice0core0": 0,
+          "clb2gslice0core1": 0,
+          "clb2gslice1core0": 1,
+          "clb2gslice1core1": 1,
+          "clb5gslice0core0": 1,
+          "clb5gslice0core1": 1,
+          "clb5gslice1core0": 0,
+          "clb5gslice1core1": 0
+        },
+        "names_by_stepping": {
+          "B1": 25
+        },
+        "representative_path": "/usr/share/firmware/wifi/C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.1.txt",
+        "rf_switch_key_counts": {
+          "slice/1/swctrlmap_2g": 1,
+          "slice/1/swctrlmap_5g": 0,
+          "swctrlmap_2g": 0,
+          "swctrlmap_5g": 1
+        },
+        "sha256": "82d38093e33abac54c94e5b792efcd4b0fe3dfb794fe8a96b3a1967622e50056",
+        "units": [
+          {
+            "configured_bands_ghz": [
+              5
+            ],
+            "mask": 2,
+            "nvram_key": "bandcap",
+            "unit": 0
+          },
+          {
+            "configured_bands_ghz": [
+              2.4
+            ],
+            "mask": 1,
+            "nvram_key": "slice/1/bandcap",
+            "unit": 1
+          }
+        ]
+      },
+      {
+        "clb_key_counts": {
+          "clb2gslice0core0": 0,
+          "clb2gslice0core1": 0,
+          "clb2gslice1core0": 1,
+          "clb2gslice1core1": 1,
+          "clb5gslice0core0": 1,
+          "clb5gslice0core1": 1,
+          "clb5gslice1core0": 0,
+          "clb5gslice1core1": 0
+        },
+        "names_by_stepping": {
+          "B1": 20
+        },
+        "representative_path": "/usr/share/firmware/wifi/C-4378__s-B1/P-shikoku_M-RASP_V-u__m-3.7.txt",
+        "rf_switch_key_counts": {
+          "slice/1/swctrlmap_2g": 1,
+          "slice/1/swctrlmap_5g": 0,
+          "swctrlmap_2g": 0,
+          "swctrlmap_5g": 1
+        },
+        "sha256": "c1440baec1eb255afcee275dd6f6fd32146830db16db4d2015565bc447fb2fcb",
+        "units": [
+          {
+            "configured_bands_ghz": [
+              5
+            ],
+            "mask": 2,
+            "nvram_key": "bandcap",
+            "unit": 0
+          },
+          {
+            "configured_bands_ghz": [
+              2.4
+            ],
+            "mask": 1,
+            "nvram_key": "slice/1/bandcap",
+            "unit": 1
+          }
+        ]
+      },
+      {
+        "clb_key_counts": {
+          "clb2gslice0core0": 0,
+          "clb2gslice0core1": 0,
+          "clb2gslice1core0": 1,
+          "clb2gslice1core1": 1,
+          "clb5gslice0core0": 1,
+          "clb5gslice0core1": 1,
+          "clb5gslice1core0": 0,
+          "clb5gslice1core1": 0
+        },
+        "names_by_stepping": {
+          "B1": 30,
+          "B3": 10
+        },
+        "representative_path": "/usr/share/firmware/wifi/C-4378__s-B1/P-honshu_M-RASP_V-u__m-3.7.txt",
+        "rf_switch_key_counts": {
+          "slice/1/swctrlmap_2g": 1,
+          "slice/1/swctrlmap_5g": 0,
+          "swctrlmap_2g": 0,
+          "swctrlmap_5g": 1
+        },
+        "sha256": "d921b4241b268694e077c146ffb918ba89e71bd1439a865fda4431deaa23b134",
+        "units": [
+          {
+            "configured_bands_ghz": [
+              5
+            ],
+            "mask": 2,
+            "nvram_key": "bandcap",
+            "unit": 0
+          },
+          {
+            "configured_bands_ghz": [
+              2.4
+            ],
+            "mask": 1,
+            "nvram_key": "slice/1/bandcap",
+            "unit": 1
+          }
+        ]
+      }
+    ],
+    "root": "/usr/share/firmware/wifi",
+    "shikoku_profile_sha256": "2e15b8551b3cbf945247a6e25a8efbfb392476d799e81cbc61f659b55dc049b4",
+    "shikoku_requested_path": "/usr/share/firmware/wifi/C-4378__s-B1/P-shikoku-X3_M-RASP_V-m__m-6.11.txt",
+    "unique_payload_count": 10
+  }
+}

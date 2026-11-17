@@ -54,7 +54,9 @@ On the sender, use the copied key and its existing LAN interface. Capture JSON f
 "$inspection_dir/probe_inspection_peer" run "$inspection_dir/pairing.key" split en0
 ```
 
-Compare preview deadline hits, tail latency and verified archive throughput under the same access-point conditions. The path report answers which interface carried the test traffic. Use an independent receiver on each band with a common clock to check which channels carried it and whether transmissions overlapped. The two-device result remains open. Data for the actual inspection and accuracy of the preview still require a camera and a part. [Radio bench measurements](simultaneous-dual-band.md#keeping-an-internet-link-while-using-another-channel)
+Compare preview deadline hits, tail latency and verified archive throughput under the same access-point conditions. The factory map puts the 5 GHz router and a 2.4 GHz direct leg on different Wi-Fi cores if macOS uses those bands. Set the owned test router to 5 GHz and record the peer's band while the split test sends both streams. The path report answers which interface carried the traffic. An independent receiver on each band with a common clock answers which channels carried it and whether transmissions overlapped. The two-device result remains open. [Factory band map and log fields](simultaneous-dual-band.md#factory-band-assignment)
+
+For an inspection cart moving between two owned access points, the application could keep sending time-sensitive previews straight to the nearby operator during a router handoff. A persistent upload queue could resume the full images when the router path returns. On a separate bench, compare missed previews during handoff with the LAN-only run, then count complete archives by part ID. The current prototype measures the transport and deadlines. Handoff recovery and inspection accuracy need the bench and camera. [Roaming test](wifi-roaming.md), [Archive recovery design](#resume-work-after-a-radio-fault)
 
 ## Wake the Mac when inspection work actually arrives
 

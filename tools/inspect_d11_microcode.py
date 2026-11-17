@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Identify the stock BCM4378 D11 loader and compare a saved microcode readback."""
+"""Identify stock BCM4378 D11 programs, configured bands, and saved readbacks."""
 
 import argparse
 from hashlib import sha256
@@ -22,6 +22,8 @@ from inspect_firmware import (
 
 HALFWORD = Struct("<H")
 WORD = Struct("<I")
+BAND_MASK_KEYS = (b"bandcap", b"slice/1/bandcap")
+BANDS_BY_MASK_BIT = ((1, 2.4), (2, 5))
 
 # Observed Thumb sequences in Honshu, Capri and Kyushu. Call instructions
 # with build-dependent displacements are decoded separately.
@@ -144,6 +146,38 @@ def inspect_loader(data):
     return report, [r[1] for r in regions]
 
 
+def inspect_board_bands(data):
+    masks = {}
+    for line in data.splitlines():
+        name, separator, value = line.partition(b"=")
+        if not separator or name not in BAND_MASK_KEYS:
+            continue
+        label = name.decode("ascii")
+        if name in masks:
+            raise ValueError(f"Duplicate board band mask {label}")
+        try:
+            mask = int(value, 0)
+        except ValueError as error:
+            raise ValueError(f"Invalid board band mask {label}") from error
+        if not 0 <= mask <= 3:
+            raise ValueError(f"Unrecognized BCM4378 band bits in {label}")
+        masks[name] = mask
+
+    units = []
+    for unit, name in enumerate(BAND_MASK_KEYS):
+        label = name.decode("ascii")
+        if name not in masks:
+            raise ValueError(f"Missing board band mask {label}")
+        mask = masks[name]
+        units.append({
+            "unit": unit,
+            "nvram_key": label,
+            "mask": mask,
+            "configured_bands_ghz": [band for bit, band in BANDS_BY_MASK_BIT if mask & bit],
+        })
+    return units
+
+
 def compare_readback(data, component):
     differences = [
         index for index, (actual, expected) in enumerate(zip(WORD.iter_unpack(data), WORD.iter_unpack(component)))
@@ -159,6 +193,8 @@ def compare_readback(data, component):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("firmware", type=Path, help="Local stock BCM4378 .trx")
+    parser.add_argument("--board-profile", type=Path,
+                        help="Retained stock BCM4378 NVRAM text containing both band masks")
     parser.add_argument("--readback", type=Path,
                         help="Retained little-endian D11 program readback starting at object word zero")
     args = parser.parse_args()
@@ -166,6 +202,9 @@ def main():
         data, identity = read_artifact(args.firmware)
         report, components = inspect_loader(data)
         report["file"] = identity
+        if args.board_profile:
+            profile, profile_identity = read_artifact(args.board_profile)
+            report["board_profile"] = {"file": profile_identity, "units": inspect_board_bands(profile)}
         if args.readback:
             captured = read_capture(args.readback, len(components[0]))
             report["readback"] = {

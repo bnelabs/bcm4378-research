@@ -17,7 +17,7 @@ The [practical radio applications](docs/practical-radio-applications.md) apply t
 
 ## Can I stay connected and use another channel?
 
-**The hardware can operate on both bands together.** A2337 lab equipment measured simultaneous 2.4 GHz and 5 GHz transmission in HT20 test modes. The running firmware advertises `rsdb`, the flag for real simultaneous dual band. macOS uses it to check what the radio's slices can do. [Lab and driver evidence](docs/simultaneous-dual-band.md)
+**The hardware can operate on both bands together.** A2337 lab equipment measured simultaneous 2.4 GHz and 5 GHz transmission in HT20 test modes. Every installed BCM4378 board profile assigns 5 GHz to D11 unit 0 and 2.4 GHz to unit 1. The running firmware advertises `rsdb`, the flag for real simultaneous dual band. macOS uses it to check what the radio's slices can do. [Factory assignment and lab evidence](docs/simultaneous-dual-band.md)
 
 On stock macOS, `en0` is the observed router connection. Discovery scans are a driver-managed way to check other channels. The driver has off-channel timing records for those scans. Apple's `awdl0` role supports direct peer traffic with compatible software. Sustained off-channel measurement during an internet session, a peer transfer confirmed on a different band, and two independent router connections on the single chip remain unverified on this build. The Linux source also has separate conditions for the number of channels and the number of router connections it exposes. [Modes and gates](docs/simultaneous-dual-band.md#keeping-an-internet-link-while-using-another-channel), [Interface evidence](docs/driver-interfaces.md)
 
@@ -56,7 +56,7 @@ The macOS driver requests `/usr/share/firmware/wifi/C-4378__s-B1/shikoku.trx`, w
 
 All three installed builds contain an initialization call that prints **ThreadX 5.6**. We traced that call and a fault routine that prints thread and stack details. We also mapped the loader, selected memory ranges, parts of the radio code, and driver requests. A complete instruction-level reconstruction of the Broadcom firmware remains open. [RTOS disassembly and reproduction](docs/rtos-threadx.md)
 
-The file also holds two **88 KiB programs for the wireless MAC cores**. We traced the exact program selected for each core and the port used to load its instruction memory. Both programs match across Honshu, Capri and Kyushu. The readback tool can check a saved program-memory capture against either one. [MAC programs and loader](docs/firmware-layout.md#d11-microcode-and-core-selection), [Readback tool](docs/ram-diagnostics.md#compare-a-d11-program-capture)
+The file also holds two **88 KiB programs for the wireless MAC cores**. We traced the exact program selected for each core and the port used to load its instruction memory. Both programs match across Honshu, Capri and Kyushu. The readback tool can show the factory band for each program and check a saved program-memory capture against either build component. [MAC programs and loader](docs/firmware-layout.md#d11-microcode-and-core-selection), [Readback tool](docs/ram-diagnostics.md#compare-a-d11-program-capture)
 
 The [Eclipse ThreadX repository](https://github.com/eclipse-threadx/threadx) and its [releases](https://github.com/eclipse-threadx/threadx/releases) publish upstream RTOS source. Apple's local `.trx` contains the compiled device build. This repository's [tools](tools/) are our inspection and measurement code, and [evidence](evidence/) contains saved results.
 
