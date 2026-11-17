@@ -230,6 +230,35 @@ def wme_tid_reporting(entries):
     }
 
 
+def he_ru_counter_legend(entries):
+    report = reporting_legend(entries)
+    if report is None:
+        return None
+    public, legend = report
+    counter_groups = []
+    for group, subgroup, labels in report_legend_rows(legend):
+        ru_sizes = group in ("Chip", "Slice 0", "Slice 1") and subgroup in (
+            "Tx OFDMA RU Counters", "Rx OFDMA RU Counters",
+        )
+        mpdus = group == "MPDUs per RU" and isinstance(subgroup, str) and re.fullmatch(
+            r"Rx MPDU in AMPDU in (?:20|40|80|160) Mhz BW", subgroup,
+        )
+        if ru_sizes or mpdus:
+            counter_groups.append({
+                "group": group,
+                "subgroup": subgroup,
+                "labels": [
+                    label.strip() for label in labels
+                    if re.fullmatch(
+                        r"(?:[TR]x RU size (?:26|52|106|242|484|996|2x996)|"
+                        r"Rx MPDU in AMPDU in (?:26|52|106|242|484|996|2x996) Tone RU)",
+                        label.strip(),
+                    )
+                ],
+            })
+    return {"legend_marked_public": public, "counter_groups": counter_groups}
+
+
 def dfs_proxy_reporting(entries):
     report = reporting_legend(entries)
     if report is None:
@@ -331,6 +360,7 @@ def collect():
             "radio_power_config_properties": summarize_config_keys(bus, RADIO_POWER_CONFIG_KEYS),
             "radio_chain_reporting": radio_chain_reporting(entries),
             "wme_tid_reporting": wme_tid_reporting(entries),
+            "he_ru_counter_legend": he_ru_counter_legend(entries),
             "transport_config_properties": {
                 key: bus[key] for key in TRANSPORT_CONFIG_KEYS if type(bus.get(key)) is int
             },
