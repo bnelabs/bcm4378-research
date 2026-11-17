@@ -1,0 +1,311 @@
+{
+  "host": {
+    "default_ipv4_interface": "en0",
+    "macos_build": "26B131",
+    "macos_version": "27.2.1",
+    "model": "MacBookAir10,1"
+  },
+  "legacy_firmware_capability_words": [
+    "adv_ecounters",
+    "ampdu",
+    "ampdu_rx",
+    "ampdu_tx",
+    "amsdurx",
+    "amsdutx",
+    "he"
+  ],
+  "linux_retry_paths": {
+    "asahi_driver": "https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L1272-L1333",
+    "asahi_wiphy_updates": "https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/net/wireless/nl80211.c#L4552-L4593",
+    "harness": {
+      "results": {
+        "asahi": {
+          "combined": {
+            "calls": 1,
+            "firmware_long": 5,
+            "firmware_short": 7,
+            "return": 0,
+            "wiphy_long": 5,
+            "wiphy_short": 8
+          },
+          "compiled_function_text_sha256": "dfa0ffb5acfc0dcffc9eb51c57610a32a24986669b23736fe27f630fd0e8956f",
+          "same_request_after_firmware_error": {
+            "error_injected": true,
+            "firmware_short": 7,
+            "return_on_repeat": 0,
+            "total_calls_including_failed_attempt": 1
+          },
+          "separate_short_request": {
+            "firmware_short": 8,
+            "return": 0,
+            "total_calls": 2
+          }
+        },
+        "upstream": {
+          "combined": {
+            "calls": 1,
+            "firmware_long": 5,
+            "firmware_short": 7,
+            "return": 0,
+            "wiphy_long": 5,
+            "wiphy_short": 8
+          },
+          "compiled_function_text_sha256": "dfa0ffb5acfc0dcffc9eb51c57610a32a24986669b23736fe27f630fd0e8956f",
+          "same_request_after_firmware_error": {
+            "error_injected": true,
+            "firmware_short": 7,
+            "return_on_repeat": 0,
+            "total_calls_including_failed_attempt": 1
+          },
+          "separate_short_request": {
+            "firmware_short": 8,
+            "return": 0,
+            "total_calls": 2
+          }
+        }
+      },
+      "scope": "Original C function bodies compiled against a stub command sender and minimal cfg80211 types. The sender records simulated firmware updates."
+    },
+    "netlink_dump_fields": "https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/net/wireless/nl80211.c#L3089-L3098",
+    "stable_driver": "https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L1626-L1685",
+    "stable_wiphy_updates": "https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/net/wireless/nl80211.c#L4552-L4593"
+  },
+  "offline_aggregation": {
+    "public_he80": {
+      "bytes": 33972844,
+      "sha256": "35e78b10524333fad8e22871b35a529868dd0511dcfb5128614f544f3a44aac4",
+      "source": "https://github.com/kfoysalhaque/Wi-BFI/blob/47ca7f842d6efdff2f83b981a7c119327e8dc2d6/traces/11ax_SU_4x2_80.pcapng",
+      "summary": {
+        "ampdu": {
+          "observed_mpdus_per_run_with_last_marker": {},
+          "observed_mpdus_per_run_without_last_marker": {
+            "0": 601,
+            "1": 6686,
+            "18": 1,
+            "19": 2,
+            "2": 269,
+            "20": 3,
+            "3": 37,
+            "4": 13,
+            "5": 3,
+            "6": 1,
+            "7": 1,
+            "9": 1
+          },
+          "tagged_records": 8141,
+          "zero_length_records": 0
+        },
+        "block_ack": {
+          "ack_records": 75626,
+          "request_records": 13
+        },
+        "capture_records": 272634,
+        "data": {
+          "amsdu_present": 2362,
+          "decoded_records": 6805,
+          "retry_bit_set": 192
+        }
+      }
+    },
+    "synthetic_multichannel_and_multisection": {
+      "ampdu": {
+        "observed_mpdus_per_run_with_last_marker": {
+          "0": 1,
+          "1": 2,
+          "2": 1
+        },
+        "observed_mpdus_per_run_without_last_marker": {
+          "1": 1,
+          "2": 1
+        },
+        "tagged_records": 8,
+        "zero_length_records": 1
+      },
+      "block_ack": {
+        "ack_records": 1,
+        "request_records": 1
+      },
+      "capture_records": 10,
+      "data": {
+        "amsdu_present": 1,
+        "decoded_records": 7,
+        "retry_bit_set": 1
+      }
+    },
+    "tshark_version": "4.6.9"
+  },
+  "published_catalog": {
+    "ampdu_bucket_indexes_by_subgroup": {
+      "Rx MPDU in OFDMA AMPDU Usage": {
+        "contiguous": true,
+        "count": 64,
+        "first": 1,
+        "last": 64
+      },
+      "Rx MPDU in SU AMPDU Usage": {
+        "contiguous": true,
+        "count": 64,
+        "first": 1,
+        "last": 64
+      },
+      "Tx MPDU in AMPDU Usage": {
+        "contiguous": true,
+        "count": 64,
+        "first": 1,
+        "last": 64
+      }
+    },
+    "chip_ampdu_counter_labels": [
+      "AMPDU BlockACKs sent",
+      "AMPDU BlockACKs received",
+      "BlockACK Requests sent",
+      "BlockACK requests received",
+      "Number of RTS received",
+      "Number of Rx unicast received",
+      "Number of Rx Good PLCPs received",
+      "Number of Tx Frames",
+      "Number of Tx AMPDU",
+      "Number of Rx AMPDU",
+      "Number of Rx AMPDU with SGI",
+      "Number of Rx AMPDU with STBC",
+      "AMPDU Rx No delimiter errors",
+      "AMPDU Rx Out-of-Window errors",
+      "AMPDU Rx Out-of-Sequence errors",
+      "AMPDU Rx Duplicate errors",
+      "AMPDU Rx Stuck errors",
+      "Num Rx Single MPDUs, HT rates",
+      "Num Rx Single MPDUs, legacy rates",
+      "Missing Rx sequence numbers",
+      "Rx pkts buffered before host sendup",
+      "AMPDU DELBA received",
+      "AMPDU DELBA sent",
+      "MPDU Rx",
+      "MPDU Tx",
+      "Rx AMPDU with No BA policy",
+      "AMPDU Rx Unexpected Pkt"
+    ],
+    "legend_marked_public": true
+  },
+  "running_firmware": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a",
+  "signed_macos_driver": {
+    "limited_aggregation_net_adapter_return": 0,
+    "link_change_aggregation_gate": {
+      "feature_bit": 89,
+      "legacy_word": "adv_ecounters"
+    },
+    "rate_readers": {
+      "he_mcs_getter": "Private nrate request followed by a check for HE encoding in the returned word.",
+      "rate_getter": "Associated guard, then divides a cached unsigned 32-bit rate by 1000 with fixed-point arithmetic."
+    },
+    "retry_requests": {
+      "associated_real_time_mode_long": 12,
+      "default_mode_and_wme_setup_long": 6,
+      "default_mode_and_wme_setup_short_if_enabled": 7
+    },
+    "routines_by_slice": {
+      "arm64e": {
+        "Core.cfgAmpduWindowSize": {
+          "entry_address": "1000fc96c",
+          "symbol": "__ZN16AppleBCMWLANCore18cfgAmpduWindowSizeEv"
+        },
+        "Core.getMCS_HE": {
+          "entry_address": "1002390c0",
+          "symbol": "__ZN16AppleBCMWLANCore9getMCS_HEEP22apple80211_mcs_he_data"
+        },
+        "Core.getRATE": {
+          "entry_address": "100131c90",
+          "symbol": "__ZN16AppleBCMWLANCore7getRATEEP20apple80211_rate_data"
+        },
+        "Core.linkChangeEvent": {
+          "entry_address": "100105d64",
+          "symbol": "__ZN16AppleBCMWLANCore15linkChangeEventEib"
+        },
+        "LQM.getCurrentTxRate": {
+          "entry_address": "10000cee8",
+          "symbol": "__ZN15AppleBCMWLANLQM16getCurrentTxRateERj"
+        },
+        "NetAdapter.configureLongRetryLimit": {
+          "entry_address": "1000135fc",
+          "symbol": "__ZN22AppleBCMWLANNetAdapter23configureLongRetryLimitEj"
+        },
+        "NetAdapter.configureShortRetryLimit": {
+          "entry_address": "1000134d0",
+          "symbol": "__ZN22AppleBCMWLANNetAdapter24configureShortRetryLimitEj"
+        },
+        "NetAdapter.setDefaultMode": {
+          "entry_address": "100014384",
+          "symbol": "__ZN22AppleBCMWLANNetAdapter14setDefaultModeEv"
+        },
+        "NetAdapter.setDefaultWMEParamsSync": {
+          "entry_address": "10001485c",
+          "symbol": "__ZN22AppleBCMWLANNetAdapter23setDefaultWMEParamsSyncEv"
+        },
+        "NetAdapter.setLimitedAggregation": {
+          "entry_address": "1000177a4",
+          "symbol": "__ZN22AppleBCMWLANNetAdapter21setLimitedAggregationEj"
+        },
+        "NetAdapter.setRealTimeMode": {
+          "entry_address": "1000145dc",
+          "symbol": "__ZN22AppleBCMWLANNetAdapter15setRealTimeModeEv"
+        }
+      },
+      "arm64e.x1": {
+        "Core.cfgAmpduWindowSize": {
+          "entry_address": "1000f98d0",
+          "symbol": "__ZN16AppleBCMWLANCore18cfgAmpduWindowSizeEv"
+        },
+        "Core.getMCS_HE": {
+          "entry_address": "100232bcc",
+          "symbol": "__ZN16AppleBCMWLANCore9getMCS_HEEP22apple80211_mcs_he_data"
+        },
+        "Core.getRATE": {
+          "entry_address": "10012e100",
+          "symbol": "__ZN16AppleBCMWLANCore7getRATEEP20apple80211_rate_data"
+        },
+        "Core.linkChangeEvent": {
+          "entry_address": "1001026d0",
+          "symbol": "__ZN16AppleBCMWLANCore15linkChangeEventEib"
+        },
+        "LQM.getCurrentTxRate": {
+          "entry_address": "10000ce60",
+          "symbol": "__ZN15AppleBCMWLANLQM16getCurrentTxRateERj"
+        },
+        "NetAdapter.configureLongRetryLimit": {
+          "entry_address": "1000134b8",
+          "symbol": "__ZN22AppleBCMWLANNetAdapter23configureLongRetryLimitEj"
+        },
+        "NetAdapter.configureShortRetryLimit": {
+          "entry_address": "10001338c",
+          "symbol": "__ZN22AppleBCMWLANNetAdapter24configureShortRetryLimitEj"
+        },
+        "NetAdapter.setDefaultMode": {
+          "entry_address": "1000141f4",
+          "symbol": "__ZN22AppleBCMWLANNetAdapter14setDefaultModeEv"
+        },
+        "NetAdapter.setDefaultWMEParamsSync": {
+          "entry_address": "1000146cc",
+          "symbol": "__ZN22AppleBCMWLANNetAdapter23setDefaultWMEParamsSyncEv"
+        },
+        "NetAdapter.setLimitedAggregation": {
+          "entry_address": "1000175a4",
+          "symbol": "__ZN22AppleBCMWLANNetAdapter21setLimitedAggregationEj"
+        },
+        "NetAdapter.setRealTimeMode": {
+          "entry_address": "10001444c",
+          "symbol": "__ZN22AppleBCMWLANNetAdapter15setRealTimeModeEv"
+        }
+      }
+    },
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "window_configuration_constants": {
+      "rx_halfwords": [
+        16,
+        64
+      ],
+      "tx_encoded_halfwords": [
+        "0x0210",
+        "0x0240"
+      ]
+    }
+  }
+}
