@@ -11,6 +11,7 @@ extern CFDictionaryRef IOReportCopyChannelsForDriver(io_service_t, CFAllocatorRe
 extern CFStringRef IOReportChannelGetGroup(CFDictionaryRef);
 extern CFStringRef IOReportChannelGetSubGroup(CFDictionaryRef);
 extern CFStringRef IOReportChannelGetChannelName(CFDictionaryRef);
+extern uint64_t IOReportChannelGetChannelID(CFDictionaryRef);
 extern uint8_t IOReportChannelGetFormat(CFDictionaryRef);
 extern uint64_t IOReportChannelGetDriverID(CFDictionaryRef);
 extern uint64_t IOReportChannelGetUnit(CFDictionaryRef);
@@ -28,6 +29,12 @@ static NSString *const ExternalCCA = @"CCA (%) excluding own traffic";
 enum ReportFormat {
     FormatSimple = 1,
     FormatState = 2,
+};
+
+enum SampleMode {
+    SampleAirtime,
+    SampleWME,
+    SampleChannelSwitch,
 };
 
 static NSDictionary *readWLANReportCatalogue(uint64_t *driverID)
@@ -55,7 +62,7 @@ static NSDictionary *readWLANReportCatalogue(uint64_t *driverID)
     return [catalogue[ChannelList] isKindOfClass:[NSArray class]] ? catalogue : nil;
 }
 
-static BOOL isSelectedChannel(CFDictionaryRef row, uint64_t driverID, BOOL wmeOnly)
+static BOOL isSelectedChannel(CFDictionaryRef row, uint64_t driverID, enum SampleMode mode)
 {
     if (IOReportChannelGetDriverID(row) != driverID) {
         return NO;
@@ -63,11 +70,19 @@ static BOOL isSelectedChannel(CFDictionaryRef row, uint64_t driverID, BOOL wmeOn
     NSString *group = (__bridge NSString *)IOReportChannelGetGroup(row);
     NSString *subgroup = (__bridge NSString *)IOReportChannelGetSubGroup(row);
     NSString *name = (__bridge NSString *)IOReportChannelGetChannelName(row);
-    if (wmeOnly) {
+    if (mode == SampleWME) {
         NSString *label = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         return [subgroup isEqualToString:@"Counters"] &&
             (([group hasPrefix:@"Tx MPDU WME Slice "] && [label hasPrefix:@"Tx MPDU Tid"]) ||
              ([group hasPrefix:@"Rx MPDU WME Slice "] && [label hasPrefix:@"Rx MPDU Tid"]));
+    }
+    if (mode == SampleChannelSwitch) {
+        BOOL switches = [group hasPrefix:@"Channel Switch: Slice "] &&
+            ([subgroup isEqualToString:@"Channels Visited"] || [subgroup isEqualToString:@"Channel Switch Reasons"]);
+        BOOL sliceBytes = [group hasPrefix:@"Slice "] && [subgroup isEqualToString:@"Bytes Transferred"];
+        BOOL awdlSnapshot = [group isEqualToString:@"AWDL Metrics"] && [subgroup isEqualToString:@"AWDL Snapshot"];
+        BOOL awdlSchedule = [group isEqualToString:@"Interface awdl0"] && [subgroup isEqualToString:@"AWDL Schedule"];
+        return switches || sliceBytes || awdlSnapshot || awdlSchedule;
     }
     if ([group isEqualToString:@"Channel"]) {
         return [subgroup isEqualToString:@"CCA State"] || [subgroup isEqualToString:@"CCA Last Reported"];
@@ -83,22 +98,27 @@ static id reportInteger(int64_t value)
     return value == INT64_MIN ? (id)[NSNull null] : @(value);
 }
 
-static NSDictionary *decodeReport(CFDictionaryRef row, BOOL wmeOnly)
+static NSDictionary *decodeReport(CFDictionaryRef row, enum SampleMode mode)
 {
     NSString *group = (__bridge NSString *)IOReportChannelGetGroup(row);
+    NSString *subgroup = (__bridge NSString *)IOReportChannelGetSubGroup(row);
     NSString *name = (__bridge NSString *)IOReportChannelGetChannelName(row);
-    if (wmeOnly) {
+    if (mode != SampleAirtime) {
         name = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     }
     uint8_t format = IOReportChannelGetFormat(row);
     NSMutableDictionary *report = [@{
         @"group": [name isEqualToString:ExternalCCA] ? @"Interface en0" : group ?: @"",
-        @"subgroup": (__bridge NSString *)IOReportChannelGetSubGroup(row) ?: @"",
+        @"subgroup": subgroup ?: @"",
         @"name": name ?: @"",
         @"format": @(format),
         @"unit_raw_hex": [NSString stringWithFormat:@"0x%016llx", (unsigned long long)IOReportChannelGetUnit(row)],
     } mutableCopy];
 
+    if (mode == SampleChannelSwitch && [subgroup isEqualToString:@"Channels Visited"]) {
+        report[@"channel_id_hex"] = [NSString stringWithFormat:@"0x%016llx",
+            (unsigned long long)IOReportChannelGetChannelID(row)];
+    }
     if (format == FormatSimple) {
         report[@"value"] = reportInteger(IOReportSimpleGetIntegerValue(row, NULL));
     } else if (format == FormatState) {
@@ -134,9 +154,13 @@ static NSDictionary *currentLink(void)
 
 int main(int argc, char **argv)
 {
-    BOOL wmeOnly = argc == 2 && strcmp(argv[1], "--wme") == 0;
-    if (argc != 1 && !wmeOnly) {
-        fputs("Usage: read_wifi_airtime [--wme]\n", stderr);
+    enum SampleMode mode = SampleAirtime;
+    if (argc == 2 && strcmp(argv[1], "--wme") == 0) {
+        mode = SampleWME;
+    } else if (argc == 2 && strcmp(argv[1], "--channel-switch") == 0) {
+        mode = SampleChannelSwitch;
+    } else if (argc != 1) {
+        fputs("Usage: read_wifi_airtime [--wme | --channel-switch]\n", stderr);
         return 2;
     }
     @autoreleasepool {
@@ -145,13 +169,12 @@ int main(int argc, char **argv)
         NSMutableArray *requested = [NSMutableArray array];
         for (id channel in catalogue[ChannelList]) {
             if ([channel isKindOfClass:[NSDictionary class]] &&
-                isSelectedChannel((__bridge CFDictionaryRef)channel, driverID, wmeOnly)) {
+                isSelectedChannel((__bridge CFDictionaryRef)channel, driverID, mode)) {
                 [requested addObject:channel];
             }
         }
         if (requested.count == 0) {
-            fprintf(stderr, "No matching WLAN %s channels in the IOReport catalogue.\n",
-                wmeOnly ? "WME" : "airtime");
+            fputs("No matching WLAN channels in the IOReport catalogue.\n", stderr);
             return 1;
         }
 
@@ -185,8 +208,8 @@ int main(int argc, char **argv)
         NSMutableArray *reports = [NSMutableArray array];
         for (id channel in sample[ChannelList]) {
             if ([channel isKindOfClass:[NSDictionary class]] &&
-                isSelectedChannel((__bridge CFDictionaryRef)channel, driverID, wmeOnly)) {
-                [reports addObject:decodeReport((__bridge CFDictionaryRef)channel, wmeOnly)];
+                isSelectedChannel((__bridge CFDictionaryRef)channel, driverID, mode)) {
+                [reports addObject:decodeReport((__bridge CFDictionaryRef)channel, mode)];
             }
         }
         CFRelease(channelSet);

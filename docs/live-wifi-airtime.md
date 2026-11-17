@@ -39,3 +39,13 @@ The separate CoreWiFi client created with its default service returned empty val
 ## Read Wi-Fi priority counters
 
 Run `"$build_dir/read_wifi_airtime" --wme` after the same build. This mode requests 32 simple counters from the WLAN reporter. Each of the two slices has eight transmit and eight receive MPDU counters, one per traffic ID. The values are cumulative. Compare snapshots of the same interface and channel context around known traffic. Use the host queue and route alongside the radio counters when packets pass through a tunnel. [Connected measurement](wifi-traffic-scheduling.md#where-interactive-priority-showed-up-on-the-connected-mac)
+
+## Read channel-switch reports
+
+Use the same build to read the channel-switch counters, slice byte counters and AWDL schedule without requesting a scan.
+
+```sh
+"$build_dir/read_wifi_airtime" --channel-switch
+```
+
+This reader returned 66 records on build 26B131. In `Channels Visited`, `name` gives the driver's display label and `channel_id_hex` preserves the identifier with the slice and raw channel specification. Take before-and-after snapshots of the same run. Compare both slices' byte deltas with the host path report and compare switch counters only where both snapshots contain the same channel ID. A counter can persist across many reads and channel-switch history has no event timestamp. [Reporter implementation](../tools/read_wifi_airtime.m), [Trace and observed deltas](simultaneous-dual-band.md#read-the-channel-history-of-each-slice)

@@ -68,6 +68,8 @@ All three A2337 lab blocks absent from the stock list straddle that boundary. A 
 
 The band-edge comparison explains the shape of the decoded channel plan. The live airtime sample's zero for 144 came with a running default-state timer and no new state entries. [Geometry and comparison](../evidence/2026-11-17-clm-5725-edge.json), [Live channel 144 observations](live-wifi-airtime.md#state-history-and-freshness)
 
+A separate channel-switch counter had six destination records for 144 at 20 MHz and zero new records in the 60-second sample. The counter carries no timestamp, country or transmit evidence for those events. The current CoreWLAN channel list under `TR` still omits 144. [Channel-switch history and current list](simultaneous-dual-band.md#read-the-channel-history-of-each-slice)
+
 ## How the host driver gets the list
 
 Apple documents CoreWLAN's supported-channel getter as querying the interface for the active country. In both signed AppleBCMWLAN slices, `getCurrentSupportedChannels` queries the firmware country, copies the returned country text into its `chanspecs` query, and converts returned entries with `getAppleChannelSpec`. Both the `SUPPORTED_CHANNELS` and `HW_SUPPORTED_CHANNELS` driver handlers call `getSupportedChannelsMatching`, which contains a restricted-country check, another `chanspecs` query, and reply decoding. The hardware-named handler therefore depends on a firmware channel-list request. [CoreWLAN supported channels](https://developer.apple.com/documentation/corewlan/cwinterface/supportedwlanchannels%28%29?changes=_6), [Signed driver call sites](../evidence/2026-11-17-clm-channel-tables.json)
