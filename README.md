@@ -13,6 +13,7 @@ This repository records the Wi-Fi hardware, driver and firmware of the 2020 M1 M
 - [macOS host power policy](docs/host-power-policy.md) records network wake and keepalive settings and their scope.
 - [Linux and Asahi controls](docs/asahi-controls.md) records the versioned driver paths and readouts for a separately managed A2337.
 - [Firmware RAM diagnostics](docs/ram-diagnostics.md) maps the Linux capture boundary, boot serialization, and offline comparison.
+- [macOS NVRAM normalization](docs/macos-nvram-normalization.md) traces the signed driver's text conversion and the firmware's threshold-name calls.
 
 ## Reproduce the baseline
 
