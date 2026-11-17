@@ -76,10 +76,30 @@ BEAMFORMING_FIELDS = {
     "he_phy_txbf_known": "radiotap.he.data_2.txbf_known",
     "he_phy_txbf": "radiotap.he.txbf",
 }
+AGGREGATION_FIELDS = (
+    "frame.number",
+    "frame.section_number",
+    "frame.interface_id",
+    "radiotap.channel.freq",
+    "radiotap.xchannel.freq",
+    "radiotap.ampdu.reference",
+    "radiotap.ampdu.flags.report_zerolen",
+    "radiotap.ampdu.flags.is_zerolen",
+    "radiotap.ampdu.flags.lastknown",
+    "radiotap.ampdu.flags.last",
+    "wlan.fc.type",
+    "wlan.fc.type_subtype",
+    "wlan.fc.retry",
+    "wlan.qos.amsdupresent",
+)
 
 
 def field_number(field):
     return int(field, 16) if field.lower().startswith("0x") else int(field)
+
+
+def flag_is_set(field):
+    return field.lower() in ("true", "1")
 
 
 def capture_field_rows(path, fields, occurrence):
@@ -105,7 +125,7 @@ def summarize_capture(path):
         format_name = HE_FORMATS.get(format_code, f"unrecognized format {format_code}")
         formats[format_name] += 1
         allocation = "unknown"
-        if known_flag.lower() in ("true", "1") and raw_allocation:
+        if flag_is_set(known_flag) and raw_allocation:
             code = field_number(raw_allocation)
             allocation = BW_RU_CODES.get(code, f"reserved code {code}")
         data_bw_or_ru[format_name][allocation] += 1
@@ -138,6 +158,63 @@ def summarize_metadata(path, field_names):
     return {"capture_records": records, "observed_fields": observed}
 
 
+def summarize_aggregation(path):
+    records = tagged = zero_length = 0
+    active_runs = {}
+    last_marked = Counter()
+    last_unmarked = Counter()
+    data = {"decoded_records": 0, "retry_bit_set": 0, "amsdu_present": 0}
+    block_ack = {"request_records": 0, "ack_records": 0}
+    for row in capture_field_rows(path, AGGREGATION_FIELDS, "f"):
+        (_, section, interface, frequency, extended_frequency, reference, reports_zero_length,
+         raw_zero_length, last_known,
+         last, frame_type, subtype, retry, amsdu) = row
+        records += 1
+        is_zero_length = flag_is_set(reports_zero_length) and flag_is_set(raw_zero_length)
+        if not is_zero_length and frame_type and field_number(frame_type) == 2:
+            data["decoded_records"] += 1
+            data["retry_bit_set"] += flag_is_set(retry)
+            data["amsdu_present"] += flag_is_set(amsdu)
+        if not is_zero_length and subtype:
+            code = field_number(subtype)
+            if code == 0x18:
+                block_ack["request_records"] += 1
+            if code == 0x19:
+                block_ack["ack_records"] += 1
+
+        channel = frequency or extended_frequency
+        stream = (section, interface, field_number(channel) if channel else None)
+        previous_reference, mpdus = active_runs.get(stream, ("", 0))
+        if previous_reference and reference != previous_reference:
+            last_unmarked[mpdus] += 1
+            del active_runs[stream]
+            mpdus = 0
+        if not reference:
+            continue
+
+        tagged += 1
+        zero_length += is_zero_length
+        mpdus += bool(subtype) and not is_zero_length
+        if flag_is_set(last_known) and flag_is_set(last):
+            last_marked[mpdus] += 1
+            active_runs.pop(stream, None)
+        else:
+            active_runs[stream] = (reference, mpdus)
+
+    last_unmarked.update(mpdus for _, mpdus in active_runs.values())
+    return {
+        "capture_records": records,
+        "ampdu": {
+            "tagged_records": tagged,
+            "zero_length_records": zero_length,
+            "observed_mpdus_per_run_with_last_marker": last_marked,
+            "observed_mpdus_per_run_without_last_marker": last_unmarked,
+        },
+        "data": data,
+        "block_ack": block_ack,
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("capture", type=Path, help="Local capture file, such as PCAP or PCAPNG")
@@ -146,15 +223,19 @@ def main():
                        const=SPATIAL_REUSE_FIELDS, help="Summarize BSS color and spatial reuse fields")
     modes.add_argument("--beamforming", dest="metadata_fields", action="store_const",
                        const=BEAMFORMING_FIELDS, help="Summarize beamforming roles, sounding, and feedback")
+    modes.add_argument("--aggregation", action="store_true",
+                       help="Summarize aggregate references, retries, and Block Ack")
     args = parser.parse_args()
     try:
         path = args.capture.resolve(strict=True)
         if not path.is_file():
             raise ValueError("expected a regular capture file")
-        if args.metadata_fields is None:
-            summary = summarize_capture(path)
-        else:
+        if args.aggregation:
+            summary = summarize_aggregation(path)
+        elif args.metadata_fields is not None:
             summary = summarize_metadata(path, args.metadata_fields)
+        else:
+            summary = summarize_capture(path)
     except (OSError, ValueError, subprocess.CalledProcessError) as error:
         parser.exit(1, f"{parser.prog}: {error}\n")
     print(json.dumps(summary, indent=2, sort_keys=True))

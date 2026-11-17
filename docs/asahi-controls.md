@@ -26,6 +26,8 @@ The pinned Asahi PCIe driver doubles the host-allocated receive ring depths and 
 
 Both trees register a survey callback behind the OBSS measurement capability. The callback rejects a connecting or connected primary interface and retunes the test radio for an 80 ms measurement. Busy and receive durations use different sums, and a failed PHY-noise query produces a fallback value. [Survey field definitions and effects](cca-provenance.md#linux-survey-behavior), [Upstream survey][up-survey], [Asahi survey][asahi-survey], [Asahi registration gate][survey-gate]
 
+Both trees support the standard short and long retry-limit attributes on an up interface. Their shared handler can stop after the first successful update in a combined request. [Compiled source test and readback trace](wifi-retries-and-aggregation.md#linux-and-asahi-retry-controls)
+
 The pinned Asahi driver stores antenna counts in the Linux availability bitmap fields. A two-chain firmware mask of `0x3` becomes `0x2` in those fields. The two driver operation tables have no antenna selection callback. [Antenna fields and test scope](radio-chain-policy.md#interpreting-linux-antenna-fields)
 
 ## Wi-Fi 6 capability evidence

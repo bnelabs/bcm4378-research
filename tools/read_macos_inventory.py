@@ -330,6 +330,32 @@ def roaming_reporting(entries):
     }
 
 
+def aggregation_reporting(entries):
+    report = reporting_legend(entries)
+    if report is None:
+        return None
+    public, legend = report
+    prefixes = {
+        "Rx MPDU in SU AMPDU Usage": "Rx MPDU in SU AMPDU Usage ",
+        "Tx MPDU in AMPDU Usage": "Tx MPDU in AMPDU ",
+        "Rx MPDU in OFDMA AMPDU Usage": "Rx MPDU in OFDMA AMPDU Usage ",
+    }
+    chip_labels = []
+    buckets = {}
+    for group, subgroup, labels in report_legend_rows(legend):
+        if group == "Chip" and subgroup == "AMPDU Counters":
+            chip_labels = labels
+        if group == "AMPDU" and isinstance(subgroup, str) and subgroup in prefixes:
+            prefix = prefixes[subgroup]
+            indexes = [label.removeprefix(prefix) for label in labels if label.startswith(prefix)]
+            buckets[subgroup] = sorted(int(index) for index in indexes if re.fullmatch(r"[0-9]+", index))
+    return {
+        "legend_marked_public": public,
+        "chip_ampdu_counter_labels": chip_labels,
+        "ampdu_bucket_indexes_by_subgroup": buckets,
+    }
+
+
 def bluetooth_snapshot():
     report = json.loads(run("/usr/sbin/system_profiler", "SPBluetoothDataType", "-detailLevel", "basic", "-json"))
     snapshot = {}
@@ -409,6 +435,7 @@ def collect():
             "radio_chain_reporting": radio_chain_reporting(entries),
             "wme_tid_reporting": wme_tid_reporting(entries),
             "he_ru_counter_legend": he_ru_counter_legend(entries),
+            "aggregation_counter_legend": aggregation_reporting(entries),
             "tvpm_reporting": tvpm_reporting(entries),
             "transport_config_properties": {
                 key: bus[key] for key in TRANSPORT_CONFIG_KEYS if type(bus.get(key)) is int
