@@ -10,6 +10,7 @@ import sys
 
 from inspect_firmware import (
     BTC_PARAMETER_KEY,
+    DFS_PROXY_KEY,
     RADIO_POWER_CONFIG_KEYS,
     TRANSPORT_CONFIG_KEYS,
     decode_btc_parameters,
@@ -162,14 +163,15 @@ def wifi_capability_inputs(core, bus):
     }
 
 
-def radio_chain_reporting(entries):
+def reporting_legend(entries):
     reporter = next((entry for entry in entries if entry.get("IOUserClass") == "IO80211ReporterProxy"), {})
     legend = reporter.get("IOReportLegend")
     if not isinstance(legend, list):
         return None
+    return reporter.get("IOReportLegendPublic") is True, legend
 
-    omi = {}
-    nss_state = []
+
+def report_legend_rows(legend):
     for row in legend:
         if not isinstance(row, dict):
             continue
@@ -182,14 +184,52 @@ def radio_chain_reporting(entries):
             item[2] for item in channels
             if isinstance(item, list) and len(item) > 2 and isinstance(item[2], str)
         ]
+        yield group, subgroup, labels
+
+
+def radio_chain_reporting(entries):
+    report = reporting_legend(entries)
+    if report is None:
+        return None
+    public, legend = report
+    omi = {}
+    nss_state = []
+    for group, subgroup, labels in report_legend_rows(legend):
         if subgroup == "OMI Counters" and group in ("Chip", "Slice 0", "Slice 1"):
             omi[group] = labels
         if subgroup == "NSS" and re.fullmatch(r"Interface en[0-9]+", group) and "NSS State" in labels:
             nss_state.append(group.removeprefix("Interface "))
     return {
-        "legend_marked_public": reporter.get("IOReportLegendPublic") is True,
+        "legend_marked_public": public,
         "omi_counter_labels": omi,
         "nss_state_interfaces": sorted(set(nss_state)),
+    }
+
+
+def dfs_proxy_reporting(entries):
+    report = reporting_legend(entries)
+    if report is None:
+        return None
+    public, legend = report
+    peer_labels = {}
+    switch_reasons = {}
+    infrastructure_interfaces = set()
+    for group, subgroup, labels in report_legend_rows(legend):
+        if subgroup == "AWDL Statistics" and re.fullmatch(r"Interface awdl[0-9]+", group):
+            peer_labels[group.removeprefix("Interface ")] = [
+                label for label in labels
+                if label == "Cached Peers On DFS" or label.startswith("DFS Proxy Mode ")
+            ]
+        if subgroup == "Channel Switch Reasons" and re.fullmatch(r"Channel Switch: Slice [0-9]+", group):
+            switch_reasons[group.removeprefix("Channel Switch: ")] = labels
+        if subgroup == "Association Join Counters" and re.fullmatch(r"Interface en[0-9]+", group):
+            if "Channel Switch Event" in labels:
+                infrastructure_interfaces.add(group.removeprefix("Interface "))
+    return {
+        "legend_marked_public": public,
+        "awdl_dfs_proxy_labels": peer_labels,
+        "channel_switch_reason_labels": switch_reasons,
+        "channel_switch_event_interfaces": sorted(infrastructure_interfaces),
     }
 
 
@@ -246,6 +286,10 @@ def collect():
             "interface_roles": interface_roles(entries),
             "capability_inputs": wifi_capability_inputs(core, bus),
             "coexistence_parameters": coexistence,
+            "dfs_proxy": {
+                "board_property": summarize_config_keys(bus, (DFS_PROXY_KEY,)).get(DFS_PROXY_KEY),
+                "reporting": dfs_proxy_reporting(entries),
+            },
             "radio_power_config_properties": summarize_config_keys(bus, RADIO_POWER_CONFIG_KEYS),
             "radio_chain_reporting": radio_chain_reporting(entries),
             "transport_config_properties": {
