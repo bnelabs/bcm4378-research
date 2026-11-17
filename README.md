@@ -9,6 +9,7 @@ This repository records the Wi-Fi hardware, driver and firmware of the 2020 M1 M
 - [Bluetooth companion firmware](docs/bluetooth-firmware.md) maps the controller version to installed artifacts and records the native macOS application controls.
 - [Wi-Fi and Bluetooth coexistence](docs/bluetooth-coexistence-policy.md) traces board defaults, association protection and antenna-sharing telemetry.
 - [Spectrum coverage and sensing](docs/spectrum-sensing.md) compares the stock channel list, A2337 lab measurements and applicable research.
+- [DFS proxy and channel switches](docs/dfs-proxy-policy.md) traces the firmware gate, peer policy and laboratory channel-move measurements.
 - [Clear-channel assessment reporting](docs/cca-provenance.md) traces the live legend, native cache, and Linux survey measurement.
 - [A2337 RF tests](docs/a2337-rf-tests.md) records simultaneous Wi-Fi and Bluetooth tests, HE waveforms and Bluetooth transmit beamforming measurements.
 - [Simultaneous dual-band policy](docs/simultaneous-dual-band.md) maps the macOS firmware and platform gates and the Linux channel and station limits.

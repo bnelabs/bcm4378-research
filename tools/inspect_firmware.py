@@ -81,12 +81,14 @@ RADIO_POWER_CONFIG_KEYS = (
     "wlan.psbw.enabled",
 )
 BTC_PARAMETER_KEY = "bcom.btc.params"
+DFS_PROXY_KEY = "wlan.dfsproxy.enabled"
 CONFIG_KEYS = (
     BTC_PARAMETER_KEY,
     "bcom.roam.default",
     "bcom.roam.profiles",
     "bcom.wow.magic-packet",
     "wlan.awdl.params",
+    DFS_PROXY_KEY,
     "wlan.sdb.profile",
     "wlan.tethering.enabled",
     "wlan.txsdb.mode",

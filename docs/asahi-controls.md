@@ -8,6 +8,8 @@ Both trees match Broadcom PCI Wi-Fi device `14e4:4425` and map BCM4378 chip revi
 
 Firmware responses and driver policy shape the advertised bands, channels and interface combinations. For example, P2P modes depend on the P2P feature. Multiple-channel combinations depend on simultaneous dual-band (RSDB) or P2P multichannel (MCHAN) support. Both trees advertise DFS offload when a 5 GHz band is present and the firmware reports the `802.11h` feature. The actual feature flags on this board remain unverified. [Upstream feature detection][up-feat], [Asahi feature detection][asahi-feat], [Interface combinations][ifmodes], [DFS offload][dfs], [Channel flags][channel-flags]
 
+The radar and passive channel designations come from the firmware's per-channel reply. [DFS flags and macOS proxy trace](dfs-proxy-policy.md#linux-and-asahi-policy)
+
 The interface-combination code calculates separate limits for channels and infrastructure stations. [Dual-band policy report](simultaneous-dual-band.md#linux-advertisement-rules)
 
 The pinned Asahi PCIe driver doubles the host-allocated receive ring depths and exposes the same `msgbuf_stats` readout on debug builds. [Queue and ring sizing](pcie-queue-sizing.md#linux-and-asahi)

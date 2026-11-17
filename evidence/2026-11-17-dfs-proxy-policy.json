@@ -1,0 +1,256 @@
+{
+  "sampled_at_utc": "2026-11-17T10:37:48+00:00",
+  "host": {
+    "model": "MacBookAir10,1",
+    "macos_version": "27.2.1",
+    "macos_build": "26B131",
+    "default_ipv4_interface": "en0",
+    "wifi_firmware": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a"
+  },
+  "stock_station_channel": {
+    "interface": "en0",
+    "phy_mode": "802.11ax",
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80
+  },
+  "inputs_in_a2337_fcc_dfs_groups": {
+    "scope": "Advertised 5 GHz primary channel identifiers in channels 52\u201364 or 100\u2013144",
+    "identifiers_by_width_mhz": {
+      "20": [
+        52,
+        56,
+        60,
+        64,
+        100,
+        104,
+        108,
+        112,
+        116,
+        120,
+        124,
+        128,
+        132,
+        136,
+        140
+      ],
+      "40": [
+        52,
+        56,
+        60,
+        64,
+        100,
+        104,
+        108,
+        112,
+        116,
+        120,
+        124,
+        128,
+        132,
+        136
+      ],
+      "80": [
+        52,
+        56,
+        60,
+        64,
+        100,
+        104,
+        108,
+        112,
+        116,
+        120,
+        124,
+        128
+      ]
+    }
+  },
+  "signed_driver": {
+    "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "bytes": 10564944,
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f"
+  },
+  "strict_signature_verified": true,
+  "traced_driver_slices": [
+    "arm64e",
+    "arm64e.x1"
+  ],
+  "published_board_input": {
+    "bus_class": "AppleBCMWLANBusInterfacePCIe",
+    "key": "wlan.dfsproxy.enabled",
+    "type": "bytes",
+    "bytes": 8,
+    "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+    "all_bytes_zero": true,
+    "source_profile": {
+      "path": "/usr/share/firmware/wifi/shikoku-PlatformConfig.plist",
+      "resolved_path": "/usr/share/firmware/wifi/shikoku-PlatformConfig.plist",
+      "bytes": 2647,
+      "sha256": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547"
+    },
+    "profile_roots": {
+      "/usr/share/firmware/wifi": {
+        "profile_paths": 56,
+        "byte_equal_to_published_property": 56
+      },
+      "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/PlatformConfig/macOS": {
+        "profile_paths": 56,
+        "byte_equal_to_published_property": 56
+      }
+    }
+  },
+  "legacy_capability_path": {
+    "tested_words_present": [
+      "dfsp",
+      "awdl",
+      "rsdb",
+      "802.11h"
+    ],
+    "tested_words_absent": [],
+    "word": "dfsp",
+    "driver_feature_bit": 54,
+    "gate": "Word in legacy reply and ConfigManager DFS provisioning permission",
+    "board_check": "Acquire readable backing bytes from OSData"
+  },
+  "firmware_literal_sample": {
+    "C-4378__s-B1/shikoku.trx": {
+      "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06",
+      "boundary_delimited_ascii_counts": {
+        "dfsp": 2,
+        "awdl_dfsp_cfg": 0,
+        "awdl_dfsp_ucsa": 0,
+        "per_chan_info": 0,
+        "802.11h": 1
+      }
+    },
+    "C-4378__s-B1/capri.trx": {
+      "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6",
+      "boundary_delimited_ascii_counts": {
+        "dfsp": 2,
+        "awdl_dfsp_cfg": 0,
+        "awdl_dfsp_ucsa": 0,
+        "per_chan_info": 0,
+        "802.11h": 1
+      }
+    },
+    "C-4378__s-B3/kyushu.trx": {
+      "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a",
+      "boundary_delimited_ascii_counts": {
+        "dfsp": 2,
+        "awdl_dfsp_cfg": 0,
+        "awdl_dfsp_ucsa": 0,
+        "per_chan_info": 0,
+        "802.11h": 1
+      }
+    }
+  },
+  "driverkit_paths": {
+    "channel_classification": {
+      "cache_population": "AppleBCMWLANCore::handleChanInfoTimer",
+      "firmware_variable": "per_chan_info",
+      "radar_bit": 3,
+      "consumer": "AppleBCMWLANCore::isDFSChannel"
+    },
+    "proximity_interface_variables": {
+      "getAWDL_DFSP_CONFIG": "awdl_dfsp_cfg",
+      "setAWDL_DFSP_CONFIG": "awdl_dfsp_cfg",
+      "setAWDL_DFSP_UCSA_CONFIG": "awdl_dfsp_ucsa"
+    },
+    "proximity_event_diagnostic_labels": [
+      "DFS Proxy Suspect Event",
+      "DFS Proxy Resume Event"
+    ],
+    "channel_switch_event_parser": "AppleBCMWLANCore::parseEventLogRecordChannelSwitch",
+    "channel_switch_record_lengths_bytes": [
+      20,
+      24,
+      28
+    ],
+    "shared_cache_uuid": "f0ba88aa-2977-307d-b8c6-ddcec8e76f9e",
+    "awdl_proxy_policy": "IO80211AWDLPeerManager::dfsProxyModeAllowedWithReason",
+    "availability_callers": [
+      "IO80211AWDLPeerManager::isDFSChannelUsageAllowed",
+      "IO80211NANDataPathManager::isDfsChannelUsageAllowed"
+    ],
+    "proxy_schedule_enabler": "IO80211AWDLPeerManager::setScheduleState calls enableDFSProxyMode",
+    "state_update_caller": "IO80211AWDLPeerManager::reportDataPathEvents",
+    "state_update_callees": [
+      "IO80211P2PDFSProxyManager::handleDFSChannelSuspended",
+      "IO80211P2PDFSProxyManager::handleDFSChannelResumed"
+    ]
+  },
+  "published_reporting": {
+    "legend_marked_public": true,
+    "awdl_dfs_proxy_labels": {
+      "awdl0": [
+        "Cached Peers On DFS",
+        "DFS Proxy Mode AirPlay Connected",
+        "DFS Proxy Mode AirPlay Failed",
+        "DFS Proxy Mode CSA Rx from Peer",
+        "DFS Proxy Mode CSA Rx from AP",
+        "DFS Proxy Mode Suspected DFS issue",
+        "DFS Proxy Mode DFS Resumed"
+      ]
+    },
+    "channel_switch_reason_labels": {
+      "Slice 0": [
+        "Channel Switch Messages",
+        "Scan",
+        "To Associate",
+        "STA",
+        "Slotted BSS Calibration",
+        "Slotted BSS",
+        "Unknown",
+        "Slotted Common Sync Layer"
+      ],
+      "Slice 1": [
+        "Channel Switch Messages",
+        "WLC Init",
+        "Scan",
+        "Slotted BSS Calibration",
+        "Slotted Common Sync Layer",
+        "Slotted BSS",
+        "STA"
+      ]
+    },
+    "channel_switch_event_interfaces": [
+      "en0"
+    ],
+    "sample_values_collected": false
+  },
+  "a2337_lab_client_results": {
+    "report_url": "https://device.report/m/e27c03bc861ebf56abc2119aff6d1ab85f56be8043aef432de943103e4ac7d69.pdf",
+    "report_sha256": "e27c03bc861ebf56abc2119aff6d1ab85f56be8043aef432de943103e4ac7d69",
+    "waveform": "802.11ac VHT80",
+    "lab_role": "Client without radar detection under the master",
+    "infrastructure": {
+      "pdf_page": 180,
+      "move_ms": 113.26,
+      "closing_airtime_ms": 1.32
+    },
+    "client_to_client": {
+      "pdf_page": 184,
+      "move_ms": 29,
+      "closing_airtime_ms": 14.86
+    }
+  },
+  "linux_reference": {
+    "upstream": {
+      "feature_c_sha256": "6afeeeab48e2907b8f9b2f7cb6c9999fdf25c565b09847a1e6d9385d80b59b8d",
+      "cfg80211_c_sha256": "e01771665b45d2c116e4df9af998fed0c7f009d19e65a00584b248e3911770ad"
+    },
+    "asahi": {
+      "feature_c_sha256": "f16957c79212f5f5e4d3d3b4982566dff2f39f1ad2e55ae946ea98308c735d99",
+      "cfg80211_c_sha256": "e2d98f65c1d771a0b262eda27d297787f5612c8ebcf614b36dc8062847534ec0"
+    },
+    "upstream_commit": "7595a62d45ee1a2297eafa5f2ef5d0a45142d84d",
+    "asahi_commit": "201be96df5654336bdcbe1da2103f193d7a0b940",
+    "advertisement_gate": "5 GHz band present and firmware feature word 802.11h",
+    "per_channel_radar_flags": [
+      "IEEE80211_CHAN_RADAR",
+      "IEEE80211_CHAN_NO_IR"
+    ]
+  }
+}
