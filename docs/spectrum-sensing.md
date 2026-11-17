@@ -41,6 +41,8 @@ The lab measured simultaneous dual-band Wi-Fi in HT20 diversity modes. Separate 
 
 Bluetooth is authorized at 2,402–2,480 MHz. The classic Bluetooth test counted 79 hopping channels. The report also measured LE 1M and 2M, and two π/4-DQPSK lab modes called **HDR4** and **HDR8** at 2,404, 2,441 and 2,478 MHz. The reported 99% occupied bandwidths were 2.344 MHz and 4.550–4.560 MHz respectively. A separate Apple Watch report associates the same labels with 4 and 8 Mb/s. Rate and public access on this Mac remain unverified. [Classic Bluetooth test](https://device.report/m/f23d693e4f80d60e381d4984b15fc5007810b0506fba5d24963e328a6cb83c37.pdf#page=18), [A2337 HDR4](https://fccid.io/BCGA2337/Test-Report/Test-report-part1-4983141.pdf#page=8), [A2337 HDR8](https://fccid.io/BCGA2337/Test-Report/Test-report-part1-4983141.pdf#page=20), [A1978 comparison report](https://fccid.io/m/24fafd375904a7455de233e95862c736d9036949653151c13ecf93d0aa116c00.pdf)
 
+The driver publishes bins for HE resource-unit sizes and trigger responses. The observed product widths, the lab waveforms, and the Radiotap capture fields provide the inputs for testing allocations within a Wi-Fi channel. [Wi-Fi 6 resource-unit evidence](he-ofdma.md)
+
 ## Research applicability
 
 | Technique | What published work demonstrates | State on this Mac |

@@ -1,0 +1,314 @@
+{
+  "sampled_at_utc": "2026-11-17T11:38:07+00:00",
+  "host": {
+    "model": "MacBookAir10,1",
+    "macos_version": "27.2.1",
+    "macos_build": "26B131",
+    "default_ipv4_interface": "en0",
+    "wifi_firmware": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a"
+  },
+  "station_link": {
+    "interface": "en0",
+    "phy_mode": "802.11ax",
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80
+  },
+  "corewlan_reported_channel_widths_mhz": {
+    "2.4 GHz": [20],
+    "5 GHz": [20, 40, 80]
+  },
+  "published_registry": {
+    "selected_fwcap_words": [
+      "he",
+      "multi-user-beamformee"
+    ],
+    "ru_counter_legend": {
+      "legend_marked_public": true,
+      "counter_groups": [
+        {
+          "group": "Slice 0",
+          "subgroup": "Tx OFDMA RU Counters",
+          "labels": [
+            "Tx RU size 26",
+            "Tx RU size 52",
+            "Tx RU size 106",
+            "Tx RU size 242",
+            "Tx RU size 484",
+            "Tx RU size 996",
+            "Tx RU size 2x996"
+          ]
+        },
+        {
+          "group": "Slice 0",
+          "subgroup": "Rx OFDMA RU Counters",
+          "labels": [
+            "Rx RU size 26",
+            "Rx RU size 52",
+            "Rx RU size 106",
+            "Rx RU size 242",
+            "Rx RU size 484",
+            "Rx RU size 996",
+            "Rx RU size 2x996"
+          ]
+        },
+        {
+          "group": "Slice 1",
+          "subgroup": "Tx OFDMA RU Counters",
+          "labels": [
+            "Tx RU size 26",
+            "Tx RU size 52",
+            "Tx RU size 106",
+            "Tx RU size 242",
+            "Tx RU size 484",
+            "Tx RU size 996",
+            "Tx RU size 2x996"
+          ]
+        },
+        {
+          "group": "Slice 1",
+          "subgroup": "Rx OFDMA RU Counters",
+          "labels": [
+            "Rx RU size 26",
+            "Rx RU size 52",
+            "Rx RU size 106",
+            "Rx RU size 242",
+            "Rx RU size 484",
+            "Rx RU size 996",
+            "Rx RU size 2x996"
+          ]
+        },
+        {
+          "group": "Chip",
+          "subgroup": "Rx OFDMA RU Counters",
+          "labels": [
+            "Rx RU size 26",
+            "Rx RU size 52",
+            "Rx RU size 106",
+            "Rx RU size 242",
+            "Rx RU size 484",
+            "Rx RU size 996"
+          ]
+        },
+        {
+          "group": "Chip",
+          "subgroup": "Tx OFDMA RU Counters",
+          "labels": [
+            "Tx RU size 26",
+            "Tx RU size 52",
+            "Tx RU size 106",
+            "Tx RU size 242",
+            "Tx RU size 484",
+            "Tx RU size 996"
+          ]
+        },
+        {
+          "group": "MPDUs per RU",
+          "subgroup": "Rx MPDU in AMPDU in 20 Mhz BW",
+          "labels": [
+            "Rx MPDU in AMPDU in 26 Tone RU",
+            "Rx MPDU in AMPDU in 242 Tone RU"
+          ]
+        },
+        {
+          "group": "MPDUs per RU",
+          "subgroup": "Rx MPDU in AMPDU in 40 Mhz BW",
+          "labels": [
+            "Rx MPDU in AMPDU in 26 Tone RU",
+            "Rx MPDU in AMPDU in 242 Tone RU"
+          ]
+        },
+        {
+          "group": "MPDUs per RU",
+          "subgroup": "Rx MPDU in AMPDU in 80 Mhz BW",
+          "labels": [
+            "Rx MPDU in AMPDU in 26 Tone RU",
+            "Rx MPDU in AMPDU in 242 Tone RU"
+          ]
+        }
+      ]
+    },
+    "selected_trigger_and_he_frame_labels": {
+      "Slice Frames: slice  0": {
+        "Tx Control Frame Counters": [
+          "Tx Trigger frames"
+        ],
+        "Rx Control Frame Counters": [
+          "Rx Trigger with My AID",
+          "Rx Trigger with Rand AID",
+          "Rx Trigger Basic",
+          "Rx Trigger MU-RTS",
+          "Rx Trigger BSRP",
+          "Rx Trigger NFRP",
+          "Rx Trigger BQRP",
+          "Rx Trigger MU BAR",
+          "Rx Trigger GCR MU BAR"
+        ],
+        "Tx Data Frame Counters": [
+          "Tx TBPPDU",
+          "Tx Null TBPPDU",
+          "Tx he mgmt TBPPDU"
+        ],
+        "Rx Data Frame Counters": [
+          "Rx SU PPDU",
+          "Rx Range Extension SU PPDU",
+          "Rx MU PPDU"
+        ]
+      },
+      "Slice Frames: slice  1": {
+        "Tx Control Frame Counters": [
+          "Tx Trigger frames"
+        ],
+        "Rx Control Frame Counters": [
+          "Rx Trigger with My AID",
+          "Rx Trigger with Rand AID",
+          "Rx Trigger Basic",
+          "Rx Trigger MU-RTS",
+          "Rx Trigger BSRP",
+          "Rx Trigger NFRP",
+          "Rx Trigger BQRP",
+          "Rx Trigger MU BAR",
+          "Rx Trigger GCR MU BAR"
+        ],
+        "Tx Data Frame Counters": [
+          "Tx TBPPDU",
+          "Tx Null TBPPDU",
+          "Tx he mgmt TBPPDU"
+        ],
+        "Rx Data Frame Counters": [
+          "Rx SU PPDU",
+          "Rx Range Extension SU PPDU",
+          "Rx MU PPDU"
+        ]
+      }
+    }
+  },
+  "driverkit": {
+    "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "signature_check": "codesign --verify --strict",
+    "architectures": [
+      "arm64e",
+      "arm64e.x1"
+    ],
+    "legacy_he_feature_flag_index": 67,
+    "ul_ofdma_command_format_switch_above_fw_interface_version": 20,
+    "active_fw_interface_version": null,
+    "entry_points": {
+      "AppleBCMWLAN11axAdapter::configureUpLinkOFDMA": {
+        "arm64e": "0x1001dc33c",
+        "arm64e.x1": "0x1001d66d0"
+      },
+      "AppleBCMWLAN11axAdapter::handleUlOfdmaConfigurationAsyncCallback": {
+        "arm64e": "0x1001dc4c0",
+        "arm64e.x1": "0x1001d6854"
+      },
+      "AppleBCMWLANCore::IssueFwCap": {
+        "arm64e": "0x1000ee30c",
+        "arm64e.x1": "0x1000eb4c0"
+      },
+      "AppleBCMWLANCore::getFirmwareInterfaceVersion": {
+        "arm64e": "0x1000f55fc",
+        "arm64e.x1": "0x1000f2684"
+      },
+      "AppleBCMWLANCore::handleUlOfdmaDisableEvent": {
+        "arm64e": "0x100113ecc",
+        "arm64e.x1": "0x1001105ac"
+      },
+      "AppleBCMWLANCore::parseV30CntContainer": {
+        "arm64e": "0x100137e04",
+        "arm64e.x1": "0x1001341ac"
+      },
+      "AppleBCMWLANCore::setWCL_ULOFDMA_STATE": {
+        "arm64e": "0x10017bd58",
+        "arm64e.x1": "0x1001777d4"
+      },
+      "AppleBCMWLANIOReportingPerSlice::initHeWlCntReporter": {
+        "arm64e": "0x10002ca40",
+        "arm64e.x1": "0x10002c594"
+      },
+      "AppleBCMWLANIOReportingPerSlice::initWlCntSliceFrameReporter": {
+        "arm64e": "0x10002b1b8",
+        "arm64e.x1": "0x10002ad0c"
+      },
+      "AppleBCMWLANIOReportingPerSlice::reportHeCntPerSlice": {
+        "arm64e": "0x100030510",
+        "arm64e.x1": "0x100030058"
+      },
+      "AppleBCMWLANIOReportingPerSlice::reportWlCntSliceFrameCounters": {
+        "arm64e": "0x10002a9f0",
+        "arm64e.x1": "0x10002a544"
+      },
+      "AppleBCMWLANInfraProtocol::setWCL_ULOFDMA_STATE": {
+        "arm64e": "0x10001b1c0",
+        "arm64e.x1": "0x10001af6c"
+      }
+    }
+  },
+  "reference_scope": {
+    "fcc_rf_reports": [
+      "75949395-11 (2.4 GHz WLAN)",
+      "75949395-12 (5 GHz WLAN)"
+    ],
+    "wlan_2_4_ghz_report_source": "Existing repository A2337 RF test review. The 2.4 GHz PDF was unavailable for direct recheck.",
+    "five_ghz_conducted_psd_comparison": {
+      "source": "https://device.report/m/9dbefd8fa57734334f25d9b4c27352a2b1333e4a7384c14f77fb813ec85822d7.pdf#page=88",
+      "center_mhz": 5210,
+      "phy_test": "HE80 MCS7 x2 SDM, cores 0 and 1, US",
+      "unit": "dBm/MHz",
+      "single_user": {
+        "table": 255,
+        "core_0": -10.55,
+        "core_1": -10.99,
+        "duty_cycle_correction_db": 0.89,
+        "reported_result": -6.86
+      },
+      "ru_26": {
+        "table": 257,
+        "core_0": 3.05,
+        "core_1": 3.11,
+        "duty_cycle_correction_db": 0.29,
+        "reported_result": 6.38
+      },
+      "difference_ru_minus_single_user_db": 13.24
+    },
+    "asahi_revision": "201be96df5654336bdcbe1da2103f193d7a0b940",
+    "radiotap_he_specification": "https://radiotap.org/fields/HE.html"
+  },
+  "offline_fixture": {
+    "description": "Eight generated Radiotap records for parser verification",
+    "tshark_version": "TShark (Wireshark) 4.6.9 (Git commit 2d548b197c75).",
+    "summary": {
+      "capture_records": 8,
+      "data_bandwidth_or_ru_by_he_format": {
+        "HE_EXT_SU": {
+          "20 MHz": 1
+        },
+        "HE_MU": {
+          "26-tone RU": 1,
+          "2x996-tone RU": 1
+        },
+        "HE_SU": {
+          "80 MHz": 1,
+          "reserved code 15": 1
+        },
+        "HE_TRIG": {
+          "996-tone RU": 1,
+          "unknown": 1
+        }
+      },
+      "records_by_he_format": {
+        "HE_EXT_SU": 1,
+        "HE_MU": 2,
+        "HE_SU": 2,
+        "HE_TRIG": 2
+      },
+      "records_without_radiotap_he_format": 1
+    }
+  },
+  "measurement_scope": {
+    "actual_ru_allocation_on_air_measured": false,
+    "live_ioreport_values_collected": false,
+    "ul_ofdma_state_changed": false
+  }
+}
