@@ -26,10 +26,14 @@ Both the active CLM request and the TxCap request resolve to Broadcom `BLOB` fil
 | Role | First record length | Verified file metadata |
 | --- | ---: | --- |
 | CLM | 35,909 bytes | The `CLM DATA` header identifies API `Oly.Shikoku`, compiler `1.72.1`, import label `ClmImport: 1.74.1` and release label `v5 Final 251211` in the field named manufacturer. [OpenWrt CLM header definition](https://github.com/openwrt/firmware-utils/blob/master/src/bcmclm.c) |
-| TxCap | 633 bytes | The record begins with `TXCP`. Its internal fields and their runtime use remain unverified. |
+| TxCap | 633 bytes | The `TXCP` record contains the profile label `Shikoku_Final_WIFICap_2020Aug25_v1.0` and timestamp text `2026-08-11 16:04:16`, with no encoded timezone. [Profile evidence](../evidence/2026-11-17-txcap-profiles.json) |
 | NVRAM | — | The selected 7,690-byte ASCII profile has 296 distinct assignments, including 249 flat keys and 47 `slice/1/` keys. Its `sromrev` field is `11`. [Infineon SROM field description](https://www.infineon.com/assets/row/public/documents/30/42/infineon-an215294-cyw4335-otp-programming-and-nvram-applicationnotes-en.pdf) |
 
 The checks describe the contents at the three paths named by the driver. The applied per-device calibration and transmit-power limits remain unmeasured.
+
+All 35 installed BCM4378 TxCap names resolve to seven whole-file identities. In each distinct first record, `TXCP` precedes a little-endian word with value 4, a 64-byte zero-padded label field and a 20-byte NUL-terminated timestamp field. This places the remaining body at record offset 92. The meaning of the word at offset 4 remains unknown. [TxCap profile inventory](../evidence/2026-11-17-txcap-profiles.json)
+
+The body hashes form four groups. AtlantisB, Capri and Santorini share one 148-byte body. Honshu and Shikoku each have a distinct 541-byte body, and Kyushu B1 and B3 share a third 541-byte body. The two Kyushu files differ in two timestamp characters and eight CRC bytes. All seven carry the same four-byte second record. The body hashes can track changes independently of packaging timestamps. The field meanings and live RF limits still require separate evidence. [Profile and checksum comparison](../evidence/2026-11-17-txcap-profiles.json)
 
 ```sh
 bcm_sidecars=/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1
@@ -89,13 +93,28 @@ The firmware tag is followed by a second tag, `<UCODE-TAG>`, in all three BCM437
 
 Within that span, two windows contain 11,190 and 10,927 aligned eight-byte records. Each record has a zero in the eighth byte. The fourth byte is zero only 20 and 21 times respectively. The second window has a four-byte alignment shift relative to the first. Published Broadcom FullMAC work describes a separate D11 core handling real-time 802.11 MAC work with an embedded microcode image. The build tag and record patterns make these two windows candidates for D11 microcode. Their exact logical bounds and runtime roles remain open. [Measured record layouts](../evidence/2026-11-17-microcode-components.json), [TU Darmstadt D11 research](https://www.seemoo.tu-darmstadt.de/theses/emulating-broadcoms-d11-core/)
 
-The common span ends inside a separate eight-byte-record table. Each record has two little-endian words. The first increases strictly and the second increments by eight. The table contains 768 rows in each B1 image and 374 in B3. A single newline separates the final record from `<FW-TAG>`. The field meanings remain open. [Table measurements](../evidence/2026-11-17-microcode-components.json)
+Both windows use up to 53 bits per little-endian eight-byte record. The first and second windows contain 5,941 and 5,742 records that exceed the legacy b43 decoder's 51-bit limit. A full-file scan across 13 distinct stock images found comparable zero-byte lanes only at window phases 0 and 4 modulo 8. The longest qualifying runs in both BCM4364 files used up to 50 bits. The runs in all eight BCM4387 and BCM4388 files reached 53 bits. The zero lane is a family-wide structural clue. The matched bytes and the microcode build tag identify the BCM4378 windows more narrowly. Their modern instruction fields and logical endpoints remain open. [Width and alignment measurements](../evidence/2026-11-17-d11-window-profile.json), [Legacy b43 decoder](https://github.com/mbuesch/b43-tools/blob/master/disassembler/main.c#L913-L936)
 
 ```sh
 python3 tools/inspect_firmware.py /usr/share/firmware/wifi/C-4378__s-B1/honshu.trx \
-  --embedded-metadata --lane-window 1295724 89520 --lane-window 1385832 87416
+  --embedded-metadata --lane-window 1295724 89520 --lane-window 1385832 87416 \
+  --bcm4378-overlays
 ```
 
 Both B1 images contain the selected literal `wnm_btm_rssi_thresh`. The B3 image contains other WNM labels and has zero exact hits for this one. This corrects the earlier count of ten shared positive markers. Runtime roaming policy remains unmeasured. [Literal counts](../evidence/2026-11-17-firmware-comparison.json)
 
 REA retained whole-file measurements for Honshu (`ev_186a126d3c11596de007eda0924b9618b278e7b5963f1e1c2a5a1f64a7b6062e`), Capri (`ev_65bf19f00ba99813c057b23b1ef5bcdb244074dbb6ddee977e238e0bcbddd7af`) and Kyushu (`ev_ea0e5065f3b137c51198a9183340e123b41f8209e92808a21337ba7b02db1dc6`). The entropy values characterize byte distributions. Code and data boundaries require independent evidence.
+
+### ARM ROM overlay map
+
+The common span ends inside the table immediately before the firmware tag. In all three images its first word is eight-byte aligned, strictly increases and lies below the Linux reference RAM base. Its second word maps to a sequence of eight-byte slots in the uploaded image. The sequence begins at file offset 57,344 in all three builds, immediately after the 56,941-byte zero run. Published work on earlier Broadcom parts describes a ROM overlay mechanism with eight-byte replacement slots stored in RAM. [Local table profile](../evidence/2026-11-17-rom-overlay-layout.json), [Linux BCM4378 RAM origin](https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c#L738-L747), [Broadcom ROM overlay research, section 3.3](https://www.maki.tu-darmstadt.de/media/sfb_maki/forschung_8/awards/Nexmon_2017.pdf#page=4)
+
+Every row's slot contains a wide Thumb branch encoding that points into the file region after the slots and before the table when decoded at the first word's address. Using the second word as the instruction address produces six matching rows in each B1 image and two in B3. Rizin independently agreed with the decoded displacements of all 1,948 matching words. A linear disassembly of the entire slot region also found branches at instruction boundaries using the first-word model in 735 rows for each B1 build and 362 for B3. Together these results support a table of ROM addresses paired with RAM overlay slots. Activation and executed addresses on the live controller remain unverified. [Branch comparisons and disassembly evidence](../evidence/2026-11-17-rom-overlay-layout.json)
+
+| Image | Table file offset | Rows | Referenced slot bytes |
+| --- | ---: | ---: | ---: |
+| B1 Honshu | 1,490,944 | 768 | 6,144 |
+| B1 Capri | 1,490,232 | 768 | 6,144 |
+| B3 Kyushu | 1,222,768 | 374 | 2,992 |
+
+The two B1 images share 759 exact table rows. B3 shares two with each B1 image despite retaining the same D11 build tag. The table and slot digests provide separate identifiers for comparing ARM changes and shared D11 candidates across firmware updates. The chip-specific detector found zero matching tables in the ten other stock images checked. [Pairwise comparisons and controls](../evidence/2026-11-17-rom-overlay-layout.json)

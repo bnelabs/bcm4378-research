@@ -1,0 +1,271 @@
+{
+  "container": {
+    "header_bytes": 60,
+    "marker": "BLOB",
+    "payload_marker": "TXCP"
+  },
+  "kyushu_b1_b3_comparison": {
+    "changed_checksum_byte_count": 8,
+    "changed_timestamp_offsets_in_first_record": [
+      87,
+      90
+    ],
+    "file_difference_count": 10
+  },
+  "post_text_groups": [
+    {
+      "bytes": 148,
+      "members": [
+        "C-4378__s-B1/atlantisb.txcb",
+        "C-4378__s-B1/capri.txcb",
+        "C-4378__s-B1/santorini.txcb"
+      ],
+      "sha256": "7c16cd3e9c2f446a3122ce3d86117f09ddc5b5949a0cd79ef6771acee9277826"
+    },
+    {
+      "bytes": 541,
+      "members": [
+        "C-4378__s-B1/shikoku.txcb"
+      ],
+      "sha256": "d282859435f3ab51dc14028f179c2d53cd3e079fb0f8c72a402e998503bbe152"
+    },
+    {
+      "bytes": 541,
+      "members": [
+        "C-4378__s-B1/honshu.txcb"
+      ],
+      "sha256": "d5f9ae2ae3eae4fc25295cb6bad0ada78f433257fa0bd47fb4b697706ff6a82b"
+    },
+    {
+      "bytes": 541,
+      "members": [
+        "C-4378__s-B1/kyushu.txcb",
+        "C-4378__s-B3/kyushu.txcb"
+      ],
+      "sha256": "f13f723bbf44fd75c267c9ff482aa715e323349a75c35896c7aa57b7c8dd770c"
+    }
+  ],
+  "profiles": [
+    {
+      "alias_count": 4,
+      "entries": [
+        {
+          "bytes": 240,
+          "crc32": "0xa5b69788",
+          "offset": 60
+        },
+        {
+          "bytes": 4,
+          "crc32": "0xfd1364f6",
+          "offset": 300
+        }
+      ],
+      "file_bytes": 304,
+      "file_sha256": "61c650d5481c69fe03ec80bad0419d372cd007d4aef1850c2d3f17db45bd48ec",
+      "header_crc32": "0x24fd40b3",
+      "relative_path": "C-4378__s-B1/atlantisb.txcb",
+      "txcap_profile": {
+        "post_text": {
+          "bytes": 148,
+          "offset_in_record": 92,
+          "sha256": "7c16cd3e9c2f446a3122ce3d86117f09ddc5b5949a0cd79ef6771acee9277826"
+        },
+        "profile_label": "AtlantisB_EVT Final_WIFICap_2020Aug10_v1.0",
+        "timestamp_text": "2026-08-11 16:30:00",
+        "word_at_offset_4_le": 4
+      }
+    },
+    {
+      "alias_count": 4,
+      "entries": [
+        {
+          "bytes": 240,
+          "crc32": "0x415a5dbb",
+          "offset": 60
+        },
+        {
+          "bytes": 4,
+          "crc32": "0xfd1364f6",
+          "offset": 300
+        }
+      ],
+      "file_bytes": 304,
+      "file_sha256": "3ba1ed3b0b6dfb2cfcb51621bd347a8168d704e745c72047024718e47cbb4ff4",
+      "header_crc32": "0x132f2408",
+      "relative_path": "C-4378__s-B1/capri.txcb",
+      "txcap_profile": {
+        "post_text": {
+          "bytes": 148,
+          "offset_in_record": 92,
+          "sha256": "7c16cd3e9c2f446a3122ce3d86117f09ddc5b5949a0cd79ef6771acee9277826"
+        },
+        "profile_label": "Capri_EVT_WIFICap_2020Dec16_v1.0",
+        "timestamp_text": "2026-08-11 16:04:16",
+        "word_at_offset_4_le": 4
+      }
+    },
+    {
+      "alias_count": 4,
+      "entries": [
+        {
+          "bytes": 633,
+          "crc32": "0xff6f5743",
+          "offset": 60
+        },
+        {
+          "bytes": 4,
+          "crc32": "0xfd1364f6",
+          "offset": 693
+        }
+      ],
+      "file_bytes": 697,
+      "file_sha256": "576f322a05f586b3fb279ff1da4ecff69aa08a8ba0da67a023506b45e8138abd",
+      "header_crc32": "0xe2a0cb11",
+      "relative_path": "C-4378__s-B1/honshu.txcb",
+      "txcap_profile": {
+        "post_text": {
+          "bytes": 541,
+          "offset_in_record": 92,
+          "sha256": "d5f9ae2ae3eae4fc25295cb6bad0ada78f433257fa0bd47fb4b697706ff6a82b"
+        },
+        "profile_label": "Honshu_Final_WIFICap_2019Aug17_v1.0",
+        "timestamp_text": "2026-08-11 16:05:13",
+        "word_at_offset_4_le": 4
+      }
+    },
+    {
+      "alias_count": 4,
+      "entries": [
+        {
+          "bytes": 633,
+          "crc32": "0x12181759",
+          "offset": 60
+        },
+        {
+          "bytes": 4,
+          "crc32": "0xfd1364f6",
+          "offset": 693
+        }
+      ],
+      "file_bytes": 697,
+      "file_sha256": "cfee6b73a2467d2574a17b0b18da5b6cb04cfe545264e66b2341ee49b18dfae5",
+      "header_crc32": "0xb812f91e",
+      "relative_path": "C-4378__s-B1/kyushu.txcb",
+      "txcap_profile": {
+        "post_text": {
+          "bytes": 541,
+          "offset_in_record": 92,
+          "sha256": "f13f723bbf44fd75c267c9ff482aa715e323349a75c35896c7aa57b7c8dd770c"
+        },
+        "profile_label": "KYUSHU_Final_WIFICap_2022Feb03_v1.0",
+        "timestamp_text": "2026-08-11 16:04:13",
+        "word_at_offset_4_le": 4
+      }
+    },
+    {
+      "alias_count": 4,
+      "entries": [
+        {
+          "bytes": 240,
+          "crc32": "0x2846d268",
+          "offset": 60
+        },
+        {
+          "bytes": 4,
+          "crc32": "0xfd1364f6",
+          "offset": 300
+        }
+      ],
+      "file_bytes": 304,
+      "file_sha256": "dbbab4532ec6174836341937ea04e08ae46c8288741c099114565a7749aaff31",
+      "header_crc32": "0x6422cdde",
+      "relative_path": "C-4378__s-B1/santorini.txcb",
+      "txcap_profile": {
+        "post_text": {
+          "bytes": 148,
+          "offset_in_record": 92,
+          "sha256": "7c16cd3e9c2f446a3122ce3d86117f09ddc5b5949a0cd79ef6771acee9277826"
+        },
+        "profile_label": "Santorini_EVT_WIFICap_2020Dec16_v1.0",
+        "timestamp_text": "2026-08-11 16:30:11",
+        "word_at_offset_4_le": 4
+      }
+    },
+    {
+      "alias_count": 4,
+      "entries": [
+        {
+          "bytes": 633,
+          "crc32": "0xee609053",
+          "offset": 60
+        },
+        {
+          "bytes": 4,
+          "crc32": "0xfd1364f6",
+          "offset": 693
+        }
+      ],
+      "file_bytes": 697,
+      "file_sha256": "43d76d167e3fb833535e7e43ff28b77d1c07fa5d7ec730eaae8bce549cd9b059",
+      "header_crc32": "0x67c946c3",
+      "relative_path": "C-4378__s-B1/shikoku.txcb",
+      "txcap_profile": {
+        "post_text": {
+          "bytes": 541,
+          "offset_in_record": 92,
+          "sha256": "d282859435f3ab51dc14028f179c2d53cd3e079fb0f8c72a402e998503bbe152"
+        },
+        "profile_label": "Shikoku_Final_WIFICap_2020Aug25_v1.0",
+        "timestamp_text": "2026-08-11 16:04:16",
+        "word_at_offset_4_le": 4
+      }
+    },
+    {
+      "alias_count": 4,
+      "entries": [
+        {
+          "bytes": 633,
+          "crc32": "0x37d326e7",
+          "offset": 60
+        },
+        {
+          "bytes": 4,
+          "crc32": "0xfd1364f6",
+          "offset": 693
+        }
+      ],
+      "file_bytes": 697,
+      "file_sha256": "39a83b0df7dd23a5adff3f8697e77889d5586e26a104c97567238a23b81e34d1",
+      "header_crc32": "0x1477febf",
+      "relative_path": "C-4378__s-B3/kyushu.txcb",
+      "txcap_profile": {
+        "post_text": {
+          "bytes": 541,
+          "offset_in_record": 92,
+          "sha256": "f13f723bbf44fd75c267c9ff482aa715e323349a75c35896c7aa57b7c8dd770c"
+        },
+        "profile_label": "KYUSHU_Final_WIFICap_2022Feb03_v1.0",
+        "timestamp_text": "2026-08-11 16:05:15",
+        "word_at_offset_4_le": 4
+      }
+    }
+  ],
+  "scope": {
+    "distinct_files": 7,
+    "names_per_root_by_stepping": {
+      "B1": 30,
+      "B3": 5
+    },
+    "recognized_profiles": 7,
+    "roots": [
+      "/usr/share/firmware/wifi",
+      "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware"
+    ],
+    "same_filesystem_object_pairs": 35
+  },
+  "second_record": {
+    "bytes": 4,
+    "sha256": "9868c82997359ce905d013fb67c7358ca8a1d55c91f701d7401ae2236a8fa401",
+    "unique_contents": 1
+  }
+}

@@ -47,3 +47,5 @@ The installed CoreWLAN shared-cache image exposes the public `transmitPower` wra
 ## Separate test target
 
 A second A2337 with an independent Ethernet or console management link is the usable setup for studying driver-owned raw access without putting this Mac's internet connection at risk. Asahi documents working Wi-Fi on the 2020 M1 MacBook Air. The upstream driver establishes a route to device memory and registers on that platform. The lab's firmware build, the impact of a diagnostic snapshot and the scope of captured state would still need verification on that target. [Asahi M1 device support](https://asahilinux.org/docs/platform/feature-support/m1/#m1-devices)
+
+The versioned Linux and Asahi sources identify standard station telemetry, channel reporting and power policy paths for the bench. The Asahi build can report HE rate details when firmware supplies them. Its generic advertised capabilities and the actual station or RF measurements carry different evidence. [Driver comparison and bench checks](asahi-controls.md)

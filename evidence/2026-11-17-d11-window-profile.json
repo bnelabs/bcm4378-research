@@ -1,0 +1,561 @@
+{
+  "bcm4378_images": [
+    {
+      "bytes": 1496769,
+      "little_endian_32bit_literal_counts": {
+        "10927": 0,
+        "11190": 0,
+        "87416": 0,
+        "89520": 0
+      },
+      "path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+      "qualifying_run_counts_by_phase": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "qualifying_runs": [
+        {
+          "end_exclusive": 1475392,
+          "file_offset": 1384528,
+          "nonzero_byte_3_count": 10910,
+          "records": 11358
+        },
+        {
+          "end_exclusive": 1385124,
+          "file_offset": 1295012,
+          "nonzero_byte_3_count": 11170,
+          "records": 11264
+        }
+      ],
+      "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6",
+      "shared_span_file_offset": 1294998,
+      "windows": [
+        {
+          "bit_width_histogram": {
+            "43": 17,
+            "44": 5,
+            "45": 1080,
+            "49": 144,
+            "50": 1450,
+            "51": 2553,
+            "52": 3300,
+            "53": 2641
+          },
+          "bytes": 89520,
+          "end_exclusive": 1384532,
+          "file_offset": 1295012,
+          "maximum_used_bits": 53,
+          "phase_mod_8": 4,
+          "records": 11190,
+          "records_exceeding_bit_width": {
+            "48": 10088,
+            "51": 5941,
+            "53": 0
+          },
+          "sha256": "c0e574dbf7de3d3dee0f5ff39ac528d4c59947bc3b5261cad28e3f91bde74552",
+          "shifted_four_bytes": {
+            "complete_records": 11189,
+            "zero_byte_7_count": 20
+          },
+          "zero_byte_3_count": 20,
+          "zero_byte_7_count": 11190
+        },
+        {
+          "bit_width_histogram": {
+            "43": 17,
+            "44": 5,
+            "45": 1035,
+            "49": 134,
+            "50": 1448,
+            "51": 2546,
+            "52": 3265,
+            "53": 2477
+          },
+          "bytes": 87416,
+          "end_exclusive": 1472536,
+          "file_offset": 1385120,
+          "maximum_used_bits": 53,
+          "phase_mod_8": 0,
+          "records": 10927,
+          "records_exceeding_bit_width": {
+            "48": 9870,
+            "51": 5742,
+            "53": 0
+          },
+          "sha256": "d83fd8c55e795584f88fe5454082a523b32dba741efbf92fba216e8353f7729b",
+          "shifted_four_bytes": {
+            "complete_records": 10926,
+            "zero_byte_7_count": 20
+          },
+          "zero_byte_3_count": 21,
+          "zero_byte_7_count": 10927
+        }
+      ]
+    },
+    {
+      "bytes": 1497470,
+      "little_endian_32bit_literal_counts": {
+        "10927": 0,
+        "11190": 0,
+        "87416": 0,
+        "89520": 0
+      },
+      "path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+      "qualifying_run_counts_by_phase": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "qualifying_runs": [
+        {
+          "end_exclusive": 1476104,
+          "file_offset": 1385240,
+          "nonzero_byte_3_count": 10910,
+          "records": 11358
+        },
+        {
+          "end_exclusive": 1385836,
+          "file_offset": 1295724,
+          "nonzero_byte_3_count": 11170,
+          "records": 11264
+        }
+      ],
+      "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06",
+      "shared_span_file_offset": 1295710,
+      "windows": [
+        {
+          "bit_width_histogram": {
+            "43": 17,
+            "44": 5,
+            "45": 1080,
+            "49": 144,
+            "50": 1450,
+            "51": 2553,
+            "52": 3300,
+            "53": 2641
+          },
+          "bytes": 89520,
+          "end_exclusive": 1385244,
+          "file_offset": 1295724,
+          "maximum_used_bits": 53,
+          "phase_mod_8": 4,
+          "records": 11190,
+          "records_exceeding_bit_width": {
+            "48": 10088,
+            "51": 5941,
+            "53": 0
+          },
+          "sha256": "c0e574dbf7de3d3dee0f5ff39ac528d4c59947bc3b5261cad28e3f91bde74552",
+          "shifted_four_bytes": {
+            "complete_records": 11189,
+            "zero_byte_7_count": 20
+          },
+          "zero_byte_3_count": 20,
+          "zero_byte_7_count": 11190
+        },
+        {
+          "bit_width_histogram": {
+            "43": 17,
+            "44": 5,
+            "45": 1035,
+            "49": 134,
+            "50": 1448,
+            "51": 2546,
+            "52": 3265,
+            "53": 2477
+          },
+          "bytes": 87416,
+          "end_exclusive": 1473248,
+          "file_offset": 1385832,
+          "maximum_used_bits": 53,
+          "phase_mod_8": 0,
+          "records": 10927,
+          "records_exceeding_bit_width": {
+            "48": 9870,
+            "51": 5742,
+            "53": 0
+          },
+          "sha256": "d83fd8c55e795584f88fe5454082a523b32dba741efbf92fba216e8353f7729b",
+          "shifted_four_bytes": {
+            "complete_records": 10926,
+            "zero_byte_7_count": 20
+          },
+          "zero_byte_3_count": 21,
+          "zero_byte_7_count": 10927
+        }
+      ]
+    },
+    {
+      "bytes": 1226142,
+      "little_endian_32bit_literal_counts": {
+        "10927": 0,
+        "11190": 0,
+        "87416": 0,
+        "89520": 0
+      },
+      "path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+      "qualifying_run_counts_by_phase": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "qualifying_runs": [
+        {
+          "end_exclusive": 1207928,
+          "file_offset": 1117064,
+          "nonzero_byte_3_count": 10910,
+          "records": 11358
+        },
+        {
+          "end_exclusive": 1117660,
+          "file_offset": 1027548,
+          "nonzero_byte_3_count": 11170,
+          "records": 11264
+        }
+      ],
+      "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a",
+      "shared_span_file_offset": 1027534,
+      "windows": [
+        {
+          "bit_width_histogram": {
+            "43": 17,
+            "44": 5,
+            "45": 1080,
+            "49": 144,
+            "50": 1450,
+            "51": 2553,
+            "52": 3300,
+            "53": 2641
+          },
+          "bytes": 89520,
+          "end_exclusive": 1117068,
+          "file_offset": 1027548,
+          "maximum_used_bits": 53,
+          "phase_mod_8": 4,
+          "records": 11190,
+          "records_exceeding_bit_width": {
+            "48": 10088,
+            "51": 5941,
+            "53": 0
+          },
+          "sha256": "c0e574dbf7de3d3dee0f5ff39ac528d4c59947bc3b5261cad28e3f91bde74552",
+          "shifted_four_bytes": {
+            "complete_records": 11189,
+            "zero_byte_7_count": 20
+          },
+          "zero_byte_3_count": 20,
+          "zero_byte_7_count": 11190
+        },
+        {
+          "bit_width_histogram": {
+            "43": 17,
+            "44": 5,
+            "45": 1035,
+            "49": 134,
+            "50": 1448,
+            "51": 2546,
+            "52": 3265,
+            "53": 2477
+          },
+          "bytes": 87416,
+          "end_exclusive": 1205072,
+          "file_offset": 1117656,
+          "maximum_used_bits": 53,
+          "phase_mod_8": 0,
+          "records": 10927,
+          "records_exceeding_bit_width": {
+            "48": 9870,
+            "51": 5742,
+            "53": 0
+          },
+          "sha256": "d83fd8c55e795584f88fe5454082a523b32dba741efbf92fba216e8353f7729b",
+          "shifted_four_bytes": {
+            "complete_records": 10926,
+            "zero_byte_7_count": 20
+          },
+          "zero_byte_3_count": 21,
+          "zero_byte_7_count": 10927
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "bytes": 1026409,
+      "longest_qualifying_run": {
+        "end_exclusive": 1015260,
+        "file_offset": 894116,
+        "maximum_used_bits": 50,
+        "nonzero_byte_3_count": 15079,
+        "records": 15143
+      },
+      "path": "/usr/share/firmware/wifi/C-4364__s-B2/ekans.trx",
+      "qualifying_run_counts_by_phase": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "sha256": "d19ddede506de115cf3794d9313910b1843f91727494a06810b64697565455d2"
+    },
+    {
+      "bytes": 820013,
+      "longest_qualifying_run": {
+        "end_exclusive": 808864,
+        "file_offset": 687720,
+        "maximum_used_bits": 50,
+        "nonzero_byte_3_count": 15079,
+        "records": 15143
+      },
+      "path": "/usr/share/firmware/wifi/C-4364__s-B3/borneo.trx",
+      "qualifying_run_counts_by_phase": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "b562fe64d210a14c92744edfc41bad9ace0d2c0d8809cb538686bfcae14c2fd5"
+    },
+    {
+      "bytes": 1782341,
+      "longest_qualifying_run": {
+        "end_exclusive": 1582992,
+        "file_offset": 1487176,
+        "maximum_used_bits": 53,
+        "nonzero_byte_3_count": 10189,
+        "records": 11977
+      },
+      "path": "/usr/share/firmware/wifi/C-4387__s-C2/maldives.trx",
+      "qualifying_run_counts_by_phase": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "sha256": "3492022415265b65c6efa31c200af53c041856a54ca7f67f1a23570c1419b46f"
+    },
+    {
+      "bytes": 1766717,
+      "longest_qualifying_run": {
+        "end_exclusive": 1567992,
+        "file_offset": 1472176,
+        "maximum_used_bits": 53,
+        "nonzero_byte_3_count": 10189,
+        "records": 11977
+      },
+      "path": "/usr/share/firmware/wifi/C-4387__s-C2/okinawa.trx",
+      "qualifying_run_counts_by_phase": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "sha256": "73736039b202164741942d61bd8ae69d4525c821d30724feecc5edb94ee0d0f3"
+    },
+    {
+      "bytes": 2478179,
+      "longest_qualifying_run": {
+        "end_exclusive": 2150468,
+        "file_offset": 2008172,
+        "maximum_used_bits": 53,
+        "nonzero_byte_3_count": 11351,
+        "records": 17787
+      },
+      "path": "/usr/share/firmware/wifi/C-4388__s-B0/miyake.trx",
+      "qualifying_run_counts_by_phase": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "sha256": "de1935053397211ea153a9be9ecbe2fc4e9ca0447e5877153729098ee76dd023"
+    },
+    {
+      "bytes": 2495971,
+      "longest_qualifying_run": {
+        "end_exclusive": 2167576,
+        "file_offset": 2025280,
+        "maximum_used_bits": 53,
+        "nonzero_byte_3_count": 11389,
+        "records": 17787
+      },
+      "path": "/usr/share/firmware/wifi/C-4388__s-B0/tokara.trx",
+      "qualifying_run_counts_by_phase": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "sha256": "d011649f88bc82f78ab970844d8280a359b30b8867e2b00a2601bf08d7e97dfc"
+    },
+    {
+      "bytes": 2269611,
+      "longest_qualifying_run": {
+        "end_exclusive": 2081876,
+        "file_offset": 1918012,
+        "maximum_used_bits": 53,
+        "nonzero_byte_3_count": 12609,
+        "records": 20483
+      },
+      "path": "/usr/share/firmware/wifi/C-4388__s-C0/miyake.trx",
+      "qualifying_run_counts_by_phase": [
+        1,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      "sha256": "085bf4892eaafcf04142c6482157b247f72e3f9b2cef2faa52d8e42859a1c436"
+    },
+    {
+      "bytes": 2270907,
+      "longest_qualifying_run": {
+        "end_exclusive": 2082536,
+        "file_offset": 1919120,
+        "maximum_used_bits": 53,
+        "nonzero_byte_3_count": 12665,
+        "records": 20427
+      },
+      "path": "/usr/share/firmware/wifi/C-4388__s-C0/tokara.trx",
+      "qualifying_run_counts_by_phase": [
+        2,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "sha256": "3b6eb1e538a4bd93730fa275753bf2140a57153d224b9dc3bef4aa8cc1761e26"
+    },
+    {
+      "bytes": 1858007,
+      "longest_qualifying_run": {
+        "end_exclusive": 1690176,
+        "file_offset": 1526760,
+        "maximum_used_bits": 53,
+        "nonzero_byte_3_count": 12665,
+        "records": 20427
+      },
+      "path": "/usr/share/firmware/wifi/C-4388__s-C2/guam.trx",
+      "qualifying_run_counts_by_phase": [
+        2,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "sha256": "6fca2cd2b9a45f7360f49c93e966cc21e92b79676fb020ab01db9743f12fe4bd"
+    },
+    {
+      "bytes": 1840579,
+      "longest_qualifying_run": {
+        "end_exclusive": 1673132,
+        "file_offset": 1509268,
+        "maximum_used_bits": 53,
+        "nonzero_byte_3_count": 12609,
+        "records": 20483
+      },
+      "path": "/usr/share/firmware/wifi/C-4388__s-C2/paradise.trx",
+      "qualifying_run_counts_by_phase": [
+        1,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      "sha256": "1a48789821da3750065067d832b00cc149b8aac9373a16c45c11e5e4c7c265fa"
+    }
+  ],
+  "limitations": [
+    "Correct alignment is material. Both phases 0 and 4 are needed to see every matching run in this corpus.",
+    "An all-zero interval can extend a run beyond a logical boundary. Detection is a structural fingerprint.",
+    "The older b43 width comparisons do not decode the contemporary instruction fields.",
+    "Literal scans do not identify lengths held in another representation or computed by code."
+  ],
+  "method": {
+    "bcm4378_window_inputs": "File offsets and lengths from 2026-11-17-microcode-components.json with stock hashes verified",
+    "control_scan": {
+      "definition": "At each phase, find maximal consecutive runs of complete records with byte 7 zero. Retain runs of at least 2048 records with byte 3 nonzero in at least three fifths of the records.",
+      "minimum_consecutive_records": 2048,
+      "minimum_nonzero_fraction": 0.6,
+      "phases_mod_8": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "record_bytes": 8,
+      "required_nonzero_byte_index": 3,
+      "required_zero_byte_index": 7,
+      "scope": "Entire file",
+      "summary": "Store run counts by phase for all images, both qualifying runs on each BCM4378 image, and the longest qualifying run on each control."
+    },
+    "file_selection": "Regular non-symlink .trx files under chip family directories in /usr/share/firmware/wifi, deduplicated by whole-file SHA-256",
+    "integer_interpretation": "Unsigned little-endian 64-bit records, with zero-based byte and bit numbering",
+    "literal_check": "Scan each complete BCM4378 file for the two candidate byte lengths and the two record counts as individual unsigned little-endian 32-bit literals",
+    "reference_widths": {
+      "b43_arch_15_bits": 51,
+      "b43_arch_5_bits": 48,
+      "b43_source": "https://github.com/mbuesch/b43-tools/blob/master/disassembler/main.c#L913-L936",
+      "published_D11_storage": "https://tuprints.ulb.tu-darmstadt.de/7243/7/dissertation_2018_matthias_thomas_schulz.pdf"
+    },
+    "window_alignment_check": "Repeat the eighth-byte zero count starting four bytes later and ending four bytes sooner to keep complete eight-byte records within each window"
+  },
+  "observed_date": "2026-11-17",
+  "scope": "Existing BCM4378 windows and 10 other distinct installed BCM4364, BCM4387 and BCM4388 images"
+}
