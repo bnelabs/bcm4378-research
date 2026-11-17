@@ -1,0 +1,75 @@
+{
+  "disassembler": "rizin 0.9.1 @ darwin-arm-64, package: 0.9.1_2 (Homebrew)",
+  "images": [
+    {
+      "destinations_within_reference_image_under_hypothetical_zero_origin": 16,
+      "first_reset_candidate_resolves_within_reference_image": true,
+      "image": "honshu.trx",
+      "opening_32_bytes_repeat": true,
+      "opening_thumb2_wide_branches": 16,
+      "reference_rams_field_bytes_hex": "fafafafafafafafa",
+      "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+    },
+    {
+      "destinations_within_reference_image_under_hypothetical_zero_origin": 16,
+      "first_reset_candidate_resolves_within_reference_image": true,
+      "image": "capri.trx",
+      "opening_32_bytes_repeat": true,
+      "opening_thumb2_wide_branches": 16,
+      "reference_rams_field_bytes_hex": "fafafafafafafafa",
+      "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6"
+    },
+    {
+      "destinations_within_reference_image_under_hypothetical_zero_origin": 16,
+      "first_reset_candidate_resolves_within_reference_image": true,
+      "image": "kyushu.trx",
+      "opening_32_bytes_repeat": true,
+      "opening_thumb2_wide_branches": 16,
+      "reference_rams_field_bytes_hex": "fafafafafafafafa",
+      "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a"
+    }
+  ],
+  "package": {
+    "authenticated_root_setting": "Authenticated Root status: enabled",
+    "code_resources_file_records": {
+      "files": 0,
+      "files2": 0
+    },
+    "driverkit_strict_signature_verification": "passed for all architectures",
+    "hashstore": {
+      "bundle": "com.apple.driver.BCMWLANFirmware4378.Hashstore",
+      "consumer_match": {
+        "consumer-id": "com.apple.driver.AppleBCMWLANCore"
+      },
+      "loose_executable_present": false,
+      "provider": "IOImageLoader"
+    },
+    "requested_files": [
+      {
+        "dext_and_shared_lookups_resolve_to_same_file": true,
+        "requested_path": "C-4378__s-B1/shikoku.trx",
+        "role": "Firmware",
+        "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+      },
+      {
+        "dext_and_shared_lookups_resolve_to_same_file": true,
+        "requested_path": "C-4378__s-B1/P-shikoku-X3_M-RASP_V-m__m-6.11.txt",
+        "role": "NVRAM",
+        "sha256": "2e15b8551b3cbf945247a6e25a8efbfb392476d799e81cbc61f659b55dc049b4"
+      },
+      {
+        "dext_and_shared_lookups_resolve_to_same_file": true,
+        "requested_path": "C-4378__s-B1/shikoku-X3.clmb",
+        "role": "Regulatory",
+        "sha256": "3202b0cd073d89b13955762acf42442483873a46ff0d426da618f04ec2184140"
+      },
+      {
+        "dext_and_shared_lookups_resolve_to_same_file": true,
+        "requested_path": "C-4378__s-B1/shikoku-X3.txcb",
+        "role": "TxCap",
+        "sha256": "43d76d167e3fb833535e7e43ff28b77d1c07fa5d7ec730eaae8bce549cd9b059"
+      }
+    ]
+  },
+  "reference_model": "Linux v6.12 BCM4378 PCIe upload and reset word"
+}
