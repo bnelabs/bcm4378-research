@@ -2,6 +2,17 @@
 
 This project examines the Wi-Fi chip in the 2020 M1 MacBook Air (A2337, `MacBookAir10,1`). The measured Mac runs macOS 27.2.1 build 26B131 and Wi-Fi firmware `18.20.511.0.7.8.207` with firmware ID `01-2606388a`. Its internet connection uses `en0`. The research uses the installed binaries, stock status queries, and separately managed radio experiments where a test can interrupt service.
 
+## Know Your Wifi
+
+**KYW** is the native Mac app for this research. See what the radio hears, compare channel plans before travel, and measure whether fast updates meet their deadlines alongside a bulk transfer. **Geek’s Corner** shows the chip, firmware, operating system inside it, upstream security advisories, and what changing each available setting would do. [Build and use KYW](app/README.md)
+
+```sh
+./app/build.sh
+open "app/dist/Know Your Wifi.app"
+```
+
+## Research
+
 The [discovery catalog](docs/capability-catalog.md) is the complete list of processes, features, controls, and evidence covered so far. The [firmware feature index](docs/firmware-feature-index.md) lists all 90 words reported by the running firmware and the additional fields decoded in the driver.
 
 The [practical radio applications](docs/practical-radio-applications.md) apply those findings to inspection, on-demand processing, synchronization, and recovery. The paired inspection test measures preview deadlines during an archive upload. A loopback test also interrupts the archive connection and verifies that previews continue and the upload resumes. The ranging study traces how the radio reports distance and what a moving inspection cart would need to load the right model before it arrives. [Run the paired transfer](docs/practical-radio-applications.md#test-the-direct-link-while-the-archive-is-moving), [Run the recovery test](docs/practical-radio-applications.md#resume-work-after-a-radio-fault), [Test the station prefetch idea](docs/practical-radio-applications.md#load-the-right-inspection-model-as-a-cart-approaches)

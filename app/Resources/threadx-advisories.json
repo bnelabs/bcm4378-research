@@ -1,0 +1,222 @@
+{
+  "checked_on": "2026-11-17",
+  "source": "https://github.com/eclipse-threadx/threadx/security/advisories",
+  "rows": [
+    {
+      "cve": "CVE-2026-118052",
+      "component": "Modules",
+      "severity": "medium",
+      "impact": "Module management can stop responding.",
+      "affected": ">= 6.0.1, <= 6.5.2.202603",
+      "fixed": "6.5.2.202603b",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-67ww-q8x2-g487"
+    },
+    {
+      "cve": "CVE-2026-115654",
+      "component": "Modules",
+      "severity": "medium",
+      "impact": "A module can stop or alter another thread.",
+      "affected": ">= 6.0.1, <= 6.5.2.202603",
+      "fixed": "6.5.2.202603b",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-5q6x-rxf3-5q5f"
+    },
+    {
+      "cve": "CVE-2026-115653",
+      "component": "Cortex-M Modules",
+      "severity": "high",
+      "impact": "A module can cross its memory isolation boundary.",
+      "affected": ">= 6.0.1, <= 6.5.2.202603",
+      "fixed": "6.5.2.202603b",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-c38r-v552-gh5g"
+    },
+    {
+      "cve": "CVE-2026-115231",
+      "component": "Modules",
+      "severity": "high",
+      "impact": "A module can run code under another module’s privileges.",
+      "affected": ">= 6.0.1, <= 6.5.2.202603",
+      "fixed": "6.5.2.202603b",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-q2rc-f35r-2hw6"
+    },
+    {
+      "cve": "CVE-2026-113421",
+      "component": "Modules",
+      "severity": "high",
+      "impact": "Code may run after its module has been unloaded.",
+      "affected": ">= 6.0.1, <= 6.5.2.202603",
+      "fixed": "6.5.2.202603b",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-8pgj-qvjv-j4fq"
+    },
+    {
+      "cve": "CVE-2026-102757",
+      "component": "Modules",
+      "severity": "high",
+      "impact": "A module can gain kernel privileges.",
+      "affected": ">= 6.0.1, <= 6.5.1.202602a",
+      "fixed": "6.5.2.202603",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-rrjj-jwcw-hvf8"
+    },
+    {
+      "cve": "CVE-2026-102711",
+      "component": "Modules",
+      "severity": "medium",
+      "impact": "A malformed module can cause invalid reads or unsafe execution.",
+      "affected": ">= 6.0.1, <= 6.5.2.202603",
+      "fixed": "6.5.2.202603b",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-f53h-37j4-mqxx"
+    },
+    {
+      "cve": "CVE-2026-102710",
+      "component": "Modules",
+      "severity": "high",
+      "impact": "A module can cause code to run with kernel privileges.",
+      "affected": ">= 6.0.1, <= 6.5.2.202603",
+      "fixed": "6.5.2.202603b",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-xr9m-8j99-rw4m"
+    },
+    {
+      "cve": "CVE-2026-102709",
+      "component": "TrustZone-M",
+      "severity": "high",
+      "impact": "Code can cross the secure memory boundary.",
+      "affected": ">= 6.0.1, <= 6.5.2.202603",
+      "fixed": "6.5.2.202603b",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-ffg5-m7vh-vwrp"
+    },
+    {
+      "cve": "CVE-2026-95111",
+      "component": "Modules",
+      "severity": "medium",
+      "impact": "Message handling can read outside a module’s memory.",
+      "affected": ">= 6.0.1, <= 6.5.1.202602a",
+      "fixed": "6.5.2.202603",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-rrg6-24r9-wqpm"
+    },
+    {
+      "cve": "CVE-2026-95109",
+      "component": "Cortex-A7 Modules",
+      "severity": "high",
+      "impact": "A module can reach memory beyond its assigned range.",
+      "affected": ">= 6.1, <= 6.5.1.202602a",
+      "fixed": "6.5.2.202603",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-fvp6-37q5-c648"
+    },
+    {
+      "cve": "CVE-2026-95108",
+      "component": "Modules",
+      "severity": "medium",
+      "impact": "Repeated thread deletion can exhaust privileged memory.",
+      "affected": ">= 6.0.1, <= 6.5.1.202602a",
+      "fixed": "6.5.2.202603",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-9hhf-6357-hpgq"
+    },
+    {
+      "cve": "CVE-2026-95107",
+      "component": "Modules",
+      "severity": "high",
+      "impact": "Allocating an object can corrupt the module manager’s memory.",
+      "affected": ">= 6.0.1, <= 6.5.1.202602a",
+      "fixed": "6.5.2.202603",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-63qc-jcr6-qw6r"
+    },
+    {
+      "cve": "CVE-2026-94202",
+      "component": "Modules",
+      "severity": "medium",
+      "impact": "A module can read memory outside its assigned range.",
+      "affected": ">= 6.0.1, <= 6.5.1.202602a",
+      "fixed": "6.5.2.202603",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-5w57-xhwq-v7wq"
+    },
+    {
+      "cve": "CVE-2026-94192",
+      "component": "Modules",
+      "severity": "high",
+      "impact": "A resource can be freed while the kernel still uses it.",
+      "affected": ">= 6.0.1, <= 6.5.1.202602a",
+      "fixed": "6.5.2.202603",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-57mf-w87f-rq7m"
+    },
+    {
+      "cve": "CVE-2026-94024",
+      "component": "Modules",
+      "severity": "medium",
+      "impact": "A module can cause an out-of-bounds read.",
+      "affected": ">= 6.0.1, <= 6.5.1.202602a",
+      "fixed": "6.5.2.202603",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-39rx-hq8c-4px8"
+    },
+    {
+      "cve": "CVE-2026-94023",
+      "component": "Modules",
+      "severity": "medium",
+      "impact": "A module can delete resources owned by other code.",
+      "affected": ">= 6.0.1, <= 6.5.1.202602a",
+      "fixed": "6.5.2.202603",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-36vf-7cx6-9f9j"
+    },
+    {
+      "cve": "CVE-2026-0648",
+      "component": "OSEK compatibility",
+      "severity": "high",
+      "impact": "A failed allocation can corrupt memory.",
+      "affected": ">= 6.1.7 && <= 6.4.3",
+      "fixed": "6.4.5",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-xj75-fc68-h4rw"
+    },
+    {
+      "cve": "CVE-2025-55080",
+      "component": "Modules",
+      "severity": "high",
+      "impact": "A system call can let a module exceed its privileges.",
+      "affected": "<= 6.4.2",
+      "fixed": "6.4.3",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-76hh-wrj5-hr2v"
+    },
+    {
+      "cve": "CVE-2025-55079",
+      "component": "Modules",
+      "severity": "medium",
+      "impact": "A module thread can exceed its assigned priority.",
+      "affected": "<= 6.4.2",
+      "fixed": "6.4.3",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-w8rw-fqgj-9r49"
+    },
+    {
+      "cve": "CVE-2025-55078",
+      "component": "Modules",
+      "severity": "medium",
+      "impact": "A module can access restricted kernel memory.",
+      "affected": "<= 6.4.2",
+      "fixed": "6.4.3",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-wcfg-5jpf-hhxq"
+    },
+    {
+      "cve": "CVE-2024-2214",
+      "component": "Xtensa port",
+      "severity": "high",
+      "impact": "Mutex bookkeeping can write beyond its storage.",
+      "affected": "< 6.4.0",
+      "fixed": "6.4.0",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-vmp6-qhp9-r66x"
+    },
+    {
+      "cve": "CVE-2024-2212",
+      "component": "FreeRTOS compatibility",
+      "severity": "high",
+      "impact": "Creating a queue can corrupt memory.",
+      "affected": "< 6.4.0",
+      "fixed": "6.4.0",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-v9jj-7qjg-h6g6"
+    },
+    {
+      "cve": "CVE-2023-48693",
+      "component": "ThreadX kernel",
+      "severity": "high",
+      "impact": "The upstream advisory reports a risk of remote code execution.",
+      "affected": "<6.3.0",
+      "fixed": "6.3.0",
+      "url": "https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-p7w6-62rq-vrf9"
+    }
+  ]
+}
