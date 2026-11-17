@@ -12,6 +12,7 @@ This repository records the Wi-Fi hardware, driver and firmware of the 2020 M1 M
 - [Bluetooth companion firmware](docs/bluetooth-firmware.md) maps the controller version to installed artifacts and records the native macOS application controls.
 - [Wi-Fi and Bluetooth coexistence](docs/bluetooth-coexistence-policy.md) traces board defaults, association protection and antenna-sharing telemetry.
 - [Spectrum coverage and sensing](docs/spectrum-sensing.md) compares the stock channel list, A2337 lab measurements and applicable research.
+- [CLM channel tables and the active country plan](docs/clm-channel-tables.md) compares the installed regulatory data with the running channel list and traces the driver's country-aware queries.
 - [DFS proxy and channel switches](docs/dfs-proxy-policy.md) traces the firmware gate, peer policy and laboratory channel-move measurements.
 - [Clear-channel assessment reporting](docs/cca-provenance.md) traces the live legend, native cache, and Linux survey measurement.
 - [A2337 RF tests](docs/a2337-rf-tests.md) records simultaneous Wi-Fi and Bluetooth tests, HE waveforms and Bluetooth transmit beamforming measurements.
@@ -70,7 +71,7 @@ python3 tools/compare_firmware.py \
   /usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx
 ```
 
-Reproduce the [microcode and ROM overlay checks](docs/firmware-layout.md#microcode-build-metadata-and-record-structure), [sidecar checks](docs/firmware-layout.md#selected-radio-sidecars), and [CLM profile audit](docs/clm-profile-audit.md) with the local stock files.
+Reproduce the [microcode and ROM overlay checks](docs/firmware-layout.md#microcode-build-metadata-and-record-structure), [sidecar checks](docs/firmware-layout.md#selected-radio-sidecars), [CLM profile audit](docs/clm-profile-audit.md), and [channel-table audit](docs/clm-channel-tables.md#reproduce-the-reads) with the local stock files.
 
 ## Next research questions
 

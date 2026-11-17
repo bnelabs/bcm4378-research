@@ -16,7 +16,7 @@ All seven datasets identify compiler `1.72.1` and import `ClmImport: 1.74.1`. Th
 | Shikoku | B1 | 35,973 | 35,909 | `v5 Final 251211` |
 | Kyushu | B3 | 36,765 | 36,701 | `v2 Final 260429` |
 
-The Kyushu B1 and B3 datasets share their complete 104-byte header and a 36,603-byte prefix. Three dataset bytes differ. The eight other file differences are four bytes of the BLOB header CRC and four of the dataset record CRC. The trailing record matches. The meaning of the three dataset-byte differences and their effect under the running driver remain unverified. [Kyushu comparison](../evidence/2026-11-17-clm-profile-audit.json)
+The Kyushu B1 and B3 datasets share their complete 104-byte header and a 36,603-byte prefix. The three differing dataset bytes are characters in the creation timestamp. The eight other file differences are four bytes of the BLOB header CRC and four of the dataset record CRC. The trailing record matches. [Kyushu comparison](../evidence/2026-11-17-clm-profile-audit.json), [Creation timestamp decode](clm-channel-tables.md#region-codes-and-profile-identity)
 
 ```sh
 python3 -B tools/audit_clm_profiles.py /usr/share/firmware/wifi \
