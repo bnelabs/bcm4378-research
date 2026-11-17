@@ -1,0 +1,18 @@
+{
+  "conversion_operands": "x0, d0",
+  "dyld_image": "/System/Library/Frameworks/CoreWLAN.framework/Versions/A/CoreWLAN",
+  "mnemonics": [
+    "pacibsp",
+    "stp",
+    "mov",
+    "bl",
+    "bl",
+    "fcvtzs",
+    "ldp",
+    "retab"
+  ],
+  "numeric_conversion": "double to signed 64-bit integer, round toward zero",
+  "public_method": "-[CWInterface transmitPower]",
+  "shared_cache_image_uuid": "98C43729-E734-36E2-BF19-A1AB37C40B9B",
+  "tool": "/usr/bin/dyld_info"
+}

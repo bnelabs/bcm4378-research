@@ -25,6 +25,9 @@ METRIC_FIELDS = {
     "corewlan_transmit_power": "corewlan_transmit_power",
 }
 TIMESTAMP = "sampled_at_unix_seconds"
+TRAFFIC_FIELD = "interface_traffic"
+COUNTER_FIELDS = ("rx_bytes", "tx_bytes", "rx_packets", "tx_packets")
+MAX_UINT64 = (1 << 64) - 1
 
 
 def read_samples(text):
@@ -81,6 +84,69 @@ def summarize_metric(readings):
     }
 
 
+def read_traffic_sample(sample):
+    traffic = sample.get(TRAFFIC_FIELD)
+    if traffic is None:
+        return "missing", None
+    if not isinstance(traffic, dict):
+        return "invalid", None
+    interface = sample.get("interface")
+    timestamp = traffic.get(TIMESTAMP)
+    counters = tuple(traffic.get(field) for field in COUNTER_FIELDS)
+    if interface is None or timestamp is None or None in counters:
+        return "missing", None
+    if type(interface) is not str or not interface:
+        return "invalid", None
+    if type(timestamp) not in (int, float) or not 0 <= timestamp <= MAX_UINT64:
+        return "invalid", None
+    if any(type(value) is not int or not 0 <= value <= MAX_UINT64 for value in counters):
+        return "invalid", None
+    return "complete", (interface, timestamp, counters)
+
+
+def average_mbps(byte_count, seconds):
+    mbps = (byte_count * 8 / 1_000_000) / seconds
+    return mbps if math.isfinite(mbps) else None
+
+
+def summarize_traffic(samples):
+    traffic = [read_traffic_sample(sample) for sample in samples]
+    intervals = dict.fromkeys(("comparable", "missing", "reset", "invalid"), 0)
+    totals = Counter(dict.fromkeys(COUNTER_FIELDS, 0))
+    durations = []
+    for (left_status, left), (right_status, right) in zip(traffic, traffic[1:]):
+        if "invalid" in (left_status, right_status):
+            intervals["invalid"] += 1
+            continue
+        if "missing" in (left_status, right_status):
+            intervals["missing"] += 1
+            continue
+        left_interface, left_time, left_counters = left
+        right_interface, right_time, right_counters = right
+        seconds = right_time - left_time
+        if left_interface != right_interface or seconds <= 0:
+            intervals["invalid"] += 1
+            continue
+        deltas = tuple(new - old for old, new in zip(left_counters, right_counters))
+        if any(delta < 0 for delta in deltas):
+            intervals["reset"] += 1
+            continue
+        intervals["comparable"] += 1
+        totals.update(dict(zip(COUNTER_FIELDS, deltas)))
+        durations.append(seconds)
+
+    elapsed = math.fsum(durations) if durations else None
+    return {
+        "intervals": intervals,
+        "observed_seconds": elapsed,
+        "observed_deltas": dict(totals) if elapsed is not None else None,
+        "average_mbps": {
+            "rx": average_mbps(totals["rx_bytes"], elapsed),
+            "tx": average_mbps(totals["tx_bytes"], elapsed),
+        } if elapsed is not None else None,
+    }
+
+
 def summarize(samples):
     timestamps = [sample[TIMESTAMP] for sample in samples if sample.get(TIMESTAMP) is not None]
     duration = round(max(timestamps) - min(timestamps), 6) if len(timestamps) >= 2 else None
@@ -94,7 +160,7 @@ def summarize(samples):
         rssi - noise if rssi is not None and noise is not None else None
         for rssi, noise in zip(readings["rssi_dbm"], readings["noise_dbm"])
     ]
-    return {
+    summary = {
         "sample_count": len(samples),
         "timestamped_samples": len(timestamps),
         "duration_seconds": duration,
@@ -104,6 +170,9 @@ def summarize(samples):
         ],
         "metrics": {name: summarize_metric(values) for name, values in readings.items()},
     }
+    if any(sample.get(TRAFFIC_FIELD) is not None for sample in samples):
+        summary[TRAFFIC_FIELD] = summarize_traffic(samples)
+    return summary
 
 
 def main():
@@ -111,7 +180,8 @@ def main():
         description=__doc__,
         epilog=(
             "Duration spans the earliest and latest timestamps. "
-            "Adjacent readings follow input order. Power values come directly from CoreWLAN."
+            "Adjacent readings follow input order. Power values come directly from CoreWLAN. "
+            "Traffic rates cover comparable adjacent interface counter samples."
         ),
     )
     parser.add_argument(

@@ -1,0 +1,443 @@
+[
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44039082674,
+      "rx_packets": 96204798,
+      "sampled_at_unix_seconds": 1794892929.388973,
+      "tx_bytes": 69237627922,
+      "tx_packets": 65276490
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892929.3027868,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44039185286,
+      "rx_packets": 96205085,
+      "sampled_at_unix_seconds": 1794892929.9828238,
+      "tx_bytes": 69237714535,
+      "tx_packets": 65276705
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892929.900577,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44040688434,
+      "rx_packets": 96206479,
+      "sampled_at_unix_seconds": 1794892930.5736918,
+      "tx_bytes": 69237777448,
+      "tx_packets": 65277033
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892930.4889998,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44046038065,
+      "rx_packets": 96211124,
+      "sampled_at_unix_seconds": 1794892931.160572,
+      "tx_bytes": 69237893891,
+      "tx_packets": 65277665
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892931.084187,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44048179527,
+      "rx_packets": 96213012,
+      "sampled_at_unix_seconds": 1794892931.7540112,
+      "tx_bytes": 69237952942,
+      "tx_packets": 65277986
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892931.668686,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44049712408,
+      "rx_packets": 96214388,
+      "sampled_at_unix_seconds": 1794892932.3412452,
+      "tx_bytes": 69238020555,
+      "tx_packets": 65278186
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892932.257283,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44051977184,
+      "rx_packets": 96216574,
+      "sampled_at_unix_seconds": 1794892932.936676,
+      "tx_bytes": 69238309742,
+      "tx_packets": 65278650
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892932.8518438,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44053058922,
+      "rx_packets": 96217571,
+      "sampled_at_unix_seconds": 1794892933.520093,
+      "tx_bytes": 69238369963,
+      "tx_packets": 65278815
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892933.438126,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44053171390,
+      "rx_packets": 96217805,
+      "sampled_at_unix_seconds": 1794892934.118556,
+      "tx_bytes": 69238492376,
+      "tx_packets": 65278960
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892934.030601,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44054388597,
+      "rx_packets": 96218844,
+      "sampled_at_unix_seconds": 1794892934.720025,
+      "tx_bytes": 69238514139,
+      "tx_packets": 65279100
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892934.623927,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44056435822,
+      "rx_packets": 96220588,
+      "sampled_at_unix_seconds": 1794892935.32753,
+      "tx_bytes": 69238547422,
+      "tx_packets": 65279316
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892935.23107,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44057245539,
+      "rx_packets": 96221352,
+      "sampled_at_unix_seconds": 1794892935.917249,
+      "tx_bytes": 69238631738,
+      "tx_packets": 65279471
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892935.828597,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44058122411,
+      "rx_packets": 96222194,
+      "sampled_at_unix_seconds": 1794892936.51686,
+      "tx_bytes": 69238692592,
+      "tx_packets": 65279638
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892936.427722,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44059073096,
+      "rx_packets": 96223005,
+      "sampled_at_unix_seconds": 1794892937.105649,
+      "tx_bytes": 69238707003,
+      "tx_packets": 65279724
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892937.019061,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44059834262,
+      "rx_packets": 96223663,
+      "sampled_at_unix_seconds": 1794892937.694535,
+      "tx_bytes": 69238720549,
+      "tx_packets": 65279803
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892937.610259,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44060735126,
+      "rx_packets": 96224444,
+      "sampled_at_unix_seconds": 1794892938.29113,
+      "tx_bytes": 69238734917,
+      "tx_packets": 65279892
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892938.198347,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44061759165,
+      "rx_packets": 96225325,
+      "sampled_at_unix_seconds": 1794892938.8875508,
+      "tx_bytes": 69238753804,
+      "tx_packets": 65280014
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892938.793744,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44062724698,
+      "rx_packets": 96226205,
+      "sampled_at_unix_seconds": 1794892939.4771261,
+      "tx_bytes": 69238811976,
+      "tx_packets": 65280169
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892939.392343,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44063832770,
+      "rx_packets": 96227174,
+      "sampled_at_unix_seconds": 1794892940.065372,
+      "tx_bytes": 69238832466,
+      "tx_packets": 65280308
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892939.985759,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44063958432,
+      "rx_packets": 96227299,
+      "sampled_at_unix_seconds": 1794892940.6589131,
+      "tx_bytes": 69238838688,
+      "tx_packets": 65280356
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892940.575849,
+    "tx_rate_mbps": 432
+  },
+  {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "corewlan_transmit_power": 1496,
+    "interface": "en0",
+    "interface_mode": "station",
+    "interface_traffic": {
+      "rx_bytes": 44065064325,
+      "rx_packets": 96228296,
+      "sampled_at_unix_seconds": 1794892941.256274,
+      "tx_bytes": 69238884808,
+      "tx_packets": 65280565
+    },
+    "noise_dbm": -88,
+    "phy_mode": "802.11ax",
+    "radio_power_on": true,
+    "rssi_dbm": -67,
+    "sampled_at_unix_seconds": 1794892941.169468,
+    "tx_rate_mbps": 432
+  }
+]
