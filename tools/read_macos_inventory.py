@@ -207,6 +207,29 @@ def radio_chain_reporting(entries):
     }
 
 
+def wme_tid_reporting(entries):
+    report = reporting_legend(entries)
+    if report is None:
+        return None
+    public, legend = report
+    groups = {
+        f"{counter} Slice {slice_id}"
+        for counter in ("Tx MPDU WME", "Rx MPDU WME", "Rx MPDU Lost")
+        for slice_id in (0, 1)
+    }
+    return {
+        "legend_marked_public": public,
+        "counter_labels_by_group": {
+            group: [
+                label.strip() for label in labels
+                if re.fullmatch(r"(?:[TR]x MPDU|Rx LOST MPDU (?:BA|NonBA)) Tid[0-7]", label.strip())
+            ]
+            for group, subgroup, labels in report_legend_rows(legend)
+            if group in groups and subgroup == "Counters"
+        },
+    }
+
+
 def dfs_proxy_reporting(entries):
     report = reporting_legend(entries)
     if report is None:
@@ -307,6 +330,7 @@ def collect():
             },
             "radio_power_config_properties": summarize_config_keys(bus, RADIO_POWER_CONFIG_KEYS),
             "radio_chain_reporting": radio_chain_reporting(entries),
+            "wme_tid_reporting": wme_tid_reporting(entries),
             "transport_config_properties": {
                 key: bus[key] for key in TRANSPORT_CONFIG_KEYS if type(bus.get(key)) is int
             },
