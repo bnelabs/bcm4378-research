@@ -2,8 +2,11 @@
 """Inspect local Broadcom radio sidecars and report structural metadata."""
 
 import argparse
+from datetime import datetime
+from hashlib import sha256
 import json
 from pathlib import Path
+import re
 from struct import Struct
 from zlib import crc32
 
@@ -19,6 +22,10 @@ HEADER_CHECKSUM_START = 12
 
 # Public fixed-field dataset header in OpenWrt firmware-utils src/bcmclm.c.
 CLM_HEADER = Struct("<8sI2s20s10sII30s22s")
+
+# Observed TXCP prefix in all seven stock BCM4378 TxCap payloads.
+TXCP_PROFILE_FIELDS = Struct("<4xI64s20s")
+TXCP_TIMESTAMP = re.compile(rb"([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2})\x00")
 
 
 def verify_crc(data, expected, description):
@@ -40,6 +47,38 @@ def inspect_clm_header(payload):
         "manufacturer": manufacturer,
     }
     return {key: value.split(b"\0", 1)[0].decode("ascii") for key, value in fields.items()}
+
+
+def inspect_txcap_profile(payload):
+    if len(payload) < TXCP_PROFILE_FIELDS.size:
+        return None
+    word, label_field, timestamp_field = TXCP_PROFILE_FIELDS.unpack_from(payload)
+    label, terminator, padding = label_field.partition(b"\0")
+    if word != 4 or not terminator or any(padding):
+        return None
+    if not label or not all(0x20 <= byte <= 0x7E for byte in label):
+        return None
+
+    timestamp_match = TXCP_TIMESTAMP.fullmatch(timestamp_field)
+    if timestamp_match is None:
+        return None
+    timestamp = timestamp_match.group(1).decode("ascii")
+    try:
+        datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S")
+    except ValueError:
+        return None
+
+    post_text = payload[TXCP_PROFILE_FIELDS.size:]
+    return {
+        "word_at_offset_4_le": word,
+        "profile_label": label.decode("ascii"),
+        "timestamp_text": timestamp,
+        "post_text": {
+            "offset_in_record": TXCP_PROFILE_FIELDS.size,
+            "bytes": len(post_text),
+            "sha256": sha256(post_text).hexdigest(),
+        },
+    }
 
 
 def inspect_blob(path, role):
@@ -84,6 +123,9 @@ def inspect_blob(path, role):
         if payload[:4] != b"TXCP":
             raise ValueError("Expected the TXCP dataset marker")
         report["payload_marker"] = "TXCP"
+        profile = inspect_txcap_profile(payload)
+        if profile is not None:
+            report["txcap_profile"] = profile
     return report
 
 

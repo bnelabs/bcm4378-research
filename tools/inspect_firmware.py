@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import plistlib
 import re
+from struct import Struct
 from xml.parsers.expat import ExpatError
 
 
@@ -22,6 +23,10 @@ UCODE_TAG = re.compile(
     rb"major=(?P<major>[0-9]+) minor=(?P<minor>[0-9]+) diff_ct=(?P<diff_count>[0-9]+) "
     rb"prebuilt=(?P<prebuilt>[01])(?=[\x00-\x20]|$)"
 )
+# Chip RAM origin in Linux brcmfmac chip.c, used here as an offline model.
+BCM4378_RAM_BASE = 0x352000
+WORD_PAIR = Struct("<II")
+THUMB_WORD = Struct("<HH")
 MARKERS = (
     "arp_ol",
     "awdl",
@@ -126,7 +131,95 @@ def profile_eight_byte_lanes(data, offset, length):
     }
 
 
-def inspect_image(path, include_embedded_metadata=False, lane_windows=()):
+def find_bcm4378_overlay_rows(data):
+    tags = list(FIRMWARE_TAG.finditer(data))
+    if len(tags) != 1 or data[tags[0].start() - 1:tags[0].start()] != b"\n":
+        raise ValueError("Expected one firmware tag preceded by a line feed")
+
+    end = tags[0].start() - 1
+    start = end
+    rows = []
+    while start >= WORD_PAIR.size:
+        row_offset = start - WORD_PAIR.size
+        first, second = WORD_PAIR.unpack_from(data, row_offset)
+        slot_offset = second - BCM4378_RAM_BASE
+        if first % WORD_PAIR.size or first >= BCM4378_RAM_BASE:
+            break
+        if slot_offset < 0 or slot_offset % WORD_PAIR.size or slot_offset + WORD_PAIR.size > row_offset:
+            break
+        if rows:
+            next_first, next_second = rows[-1]
+            if first >= next_first or second + WORD_PAIR.size != next_second:
+                break
+        rows.append((first, second))
+        start = row_offset
+
+    if len(rows) < 2 or rows[0][1] - BCM4378_RAM_BASE + WORD_PAIR.size > start:
+        raise ValueError("No matching BCM4378 overlay table before the firmware tag")
+    return start, list(reversed(rows))
+
+
+def thumb_wide_branch_offset(first, second):
+    # Thumb B T4 encoding. The offset is relative to the instruction address plus four.
+    if (first & 0xF800) != 0xF000 or (second & 0xD000) != 0x9000:
+        return None
+    sign = (first >> 10) & 1
+    i1 = 1 ^ sign ^ ((second >> 13) & 1)
+    i2 = 1 ^ sign ^ ((second >> 11) & 1)
+    offset = (sign << 24) | (i1 << 23) | (i2 << 22) | ((first & 0x3FF) << 12) | ((second & 0x7FF) << 1)
+    return offset - (sign << 25)
+
+
+def profile_bcm4378_overlays(data):
+    table_offset, rows = find_bcm4378_overlay_rows(data)
+    length = len(rows) * WORD_PAIR.size
+    table_end = table_offset + length
+    slots_start = rows[0][1] - BCM4378_RAM_BASE
+    slots_end = slots_start + length
+    later_start = BCM4378_RAM_BASE + slots_end
+    later_end = BCM4378_RAM_BASE + table_offset
+    branch_counts = Counter()
+    later_image_hits = Counter()
+
+    for first, second in rows:
+        slot = second - BCM4378_RAM_BASE
+        origins_with_hits = set()
+        for word_offset in (0, THUMB_WORD.size):
+            offset = thumb_wide_branch_offset(*THUMB_WORD.unpack_from(data, slot + word_offset))
+            if offset is None:
+                continue
+            branch_counts[word_offset] += 1
+            for origin, address in (("first_word", first), ("second_word", second)):
+                target = address + word_offset + 4 + offset
+                if later_start <= target < later_end:
+                    origins_with_hits.add(origin)
+        later_image_hits.update(origins_with_hits)
+
+    return {
+        "ram_base_model": BCM4378_RAM_BASE,
+        "table": {
+            "file_offset": table_offset,
+            "record_bytes": WORD_PAIR.size,
+            "records": len(rows),
+            "sha256": sha256(data[table_offset:table_end]).hexdigest(),
+        },
+        "referenced_slots": {
+            "file_offset": slots_start,
+            "bytes": length,
+            "sha256": sha256(data[slots_start:slots_end]).hexdigest(),
+        },
+        "wide_branch_words": {
+            "at_slot_start": branch_counts[0],
+            "at_slot_plus_four": branch_counts[THUMB_WORD.size],
+        },
+        "rows_with_branch_into_bytes_between_slots_and_table": {
+            "first_word_pc": later_image_hits["first_word"],
+            "second_word_pc": later_image_hits["second_word"],
+        },
+    }
+
+
+def inspect_image(path, include_embedded_metadata=False, lane_windows=(), include_bcm4378_overlays=False):
     data, identity = read_artifact(path)
     report = inspect_image_bytes(data, identity)
     if include_embedded_metadata:
@@ -135,6 +228,8 @@ def inspect_image(path, include_embedded_metadata=False, lane_windows=()):
         report["eight_byte_lane_profiles"] = [
             profile_eight_byte_lanes(data, offset, length) for offset, length in lane_windows
         ]
+    if include_bcm4378_overlays:
+        report["bcm4378_overlay_candidate"] = profile_bcm4378_overlays(data)
     return report
 
 
@@ -164,6 +259,9 @@ def main():
         "--embedded-metadata", action="store_true", help="Include file offsets and microcode build fields"
     )
     parser.add_argument(
+        "--bcm4378-overlays", action="store_true", help="Profile the stock BCM4378 candidate ROM overlay table"
+    )
+    parser.add_argument(
         "--lane-window",
         type=int,
         nargs=2,
@@ -176,7 +274,10 @@ def main():
     try:
         report = {
             "firmware": inspect_image(
-                args.image, include_embedded_metadata=args.embedded_metadata, lane_windows=args.lane_window
+                args.image,
+                include_embedded_metadata=args.embedded_metadata,
+                lane_windows=args.lane_window,
+                include_bcm4378_overlays=args.bcm4378_overlays,
             )
         }
         if args.platform_config:
