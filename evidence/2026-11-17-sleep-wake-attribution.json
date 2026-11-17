@@ -1,0 +1,381 @@
+{
+  "collected_utc": "2026-11-17T18:45:45.886889+00:00",
+  "fixtures": {
+    "cli_checks": {
+      "combined_status_file_and_power_log_file": true,
+      "truncated_status_rejected": true
+    },
+    "power_log_fixture": "Multiline claims, power aliases, duration, ignored wake request and boot cutoff",
+    "rejected_status_records": [
+      "missing_count",
+      "other_command",
+      "short_header",
+      "slot_count_exceeds_payload",
+      "truncated_payload"
+    ],
+    "status_codes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      255,
+      7
+    ],
+    "zero_slots_and_trailing_bytes": true
+  },
+  "host_after": {
+    "ipv4_default_interface": "en0",
+    "wifi": {
+      "band": "5 GHz",
+      "channel": 40,
+      "channel_width_mhz": 80,
+      "interface": "en0",
+      "phy_mode": "802.11ax"
+    }
+  },
+  "host_before": {
+    "ipv4_default_interface": "en0",
+    "wifi": {
+      "band": "5 GHz",
+      "channel": 40,
+      "channel_width_mhz": 80,
+      "interface": "en0",
+      "phy_mode": "802.11ax"
+    }
+  },
+  "latest_wifibt_wake_log_windows": {
+    "ends_seconds_after_wake": 35,
+    "matching_driver_records": 0,
+    "starts_seconds_before_wake": 8,
+    "windows_queried": 3,
+    "windows_timed_out": 0
+  },
+  "macos_build": "26B131",
+  "power_history": {
+    "at_or_after_boot_epoch": {
+      "events": {
+        "DarkWake": 0,
+        "Sleep": 1,
+        "Wake": 1
+      },
+      "sleep_records_by_tcpkeepalive_flag": {
+        "active": 1
+      },
+      "wifibt_darkwakes": {
+        "by_power_source": {
+          "ac": {
+            "records": 0,
+            "records_with_duration": 0,
+            "reported_duration_seconds_median": null,
+            "reported_duration_seconds_total": 0
+          },
+          "battery": {
+            "records": 0,
+            "records_with_duration": 0,
+            "reported_duration_seconds_median": null,
+            "reported_duration_seconds_total": 0
+          },
+          "unreported": {
+            "records": 0,
+            "records_with_duration": 0,
+            "reported_duration_seconds_median": null,
+            "reported_duration_seconds_total": 0
+          }
+        },
+        "records": 0,
+        "with_driver_claim_at_same_second": 0,
+        "with_nonempty_driver_details_at_same_second": 0,
+        "with_smc_claim_at_same_second": 0
+      }
+    },
+    "retained": {
+      "events": {
+        "DarkWake": 156,
+        "Sleep": 161,
+        "Wake": 9
+      },
+      "sleep_records_by_tcpkeepalive_flag": {
+        "active": 161
+      },
+      "wifibt_darkwakes": {
+        "by_power_source": {
+          "ac": {
+            "records": 22,
+            "records_with_duration": 21,
+            "reported_duration_seconds_median": 10,
+            "reported_duration_seconds_total": 6934
+          },
+          "battery": {
+            "records": 45,
+            "records_with_duration": 45,
+            "reported_duration_seconds_median": 6,
+            "reported_duration_seconds_total": 280
+          },
+          "unreported": {
+            "records": 0,
+            "records_with_duration": 0,
+            "reported_duration_seconds_median": null,
+            "reported_duration_seconds_total": 0
+          }
+        },
+        "records": 67,
+        "with_driver_claim_at_same_second": 67,
+        "with_nonempty_driver_details_at_same_second": 0,
+        "with_smc_claim_at_same_second": 67
+      }
+    }
+  },
+  "scope": "Existing power history, cached registry properties, and signed local binaries. No sleep request or wake stimulus was issued. The retained history spans earlier boots and contains only aggregate power and wake observations here.",
+  "signed_driver": {
+    "codesign_strict_all_architectures": true,
+    "dext_executable_sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "slices": [
+      {
+        "architecture": "arm64e",
+        "getter": {
+          "instructions": [
+            {
+              "address": "0x1002216ec",
+              "instruction": "sub w8, w8, #0x1"
+            },
+            {
+              "address": "0x1002216f0",
+              "instruction": "cmp w8, #0x5"
+            },
+            {
+              "address": "0x1002216f4",
+              "instruction": "b.hi 0x100221708"
+            },
+            {
+              "address": "0x100221700",
+              "instruction": "ldr w0, [x9, w8, uxtw #2]"
+            }
+          ],
+          "mapped_reason_by_status_1_through_6": [
+            27,
+            28,
+            30,
+            29,
+            31,
+            26
+          ],
+          "mapping_vm_address": "0x100348950",
+          "symbol": "__ZN28AppleBCMWLANKeepAliveOffload16getTkoWakeReasonEv"
+        },
+        "publish_wake_reason": {
+          "instructions": [
+            {
+              "address": "0x100105c2c",
+              "instruction": "bl __ZN28AppleBCMWLANKeepAliveOffload16getTkoWakeReasonEv"
+            },
+            {
+              "address": "0x100105c34",
+              "instruction": "cmp w26, #0x97"
+            },
+            {
+              "address": "0x100105c38",
+              "instruction": "csel w23, w0, w24, eq"
+            },
+            {
+              "address": "0x100105cb0",
+              "instruction": "bl 0x10029368c"
+            },
+            {
+              "address": "0x100105d2c",
+              "instruction": "add x1, x1, #0xb69"
+            }
+          ],
+          "symbol": "__ZN16AppleBCMWLANCore22updateWoWReasonToIoRegEjPcjjj"
+        },
+        "raw_status_labels": {
+          "0": "Normal",
+          "1": "No Response to Keep Alive",
+          "2": "Ack bit not set",
+          "255": "Unavailable",
+          "3": "Unexpected TCP Flag",
+          "4": "Ack Number invalid",
+          "5": "Seq Number invalid",
+          "6": "Data Wakeup",
+          "7": "Invalid Wake Reason"
+        },
+        "status_reply_parser": {
+          "instructions": [
+            {
+              "address": "0x1000b3c38",
+              "instruction": "add x1, x1, #0x7ff"
+            },
+            {
+              "address": "0x1000b3c40",
+              "instruction": "bl 0x1002927cc"
+            },
+            {
+              "address": "0x1000b3d24",
+              "instruction": "ldrh w9, [x22]"
+            },
+            {
+              "address": "0x1000b3d28",
+              "instruction": "cmp w9, #0x4"
+            },
+            {
+              "address": "0x1000b3d30",
+              "instruction": "ldrh w10, [x22, #0x2]"
+            },
+            {
+              "address": "0x1000b3dd0",
+              "instruction": "ldrb w8, [x22, #0x4]"
+            },
+            {
+              "address": "0x1000b3dfc",
+              "instruction": "add x25, x22, #0x5"
+            },
+            {
+              "address": "0x1000b3e18",
+              "instruction": "ldrb w21, [x25, x24]"
+            },
+            {
+              "address": "0x1000b3eb0",
+              "instruction": "bl __ZN28AppleBCMWLANKeepAliveOffload23getStringFromWakeReasonEi"
+            },
+            {
+              "address": "0x1000b3e84",
+              "instruction": "str w9, [x8, #0x1e4]"
+            }
+          ],
+          "symbol": "__ZN28AppleBCMWLANKeepAliveOffload37handleTCPKeepAliveStatusAsyncCallBackER9CommandIDiR16CommandRxPayloadPv"
+        }
+      },
+      {
+        "architecture": "arm64e.x1",
+        "getter": {
+          "instructions": [
+            {
+              "address": "0x10021b5e8",
+              "instruction": "sub w8, w8, #0x1"
+            },
+            {
+              "address": "0x10021b5ec",
+              "instruction": "cmp w8, #0x5"
+            },
+            {
+              "address": "0x10021b5f0",
+              "instruction": "b.hi 0x10021b604"
+            },
+            {
+              "address": "0x10021b5fc",
+              "instruction": "ldr w0, [x9, w8, uxtw #2]"
+            }
+          ],
+          "mapped_reason_by_status_1_through_6": [
+            27,
+            28,
+            30,
+            29,
+            31,
+            26
+          ],
+          "mapping_vm_address": "0x100342220",
+          "symbol": "__ZN28AppleBCMWLANKeepAliveOffload16getTkoWakeReasonEv"
+        },
+        "publish_wake_reason": {
+          "instructions": [
+            {
+              "address": "0x100102598",
+              "instruction": "bl __ZN28AppleBCMWLANKeepAliveOffload16getTkoWakeReasonEv"
+            },
+            {
+              "address": "0x1001025a0",
+              "instruction": "cmp w26, #0x97"
+            },
+            {
+              "address": "0x1001025a4",
+              "instruction": "csel w23, w0, w24, eq"
+            },
+            {
+              "address": "0x10010261c",
+              "instruction": "bl 0x10028cf64"
+            },
+            {
+              "address": "0x100102698",
+              "instruction": "add x1, x1, #0x441"
+            }
+          ],
+          "symbol": "__ZN16AppleBCMWLANCore22updateWoWReasonToIoRegEjPcjjj"
+        },
+        "raw_status_labels": {
+          "0": "Normal",
+          "1": "No Response to Keep Alive",
+          "2": "Ack bit not set",
+          "255": "Unavailable",
+          "3": "Unexpected TCP Flag",
+          "4": "Ack Number invalid",
+          "5": "Seq Number invalid",
+          "6": "Data Wakeup",
+          "7": "Invalid Wake Reason"
+        },
+        "status_reply_parser": {
+          "instructions": [
+            {
+              "address": "0x1000b18b0",
+              "instruction": "add x1, x1, #0xd7"
+            },
+            {
+              "address": "0x1000b18b8",
+              "instruction": "bl 0x10028c0a4"
+            },
+            {
+              "address": "0x1000b199c",
+              "instruction": "ldrh w9, [x22]"
+            },
+            {
+              "address": "0x1000b19a0",
+              "instruction": "cmp w9, #0x4"
+            },
+            {
+              "address": "0x1000b19a8",
+              "instruction": "ldrh w10, [x22, #0x2]"
+            },
+            {
+              "address": "0x1000b1a48",
+              "instruction": "ldrb w8, [x22, #0x4]"
+            },
+            {
+              "address": "0x1000b1a74",
+              "instruction": "add x25, x22, #0x5"
+            },
+            {
+              "address": "0x1000b1a90",
+              "instruction": "ldrb w21, [x25, x24]"
+            },
+            {
+              "address": "0x1000b1b28",
+              "instruction": "bl __ZN28AppleBCMWLANKeepAliveOffload23getStringFromWakeReasonEi"
+            },
+            {
+              "address": "0x1000b1afc",
+              "instruction": "str w9, [x8, #0x1e4]"
+            }
+          ],
+          "symbol": "__ZN28AppleBCMWLANKeepAliveOffload37handleTCPKeepAliveStatusAsyncCallBackER9CommandIDiR16CommandRxPayloadPv"
+        }
+      }
+    ],
+    "tko_event_subtype": 151
+  },
+  "wlan_registry": {
+    "legend_rows": 602,
+    "properties": {
+      "LastWakeReason": 1,
+      "TKO status data": 0,
+      "getTCPAliveOffloadWakeReason: tko": 0,
+      "initializeKeepAliveCapabilities: tko": 0
+    },
+    "published_last_wlan_wake_reason_values": [
+      0
+    ],
+    "wifi_wake_legend_rows": 0,
+    "wlan_registry_entries": 101
+  }
+}
