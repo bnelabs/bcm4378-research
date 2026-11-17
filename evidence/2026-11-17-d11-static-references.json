@@ -1,6 +1,25 @@
 {
   "images": [
     {
+      "common_handoff": {
+        "bounded_callee_path": {
+          "calculates_source_end_from_count": true,
+          "compares_source_position_to_calculated_end": true,
+          "computes_word_count_by_dividing_byte_size_by_four": true,
+          "iterations_with_observed_size_if_this_path_runs_to_completion": 22528,
+          "preloop_conditional_paths_rejoin_at_copy_setup": true,
+          "preserves_source_and_size_before_first_nested_call": true,
+          "returns_when_source_pointer_equals_computed_end": true,
+          "source_iteration_depends_on_end_comparison": true,
+          "source_word_stride_bytes": 4,
+          "stores_each_loaded_word_on_this_path": true
+        },
+        "component_pointer_argument_position": 2,
+        "dereferenced_size_argument_position": 3,
+        "direct_callee_inside_image": true,
+        "first_branch_joins_after_second_path_loads": true,
+        "intervening_move_preserves_both_arguments": true
+      },
       "file": {
         "bytes": 1496769,
         "path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
@@ -73,9 +92,35 @@
         "sha256": "1e4f3621f53a3782535c4444761099583bbef98bd53bf9e5cbe145ef34b07991",
         "zero_suffix_records": 338
       },
+      "second_size_field": {
+        "bytes": 4,
+        "equals_second_stored_region_length": true,
+        "file_offset": 1475240,
+        "second_component_reference_and_size_read_in_same_thumb_block": true,
+        "value_le32": 90112
+      },
       "second_start_and_following_boundary_read_in_same_thumb_block": true
     },
     {
+      "common_handoff": {
+        "bounded_callee_path": {
+          "calculates_source_end_from_count": true,
+          "compares_source_position_to_calculated_end": true,
+          "computes_word_count_by_dividing_byte_size_by_four": true,
+          "iterations_with_observed_size_if_this_path_runs_to_completion": 22528,
+          "preloop_conditional_paths_rejoin_at_copy_setup": true,
+          "preserves_source_and_size_before_first_nested_call": true,
+          "returns_when_source_pointer_equals_computed_end": true,
+          "source_iteration_depends_on_end_comparison": true,
+          "source_word_stride_bytes": 4,
+          "stores_each_loaded_word_on_this_path": true
+        },
+        "component_pointer_argument_position": 2,
+        "dereferenced_size_argument_position": 3,
+        "direct_callee_inside_image": true,
+        "first_branch_joins_after_second_path_loads": true,
+        "intervening_move_preserves_both_arguments": true
+      },
       "file": {
         "bytes": 1497470,
         "path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
@@ -148,9 +193,35 @@
         "sha256": "1e4f3621f53a3782535c4444761099583bbef98bd53bf9e5cbe145ef34b07991",
         "zero_suffix_records": 338
       },
+      "second_size_field": {
+        "bytes": 4,
+        "equals_second_stored_region_length": true,
+        "file_offset": 1475952,
+        "second_component_reference_and_size_read_in_same_thumb_block": true,
+        "value_le32": 90112
+      },
       "second_start_and_following_boundary_read_in_same_thumb_block": true
     },
     {
+      "common_handoff": {
+        "bounded_callee_path": {
+          "calculates_source_end_from_count": true,
+          "compares_source_position_to_calculated_end": true,
+          "computes_word_count_by_dividing_byte_size_by_four": true,
+          "iterations_with_observed_size_if_this_path_runs_to_completion": 22528,
+          "preloop_conditional_paths_rejoin_at_copy_setup": true,
+          "preserves_source_and_size_before_first_nested_call": true,
+          "returns_when_source_pointer_equals_computed_end": true,
+          "source_iteration_depends_on_end_comparison": true,
+          "source_word_stride_bytes": 4,
+          "stores_each_loaded_word_on_this_path": true
+        },
+        "component_pointer_argument_position": 2,
+        "dereferenced_size_argument_position": 3,
+        "direct_callee_inside_image": true,
+        "first_branch_joins_after_second_path_loads": true,
+        "intervening_move_preserves_both_arguments": true
+      },
       "file": {
         "bytes": 1226142,
         "path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
@@ -223,21 +294,32 @@
         "sha256": "1e4f3621f53a3782535c4444761099583bbef98bd53bf9e5cbe145ef34b07991",
         "zero_suffix_records": 338
       },
+      "second_size_field": {
+        "bytes": 4,
+        "equals_second_stored_region_length": true,
+        "file_offset": 1207776,
+        "second_component_reference_and_size_read_in_same_thumb_block": true,
+        "value_le32": 90112
+      },
       "second_start_and_following_boundary_read_in_same_thumb_block": true
     }
   ],
   "limits": [
     "The four targets and both stored regions are file-relative measurements under the reference mapping.",
-    "This establishes stored extents and a size-valued field read by ARM code. The executed path, D11 destination, and exact transfer count remain unobserved.",
-    "The nonzero-prefix and all-zero-suffix counts are structural. Logical treatment of zero records and the contemporary D11 instruction fields remain open."
+    "Both size fields and the static argument handoff establish the source and byte count offered to the common routine. Runtime path selection remains unobserved.",
+    "The decoded consumer loop reads each source word until the computed end. The destination identity and execution of this path, including the actual D11 transfer, remain unverified.",
+    "The nonzero-prefix and all-zero-suffix counts are structural. Contemporary D11 instruction fields remain open."
   ],
   "method": {
     "anchor_and_pool": "Use the Linux BCM4378 RAM-origin model to form the modeled first-window start and search aligned LE32 words before the first window. Require a unique occurrence and compare the preceding three consecutive four-byte slots. Translate all resulting values back to file offsets under the same model.",
     "component_bounds": "Measure the two intervals between the first start and the intervening field, and between the second start and the following boundary. Count leading nonzero LE64 records then trailing all-zero records and verify byte 7 of each complete record is zero.",
+    "consumer_check": "Decode 22 Thumb instructions at the direct common call target within each stock file. Verify caller values are preserved, the byte size is shifted right by two, and both sides of the earlier conditional branch reach the same source-copy setup. Verify that the source end is computed from the count and that a pointer comparison bounds sequential four-byte reads and stores. Check both loop edges and the return on equality.",
+    "handoff_check": "Decode both Thumb paths from their confirmed size-field readers. Verify that each path dereferences its own four-byte field, the first branch joins immediately after the second path's three loads, and both values occupy the same second and third argument positions at the subsequent common call under AAPCS32.",
     "input": "The three stock BCM4378 files and their original record windows from 2026-11-17-d11-window-profile.json, verified by whole-file SHA-256",
     "reader_check": "Scan two-byte boundaries within 4096 bytes of each literal slot for Thumb LDR (literal) T1 and T2 encodings that resolve to the slot. Confirm instruction kind and PC-relative addressing by individually decoding the matching T1 candidate with Rizin 0.9.1 in Thumb mode.",
     "size_read_check": "In the four-instruction block beginning at the size-field reference, verify the first-component literal read is next, then a word load dereferences the size-field pointer before a branch. Separately verify the following-boundary and second-component references are decoded as consecutive instructions.",
     "sources": {
+      "aapcs32_argument_positions": "https://github.com/ARM-software/abi-aa/blob/main/aapcs32/aapcs32.rst#core-registers",
       "linux_bcm4378_ram_model": "https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c",
       "thumb_literal_load": "https://support.arm.com/documentation/ddi0597/2021-03/Base-Instructions/LDR--literal---Load-Register--literal--"
     }

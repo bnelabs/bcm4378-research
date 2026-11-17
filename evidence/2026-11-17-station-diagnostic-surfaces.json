@@ -1,0 +1,108 @@
+{
+  "checked_at_utc": "2026-11-17T06:11:37Z",
+  "host": {
+    "macos_version": "27.2.1",
+    "macos_build": "26B131",
+    "macos_sdk_version": "27.2",
+    "inspected_image_architecture": "arm64e"
+  },
+  "images": {
+    "wdutil": {
+      "path": "/usr/bin/wdutil",
+      "macho_uuid": "75A034E0-7FCC-3EAC-B656-9DE8583B5275",
+      "sha256": "c4513e9556f9ee389d0a2fb84d2506825bba63d703f40269b63e0828809be79e"
+    },
+    "wifi_velocity": {
+      "path": "/System/Library/PrivateFrameworks/WiFiVelocity.framework/Versions/A/WiFiVelocity",
+      "macho_uuid": "ABFBDA96-92F2-353F-A715-C8B1F9335639"
+    },
+    "system_profiler": {
+      "path": "/usr/sbin/system_profiler",
+      "macho_uuid": "558FA2EB-5A80-344E-B98F-570A6CA6C322",
+      "sha256": "2789e9f235932e6ad3ae1667cd68dad50bc97722a45c5282611c54b3c074656e"
+    },
+    "sp_support": {
+      "path": "/System/Library/PrivateFrameworks/SPSupport.framework/Versions/A/SPSupport",
+      "macho_uuid": "1C8D1A8C-F240-33D6-9703-A92D0C9A4BA6"
+    },
+    "sp_airport_reporter": {
+      "path": "/System/Library/SystemProfiler/SPAirPortReporter.spreporter/Contents/MacOS/SPAirPortReporter",
+      "bundle_version": "1502",
+      "macho_uuid": "ED086C5B-CB01-367C-83B5-6AF7BF67C6D7",
+      "sha256": "0aaa5838f0067806ec68308f24316fc0c2dbd591b88e549bca038d8d073174fd"
+    }
+  },
+  "scope": {
+    "static_tools_used": [
+      "sw_vers for OS version and build",
+      "xcrun for SDK version and installed tool paths",
+      "man for wdutil and system_profiler usage",
+      "plutil for reporter properties and localized labels",
+      "shasum for installed binary identity",
+      "strings, nm, otool and llvm-objdump for installed Mach-O inspection",
+      "dyld_info for image UUIDs and static shared-cache sections and instructions"
+    ],
+    "diagnostics_invoked": false,
+    "active_scan_invoked": false,
+    "privilege_elevation_requested": false,
+    "current_station_values_sampled": false
+  },
+  "corewlan_public_sdk": {
+    "interface_headers_checked": [
+      "CWInterface.h",
+      "CWChannel.h",
+      "CWWiFiClient.h"
+    ],
+    "documented_current_readouts": [
+      "wlanChannel and its channel number, width and band",
+      "activePHYMode",
+      "rssiValue",
+      "noiseMeasurement",
+      "transmitRate"
+    ],
+    "requested_fields_without_public_corewlan_accessor": [
+      "MCS index",
+      "NSS",
+      "Guard interval",
+      "CCA"
+    ]
+  },
+  "wdutil_info": {
+    "documented_command": "wdutil info",
+    "documented_purpose": "Gather information about the current wireless environment",
+    "bundled_manual": "wdutil(8), DESCRIPTION",
+    "installed_usage_for_info": "sudo wdutil info",
+    "command_path": "Installed command calls getuid before subcommand dispatch and goes to usage on a nonzero UID. The info branch requests W5 status and prints the return of W5FormattedDescriptionForStatus.",
+    "format_fields_verified_in_called_formatter": {
+      "CCA": "integer percent",
+      "MCS Index": "integer",
+      "Guard Interval": "integer, with no unit in the format string",
+      "NSS": "integer"
+    },
+    "limits": "The manual describes an information readout. The wrapper dispatch and formatter leave the collector's exact radio behavior and values on this BCM4378 unverified."
+  },
+  "system_profiler_wifi": {
+    "data_type": "SPAirPortDataType",
+    "current_network_path": [
+      "spairport_current_network_information",
+      "spairport_network_mcs"
+    ],
+    "english_label": "MCS Index",
+    "field_condition": "The reporter inserts the MCS field when the interface MCS value is present.",
+    "scan_path": "SPAirPortReporter updateDictionary checks the _SPCommandLineArguments option for the micro flag and enables doScan in its absence. The AirPort report calls performBroadcastScan when doScan is true. The scanner invokes a CoreWLAN scan method.",
+    "documented_detail_levels": [
+      "mini",
+      "basic",
+      "full"
+    ],
+    "micro_dispatch": "The stock CLI recognizes the undocumented micro flag separately from detailLevel. That branch takes priority over ordinary data-type selection and JSON output. The micro assembler invokes AirPort, Bluetooth, Network and other hardware reports. Its AirPort serializer extracts card type and firmware version.",
+    "limits": "A scoped, scan-free System Profiler station query remains unverified."
+  },
+  "sources": {
+    "apple_corewlan": "https://developer.apple.com/documentation/corewlan/cwinterface",
+    "apple_corewlan_channel": "https://developer.apple.com/documentation/corewlan/cwchannel",
+    "apple_link_quality_delegate": "https://developer.apple.com/documentation/corewlan/cweventdelegate/linkqualitydidchangeforwifiinterface%28withname%3Arssi%3Atransmitrate%3A%29",
+    "apple_system_information": "https://support.apple.com/guide/system-information/welcome/mac",
+    "apple_dyld_inspection_tool": "https://github.com/apple-oss-distributions/dyld/blob/main/other-tools/dyld_info.cpp"
+  }
+}

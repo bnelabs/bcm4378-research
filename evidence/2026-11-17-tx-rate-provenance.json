@@ -1,0 +1,165 @@
+{
+  "captured_utc": "2026-11-17T06:08:06+00:00",
+  "corewifi": {
+    "static_selectors": {
+      "CWFApple80211 txRate": [
+        "copy"
+      ],
+      "CWFInterface txRate": [
+        "allowRequestType:",
+        "synchronousRemoteObjectProxyWithErrorHandler:",
+        "__adjustedRequestParameters",
+        "queryTxRateWithRequestParams:reply:"
+      ]
+    },
+    "uuid": "BD102104-B05E-3CCD-9F26-65C83FDB6BBF"
+  },
+  "driver": {
+    "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "slices": [
+      {
+        "architecture": "arm64e",
+        "associated_only": true,
+        "get_guard_interval": {
+          "firmware_variable": "nrate",
+          "result_constants_ns": [
+            400,
+            800,
+            1600,
+            3200
+          ]
+        },
+        "integer_division": {
+          "divisor": 1000,
+          "input_width_bits": 32,
+          "reciprocal_multiplier": 274877907,
+          "shift_right_bits": 38
+        },
+        "tx_rate_handler": "getRATE delegates to getCurrentTxRate in AppleBCMWLANLQM",
+        "uuid": "A4468F67-5706-3058-9E27-44A96E806FB5"
+      },
+      {
+        "architecture": "arm64e.x1",
+        "associated_only": true,
+        "get_guard_interval": {
+          "firmware_variable": "nrate",
+          "result_constants_ns": [
+            400,
+            800,
+            1600,
+            3200
+          ]
+        },
+        "integer_division": {
+          "divisor": 1000,
+          "input_width_bits": 32,
+          "reciprocal_multiplier": 274877907,
+          "shift_right_bits": 38
+        },
+        "tx_rate_handler": "getRATE delegates to getCurrentTxRate in AppleBCMWLANLQM",
+        "uuid": "59286A5B-223E-389D-9FC8-0C1F7CA64B02"
+      }
+    ]
+  },
+  "fresh_corewlan_observation": {
+    "captured_utc": "2026-11-17T06:12:31+00:00",
+    "default_route_after": "en0",
+    "default_route_before": "en0",
+    "duration_seconds": 4.129207,
+    "model_result": {
+      "assumptions": "Full channel, one or two streams, DCM disabled and whole-Mb/s truncation.",
+      "groups": [
+        {
+          "candidates": [
+            {
+              "guard_interval_ns": 800,
+              "mcs_index": 4,
+              "nominal_mbps": 432.353,
+              "spatial_streams": 2
+            },
+            {
+              "guard_interval_ns": 800,
+              "mcs_index": 8,
+              "nominal_mbps": 432.353,
+              "spatial_streams": 1
+            }
+          ],
+          "channel_width_mhz": 80,
+          "sample_count": 9,
+          "tx_rate_mbps": 432
+        }
+      ],
+      "unmodeled_samples": 0
+    },
+    "observed_configurations": [
+      {
+        "band": "5 GHz",
+        "channel": 40,
+        "channel_width_mhz": 80,
+        "interface": "en0",
+        "interface_mode": "station",
+        "phy_mode": "802.11ax",
+        "sample_count": 9
+      }
+    ],
+    "rate": {
+      "adjacent_measured_pairs": 8,
+      "distinct_values": 1,
+      "equal_adjacent_pairs": 8,
+      "maximum": 432,
+      "measured_samples": 9,
+      "median": 432,
+      "minimum": 432,
+      "unavailable_samples": 0
+    },
+    "sample_count": 9,
+    "sampling_command": "swift tools/read_wifi_status.swift --sample 9 0.5"
+  },
+  "method": [
+    "Disassemble the installed handler and its direct LQM helper with dyld_info. Identify the public wrapper selectors from the file-backed shared-cache mappings.",
+    "Verify the reciprocal multiply and right shift as floor(unsigned 32-bit input / 1000). The maximum positive correction before flooring is less than 0.001.",
+    "Resolve the separate guard-interval handler readback name through the Mach-O segments and check the integer results in its branches."
+  ],
+  "offline_rate_model": {
+    "input_capture": "evidence/2026-11-17-link-activity-sample.json",
+    "manual_rate_table_cross_check": "https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-wlan/212892-802-11ac-wireless-throughput-testing-and.html",
+    "result": {
+      "assumptions": "Full channel, one or two streams, DCM disabled and whole-Mb/s truncation.",
+      "groups": [
+        {
+          "candidates": [
+            {
+              "guard_interval_ns": 800,
+              "mcs_index": 4,
+              "nominal_mbps": 432.353,
+              "spatial_streams": 2
+            },
+            {
+              "guard_interval_ns": 800,
+              "mcs_index": 8,
+              "nominal_mbps": 432.353,
+              "spatial_streams": 1
+            }
+          ],
+          "channel_width_mhz": 80,
+          "sample_count": 21,
+          "tx_rate_mbps": 432
+        }
+      ],
+      "unmodeled_samples": 0
+    },
+    "samples": 21,
+    "tone_and_symbol_reference": "https://www.cisco.com/c/en/us/products/collateral/wireless/white-paper-c11-740788.html"
+  },
+  "public_framework": {
+    "method": "CWInterface transmitRate",
+    "selectors": [
+      "corewifi",
+      "txRate"
+    ],
+    "uuid": "98C43729-E734-36E2-BF19-A1AB37C40B9B"
+  },
+  "scope": "Shipped driver and framework behavior from static inspection. Candidates match a nominal HE PHY mode model under its assumptions. PHY rate is a driver report. The firmware input, metric update age, per-frame MCS, guard interval and spatial-stream count were not observed.",
+  "system_build": "26B131"
+}

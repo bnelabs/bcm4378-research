@@ -1,0 +1,30 @@
+# A2337 RF test evidence
+
+## Simultaneous transmission
+
+TÜV SÜD measured radiated spurious emissions on one A2337 sample. Each Wi-Fi leg used 802.11n HT20 with cyclic delay diversity (CDD) on Core 0 and Core 1. Each Bluetooth leg used Classic Bluetooth DH5 in the `ePA` configuration on Core 0. CDD describes the transmit diversity configuration. The report gives no MCS index or spatial-stream count for these runs. [TÜV SÜD 75949395-14, §1.2](https://fccid.io/BCGA2337/Test-Report/Simultaneous-transmission-report-4983630.pdf#page=3), [§2.1](https://fccid.io/BCGA2337/Test-Report/Simultaneous-transmission-report-4983630.pdf#page=6)
+
+| 2.4 GHz Wi-Fi | 5 GHz Wi-Fi | Bluetooth | Measured combination |
+| --- | --- | --- | --- |
+| CH2, 2,417 MHz | CH40, 5,200 MHz | — | [Table 5](https://fccid.io/BCGA2337/Test-Report/Simultaneous-transmission-report-4983630.pdf#page=7) |
+| CH9, 2,452 MHz | CH136, 5,680 MHz | — | [Table 6](https://fccid.io/BCGA2337/Test-Report/Simultaneous-transmission-report-4983630.pdf#page=11) |
+| CH2, 2,417 MHz | — | CH78, 2,480 MHz | [Table 7](https://fccid.io/BCGA2337/Test-Report/Simultaneous-transmission-report-4983630.pdf#page=14) |
+| CH9, 2,452 MHz | — | CH0, 2,402 MHz | [Table 8](https://fccid.io/BCGA2337/Test-Report/Simultaneous-transmission-report-4983630.pdf#page=17) |
+| — | CH40, 5,200 MHz | CH78, 2,480 MHz | [Table 9](https://fccid.io/BCGA2337/Test-Report/Simultaneous-transmission-report-4983630.pdf#page=20) |
+| — | CH136, 5,765 MHz as printed. Channel and frequency conflict. | CH0, 2,402 MHz | [Table 10](https://fccid.io/BCGA2337/Test-Report/Simultaneous-transmission-report-4983630.pdf#page=23) |
+
+Table 10 labels its 5 GHz leg U-NII-2C and CH136, whose center Table 6 gives as 5,680 MHz. The 5,765 MHz label corresponds to CH153 in U-NII-3, so the exact test center remains unresolved. The report's CoTX heading names both Wi-Fi bands and Bluetooth collectively. Its six measured combinations are pairwise. Simultaneous dual-band HE, transmission on both Wi-Fi bands with Bluetooth, and dual infrastructure association under stock macOS remain unverified. [Table 6](https://fccid.io/BCGA2337/Test-Report/Simultaneous-transmission-report-4983630.pdf#page=11), [Table 10](https://fccid.io/BCGA2337/Test-Report/Simultaneous-transmission-report-4983630.pdf#page=23)
+
+## 802.11ax waveforms and Wi-Fi antenna paths
+
+- **2.4 GHz.** TÜV SÜD lists HE20 SU and MU at MCS 7 in SISO on Core 1 and in CDD on Core 0 and Core 1. It lists 26-, 52-, 106- and 242-tone resource units (RUs). Table 14 records bandwidth measurements for HE20 MCS7×1 with a 26-tone RU and CDD on both cores at 2,412, 2,442 and 2,472 MHz. Table 3 identifies the two antenna ports, which were individually accessible for conducted testing. Exhibit 4983143 has a Bluetooth label in the FCC index. Its title page identifies the 2.4 GHz WLAN report. [75949395-11, §1.4.2–1.4.4](https://fccid.io/BCGA2337/Test-Report/Test-report-BT-LE-part1-4983143.pdf#page=5), [Table 14](https://fccid.io/BCGA2337/Test-Report/Test-report-BT-LE-part1-4983143.pdf#page=33)
+- **5 GHz.** TÜV SÜD lists HE20, HE40 and HE80 SU and MU test waveforms with MCS7×1 on one core (SISO) or two (CDD), and MCS7×2 on two cores using spatial division multiplexing (SDM). It lists 26-tone RUs for U-NII-1 and U-NII-3 only and 52-, 106-, 242-, 484- and 996-tone RUs where the channel width allows. The conducted power spectral density tables include 26-, 52- and 106-tone cases. Tables 255 and 257 record HE80 MCS7×2 SDM on both cores at 5,210 MHz for SU and a 26-tone RU respectively. Multi-client scheduling and throughput were outside those measurements. [75949395-12, §1.4.2–1.4.4](https://fccid.io/BCGA2337/Test-Report/Report-part1-4983625.pdf#page=5), [Tables 255 and 257](https://fccid.io/BCGA2337/Test-Report/Report-part1-4983625.pdf#page=88)
+- **Product limits.** Apple specifies two spatial streams on both bands for the M1 MacBook Air, with HE MCS 9 at 2.4 GHz (20 MHz, 195 Mb/s maximum PHY rate) and HE MCS 11 at 5 GHz (80 MHz, 1,200 Mb/s maximum PHY rate). [Apple Wi-Fi specifications](https://support.apple.com/en-au/guide/deployment/-dep268652e6c/web)
+
+## Bluetooth transmit beamforming
+
+The Bluetooth radio exhibits record conducted power on both BT Core 0 and BT Core 1 in the lab's `iPA` and `ePA` transmit beamforming configurations. The Classic Bluetooth report shows DH5, 2-DH5 and 3-DH5 at 2,402, 2,441 and 2,480 MHz. The other report shows LE 1M, LE 2M, HDR4 and HDR8. The beam pattern, link benefit and availability through macOS remain unverified. [Classic Bluetooth 75949395-09, Tables 29–31](https://fccid.io/BCGA2337/Test-Report/Test-report-part1-4983170.pdf#page=55), [Tables 35–37](https://fccid.io/BCGA2337/Test-Report/Test-report-part1-4983170.pdf#page=57), [LE/HDR 75949395-10, Tables 43–46](https://fccid.io/BCGA2337/Test-Report/Test-report-part1-4983141.pdf#page=59), [Tables 51–54](https://fccid.io/BCGA2337/Test-Report/Test-report-part1-4983141.pdf#page=61)
+
+The RF exposure report's diagram identifies two physically separated Wi-Fi/Bluetooth antenna locations. It records separate Bluetooth EDR SISO measurements at 2,480 MHz on BT Core 0 and BT Core 1. Its simultaneous exposure result is a sum of separate WLAN and Bluetooth SAR results. [75949395 Report 17, §1.4.2](https://fccid.io/BCGA2337/RF-Exposure-Info/SAR-part-1-4983146.pdf#page=8), [§1.4.3](https://fccid.io/BCGA2337/RF-Exposure-Info/SAR-part-1-4983146.pdf#page=14), [§1.4.7 and Figure 1](https://fccid.io/BCGA2337/RF-Exposure-Info/SAR-part-1-4983146.pdf#page=16)
+
+The 2.4 GHz Wi-Fi and Classic Bluetooth gain tables list the same two antenna gains with reversed core numbering. The 4.03 dBi entry is Wi-Fi Core 0 and BT Core 1, and the 3.22 dBi entry is Wi-Fi Core 1 and BT Core 0. The mapping from those core IDs to physical positions remains unverified. [2.4 GHz WLAN, Table 3](https://fccid.io/BCGA2337/Test-Report/Test-report-BT-LE-part1-4983143.pdf#page=6), [Classic Bluetooth, Table 3](https://fccid.io/BCGA2337/Test-Report/Test-report-part1-4983170.pdf#page=5)
