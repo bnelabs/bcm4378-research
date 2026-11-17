@@ -12,6 +12,7 @@ This repository records the Wi-Fi hardware, driver and firmware of the 2020 M1 M
 - [A2337 RF tests](docs/a2337-rf-tests.md) records simultaneous Wi-Fi and Bluetooth tests, HE waveforms and Bluetooth transmit beamforming measurements.
 - [Simultaneous dual-band policy](docs/simultaneous-dual-band.md) maps the macOS firmware and platform gates and the Linux channel and station limits.
 - [Live access and control](docs/live-access.md) records the PCIe apertures, UART metadata, transmit-power readout and conditions for testing deeper controls.
+- [Chip memory and backplane layout](docs/chip-memory-map.md) traces the signed driver's RAM geometry, core and wrapper regions, and normal fault attachment.
 - [PCIe link and power properties](docs/pcie-link-properties.md) records the shared port, endpoint status fields, and link power capability and policy.
 - [Packet queues and PCIe ring sizing](docs/pcie-queue-sizing.md) traces the live scheduler and Shikoku transport settings through macOS and compares Linux descriptor depths.
 - [macOS host power policy](docs/host-power-policy.md) records network wake and keepalive settings and their scope.
@@ -59,4 +60,4 @@ Reproduce the [microcode and ROM overlay checks](docs/firmware-layout.md#microco
 1. Verify D11 component selection, the destination and transfer count of the shared copy routine, and ROM overlay selection at runtime on a separate test target.
 2. Compare the driver-reported link diary and raw transmit-power field with measurements from a calibrated spectrum receiver or a controlled obstruction test.
 3. Verify simultaneous infrastructure and peer-to-peer transfer, and the runtime availability of the A2337's lab modes, on a separate managed test setup.
-4. Pair the [driver-owned RAM capture](docs/ram-diagnostics.md) with measured geometry and connectivity on a separately managed test Mac. Verify register diagnostics separately.
+4. Compare a [driver-owned RAM capture](docs/ram-diagnostics.md) with the [declared memory geometry](docs/chip-memory-map.md) on a separately managed test Mac. Verify the bank sizing and register diagnostics on that device.

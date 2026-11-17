@@ -1,0 +1,117 @@
+{
+  "sampled_at_utc": "2026-11-17T09:24:00+00:00",
+  "host": {
+    "model": "MacBookAir10,1",
+    "macos_version": "27.2.1",
+    "macos_build": "26B131",
+    "default_ipv4_interface": "en0",
+    "wlan_pci_id": "14e4:4425",
+    "live_registry_aperture_lengths_bytes": [
+      65536,
+      8388608
+    ]
+  },
+  "signed_driver_file": {
+    "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "bytes": 10564944,
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f"
+  },
+  "strict_signature_verified": true,
+  "slices_with_matching_tables_and_consumers": [
+    "arm64e",
+    "arm64e.x1"
+  ],
+  "static_bcm4378_layout": {
+    "core_region_sizes_bytes": {
+      "4096": 9
+    },
+    "wrapper_region_sizes_bytes": {
+      "4096": 17
+    },
+    "backplane_windows": {
+      "fixed": 4,
+      "remappable_core": 2,
+      "remappable_wrapper": 2
+    },
+    "memory_region_sizes_bytes": {
+      "0": 3399680,
+      "1": 1507328,
+      "2": 32,
+      "3": 1507296,
+      "4": 1892352,
+      "5": 712704,
+      "6": 1179648
+    },
+    "firmware_ram_bytes": 1892352,
+    "arm_ram_base_matches_linux_reference": true,
+    "firmware_ram_split_into_adjacent_regions": true,
+    "first_region_split_into_adjacent_regions": true,
+    "coexistence_view_and_first_region_share_base": true,
+    "coexistence_view_length_equals_first_region_plus_ram": true,
+    "microcode_diagnostic_size_fields": {
+      "scratch": 128,
+      "shared": 252
+    }
+  },
+  "instruction_trace": {
+    "initializer": "AppleBCMWLANChipManagerPCIe4378::initWithChip",
+    "descriptor_bytes": {
+      "ChipRegionDescriptor": 12,
+      "ChipWindowDescriptor": 20
+    },
+    "ram_size_lookup": "AppleBCMWLANChipManagerPCIe::getRAMSize",
+    "ram_size_consumer_functions": [
+      "AppleBCMWLANBusInterfacePCIe::allocChipImage",
+      "AppleBCMWLANBusInterfacePCIe::getSoCRAMSize"
+    ],
+    "nominal_fault_attachment": {
+      "function": "AppleBCMWLANBusInterfacePCIe::attachSoCRAMFile",
+      "name": "SoC_RAM.bin",
+      "size_bytes": 1892352,
+      "reader_resolved_from_chained_fixups": "AppleBCMWLANBusInterfacePCIe::readSoCRAM",
+      "region_accessor": "AppleBCMWLANChipMemory::readRAM",
+      "separate_coexistence_accessor": "AppleBCMWLANChipMemory::readCoexRAM"
+    },
+    "logical_core_region_selectors_in_named_accessors": {
+      "0": "readCommonCoreReg32",
+      "1": "readMACCoreReg32",
+      "2": "readARMCoreReg32",
+      "3": "readPCIeCoreReg32",
+      "6": "readGCICoreReg32",
+      "7": "readPMUCoreReg32"
+    },
+    "otp_core_selector_from_initializer": 8,
+    "primary_d11_wrapper_selectors": {
+      "1": "readMACMasterWrapperReg32",
+      "14": "readD11Master1WrapperReg32",
+      "15": "readD11SlaveWrapperReg32"
+    },
+    "auxiliary_d11_wrapper_selectors": {
+      "12": "readD11AUXMasterWrapperReg32",
+      "13": "readD11AUXMaster1WrapperReg32",
+      "16": "readD11AUXSlaveWrapperReg32"
+    },
+    "microcode_diagnostics_may_change_device_sleep_state": true
+  },
+  "retained_observations": {
+    "boot_log_predicates": [
+      "Chip RAM layout",
+      "SoCRAM dump collected"
+    ],
+    "boot_log_window_seconds": 300,
+    "boot_log_query_exit_status": 0,
+    "matching_boot_log_records": 0,
+    "matching_filenames_in_system_and_user_diagnostic_report_dirs_through_one_subdirectory": 0,
+    "checked_historical_corecapture_directories_present": 0,
+    "current_physical_ram_or_register_contents_measured": false
+  },
+  "corroboration": {
+    "vinix_document_commit": "63fc675f13718e5724bfeac54431344815be5085",
+    "vinix_prior_apple_ram_size_bytes": 1892352,
+    "vinix_prior_apple_build": "25D771280a",
+    "linux_stable_commit": "7595a62d45ee1a2297eafa5f2ef5d0a45142d84d",
+    "asahi_commit": "201be96df5654336bdcbe1da2103f193d7a0b940",
+    "asahi_sysmem_bank_discovery_change": "d456705a5929ed2183360aeb384e63bcf0ef0cff"
+  }
+}
