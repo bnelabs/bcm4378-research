@@ -1,0 +1,98 @@
+{
+  "bluetooth": {
+    "chipset": "BCM_4378",
+    "firmware_version": "24.2.551.4122",
+    "pci_child_services": [
+      "AppleConvergedPCI"
+    ],
+    "pci_id": "14e4:5f69",
+    "product_id": "0x4A02",
+    "reported_services": "0x1390039 < HFP AVRCP A2DP HID LEA AACP GATT SerialPort SCO >",
+    "transport": "PCIe",
+    "vendor_id": "0x004C (Apple)"
+  },
+  "bluetooth_pci": {
+    "id": "14e4:5f69",
+    "link_capabilities": {
+      "rate_gt_s": 5,
+      "raw": "0x46d812",
+      "width_lanes": 1
+    },
+    "link_status": {
+      "rate_gt_s": 5,
+      "raw": "0x1012",
+      "width_lanes": 1
+    },
+    "memory_aperture_lengths_bytes": [
+      32768,
+      4194304
+    ],
+    "reported_power_states": {
+      "CurrentPowerState": 2,
+      "DevicePowerState": 2,
+      "MaxPowerState": 3
+    },
+    "revision_id": 3
+  },
+  "catalog_version_candidates": {
+    "images": [
+      "BCM4378B1_24.2.551.4122_PCIE_macOS_Shikoku_OS_MUR_20260715.bin"
+    ],
+    "ptb_catalog_partners": [
+      "BCM4378B1_FinalV0_PCIE_macOS_Shikoku_OS_MUR_K_R_20200902.ptb"
+    ],
+    "version": "24.2.551.4122"
+  },
+  "default_ipv4_interface": "en0",
+  "filename_query": {
+    "outcome": "timeout",
+    "scope_hours": 24,
+    "seconds_allowed": 12
+  },
+  "honshu_and_shikoku_identical_before_configuration_bytes": 342900,
+  "native_sdk_type_checks": {
+    "channel_sounding_declarations": "unavailable on macOS",
+    "sdk": "macOS 27.2",
+    "supported_declarations": [
+      "CBCentralManager.scanForPeripherals(withServices:options:)",
+      "CBCentralManager.connect(_:options:)",
+      "CBPeripheral.readRSSI()",
+      "CBPeripheralManager.startAdvertising(_:)",
+      "CBPeripheralManager.setDesiredConnectionLatency(_:for:)",
+      "IOBluetoothHostController.powerState"
+    ]
+  },
+  "host_driver_packages": [
+    {
+      "bundle_identifier": "com.apple.driver.AppleConvergedPCI",
+      "listed_by_kmutil": true,
+      "package_personalities": [
+        "AppleConvergedPCI"
+      ]
+    },
+    {
+      "bundle_identifier": "com.apple.driver.AppleConvergedIPCOLYBTControl",
+      "listed_by_kmutil": true,
+      "package_personalities": [
+        "AppleConvergedIPCOLYBTControl",
+        "AppleConvergedIPCOLYBTCoreDumpProvider",
+        "AppleConvergedIPCOLYBTLogProvider"
+      ]
+    }
+  ],
+  "rea_firmware_measurements": {
+    "shikoku_mur": {
+      "evidence_id": "ev_3acdfb8f5bd74c01ad8970b48680f44142624396e48ad791267217e3338ce47b",
+      "file_entropy_bits_per_byte": 7.1549,
+      "sha256": "6be86dd5cc72e5cc11eaac80a4dcd92138171138ff174da2751d3e78bd329b60"
+    },
+    "shikoku_usi": {
+      "evidence_id": "ev_9f663161484ea75c4e6e6b1da82ba1c6d8d7dee7db12690be7bcc0561c05aa6f",
+      "file_entropy_bits_per_byte": 7.1541,
+      "sha256": "796ee56f4cd32092cca25fd4242c91cfde8e51321a457b6966f015ad6d16403e"
+    }
+  },
+  "shikoku_binary_bytes": 357738,
+  "shikoku_ptb_names_resolve_to_same_file": true,
+  "shikoku_same_offset_matching_bytes": 355970
+}

@@ -1,0 +1,703 @@
+{
+  "controller_version_candidates": {
+    "images": [
+      "BCM4378B1_24.2.551.4122_PCIE_macOS_Shikoku_OS_MUR_20260715.bin"
+    ],
+    "ptb_catalog_partners": [
+      "BCM4378B1_FinalV0_PCIE_macOS_Shikoku_OS_MUR_K_R_20200902.ptb"
+    ],
+    "version": "24.2.551.4122"
+  },
+  "counts": {
+    "bin": {
+      "distinct_payloads": 11,
+      "filenames": 11
+    },
+    "ptb": {
+      "distinct_payloads": 5,
+      "filenames": 11
+    }
+  },
+  "directory": "/usr/share/firmware/bluetooth",
+  "files": [
+    {
+      "board": "AtlantisB",
+      "container_layout": {
+        "configuration_markers": {
+          "BRCMcfgD": 343902,
+          "BRCMcfgS": 343836
+        },
+        "embedded_identity": {
+          "board": "AtlantisB",
+          "offset": 343928,
+          "profile": "3ANT",
+          "stepping": "B1",
+          "vendor": "MUR",
+          "version": "24.2.551.4114"
+        },
+        "header_bytes": 256,
+        "regions": [
+          {
+            "bytes": 116616,
+            "offset": 256,
+            "sha256": "fcd528653ae3e66045782adf7c56581c83f07da97072ef7da34ecef5724afb11"
+          },
+          {
+            "bytes": 226964,
+            "offset": 116872,
+            "sha256": "bdb5f3250c3f6e56b1e45af241e692998b3e04867a92693d07c089d9b766870d"
+          },
+          {
+            "bytes": 14769,
+            "offset": 343836,
+            "sha256": "c6a6bd987a22d0e02075277354742d9e2f8f314339b3332e03b91dc2428712db"
+          }
+        ]
+      },
+      "extension": "bin",
+      "file": {
+        "bytes": 358605,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4114_PCIE_macOS_AtlantisB_OS_MUR_20260715.bin",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4114_PCIE_macOS_AtlantisB_OS_MUR_20260715.bin",
+        "sha256": "11d6aa02a247de70933abc1fce86e79521dbd32a756f46f375d558e1e32c07a4"
+      },
+      "qualifiers": "20260715",
+      "release": "24.2.551.4114",
+      "stepping": "B1",
+      "vendor": "MUR"
+    },
+    {
+      "board": "AtlantisB",
+      "container_layout": {
+        "configuration_markers": {
+          "BRCMcfgD": 343902,
+          "BRCMcfgS": 343836
+        },
+        "embedded_identity": {
+          "board": "AtlantisB",
+          "offset": 343928,
+          "profile": "3ANT",
+          "stepping": "B1",
+          "vendor": "USI",
+          "version": "24.2.551.4115"
+        },
+        "header_bytes": 256,
+        "regions": [
+          {
+            "bytes": 116616,
+            "offset": 256,
+            "sha256": "fcd528653ae3e66045782adf7c56581c83f07da97072ef7da34ecef5724afb11"
+          },
+          {
+            "bytes": 226964,
+            "offset": 116872,
+            "sha256": "bdb5f3250c3f6e56b1e45af241e692998b3e04867a92693d07c089d9b766870d"
+          },
+          {
+            "bytes": 14769,
+            "offset": 343836,
+            "sha256": "4a5573856736e3d531bedc384da899b8542945e5d856d43746131bfc10b4d139"
+          }
+        ]
+      },
+      "extension": "bin",
+      "file": {
+        "bytes": 358605,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4115_PCIE_macOS_AtlantisB_OS_USI_20260715.bin",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4115_PCIE_macOS_AtlantisB_OS_USI_20260715.bin",
+        "sha256": "dc046e4df710f821dc15a713adbea3239f3efa4a38b8fc5be729c34c298a7b81"
+      },
+      "qualifiers": "20260715",
+      "release": "24.2.551.4115",
+      "stepping": "B1",
+      "vendor": "USI"
+    },
+    {
+      "board": "Capri",
+      "container_layout": {
+        "configuration_markers": {
+          "BRCMcfgD": 343878,
+          "BRCMcfgS": 343812
+        },
+        "embedded_identity": {
+          "board": "Capri",
+          "offset": 343904,
+          "profile": "3ANT",
+          "stepping": "B1",
+          "vendor": "MUR",
+          "version": "24.2.551.4116"
+        },
+        "header_bytes": 256,
+        "regions": [
+          {
+            "bytes": 116592,
+            "offset": 256,
+            "sha256": "f457b6e9946f0cd23cecc0878baaa9b2c920d35f9c2ecdf5487d5f9664fce614"
+          },
+          {
+            "bytes": 226964,
+            "offset": 116848,
+            "sha256": "7e20d04b8aca47919d922e7e8677a2dfebdea9c8fa97df4915ff6f336ef7f35a"
+          },
+          {
+            "bytes": 14765,
+            "offset": 343812,
+            "sha256": "7501b58ff0faa3c32dc5a14dc6a8b8991453c33f95e4d18636019c081487d5e4"
+          }
+        ]
+      },
+      "extension": "bin",
+      "file": {
+        "bytes": 358577,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4116_PCIE_macOS_Capri_OS_MUR_20260715.bin",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4116_PCIE_macOS_Capri_OS_MUR_20260715.bin",
+        "sha256": "12b5572a06bd7aa5f42a9e07812caa35890226b1151864344d91a2c4eb17bdb4"
+      },
+      "qualifiers": "20260715",
+      "release": "24.2.551.4116",
+      "stepping": "B1",
+      "vendor": "MUR"
+    },
+    {
+      "board": "Capri",
+      "container_layout": {
+        "configuration_markers": {
+          "BRCMcfgD": 343878,
+          "BRCMcfgS": 343812
+        },
+        "embedded_identity": {
+          "board": "Capri",
+          "offset": 343904,
+          "profile": "3ANT",
+          "stepping": "B1",
+          "vendor": "USI",
+          "version": "24.2.551.4117"
+        },
+        "header_bytes": 256,
+        "regions": [
+          {
+            "bytes": 116592,
+            "offset": 256,
+            "sha256": "f457b6e9946f0cd23cecc0878baaa9b2c920d35f9c2ecdf5487d5f9664fce614"
+          },
+          {
+            "bytes": 226964,
+            "offset": 116848,
+            "sha256": "7e20d04b8aca47919d922e7e8677a2dfebdea9c8fa97df4915ff6f336ef7f35a"
+          },
+          {
+            "bytes": 14765,
+            "offset": 343812,
+            "sha256": "268ece25707923c20f5f0ef1cb783720fab6c2dd58c3ee24e08f7ea03aa99a7b"
+          }
+        ]
+      },
+      "extension": "bin",
+      "file": {
+        "bytes": 358577,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4117_PCIE_macOS_Capri_OS_USI_20260715.bin",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4117_PCIE_macOS_Capri_OS_USI_20260715.bin",
+        "sha256": "d7ccb8b216b82a49af9d123b705606e703342477546b7b2cae16ca18aa9ae137"
+      },
+      "qualifiers": "20260715",
+      "release": "24.2.551.4117",
+      "stepping": "B1",
+      "vendor": "USI"
+    },
+    {
+      "board": "Honshu",
+      "container_layout": {
+        "configuration_markers": {
+          "BRCMcfgD": 343222,
+          "BRCMcfgS": 343156
+        },
+        "embedded_identity": {
+          "board": "Honshu",
+          "offset": 343248,
+          "stepping": "B1",
+          "vendor": "MUR",
+          "version": "24.2.551.4118"
+        },
+        "header_bytes": 256,
+        "regions": [
+          {
+            "bytes": 116248,
+            "offset": 256,
+            "sha256": "a830e509b8382453e6d96ac84990066982ab421cfaee9706022fffd7acf991ae"
+          },
+          {
+            "bytes": 226652,
+            "offset": 116504,
+            "sha256": "5de97270fd9b92fef347925f60666d7ec90da744e986f3cef7e368f880328251"
+          },
+          {
+            "bytes": 14581,
+            "offset": 343156,
+            "sha256": "1afe3f734225ce269ac0742041397181d1f0e3fb9bf02af47cfe3811350fcdfa"
+          }
+        ]
+      },
+      "extension": "bin",
+      "file": {
+        "bytes": 357737,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4118_PCIE_macOS_Honshu_OS_MUR_20260715.bin",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4118_PCIE_macOS_Honshu_OS_MUR_20260715.bin",
+        "sha256": "f6759c707b9a4de43706afb064119c35ea85a1cf726e3c8394fe9262aba0c064"
+      },
+      "qualifiers": "20260715",
+      "release": "24.2.551.4118",
+      "stepping": "B1",
+      "vendor": "MUR"
+    },
+    {
+      "board": "Honshu",
+      "container_layout": {
+        "configuration_markers": {
+          "BRCMcfgD": 343222,
+          "BRCMcfgS": 343156
+        },
+        "embedded_identity": {
+          "board": "Honshu",
+          "offset": 343248,
+          "stepping": "B1",
+          "vendor": "USI",
+          "version": "24.2.551.4119"
+        },
+        "header_bytes": 256,
+        "regions": [
+          {
+            "bytes": 116248,
+            "offset": 256,
+            "sha256": "a830e509b8382453e6d96ac84990066982ab421cfaee9706022fffd7acf991ae"
+          },
+          {
+            "bytes": 226652,
+            "offset": 116504,
+            "sha256": "5de97270fd9b92fef347925f60666d7ec90da744e986f3cef7e368f880328251"
+          },
+          {
+            "bytes": 14581,
+            "offset": 343156,
+            "sha256": "c9b26745ac882d8f5de093d9bf8ae5ecf929a476dca065753a77bb1479aa65e2"
+          }
+        ]
+      },
+      "extension": "bin",
+      "file": {
+        "bytes": 357737,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4119_PCIE_macOS_Honshu_OS_USI_20260715.bin",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4119_PCIE_macOS_Honshu_OS_USI_20260715.bin",
+        "sha256": "e35203928d9d7b2c3a2d33cbf09b732d0376e9778de40bdf233e0bc0bfeb2de8"
+      },
+      "qualifiers": "20260715",
+      "release": "24.2.551.4119",
+      "stepping": "B1",
+      "vendor": "USI"
+    },
+    {
+      "board": "Santorini",
+      "container_layout": {
+        "configuration_markers": {
+          "BRCMcfgD": 343654,
+          "BRCMcfgS": 343588
+        },
+        "embedded_identity": {
+          "board": "Santorini",
+          "offset": 343680,
+          "profile": "3ANT",
+          "stepping": "B1",
+          "vendor": "MUR",
+          "version": "24.2.551.4120"
+        },
+        "header_bytes": 256,
+        "regions": [
+          {
+            "bytes": 116368,
+            "offset": 256,
+            "sha256": "2f5c6a160777e84ec44da8c59a0580d7953fa1082c33b175c8cc3e1947fd55af"
+          },
+          {
+            "bytes": 226964,
+            "offset": 116624,
+            "sha256": "11f35c4c2e874760a7dbcbcc915e614748a01b20192d5ec199fc5930981b2973"
+          },
+          {
+            "bytes": 14769,
+            "offset": 343588,
+            "sha256": "8ea956b810a55848759bdc437440485e705479564750e94196cc014c97288f8a"
+          }
+        ]
+      },
+      "extension": "bin",
+      "file": {
+        "bytes": 358357,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4120_PCIE_macOS_Santorini_OS_MUR_20260715.bin",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4120_PCIE_macOS_Santorini_OS_MUR_20260715.bin",
+        "sha256": "df119217db5025b5effd41c3c8071932a6198976e8156cb4416c5a86f116fef6"
+      },
+      "qualifiers": "20260715",
+      "release": "24.2.551.4120",
+      "stepping": "B1",
+      "vendor": "MUR"
+    },
+    {
+      "board": "Santorini",
+      "container_layout": {
+        "configuration_markers": {
+          "BRCMcfgD": 343654,
+          "BRCMcfgS": 343588
+        },
+        "embedded_identity": {
+          "board": "Santorini",
+          "offset": 343680,
+          "profile": "3ANT",
+          "stepping": "B1",
+          "vendor": "USI",
+          "version": "24.2.551.4121"
+        },
+        "header_bytes": 256,
+        "regions": [
+          {
+            "bytes": 116368,
+            "offset": 256,
+            "sha256": "2f5c6a160777e84ec44da8c59a0580d7953fa1082c33b175c8cc3e1947fd55af"
+          },
+          {
+            "bytes": 226964,
+            "offset": 116624,
+            "sha256": "11f35c4c2e874760a7dbcbcc915e614748a01b20192d5ec199fc5930981b2973"
+          },
+          {
+            "bytes": 14769,
+            "offset": 343588,
+            "sha256": "a8dc7ebd48851ccf4adcb090073291dc8e13b96831269c83ab6f2626fd10d114"
+          }
+        ]
+      },
+      "extension": "bin",
+      "file": {
+        "bytes": 358357,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4121_PCIE_macOS_Santorini_OS_USI_20260715.bin",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4121_PCIE_macOS_Santorini_OS_USI_20260715.bin",
+        "sha256": "b02b8079699d76854c1c14cf9218d534e8499badfde57025db7caa1ad4eead21"
+      },
+      "qualifiers": "20260715",
+      "release": "24.2.551.4121",
+      "stepping": "B1",
+      "vendor": "USI"
+    },
+    {
+      "board": "Shikoku",
+      "container_layout": {
+        "configuration_markers": {
+          "BRCMcfgD": 343222,
+          "BRCMcfgS": 343156
+        },
+        "embedded_identity": {
+          "board": "Shikoku",
+          "offset": 343248,
+          "stepping": "B1",
+          "vendor": "MUR",
+          "version": "24.2.551.4122"
+        },
+        "header_bytes": 256,
+        "regions": [
+          {
+            "bytes": 116248,
+            "offset": 256,
+            "sha256": "a830e509b8382453e6d96ac84990066982ab421cfaee9706022fffd7acf991ae"
+          },
+          {
+            "bytes": 226652,
+            "offset": 116504,
+            "sha256": "5de97270fd9b92fef347925f60666d7ec90da744e986f3cef7e368f880328251"
+          },
+          {
+            "bytes": 14582,
+            "offset": 343156,
+            "sha256": "88fde4430307a68fb0c4c325b7e5ea0bc319a6257be043e747905f9c5b80d9f7"
+          }
+        ]
+      },
+      "extension": "bin",
+      "file": {
+        "bytes": 357738,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4122_PCIE_macOS_Shikoku_OS_MUR_20260715.bin",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4122_PCIE_macOS_Shikoku_OS_MUR_20260715.bin",
+        "sha256": "6be86dd5cc72e5cc11eaac80a4dcd92138171138ff174da2751d3e78bd329b60"
+      },
+      "qualifiers": "20260715",
+      "release": "24.2.551.4122",
+      "stepping": "B1",
+      "vendor": "MUR"
+    },
+    {
+      "board": "Shikoku",
+      "container_layout": {
+        "configuration_markers": {
+          "BRCMcfgD": 343222,
+          "BRCMcfgS": 343156
+        },
+        "embedded_identity": {
+          "board": "Shikoku",
+          "offset": 343248,
+          "stepping": "B1",
+          "vendor": "USI",
+          "version": "24.2.551.4123"
+        },
+        "header_bytes": 256,
+        "regions": [
+          {
+            "bytes": 116248,
+            "offset": 256,
+            "sha256": "a830e509b8382453e6d96ac84990066982ab421cfaee9706022fffd7acf991ae"
+          },
+          {
+            "bytes": 226652,
+            "offset": 116504,
+            "sha256": "5de97270fd9b92fef347925f60666d7ec90da744e986f3cef7e368f880328251"
+          },
+          {
+            "bytes": 14582,
+            "offset": 343156,
+            "sha256": "a56ba59e58a8907680b9b2314f04602bf8bc22d073e52032c2d1620f4941d987"
+          }
+        ]
+      },
+      "extension": "bin",
+      "file": {
+        "bytes": 357738,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4123_PCIE_macOS_Shikoku_OS_USI_20260715.bin",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_24.2.551.4123_PCIE_macOS_Shikoku_OS_USI_20260715.bin",
+        "sha256": "796ee56f4cd32092cca25fd4242c91cfde8e51321a457b6966f015ad6d16403e"
+      },
+      "qualifiers": "20260715",
+      "release": "24.2.551.4123",
+      "stepping": "B1",
+      "vendor": "USI"
+    },
+    {
+      "board": "Capri",
+      "extension": "ptb",
+      "file": {
+        "bytes": 786,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_3ANT_PCAP13_TXBF_PCIE_macOS_Capri_OS_MUR_K_R_20201216.ptb",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_3ANT_PCAP13_TXBF_PCIE_macOS_Capri_OS_MUR_K_R_20201216.ptb",
+        "sha256": "d6f61e0ccbeaed87345f2e72bb7fdc05cbfd8e03516e60837b54dc75f5406591"
+      },
+      "qualifiers": "K_R_20201216",
+      "release": "3ANT_PCAP13_TXBF",
+      "stepping": "B1",
+      "vendor": "MUR"
+    },
+    {
+      "board": "Capri",
+      "extension": "ptb",
+      "file": {
+        "bytes": 786,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_3ANT_PCAP13_TXBF_PCIE_macOS_Capri_OS_USI_K_R_20201216.ptb",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_3ANT_PCAP13_TXBF_PCIE_macOS_Capri_OS_USI_K_R_20201216.ptb",
+        "sha256": "d6f61e0ccbeaed87345f2e72bb7fdc05cbfd8e03516e60837b54dc75f5406591"
+      },
+      "qualifiers": "K_R_20201216",
+      "release": "3ANT_PCAP13_TXBF",
+      "stepping": "B1",
+      "vendor": "USI"
+    },
+    {
+      "board": "Santorini",
+      "extension": "ptb",
+      "file": {
+        "bytes": 786,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_3ANT_PCAP13_TXBF_PCIE_macOS_Santorini_OS_MUR_K_R_20201216.ptb",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_3ANT_PCAP13_TXBF_PCIE_macOS_Santorini_OS_MUR_K_R_20201216.ptb",
+        "sha256": "0c19a717f47584bf0bab2ad8947625db0de0411a38c02b3ce0fad21f0fe7e07d"
+      },
+      "qualifiers": "K_R_20201216",
+      "release": "3ANT_PCAP13_TXBF",
+      "stepping": "B1",
+      "vendor": "MUR"
+    },
+    {
+      "board": "Santorini",
+      "extension": "ptb",
+      "file": {
+        "bytes": 786,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_3ANT_PCAP13_TXBF_PCIE_macOS_Santorini_OS_USI_K_R_20201216.ptb",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_3ANT_PCAP13_TXBF_PCIE_macOS_Santorini_OS_USI_K_R_20201216.ptb",
+        "sha256": "0c19a717f47584bf0bab2ad8947625db0de0411a38c02b3ce0fad21f0fe7e07d"
+      },
+      "qualifiers": "K_R_20201216",
+      "release": "3ANT_PCAP13_TXBF",
+      "stepping": "B1",
+      "vendor": "USI"
+    },
+    {
+      "board": "AtlantisB",
+      "extension": "ptb",
+      "file": {
+        "bytes": 786,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_FinalV0_PCIE_macOS_AtlantisB_OS_MUR_K_R_20200812.ptb",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_FinalV0_PCIE_macOS_AtlantisB_OS_MUR_K_R_20200812.ptb",
+        "sha256": "75a2726d210d819d5f34e1ca7042ebcd23e2243337ebb8a1eabb97c28839e0a1"
+      },
+      "qualifiers": "K_R_20200812",
+      "release": "FinalV0",
+      "stepping": "B1",
+      "vendor": "MUR"
+    },
+    {
+      "board": "AtlantisB",
+      "extension": "ptb",
+      "file": {
+        "bytes": 786,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_FinalV0_PCIE_macOS_AtlantisB_OS_USI_K_R_20200812.ptb",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_FinalV0_PCIE_macOS_AtlantisB_OS_USI_K_R_20200812.ptb",
+        "sha256": "75a2726d210d819d5f34e1ca7042ebcd23e2243337ebb8a1eabb97c28839e0a1"
+      },
+      "qualifiers": "K_R_20200812",
+      "release": "FinalV0",
+      "stepping": "B1",
+      "vendor": "USI"
+    },
+    {
+      "board": "Honshu",
+      "extension": "ptb",
+      "file": {
+        "bytes": 520,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_FinalV0_PCIE_macOS_Honshu_OS_MUR_K_R_2020824.ptb",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_FinalV0_PCIE_macOS_Honshu_OS_MUR_K_R_2020824.ptb",
+        "sha256": "d6644d1425c08cbf92d49e5715bcc7a7999c0f00b02413a83df684d5dc2e2e42"
+      },
+      "qualifiers": "K_R_2020824",
+      "release": "FinalV0",
+      "stepping": "B1",
+      "vendor": "MUR"
+    },
+    {
+      "board": "Honshu",
+      "extension": "ptb",
+      "file": {
+        "bytes": 520,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_FinalV0_PCIE_macOS_Honshu_OS_USI_K_R_2020824.ptb",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_FinalV0_PCIE_macOS_Honshu_OS_USI_K_R_2020824.ptb",
+        "sha256": "d6644d1425c08cbf92d49e5715bcc7a7999c0f00b02413a83df684d5dc2e2e42"
+      },
+      "qualifiers": "K_R_2020824",
+      "release": "FinalV0",
+      "stepping": "B1",
+      "vendor": "USI"
+    },
+    {
+      "board": "Shikoku",
+      "extension": "ptb",
+      "file": {
+        "bytes": 520,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_FinalV0_PCIE_macOS_Shikoku_OS_MUR_K_R_20200902.ptb",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_FinalV0_PCIE_macOS_Shikoku_OS_MUR_K_R_20200902.ptb",
+        "sha256": "01f059c62863ab3b2a1a85712451e67b2d921864d0f85529c1de664734c11645"
+      },
+      "qualifiers": "K_R_20200902",
+      "release": "FinalV0",
+      "stepping": "B1",
+      "vendor": "MUR"
+    },
+    {
+      "board": "Shikoku",
+      "extension": "ptb",
+      "file": {
+        "bytes": 520,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B1_FinalV0_PCIE_macOS_Shikoku_OS_USI_K_R_20200902.ptb",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B1_FinalV0_PCIE_macOS_Shikoku_OS_USI_K_R_20200902.ptb",
+        "sha256": "01f059c62863ab3b2a1a85712451e67b2d921864d0f85529c1de664734c11645"
+      },
+      "qualifiers": "K_R_20200902",
+      "release": "FinalV0",
+      "stepping": "B1",
+      "vendor": "USI"
+    },
+    {
+      "board": "Kyushu",
+      "container_layout": {
+        "configuration_markers": {
+          "BRCMcfgD": 218098,
+          "BRCMcfgS": 218032
+        },
+        "embedded_identity": {
+          "board": "Kyushu",
+          "offset": 218124,
+          "stepping": "B3",
+          "vendor": "USI",
+          "version": "24.2.155.293"
+        },
+        "header_bytes": 256,
+        "regions": [
+          {
+            "bytes": 102240,
+            "offset": 256,
+            "sha256": "caea6a34d381a9dc8f683e964ee1e08163d284e990a7fbe1ab428237df93ac99"
+          },
+          {
+            "bytes": 115536,
+            "offset": 102496,
+            "sha256": "ff219bff63ed2ba416c7daef82022e851a16a252c9e125761e31891529d4813b"
+          },
+          {
+            "bytes": 12664,
+            "offset": 218032,
+            "sha256": "db9955e4082cde297f68f3f36c3a3cb87465166a0d1efe0636899d2cfad06641"
+          }
+        ]
+      },
+      "extension": "bin",
+      "file": {
+        "bytes": 230696,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B3_24.2.155.293_PCIE_macOS_Kyushu_OS_USI_20260715.bin",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B3_24.2.155.293_PCIE_macOS_Kyushu_OS_USI_20260715.bin",
+        "sha256": "0ceb164544b4a7e38c92f9abf9648dac4ac7ac1ab8116e31f14eec7a6a1753e5"
+      },
+      "qualifiers": "20260715",
+      "release": "24.2.155.293",
+      "stepping": "B3",
+      "vendor": "USI"
+    },
+    {
+      "board": "Kyushu",
+      "extension": "ptb",
+      "file": {
+        "bytes": 520,
+        "path": "/usr/share/firmware/bluetooth/BCM4378B3_Final_PCIE_macOS_Kyushu_OS_USI_K_R_20220128.ptb",
+        "resolved_path": "/usr/share/firmware/bluetooth/BCM4378B3_Final_PCIE_macOS_Kyushu_OS_USI_K_R_20220128.ptb",
+        "sha256": "d6644d1425c08cbf92d49e5715bcc7a7999c0f00b02413a83df684d5dc2e2e42"
+      },
+      "qualifiers": "K_R_20220128",
+      "release": "Final",
+      "stepping": "B3",
+      "vendor": "USI"
+    }
+  ],
+  "groups_with_identical_first_two_regions": [
+    [
+      "BCM4378B1_24.2.551.4114_PCIE_macOS_AtlantisB_OS_MUR_20260715.bin",
+      "BCM4378B1_24.2.551.4115_PCIE_macOS_AtlantisB_OS_USI_20260715.bin"
+    ],
+    [
+      "BCM4378B1_24.2.551.4116_PCIE_macOS_Capri_OS_MUR_20260715.bin",
+      "BCM4378B1_24.2.551.4117_PCIE_macOS_Capri_OS_USI_20260715.bin"
+    ],
+    [
+      "BCM4378B1_24.2.551.4118_PCIE_macOS_Honshu_OS_MUR_20260715.bin",
+      "BCM4378B1_24.2.551.4119_PCIE_macOS_Honshu_OS_USI_20260715.bin",
+      "BCM4378B1_24.2.551.4122_PCIE_macOS_Shikoku_OS_MUR_20260715.bin",
+      "BCM4378B1_24.2.551.4123_PCIE_macOS_Shikoku_OS_USI_20260715.bin"
+    ],
+    [
+      "BCM4378B1_24.2.551.4120_PCIE_macOS_Santorini_OS_MUR_20260715.bin",
+      "BCM4378B1_24.2.551.4121_PCIE_macOS_Santorini_OS_USI_20260715.bin"
+    ],
+    [
+      "BCM4378B3_24.2.155.293_PCIE_macOS_Kyushu_OS_USI_20260715.bin"
+    ]
+  ],
+  "unrecognized_filenames": []
+}

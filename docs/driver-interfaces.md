@@ -31,3 +31,5 @@ The mapping uses the driver-published interface-name prefix and unit. State flag
 ## Bluetooth endpoint
 
 The host lists the Broadcom Bluetooth PCIe endpoint as `14e4:5f69` with an `AppleConvergedPCI` child. System Information reports chipset `BCM_4378`, transport PCIe and controller firmware `24.2.551.4122`. Its service flags include HFP, AVRCP, A2DP, HID, LEA, AACP, GATT, SerialPort and SCO. The service flags describe the host's reported services. A negotiated service or PHY would require separate runtime evidence. [Host inventory](../evidence/2026-11-17-macos-inventory.json), [Linux Bluetooth identifier](https://github.com/torvalds/linux/blob/v6.12/drivers/bluetooth/hci_bcm4377.c)
+
+The version uniquely matches the embedded release in the installed Shikoku MUR firmware. The companion report records the format, PTB matches, observed PCIe aperture lengths and macOS API availability. [Bluetooth firmware investigation](bluetooth-firmware.md)
