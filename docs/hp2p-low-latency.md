@@ -33,6 +33,8 @@ A native Swift probe set and cleared `NWParameters.includePeerToPeer` on a proce
 
 On a separately managed A2337 and an owned Apple peer, compare a small interactive flow over the documented peer-to-peer API with the same flow on the infrastructure network. Record median and 95th-percentile round-trip time, transfer rate, and `awdl0` and `en0` byte deltas during simultaneous infrastructure traffic. A separate receiver observing the owned links can establish whether their airtime overlaps or alternates. Prior AWDL measurements show how availability windows can time-share a radio with an access point. A driver-owned record of the HP2P reply and completion events would be needed to connect the observed latency to RLLW or split transmit status. [Role counter sampler](../tools/read_link_role_counters.py), [Original AWDL timing study](https://arxiv.org/abs/1808.03156)
 
+The paired inspection tool implements the application side of that test. It resolves the owned listener on the required interfaces, sends both workloads and collects per-connection path reports. The local verification exercised name discovery and payload transfer through the same code. An actual `awdl0` path attribution and HP2P status remain open. [Paired transfer and bench commands](practical-radio-applications.md#test-the-direct-link-while-the-archive-is-moving)
+
 ## Reproduce the offline image comparison
 
 ```sh

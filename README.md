@@ -4,7 +4,7 @@ This project examines the Wi-Fi chip in the 2020 M1 MacBook Air (A2337, `MacBook
 
 The [discovery catalog](docs/capability-catalog.md) is the complete list of processes, features, controls, and evidence covered so far. The [firmware feature index](docs/firmware-feature-index.md) lists all 90 words reported by the running firmware and the additional fields decoded in the driver.
 
-The [practical radio applications](docs/practical-radio-applications.md) apply those findings to inspection, on-demand processing, synchronization, and recovery. The inspection prototype sends timely previews while preserving the full archive and verifies traffic markings on connected macOS sockets.
+The [practical radio applications](docs/practical-radio-applications.md) apply those findings to inspection, on-demand processing, synchronization, and recovery. The inspection tools model how to send previews first and run a paired transfer that measures preview deadlines during a full archive upload. [Run the paired transfer](docs/practical-radio-applications.md#test-the-direct-link-while-the-archive-is-moving)
 
 ## What can I use today?
 
@@ -20,6 +20,8 @@ The [practical radio applications](docs/practical-radio-applications.md) apply t
 **The hardware can operate on both bands together.** A2337 lab equipment measured simultaneous 2.4 GHz and 5 GHz transmission in HT20 test modes. The running firmware advertises `rsdb`, the flag for real simultaneous dual band. macOS uses it to check what the radio's slices can do. [Lab and driver evidence](docs/simultaneous-dual-band.md)
 
 On stock macOS, `en0` is the observed router connection. Discovery scans are a driver-managed way to check other channels. The driver has off-channel timing records for those scans. Apple's `awdl0` role supports direct peer traffic with compatible software. Sustained off-channel measurement during an internet session, a peer transfer confirmed on a different band, and two independent router connections on the single chip remain unverified on this build. The Linux source also has separate conditions for the number of channels and the number of router connections it exposes. [Modes and gates](docs/simultaneous-dual-band.md#keeping-an-internet-link-while-using-another-channel), [Interface evidence](docs/driver-interfaces.md)
+
+The paired-transfer test can require `awdl0` for previews and `en0` for full images. It verifies the interface used for each stream through the connection's own byte counts. Local transfer and interface reporting passed. The two-device run and the timing of transmissions on each band still need bench measurements. [Test and results](docs/practical-radio-applications.md#test-the-direct-link-while-the-archive-is-moving)
 
 For continuous probing or a second router connection while this Mac stays online, an independent Wi-Fi radio or a second test device can take the second channel. [Bench controls and verification](docs/asahi-controls.md)
 

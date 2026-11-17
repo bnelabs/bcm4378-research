@@ -17,13 +17,44 @@ The timing uses the modeled bottleneck. The optional TCP loopback run delivered 
 python3 -B tools/replay_inspection_stream.py --loopback
 ```
 
-With an owned camera or phone, the next version would carry the preview on a separate connection and record the part ID and age at the receiver. The Mac can request an Apple peer link for local camera traffic and use its ordinary router connection for archive upload. The A2337 lab result and firmware's dual-band flag support testing that combination. The exact route, band and airtime of an app's transfer need verification. Measure how many previews reach the inspection decision within the part's time window, how many complete images remain in the archive, and whether the preview yields the same decision as the full image. [Peer roles](driver-interfaces.md#running-wi-fi-interfaces), [Dual-band gates](simultaneous-dual-band.md)
+With an owned camera, a paired Apple device can send small previews to the Mac over a direct link and transfer full images over the site's access point. Each preview can carry a part ID and an acknowledgement deadline. Compare how many previews arrive in time to inform the inspection decision and how many full images make it to the archive. The A2337 lab result and firmware's dual-band flag support testing this combination. [Peer roles](driver-interfaces.md#running-wi-fi-interfaces), [Dual-band gates](simultaneous-dual-band.md)
 
 The receiver's deadline misses can drive the sender to lower archive pacing or use smaller previews. The published same-network, other-network, and interference readings can help explain the circumstances after the fact. In one 22-second run the connected Mac returned 18% average and 7% other-network CCA at every read. Decisions about immediate rate need the receiver's delivery times because the CCA values can persist across snapshots. [Live airtime values](live-wifi-airtime.md)
 
 Two small HTTPS transfers on this Mac showed that the inspection socket setting can be visible at only part of the path. The video class advanced the tunnel queue while the Wi-Fi video queue and radio's video counters stayed flat. Keep the preview deadline in the sender and receiver, and check physical queue behavior wherever the inspection system is deployed. [Measured tunnel and Wi-Fi queues](wifi-traffic-scheduling.md#where-interactive-priority-showed-up-on-the-connected-mac)
 
 For a portable inspection kit, use the stock country tables to choose a shared 80 MHz block and narrower fallbacks for the camera and Mac. For example, the installed Türkiye, US and Japan rows all contain the block centered at 5,210 MHz. The 80 MHz block containing channel 144 appears in the US and Japan rows and is absent under Türkiye's rules for this Mac. Confirm the owned access point's available settings and the Mac's active list at the site. Record the negotiated width with the preview deadline results so changes to the radio plan can inform the sender's pacing. [Field deployment example and decoder](clm-channel-tables.md#plan-an-access-point-before-a-field-deployment)
+
+### Test the direct link while the archive is moving
+
+The native test opens two authenticated TCP connections. It sends twenty 2 KiB previews at 100 ms intervals and a 1 MiB archive in 4 KiB chunks. The receiver checks each payload against the expected bytes and acknowledges each preview and the complete archive. The sender requests interactive-video service for the previews and background service for the archive. It measures the time from each scheduled release to the receiver's acknowledgement using one monotonic clock. [Probe source](../tools/probe_inspection_peer.swift), [Network framework service classes](https://developer.apple.com/documentation/network/nwparameters/serviceclass-swift.enum)
+
+The sender selects the receiver's Bonjour advertisement on the required interface and stops discovery before opening the connections. It sets `NWParameters.requiredInterface` on each connection. The `split` test requires `awdl0` for previews and the named LAN interface for the archive. The `lan` test uses the named LAN interface for both streams. The connection's transfer report associates application bytes with the interface that carried them. A transfer counts as a successful split only when the report shows payload on both requested interfaces. [Apple peer setup](https://developer.apple.com/documentation/technotes/tn3213-moving-from-multipeer-connectivity-to-network-framework), [Required interface](https://developer.apple.com/documentation/network/nwparameters/requiredinterface), [Per-path transfer report](https://developer.apple.com/documentation/network/nwconnection/datatransferreport/pathreport)
+
+On macOS build 26B131, three local runs discovered the paired receiver through Bonjour on `lo0`. The connections used TLS with a fresh 32-byte shared key. The listener rejected the mismatched key in each run. All 60 preview acknowledgements met the 160 ms deadline, the receiver verified all 3 MiB of archive payload, and the reports attributed both connections in each run to `lo0`. The IPv4 default interface was `en0` and the association was on primary 40 at 80 MHz before and after the runs. [Loopback results](../evidence/2026-11-17-inspection-peer.json)
+
+```sh
+inspection_dir=$(mktemp -d -t bcm4378-inspection)
+xcrun swiftc -swift-version 6 -warnings-as-errors -O \
+  tools/probe_inspection_peer.swift -o "$inspection_dir/probe_inspection_peer"
+"$inspection_dir/probe_inspection_peer" selftest
+```
+
+For the radio comparison, build the same command on two owned Macs and run it on the independently managed test setup. Generate a fresh key on one test machine and share just that file over a trusted channel with the other one. The listener advertises the test service and runs for 90 seconds.
+
+```sh
+(umask 077 && /usr/bin/openssl rand -out "$inspection_dir/pairing.key" 32)
+"$inspection_dir/probe_inspection_peer" serve "$inspection_dir/pairing.key"
+```
+
+On the sender, use the copied key and its existing LAN interface. Capture JSON from both runs while the receiver is listening.
+
+```sh
+"$inspection_dir/probe_inspection_peer" run "$inspection_dir/pairing.key" lan en0
+"$inspection_dir/probe_inspection_peer" run "$inspection_dir/pairing.key" split en0
+```
+
+Compare preview deadline hits, tail latency and verified archive throughput under the same access-point conditions. The path report answers which interface carried the test traffic. Use an independent receiver on each band with a common clock to check which channels carried it and whether transmissions overlapped. The two-device result remains open. Data for the actual inspection and accuracy of the preview still require a camera and a part. [Radio bench measurements](simultaneous-dual-band.md#keeping-an-internet-link-while-using-another-channel)
 
 ## Wake the Mac when inspection work actually arrives
 

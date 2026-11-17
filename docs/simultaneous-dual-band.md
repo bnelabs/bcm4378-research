@@ -8,6 +8,8 @@ The hardware lab result establishes simultaneous use of the two bands under the 
 
 Apple's AWDL peer interface is a separate role on the same chip. Apps can opt into it for direct transfers with a compatible peer. A measured transfer on a different band while routing over `en0` still needs an owned peer and synchronized observation on both bands. A second physical radio or test device can handle continuous probing or a second router association independently of the Mac's internet radio. [Apple peer networking](https://developer.apple.com/documentation/technotes/tn3151-choosing-the-right-networking-api#Peer-to-peer-networking), [Observed interface roles](driver-interfaces.md#running-wi-fi-interfaces)
 
+The paired inspection tool measures a preview stream on `awdl0` and an archive stream on the infrastructure interface when both roles are available. Its per-connection report verifies where the payload traveled. A separate receiver on each band can measure frequency and airtime while the tool runs. [Two-device experiment](practical-radio-applications.md#test-the-direct-link-while-the-archive-is-moving)
+
 ## macOS firmware and platform gates
 
 Both signed driver slices search the firmware's capability response for the word `rsdb` and set or clear the bit read by `checkForSDBSupport`. That bit gates `querySDBPolicies`. Its four reads handle version, capabilities, bands, and configuration, with response checks in each path. The capability handler caches fields that the AWDL-facing getter copies to its caller. A separate chip check uses the cached slice count and per-slice bytes. [Host instruction trace](../evidence/2026-11-17-sdb-policy.json)
