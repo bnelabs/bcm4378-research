@@ -38,6 +38,8 @@ swift tools/read_wifi_status.swift
 
 The SDK type-check accepted references to the power and channel getters, channel and power setters, and association and disassociation methods. The setters and association methods require runtime verification on a separate target.
 
+The CoreWLAN link-quality delegate and subscription methods also type-checked. Apple documents the `com.apple.wifi.events` entitlement for application subscriptions. A stock terminal probe returned success from registration and cleanup and received zero callbacks over 8.01 seconds. That sample leaves event delivery unverified. The link diary uses the validated RSSI and transmit-rate getters. [Probe observation](../evidence/2026-11-17-corewlan-event-probe.json), [Apple event registration](https://developer.apple.com/documentation/corewlan/cwwificlient/startmonitoringevent%28with%3A%29), [Apple link-quality getters](https://developer.apple.com/documentation/corewlan/cweventdelegate/linkqualitydidchangeforwifiinterface%28withname%3Arssi%3Atransmitrate%3A%29)
+
 Apple describes the transmit-power getter in mW and uses zero for an error. Taken literally, `1496` would be 1.496 W. The A2337 grant reports a conducted test value of 0.023 W at the associated 80 MHz group's 5,210 MHz center. The source, measurement conditions and scaling of the getter are unverified. The sampler preserves the integer under `corewlan_transmit_power`. A calibrated bench comparison would need known channel width and measurement conditions, with both the getter and instrument measurements captured at the same time. [Apple getter documentation](https://developer.apple.com/documentation/corewlan/cwinterface/transmitpower%28%29), [A2337 grant](https://fccid.io/BCGA2337#grants)
 
 ## Separate test target

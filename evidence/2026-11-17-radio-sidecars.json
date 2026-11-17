@@ -1,0 +1,77 @@
+{
+  "clm": {
+    "bytes_outside_header_and_entries": 0,
+    "clm_metadata": {
+      "api": "Oly.Shikoku",
+      "clm_import_ver": "ClmImport: 1.74.1",
+      "compiler": "1.72.1",
+      "manufacturer": "v5 Final 251211"
+    },
+    "container": "BLOB",
+    "entries": [
+      {
+        "bytes": 35909,
+        "crc32": "0xb525a85f",
+        "offset": 60
+      },
+      {
+        "bytes": 4,
+        "crc32": "0xfd1364f6",
+        "offset": 35969
+      }
+    ],
+    "file": {
+      "bytes": 35973,
+      "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/shikoku-X3.clmb",
+      "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/shikoku.clmb",
+      "sha256": "3202b0cd073d89b13955762acf42442483873a46ff0d426da618f04ec2184140"
+    },
+    "header": {
+      "bytes": 60,
+      "crc32": "0xc3d68636"
+    },
+    "payload_marker": "CLM DATA"
+  },
+  "clm_txcap_trailing_entries_identical": true,
+  "nvram": {
+    "assignments": 296,
+    "distinct_keys": 296,
+    "encoding": "ASCII",
+    "file": {
+      "bytes": 7690,
+      "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/P-shikoku-X3_M-RASP_V-m__m-6.11.txt",
+      "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.11.txt",
+      "sha256": "2e15b8551b3cbf945247a6e25a8efbfb392476d799e81cbc61f659b55dc049b4"
+    },
+    "flat_key_assignments": 249,
+    "slice_1_assignments": 47,
+    "srom_revision": 11
+  },
+  "txcap": {
+    "bytes_outside_header_and_entries": 0,
+    "container": "BLOB",
+    "entries": [
+      {
+        "bytes": 633,
+        "crc32": "0xee609053",
+        "offset": 60
+      },
+      {
+        "bytes": 4,
+        "crc32": "0xfd1364f6",
+        "offset": 693
+      }
+    ],
+    "file": {
+      "bytes": 697,
+      "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/shikoku-X3.txcb",
+      "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/shikoku.txcb",
+      "sha256": "43d76d167e3fb833535e7e43ff28b77d1c07fa5d7ec730eaae8bce549cd9b059"
+    },
+    "header": {
+      "bytes": 60,
+      "crc32": "0x67c946c3"
+    },
+    "payload_marker": "TXCP"
+  }
+}

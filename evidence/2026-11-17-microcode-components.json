@@ -1,0 +1,463 @@
+{
+  "images": [
+    {
+      "eight_byte_windows": [
+        {
+          "bytes": 89520,
+          "distinct_values_by_byte_lane": [
+            256,
+            183,
+            201,
+            129,
+            168,
+            172,
+            29,
+            1
+          ],
+          "file_offset": 1295724,
+          "records": 11190,
+          "zeros_by_byte_lane": [
+            437,
+            524,
+            5316,
+            20,
+            2269,
+            422,
+            1102,
+            11190
+          ]
+        },
+        {
+          "bytes": 87416,
+          "distinct_values_by_byte_lane": [
+            256,
+            183,
+            204,
+            129,
+            168,
+            171,
+            29,
+            1
+          ],
+          "file_offset": 1385832,
+          "records": 10927,
+          "zeros_by_byte_lane": [
+            420,
+            513,
+            5184,
+            21,
+            2241,
+            366,
+            1057,
+            10927
+          ]
+        }
+      ],
+      "embedded_metadata": {
+        "firmware_tag_file_offsets": [
+          1497089
+        ],
+        "ucode_tags": [
+          {
+            "diff_count": 0,
+            "family": "OlympicAXUcode_1447_100",
+            "file_offset": 1497201,
+            "major": 1447,
+            "minor": 100,
+            "prebuilt": false,
+            "revision": 48542
+          }
+        ]
+      },
+      "file": {
+        "bytes": 1497470,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+      },
+      "shared_span_file_offset": 1295710,
+      "trailing_table": {
+        "file_offset": 1490944,
+        "first_le_word_strictly_increases": true,
+        "record_bytes": 8,
+        "records": 768,
+        "second_le_word_step": 8,
+        "separator_before_firmware_tag": "LF"
+      }
+    },
+    {
+      "eight_byte_windows": [
+        {
+          "bytes": 89520,
+          "distinct_values_by_byte_lane": [
+            256,
+            183,
+            201,
+            129,
+            168,
+            172,
+            29,
+            1
+          ],
+          "file_offset": 1295012,
+          "records": 11190,
+          "zeros_by_byte_lane": [
+            437,
+            524,
+            5316,
+            20,
+            2269,
+            422,
+            1102,
+            11190
+          ]
+        },
+        {
+          "bytes": 87416,
+          "distinct_values_by_byte_lane": [
+            256,
+            183,
+            204,
+            129,
+            168,
+            171,
+            29,
+            1
+          ],
+          "file_offset": 1385120,
+          "records": 10927,
+          "zeros_by_byte_lane": [
+            420,
+            513,
+            5184,
+            21,
+            2241,
+            366,
+            1057,
+            10927
+          ]
+        }
+      ],
+      "embedded_metadata": {
+        "firmware_tag_file_offsets": [
+          1496377
+        ],
+        "ucode_tags": [
+          {
+            "diff_count": 0,
+            "family": "OlympicAXUcode_1447_100",
+            "file_offset": 1496495,
+            "major": 1447,
+            "minor": 100,
+            "prebuilt": false,
+            "revision": 48542
+          }
+        ]
+      },
+      "file": {
+        "bytes": 1496769,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6"
+      },
+      "shared_span_file_offset": 1294998,
+      "trailing_table": {
+        "file_offset": 1490232,
+        "first_le_word_strictly_increases": true,
+        "record_bytes": 8,
+        "records": 768,
+        "second_le_word_step": 8,
+        "separator_before_firmware_tag": "LF"
+      }
+    },
+    {
+      "eight_byte_windows": [
+        {
+          "bytes": 89520,
+          "distinct_values_by_byte_lane": [
+            256,
+            183,
+            201,
+            129,
+            168,
+            172,
+            29,
+            1
+          ],
+          "file_offset": 1027548,
+          "records": 11190,
+          "zeros_by_byte_lane": [
+            437,
+            524,
+            5316,
+            20,
+            2269,
+            422,
+            1102,
+            11190
+          ]
+        },
+        {
+          "bytes": 87416,
+          "distinct_values_by_byte_lane": [
+            256,
+            183,
+            204,
+            129,
+            168,
+            171,
+            29,
+            1
+          ],
+          "file_offset": 1117656,
+          "records": 10927,
+          "zeros_by_byte_lane": [
+            420,
+            513,
+            5184,
+            21,
+            2241,
+            366,
+            1057,
+            10927
+          ]
+        }
+      ],
+      "embedded_metadata": {
+        "firmware_tag_file_offsets": [
+          1225761
+        ],
+        "ucode_tags": [
+          {
+            "diff_count": 0,
+            "family": "OlympicAXUcode_1447_100",
+            "file_offset": 1225873,
+            "major": 1447,
+            "minor": 100,
+            "prebuilt": false,
+            "revision": 48542
+          }
+        ]
+      },
+      "file": {
+        "bytes": 1226142,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a"
+      },
+      "shared_span_file_offset": 1027534,
+      "trailing_table": {
+        "file_offset": 1222768,
+        "first_le_word_strictly_increases": true,
+        "record_bytes": 8,
+        "records": 374,
+        "second_le_word_step": 8,
+        "separator_before_firmware_tag": "LF"
+      }
+    }
+  ],
+  "outgroups": [
+    {
+      "bcm4378_sample_anchor_hits": 0,
+      "entire_bcm4378_span_present": false,
+      "file": {
+        "bytes": 1026409,
+        "path": "/usr/share/firmware/wifi/C-4364__s-B2/ekans.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4364__s-B2/ekans.trx",
+        "sha256": "d19ddede506de115cf3794d9313910b1843f91727494a06810b64697565455d2"
+      },
+      "microcode_tags": []
+    },
+    {
+      "bcm4378_sample_anchor_hits": 0,
+      "entire_bcm4378_span_present": false,
+      "file": {
+        "bytes": 820013,
+        "path": "/usr/share/firmware/wifi/C-4364__s-B3/borneo.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4364__s-B3/borneo.trx",
+        "sha256": "b562fe64d210a14c92744edfc41bad9ace0d2c0d8809cb538686bfcae14c2fd5"
+      },
+      "microcode_tags": []
+    },
+    {
+      "bcm4378_sample_anchor_hits": 0,
+      "entire_bcm4378_span_present": false,
+      "file": {
+        "bytes": 1782341,
+        "path": "/usr/share/firmware/wifi/C-4387__s-C2/maldives.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4387__s-C2/maldives.trx",
+        "sha256": "3492022415265b65c6efa31c200af53c041856a54ca7f67f1a23570c1419b46f"
+      },
+      "microcode_tags": [
+        {
+          "diff_count": 0,
+          "family": "OlympicAXUcode_1478_100",
+          "file_offset": 1782078,
+          "major": 1478,
+          "minor": 100,
+          "prebuilt": false,
+          "revision": 48627
+        }
+      ]
+    },
+    {
+      "bcm4378_sample_anchor_hits": 0,
+      "entire_bcm4378_span_present": false,
+      "file": {
+        "bytes": 1766717,
+        "path": "/usr/share/firmware/wifi/C-4387__s-C2/okinawa.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4387__s-C2/okinawa.trx",
+        "sha256": "73736039b202164741942d61bd8ae69d4525c821d30724feecc5edb94ee0d0f3"
+      },
+      "microcode_tags": [
+        {
+          "diff_count": 0,
+          "family": "OlympicAXUcode_1478_100",
+          "file_offset": 1766448,
+          "major": 1478,
+          "minor": 100,
+          "prebuilt": false,
+          "revision": 48627
+        }
+      ]
+    },
+    {
+      "bcm4378_sample_anchor_hits": 0,
+      "entire_bcm4378_span_present": false,
+      "file": {
+        "bytes": 2478179,
+        "path": "/usr/share/firmware/wifi/C-4388__s-B0/miyake.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4388__s-B0/miyake.trx",
+        "sha256": "de1935053397211ea153a9be9ecbe2fc4e9ca0447e5877153729098ee76dd023"
+      },
+      "microcode_tags": [
+        {
+          "diff_count": 0,
+          "family": "OlympicAXUcode_1526_100",
+          "file_offset": 2477909,
+          "major": 1526,
+          "minor": 100,
+          "prebuilt": false,
+          "revision": 43309
+        }
+      ]
+    },
+    {
+      "bcm4378_sample_anchor_hits": 0,
+      "entire_bcm4378_span_present": false,
+      "file": {
+        "bytes": 2495971,
+        "path": "/usr/share/firmware/wifi/C-4388__s-B0/tokara.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4388__s-B0/tokara.trx",
+        "sha256": "d011649f88bc82f78ab970844d8280a359b30b8867e2b00a2601bf08d7e97dfc"
+      },
+      "microcode_tags": [
+        {
+          "diff_count": 0,
+          "family": "OlympicAXUcode_1526_100",
+          "file_offset": 2495707,
+          "major": 1526,
+          "minor": 100,
+          "prebuilt": false,
+          "revision": 43309
+        }
+      ]
+    },
+    {
+      "bcm4378_sample_anchor_hits": 0,
+      "entire_bcm4378_span_present": false,
+      "file": {
+        "bytes": 2269611,
+        "path": "/usr/share/firmware/wifi/C-4388__s-C0/miyake.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4388__s-C0/miyake.trx",
+        "sha256": "085bf4892eaafcf04142c6482157b247f72e3f9b2cef2faa52d8e42859a1c436"
+      },
+      "microcode_tags": [
+        {
+          "diff_count": 0,
+          "family": "OlympicAXUcode_1526_100",
+          "file_offset": 2269342,
+          "major": 1526,
+          "minor": 100,
+          "prebuilt": false,
+          "revision": 48593
+        }
+      ]
+    },
+    {
+      "bcm4378_sample_anchor_hits": 0,
+      "entire_bcm4378_span_present": false,
+      "file": {
+        "bytes": 2270907,
+        "path": "/usr/share/firmware/wifi/C-4388__s-C0/tokara.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4388__s-C0/tokara.trx",
+        "sha256": "3b6eb1e538a4bd93730fa275753bf2140a57153d224b9dc3bef4aa8cc1761e26"
+      },
+      "microcode_tags": [
+        {
+          "diff_count": 0,
+          "family": "OlympicAXUcode_1526_100",
+          "file_offset": 2270644,
+          "major": 1526,
+          "minor": 100,
+          "prebuilt": false,
+          "revision": 48593
+        }
+      ]
+    },
+    {
+      "bcm4378_sample_anchor_hits": 0,
+      "entire_bcm4378_span_present": false,
+      "file": {
+        "bytes": 1858007,
+        "path": "/usr/share/firmware/wifi/C-4388__s-C2/guam.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4388__s-C2/guam.trx",
+        "sha256": "6fca2cd2b9a45f7360f49c93e966cc21e92b79676fb020ab01db9743f12fe4bd"
+      },
+      "microcode_tags": [
+        {
+          "diff_count": 0,
+          "family": "OlympicAXUcode_1526_100",
+          "file_offset": 1857744,
+          "major": 1526,
+          "minor": 100,
+          "prebuilt": false,
+          "revision": 48593
+        }
+      ]
+    },
+    {
+      "bcm4378_sample_anchor_hits": 0,
+      "entire_bcm4378_span_present": false,
+      "file": {
+        "bytes": 1840579,
+        "path": "/usr/share/firmware/wifi/C-4388__s-C2/paradise.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4388__s-C2/paradise.trx",
+        "sha256": "1a48789821da3750065067d832b00cc149b8aac9373a16c45c11e5e4c7c265fa"
+      },
+      "microcode_tags": [
+        {
+          "diff_count": 0,
+          "family": "OlympicAXUcode_1526_100",
+          "file_offset": 1840310,
+          "major": 1526,
+          "minor": 100,
+          "prebuilt": false,
+          "revision": 48593
+        }
+      ]
+    }
+  ],
+  "rea_window": {
+    "block_size": 4096,
+    "bytes": 195250,
+    "evidence_id": "ev_6ec5aceac9f4d38ec2177c0bc6e62f86fa7277ac3b689567f7023ae86a1d4ffc",
+    "offset": 1295710
+  },
+  "sample_anchor_bytes": 256,
+  "sample_anchor_count": 24,
+  "sample_anchor_first_offset_in_shared_span": 224,
+  "sample_anchor_stride_bytes": 8192,
+  "shared_span_exact_equality_verified": true,
+  "shared_span_length": 195250
+}

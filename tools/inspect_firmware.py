@@ -17,6 +17,11 @@ FIRMWARE_TAG = re.compile(
     rb"Date=(?P<build_date>[0-9TZ:+-]+) FWID=(?P<firmware_id>[0-9a-fA-F-]+)"
     rb"(?=[\x00-\x20]|$)"
 )
+UCODE_TAG = re.compile(
+    rb"<UCODE-TAG>path=(?:[!-~]*/)?(?P<family>[A-Za-z0-9._-]+)@(?P<revision>[0-9]+) "
+    rb"major=(?P<major>[0-9]+) minor=(?P<minor>[0-9]+) diff_ct=(?P<diff_count>[0-9]+) "
+    rb"prebuilt=(?P<prebuilt>[01])(?=[\x00-\x20]|$)"
+)
 MARKERS = (
     "arp_ol",
     "awdl",
@@ -89,8 +94,48 @@ def inspect_image_bytes(data, identity):
     }
 
 
-def inspect_image(path):
-    return inspect_image_bytes(*read_artifact(path))
+def inspect_embedded_metadata(data):
+    ucode_tags = [
+        {
+            "file_offset": match.start(),
+            "family": match["family"].decode("ascii"),
+            "revision": int(match["revision"]),
+            "major": int(match["major"]),
+            "minor": int(match["minor"]),
+            "diff_count": int(match["diff_count"]),
+            "prebuilt": bool(int(match["prebuilt"])),
+        }
+        for match in UCODE_TAG.finditer(data)
+    ]
+    return {
+        "firmware_tag_file_offsets": [match.start() for match in FIRMWARE_TAG.finditer(data)],
+        "ucode_tags": ucode_tags,
+    }
+
+
+def profile_eight_byte_lanes(data, offset, length):
+    if offset < 0 or length <= 0 or length % 8 or offset + length > len(data):
+        raise ValueError("Lane window needs a nonnegative offset and a positive in-file length divisible by eight")
+    lanes = [data[start:offset + length:8] for start in range(offset, offset + 8)]
+    return {
+        "file_offset": offset,
+        "bytes": length,
+        "records": length // 8,
+        "zeros_by_byte_lane": [lane.count(b"\0") for lane in lanes],
+        "distinct_values_by_byte_lane": [len(set(lane)) for lane in lanes],
+    }
+
+
+def inspect_image(path, include_embedded_metadata=False, lane_windows=()):
+    data, identity = read_artifact(path)
+    report = inspect_image_bytes(data, identity)
+    if include_embedded_metadata:
+        report["embedded_metadata"] = inspect_embedded_metadata(data)
+    if lane_windows:
+        report["eight_byte_lane_profiles"] = [
+            profile_eight_byte_lanes(data, offset, length) for offset, length in lane_windows
+        ]
+    return report
 
 
 def inspect_platform_config(path):
@@ -115,9 +160,25 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("image", type=Path, help="Local firmware image")
     parser.add_argument("--platform-config", type=Path, help="Local platform plist")
+    parser.add_argument(
+        "--embedded-metadata", action="store_true", help="Include file offsets and microcode build fields"
+    )
+    parser.add_argument(
+        "--lane-window",
+        type=int,
+        nargs=2,
+        action="append",
+        default=[],
+        metavar=("OFFSET", "BYTES"),
+        help="Profile byte lanes in a file window, without outputting its contents",
+    )
     args = parser.parse_args()
     try:
-        report = {"firmware": inspect_image(args.image)}
+        report = {
+            "firmware": inspect_image(
+                args.image, include_embedded_metadata=args.embedded_metadata, lane_windows=args.lane_window
+            )
+        }
         if args.platform_config:
             report["platform_config"] = inspect_platform_config(args.platform_config)
     except (OSError, ValueError, plistlib.InvalidFileException, ExpatError) as error:
