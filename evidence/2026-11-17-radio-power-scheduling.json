@@ -1,0 +1,302 @@
+{
+  "sampled_at_utc": "2026-11-17T09:57:47+00:00",
+  "host": {
+    "model": "MacBookAir10,1",
+    "macos_version": "27.2.1",
+    "macos_build": "26B131",
+    "default_ipv4_interface": "en0",
+    "connected_phy": "802.11ax",
+    "wifi_firmware_version": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a"
+  },
+  "signed_driver": {
+    "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "bytes": 10564944,
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f"
+  },
+  "strict_signature_verified": true,
+  "traced_slices": [
+    "arm64e",
+    "arm64e.x1"
+  ],
+  "stock_platform_profile_scan": {
+    "/usr/share/firmware/wifi": {
+      "profile_paths": 56,
+      "properties": {
+        "wlan.aoac-allowed": {
+          "present": 35,
+          "empty_data": 35
+        },
+        "wlan.dignap.enabled": {
+          "present": 0,
+          "empty_data": 0
+        },
+        "wlan.ebt.enabled": {
+          "present": 0,
+          "empty_data": 0
+        },
+        "wlan.lpas-allowed": {
+          "present": 35,
+          "empty_data": 35
+        },
+        "wlan.mimo_ps.enabled": {
+          "present": 56,
+          "empty_data": 56
+        },
+        "wlan.ocl.enabled": {
+          "present": 56,
+          "empty_data": 56
+        },
+        "wlan.ops.enabled": {
+          "present": 0,
+          "empty_data": 0
+        },
+        "wlan.pm-thresholds.lpas": {
+          "present": 0,
+          "empty_data": 0
+        },
+        "wlan.pm-thresholds.wow": {
+          "present": 0,
+          "empty_data": 0
+        }
+      }
+    },
+    "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/PlatformConfig/macOS": {
+      "profile_paths": 56,
+      "properties": {
+        "wlan.aoac-allowed": {
+          "present": 35,
+          "empty_data": 35
+        },
+        "wlan.dignap.enabled": {
+          "present": 0,
+          "empty_data": 0
+        },
+        "wlan.ebt.enabled": {
+          "present": 0,
+          "empty_data": 0
+        },
+        "wlan.lpas-allowed": {
+          "present": 35,
+          "empty_data": 35
+        },
+        "wlan.mimo_ps.enabled": {
+          "present": 56,
+          "empty_data": 56
+        },
+        "wlan.ocl.enabled": {
+          "present": 56,
+          "empty_data": 56
+        },
+        "wlan.ops.enabled": {
+          "present": 0,
+          "empty_data": 0
+        },
+        "wlan.pm-thresholds.lpas": {
+          "present": 0,
+          "empty_data": 0
+        },
+        "wlan.pm-thresholds.wow": {
+          "present": 0,
+          "empty_data": 0
+        }
+      }
+    }
+  },
+  "live_pcie_bus_service": {
+    "class": "AppleBCMWLANBusInterfacePCIe",
+    "properties": {
+      "wlan.aoac-allowed": {
+        "type": "bytes",
+        "bytes": 0
+      },
+      "wlan.lpas-allowed": {
+        "type": "bytes",
+        "bytes": 0
+      },
+      "wlan.mimo_ps.enabled": {
+        "type": "bytes",
+        "bytes": 0
+      },
+      "wlan.ocl.enabled": {
+        "type": "bytes",
+        "bytes": 0
+      }
+    },
+    "selected_stock_platform": {
+      "path": "/usr/share/firmware/wifi/shikoku-PlatformConfig.plist",
+      "resolved_path": "/usr/share/firmware/wifi/shikoku-PlatformConfig.plist",
+      "bytes": 2647,
+      "sha256": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547"
+    },
+    "selected_stock_properties_match": true
+  },
+  "legacy_capabilities": {
+    "tested_words_present": [
+      "he",
+      "lpas",
+      "dtim_miss"
+    ],
+    "tested_words_absent": [
+      "ops",
+      "bcntrim",
+      "nap",
+      "twt",
+      "he_twt"
+    ],
+    "selected_driver_table_bits": {
+      "lpas": 26,
+      "ops": 56,
+      "bcntrim": 57,
+      "nap": 68,
+      "dtim_miss": 110
+    }
+  },
+  "stock_firmware_literal_scan": {
+    "C-4378__s-B1/shikoku.trx": {
+      "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06",
+      "selected_literal_counts": {
+        "twt": 0,
+        "he_twt": 0,
+        "ops_cfg": 0,
+        "ops_status": 0,
+        "bcntrim": 0,
+        "bcntrim_status": 0,
+        "dtim_miss": 1,
+        "bcn_li_dtim": 0,
+        "bcn_li_bcn": 0,
+        "lpas": 1,
+        "pm2_sleep_ret": 0,
+        "pwrstats": 0,
+        "nap_enable": 0
+      }
+    },
+    "C-4378__s-B1/capri.trx": {
+      "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6",
+      "selected_literal_counts": {
+        "twt": 0,
+        "he_twt": 0,
+        "ops_cfg": 0,
+        "ops_status": 0,
+        "bcntrim": 0,
+        "bcntrim_status": 0,
+        "dtim_miss": 1,
+        "bcn_li_dtim": 0,
+        "bcn_li_bcn": 0,
+        "lpas": 1,
+        "pm2_sleep_ret": 0,
+        "pwrstats": 0,
+        "nap_enable": 0
+      }
+    },
+    "C-4378__s-B3/kyushu.trx": {
+      "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a",
+      "selected_literal_counts": {
+        "twt": 0,
+        "he_twt": 0,
+        "ops_cfg": 0,
+        "ops_status": 0,
+        "bcntrim": 0,
+        "bcntrim_status": 0,
+        "dtim_miss": 1,
+        "bcn_li_dtim": 0,
+        "bcn_li_bcn": 0,
+        "lpas": 2,
+        "pm2_sleep_ret": 0,
+        "pwrstats": 0,
+        "nap_enable": 0
+      }
+    }
+  },
+  "low_power_associated_sleep": {
+    "platform_reader": "AppleBCMWLANConfigManager::gatherParameterData",
+    "presence_based_keys": [
+      "wlan.lpas-allowed",
+      "wlan.aoac-allowed"
+    ],
+    "capability_check": "AppleBCMWLANCore::checkForLPASSupport",
+    "requires_host_lpas_permission_and_firmware_feature_bit": true,
+    "selected_associated_sleep_entry": "AppleBCMWLANCore::configureLPASEntry",
+    "selected_associated_sleep_exit": "AppleBCMWLANCore::configureLPASExit",
+    "firmware_setting": "lpas",
+    "mode_requested_on_lpas_entry": 1,
+    "mode_requested_on_lpas_exit": 0,
+    "active_mode_sampled": false
+  },
+  "listen_interval_policy": {
+    "caller": "AppleBCMWLANPowerStateAdapter::configureBeaconSOI",
+    "extended_path": "AppleBCMWLANPowerStateAdapter::configureExtendedListenInterval",
+    "inputs": [
+      "AP DTIM period in beacons",
+      "beacon interval in milliseconds",
+      "requested wake period in milliseconds"
+    ],
+    "extended_path_predicate": "Requested wake period exceeds one beacon interval",
+    "count_for_positive_inputs": "max(1, ceil(requested wake period / (beacon interval * DTIM period)) - 1)",
+    "firmware_variables": [
+      "bcn_li_bcn",
+      "bcn_li_dtim"
+    ],
+    "extended_mode_sets_beacon_count": 0,
+    "default_mode_sets_beacon_count": 1,
+    "default_mode_sets_dtim_count": 0,
+    "dtim_period_consumer": "AppleBCMWLANCore::getDTIM_INT calls IO80211BssManager::getCurrentDTIMPeriod",
+    "missed_dtim_parser": "AppleBCMWLANCore::parseDTIMEcounter",
+    "missed_dtim_record_version": 1,
+    "missed_dtim_record_length": 32,
+    "missed_dtim_reason_labels": [
+      "p2p",
+      "iovar",
+      "scan",
+      "roam",
+      "homechan",
+      "sleep",
+      "misc"
+    ]
+  },
+  "other_driver_paths": {
+    "early_beacon_termination": [
+      "wlan.ebt.enabled",
+      "bcntrim",
+      "bcntrim_status"
+    ],
+    "opportunistic_power_save": [
+      "wlan.ops.enabled",
+      "ops_cfg",
+      "ops_status"
+    ],
+    "digital_nap": [
+      "wlan.dignap.enabled",
+      "nap_enable"
+    ]
+  },
+  "bounded_runtime_observation": {
+    "corewlan_bssid_available": false,
+    "cache_lookup_attempted": false,
+    "boot_log_window_seconds": 300,
+    "boot_log_matching_records": 0,
+    "boot_log_predicate_message_fragments": [
+      "LPAS allowed[",
+      "LPAS request in FW",
+      "default extended DTIM params from device tree"
+    ],
+    "pmset_log_timeout_seconds": 12,
+    "radio_duty_cycle_sampled": false,
+    "target_wake_time_agreement_sampled": false
+  },
+  "pinned_linux_reference": {
+    "stable_commit": "7595a62d45ee1a2297eafa5f2ef5d0a45142d84d",
+    "asahi_commit": "201be96df5654336bdcbe1da2103f193d7a0b940",
+    "stable_cfg80211_sha256": "e01771665b45d2c116e4df9af998fed0c7f009d19e65a00584b248e3911770ad",
+    "asahi_cfg80211_sha256": "e2d98f65c1d771a0b262eda27d297787f5612c8ebcf614b36dc8062847534ec0",
+    "stable_nl80211_sha256": "db2e731e96e9572003a449253ca6623a67a0293c48160dcd3d144b60980c5b16",
+    "firmware_fast_power_save_timeout_variable": "pm2_sleep_ret",
+    "driver_callback_timeout_ceiling_ms": 2000,
+    "asahi_station_he_template_twt_flags": [
+      "requester",
+      "responder",
+      "broadcast",
+      "flexible scheduling"
+    ]
+  }
+}

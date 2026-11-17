@@ -32,11 +32,22 @@ MARKERS = (
     "awdl",
     "awdl_doiovar_patch",
     "awdl_psf_dwell",
+    "bcn_li_bcn",
+    "bcn_li_dtim",
+    "bcntrim",
+    "bcntrim_status",
     "btc_esco_awdl",
     "btc_wifi_prot",
+    "dtim_miss",
     "he_twt",
+    "lpas",
+    "nap_enable",
     "ndoe",
+    "ops_cfg",
+    "ops_status",
     "pkt_filter",
+    "pm2_sleep_ret",
+    "pwrstats",
     "roam_5g_bandboost",
     "sdb",
     "twt",
@@ -56,6 +67,17 @@ TRANSPORT_CONFIG_KEYS = (
     "wlan.tx.submission-queue.size",
     "wlan.skywalk.packetpoolsize",
 )
+RADIO_POWER_CONFIG_KEYS = (
+    "wlan.aoac-allowed",
+    "wlan.dignap.enabled",
+    "wlan.ebt.enabled",
+    "wlan.lpas-allowed",
+    "wlan.mimo_ps.enabled",
+    "wlan.ocl.enabled",
+    "wlan.ops.enabled",
+    "wlan.pm-thresholds.lpas",
+    "wlan.pm-thresholds.wow",
+)
 BTC_PARAMETER_KEY = "bcom.btc.params"
 CONFIG_KEYS = (
     BTC_PARAMETER_KEY,
@@ -67,6 +89,7 @@ CONFIG_KEYS = (
     "wlan.tethering.enabled",
     "wlan.txsdb.mode",
     "wlan.wnm.enabled",
+    *RADIO_POWER_CONFIG_KEYS,
     *TRANSPORT_CONFIG_KEYS,
 )
 
@@ -252,13 +275,9 @@ def decode_btc_parameters(data):
     }
 
 
-def inspect_platform_config(path):
-    data, identity = read_artifact(path)
-    config = plistlib.loads(data)
-    if not isinstance(config, dict):
-        raise ValueError(f"Expected a plist dictionary at {path}")
+def summarize_config_keys(config, selected_keys):
     keys = {}
-    for key in CONFIG_KEYS:
+    for key in selected_keys:
         if key in config:
             value = config[key]
             summary = {"type": type(value).__name__}
@@ -269,7 +288,15 @@ def inspect_platform_config(path):
             elif isinstance(value, (bool, int)):
                 summary["value"] = value
             keys[key] = summary
-    return {"file": identity, "selected_keys": keys}
+    return keys
+
+
+def inspect_platform_config(path):
+    data, identity = read_artifact(path)
+    config = plistlib.loads(data)
+    if not isinstance(config, dict):
+        raise ValueError(f"Expected a plist dictionary at {path}")
+    return {"file": identity, "selected_keys": summarize_config_keys(config, CONFIG_KEYS)}
 
 
 def main():
