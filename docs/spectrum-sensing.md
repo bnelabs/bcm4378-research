@@ -62,6 +62,8 @@ Both signed Apple host driver slices contain FTM and Target Wake Time (TWT) mark
 
 Apple documents a 56-bit random starting Timing Synchronization Function (TSF) offset in peer-to-peer and access point modes on late-2020 and newer Macs with macOS 12.0.1 or later. The offset changes when the interface MAC address changes. Align receiver captures against a common observer clock when comparing timing across peer sessions. [Apple Platform Security](https://support.apple.com/en-ca/guide/security/sec31e483abf/web)
 
+The packet-timing investigation traces the PCIe clock modes and verifies stock macOS socket timestamps. Saved Radiotap captures can carry both a receive-side TSF time and a timestamp sampled earlier in the PHY. [Packet timestamp evidence](packet-timestamps.md)
+
 ## Interface activity and PHY rate
 
 The sampler's optional `--traffic` mode pairs CoreWLAN with the stock `netstat` link-layer row for the same interface. Apple sources its interface totals from unsigned 64-bit byte and packet fields. The analyzer uses adjacent samples from the same interface with increasing timestamps and nondecreasing counters. It totals bytes and divides by the elapsed time covered by those intervals. Missing samples, counter decreases and incomparable intervals have separate counts. [Apple netstat implementation](https://github.com/apple-oss-distributions/network_cmds/blob/main/netstat.tproj/if.c), [Apple interface counter definitions](https://github.com/apple-oss-distributions/xnu/blob/main/bsd/net/if_var.h)

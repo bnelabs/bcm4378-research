@@ -21,6 +21,7 @@ This repository records the Wi-Fi hardware, driver and firmware of the 2020 M1 M
 - [Live access and control](docs/live-access.md) records the PCIe apertures, UART metadata, transmit-power readout and conditions for testing deeper controls.
 - [Chip memory and backplane layout](docs/chip-memory-map.md) traces the signed driver's RAM geometry, core and wrapper regions, and normal fault attachment.
 - [PCIe link and power properties](docs/pcie-link-properties.md) records the shared port, endpoint status fields, and link power capability and policy.
+- [Packet timestamps and PCIe time measurement](docs/packet-timestamps.md) traces the driver's clock modes, verifies the stock macOS timestamp readouts, and compares timing fields in a saved capture.
 - [Packet queues and PCIe ring sizing](docs/pcie-queue-sizing.md) traces the live scheduler and Shikoku transport settings through macOS and compares Linux descriptor depths.
 - [Wi-Fi traffic scheduling](docs/wifi-traffic-scheduling.md) verifies per-socket service types and pacing settings, maps host queues, and traces WME and MSCS paths.
 - [macOS host power policy](docs/host-power-policy.md) records network wake and keepalive settings and their scope.

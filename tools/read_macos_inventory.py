@@ -399,6 +399,7 @@ def collect():
     platform_bundle = DRIVER_BUNDLE / "PlatformConfig" / "macOS" / platform
     coexistence_data = bus.get(BTC_PARAMETER_KEY)
     coexistence = decode_btc_parameters(coexistence_data) if isinstance(coexistence_data, bytes) else None
+    ptm_mode = core.get("PTM_Mode")
     report = {
         "host": {"model": model, "macos_version": version, "macos_build": build},
         "default_ipv4_interface": default_route.group(1) if default_route else None,
@@ -408,6 +409,7 @@ def collect():
             "running_firmware": core.get("FirmwareVersion"),
             "interface_roles": interface_roles(entries),
             "capability_inputs": wifi_capability_inputs(core, bus),
+            "pcie_ptm_mode": ptm_mode if type(ptm_mode) is int else None,
             "coexistence_parameters": coexistence,
             "dfs_proxy": {
                 "board_property": summarize_config_keys(bus, (DFS_PROXY_KEY,)).get(DFS_PROXY_KEY),

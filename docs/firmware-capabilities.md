@@ -20,6 +20,7 @@ In both signed driver slices, the successful `AppleBCMWLANCore::IssueFwCap` path
 | `arpoe`, `ndoe`, `tko`, `pktfltr2`, `bdo` | The signed driver uses these features for ARP, IPv6 neighbor discovery, TCP keepalive, packet filtering, and Bonjour discovery. The firmware supplies the driver's keepalive slot count. The slot count and actual behavior during sleep remain unmeasured. [Offload and wake paths](sleep-network-offloads.md) |
 | `tvpm` | The driver checks this feature for temperature and voltage power management. The live registry publishes radio temperature, battery voltage, and transmit mitigation labels. Applied limits remain unmeasured. [TVPM evidence](tvpm.md) |
 | `ecounters`, `adv_ecounters`, `phy_ecounter`, `phy_cal_ecounter` | The firmware advertises event and PHY telemetry families. The macOS sampling path can issue commands to firmware, so the registry sample only reads the published words. [IOReport provenance](cca-provenance.md) |
+| `tsync`, `ptm` | Both words are absent from the running legacy response. The signed driver tests the associated feature bits and publishes the core's PTM fallback mode. Stock `en0` reports clear interface hardware timestamp capability bits. [Timestamp trace and host probe](packet-timestamps.md) |
 
 ## Ranging on the BCM4378
 
