@@ -1,0 +1,844 @@
+{
+  "date": "2026-11-17",
+  "scope": "Signed AppleBCMWLAN channel report provenance, native IOReport sampling, and a read-only comparison with the current channel list.",
+  "macos_build": "26B131",
+  "driver": {
+    "binary": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "strict_codesign_verification_exit_status": 0,
+    "slices": [
+      {
+        "architecture": "arm64e",
+        "parse_event": {
+          "entry": "0x100122fac",
+          "accepted_length_checks": [
+            {
+              "address": "0x100123004",
+              "instruction": "cmp x0, #0x14"
+            },
+            {
+              "address": "0x100122ffc",
+              "instruction": "cmp x0, #0x18"
+            },
+            {
+              "address": "0x100122ff4",
+              "instruction": "cmp x0, #0x1c"
+            }
+          ],
+          "legacy_sdb_bit": {
+            "address": "0x10012301c",
+            "instruction": "mov w1, #0x2e"
+          },
+          "legacy_band_mask": {
+            "address": "0x100123044",
+            "instruction": "tst w8, #0xc000"
+          },
+          "explicit_slice_read": {
+            "address": "0x100123068",
+            "instruction": "ldr w2, [x0, #0x14]"
+          },
+          "legacy_report_call": {
+            "address": "0x1001231e4",
+            "instruction": "bl __ZN31AppleBCMWLANIOReportingPerSlice29reportChannelSwitchV1PerSliceEP6OSData19AppleBCMWLANSliceId"
+          },
+          "extended_report_call": {
+            "address": "0x100123074",
+            "instruction": "bl __ZN31AppleBCMWLANIOReportingPerSlice29reportChannelSwitchV2PerSliceEP6OSData19AppleBCMWLANSliceId"
+          }
+        },
+        "legacy_adapter": {
+          "entry": "0x100037f64",
+          "zero_word": {
+            "address": "0x100037f94",
+            "instruction": "str wzr, [sp]"
+          },
+          "size": {
+            "address": "0x100037fac",
+            "instruction": "mov w2, #0x4"
+          },
+          "append": {
+            "address": "0x100037fb0",
+            "instruction": "bl 0x1002941cc ; symbol stub for: __ZN6OSData11appendBytesEPKvm"
+          }
+        },
+        "report_update": {
+          "entry": "0x100038030",
+          "diagnostic_format_reference": {
+            "address": "0x10003833c",
+            "instruction": "add x1, x1, #0x278 ; literal pool for: \"[dk] %s@%d:time %llu old_chanspec %llu %s new_chanspec %llu %s chansw_reason %llu dwell_time %llu core %llu phychanswtime %llu\\n\""
+          },
+          "destination_spec_offset_argument": {
+            "address": "0x100038384",
+            "instruction": "mov w3, #0x8"
+          },
+          "destination_spec_in_report_id": {
+            "address": "0x1000383a0",
+            "instruction": "bfxil x1, x0, #0, #16"
+          },
+          "slice_in_report_id": {
+            "address": "0x100038398",
+            "instruction": "bfi x25, x20, #56, #8"
+          },
+          "destination_count_step": {
+            "address": "0x1000383a8",
+            "instruction": "mov w2, #0x1"
+          },
+          "destination_count_update": {
+            "address": "0x1000383ac",
+            "instruction": "bl 0x1002931bc ; symbol stub for: __ZN16IOSimpleReporter14incrementValueEyx"
+          },
+          "destination_report_group_reference": {
+            "address": "0x100038488",
+            "instruction": "add x27, x27, #0xe2d ; literal pool for: \"Channels Visited\""
+          },
+          "total_message_report_reference": {
+            "address": "0x100038734",
+            "instruction": "add x2, x2, #0xc6e ; literal pool for: \"Channel Switch Messages\""
+          },
+          "reason_report_group_reference": {
+            "address": "0x1000387c0",
+            "instruction": "add x26, x26, #0xe16 ; literal pool for: \"Channel Switch Reasons\""
+          }
+        }
+      },
+      {
+        "architecture": "arm64e.x1",
+        "parse_event": {
+          "entry": "0x10011f568",
+          "accepted_length_checks": [
+            {
+              "address": "0x10011f5c0",
+              "instruction": "cmp x0, #0x14"
+            },
+            {
+              "address": "0x10011f5b8",
+              "instruction": "cmp x0, #0x18"
+            },
+            {
+              "address": "0x10011f5b0",
+              "instruction": "cmp x0, #0x1c"
+            }
+          ],
+          "legacy_sdb_bit": {
+            "address": "0x10011f5d8",
+            "instruction": "mov w1, #0x2e"
+          },
+          "legacy_band_mask": {
+            "address": "0x10011f600",
+            "instruction": "tst w8, #0xc000"
+          },
+          "explicit_slice_read": {
+            "address": "0x10011f624",
+            "instruction": "ldr w2, [x0, #0x14]"
+          },
+          "legacy_report_call": {
+            "address": "0x10011f7a0",
+            "instruction": "bl __ZN31AppleBCMWLANIOReportingPerSlice29reportChannelSwitchV1PerSliceEP6OSData19AppleBCMWLANSliceId"
+          },
+          "extended_report_call": {
+            "address": "0x10011f630",
+            "instruction": "bl __ZN31AppleBCMWLANIOReportingPerSlice29reportChannelSwitchV2PerSliceEP6OSData19AppleBCMWLANSliceId"
+          }
+        },
+        "legacy_adapter": {
+          "entry": "0x100037a88",
+          "zero_word": {
+            "address": "0x100037ab8",
+            "instruction": "str wzr, [sp]"
+          },
+          "size": {
+            "address": "0x100037ad0",
+            "instruction": "mov w2, #0x4"
+          },
+          "append": {
+            "address": "0x100037ad4",
+            "instruction": "bl 0x10028daa4 ; symbol stub for: __ZN6OSData11appendBytesEPKvm"
+          }
+        },
+        "report_update": {
+          "entry": "0x100037b54",
+          "diagnostic_format_reference": {
+            "address": "0x100037e60",
+            "instruction": "add x1, x1, #0xb50 ; literal pool for: \"[dk] %s@%d:time %llu old_chanspec %llu %s new_chanspec %llu %s chansw_reason %llu dwell_time %llu core %llu phychanswtime %llu\\n\""
+          },
+          "destination_spec_offset_argument": {
+            "address": "0x100037ea8",
+            "instruction": "mov w3, #0x8"
+          },
+          "destination_spec_in_report_id": {
+            "address": "0x100037ec4",
+            "instruction": "bfxil x1, x0, #0, #16"
+          },
+          "slice_in_report_id": {
+            "address": "0x100037ebc",
+            "instruction": "bfi x25, x20, #56, #8"
+          },
+          "destination_count_step": {
+            "address": "0x100037ecc",
+            "instruction": "mov w2, #0x1"
+          },
+          "destination_count_update": {
+            "address": "0x100037ed0",
+            "instruction": "bl 0x10028ca94 ; symbol stub for: __ZN16IOSimpleReporter14incrementValueEyx"
+          },
+          "destination_report_group_reference": {
+            "address": "0x100037fac",
+            "instruction": "add x27, x27, #0x705 ; literal pool for: \"Channels Visited\""
+          },
+          "total_message_report_reference": {
+            "address": "0x100038258",
+            "instruction": "add x2, x2, #0x546 ; literal pool for: \"Channel Switch Messages\""
+          },
+          "reason_report_group_reference": {
+            "address": "0x1000382e4",
+            "instruction": "add x26, x26, #0x6ee ; literal pool for: \"Channel Switch Reasons\""
+          }
+        }
+      }
+    ]
+  },
+  "format_on_the_inspected_build": {
+    "event_20_byte_path": "When RSDB is enabled, classify the converted destination band as slice 1 for 2.4 GHz and slice 0 otherwise. Use slice 0 when the RSDB bit is clear.",
+    "event_24_and_28_byte_path": "Use the 32-bit slice field at offset 0x14.",
+    "destination_field_offset": "0x08",
+    "destination_report_id_low_16_bits": "Raw destination chanspec",
+    "destination_report_id_bits_56_to_63": "Slice identifier",
+    "destination_counts": "A count of reported destination records. The published count carries no event timestamp, regulatory context or evidence of transmission."
+  },
+  "mode_checks": {
+    "source": "tools/read_wifi_airtime.m",
+    "strict_warnings": true,
+    "report_counts": {
+      "none": 98,
+      "--wme": 32,
+      "--channel-switch": 66
+    },
+    "channel_ids_matching_live_registry": 42
+  },
+  "native_measurement": {
+    "samples": 25,
+    "spacing_requested_seconds": 2.5,
+    "elapsed_seconds": 60.037109,
+    "timestamps_unix_seconds": [
+      1794943193.868942,
+      1794943196.420779,
+      1794943198.952616,
+      1794943201.416027,
+      1794943203.918236,
+      1794943206.4473,
+      1794943208.916698,
+      1794943211.406353,
+      1794943213.916985,
+      1794943216.415907,
+      1794943218.916348,
+      1794943221.440846,
+      1794943223.915549,
+      1794943226.445448,
+      1794943228.91356,
+      1794943231.445757,
+      1794943233.9484549,
+      1794943236.41395,
+      1794943238.909687,
+      1794943241.413855,
+      1794943243.9128408,
+      1794943246.438803,
+      1794943248.944809,
+      1794943251.444061,
+      1794943253.9060512
+    ],
+    "reported_channel": {
+      "channel_width_mhz": 80,
+      "interface": "en0",
+      "primary_channel": 40
+    },
+    "same_reported_channel_at_all_samples": true,
+    "ipv4_default_route_counts": {
+      "en0": 25
+    },
+    "host_interface_totals": {
+      "ap1": {
+        "delta": {
+          "rx_bytes": 0,
+          "tx_bytes": 0,
+          "rx_packets": 0,
+          "tx_packets": 0
+        },
+        "intervals_with_positive_delta": 0
+      },
+      "en0": {
+        "delta": {
+          "rx_bytes": 1504420,
+          "tx_bytes": 464760,
+          "rx_packets": 2410,
+          "tx_packets": 1609
+        },
+        "intervals_with_positive_delta": 24
+      },
+      "awdl0": {
+        "delta": {
+          "rx_bytes": 0,
+          "tx_bytes": 0,
+          "rx_packets": 0,
+          "tx_packets": 0
+        },
+        "intervals_with_positive_delta": 0
+      },
+      "llw0": {
+        "delta": {
+          "rx_bytes": 0,
+          "tx_bytes": 0,
+          "rx_packets": 0,
+          "tx_packets": 0
+        },
+        "intervals_with_positive_delta": 0
+      },
+      "nan0": {
+        "delta": {
+          "rx_bytes": 0,
+          "tx_bytes": 0,
+          "rx_packets": 0,
+          "tx_packets": 0
+        },
+        "intervals_with_positive_delta": 0
+      }
+    },
+    "returned_report_count_at_each_sample": 66,
+    "observed_in_unprivileged_process": true,
+    "passive_observation": "IOReport, CoreWLAN link getters, route and interface counters. No scan or peer transfer was requested.",
+    "slices": {
+      "Slice 0": {
+        "bytes_transferred_before": {
+          "Tx Bytes": 371160450,
+          "Rx Bytes": 468721570
+        },
+        "bytes_transferred_after": {
+          "Tx Bytes": 371666498,
+          "Rx Bytes": 470293381
+        },
+        "bytes_transferred_delta": {
+          "Tx Bytes": 506048,
+          "Rx Bytes": 1571811
+        },
+        "channel_and_reason_counts_unchanged_throughout": true,
+        "channel_switch_reasons": {
+          "Channel Switch Messages": 172372,
+          "Scan": 373,
+          "To Associate": 3,
+          "STA": 80363,
+          "Slotted BSS Calibration": 2,
+          "Slotted BSS": 85721,
+          "Unknown": 1585,
+          "Slotted Common Sync Layer": 4325
+        },
+        "channel_history": [
+          {
+            "label": "40 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d028",
+            "firmware_chanspec_hex": "0xd028",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 40,
+            "center_channel": 40,
+            "reported_destination_count": 6
+          },
+          {
+            "label": "40 5g 80MHz u",
+            "channel_id_hex": "0x005053775600e12a",
+            "firmware_chanspec_hex": "0xe12a",
+            "band_ghz": 5,
+            "width_mhz": 80,
+            "primary_channel": 40,
+            "center_channel": 42,
+            "reported_destination_count": 90230
+          },
+          {
+            "label": "36 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d024",
+            "firmware_chanspec_hex": "0xd024",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 36,
+            "center_channel": 36,
+            "reported_destination_count": 12
+          },
+          {
+            "label": "44 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d02c",
+            "firmware_chanspec_hex": "0xd02c",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 44,
+            "center_channel": 44,
+            "reported_destination_count": 5
+          },
+          {
+            "label": "48 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d030",
+            "firmware_chanspec_hex": "0xd030",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 48,
+            "center_channel": 48,
+            "reported_destination_count": 12
+          },
+          {
+            "label": "149 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d095",
+            "firmware_chanspec_hex": "0xd095",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 149,
+            "center_channel": 149,
+            "reported_destination_count": 3
+          },
+          {
+            "label": "153 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d099",
+            "firmware_chanspec_hex": "0xd099",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 153,
+            "center_channel": 153,
+            "reported_destination_count": 11
+          },
+          {
+            "label": "157 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d09d",
+            "firmware_chanspec_hex": "0xd09d",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 157,
+            "center_channel": 157,
+            "reported_destination_count": 11
+          },
+          {
+            "label": "161 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d0a1",
+            "firmware_chanspec_hex": "0xd0a1",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 161,
+            "center_channel": 161,
+            "reported_destination_count": 11
+          },
+          {
+            "label": "165 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d0a5",
+            "firmware_chanspec_hex": "0xd0a5",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 165,
+            "center_channel": 165,
+            "reported_destination_count": 11
+          },
+          {
+            "label": "52 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d034",
+            "firmware_chanspec_hex": "0xd034",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 52,
+            "center_channel": 52,
+            "reported_destination_count": 12
+          },
+          {
+            "label": "56 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d038",
+            "firmware_chanspec_hex": "0xd038",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 56,
+            "center_channel": 56,
+            "reported_destination_count": 12
+          },
+          {
+            "label": "60 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d03c",
+            "firmware_chanspec_hex": "0xd03c",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 60,
+            "center_channel": 60,
+            "reported_destination_count": 12
+          },
+          {
+            "label": "64 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d040",
+            "firmware_chanspec_hex": "0xd040",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 64,
+            "center_channel": 64,
+            "reported_destination_count": 12
+          },
+          {
+            "label": "100 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d064",
+            "firmware_chanspec_hex": "0xd064",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 100,
+            "center_channel": 100,
+            "reported_destination_count": 12
+          },
+          {
+            "label": "104 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d068",
+            "firmware_chanspec_hex": "0xd068",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 104,
+            "center_channel": 104,
+            "reported_destination_count": 12
+          },
+          {
+            "label": "108 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d06c",
+            "firmware_chanspec_hex": "0xd06c",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 108,
+            "center_channel": 108,
+            "reported_destination_count": 11
+          },
+          {
+            "label": "112 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d070",
+            "firmware_chanspec_hex": "0xd070",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 112,
+            "center_channel": 112,
+            "reported_destination_count": 11
+          },
+          {
+            "label": "116 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d074",
+            "firmware_chanspec_hex": "0xd074",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 116,
+            "center_channel": 116,
+            "reported_destination_count": 11
+          },
+          {
+            "label": "120 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d078",
+            "firmware_chanspec_hex": "0xd078",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 120,
+            "center_channel": 120,
+            "reported_destination_count": 11
+          },
+          {
+            "label": "124 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d07c",
+            "firmware_chanspec_hex": "0xd07c",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 124,
+            "center_channel": 124,
+            "reported_destination_count": 11
+          },
+          {
+            "label": "128 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d080",
+            "firmware_chanspec_hex": "0xd080",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 128,
+            "center_channel": 128,
+            "reported_destination_count": 11
+          },
+          {
+            "label": "132 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d084",
+            "firmware_chanspec_hex": "0xd084",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 132,
+            "center_channel": 132,
+            "reported_destination_count": 11
+          },
+          {
+            "label": "136 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d088",
+            "firmware_chanspec_hex": "0xd088",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 136,
+            "center_channel": 136,
+            "reported_destination_count": 11
+          },
+          {
+            "label": "140 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d08c",
+            "firmware_chanspec_hex": "0xd08c",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 140,
+            "center_channel": 140,
+            "reported_destination_count": 11
+          },
+          {
+            "label": "144 5g 20MHz n",
+            "channel_id_hex": "0x005053775600d090",
+            "firmware_chanspec_hex": "0xd090",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": 144,
+            "center_channel": 144,
+            "reported_destination_count": 6
+          },
+          {
+            "label": "149 5g 80MHz l",
+            "channel_id_hex": "0x005053775600e09b",
+            "firmware_chanspec_hex": "0xe09b",
+            "band_ghz": 5,
+            "width_mhz": 80,
+            "primary_channel": 149,
+            "center_channel": 155,
+            "reported_destination_count": 41483
+          },
+          {
+            "label": "44 5g 80MHz l",
+            "channel_id_hex": "0x005053775600e22a",
+            "firmware_chanspec_hex": "0xe22a",
+            "band_ghz": 5,
+            "width_mhz": 80,
+            "primary_channel": 44,
+            "center_channel": 42,
+            "reported_destination_count": 40400
+          }
+        ]
+      },
+      "Slice 1": {
+        "bytes_transferred_before": {
+          "Tx Bytes": 1192482,
+          "Rx Bytes": 1138890
+        },
+        "bytes_transferred_after": {
+          "Tx Bytes": 1192482,
+          "Rx Bytes": 1138890
+        },
+        "bytes_transferred_delta": {
+          "Tx Bytes": 0,
+          "Rx Bytes": 0
+        },
+        "channel_and_reason_counts_unchanged_throughout": true,
+        "channel_switch_reasons": {
+          "Channel Switch Messages": 3174,
+          "WLC Init": 1019,
+          "Scan": 1935,
+          "Slotted BSS Calibration": 1,
+          "Slotted Common Sync Layer": 159,
+          "Slotted BSS": 59,
+          "STA": 1
+        },
+        "channel_history": [
+          {
+            "label": "0 5g 20MHz n",
+            "channel_id_hex": "0x015053775600d000",
+            "firmware_chanspec_hex": "0xd000",
+            "band_ghz": 5,
+            "width_mhz": 20,
+            "primary_channel": null,
+            "center_channel": null,
+            "reported_destination_count": 510
+          },
+          {
+            "label": "1 2g 20MHz n",
+            "channel_id_hex": "0x0150537756001001",
+            "firmware_chanspec_hex": "0x1001",
+            "band_ghz": 2.4,
+            "width_mhz": 20,
+            "primary_channel": 1,
+            "center_channel": 1,
+            "reported_destination_count": 642
+          },
+          {
+            "label": "6 2g 20MHz n",
+            "channel_id_hex": "0x0150537756001006",
+            "firmware_chanspec_hex": "0x1006",
+            "band_ghz": 2.4,
+            "width_mhz": 20,
+            "primary_channel": 6,
+            "center_channel": 6,
+            "reported_destination_count": 773
+          },
+          {
+            "label": "11 2g 20MHz n",
+            "channel_id_hex": "0x015053775600100b",
+            "firmware_chanspec_hex": "0x100b",
+            "band_ghz": 2.4,
+            "width_mhz": 20,
+            "primary_channel": 11,
+            "center_channel": 11,
+            "reported_destination_count": 571
+          },
+          {
+            "label": "2 2g 20MHz n",
+            "channel_id_hex": "0x0150537756001002",
+            "firmware_chanspec_hex": "0x1002",
+            "band_ghz": 2.4,
+            "width_mhz": 20,
+            "primary_channel": 2,
+            "center_channel": 2,
+            "reported_destination_count": 62
+          },
+          {
+            "label": "3 2g 20MHz n",
+            "channel_id_hex": "0x0150537756001003",
+            "firmware_chanspec_hex": "0x1003",
+            "band_ghz": 2.4,
+            "width_mhz": 20,
+            "primary_channel": 3,
+            "center_channel": 3,
+            "reported_destination_count": 63
+          },
+          {
+            "label": "4 2g 20MHz n",
+            "channel_id_hex": "0x0150537756001004",
+            "firmware_chanspec_hex": "0x1004",
+            "band_ghz": 2.4,
+            "width_mhz": 20,
+            "primary_channel": 4,
+            "center_channel": 4,
+            "reported_destination_count": 77
+          },
+          {
+            "label": "5 2g 20MHz n",
+            "channel_id_hex": "0x0150537756001005",
+            "firmware_chanspec_hex": "0x1005",
+            "band_ghz": 2.4,
+            "width_mhz": 20,
+            "primary_channel": 5,
+            "center_channel": 5,
+            "reported_destination_count": 75
+          },
+          {
+            "label": "7 2g 20MHz n",
+            "channel_id_hex": "0x0150537756001007",
+            "firmware_chanspec_hex": "0x1007",
+            "band_ghz": 2.4,
+            "width_mhz": 20,
+            "primary_channel": 7,
+            "center_channel": 7,
+            "reported_destination_count": 62
+          },
+          {
+            "label": "8 2g 20MHz n",
+            "channel_id_hex": "0x0150537756001008",
+            "firmware_chanspec_hex": "0x1008",
+            "band_ghz": 2.4,
+            "width_mhz": 20,
+            "primary_channel": 8,
+            "center_channel": 8,
+            "reported_destination_count": 62
+          },
+          {
+            "label": "9 2g 20MHz n",
+            "channel_id_hex": "0x0150537756001009",
+            "firmware_chanspec_hex": "0x1009",
+            "band_ghz": 2.4,
+            "width_mhz": 20,
+            "primary_channel": 9,
+            "center_channel": 9,
+            "reported_destination_count": 62
+          },
+          {
+            "label": "10 2g 20MHz n",
+            "channel_id_hex": "0x015053775600100a",
+            "firmware_chanspec_hex": "0x100a",
+            "band_ghz": 2.4,
+            "width_mhz": 20,
+            "primary_channel": 10,
+            "center_channel": 10,
+            "reported_destination_count": 77
+          },
+          {
+            "label": "12 2g 20MHz n",
+            "channel_id_hex": "0x015053775600100c",
+            "firmware_chanspec_hex": "0x100c",
+            "band_ghz": 2.4,
+            "width_mhz": 20,
+            "primary_channel": 12,
+            "center_channel": 12,
+            "reported_destination_count": 62
+          },
+          {
+            "label": "13 2g 20MHz n",
+            "channel_id_hex": "0x015053775600100d",
+            "firmware_chanspec_hex": "0x100d",
+            "band_ghz": 2.4,
+            "width_mhz": 20,
+            "primary_channel": 13,
+            "center_channel": 13,
+            "reported_destination_count": 76
+          }
+        ]
+      }
+    },
+    "awdl": {
+      "snapshot_values_at_every_sample": {
+        "AWDLDuration(s)": 4,
+        "AWDLUse(%)": 21,
+        "SDB": 0,
+        "TS(ms)": 1794939938010
+      },
+      "schedule_state_timebase_raw_hex": "0x0100007980000018",
+      "schedule_state_changes": {
+        "InfraPri": {
+          "in_transitions": 0,
+          "residency_raw": 1440938315
+        }
+      }
+    }
+  },
+  "current_channel_list": {
+    "country": "TR",
+    "reported_supported_5ghz_20mhz_primaries": [
+      36,
+      40,
+      44,
+      48,
+      52,
+      56,
+      60,
+      64,
+      100,
+      104,
+      108,
+      112,
+      116,
+      120,
+      124,
+      128,
+      132,
+      136,
+      140,
+      149,
+      153,
+      157,
+      161,
+      165
+    ],
+    "channel_144_history_does_not_supply_event_country": true,
+    "band": "5 GHz",
+    "interface": "en0",
+    "primary_channel": 40,
+    "channel_width_mhz": 80,
+    "default_ipv4_interface": "en0"
+  },
+  "retained_log_query": {
+    "checked_at": "2026-11-17T22:22:14.335964+03:00",
+    "lookback_hours": 6,
+    "predicate": "senderImagePath CONTAINS[c] \"AppleBCMWLAN\" AND eventMessage CONTAINS[c] \"reportChannelSwitchV2PerSlice\" AND eventMessage CONTAINS[c] \"new_chanspec\"",
+    "exit_status": 0,
+    "query_outcome": "completed",
+    "matching_messages": 0,
+    "rendered_fields_count": 0,
+    "new_channels_by_core": {}
+  }
+}

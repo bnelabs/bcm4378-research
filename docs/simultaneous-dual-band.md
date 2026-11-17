@@ -31,6 +31,21 @@ Apple's AWDL peer interface is a separate role on the same chip. Apps can opt in
 
 The paired inspection tool measures a preview stream on `awdl0` and an archive stream on the infrastructure interface when both roles are available. Its per-connection report verifies where the payload traveled. A separate receiver on each band can measure frequency and airtime while the tool runs. [Two-device experiment](practical-radio-applications.md#test-the-direct-link-while-the-archive-is-moving)
 
+## Read the channel history of each slice
+
+On macOS 26B131 an ordinary user process read 66 reports from the running WLAN driver. They included destination channel counts, reasons for switching channels, transmit and receive bytes for both slices, and the AWDL schedule state. Each report in the `Channels Visited` group has an ID whose low 16 bits hold the firmware's channel specification and whose high byte holds the slice index. All 42 IDs returned by the sampler matched the published I/O Registry legend. The low channel byte normally gives the center channel. For example, `0xe12a` describes the 80 MHz group centered on channel 42 with primary 40. [Sampler and readout](live-wifi-airtime.md#read-channel-switch-reports), [Native evidence](../evidence/2026-11-17-channel-switch-reports.json), [Broadcom channel encoding](https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/include/brcmu_d11.h#L579-L637)
+
+Both signed driver slices dispatch 20-, 24- and 28-byte channel-switch records. The two longer layouts supply the slice index at offset `0x14`. For the 20-byte layout the driver uses slice 0 if the `rsdb` bit is clear. With the bit set it classifies a 2.4 GHz destination as slice 1 and other destinations as slice 0. The reporting routine adds one to the destination counter using the low 16 bits of the field at offset `0x08`. The aggregate includes both sources of slice attribution. [Signed parser and reporter instructions](../evidence/2026-11-17-channel-switch-reports.json)
+
+| Reported slice | Cumulative switch reports | Destination history | Tx / Rx bytes added in the 60 s sample |
+| --- | ---: | --- | ---: |
+| 0 | 172,372 | 25 distinct 20 MHz channels and three 80 MHz specifications at 5 GHz | 506,048 / 1,571,811 |
+| 1 | 3,174 | All 13 2.4 GHz channels plus 510 channel-zero entries | 0 / 0 |
+
+In the slice 1 history, the most frequent real channel labels were 6, 1 and 11, with 773, 642 and 571 destination records respectively. Slice 1 also held 1,935 records labeled `Scan`. The reason totals and destination counts are independent aggregates. A channel-zero entry has a zero channel number in the firmware specification and supplies no usable frequency. The slice 0 history contains six records naming channel 144 at 20 MHz. CoreWLAN's current `TR` list excludes 144. The history has no timestamp or country for those six records. [Complete counts and current channel list](../evidence/2026-11-17-channel-switch-reports.json), [Regional channel rules](clm-channel-tables.md)
+
+All 25 link samples reported `en0` on 5 GHz primary 40 at 80 MHz and all default IPv4 route checks returned `en0`. The host interface's packet counters advanced in every interval. The channel-switch and reason counters had zero deltas on both slices, and the `awdl0` packet counters had zero delta. The AWDL schedule accumulated time in the state labeled `InfraPri` with zero new state entries. The separate AWDL `SDB` value was zero with the same snapshot timestamp throughout. The sample verifies a live read of slice 0 traffic and a cumulative history on both slices. Concurrent use of both bands for a peer transfer remains a separate measurement. [Timed observations](../evidence/2026-11-17-channel-switch-reports.json)
+
 ## macOS firmware and platform gates
 
 Both signed driver slices search the firmware's capability response for the word `rsdb` and set or clear the bit read by `checkForSDBSupport`. That bit gates `querySDBPolicies`. Its four reads handle version, capabilities, bands, and configuration, with response checks in each path. The capability handler caches fields that the AWDL-facing getter copies to its caller. A separate chip check uses the cached slice count and per-slice bytes. [Host instruction trace](../evidence/2026-11-17-sdb-policy.json)
