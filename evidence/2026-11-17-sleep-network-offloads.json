@@ -1,0 +1,218 @@
+{
+  "sampled_at_utc": "2026-11-17T10:58:10+00:00",
+  "host": {
+    "model": "MacBookAir10,1",
+    "macos_version": "27.2.1",
+    "macos_build": "26B131",
+    "default_ipv4_interface": "en0",
+    "wifi_firmware": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a"
+  },
+  "host_power_preferences": {
+    "power_source": "Now drawing from 'AC Power'",
+    "live": {
+      "tcpkeepalive": 1,
+      "womp": 1
+    },
+    "saved": {
+      "Battery Power": {
+        "womp": 0,
+        "tcpkeepalive": 1
+      },
+      "AC Power": {
+        "womp": 1,
+        "tcpkeepalive": 1
+      }
+    }
+  },
+  "registry": {
+    "scope": "Published macOS IOService properties for wlan and descendants through depth 5 while awake",
+    "magic_packet_board_property": {
+      "type": "bool",
+      "value": false
+    },
+    "mdns_keepalive_by_service": {
+      "AppleBCMWLANSkywalkInterface": true,
+      "AppleBCMWLANLowLatencyInterface": true
+    },
+    "selected_firmware_words_present": [
+      "arpoe",
+      "bdo",
+      "lpas",
+      "ndoe",
+      "pktfltr2",
+      "tko"
+    ],
+    "selected_firmware_words_absent": [
+      "wowl"
+    ],
+    "initialize_keepalive_capabilities_tko_property_present": false
+  },
+  "installed_platform_configuration": {
+    "key": "bcom.wow.magic-packet",
+    "catalogs": [
+      {
+        "directory": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/PlatformConfig/macOS",
+        "profile_count": 56,
+        "boolean_false_count": 56,
+        "boolean_true_count": 0,
+        "missing_or_other_type_count": 0
+      },
+      {
+        "directory": "/usr/share/firmware/wifi",
+        "profile_count": 56,
+        "boolean_false_count": 56,
+        "boolean_true_count": 0,
+        "missing_or_other_type_count": 0
+      }
+    ],
+    "catalogs_match_by_relative_path_and_content": true,
+    "selected": {
+      "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/PlatformConfig/macOS/shikoku-PlatformConfig.plist",
+      "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/PlatformConfig/macOS/shikoku-PlatformConfig.plist",
+      "bytes": 2647,
+      "sha256": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547",
+      "magic_packet_board_property": false,
+      "matches_shared_copy": true
+    }
+  },
+  "driverkit": {
+    "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "architectures": [
+      "arm64e",
+      "arm64e.x1"
+    ],
+    "signature_check": "codesign --verify --strict",
+    "static_firmware_feature_indices": {
+      "ndoe": 30,
+      "pktfltr2": 31,
+      "bdo": 45,
+      "tko": 49
+    },
+    "entry_points": {
+      "AppleBCMWLANBonjourOffload::mDNSOffloadConfigureKeepAlives": {
+        "arm64e": "0x10002670c",
+        "arm64e.x1": "0x10002635c"
+      },
+      "AppleBCMWLANBonjourOffload::mDNSOffloadDownloadConfig": {
+        "arm64e": "0x100025780",
+        "arm64e.x1": "0x1000253d0"
+      },
+      "AppleBCMWLANBonjourOffload::mDNSOffloadEnable": {
+        "arm64e": "0x1000242c0",
+        "arm64e.x1": "0x100023f10"
+      },
+      "AppleBCMWLANBonjourOffload::mDNSOffloadPublishOffloadCapability": {
+        "arm64e": "0x100024588",
+        "arm64e.x1": "0x1000241d8"
+      },
+      "AppleBCMWLANConfigManager::gatherParameterData": {
+        "arm64e": "0x10009c1e4",
+        "arm64e.x1": "0x10009a3fc"
+      },
+      "AppleBCMWLANConfigManager::isTCPKAOffloadEnabled": {
+        "arm64e": "0x10009fae4",
+        "arm64e.x1": "0x10009dcfc"
+      },
+      "AppleBCMWLANConfigManager::populatePlatformProperties": {
+        "arm64e": "0x10009d930",
+        "arm64e.x1": "0x10009bb48"
+      },
+      "AppleBCMWLANConfigManager::wompEnabled": {
+        "arm64e": "0x10009ea00",
+        "arm64e.x1": "0x10009cc18"
+      },
+      "AppleBCMWLANCore::checkForTCPKAOffloadSupport": {
+        "arm64e": "0x1000eddd4",
+        "arm64e.x1": "0x1000eafa8"
+      },
+      "AppleBCMWLANCore::clearHostIPv6TableForNeighbourDiscovery": {
+        "arm64e": "0x10016c99c",
+        "arm64e.x1": "0x1001687f8"
+      },
+      "AppleBCMWLANCore::configureARPOffload": {
+        "arm64e": "0x10016c1e0",
+        "arm64e.x1": "0x10016803c"
+      },
+      "AppleBCMWLANCore::configureHostIPsForNeighbourDiscovery": {
+        "arm64e": "0x10016cbc0",
+        "arm64e.x1": "0x100168a1c"
+      },
+      "AppleBCMWLANCore::configureNeighbourDiscovery": {
+        "arm64e": "0x10016c6a4",
+        "arm64e.x1": "0x100168500"
+      },
+      "AppleBCMWLANCore::configurePktFilters": {
+        "arm64e": "0x100161c4c",
+        "arm64e.x1": "0x10015dc30"
+      },
+      "AppleBCMWLANCore::configureWoWEntry": {
+        "arm64e": "0x100161050",
+        "arm64e.x1": "0x10015d060"
+      },
+      "AppleBCMWLANCore::configureWoWExit": {
+        "arm64e": "0x1001638ac",
+        "arm64e.x1": "0x10015f868"
+      },
+      "AppleBCMWLANCore::disablePacketFilters": {
+        "arm64e": "0x10016a480",
+        "arm64e.x1": "0x1001662f8"
+      },
+      "AppleBCMWLANCore::enablePacketFilters": {
+        "arm64e": "0x10016a08c",
+        "arm64e.x1": "0x100165f2c"
+      },
+      "AppleBCMWLANCore::unConfigurePktFilters": {
+        "arm64e": "0x1001557c0",
+        "arm64e.x1": "0x100151904"
+      },
+      "AppleBCMWLANKeepAliveOffload::getMaxSupportedTCPSocketOffloads": {
+        "arm64e": "0x10001c474",
+        "arm64e.x1": "0x10001c1fc"
+      },
+      "AppleBCMWLANKeepAliveOffload::getTCPAliveOffloadWakeReason": {
+        "arm64e": "0x1000b3a60",
+        "arm64e.x1": "0x1000b16d8"
+      },
+      "AppleBCMWLANKeepAliveOffload::initializeKeepAliveCapabilities": {
+        "arm64e": "0x1000b2730",
+        "arm64e.x1": "0x1000b03c0"
+      },
+      "AppleBCMWLANKeepAliveOffload::programGARP": {
+        "arm64e": "0x1000b492c",
+        "arm64e.x1": "0x1000b2598"
+      },
+      "AppleBCMWLANKeepAliveOffload::unConfigureKeepAlives": {
+        "arm64e": "0x1000b401c",
+        "arm64e.x1": "0x1000b1c94"
+      }
+    },
+    "tko_capacity": {
+      "source": "Unsigned byte in successful firmware reply cached by initializeKeepAliveCapabilities",
+      "compiled_comparison_for_diagnostic": 4,
+      "running_slot_count": null
+    },
+    "driver_default_tcpka_policy": true,
+    "program_garp_v2_retry_default_and_upper_bound": 5
+  },
+  "linux_and_asahi": {
+    "linux_stable": {
+      "revision": "7595a62d45ee1a2297eafa5f2ef5d0a45142d84d",
+      "pcie_d3hot_gate": "pcie.c:2522",
+      "firmware_probe": "feature.c:306-319",
+      "suspend_and_resume": "cfg80211.c:4179-4251",
+      "advertised_wake_support": "cfg80211.c:7619-7655"
+    },
+    "asahi_linux": {
+      "revision": "201be96df5654336bdcbe1da2103f193d7a0b940",
+      "pcie_d3hot_gate": "pcie.c:2891",
+      "firmware_probe": "feature.c:331-344",
+      "suspend_and_resume": "cfg80211.c:4038-4110",
+      "advertised_wake_support": "cfg80211.c:7811-7847"
+    }
+  },
+  "bench_observations": {
+    "sleep_transition_tested": false,
+    "firmware_offload_allocation_or_wake_observed": false
+  }
+}

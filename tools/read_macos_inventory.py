@@ -11,6 +11,7 @@ import sys
 from inspect_firmware import (
     BTC_PARAMETER_KEY,
     DFS_PROXY_KEY,
+    MAGIC_PACKET_KEY,
     RADIO_POWER_CONFIG_KEYS,
     TRANSPORT_CONFIG_KEYS,
     decode_btc_parameters,
@@ -289,6 +290,20 @@ def collect():
             "dfs_proxy": {
                 "board_property": summarize_config_keys(bus, (DFS_PROXY_KEY,)).get(DFS_PROXY_KEY),
                 "reporting": dfs_proxy_reporting(entries),
+            },
+            "sleep_offload_properties": {
+                "magic_packet_board_property": summarize_config_keys(bus, (MAGIC_PACKET_KEY,)).get(
+                    MAGIC_PACKET_KEY
+                ),
+                "mdns_keepalive_by_service": {
+                    entry["IOUserClass"]: entry["mDNS_Keepalive"]
+                    for entry in entries
+                    if entry.get("IOUserClass") in (
+                        "AppleBCMWLANSkywalkInterface",
+                        "AppleBCMWLANLowLatencyInterface",
+                    )
+                    and type(entry.get("mDNS_Keepalive")) is bool
+                },
             },
             "radio_power_config_properties": summarize_config_keys(bus, RADIO_POWER_CONFIG_KEYS),
             "radio_chain_reporting": radio_chain_reporting(entries),
