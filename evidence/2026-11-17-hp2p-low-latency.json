@@ -1,0 +1,368 @@
+{
+  "sampled_at_utc": "2026-11-17T14:03:24+00:00",
+  "host": {
+    "model": "MacBookAir10,1",
+    "macos_version": "27.2.1",
+    "macos_build": "26B131",
+    "running_firmware": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a",
+    "pci_id": "14e4:4425",
+    "default_ipv4_interface_before": "en0",
+    "default_ipv4_interface_after": "en0",
+    "en0_link_status": "active"
+  },
+  "current_published_state": {
+    "selected_legacy_words": {
+      "hp2p": true,
+      "p2p": false,
+      "nan": true,
+      "awdl": true
+    },
+    "roles": {
+      "awdl0": {
+        "role": "AirLink",
+        "link_status": "active",
+        "is_up": true,
+        "is_running": true
+      },
+      "llw0": {
+        "role": "LowLatency",
+        "link_status": null,
+        "is_up": true,
+        "is_running": true
+      },
+      "nan0": {
+        "role": "WiFi-Aware Discovery+Data",
+        "link_status": null,
+        "is_up": false,
+        "is_running": false
+      }
+    },
+    "registry_rows_checked": 92,
+    "matching_registry_keys": [
+      [
+        "AppleBCMWLANBusInterfacePCIe",
+        "wlan.llw.tx.ring.size"
+      ]
+    ],
+    "llw_host_tx_ring_size": 512,
+    "legend_marked_public": true,
+    "legend_rows_checked": 602,
+    "matching_legend_rows": [],
+    "label_filter": "\\b(hp2p|rllw|llw|split.?tx.?status|chip.?delay)\\b",
+    "published_awdl_parameters": "0000000000000000",
+    "live_rllw_and_split_tx_status_flags": null
+  },
+  "stock_awdl_config_value_counts": {
+    "0000000000000000": 56
+  },
+  "native_app_probes": {
+    "target": "arm64-apple-macos27.2",
+    "includePeerToPeer_process_local_object": {
+      "default": false,
+      "after_opt_in": true,
+      "after_clear": false
+    },
+    "WACapabilities_typecheck_error": "'WACapabilities' is unavailable in macOS"
+  },
+  "driver": {
+    "executable_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "strict_signature_verified": true,
+    "legacy_and_extended_hp2p_reply_bits": {
+      "2": "RLLW flag read by isRllwEnabled",
+      "3": "Split transmit status flag read by isSplitTxStatusEnabled"
+    },
+    "trace_addresses": {
+      "arm64e": {
+        "core_getter_firmware_read": "0x1000ef858",
+        "core_getter_returns_word": "0x1000ef864",
+        "legacy_hp2p_helper_call": "0x1000eec8c",
+        "legacy_split_tx_status_flag_store": "0x1000eeca4",
+        "legacy_rllw_flag_store": "0x1000eecb8",
+        "extended_hp2p_helper_call": "0x1000f0424",
+        "extended_split_tx_status_flag_store": "0x1000f05a8",
+        "extended_rllw_flag_store": "0x1000f05c0",
+        "isSplitTxStatusEnabled_byte_load": "0x1001795fc",
+        "isRllwEnabled_byte_load": "0x100172cdc",
+        "split_tx_status_check_in_skywalk_enqueue": "0x1000931d0",
+        "split_tx_status_check_in_pcie_flow_enqueue": "0x1001c87a4",
+        "split_tx_status_check_in_skywalk_drain": "0x100212c58",
+        "rllw_check_at_nan_parameter_selection": "0x100062868",
+        "nan_parameters_firmware_set_call": "0x100062b58",
+        "nan_statistics_calls": [
+          "0x1000631d8",
+          "0x100063204"
+        ],
+        "nan_firmware_read_call": "0x100062e0c"
+      },
+      "arm64e.x1": {
+        "core_getter_firmware_read": "0x1000ec9b8",
+        "core_getter_returns_word": "0x1000ec9c4",
+        "legacy_hp2p_helper_call": "0x1000ebe18",
+        "legacy_split_tx_status_flag_store": "0x1000ebe30",
+        "legacy_rllw_flag_store": "0x1000ebe44",
+        "extended_hp2p_helper_call": "0x1000ed584",
+        "extended_split_tx_status_flag_store": "0x1000ed708",
+        "extended_rllw_flag_store": "0x1000ed720",
+        "isSplitTxStatusEnabled_byte_load": "0x1001751b4",
+        "isRllwEnabled_byte_load": "0x10016ea74",
+        "split_tx_status_check_in_skywalk_enqueue": "0x100091704",
+        "split_tx_status_check_in_pcie_flow_enqueue": "0x1001c3030",
+        "split_tx_status_check_in_skywalk_drain": "0x10020cdc4",
+        "rllw_check_at_nan_parameter_selection": "0x100061ac4",
+        "nan_parameters_firmware_set_call": "0x100061db4",
+        "nan_statistics_calls": [
+          "0x100062420",
+          "0x100062440"
+        ],
+        "nan_firmware_read_call": "0x100062054"
+      }
+    }
+  },
+  "local_firmware_images": {
+    "reference_ram_origin": "0x352000",
+    "candidate_record_size": 12,
+    "images": [
+      {
+        "file": {
+          "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/honshu.trx",
+          "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/honshu.trx",
+          "bytes": 1497470,
+          "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+        },
+        "table_candidates": [
+          {
+            "rows": [
+              {
+                "name": "hp2p_lfrag_rsrv",
+                "row_file_offset": 992064,
+                "string_file_offset": 1006361
+              },
+              {
+                "name": "hp2p_ll",
+                "row_file_offset": 992076,
+                "string_file_offset": 992189
+              },
+              {
+                "name": "hp2p_txop",
+                "row_file_offset": 992088,
+                "string_file_offset": 992197
+              },
+              {
+                "name": "hp2p_host_latency_cnt",
+                "row_file_offset": 992100,
+                "string_file_offset": 992207
+              },
+              {
+                "name": "hp2p_dur",
+                "row_file_offset": 992112,
+                "string_file_offset": 992229
+              }
+            ],
+            "metadata_sha256": "fdeced1fa7d741aac0c5ac0e5b1b838c506adb25847f522d102a6deb4f2212d2"
+          }
+        ],
+        "literal_references": {
+          "hp2p": [
+            {
+              "string_file_offset": 1006352,
+              "aligned_reference_file_offsets": [
+                1006328
+              ]
+            },
+            {
+              "string_file_offset": 1292508,
+              "aligned_reference_file_offsets": [
+                1204700
+              ]
+            }
+          ],
+          "bus:hp2p_lfrag_rsrv": [
+            {
+              "string_file_offset": 1006357,
+              "aligned_reference_file_offsets": [
+                590092
+              ]
+            }
+          ],
+          "hp2p_rxcmpl": [
+            {
+              "string_file_offset": 1269942,
+              "aligned_reference_file_offsets": [
+                1089812
+              ]
+            }
+          ],
+          "hp2p_txcmpl": [
+            {
+              "string_file_offset": 1269954,
+              "aligned_reference_file_offsets": [
+                1089808
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "file": {
+          "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/capri.trx",
+          "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1/capri.trx",
+          "bytes": 1496769,
+          "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6"
+        },
+        "table_candidates": [
+          {
+            "rows": [
+              {
+                "name": "hp2p_lfrag_rsrv",
+                "row_file_offset": 991808,
+                "string_file_offset": 1006097
+              },
+              {
+                "name": "hp2p_ll",
+                "row_file_offset": 991820,
+                "string_file_offset": 991933
+              },
+              {
+                "name": "hp2p_txop",
+                "row_file_offset": 991832,
+                "string_file_offset": 991941
+              },
+              {
+                "name": "hp2p_host_latency_cnt",
+                "row_file_offset": 991844,
+                "string_file_offset": 991951
+              },
+              {
+                "name": "hp2p_dur",
+                "row_file_offset": 991856,
+                "string_file_offset": 991973
+              }
+            ],
+            "metadata_sha256": "fdeced1fa7d741aac0c5ac0e5b1b838c506adb25847f522d102a6deb4f2212d2"
+          }
+        ],
+        "literal_references": {
+          "hp2p": [
+            {
+              "string_file_offset": 1006088,
+              "aligned_reference_file_offsets": [
+                1006064
+              ]
+            },
+            {
+              "string_file_offset": 1291900,
+              "aligned_reference_file_offsets": [
+                1204680
+              ]
+            }
+          ],
+          "bus:hp2p_lfrag_rsrv": [
+            {
+              "string_file_offset": 1006093,
+              "aligned_reference_file_offsets": [
+                590056
+              ]
+            }
+          ],
+          "hp2p_rxcmpl": [
+            {
+              "string_file_offset": 1269334,
+              "aligned_reference_file_offsets": [
+                1089812
+              ]
+            }
+          ],
+          "hp2p_txcmpl": [
+            {
+              "string_file_offset": 1269346,
+              "aligned_reference_file_offsets": [
+                1089808
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "file": {
+          "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B3/kyushu.trx",
+          "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B3/kyushu.trx",
+          "bytes": 1226142,
+          "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a"
+        },
+        "table_candidates": [
+          {
+            "rows": [
+              {
+                "name": "hp2p_lfrag_rsrv",
+                "row_file_offset": 729780,
+                "string_file_offset": 741673
+              },
+              {
+                "name": "hp2p_ll",
+                "row_file_offset": 729792,
+                "string_file_offset": 729905
+              },
+              {
+                "name": "hp2p_txop",
+                "row_file_offset": 729804,
+                "string_file_offset": 729913
+              },
+              {
+                "name": "hp2p_host_latency_cnt",
+                "row_file_offset": 729816,
+                "string_file_offset": 729923
+              },
+              {
+                "name": "hp2p_dur",
+                "row_file_offset": 729828,
+                "string_file_offset": 729945
+              }
+            ],
+            "metadata_sha256": "fdeced1fa7d741aac0c5ac0e5b1b838c506adb25847f522d102a6deb4f2212d2"
+          }
+        ],
+        "literal_references": {
+          "hp2p": [
+            {
+              "string_file_offset": 741664,
+              "aligned_reference_file_offsets": [
+                741640
+              ]
+            },
+            {
+              "string_file_offset": 1024288,
+              "aligned_reference_file_offsets": [
+                936188
+              ]
+            }
+          ],
+          "bus:hp2p_lfrag_rsrv": [
+            {
+              "string_file_offset": 741669,
+              "aligned_reference_file_offsets": [
+                408952
+              ]
+            }
+          ],
+          "hp2p_rxcmpl": [
+            {
+              "string_file_offset": 1001862,
+              "aligned_reference_file_offsets": [
+                821992
+              ]
+            }
+          ],
+          "hp2p_txcmpl": [
+            {
+              "string_file_offset": 1001874,
+              "aligned_reference_file_offsets": [
+                821988
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

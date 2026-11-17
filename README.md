@@ -6,6 +6,7 @@ This repository records the Wi-Fi hardware, driver and firmware of the 2020 M1 M
 - [Firmware layout and board selection](docs/firmware-layout.md) records the selected files, antenna and chain declarations, TxCap profiles, stored microcode candidates and the probable ARM ROM overlay map.
 - [Running firmware capabilities](docs/firmware-capabilities.md) records the live firmware words and traces the macOS ranging and CSI gates.
 - [Extended firmware capability parsing](docs/extended-firmware-capabilities.md) maps the signed driver's feature bits and traces the BCM4378's advertised HP2P support.
+- [HP2P low-latency and transmit completion paths](docs/hp2p-low-latency.md) traces two firmware reply bits, compares three BCM4378 images, and verifies the public peer-to-peer app setting.
 - [DriverKit and radio services](docs/driver-interfaces.md) records the shipped host driver, the running Wi-Fi interfaces and the Bluetooth endpoint.
 - [Bluetooth companion firmware](docs/bluetooth-firmware.md) maps the controller version to installed artifacts and records the native macOS application controls.
 - [Wi-Fi and Bluetooth coexistence](docs/bluetooth-coexistence-policy.md) traces board defaults, association protection and antenna-sharing telemetry.
