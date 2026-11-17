@@ -1,0 +1,597 @@
+{
+  "host": "MacBookAir10,1",
+  "inferred_wide_center_comparison": {
+    "2.4 GHz 40 MHz": {
+      "matched_centers": [],
+      "unmatched_centers_and_absent_primaries": {
+        "3": [
+          1,
+          5
+        ],
+        "4": [
+          2,
+          6
+        ],
+        "5": [
+          3,
+          7
+        ],
+        "6": [
+          4,
+          8
+        ],
+        "7": [
+          5,
+          9
+        ],
+        "8": [
+          6,
+          10
+        ],
+        "9": [
+          7,
+          11
+        ],
+        "10": [
+          8,
+          12
+        ],
+        "11": [
+          9,
+          13
+        ]
+      }
+    },
+    "5 GHz 40 MHz": {
+      "matched_centers": [
+        38,
+        46,
+        54,
+        62,
+        102,
+        110,
+        118,
+        126,
+        134,
+        151,
+        159
+      ],
+      "unmatched_centers_and_absent_primaries": {
+        "142": [
+          140,
+          144
+        ],
+        "167": [
+          165,
+          169
+        ],
+        "175": [
+          173,
+          177
+        ]
+      }
+    },
+    "5 GHz 80 MHz": {
+      "matched_centers": [
+        42,
+        58,
+        106,
+        122,
+        155
+      ],
+      "unmatched_centers_and_absent_primaries": {
+        "138": [
+          132,
+          136,
+          140,
+          144
+        ],
+        "171": [
+          165,
+          169,
+          173,
+          177
+        ]
+      }
+    }
+  },
+  "kyushu_comparison": {
+    "changed_dataset_offsets": [
+      {
+        "b1": "4",
+        "b3": "5",
+        "offset": 36603
+      },
+      {
+        "b1": "0",
+        "b3": "1",
+        "offset": 36605
+      },
+      {
+        "b1": "9",
+        "b3": "3",
+        "offset": 36606
+      }
+    ],
+    "same_dataset_sha256_excluding_creation_text": "b2a420dcdce7d1b3b2ab65fafb488fb268e769c09067793d69420731ee78fa62"
+  },
+  "live_context": {
+    "corewlan_country_code_getter": "",
+    "current_channel_width_mhz": 80,
+    "current_primary_channel": 40,
+    "interface": "en0",
+    "interface_mode": "station",
+    "ioreg_clm_version_lines": [
+      "API: 21.0",
+      "Data: Oly.Shikoku",
+      "Compiler: 1.72.1",
+      "ClmImport: 1.74.1",
+      "Customization: v5 Final 251211",
+      "Creation: 2026-08-11 16:04:17"
+    ],
+    "ioreg_interface_country_code": "TR",
+    "ipv4_default_interfaces_before_and_after": [
+      "en0",
+      "en0"
+    ],
+    "matching_stock_file": "C-4378__s-B1/shikoku.clmb",
+    "supported_channel_numbers_by_band_and_width_mhz": {
+      "2.4 GHz": {
+        "20": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      "5 GHz": {
+        "20": [
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          100,
+          104,
+          108,
+          112,
+          116,
+          120,
+          124,
+          128,
+          132,
+          136,
+          140,
+          149,
+          153,
+          157,
+          161,
+          165
+        ],
+        "40": [
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          100,
+          104,
+          108,
+          112,
+          116,
+          120,
+          124,
+          128,
+          132,
+          136,
+          149,
+          153,
+          157,
+          161
+        ],
+        "80": [
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          100,
+          104,
+          108,
+          112,
+          116,
+          120,
+          124,
+          128,
+          149,
+          153,
+          157,
+          161
+        ]
+      }
+    }
+  },
+  "macos": {
+    "build": "26B131",
+    "version": "27.2.1"
+  },
+  "observed_utc": "2026-11-17T14:57:50+00:00",
+  "primary_comparison": {
+    "2.4 GHz": {
+      "corewlan_count": 13,
+      "corewlan_only": [],
+      "general_count": 13,
+      "general_only": []
+    },
+    "5 GHz": {
+      "corewlan_count": 24,
+      "corewlan_only": [],
+      "general_count": 25,
+      "general_only": [
+        144
+      ]
+    }
+  },
+  "region_directories": {
+    "all_code_lists_identical": true,
+    "distinct_records_sha256": 3,
+    "selected_common_record": {
+      "bytes_hex": "545200000e000eab00",
+      "code": "TR"
+    }
+  },
+  "scope": "Seven stock CLM files, static signed host code and read-only status on the associated interface.",
+  "shared_channel_records": {
+    "2.4ghz_40mhz_centers_inferred": {
+      "channel_numbers": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "count": 1,
+      "ranges": [
+        {
+          "first": 3,
+          "last": 11,
+          "step": 1
+        }
+      ],
+      "slot": 25
+    },
+    "2.4ghz_primary": {
+      "channel_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "count": 1,
+      "ranges": [
+        {
+          "first": 1,
+          "last": 13,
+          "step": 1
+        }
+      ],
+      "slot": 0
+    },
+    "5ghz_40mhz_centers_inferred": {
+      "channel_numbers": [
+        38,
+        46,
+        54,
+        62,
+        102,
+        110,
+        118,
+        126,
+        134,
+        142,
+        151,
+        159,
+        167,
+        175
+      ],
+      "count": 3,
+      "ranges": [
+        {
+          "first": 38,
+          "last": 62,
+          "step": 8
+        },
+        {
+          "first": 102,
+          "last": 142,
+          "step": 8
+        },
+        {
+          "first": 151,
+          "last": 175,
+          "step": 8
+        }
+      ],
+      "slot": 26
+    },
+    "5ghz_80mhz_centers_inferred": {
+      "channel_numbers": [
+        42,
+        58,
+        106,
+        122,
+        138,
+        155,
+        171
+      ],
+      "count": 3,
+      "ranges": [
+        {
+          "first": 42,
+          "last": 58,
+          "step": 16
+        },
+        {
+          "first": 106,
+          "last": 138,
+          "step": 16
+        },
+        {
+          "first": 155,
+          "last": 171,
+          "step": 16
+        }
+      ],
+      "slot": 27
+    },
+    "5ghz_primary": {
+      "channel_numbers": [
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        100,
+        104,
+        108,
+        112,
+        116,
+        120,
+        124,
+        128,
+        132,
+        136,
+        140,
+        144,
+        149,
+        153,
+        157,
+        161,
+        165
+      ],
+      "count": 3,
+      "ranges": [
+        {
+          "first": 36,
+          "last": 64,
+          "step": 4
+        },
+        {
+          "first": 100,
+          "last": 144,
+          "step": 4
+        },
+        {
+          "first": 149,
+          "last": 165,
+          "step": 4
+        }
+      ],
+      "slot": 1
+    },
+    "slot_28": {
+      "channel_numbers": [],
+      "count": 0,
+      "ranges": [],
+      "slot": 28
+    }
+  },
+  "signed_driver_static": {
+    "addresses_by_architecture": {
+      "arm64e": {
+        "country_change_async_chanspecs_get": "0x1000f5a28",
+        "country_change_completion_beacon_update": "0x10016621c",
+        "country_change_completion_handleGetChanSpecs": "0x1001660c0",
+        "getCurrentSupportedChannels_chanspecs_get": "0x100133130",
+        "getCurrentSupportedChannels_country_get": "0x100132fa8",
+        "getCurrentSupportedChannels_reply_decode": "0x100133240",
+        "getHW_SUPPORTED_CHANNELS_shared_helper": "0x100233cb0",
+        "getSUPPORTED_CHANNELS_shared_helper": "0x100233b74",
+        "getSupportedChannelsMatching_chanspecs_get": "0x1002337b4",
+        "getSupportedChannelsMatching_country_check": "0x100233738",
+        "getSupportedChannelsMatching_reply_decode": "0x1002338cc",
+        "updateCurrentFWCountryCode_country_get": "0x1000fb2f8"
+      },
+      "arm64e.x1": {
+        "country_change_async_chanspecs_get": "0x1000f2a9c",
+        "country_change_completion_beacon_update": "0x100162138",
+        "country_change_completion_handleGetChanSpecs": "0x100161fdc",
+        "getCurrentSupportedChannels_chanspecs_get": "0x10012f558",
+        "getCurrentSupportedChannels_country_get": "0x10012f3e4",
+        "getCurrentSupportedChannels_reply_decode": "0x10012f668",
+        "getHW_SUPPORTED_CHANNELS_shared_helper": "0x10022d86c",
+        "getSUPPORTED_CHANNELS_shared_helper": "0x10022d730",
+        "getSupportedChannelsMatching_chanspecs_get": "0x10022d370",
+        "getSupportedChannelsMatching_country_check": "0x10022d2f4",
+        "getSupportedChannelsMatching_reply_decode": "0x10022d488",
+        "updateCurrentFWCountryCode_country_get": "0x1000f8290"
+      }
+    },
+    "binary": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "codesign_strict_result": "passed",
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f"
+  },
+  "stock_firmware_root": "/usr/share/firmware/wifi",
+  "stock_profiles": [
+    {
+      "creation": {
+        "offset": 33884,
+        "slot": 24,
+        "text": "2026-08-11 16:29:55"
+      },
+      "file": "C-4378__s-B1/atlantisb.clmb",
+      "lookup_offset": 448,
+      "region_directory": {
+        "count": 222,
+        "descriptor_offset": 684,
+        "record_size": 9,
+        "records_offset": 692,
+        "records_sha256": "f4570ffa363423c0fc933f7224aeb2ed21f1544bb8fd1070f89a3a193b15e99e",
+        "slot": 10
+      },
+      "sha256": "ecee6770918bfd6daf3faf67cb8cf549015acd24acf0f3d2a5d5a0d8dea791d5"
+    },
+    {
+      "creation": {
+        "offset": 34204,
+        "slot": 24,
+        "text": "2026-08-11 16:04:11"
+      },
+      "file": "C-4378__s-B1/capri.clmb",
+      "lookup_offset": 440,
+      "region_directory": {
+        "count": 222,
+        "descriptor_offset": 676,
+        "record_size": 9,
+        "records_offset": 684,
+        "records_sha256": "d8e340f147647cb8a803cd17c148d6762887bd485364286c9da6829735ae602c",
+        "slot": 10
+      },
+      "sha256": "daad70044687d0f44a2832073215cea28fa31a767aef88f1d4f0e4f218ec5714"
+    },
+    {
+      "creation": {
+        "offset": 36772,
+        "slot": 24,
+        "text": "2026-08-11 16:05:10"
+      },
+      "file": "C-4378__s-B1/honshu.clmb",
+      "lookup_offset": 468,
+      "region_directory": {
+        "count": 222,
+        "descriptor_offset": 704,
+        "record_size": 9,
+        "records_offset": 712,
+        "records_sha256": "7bfe5356539065a9011582354a2e9dc933fb6f3be99ba7f0491269107addf3b1",
+        "slot": 10
+      },
+      "sha256": "5591f8cfbf2ee838e9b519fd01a5d7472d3980ccd059e75ebd055a5a72fababf"
+    },
+    {
+      "creation": {
+        "offset": 36588,
+        "slot": 24,
+        "text": "2026-08-11 16:04:09"
+      },
+      "file": "C-4378__s-B1/kyushu.clmb",
+      "lookup_offset": 464,
+      "region_directory": {
+        "count": 222,
+        "descriptor_offset": 700,
+        "record_size": 9,
+        "records_offset": 708,
+        "records_sha256": "d8e340f147647cb8a803cd17c148d6762887bd485364286c9da6829735ae602c",
+        "slot": 10
+      },
+      "sha256": "f0957a5bf040bfb7ae06242886335860b5b0509ddc5a6a07da21b0ed8a543a85"
+    },
+    {
+      "creation": {
+        "offset": 34404,
+        "slot": 24,
+        "text": "2026-08-11 16:30:10"
+      },
+      "file": "C-4378__s-B1/santorini.clmb",
+      "lookup_offset": 444,
+      "region_directory": {
+        "count": 222,
+        "descriptor_offset": 680,
+        "record_size": 9,
+        "records_offset": 688,
+        "records_sha256": "d8e340f147647cb8a803cd17c148d6762887bd485364286c9da6829735ae602c",
+        "slot": 10
+      },
+      "sha256": "6df987fae5d6b6e7f88ffdb9f71ef0ecff1e70fe711bad610ead060c89c1ef3e"
+    },
+    {
+      "creation": {
+        "offset": 35796,
+        "slot": 24,
+        "text": "2026-08-11 16:04:17"
+      },
+      "file": "C-4378__s-B1/shikoku.clmb",
+      "lookup_offset": 460,
+      "region_directory": {
+        "count": 222,
+        "descriptor_offset": 696,
+        "record_size": 9,
+        "records_offset": 704,
+        "records_sha256": "f4570ffa363423c0fc933f7224aeb2ed21f1544bb8fd1070f89a3a193b15e99e",
+        "slot": 10
+      },
+      "sha256": "3202b0cd073d89b13955762acf42442483873a46ff0d426da618f04ec2184140"
+    },
+    {
+      "creation": {
+        "offset": 36588,
+        "slot": 24,
+        "text": "2026-08-11 16:05:13"
+      },
+      "file": "C-4378__s-B3/kyushu.clmb",
+      "lookup_offset": 464,
+      "region_directory": {
+        "count": 222,
+        "descriptor_offset": 700,
+        "record_size": 9,
+        "records_offset": 708,
+        "records_sha256": "d8e340f147647cb8a803cd17c148d6762887bd485364286c9da6829735ae602c",
+        "slot": 10
+      },
+      "sha256": "a4188793ab990c77d665be4633b58d83dc6af606dff3754fc1d01a0aaea247a9"
+    }
+  ]
+}

@@ -35,6 +35,8 @@ The 5 GHz comparison treats each reported channel number as a possible primary 2
 
 Each unmatched center is from the A2337 straddle tests. None of its candidate primaries appeared at the corresponding width. Channels 132, 136 and 140 appeared at 20 MHz, and 132 and 136 also appeared in the 40 MHz list. The match compares the host's current advertised channel plan with a lab test plan. It leaves runtime availability under other operating conditions and physical tuning limits open. [A2337 5 GHz exhibit](https://device.report/m/9dbefd8fa57734334f25d9b4c27352a2b1333e4a7384c14f77fb813ec85822d7.pdf#page=5)
 
+All seven installed regulatory profiles carry channel 144 in the general 5 GHz range. A read under registry country code `TR` confirmed its absence from the stock interface's 20 MHz list. The CLM comparison also traces the driver requests that depend on country context. [CLM channel tables and the active country plan](clm-channel-tables.md)
+
 ### Wi-Fi and Bluetooth lab modes
 
 The lab measured simultaneous dual-band Wi-Fi in HT20 diversity modes. Separate pairings combined one Wi-Fi band with Classic Bluetooth. The single-band HE tests include HE80 MCS 7 with two streams at 5,210 MHz, both in single-user operation and with a 26-tone resource unit. Dual-band HE, triple transmission and dual association under stock macOS remain unverified. [A2337 RF tests and exhibit citations](a2337-rf-tests.md)
