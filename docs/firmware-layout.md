@@ -53,6 +53,8 @@ The macOS firmware getter exposes hardware and configured masks to the link-repo
 
 Across the payloads, 247 of 253 flat keys and 46 of 47 `slice/1/` keys occur in every profile. All ten have one 52-value `slice/1/` array. On each B1 board, the vendor `m` file adds one four-value `slice/1/` array compared with vendor `u`. The two stock directory roots have 250 matching names that resolve to the same filesystem objects across the roots. Kyushu B3 uses the B1 Honshu `u` payload. The physical mapping of the second namespace and its relation to simultaneous radio operation remain open. [Alias, namespace and array counts](../evidence/2026-11-17-nvram-topology.json)
 
+The B1 NVRAM catalog has two sets of TVPM and temperature declarations. They share the stored backoff and duty-cycle thresholds and differ in their 2.4 GHz backoff, duty-cycle, and transmit-chain tables. [TVPM board comparison](tvpm.md)
+
 ## Installed package
 
 | Stepping | Executable names / unique payloads | CLM | TxCap | NVRAM |

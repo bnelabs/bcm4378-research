@@ -21,6 +21,7 @@ This repository records the Wi-Fi hardware, driver and firmware of the 2020 M1 M
 - [Packet queues and PCIe ring sizing](docs/pcie-queue-sizing.md) traces the live scheduler and Shikoku transport settings through macOS and compares Linux descriptor depths.
 - [Wi-Fi traffic scheduling](docs/wifi-traffic-scheduling.md) verifies per-socket service types and pacing settings, maps host queues, and traces WME and MSCS paths.
 - [macOS host power policy](docs/host-power-policy.md) records network wake and keepalive settings and their scope.
+- [Temperature, voltage, and transmit power management](docs/tvpm.md) compares the B1 board tables and traces driver requests and thermal reporting.
 - [Sleep network offloads](docs/sleep-network-offloads.md) traces Wake-on-WLAN policy, address resolution, Bonjour discovery, and TCP keepalive slots.
 - [Radio power and wake scheduling](docs/radio-power-scheduling.md) traces associated sleep, beacon intervals, and Target Wake Time capability evidence.
 - [Radio-chain and channel-width policy](docs/radio-chain-policy.md) traces MIMO power save, spatial-stream reporting and the Linux antenna fields.
@@ -51,7 +52,7 @@ python3 tools/read_macos_inventory.py
 swift tools/read_pcie_link.swift
 ```
 
-The sampler emits timestamped JSON lines from the current association's status getters. The summary reports missing and repeated readings, operating context, PHY rate and paired RSSI-minus-noise. The optional `--traffic` flag adds aggregate interface byte and packet counts. The offline `--he-candidates` option lists compatible nominal HE modes for each reported whole-Mb/s rate under a full-channel model. The role-counter tool compares host counter changes across five Wi-Fi interfaces in the same time windows. The inventory records I/O Registry role names, PCIe aperture sizes, published firmware capability words and coexistence parameters, and hashes of the selected firmware files.
+The sampler emits timestamped JSON lines from the current association's status getters. The summary reports missing and repeated readings, operating context, PHY rate and paired RSSI-minus-noise. The optional `--traffic` flag adds aggregate interface byte and packet counts. The `--thermal` flag adds the public host thermal state. The offline `--he-candidates` option lists compatible nominal HE modes for each reported whole-Mb/s rate under a full-channel model. The role-counter tool compares host counter changes across five Wi-Fi interfaces in the same time windows. The inventory records I/O Registry role names, PCIe aperture sizes, published firmware capability words and coexistence parameters, and hashes of the selected firmware files.
 
 ```sh
 python3 tools/inventory_board_profiles.py /usr/share/firmware/wifi
