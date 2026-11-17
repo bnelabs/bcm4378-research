@@ -1,0 +1,789 @@
+{
+  "collected_utc": "2026-11-17T18:25:23.231972+00:00",
+  "compile_flags": [
+    "-swift-version",
+    "6",
+    "-warnings-as-errors",
+    "-O"
+  ],
+  "host_after": {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "ipv4_default_interface": "en0",
+    "phy_mode": "802.11ax"
+  },
+  "host_before": {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "ipv4_default_interface": "en0",
+    "phy_mode": "802.11ax"
+  },
+  "macos_build": "26B131",
+  "probe_source_sha256": "90fd37fab84386f7975ed8762214a0a7fda56916a836a994e811d36d1757acf0",
+  "rejected_verified_chunk_arguments": [
+    "-1",
+    "257",
+    "invalid"
+  ],
+  "runs": [
+    {
+      "command": [
+        "selftest"
+      ],
+      "cut_after_verified_chunks": null,
+      "report": {
+        "archive": {
+          "finished_ms": 5507.354542,
+          "paths": [
+            {
+              "interface": "lo0",
+              "received_application_bytes": 1,
+              "received_ip_packets": 1,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 1048578,
+              "sent_ip_packets": 258
+            }
+          ],
+          "payload_bytes_verified": 1048576,
+          "started_ms": 0.05925
+        },
+        "archive_chunk_interval_ms": 16,
+        "archive_service_class": "background",
+        "mismatched_key_tls_status": -9820,
+        "mode": "loopback",
+        "preview": {
+          "acknowledged_by_deadline": 20,
+          "finished_ms": 1906.822834,
+          "offered": 20,
+          "paths": [
+            {
+              "interface": "lo0",
+              "received_application_bytes": 60,
+              "received_ip_packets": 21,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 40962,
+              "sent_ip_packets": 22
+            }
+          ],
+          "payload_bytes_verified": 40960,
+          "release_to_ack_ms": [
+            1.640792,
+            5.576042,
+            9.336792,
+            7.118917,
+            10.66,
+            10.451,
+            10.629084,
+            10.578209,
+            1.092209,
+            6.627334,
+            10.371375,
+            7.55075,
+            10.601709,
+            9.347042,
+            10.665417,
+            6.843084,
+            7.742042,
+            10.592667,
+            8.969292,
+            6.818875
+          ],
+          "round_trip_median_ms": 0.5525415,
+          "round_trip_p95_ms": 0.643875,
+          "started_ms": 0.044125
+        },
+        "preview_deadline_ms": 160,
+        "preview_interval_ms": 100,
+        "preview_service_class": "interactiveVideo",
+        "tls_cipher": "TLS_PSK_WITH_AES_128_GCM_SHA256"
+      },
+      "trial": "legacy"
+    },
+    {
+      "command": [
+        "selftest-resume",
+        "0"
+      ],
+      "cut_after_verified_chunks": null,
+      "report": {
+        "archive": {
+          "attempts": [
+            {
+              "chunks_submitted": 256,
+              "finished_ms": 5510.918459,
+              "paths": [
+                {
+                  "interface": "lo0",
+                  "received_application_bytes": 4,
+                  "received_ip_packets": 2,
+                  "retransmitted_transport_bytes": 0,
+                  "sent_application_bytes": 1048594,
+                  "sent_ip_packets": 258
+                }
+              ],
+              "receiver_next_chunk": 0,
+              "started_ms": 0.052334
+            }
+          ],
+          "finished_ms": 5510.918459,
+          "paths": [
+            {
+              "interface": "lo0",
+              "received_application_bytes": 4,
+              "received_ip_packets": 2,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 1048594,
+              "sent_ip_packets": 258
+            }
+          ],
+          "payload_bytes_verified": 1048576,
+          "started_ms": 0.052334
+        },
+        "archive_chunk_interval_ms": 16,
+        "archive_service_class": "background",
+        "mismatched_key_tls_status": -9820,
+        "mode": "loopback",
+        "preview": {
+          "acknowledged_by_deadline": 20,
+          "finished_ms": 1905.177042,
+          "offered": 20,
+          "paths": [
+            {
+              "interface": "lo0",
+              "received_application_bytes": 60,
+              "received_ip_packets": 21,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 40962,
+              "sent_ip_packets": 22
+            }
+          ],
+          "payload_bytes_verified": 40960,
+          "release_to_ack_ms": [
+            3.678792,
+            3.208167,
+            3.602084,
+            2.339875,
+            4.862792,
+            10.239792,
+            10.891334,
+            10.64225,
+            5.077,
+            10.78625,
+            2.165375,
+            5.76025,
+            10.534542,
+            3.807584,
+            10.782209,
+            3.800709,
+            5.350042,
+            10.613792,
+            10.952375,
+            5.176209
+          ],
+          "round_trip_median_ms": 0.683646,
+          "round_trip_p95_ms": 0.871708,
+          "started_ms": 0.04375
+        },
+        "preview_deadline_ms": 160,
+        "preview_interval_ms": 100,
+        "preview_service_class": "interactiveVideo",
+        "previews_acknowledged_between_archive_attempts": 0,
+        "tls_cipher": "TLS_PSK_WITH_AES_128_GCM_SHA256"
+      },
+      "trial": "resume_without_cut"
+    },
+    {
+      "command": [
+        "selftest-resume",
+        "1"
+      ],
+      "cut_after_verified_chunks": 1,
+      "report": {
+        "archive": {
+          "attempts": [
+            {
+              "chunks_submitted": 1,
+              "error": "POSIXErrorCode(rawValue: 57): Socket is not connected",
+              "finished_ms": 50.259209,
+              "paths": [
+                {
+                  "interface": "lo0",
+                  "received_application_bytes": 2,
+                  "received_ip_packets": 1,
+                  "retransmitted_transport_bytes": 0,
+                  "sent_application_bytes": 4113,
+                  "sent_ip_packets": 2
+                }
+              ],
+              "receiver_next_chunk": 0,
+              "started_ms": 0.048584
+            },
+            {
+              "chunks_submitted": 255,
+              "finished_ms": 6070.477667,
+              "paths": [
+                {
+                  "interface": "lo0",
+                  "received_application_bytes": 4,
+                  "received_ip_packets": 2,
+                  "retransmitted_transport_bytes": 0,
+                  "sent_application_bytes": 1044498,
+                  "sent_ip_packets": 257
+                }
+              ],
+              "receiver_next_chunk": 1,
+              "started_ms": 660.705167
+            }
+          ],
+          "finished_ms": 6070.477667,
+          "paths": [
+            {
+              "interface": "lo0",
+              "received_application_bytes": 2,
+              "received_ip_packets": 1,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 4113,
+              "sent_ip_packets": 2
+            },
+            {
+              "interface": "lo0",
+              "received_application_bytes": 4,
+              "received_ip_packets": 2,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 1044498,
+              "sent_ip_packets": 257
+            }
+          ],
+          "payload_bytes_verified": 1048576,
+          "started_ms": 0.048584
+        },
+        "archive_chunk_interval_ms": 16,
+        "archive_service_class": "background",
+        "mismatched_key_tls_status": -9820,
+        "mode": "loopback",
+        "preview": {
+          "acknowledged_by_deadline": 20,
+          "finished_ms": 1908.929334,
+          "offered": 20,
+          "paths": [
+            {
+              "interface": "lo0",
+              "received_application_bytes": 60,
+              "received_ip_packets": 20,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 40962,
+              "sent_ip_packets": 22
+            }
+          ],
+          "payload_bytes_verified": 40960,
+          "release_to_ack_ms": [
+            3.750042,
+            10.606834,
+            10.574209,
+            2.912875,
+            0.5265,
+            2.660584,
+            4.917917,
+            2.37925,
+            4.419542,
+            10.661667,
+            8.839125,
+            10.560625,
+            9.159667,
+            9.047584,
+            10.67475,
+            4.973417,
+            9.139667,
+            10.515667,
+            9.538084,
+            8.928459
+          ],
+          "round_trip_median_ms": 0.5358959999999999,
+          "round_trip_p95_ms": 0.8165,
+          "started_ms": 0.0435
+        },
+        "preview_deadline_ms": 160,
+        "preview_interval_ms": 100,
+        "preview_service_class": "interactiveVideo",
+        "previews_acknowledged_between_archive_attempts": 6,
+        "tls_cipher": "TLS_PSK_WITH_AES_128_GCM_SHA256"
+      },
+      "trial": "cut_after_first_chunk"
+    },
+    {
+      "command": [
+        "selftest-resume"
+      ],
+      "cut_after_verified_chunks": 40,
+      "report": {
+        "archive": {
+          "attempts": [
+            {
+              "chunks_submitted": 40,
+              "error": "POSIXErrorCode(rawValue: 57): Socket is not connected",
+              "finished_ms": 890.061292,
+              "paths": [
+                {
+                  "interface": "lo0",
+                  "received_application_bytes": 2,
+                  "received_ip_packets": 1,
+                  "retransmitted_transport_bytes": 0,
+                  "sent_application_bytes": 163857,
+                  "sent_ip_packets": 41
+                }
+              ],
+              "receiver_next_chunk": 0,
+              "started_ms": 0.044042
+            },
+            {
+              "chunks_submitted": 216,
+              "finished_ms": 6111.614875,
+              "paths": [
+                {
+                  "interface": "lo0",
+                  "received_application_bytes": 4,
+                  "received_ip_packets": 2,
+                  "retransmitted_transport_bytes": 0,
+                  "sent_application_bytes": 884754,
+                  "sent_ip_packets": 218
+                }
+              ],
+              "receiver_next_chunk": 40,
+              "started_ms": 1499.527125
+            }
+          ],
+          "finished_ms": 6111.614875,
+          "paths": [
+            {
+              "interface": "lo0",
+              "received_application_bytes": 2,
+              "received_ip_packets": 1,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 163857,
+              "sent_ip_packets": 41
+            },
+            {
+              "interface": "lo0",
+              "received_application_bytes": 4,
+              "received_ip_packets": 2,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 884754,
+              "sent_ip_packets": 218
+            }
+          ],
+          "payload_bytes_verified": 1048576,
+          "started_ms": 0.044042
+        },
+        "archive_chunk_interval_ms": 16,
+        "archive_service_class": "background",
+        "mismatched_key_tls_status": -9820,
+        "mode": "loopback",
+        "preview": {
+          "acknowledged_by_deadline": 20,
+          "finished_ms": 1910.494459,
+          "offered": 20,
+          "paths": [
+            {
+              "interface": "lo0",
+              "received_application_bytes": 60,
+              "received_ip_packets": 20,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 40962,
+              "sent_ip_packets": 22
+            }
+          ],
+          "payload_bytes_verified": 40960,
+          "release_to_ack_ms": [
+            3.629875,
+            10.12325,
+            10.844209,
+            1.175292,
+            10.563667,
+            10.70175,
+            10.74075,
+            8.934292,
+            10.090084,
+            2.695667,
+            11.077084,
+            10.812292,
+            11.034542,
+            10.499292,
+            10.800709,
+            10.448042,
+            10.385084,
+            10.511917,
+            10.398042,
+            10.493334
+          ],
+          "round_trip_median_ms": 0.6958335,
+          "round_trip_p95_ms": 1.017584,
+          "started_ms": 0.042542
+        },
+        "preview_deadline_ms": 160,
+        "preview_interval_ms": 100,
+        "preview_service_class": "interactiveVideo",
+        "previews_acknowledged_between_archive_attempts": 6,
+        "tls_cipher": "TLS_PSK_WITH_AES_128_GCM_SHA256"
+      },
+      "trial": "mid_archive_cut_1"
+    },
+    {
+      "command": [
+        "selftest-resume"
+      ],
+      "cut_after_verified_chunks": 40,
+      "report": {
+        "archive": {
+          "attempts": [
+            {
+              "chunks_submitted": 40,
+              "error": "POSIXErrorCode(rawValue: 57): Socket is not connected",
+              "finished_ms": 876.41,
+              "paths": [
+                {
+                  "interface": "lo0",
+                  "received_application_bytes": 2,
+                  "received_ip_packets": 1,
+                  "retransmitted_transport_bytes": 0,
+                  "sent_application_bytes": 163857,
+                  "sent_ip_packets": 41
+                }
+              ],
+              "receiver_next_chunk": 0,
+              "started_ms": 0.082667
+            },
+            {
+              "chunks_submitted": 216,
+              "finished_ms": 6011.449209,
+              "paths": [
+                {
+                  "interface": "lo0",
+                  "received_application_bytes": 4,
+                  "received_ip_packets": 2,
+                  "retransmitted_transport_bytes": 0,
+                  "sent_application_bytes": 884754,
+                  "sent_ip_packets": 218
+                }
+              ],
+              "receiver_next_chunk": 40,
+              "started_ms": 1481.464959
+            }
+          ],
+          "finished_ms": 6011.449209,
+          "paths": [
+            {
+              "interface": "lo0",
+              "received_application_bytes": 2,
+              "received_ip_packets": 1,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 163857,
+              "sent_ip_packets": 41
+            },
+            {
+              "interface": "lo0",
+              "received_application_bytes": 4,
+              "received_ip_packets": 2,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 884754,
+              "sent_ip_packets": 218
+            }
+          ],
+          "payload_bytes_verified": 1048576,
+          "started_ms": 0.082667
+        },
+        "archive_chunk_interval_ms": 16,
+        "archive_service_class": "background",
+        "mismatched_key_tls_status": -9820,
+        "mode": "loopback",
+        "preview": {
+          "acknowledged_by_deadline": 20,
+          "finished_ms": 1910.630792,
+          "offered": 20,
+          "paths": [
+            {
+              "interface": "lo0",
+              "received_application_bytes": 60,
+              "received_ip_packets": 20,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 40962,
+              "sent_ip_packets": 22
+            }
+          ],
+          "payload_bytes_verified": 40960,
+          "release_to_ack_ms": [
+            3.663709,
+            7.863584,
+            10.107792,
+            8.313625,
+            10.036709,
+            10.089084,
+            8.560584,
+            8.31675,
+            7.252084,
+            10.787292,
+            10.812875,
+            10.902,
+            1.057209,
+            10.792334,
+            10.804417,
+            10.449417,
+            10.642917,
+            8.329459,
+            10.075667,
+            10.629417
+          ],
+          "round_trip_median_ms": 0.6136455000000001,
+          "round_trip_p95_ms": 0.842542,
+          "started_ms": 0.055792
+        },
+        "preview_deadline_ms": 160,
+        "preview_interval_ms": 100,
+        "preview_service_class": "interactiveVideo",
+        "previews_acknowledged_between_archive_attempts": 6,
+        "tls_cipher": "TLS_PSK_WITH_AES_128_GCM_SHA256"
+      },
+      "trial": "mid_archive_cut_2"
+    },
+    {
+      "command": [
+        "selftest-resume"
+      ],
+      "cut_after_verified_chunks": 40,
+      "report": {
+        "archive": {
+          "attempts": [
+            {
+              "chunks_submitted": 40,
+              "error": "POSIXErrorCode(rawValue: 57): Socket is not connected",
+              "finished_ms": 860.837041,
+              "paths": [
+                {
+                  "interface": "lo0",
+                  "received_application_bytes": 2,
+                  "received_ip_packets": 1,
+                  "retransmitted_transport_bytes": 0,
+                  "sent_application_bytes": 163857,
+                  "sent_ip_packets": 41
+                }
+              ],
+              "receiver_next_chunk": 0,
+              "started_ms": 0.0805
+            },
+            {
+              "chunks_submitted": 216,
+              "finished_ms": 6193.89275,
+              "paths": [
+                {
+                  "interface": "lo0",
+                  "received_application_bytes": 4,
+                  "received_ip_packets": 2,
+                  "retransmitted_transport_bytes": 0,
+                  "sent_application_bytes": 884754,
+                  "sent_ip_packets": 218
+                }
+              ],
+              "receiver_next_chunk": 40,
+              "started_ms": 1470.37025
+            }
+          ],
+          "finished_ms": 6193.89275,
+          "paths": [
+            {
+              "interface": "lo0",
+              "received_application_bytes": 2,
+              "received_ip_packets": 1,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 163857,
+              "sent_ip_packets": 41
+            },
+            {
+              "interface": "lo0",
+              "received_application_bytes": 4,
+              "received_ip_packets": 2,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 884754,
+              "sent_ip_packets": 218
+            }
+          ],
+          "payload_bytes_verified": 1048576,
+          "started_ms": 0.0805
+        },
+        "archive_chunk_interval_ms": 16,
+        "archive_service_class": "background",
+        "mismatched_key_tls_status": -9820,
+        "mode": "loopback",
+        "preview": {
+          "acknowledged_by_deadline": 20,
+          "finished_ms": 1903.624041,
+          "offered": 20,
+          "paths": [
+            {
+              "interface": "lo0",
+              "received_application_bytes": 60,
+              "received_ip_packets": 20,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 40962,
+              "sent_ip_packets": 22
+            }
+          ],
+          "payload_bytes_verified": 40960,
+          "release_to_ack_ms": [
+            3.43475,
+            10.324875,
+            10.573708,
+            9.597083,
+            10.08375,
+            10.626416,
+            10.459958,
+            10.250083,
+            10.2395,
+            2.153,
+            8.822375,
+            10.7625,
+            10.744375,
+            4.102625,
+            10.669708,
+            8.537875,
+            1.57175,
+            10.482833,
+            3.511791,
+            3.622958
+          ],
+          "round_trip_median_ms": 0.5341875,
+          "round_trip_p95_ms": 1.004333,
+          "started_ms": 0.053583
+        },
+        "preview_deadline_ms": 160,
+        "preview_interval_ms": 100,
+        "preview_service_class": "interactiveVideo",
+        "previews_acknowledged_between_archive_attempts": 6,
+        "tls_cipher": "TLS_PSK_WITH_AES_128_GCM_SHA256"
+      },
+      "trial": "mid_archive_cut_3"
+    },
+    {
+      "command": [
+        "selftest-resume",
+        "256"
+      ],
+      "cut_after_verified_chunks": 256,
+      "report": {
+        "archive": {
+          "attempts": [
+            {
+              "chunks_submitted": 256,
+              "error": "POSIXErrorCode(rawValue: 54): Connection reset by peer",
+              "finished_ms": 5513.795458,
+              "paths": [
+                {
+                  "interface": "lo0",
+                  "received_application_bytes": 2,
+                  "received_ip_packets": 1,
+                  "retransmitted_transport_bytes": 0,
+                  "sent_application_bytes": 1048593,
+                  "sent_ip_packets": 257
+                }
+              ],
+              "receiver_next_chunk": 0,
+              "started_ms": 0.047833
+            },
+            {
+              "chunks_submitted": 0,
+              "finished_ms": 6135.684958,
+              "paths": [
+                {
+                  "interface": "lo0",
+                  "received_application_bytes": 4,
+                  "received_ip_packets": 2,
+                  "retransmitted_transport_bytes": 0,
+                  "sent_application_bytes": 18,
+                  "sent_ip_packets": 2
+                }
+              ],
+              "receiver_next_chunk": 256,
+              "started_ms": 6124.663875
+            }
+          ],
+          "finished_ms": 6135.684958,
+          "paths": [
+            {
+              "interface": "lo0",
+              "received_application_bytes": 2,
+              "received_ip_packets": 1,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 1048593,
+              "sent_ip_packets": 257
+            },
+            {
+              "interface": "lo0",
+              "received_application_bytes": 4,
+              "received_ip_packets": 2,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 18,
+              "sent_ip_packets": 2
+            }
+          ],
+          "payload_bytes_verified": 1048576,
+          "started_ms": 0.047833
+        },
+        "archive_chunk_interval_ms": 16,
+        "archive_service_class": "background",
+        "mismatched_key_tls_status": -9820,
+        "mode": "loopback",
+        "preview": {
+          "acknowledged_by_deadline": 20,
+          "finished_ms": 1906.310291,
+          "offered": 20,
+          "paths": [
+            {
+              "interface": "lo0",
+              "received_application_bytes": 60,
+              "received_ip_packets": 21,
+              "retransmitted_transport_bytes": 0,
+              "sent_application_bytes": 40962,
+              "sent_ip_packets": 22
+            }
+          ],
+          "payload_bytes_verified": 40960,
+          "release_to_ack_ms": [
+            3.895375,
+            2.248416,
+            8.251125,
+            9.940041,
+            7.214,
+            7.68625,
+            10.542833,
+            3.581083,
+            10.619958,
+            3.544916,
+            1.625916,
+            10.729166,
+            3.720416,
+            10.657458,
+            10.421458,
+            0.825625,
+            10.444583,
+            7.274583,
+            9.192041,
+            6.309208
+          ],
+          "round_trip_median_ms": 0.5278125,
+          "round_trip_p95_ms": 0.747417,
+          "started_ms": 0.045416
+        },
+        "preview_deadline_ms": 160,
+        "preview_interval_ms": 100,
+        "preview_service_class": "interactiveVideo",
+        "previews_acknowledged_between_archive_attempts": 0,
+        "tls_cipher": "TLS_PSK_WITH_AES_128_GCM_SHA256"
+      },
+      "trial": "cut_before_final_ack"
+    }
+  ],
+  "scope": "Native paired TLS connections on the same host. The receiving application cancels only its loopback archive socket at a verified chunk boundary. The preview connection is independent. Physical Wi-Fi handoff and channel placement remain to be measured on a separately managed bench.",
+  "sdk_version": "27.2"
+}

@@ -56,7 +56,7 @@ On the sender, use the copied key and its existing LAN interface. Capture JSON f
 
 Compare preview deadline hits, tail latency and verified archive throughput under the same access-point conditions. The factory map puts the 5 GHz router and a 2.4 GHz direct leg on different Wi-Fi cores if macOS uses those bands. Set the owned test router to 5 GHz and record the peer's band while the split test sends both streams. The path report answers which interface carried the traffic. An independent receiver on each band with a common clock answers which channels carried it and whether transmissions overlapped. The two-device result remains open. [Factory band map and log fields](simultaneous-dual-band.md#factory-band-assignment)
 
-For an inspection cart moving between two owned access points, the application could keep sending time-sensitive previews straight to the nearby operator during a router handoff. A persistent upload queue could resume the full images when the router path returns. On a separate bench, compare missed previews during handoff with the LAN-only run, then count complete archives by part ID. The current prototype measures the transport and deadlines. Handoff recovery and inspection accuracy need the bench and camera. [Roaming test](wifi-roaming.md), [Archive recovery design](#resume-work-after-a-radio-fault)
+For an inspection cart moving between two owned access points, the application could keep sending time-sensitive previews straight to the nearby operator during a router handoff. The recovery probe measures whether previews arrive while the archive connection reopens. On a separate bench, compare missed previews during handoff with the LAN-only run, then count complete archives by part ID. [Roaming test](wifi-roaming.md), [Archive recovery probe](#resume-work-after-a-radio-fault)
 
 ## Wake the Mac when inspection work actually arrives
 
@@ -84,6 +84,31 @@ Use a physical part sensor as the truth reference. Test empty periods, parts of 
 
 ## Resume work after a radio fault
 
-An inspection sender can assign a stable ID to each archive and acknowledge completed chunks. When the link returns, the two devices resume the same job from the last committed chunk. An owned test radio can supply a retained RAM capture if a real fault occurs. The decoded ThreadX records and driver queue evidence can then help distinguish an interrupted application transfer from a failure that occurred inside the chip. A single snapshot gives thread state at capture time. Attributing a stall needs the sequence of application, driver and radio events. [ThreadX task map](rtos-threadx.md#main-and-idle-tasks-in-the-stock-images), [Capture framing](ram-diagnostics.md), [PCIe queues](pcie-queue-sizing.md)
+The recovery probe gives a transfer a random ID and verifies each 4 KiB chunk on the receiver. After a disconnect, a new authenticated connection asks how many chunks the receiver already verified and starts at that offset. The sender tries up to three connections and waits 600 ms before each retry. Previews keep their own connection. The receiver retains the verified offset in memory for this generated workload. Recovery across a process restart would require durable storage of the archive and its verified offset. [Probe source](../tools/probe_inspection_peer.swift)
+
+Seven trials on build 26B131 verified 1 MiB each and acknowledged all 140 previews within 160 ms. The first two trials used the original transfer and the resumable transfer with no interruption. In the other trials, the receiver closed only its loopback archive socket after verifying the indicated number of chunks. Every transfer report with application data identified `lo0`. Before and after the trials, CoreWLAN reported 5 GHz primary 40 at 80 MHz and the IPv4 default interface was `en0`. [Trial data and path reports](../evidence/2026-11-17-inspection-archive-recovery.json), [Apple connection cancellation API](https://developer.apple.com/documentation/network/nwconnection/forcecancel%28%29)
+
+| Receiver closed after verifying | Trials | Chunks sent on the new connection | Previews acknowledged between archive attempts |
+| ---: | ---: | ---: | ---: |
+| 1 chunk | 1 | 255 | 6 |
+| 40 chunks | 3 | 216 in each trial | 6 in each trial |
+| 256 chunks, before final acknowledgement | 1 | 0 | The preview workload ended before this interruption |
+
+At the 40-chunk boundary, the new connection skipped 160 KiB the receiver had already verified. At the 256-chunk boundary, the sender only needed to recover the final acknowledgement. The timed preview acknowledgements and the receiver's resume offsets measure application recovery. Actual Wi-Fi handoff recovery still needs a paired bench with two access points. [Per-attempt offsets and byte counts](../evidence/2026-11-17-inspection-archive-recovery.json)
+
+Use the same build as the [paired test](#test-the-direct-link-while-the-archive-is-moving) to run the local cases.
+
+```sh
+"$inspection_dir/probe_inspection_peer" selftest-resume
+"$inspection_dir/probe_inspection_peer" selftest-resume 256
+```
+
+On the separate bench, use the same listener and pairing key with `run-resume`. Start with `lan` and `split` controls and compare deadline hits, per-attempt offsets, and final verified bytes during a controlled handoff. Record both bands over the air to check whether the direct link held during the router change. [Dual-band test](simultaneous-dual-band.md#keeping-an-internet-link-while-using-another-channel)
+
+```sh
+"$inspection_dir/probe_inspection_peer" run-resume "$inspection_dir/pairing.key" split en0
+```
+
+If the separate test radio reports a genuine fault during a run, keep the driver capture and correlate its time with the failed attempt. The decoded ThreadX records and driver queue evidence can then help distinguish a radio fault from a transport interruption. A single chip snapshot gives thread state at capture time. Attributing a stall needs the sequence of application, driver and radio events. [ThreadX task map](rtos-threadx.md#main-and-idle-tasks-in-the-stock-images), [Capture framing](ram-diagnostics.md), [PCIe queues](pcie-queue-sizing.md)
 
 The [complete discovery catalog](capability-catalog.md) records the physical and firmware evidence behind these designs. The [feature index](firmware-feature-index.md) has the exact reported words and mapped driver bits.
