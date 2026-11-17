@@ -10,9 +10,11 @@ import sys
 
 from inspect_firmware import (
     BTC_PARAMETER_KEY,
+    RADIO_POWER_CONFIG_KEYS,
     TRANSPORT_CONFIG_KEYS,
     decode_btc_parameters,
     read_artifact,
+    summarize_config_keys,
 )
 
 
@@ -213,6 +215,7 @@ def collect():
             "interface_roles": interface_roles(entries),
             "capability_inputs": wifi_capability_inputs(core, bus),
             "coexistence_parameters": coexistence,
+            "radio_power_config_properties": summarize_config_keys(bus, RADIO_POWER_CONFIG_KEYS),
             "transport_config_properties": {
                 key: bus[key] for key in TRANSPORT_CONFIG_KEYS if type(bus.get(key)) is int
             },
