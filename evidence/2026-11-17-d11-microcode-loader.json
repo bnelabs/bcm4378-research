@@ -1,0 +1,760 @@
+{
+  "disassemblers": {
+    "llvm_mc": "Homebrew LLVM version 23.1.4",
+    "rizin": "rizin 0.9.1 @ darwin-arm-64, package: 0.9.1_2 (Homebrew)"
+  },
+  "host_after": {
+    "ipv4_default_interface": "en0",
+    "registry_firmware_id": "01-2606388a",
+    "requested_firmware": "C-4378__s-B1/shikoku.trx",
+    "resolved_firmware": "C-4378__s-B1/honshu.trx"
+  },
+  "host_before": {
+    "ipv4_default_interface": "en0",
+    "registry_firmware_id": "01-2606388a",
+    "requested_firmware": "C-4378__s-B1/shikoku.trx",
+    "resolved_firmware": "C-4378__s-B1/honshu.trx"
+  },
+  "host_microcode_fault_handler": {
+    "bytes_added_to_reported_payload_length": 48,
+    "event_attachment": "FirmwareEvent.bin",
+    "payload_length_field_offset": 20,
+    "reason_field_offset": 12,
+    "signed_dext_sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "slices": [
+      {
+        "architecture": "arm64e",
+        "entry_address": "0x100232708",
+        "selected_instructions": [
+          {
+            "address": "0x100232788",
+            "instruction": "00 7c 11 91\tadd\tx0, x0, #0x45f ; literal pool for: \"FirmwareEvent.bin\""
+          },
+          {
+            "address": "0x100232794",
+            "instruction": "68 16 40 b9\tldr\tw8, [x19, #0x14]"
+          },
+          {
+            "address": "0x100232798",
+            "instruction": "01 c1 00 91\tadd\tx1, x8, #0x30"
+          },
+          {
+            "address": "0x1002327a0",
+            "instruction": "9b 86 01 94\tbl\t0x10029420c ; symbol stub for: __ZN6OSData9withBytesEPKvm"
+          },
+          {
+            "address": "0x1002327b4",
+            "instruction": "a1 c3 00 d1\tsub\tx1, x29, #0x30"
+          },
+          {
+            "address": "0x1002327c8",
+            "instruction": "68 26 41 29\tldp\tw8, w9, [x19, #0x8]"
+          },
+          {
+            "address": "0x1002327e0",
+            "instruction": "e7 b4 3a 91\tadd\tx7, x7, #0xead ; literal pool for: \"status=%u,reason=%u\""
+          },
+          {
+            "address": "0x1002327f8",
+            "instruction": "a1 81 01 94\tbl\t0x100292e7c ; symbol stub for: __ZN15CCFaultReporter11reportFaultEjPKcjS1_P12OSDictionaryiS1_z"
+          },
+          {
+            "address": "0x1002327fc",
+            "instruction": "a0 c3 00 d1\tsub\tx0, x29, #0x30"
+          },
+          {
+            "address": "0x100232844",
+            "instruction": "68 26 41 29\tldp\tw8, w9, [x19, #0x8]"
+          }
+        ],
+        "symbol": "__ZN16AppleBCMWLANCore21reportMicrocodeLockupEPK14wl_event_msg_t"
+      },
+      {
+        "architecture": "arm64e.x1",
+        "entry_address": "0x10022c2d0",
+        "selected_instructions": [
+          {
+            "address": "0x10022c350",
+            "instruction": "00 dc 34 91\tadd\tx0, x0, #0xd37 ; literal pool for: \"FirmwareEvent.bin\""
+          },
+          {
+            "address": "0x10022c35c",
+            "instruction": "68 16 40 b9\tldr\tw8, [x19, #0x14]"
+          },
+          {
+            "address": "0x10022c360",
+            "instruction": "01 c1 00 91\tadd\tx1, x8, #0x30"
+          },
+          {
+            "address": "0x10022c368",
+            "instruction": "df 85 01 94\tbl\t0x10028dae4 ; symbol stub for: __ZN6OSData9withBytesEPKvm"
+          },
+          {
+            "address": "0x10022c37c",
+            "instruction": "a1 c3 00 d1\tsub\tx1, x29, #0x30"
+          },
+          {
+            "address": "0x10022c390",
+            "instruction": "68 26 41 29\tldp\tw8, w9, [x19, #0x8]"
+          },
+          {
+            "address": "0x10022c3a8",
+            "instruction": "e7 14 1e 91\tadd\tx7, x7, #0x785 ; literal pool for: \"status=%u,reason=%u\""
+          },
+          {
+            "address": "0x10022c3c0",
+            "instruction": "e5 80 01 94\tbl\t0x10028c754 ; symbol stub for: __ZN15CCFaultReporter11reportFaultEjPKcjS1_P12OSDictionaryiS1_z"
+          },
+          {
+            "address": "0x10022c3c4",
+            "instruction": "a0 c3 00 d1\tsub\tx0, x29, #0x30"
+          },
+          {
+            "address": "0x10022c40c",
+            "instruction": "68 26 41 29\tldp\tw8, w9, [x19, #0x8]"
+          }
+        ],
+        "symbol": "__ZN16AppleBCMWLANCore21reportMicrocodeLockupEPK14wl_event_msg_t"
+      }
+    ],
+    "status_field_offset": 8,
+    "strict_signature_verified": true
+  },
+  "loader_profiles": [
+    {
+      "core_units": [
+        {
+          "bytes": 90112,
+          "component_file_offset": 1385840,
+          "eight_byte_records_before_zero_padding": 10926,
+          "sha256": "1e4f3621f53a3782535c4444761099583bbef98bd53bf9e5cbe145ef34b07991",
+          "size_field_file_offset": 1475952,
+          "unit": 0,
+          "word_stores_if_transfer_completes": 22528,
+          "zero_padding_records": 338
+        },
+        {
+          "bytes": 90112,
+          "component_file_offset": 1295724,
+          "eight_byte_records_before_zero_padding": 11190,
+          "sha256": "1ab6713282f34e873dc98f48cf1489f8bafd82fd76d3811d3e078f8bb5e65813",
+          "size_field_file_offset": 1385836,
+          "unit": 1,
+          "word_stores_if_transfer_completes": 22528,
+          "zero_padding_records": 74
+        }
+      ],
+      "file": {
+        "bytes": 1497470,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+      },
+      "firmware_id": "01-2606388a",
+      "llvm_writer_instructions": [
+        "mov.w r2, #50331648",
+        "str.w r2, [r3, #352]",
+        "ldr.w r3, [r3, #352]",
+        "str.w r2, [r3, #356]"
+      ],
+      "loader_trace": {
+        "cache_call": {
+          "address": "0x473760",
+          "instruction": "bl    0x47a3cc"
+        },
+        "direct_writer_call": {
+          "address": "0x473cac",
+          "instruction": "bl    0x473758"
+        },
+        "object_address_readback": {
+          "address": "0x473778",
+          "instruction": "ldr.w r3, [r3, 0x160]"
+        },
+        "object_address_setup": {
+          "address": "0x473774",
+          "instruction": "str.w r2, [r3, 0x160]"
+        },
+        "object_data_store": {
+          "address": "0x473790",
+          "instruction": "str.w r2, [r3, 0x164]"
+        },
+        "selector_reads_unit": {
+          "address": "0x473c9c",
+          "instruction": "ldr   r3, [r0, 0x48]"
+        },
+        "source_pointer_cache_store": {
+          "address": "0x47a3d0",
+          "instruction": "str.w r1, [r0, r3, lsl 2]"
+        },
+        "source_size_cache_store": {
+          "address": "0x47a3d6",
+          "instruction": "str.w r2, [r1, r3, lsl 2]"
+        },
+        "source_word_load": {
+          "address": "0x47378c",
+          "instruction": "ldr   r2, [r1], 4"
+        }
+      },
+      "microcode_build": [
+        {
+          "diff_count": 0,
+          "family": "OlympicAXUcode_1447_100",
+          "file_offset": 1497201,
+          "major": 1447,
+          "minor": 100,
+          "prebuilt": false,
+          "revision": 48542
+        }
+      ],
+      "object_memory_transfer": {
+        "address_setup_guard_file_offset": 1036480,
+        "address_setup_guard_stock_value": 0,
+        "address_setup_value": "0x3000000",
+        "context_register_pointer_offset": 140,
+        "object_address_register_offset": 352,
+        "object_data_register_offset": 356,
+        "unit_field_offset": 72
+      },
+      "object_writer_file_offset": 1185624,
+      "reference_ram_base": "0x352000",
+      "selector_file_offset": 1186972,
+      "source_cache": {
+        "pointer_table_file_offset": 1292564,
+        "size_table_file_offset": 1292572,
+        "stock_source_pointers": [
+          0,
+          0
+        ],
+        "stock_source_sizes": [
+          0,
+          0
+        ]
+      },
+      "source_cache_writer_file_offset": 1213388,
+      "startup_path": {
+        "call_after_attach": {
+          "address": "0x46ff7e",
+          "instruction": "bl    0x48e48c"
+        },
+        "capability_field": {
+          "address": "0x48e4b8",
+          "instruction": "ubfx  r3, r3, 0xc, 2"
+        },
+        "compute_new_count_one": {
+          "address": "0x48e4c2",
+          "instruction": "movls r5, 1"
+        },
+        "compute_new_count_two": {
+          "address": "0x48e4c0",
+          "instruction": "movhi r5, 2"
+        },
+        "count_from_capability_read": {
+          "address": "0x48e4b4",
+          "instruction": "ldr.w r3, [r3, 0x1a4]"
+        },
+        "d11_core_id_argument": {
+          "address": "0x48e4e6",
+          "instruction": "movw  r1, 0x812"
+        },
+        "first_selector_call": {
+          "address": "0x48e4a4",
+          "instruction": "bl    0x473c9c"
+        },
+        "initial_context_has_unit_zero": {
+          "address": "0x473e0c",
+          "instruction": "str   r7, [r4, 0x48]"
+        },
+        "initial_unit_zero_value": {
+          "address": "0x473e02",
+          "instruction": "movs  r7, 0"
+        },
+        "new_count_one": {
+          "address": "0x48e4ca",
+          "instruction": "cmp   r5, 1                                            ; 1"
+        },
+        "previous_count_two": {
+          "address": "0x48e4c4",
+          "instruction": "cmp   r7, 2                                            ; 2"
+        },
+        "restore_zero_unit": {
+          "address": "0x48e504",
+          "instruction": "str   r6, [r4, 0x48]"
+        },
+        "revision_gate": {
+          "address": "0x474668",
+          "instruction": "bl    0x4735c8"
+        },
+        "revision_minus_64": {
+          "address": "0x4735cc",
+          "instruction": "sub.w r3, r2, 0x40"
+        },
+        "revision_test_remainder_20": {
+          "address": "0x4735d4",
+          "instruction": "cmp   r3, 0x14                                         ; 20"
+        },
+        "second_selector_call": {
+          "address": "0x48e4fe",
+          "instruction": "bl    0x473c9c"
+        },
+        "second_unit_context_store": {
+          "address": "0x48e4ce",
+          "instruction": "str   r5, [r4, 0x48]"
+        },
+        "select_core_call": {
+          "address": "0x48e4ea",
+          "instruction": "bl    0x768a8"
+        },
+        "slice_one_prefix_load": {
+          "address": "0x47461c",
+          "instruction": "ldr   r1, [0x0047475c]                                 ; [0x47475c:4]=0x48d720 ; \" \\xd7H\"",
+          "resolved_string": "slice/1/"
+        },
+        "store_core_register_pointer": {
+          "address": "0x48e4f2",
+          "instruction": "str.w r0, [r4, 0x8c]"
+        }
+      }
+    },
+    {
+      "core_units": [
+        {
+          "bytes": 90112,
+          "component_file_offset": 1385128,
+          "eight_byte_records_before_zero_padding": 10926,
+          "sha256": "1e4f3621f53a3782535c4444761099583bbef98bd53bf9e5cbe145ef34b07991",
+          "size_field_file_offset": 1475240,
+          "unit": 0,
+          "word_stores_if_transfer_completes": 22528,
+          "zero_padding_records": 338
+        },
+        {
+          "bytes": 90112,
+          "component_file_offset": 1295012,
+          "eight_byte_records_before_zero_padding": 11190,
+          "sha256": "1ab6713282f34e873dc98f48cf1489f8bafd82fd76d3811d3e078f8bb5e65813",
+          "size_field_file_offset": 1385124,
+          "unit": 1,
+          "word_stores_if_transfer_completes": 22528,
+          "zero_padding_records": 74
+        }
+      ],
+      "file": {
+        "bytes": 1496769,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6"
+      },
+      "firmware_id": "01-8acd757c",
+      "llvm_writer_instructions": [
+        "mov.w r2, #50331648",
+        "str.w r2, [r3, #352]",
+        "ldr.w r3, [r3, #352]",
+        "str.w r2, [r3, #356]"
+      ],
+      "loader_trace": {
+        "cache_call": {
+          "address": "0x47374c",
+          "instruction": "bl    0x47a3b8"
+        },
+        "direct_writer_call": {
+          "address": "0x473c98",
+          "instruction": "bl    0x473744"
+        },
+        "object_address_readback": {
+          "address": "0x473764",
+          "instruction": "ldr.w r3, [r3, 0x160]"
+        },
+        "object_address_setup": {
+          "address": "0x473760",
+          "instruction": "str.w r2, [r3, 0x160]"
+        },
+        "object_data_store": {
+          "address": "0x47377c",
+          "instruction": "str.w r2, [r3, 0x164]"
+        },
+        "selector_reads_unit": {
+          "address": "0x473c88",
+          "instruction": "ldr   r3, [r0, 0x48]"
+        },
+        "source_pointer_cache_store": {
+          "address": "0x47a3bc",
+          "instruction": "str.w r1, [r0, r3, lsl 2]"
+        },
+        "source_size_cache_store": {
+          "address": "0x47a3c2",
+          "instruction": "str.w r2, [r1, r3, lsl 2]"
+        },
+        "source_word_load": {
+          "address": "0x473778",
+          "instruction": "ldr   r2, [r1], 4"
+        }
+      },
+      "microcode_build": [
+        {
+          "diff_count": 0,
+          "family": "OlympicAXUcode_1447_100",
+          "file_offset": 1496495,
+          "major": 1447,
+          "minor": 100,
+          "prebuilt": false,
+          "revision": 48542
+        }
+      ],
+      "object_memory_transfer": {
+        "address_setup_guard_file_offset": 1036480,
+        "address_setup_guard_stock_value": 0,
+        "address_setup_value": "0x3000000",
+        "context_register_pointer_offset": 140,
+        "object_address_register_offset": 352,
+        "object_data_register_offset": 356,
+        "unit_field_offset": 72
+      },
+      "object_writer_file_offset": 1185604,
+      "reference_ram_base": "0x352000",
+      "selector_file_offset": 1186952,
+      "source_cache": {
+        "pointer_table_file_offset": 1291956,
+        "size_table_file_offset": 1291964,
+        "stock_source_pointers": [
+          0,
+          0
+        ],
+        "stock_source_sizes": [
+          0,
+          0
+        ]
+      },
+      "source_cache_writer_file_offset": 1213368,
+      "startup_path": {
+        "call_after_attach": {
+          "address": "0x46ff6a",
+          "instruction": "bl    0x48e1c4"
+        },
+        "capability_field": {
+          "address": "0x48e1f0",
+          "instruction": "ubfx  r3, r3, 0xc, 2"
+        },
+        "compute_new_count_one": {
+          "address": "0x48e1fa",
+          "instruction": "movls r5, 1"
+        },
+        "compute_new_count_two": {
+          "address": "0x48e1f8",
+          "instruction": "movhi r5, 2"
+        },
+        "count_from_capability_read": {
+          "address": "0x48e1ec",
+          "instruction": "ldr.w r3, [r3, 0x1a4]"
+        },
+        "d11_core_id_argument": {
+          "address": "0x48e21e",
+          "instruction": "movw  r1, 0x812"
+        },
+        "first_selector_call": {
+          "address": "0x48e1dc",
+          "instruction": "bl    0x473c88"
+        },
+        "initial_context_has_unit_zero": {
+          "address": "0x473df8",
+          "instruction": "str   r7, [r4, 0x48]"
+        },
+        "initial_unit_zero_value": {
+          "address": "0x473dee",
+          "instruction": "movs  r7, 0"
+        },
+        "new_count_one": {
+          "address": "0x48e202",
+          "instruction": "cmp   r5, 1                                            ; 1"
+        },
+        "previous_count_two": {
+          "address": "0x48e1fc",
+          "instruction": "cmp   r7, 2                                            ; 2"
+        },
+        "restore_zero_unit": {
+          "address": "0x48e23c",
+          "instruction": "str   r6, [r4, 0x48]"
+        },
+        "revision_gate": {
+          "address": "0x474654",
+          "instruction": "bl    0x4735b4"
+        },
+        "revision_minus_64": {
+          "address": "0x4735b8",
+          "instruction": "sub.w r3, r2, 0x40"
+        },
+        "revision_test_remainder_20": {
+          "address": "0x4735c0",
+          "instruction": "cmp   r3, 0x14                                         ; 20"
+        },
+        "second_selector_call": {
+          "address": "0x48e236",
+          "instruction": "bl    0x473c88"
+        },
+        "second_unit_context_store": {
+          "address": "0x48e206",
+          "instruction": "str   r5, [r4, 0x48]"
+        },
+        "select_core_call": {
+          "address": "0x48e222",
+          "instruction": "bl    0x768a8"
+        },
+        "slice_one_prefix_load": {
+          "address": "0x474608",
+          "instruction": "ldr   r1, [0x00474748]                                 ; [0x474748:4]=0x48d4c0",
+          "resolved_string": "slice/1/"
+        },
+        "store_core_register_pointer": {
+          "address": "0x48e22a",
+          "instruction": "str.w r0, [r4, 0x8c]"
+        }
+      }
+    },
+    {
+      "core_units": [
+        {
+          "bytes": 90112,
+          "component_file_offset": 1117664,
+          "eight_byte_records_before_zero_padding": 10926,
+          "sha256": "1e4f3621f53a3782535c4444761099583bbef98bd53bf9e5cbe145ef34b07991",
+          "size_field_file_offset": 1207776,
+          "unit": 0,
+          "word_stores_if_transfer_completes": 22528,
+          "zero_padding_records": 338
+        },
+        {
+          "bytes": 90112,
+          "component_file_offset": 1027548,
+          "eight_byte_records_before_zero_padding": 11190,
+          "sha256": "1ab6713282f34e873dc98f48cf1489f8bafd82fd76d3811d3e078f8bb5e65813",
+          "size_field_file_offset": 1117660,
+          "unit": 1,
+          "word_stores_if_transfer_completes": 22528,
+          "zero_padding_records": 74
+        }
+      ],
+      "file": {
+        "bytes": 1226142,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a"
+      },
+      "firmware_id": "01-f2cc5189",
+      "llvm_writer_instructions": [
+        "mov.w r2, #50331648",
+        "str.w r2, [r3, #352]",
+        "ldr.w r3, [r3, #352]",
+        "str.w r2, [r3, #356]"
+      ],
+      "loader_trace": {
+        "cache_call": {
+          "address": "0x431eb8",
+          "instruction": "bl    0x438aec"
+        },
+        "direct_writer_call": {
+          "address": "0x432404",
+          "instruction": "bl    0x431eb0"
+        },
+        "object_address_readback": {
+          "address": "0x431ed0",
+          "instruction": "ldr.w r3, [r3, 0x160]"
+        },
+        "object_address_setup": {
+          "address": "0x431ecc",
+          "instruction": "str.w r2, [r3, 0x160]"
+        },
+        "object_data_store": {
+          "address": "0x431ee8",
+          "instruction": "str.w r2, [r3, 0x164]"
+        },
+        "selector_reads_unit": {
+          "address": "0x4323f4",
+          "instruction": "ldr   r3, [r0, 0x48]"
+        },
+        "source_pointer_cache_store": {
+          "address": "0x438af0",
+          "instruction": "str.w r1, [r0, r3, lsl 2]"
+        },
+        "source_size_cache_store": {
+          "address": "0x438af6",
+          "instruction": "str.w r2, [r1, r3, lsl 2]"
+        },
+        "source_word_load": {
+          "address": "0x431ee4",
+          "instruction": "ldr   r2, [r1], 4"
+        }
+      },
+      "microcode_build": [
+        {
+          "diff_count": 0,
+          "family": "OlympicAXUcode_1447_100",
+          "file_offset": 1225873,
+          "major": 1447,
+          "minor": 100,
+          "prebuilt": false,
+          "revision": 48542
+        }
+      ],
+      "object_memory_transfer": {
+        "address_setup_guard_file_offset": 768760,
+        "address_setup_guard_stock_value": 0,
+        "address_setup_value": "0x3000000",
+        "context_register_pointer_offset": 140,
+        "object_address_register_offset": 352,
+        "object_data_register_offset": 356,
+        "unit_field_offset": 72
+      },
+      "object_writer_file_offset": 917168,
+      "reference_ram_base": "0x352000",
+      "selector_file_offset": 918516,
+      "source_cache": {
+        "pointer_table_file_offset": 1024344,
+        "size_table_file_offset": 1024352,
+        "stock_source_pointers": [
+          0,
+          0
+        ],
+        "stock_source_sizes": [
+          0,
+          0
+        ]
+      },
+      "source_cache_writer_file_offset": 944876,
+      "startup_path": {
+        "call_after_attach": {
+          "address": "0x42e7da",
+          "instruction": "bl    0x44ccfc"
+        },
+        "capability_field": {
+          "address": "0x44cd28",
+          "instruction": "ubfx  r3, r3, 0xc, 2"
+        },
+        "compute_new_count_one": {
+          "address": "0x44cd32",
+          "instruction": "movls r5, 1"
+        },
+        "compute_new_count_two": {
+          "address": "0x44cd30",
+          "instruction": "movhi r5, 2"
+        },
+        "count_from_capability_read": {
+          "address": "0x44cd24",
+          "instruction": "ldr.w r3, [r3, 0x1a4]"
+        },
+        "d11_core_id_argument": {
+          "address": "0x44cd56",
+          "instruction": "movw  r1, 0x812"
+        },
+        "first_selector_call": {
+          "address": "0x44cd14",
+          "instruction": "bl    0x4323f4"
+        },
+        "initial_context_has_unit_zero": {
+          "address": "0x432564",
+          "instruction": "str   r7, [r4, 0x48]"
+        },
+        "initial_unit_zero_value": {
+          "address": "0x43255a",
+          "instruction": "movs  r7, 0"
+        },
+        "new_count_one": {
+          "address": "0x44cd3a",
+          "instruction": "cmp   r5, 1                                            ; 1"
+        },
+        "previous_count_two": {
+          "address": "0x44cd34",
+          "instruction": "cmp   r7, 2                                            ; 2"
+        },
+        "restore_zero_unit": {
+          "address": "0x44cd74",
+          "instruction": "str   r6, [r4, 0x48]"
+        },
+        "revision_gate": {
+          "address": "0x432dc0",
+          "instruction": "bl    0x431d20"
+        },
+        "revision_minus_64": {
+          "address": "0x431d24",
+          "instruction": "sub.w r3, r2, 0x40"
+        },
+        "revision_test_remainder_20": {
+          "address": "0x431d2c",
+          "instruction": "cmp   r3, 0x14                                         ; 20"
+        },
+        "second_selector_call": {
+          "address": "0x44cd6e",
+          "instruction": "bl    0x4323f4"
+        },
+        "second_unit_context_store": {
+          "address": "0x44cd3e",
+          "instruction": "str   r5, [r4, 0x48]"
+        },
+        "select_core_call": {
+          "address": "0x44cd5a",
+          "instruction": "bl    0x75f48"
+        },
+        "slice_one_prefix_load": {
+          "address": "0x432d74",
+          "instruction": "ldr   r1, [0x00432eb4]                                 ; [0x432eb4:4]=0x44bf64",
+          "resolved_string": "slice/1/"
+        },
+        "store_core_register_pointer": {
+          "address": "0x44cd62",
+          "instruction": "str.w r0, [r4, 0x8c]"
+        }
+      }
+    }
+  ],
+  "macos_build": "26B131",
+  "observed_utc": "2026-11-17T17:56:02.612235+00:00",
+  "offline_fixture_verification": {
+    "changed_word": {
+      "different_32bit_words": 1,
+      "exact_match": false,
+      "first_different_word": 4096,
+      "unit": 1
+    },
+    "exact_readbacks": [
+      {
+        "firmware_id": "01-2606388a",
+        "fixture_unit": 0,
+        "matched_unit": 0
+      },
+      {
+        "firmware_id": "01-2606388a",
+        "fixture_unit": 1,
+        "matched_unit": 1
+      },
+      {
+        "firmware_id": "01-8acd757c",
+        "fixture_unit": 0,
+        "matched_unit": 0
+      },
+      {
+        "firmware_id": "01-8acd757c",
+        "fixture_unit": 1,
+        "matched_unit": 1
+      },
+      {
+        "firmware_id": "01-f2cc5189",
+        "fixture_unit": 0,
+        "matched_unit": 0
+      },
+      {
+        "firmware_id": "01-f2cc5189",
+        "fixture_unit": 1,
+        "matched_unit": 1
+      }
+    ],
+    "previous_three_image_boundaries_and_hashes_match": true,
+    "unsupported_firmware_and_broken_loader_or_size_rejected": true,
+    "wrong_capture_size_rejected": true
+  },
+  "primary_sources": {
+    "broadcom_d11_core_id": "https://android.googlesource.com/kernel/common/+/e017507f37d5cb8b541df165a824958bc333bec3/drivers/net/wireless/brcm80211/include/soc.h",
+    "broadcom_function_shape": "https://android.googlesource.com/kernel/msm/+/51dac98e2868508d38bafffe023c1290de57c699/drivers/net/wireless/bcmdhd/siutils.c",
+    "d11_registers": "https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmsmac/d11.h#L135-L138",
+    "object_select_bits": "https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmsmac/d11.h#L555-L565",
+    "older_broadcom_ucode_writer": "https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmsmac/main.c#L2098-L2113"
+  },
+  "scope": "This is a static trace from stock files, with the running build and route checked through read-only host APIs. The boot condition, physical program memory contents and on-air core assignment are unmeasured."
+}

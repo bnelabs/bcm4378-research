@@ -35,3 +35,15 @@ For a watchdog capture with known framing, supply its event length using `--pref
 With a paired BCM4378 `THREADX TRAP INFO` log, `--threadx-timer` reads the thread record identified by the logged timer address from the retained file. The decoded fields and the test cases are documented with the [RTOS source comparison](rtos-threadx.md#use-the-public-source-to-read-a-saved-thread-record).
 
 For the three mapped stock builds, `--threadx-list` follows the RAM thread list without needing a paired fault log. The list head comes from the shipped watchdog path, and the reader uses the reference image's digest to choose it. [Task map and usage](rtos-threadx.md#main-and-idle-tasks-in-the-stock-images)
+
+## Compare a D11 program capture
+
+The firmware copies the MAC program for each D11 unit from ARM RAM into that unit's program memory. To verify a D11 program on a separately managed target, use a retained file whose producer identifies it as a little-endian D11 object-memory readback of the first 90,112 bytes beginning at word zero. Preserve the unit number and the firmware ID with it. An ARM RAM capture can contain the source bytes for both units. The readback comparison checks the separate D11 program-memory range. [D11 loader trace](firmware-layout.md#d11-microcode-and-core-selection)
+
+```sh
+python3 -B tools/inspect_d11_microcode.py "$firmware_file" --readback "$d11_readback"
+```
+
+The tool compares against both stored programs and reports the first differing 32-bit word and the total number of differing words. It verified six readback fixtures made from the three stock images, identified a changed word at index 4,096 and rejected a short file. A physical readback remains to be measured. [Comparator evidence](../evidence/2026-11-17-d11-microcode-loader.json)
+
+Both signed macOS driver slices have a `reportMicrocodeLockup` method. It packages a firmware event in `FirmwareEvent.bin`, copying the event's 48-byte leading structure plus the payload length it reads from offset 20. The same method passes status and reason from offsets 8 and 12 to the fault reporter. The saved event and an actual D11 program capture have separate producer information. Keep that information when preserving a fault. [Signed-driver instructions](../evidence/2026-11-17-d11-microcode-loader.json)

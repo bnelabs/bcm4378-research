@@ -32,7 +32,7 @@ The chip initializer also supplies nine core register descriptors and 17 wrapper
 | 7 | Power Management Unit (PMU) |
 | 8 | OTP selection in the BCM4378 initializer |
 
-The wrapper table includes separate sets selected by the primary and auxiliary D11 wrapper methods. The microcode scratch and shared-memory diagnostic size getters return 128 and 252, respectively. The readers have separately stored iteration bounds. Their hardware path can change device sleep state and select a D11 window before collecting data. The physical D11 enumeration and full microcode memory sizes remain open. [Named selector and diagnostic evidence](../evidence/2026-11-17-bcm4378-chip-memory-map.json), [Stored microcode analysis](firmware-layout.md#microcode-build-metadata-and-record-structure)
+The wrapper table includes separate sets selected by the primary and auxiliary D11 wrapper methods. The microcode scratch and shared-memory diagnostic size getters return 128 and 252, respectively. The readers have separately stored iteration bounds. Their hardware path can change device sleep state and select a D11 window before collecting data. The ARM firmware's loader also uses the core's object port to transfer 88 KiB of program bytes per unit. The physical D11 enumeration and full microcode memory sizes remain open. [Named selector and diagnostic evidence](../evidence/2026-11-17-bcm4378-chip-memory-map.json), [D11 program-memory port](firmware-layout.md#d11-microcode-and-core-selection)
 
 ## Fault attachment and Linux comparison
 

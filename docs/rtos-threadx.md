@@ -65,6 +65,8 @@ python3 tools/compare_ram_capture.py "$capture_file" "$firmware_file" \
 
 macOS supplies the firmware image, board inputs, network state, and requested work. DriverKit and the radio exchange control messages, packet descriptors, and completions over PCIe. The embedded processor can schedule its own threads and handle radio work while the main processor is doing something else. The host configures the operating state and the tasks it hands to firmware. [PCIe packet and control path](pcie-queue-sizing.md), [ThreadX scheduler source](https://github.com/eclipse-threadx/threadx)
 
+The ARM program containing ThreadX also loads instructions into the wireless MAC hardware. The stock images contain a distinct 88 KiB D11 program for each of two units. The copy path uses the selected core's program-memory port. The ARM thread records and the D11 program memory describe different parts of an on-chip failure. [Core selection and instruction loader](firmware-layout.md#d11-microcode-and-core-selection)
+
 | When | Work found in the stock chip and driver paths |
 | --- | --- |
 | Normal connection | Radio-side rate and retry work, aggregation, channel-busy measurement and events. The host posts packets and consumes completions and reports. [Retries and aggregation](wifi-retries-and-aggregation.md), [Airtime](live-wifi-airtime.md) |

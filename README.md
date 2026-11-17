@@ -56,6 +56,8 @@ The macOS driver requests `/usr/share/firmware/wifi/C-4378__s-B1/shikoku.trx`, w
 
 All three installed builds contain an initialization call that prints **ThreadX 5.6**. We traced that call and a fault routine that prints thread and stack details. We also mapped the loader, selected memory ranges, parts of the radio code, and driver requests. A complete instruction-level reconstruction of the Broadcom firmware remains open. [RTOS disassembly and reproduction](docs/rtos-threadx.md)
 
+The file also holds two **88 KiB programs for the wireless MAC cores**. We traced the exact program selected for each core and the port used to load its instruction memory. Both programs match across Honshu, Capri and Kyushu. The readback tool can check a saved program-memory capture against either one. [MAC programs and loader](docs/firmware-layout.md#d11-microcode-and-core-selection), [Readback tool](docs/ram-diagnostics.md#compare-a-d11-program-capture)
+
 The [Eclipse ThreadX repository](https://github.com/eclipse-threadx/threadx) and its [releases](https://github.com/eclipse-threadx/threadx/releases) publish upstream RTOS source. Apple's local `.trx` contains the compiled device build. This repository's [tools](tools/) are our inspection and measurement code, and [evidence](evidence/) contains saved results.
 
 ## What can the chip do on its own?
@@ -111,7 +113,7 @@ Reproduce the [microcode and ROM overlay checks](docs/firmware-layout.md#microco
 
 ## Next research questions
 
-1. Verify D11 component selection, the destination and transfer count of the shared copy routine, and ROM overlay selection at runtime on a separate test target.
+1. Verify the program loaded into each D11 unit and the active ROM overlays on a separately managed test target. The stock code now identifies both D11 sources and their destination. [D11 loader](docs/firmware-layout.md#d11-microcode-and-core-selection)
 2. Compare the driver-reported link diary and raw transmit-power field with measurements from a calibrated spectrum receiver or a controlled obstruction test.
 3. Verify simultaneous infrastructure and peer-to-peer transfer, and the runtime availability of the A2337's lab modes, on a separate managed test setup.
 4. Compare a [driver-owned RAM capture](docs/ram-diagnostics.md) with the [declared memory geometry](docs/chip-memory-map.md) on a separately managed test Mac. Verify the bank sizing and register diagnostics on that device.
