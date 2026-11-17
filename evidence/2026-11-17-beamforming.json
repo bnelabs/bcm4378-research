@@ -1,0 +1,322 @@
+{
+  "a2337_5ghz_lab_report": {
+    "report_id": "75949395-12 Issue 01",
+    "source": "https://device.report/m/9dbefd8fa57734334f25d9b4c27352a2b1333e4a7384c14f77fb813ec85822d7.pdf#page=5",
+    "table_42_vht80_mcs7x1_txbf": {
+      "center_frequency_mhz": 5210,
+      "core_0_conducted_power_dbm": 7.98,
+      "core_1_conducted_power_dbm": 7.84,
+      "source": "https://device.report/m/9dbefd8fa57734334f25d9b4c27352a2b1333e4a7384c14f77fb813ec85822d7.pdf#page=19",
+      "total_conducted_power_dbm": 10.92
+    },
+    "transmit_beamforming_test_cores": [
+      0,
+      1
+    ],
+    "transmit_beamforming_test_modes": [
+      "HT20",
+      "HT40",
+      "VHT20",
+      "VHT40",
+      "VHT80"
+    ]
+  },
+  "host": {
+    "default_ipv4_interface": "en0",
+    "device_id": "14e4:4425",
+    "en0_media_status": "active",
+    "macos_build": "26B131",
+    "macos_version": "27.2.1",
+    "model": "MacBookAir10,1"
+  },
+  "installed_firmware": {
+    "b1_canonical_image_paths": 2,
+    "b1_canonical_nvram_paths": 48,
+    "b1_distinct_image_contents": 2,
+    "b1_distinct_image_contents_with_role_word": {
+      "multi-user-beamformee": 2,
+      "multi-user-beamformer": 2,
+      "single-user-beamformee": 2,
+      "single-user-beamformer": 2
+    },
+    "b1_distinct_nvram_contents": 10,
+    "b1_nvram_text_key_matches": [],
+    "b1_nvram_text_key_search": "(?im)^[ \\t]*([a-z0-9_.:-]*(?:txbf|rx[._]?bf|beam.?form|sounding|bfee|bfer)[a-z0-9_.:-]*)[ \\t]*=",
+    "diagnostic_text_in_selected_image": [
+      "Beamforming Statistics:",
+      "Explicit txbf mode: %s, active: %s",
+      "Implicit txbf mode: %s, calibr_flag: %d",
+      "Last sounding successful: %s",
+      "TxBF bfr capable:%d bfe capable:%d",
+      "%d links with SU-Beamforming enabled",
+      "Allow txbf on non primaryIF: %s",
+      "[rxnontb_sounding]",
+      "[rxtb_sounding]",
+      "txndpa %d txndp %d txbfpoll %d txsf %d txcwrts %d txcwcts %d txbfm %d",
+      "rxndpa_u %d rxndpa_m %d rxbfpoll %d bferpt %d rxsf %d rxcwrts %d rxcwcts %d"
+    ],
+    "roles_in_selected_image": {
+      "multi-user-beamformee": true,
+      "multi-user-beamformer": true,
+      "single-user-beamformee": true,
+      "single-user-beamformer": true
+    },
+    "selected_image": {
+      "bytes": 1497470,
+      "path": "/usr/share/firmware/wifi/C-4378__s-B1/shikoku.trx",
+      "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+      "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+    },
+    "selected_platform_config": {
+      "bytes": 2647,
+      "path": "/usr/share/firmware/wifi/shikoku-PlatformConfig.plist",
+      "resolved_path": "/usr/share/firmware/wifi/shikoku-PlatformConfig.plist",
+      "sha256": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547"
+    },
+    "selected_platform_config_key_matches": [],
+    "selected_platform_config_key_search": "beam.?form|txbf|sounding|mubf"
+  },
+  "linux_source": {
+    "asahi_he_station_capability_builder": "https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L7378-L7491",
+    "asahi_he_station_template": {
+      "beamformee_sts_gt_80mhz_encoded": 3,
+      "beamformee_sts_lte_80mhz_encoded": 7,
+      "mu_beamformer": false,
+      "rx_and_tx_he_mcs_map_lte_80mhz": "0xfffa",
+      "su_beamformee": true,
+      "su_beamformer": true,
+      "triggered_mu_partial_bandwidth_feedback": true,
+      "triggered_su_feedback": true
+    },
+    "asahi_vht_capability_builder": "https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L7354-L7372",
+    "asahi_vht_firmware_queries": "https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L7583-L7603",
+    "stable_vht_capability_builder": "https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L7304-L7344",
+    "stable_vht_firmware_queries": "https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L7394-L7412",
+    "vht_beamforming_inputs": [
+      "txbf_bfe_cap",
+      "txbf_bfr_cap"
+    ]
+  },
+  "public_capture_examples": {
+    "scope": "External Wi-BFI traces used to verify the offline parser. The A2337 sounding exchange remains unmeasured.",
+    "source": "https://github.com/kfoysalhaque/Wi-BFI/tree/47ca7f842d6efdff2f83b981a7c119327e8dc2d6/traces",
+    "summaries": [
+      {
+        "bytes": 247720,
+        "capture_records": 631,
+        "file": "11ac_SU_3x1_40.pcapng",
+        "observed_fields": {
+          "vht_feedback_bandwidth_code": {
+            "records_with_field": 631,
+            "values": {
+              "1": 631
+            }
+          },
+          "vht_feedback_grouping_code": {
+            "records_with_field": 631,
+            "values": {
+              "0": 631
+            }
+          },
+          "vht_feedback_nc_index": {
+            "records_with_field": 631,
+            "values": {
+              "0": 631
+            }
+          },
+          "vht_feedback_nr_index": {
+            "records_with_field": 631,
+            "values": {
+              "2": 631
+            }
+          },
+          "vht_feedback_type_code": {
+            "records_with_field": 631,
+            "values": {
+              "0": 631
+            }
+          }
+        },
+        "sha256": "5607cc198383ee33739a231976032880a725354455ffb860c3c2105428fe5109"
+      },
+      {
+        "bytes": 33972844,
+        "capture_records": 272634,
+        "file": "11ax_SU_4x2_80.pcapng",
+        "observed_fields": {
+          "he_beamformee_sts_gt_80mhz_code": {
+            "records_with_field": 602,
+            "values": {
+              "0": 591,
+              "7": 11
+            }
+          },
+          "he_beamformee_sts_lte_80mhz_code": {
+            "records_with_field": 602,
+            "values": {
+              "3": 574,
+              "7": 28
+            }
+          },
+          "he_feedback_bandwidth_code": {
+            "records_with_field": 555,
+            "values": {
+              "2": 555
+            }
+          },
+          "he_feedback_grouping_code": {
+            "records_with_field": 555,
+            "values": {
+              "0": 555
+            }
+          },
+          "he_feedback_nc_index": {
+            "records_with_field": 555,
+            "values": {
+              "1": 555
+            }
+          },
+          "he_feedback_nr_index": {
+            "records_with_field": 555,
+            "values": {
+              "3": 555
+            }
+          },
+          "he_feedback_type_code": {
+            "records_with_field": 555,
+            "values": {
+              "0": 555
+            }
+          },
+          "he_mu_beamformer": {
+            "records_with_field": 602,
+            "values": {
+              "false": 28,
+              "true": 574
+            }
+          },
+          "he_phy_txbf": {
+            "records_with_field": 8141,
+            "values": {
+              "0": 1385,
+              "1": 6756
+            }
+          },
+          "he_phy_txbf_known": {
+            "records_with_field": 8141,
+            "values": {
+              "true": 8141
+            }
+          },
+          "he_su_beamformee": {
+            "records_with_field": 602,
+            "values": {
+              "true": 602
+            }
+          },
+          "he_su_beamformer": {
+            "records_with_field": 602,
+            "values": {
+              "false": 21,
+              "true": 581
+            }
+          },
+          "he_trigger_type_code": {
+            "records_with_field": 3,
+            "values": {
+              "13": 1,
+              "2": 1,
+              "5": 1
+            }
+          },
+          "he_triggered_mu_partial_bandwidth_feedback": {
+            "records_with_field": 602,
+            "values": {
+              "false": 574,
+              "true": 28
+            }
+          },
+          "he_triggered_su_feedback": {
+            "records_with_field": 602,
+            "values": {
+              "true": 602
+            }
+          },
+          "ndp_announcement_variant_code": {
+            "records_with_field": 602,
+            "values": {
+              "2": 602
+            }
+          },
+          "vht_beamformee_sts_code": {
+            "records_with_field": 611,
+            "values": {
+              "2": 3,
+              "3": 608
+            }
+          },
+          "vht_mu_beamformee": {
+            "records_with_field": 611,
+            "values": {
+              "false": 594,
+              "true": 17
+            }
+          },
+          "vht_mu_beamformer": {
+            "records_with_field": 611,
+            "values": {
+              "false": 37,
+              "true": 574
+            }
+          },
+          "vht_phy_beamformed": {
+            "records_with_field": 567,
+            "values": {
+              "false": 567
+            }
+          },
+          "vht_phy_beamformed_known": {
+            "records_with_field": 567,
+            "values": {
+              "true": 567
+            }
+          },
+          "vht_su_beamformee": {
+            "records_with_field": 611,
+            "values": {
+              "false": 574,
+              "true": 37
+            }
+          },
+          "vht_su_beamformer": {
+            "records_with_field": 611,
+            "values": {
+              "false": 19,
+              "true": 592
+            }
+          }
+        },
+        "sha256": "35e78b10524333fad8e22871b35a529868dd0511dcfb5128614f544f3a44aac4"
+      }
+    ],
+    "summary_fields": "Only fields present in at least one record are included.",
+    "tshark_version": "4.6.9"
+  },
+  "published_io_registry": {
+    "firmware_capability_property": "AppleBCMWLANCore.FWCap",
+    "firmware_capability_roles": {
+      "multi-user-beamformee": true,
+      "multi-user-beamformer": false,
+      "single-user-beamformee": true,
+      "single-user-beamformer": true
+    },
+    "firmware_version": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a",
+    "he_capability_present": true,
+    "legend_marked_public": true,
+    "matching_legend_labels": [],
+    "matching_property_names": [],
+    "property_name_search": "beam.?form|txbf|sounding|mubf",
+    "report_legend_label_search": "beam.?form|txbf|sounding|NDP Announcements?|[RT]x NDPA|compressed feedback|BFRP",
+    "scope": "IOService wlan subtree with depth limit 5"
+  }
+}

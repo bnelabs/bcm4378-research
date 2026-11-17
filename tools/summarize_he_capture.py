@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Summarize radiotap HE records from an existing capture using TShark."""
+"""Summarize Wi-Fi PHY and capability fields from a saved capture using TShark."""
 
 import argparse
 from collections import Counter, defaultdict
@@ -46,6 +46,36 @@ SPATIAL_REUSE_FIELDS = {
     "advertised_srg_min_offset_db": "wlan.ext_tag.spatial_reuse.srg_obss_pd_min_offset",
     "advertised_srg_max_offset_db": "wlan.ext_tag.spatial_reuse.srg_obss_pd_max_offset",
 }
+BEAMFORMING_FIELDS = {
+    "vht_su_beamformer": "wlan.vht.capabilities.subeamformer",
+    "vht_su_beamformee": "wlan.vht.capabilities.subeamformee",
+    "vht_mu_beamformer": "wlan.vht.capabilities.mubeamformer",
+    "vht_mu_beamformee": "wlan.vht.capabilities.mubeamformee",
+    "vht_beamformee_sts_code": "wlan.vht.capabilities.beamformee_sts_cap",
+    "he_su_beamformer": "wlan.ext_tag.he_phy_cap.su_beamformer",
+    "he_su_beamformee": "wlan.ext_tag.he_phy_cap.su_beamformee",
+    "he_mu_beamformer": "wlan.ext_tag.he_phy_cap.mu_beamformer",
+    "he_beamformee_sts_lte_80mhz_code": "wlan.ext_tag.he_phy_cap.beamformee_sts_lte_80mhz",
+    "he_beamformee_sts_gt_80mhz_code": "wlan.ext_tag.he_phy_cap.beamformee_sts_gt_80mhz",
+    "he_triggered_su_feedback": "wlan.ext_tag.he_phy_cap.trig_su_bf_fb",
+    "he_triggered_mu_partial_bandwidth_feedback": "wlan.ext_tag.he_phy_cap.trig_mu_bf_fb",
+    "ndp_announcement_variant_code": "wlan.ndp.token.variant",
+    "he_trigger_type_code": "wlan.trigger.he.trigger_type",
+    "vht_feedback_nc_index": "wlan.vht.mimo_control.ncindex",
+    "vht_feedback_nr_index": "wlan.vht.mimo_control.nrindex",
+    "vht_feedback_bandwidth_code": "wlan.vht.mimo_control.chanwidth",
+    "vht_feedback_grouping_code": "wlan.vht.mimo_control.grouping",
+    "vht_feedback_type_code": "wlan.vht.mimo_control.feedbacktype",
+    "he_feedback_nc_index": "wlan.he.mimo.nc_index",
+    "he_feedback_nr_index": "wlan.he.mimo.nr_index",
+    "he_feedback_bandwidth_code": "wlan.he.mimo.bw",
+    "he_feedback_grouping_code": "wlan.he.mimo.grouping",
+    "he_feedback_type_code": "wlan.he.mimo.feedback_type",
+    "vht_phy_beamformed_known": "radiotap.vht.have_beamformed",
+    "vht_phy_beamformed": "radiotap.vht.beamformed",
+    "he_phy_txbf_known": "radiotap.he.data_2.txbf_known",
+    "he_phy_txbf": "radiotap.he.txbf",
+}
 
 
 def field_number(field):
@@ -87,17 +117,17 @@ def summarize_capture(path):
     }
 
 
-def summarize_spatial_reuse(path):
-    fields = ("frame.number", *SPATIAL_REUSE_FIELDS.values())
+def summarize_metadata(path, field_names):
+    fields = ("frame.number", *field_names.values())
     records = 0
     observed = {
-        name: {"records_with_field": 0, "values": Counter()} for name in SPATIAL_REUSE_FIELDS
+        name: {"records_with_field": 0, "values": Counter()} for name in field_names
     }
     for _, *columns in capture_field_rows(path, fields, "a"):
-        if len(columns) != len(SPATIAL_REUSE_FIELDS):
+        if len(columns) != len(field_names):
             raise ValueError("unexpected TShark field count")
         records += 1
-        for name, values in zip(SPATIAL_REUSE_FIELDS, columns):
+        for name, values in zip(field_names, columns):
             if not values:
                 continue
             field = observed[name]
@@ -111,14 +141,20 @@ def summarize_spatial_reuse(path):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("capture", type=Path, help="Local capture file, such as PCAP or PCAPNG")
-    parser.add_argument("--spatial-reuse", action="store_true",
-                        help="Summarize BSS color and spatial reuse fields")
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument("--spatial-reuse", dest="metadata_fields", action="store_const",
+                       const=SPATIAL_REUSE_FIELDS, help="Summarize BSS color and spatial reuse fields")
+    modes.add_argument("--beamforming", dest="metadata_fields", action="store_const",
+                       const=BEAMFORMING_FIELDS, help="Summarize beamforming roles, sounding, and feedback")
     args = parser.parse_args()
     try:
         path = args.capture.resolve(strict=True)
         if not path.is_file():
             raise ValueError("expected a regular capture file")
-        summary = summarize_spatial_reuse(path) if args.spatial_reuse else summarize_capture(path)
+        if args.metadata_fields is None:
+            summary = summarize_capture(path)
+        else:
+            summary = summarize_metadata(path, args.metadata_fields)
     except (OSError, ValueError, subprocess.CalledProcessError) as error:
         parser.exit(1, f"{parser.prog}: {error}\n")
     print(json.dumps(summary, indent=2, sort_keys=True))
