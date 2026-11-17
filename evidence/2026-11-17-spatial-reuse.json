@@ -1,0 +1,195 @@
+{
+  "sampled_at_utc": "2026-11-17T11:58:38+00:00",
+  "host": {
+    "model": "MacBookAir10,1",
+    "macos_version": "27.2.1",
+    "macos_build": "26B131",
+    "default_ipv4_interface": "en0",
+    "wifi_firmware": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a"
+  },
+  "published_registry": {
+    "legacy_he_word_present": true,
+    "legacy_obss_hw_word_present": false,
+    "legend_marked_public": true,
+    "obss_cca_label_groups": {
+      "Interface en0": {
+        "OBSS CCA": [
+          "Interface OBSS CCA"
+        ],
+        "OBSS CCA State": [
+          "Interface OBSS CCA State"
+        ]
+      },
+      "Interface awdl0": {
+        "OBSS CCA": [
+          "Interface OBSS CCA"
+        ],
+        "OBSS CCA State": [
+          "Interface OBSS CCA State"
+        ]
+      }
+    }
+  },
+  "corewlan_cache_probe": {
+    "entry_point": "CWWiFiClient.shared().interface().bssid()",
+    "status": "associated_bssid_unavailable"
+  },
+  "driverkit": {
+    "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "architectures": [
+      "arm64e",
+      "arm64e.x1"
+    ],
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "signature_check": "codesign --verify --strict",
+    "legacy_obss_hw_bit_index": 101,
+    "setup_requests_hardware_mitigation_when_bit_is_set": true,
+    "obss_detect_event_log_value": "Available channel specification",
+    "entry_points": {
+      "IssueFwCap": {
+        "arm64e": "0x1000ee30c",
+        "arm64e.x1": "0x1000eb4c0"
+      },
+      "enableObssMitigation": {
+        "arm64e": "0x1000f61e0",
+        "arm64e.x1": "0x1000f3254"
+      },
+      "handleObssDetectEvent": {
+        "arm64e": "0x100113f74",
+        "arm64e.x1": "0x100110654"
+      },
+      "setupFirmware": {
+        "arm64e": "0x1000e8e24",
+        "arm64e.x1": "0x1000e6108"
+      }
+    }
+  },
+  "asahi_station_he_capability_template": {
+    "revision": "201be96df5654336bdcbe1da2103f193d7a0b940",
+    "phy_capability_byte_offset": 7,
+    "psr_based_spatial_reuse_mask_hex": "0x01",
+    "flags_constructed_in_byte": [
+      "IEEE80211_HE_PHY_CAP7_HE_SU_MU_PPDU_4XLTF_AND_08_US_GI",
+      "IEEE80211_HE_PHY_CAP7_MAX_NC_1"
+    ],
+    "psr_based_spatial_reuse_flag_set": false,
+    "mask_reference_revision": "7595a62d45ee1a2297eafa5f2ef5d0a45142d84d"
+  },
+  "offline_fixture": {
+    "scope": "Three synthetic beacon records and two synthetic Radiotap HE header records",
+    "tshark_version": "TShark (Wireshark) 4.6.9 (Git commit 2d548b197c75).",
+    "summary": {
+      "capture_records": 5,
+      "observed_fields": {
+        "advertised_bss_color": {
+          "records_with_field": 3,
+          "values": {
+            "31": 1,
+            "5": 1,
+            "7": 1
+          }
+        },
+        "advertised_bss_color_disabled": {
+          "records_with_field": 3,
+          "values": {
+            "false": 2,
+            "true": 1
+          }
+        },
+        "advertised_he_sig_a_reuse_15_allowed": {
+          "records_with_field": 3,
+          "values": {
+            "false": 2,
+            "true": 1
+          }
+        },
+        "advertised_non_srg_max_offset_db": {
+          "records_with_field": 1,
+          "values": {
+            "6": 1
+          }
+        },
+        "advertised_non_srg_obss_pd_disallowed": {
+          "records_with_field": 3,
+          "values": {
+            "false": 2,
+            "true": 1
+          }
+        },
+        "advertised_non_srg_offset_present": {
+          "records_with_field": 3,
+          "values": {
+            "false": 2,
+            "true": 1
+          }
+        },
+        "advertised_partial_bss_color": {
+          "records_with_field": 3,
+          "values": {
+            "false": 2,
+            "true": 1
+          }
+        },
+        "advertised_psr_based_sr_support": {
+          "records_with_field": 3,
+          "values": {
+            "false": 1,
+            "true": 2
+          }
+        },
+        "advertised_psr_disallowed": {
+          "records_with_field": 3,
+          "values": {
+            "false": 2,
+            "true": 1
+          }
+        },
+        "advertised_sr_control": {
+          "records_with_field": 3,
+          "values": {
+            "24": 1,
+            "3": 1,
+            "4": 1
+          }
+        },
+        "advertised_srg_information_present": {
+          "records_with_field": 3,
+          "values": {
+            "false": 2,
+            "true": 1
+          }
+        },
+        "advertised_srg_max_offset_db": {
+          "records_with_field": 1,
+          "values": {
+            "7": 1
+          }
+        },
+        "advertised_srg_min_offset_db": {
+          "records_with_field": 1,
+          "values": {
+            "2": 1
+          }
+        },
+        "he_header_bss_color": {
+          "records_with_field": 1,
+          "values": {
+            "7": 1
+          }
+        },
+        "he_header_bss_color_known": {
+          "records_with_field": 2,
+          "values": {
+            "false": 1,
+            "true": 1
+          }
+        }
+      }
+    }
+  },
+  "measurement_scope": {
+    "current_ap_spatial_reuse_parameters_observed": false,
+    "overlapping_transmission_observed": false,
+    "live_ioreport_values_sampled": false
+  }
+}

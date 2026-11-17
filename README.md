@@ -13,6 +13,7 @@ This repository records the Wi-Fi hardware, driver and firmware of the 2020 M1 M
 - [Clear-channel assessment reporting](docs/cca-provenance.md) traces the live legend, native cache, and Linux survey measurement.
 - [A2337 RF tests](docs/a2337-rf-tests.md) records simultaneous Wi-Fi and Bluetooth tests, HE waveforms and Bluetooth transmit beamforming measurements.
 - [Wi-Fi 6 resource units and trigger frames](docs/he-ofdma.md) traces the driver's OFDMA catalog and uplink control and shows how to verify allocations in an offline capture.
+- [BSS coloring and spatial reuse](docs/spatial-reuse.md) traces overlapping-network mitigation, Asahi's station capability, and the reuse fields in a saved capture.
 - [Simultaneous dual-band policy](docs/simultaneous-dual-band.md) maps the macOS firmware and platform gates and the Linux channel and station limits.
 - [Live access and control](docs/live-access.md) records the PCIe apertures, UART metadata, transmit-power readout and conditions for testing deeper controls.
 - [Chip memory and backplane layout](docs/chip-memory-map.md) traces the signed driver's RAM geometry, core and wrapper regions, and normal fault attachment.
