@@ -13,6 +13,7 @@ from inspect_firmware import (
     DFS_PROXY_KEY,
     MAGIC_PACKET_KEY,
     RADIO_POWER_CONFIG_KEYS,
+    ROAM_CONFIG_KEYS,
     TRANSPORT_CONFIG_KEYS,
     decode_btc_parameters,
     read_artifact,
@@ -305,6 +306,30 @@ def dfs_proxy_reporting(entries):
     }
 
 
+def roaming_reporting(entries):
+    report = reporting_legend(entries)
+    if report is None:
+        return None
+    public, legend = report
+    association = {}
+    scans = {}
+    for group, subgroup, labels in report_legend_rows(legend):
+        if subgroup == "Association Join Counters" and re.fullmatch(r"Interface en[0-9]+", group):
+            association[group.removeprefix("Interface ")] = [
+                name for name in map(str.strip, labels)
+                if name == "BSSID Changed" or name.startswith("Roam ")
+            ]
+        if group in ("Slice 0", "Slice 1") and subgroup in ("Count Per Scan Type", "Dur   Per Scan Type"):
+            scans.setdefault(group, []).extend(
+                name for name in map(str.strip, labels) if "Roam" in name
+            )
+    return {
+        "legend_marked_public": public,
+        "association_labels_by_interface": association,
+        "scan_labels_by_slice": scans,
+    }
+
+
 def bluetooth_snapshot():
     report = json.loads(run("/usr/sbin/system_profiler", "SPBluetoothDataType", "-detailLevel", "basic", "-json"))
     snapshot = {}
@@ -377,6 +402,10 @@ def collect():
                 },
             },
             "radio_power_config_properties": summarize_config_keys(bus, RADIO_POWER_CONFIG_KEYS),
+            "roaming": {
+                "platform_properties": summarize_config_keys(bus, ROAM_CONFIG_KEYS),
+                "reporting": roaming_reporting(entries),
+            },
             "radio_chain_reporting": radio_chain_reporting(entries),
             "wme_tid_reporting": wme_tid_reporting(entries),
             "he_ru_counter_legend": he_ru_counter_legend(entries),

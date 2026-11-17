@@ -1,0 +1,590 @@
+{
+  "firmware_version": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a",
+  "host": {
+    "default_ipv4_interface": "en0",
+    "macos_build": "26B131",
+    "macos_version": "27.2.1",
+    "model": "MacBookAir10,1"
+  },
+  "installed_mac_board_profile_audit": {
+    "profiles_checked": 56,
+    "properties": {
+      "bcom.roam.default": {
+        "byte_lengths": [
+          20
+        ],
+        "distinct_values": 1,
+        "profiles_with_key": 56
+      },
+      "bcom.roam.enabledenhanced": {
+        "byte_lengths": [
+          4
+        ],
+        "distinct_values": 2,
+        "profiles_with_key": 56,
+        "raw_value_hex_counts": {
+          "00000000": 1,
+          "01000000": 55
+        }
+      },
+      "bcom.roam.enterprise": {
+        "byte_lengths": [
+          20
+        ],
+        "distinct_values": 1,
+        "profiles_with_key": 56
+      },
+      "bcom.roam.profiles": {
+        "byte_lengths": [
+          528
+        ],
+        "distinct_values": 1,
+        "profiles_with_key": 56
+      },
+      "wlan.bss.5GHz-preference": {
+        "byte_lengths": [
+          4
+        ],
+        "distinct_values": 2,
+        "profiles_with_key": 56,
+        "raw_value_hex_counts": {
+          "baff1e00": 53,
+          "bfff1e00": 3
+        }
+      },
+      "wlan.bss.6GHz-preference": {
+        "byte_lengths": [
+          4
+        ],
+        "distinct_values": 1,
+        "profiles_with_key": 24,
+        "raw_value_hex_counts": {
+          "baff3700": 24
+        }
+      },
+      "wlan.fast_enterprise_nw.enabled": {
+        "byte_lengths": [
+          4
+        ],
+        "distinct_values": 2,
+        "profiles_with_key": 56,
+        "raw_value_hex_counts": {
+          "00000000": 21,
+          "01000000": 35
+        }
+      },
+      "wlan.voice_enterprise_nw.enabled": {
+        "byte_lengths": [
+          4
+        ],
+        "distinct_values": 2,
+        "profiles_with_key": 56,
+        "raw_value_hex_counts": {
+          "00000000": 21,
+          "01000000": 35
+        }
+      },
+      "wlan.wnm.enabled": {
+        "byte_lengths": [
+          4
+        ],
+        "distinct_values": 2,
+        "profiles_with_key": 56,
+        "raw_value_hex_counts": {
+          "00000000": 21,
+          "01000000": 35
+        }
+      }
+    }
+  },
+  "legacy_table_structure_candidate": {
+    "byte_stride": 22,
+    "driver_legacy_slot_loop_slices": {
+      "arm64e": {
+        "entry_address": "10001c6e8",
+        "symbol": "__ZN23AppleBCMWLANRoamAdapter17setRoamingProfileEP37apple80211_legacy_roam_profile_config"
+      },
+      "arm64e.x1": {
+        "entry_address": "10001c470",
+        "symbol": "__ZN23AppleBCMWLANRoamAdapter17setRoamingProfileEP37apple80211_legacy_roam_profile_config"
+      }
+    },
+    "groups": [
+      {
+        "byte_offset": 0,
+        "first_words_u16": [
+          12,
+          16,
+          0
+        ],
+        "nonzero_slots": 2
+      },
+      {
+        "byte_offset": 66,
+        "first_words_u16": [
+          16,
+          0,
+          0
+        ],
+        "nonzero_slots": 1
+      },
+      {
+        "byte_offset": 132,
+        "first_words_u16": [
+          20,
+          0,
+          0
+        ],
+        "nonzero_slots": 1
+      },
+      {
+        "byte_offset": 198,
+        "first_words_u16": [
+          20,
+          0,
+          0
+        ],
+        "nonzero_slots": 1
+      },
+      {
+        "byte_offset": 264,
+        "first_words_u16": [
+          12,
+          16,
+          0
+        ],
+        "nonzero_slots": 2
+      },
+      {
+        "byte_offset": 330,
+        "first_words_u16": [
+          16,
+          0,
+          0
+        ],
+        "nonzero_slots": 1
+      },
+      {
+        "byte_offset": 396,
+        "first_words_u16": [
+          12,
+          12,
+          16
+        ],
+        "nonzero_slots": 3
+      },
+      {
+        "byte_offset": 462,
+        "first_words_u16": [
+          16,
+          0,
+          0
+        ],
+        "nonzero_slots": 1
+      }
+    ],
+    "populated_slots": 12,
+    "scope": "Structural inference from aligned nonzero slots and the legacy setter loop. The selector and exact table consumer remain open.",
+    "slots_per_group": 3
+  },
+  "linux_comparison": {
+    "asahi_defaults": "https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.h#L26-L27",
+    "asahi_initialization": "https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L6878-L6926",
+    "beacon_timeout_values": {
+      "firmware_roaming_off": 4,
+      "firmware_roaming_on": 2
+    },
+    "roam_delta_db": 20,
+    "roam_trigger_dbm": -75,
+    "stable_defaults": "https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.h#L25-L26",
+    "stable_initialization": "https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L6914-L6962"
+  },
+  "public_protocol_fixtures": {
+    "display_filters": {
+      "bss_transition_management": "wlan.fixed.category_code == 10 && wlan.fixed.action_code in {6, 7, 8}",
+      "ft_exchange": "wlan.fixed.auth.alg == 2 || wlan.fixed.category_code == 6 || (wlan.fc.type_subtype in {2, 3} && wlan.tag.number == 55)",
+      "mobility_domain": "wlan.mobility_domain.mdid",
+      "neighbor_report": "wlan.fixed.category_code == 5 && wlan.fixed.action_code in {4, 5}"
+    },
+    "extractor": "TShark with WLAN decryption disabled and selected metadata fields",
+    "summaries": [
+      {
+        "bytes": 5074,
+        "capture_records": 33,
+        "file": "wpa2-ft-psk.pcapng.gz",
+        "ft_sequence": [
+          {
+            "auth_sequence": 1,
+            "frame": 24,
+            "status_code": 0,
+            "subtype": 11
+          },
+          {
+            "auth_sequence": 2,
+            "frame": 25,
+            "status_code": 0,
+            "subtype": 11
+          },
+          {
+            "auth_sequence": null,
+            "frame": 26,
+            "status_code": null,
+            "subtype": 2
+          },
+          {
+            "auth_sequence": null,
+            "frame": 27,
+            "status_code": 0,
+            "subtype": 3
+          }
+        ],
+        "records_matching_filters": {
+          "bss_transition_management": 0,
+          "ft_exchange": 4,
+          "mobility_domain": 11,
+          "neighbor_report": 0
+        },
+        "sha256": "3b2965d9f475e66a388e5c447704b154bdf772a6a40b9d3991704444497284e9",
+        "source": "https://github.com/wireshark/wireshark/blob/v4.6.9/test/captures/wpa2-ft-psk.pcapng.gz"
+      },
+      {
+        "bytes": 4927,
+        "capture_records": 36,
+        "file": "wpa2-ft-eap.pcapng.gz",
+        "ft_sequence": [],
+        "records_matching_filters": {
+          "bss_transition_management": 0,
+          "ft_exchange": 0,
+          "mobility_domain": 7,
+          "neighbor_report": 0
+        },
+        "sha256": "59010950ee2fba1bd04ed751bef1d6ba66efe34fe3e3cada4513aeece511162f",
+        "source": "https://github.com/wireshark/wireshark/blob/v4.6.9/test/captures/wpa2-ft-eap.pcapng.gz"
+      },
+      {
+        "bytes": 5234,
+        "capture_records": 34,
+        "file": "wpa3-ft-sae-h2e.pcapng.gz",
+        "ft_sequence": [
+          {
+            "auth_sequence": 1,
+            "frame": 23,
+            "status_code": 0,
+            "subtype": 11
+          },
+          {
+            "auth_sequence": 2,
+            "frame": 24,
+            "status_code": 0,
+            "subtype": 11
+          },
+          {
+            "auth_sequence": null,
+            "frame": 25,
+            "status_code": null,
+            "subtype": 2
+          },
+          {
+            "auth_sequence": null,
+            "frame": 26,
+            "status_code": 0,
+            "subtype": 3
+          }
+        ],
+        "records_matching_filters": {
+          "bss_transition_management": 0,
+          "ft_exchange": 4,
+          "mobility_domain": 10,
+          "neighbor_report": 0
+        },
+        "sha256": "45dae2bdd4ce4d6c3984e5c71bb1987c703b26f122a99308e77c3cffc9b2ed91",
+        "source": "https://github.com/wireshark/wireshark/blob/v4.6.9/test/captures/wpa3-ft-sae-h2e.pcapng.gz"
+      }
+    ],
+    "tshark_version": "4.6.9"
+  },
+  "published_registry": {
+    "matches_selected_plist_bytes": {
+      "bcom.roam.default": true,
+      "bcom.roam.enabledenhanced": true,
+      "bcom.roam.enterprise": true,
+      "bcom.roam.profiles": true,
+      "wlan.bss.5GHz-preference": true,
+      "wlan.fast_enterprise_nw.enabled": true,
+      "wlan.voice_enterprise_nw.enabled": true,
+      "wlan.wnm.enabled": true
+    },
+    "properties_on_service": "AppleBCMWLANBusInterfacePCIe",
+    "relevant_fwcap_words": [
+      "fbt_adpt",
+      "fbtoverds",
+      "wnm"
+    ],
+    "report_legend": {
+      "association_labels_by_interface": {
+        "en0": [
+          "BSSID Changed",
+          "Roam Success",
+          "Roam Failed",
+          "Roam Prep",
+          "Roam Scan Start",
+          "Roam Scan End"
+        ]
+      },
+      "legend_marked_public": true,
+      "scan_labels_by_slice": {
+        "Slice 0": [
+          "Roam Scan Cnt",
+          "Scan While Roam Cnt",
+          "Roam Scan Dur",
+          "Roam Scan Off Ch Dur"
+        ],
+        "Slice 1": [
+          "Roam Scan Cnt",
+          "Scan While Roam Cnt",
+          "Roam Scan Dur",
+          "Roam Scan Off Ch Dur"
+        ]
+      }
+    },
+    "roam_profile_table_sha256": "32c9c2fa19a3bde23a2b9fdfd25cf45e73185484ab7d0bbce5c1bf0e3fe0ee57",
+    "roaming_property_summary": {
+      "bcom.roam.default": {
+        "bytes": 20,
+        "legacy_roam_profile": {
+          "leading_u16_words": [
+            1,
+            90,
+            30,
+            7,
+            2,
+            0
+          ],
+          "rssi_by_band": {
+            "2.4 GHz": {
+              "quality_delta_db": 20,
+              "trigger_dbm": -75
+            },
+            "5 GHz": {
+              "quality_delta_db": 10,
+              "trigger_dbm": -75
+            }
+          }
+        },
+        "type": "bytes"
+      },
+      "bcom.roam.enabledenhanced": {
+        "bytes": 4,
+        "type": "bytes"
+      },
+      "bcom.roam.enterprise": {
+        "bytes": 20,
+        "legacy_roam_profile": {
+          "leading_u16_words": [
+            1,
+            90,
+            30,
+            7,
+            2,
+            0
+          ],
+          "rssi_by_band": {
+            "2.4 GHz": {
+              "quality_delta_db": 12,
+              "trigger_dbm": -70
+            },
+            "5 GHz": {
+              "quality_delta_db": 12,
+              "trigger_dbm": -70
+            }
+          }
+        },
+        "type": "bytes"
+      },
+      "bcom.roam.profiles": {
+        "bytes": 528,
+        "type": "bytes"
+      },
+      "wlan.bss.5GHz-preference": {
+        "bytes": 4,
+        "type": "bytes"
+      },
+      "wlan.fast_enterprise_nw.enabled": {
+        "bytes": 4,
+        "type": "bytes"
+      },
+      "wlan.voice_enterprise_nw.enabled": {
+        "bytes": 4,
+        "type": "bytes"
+      },
+      "wlan.wnm.enabled": {
+        "bytes": 4,
+        "type": "bytes"
+      }
+    },
+    "shikoku_values_in_hex_up_to_20_bytes": {
+      "bcom.roam.default": "01005a001e00070002000000b5ff1400b5ff0a00",
+      "bcom.roam.enabledenhanced": "01000000",
+      "bcom.roam.enterprise": "01005a001e00070002000000baff0c00baff0c00",
+      "wlan.bss.5GHz-preference": "baff1e00",
+      "wlan.fast_enterprise_nw.enabled": "01000000",
+      "wlan.voice_enterprise_nw.enabled": "01000000",
+      "wlan.wnm.enabled": "01000000"
+    }
+  },
+  "selected_platform_config": {
+    "bytes": 2647,
+    "path": "/usr/share/firmware/wifi/shikoku-PlatformConfig.plist",
+    "resolved_path": "/usr/share/firmware/wifi/shikoku-PlatformConfig.plist",
+    "sha256": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547"
+  },
+  "signed_driver_trace": {
+    "btm_rssi_source": "The WNM extended capability path loads its threshold argument from the WNM configuration record.",
+    "driver_sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "enterprise_words": "The trigger getter loads a signed halfword at byte 12. The enterprise firmware path uses words at bytes 16 and 18.",
+    "fbt_over_ds": "The enterprise feature configuration path calls configureFBTOverDS.",
+    "roam_header": [
+      "trigger_2g at byte 12",
+      "quality_delta_2g at byte 14",
+      "trigger_5g at byte 16",
+      "quality_delta_5g at byte 18"
+    ],
+    "routines": {
+      "configure_bss_transition_rssi": {
+        "related_labels_or_loads": [
+          "wnm_btm_rssi_thresh",
+          "runIOVarSet"
+        ],
+        "slices": {
+          "arm64e": {
+            "entry_address": "1000c7a38",
+            "symbol": "__ZN22AppleBCMWLANWnmAdapter25configureBTMRssiThresholdEj"
+          },
+          "arm64e.x1": {
+            "entry_address": "1000c53ec",
+            "symbol": "__ZN22AppleBCMWLANWnmAdapter25configureBTMRssiThresholdEj"
+          }
+        }
+      },
+      "configure_ft_over_distribution_system": {
+        "related_labels_or_loads": [
+          "fbtoverds",
+          "runIOVarSet"
+        ],
+        "slices": {
+          "arm64e": {
+            "entry_address": "1000c4268",
+            "symbol": "__ZN22AppleBCMWLANWnmAdapter18configureFBTOverDSEj"
+          },
+          "arm64e.x1": {
+            "entry_address": "1000c1c1c",
+            "symbol": "__ZN22AppleBCMWLANWnmAdapter18configureFBTOverDSEj"
+          }
+        }
+      },
+      "configure_roaming": {
+        "related_labels_or_loads": [
+          "isEnabledEnhancedRoaming",
+          "configureEnterpriseRoamParams"
+        ],
+        "slices": {
+          "arm64e": {
+            "entry_address": "1000f6f64",
+            "symbol": "__ZN16AppleBCMWLANCore13configureRoamEv"
+          },
+          "arm64e.x1": {
+            "entry_address": "1000f3fc4",
+            "symbol": "__ZN16AppleBCMWLANCore13configureRoamEv"
+          }
+        }
+      },
+      "configure_wnm_gate": {
+        "related_labels_or_loads": [
+          "wlan.wnm.enabled",
+          "getPlatformPropertyBool"
+        ],
+        "slices": {
+          "arm64e": {
+            "entry_address": "10009d2fc",
+            "symbol": "__ZN25AppleBCMWLANConfigManager22gatherKvrParameterDataEP9IOServiceb"
+          },
+          "arm64e.x1": {
+            "entry_address": "10009b514",
+            "symbol": "__ZN25AppleBCMWLANConfigManager22gatherKvrParameterDataEP9IOServiceb"
+          }
+        }
+      },
+      "enterprise_firmware_configuration": {
+        "related_labels_or_loads": [
+          "#0x60",
+          "#0x62",
+          "roam_conf_aggressive",
+          "runIOVarSet"
+        ],
+        "slices": {
+          "arm64e": {
+            "entry_address": "10009eaa0",
+            "symbol": "__ZN25AppleBCMWLANConfigManager29configureEnterpriseRoamParamsEv"
+          },
+          "arm64e.x1": {
+            "entry_address": "10009ccb8",
+            "symbol": "__ZN25AppleBCMWLANConfigManager29configureEnterpriseRoamParamsEv"
+          }
+        }
+      },
+      "enterprise_trigger": {
+        "related_labels_or_loads": [
+          "ldrsh",
+          "#0x5c"
+        ],
+        "slices": {
+          "arm64e": {
+            "entry_address": "10009f9b0",
+            "symbol": "__ZN25AppleBCMWLANConfigManager24getEnterpriseRoamTriggerEv"
+          },
+          "arm64e.x1": {
+            "entry_address": "10009dbc8",
+            "symbol": "__ZN25AppleBCMWLANConfigManager24getEnterpriseRoamTriggerEv"
+          }
+        }
+      },
+      "gather_profiles": {
+        "related_labels_or_loads": [
+          "bcom.roam.default",
+          "bcom.roam.enterprise",
+          "getBytesNoCopy"
+        ],
+        "slices": {
+          "arm64e": {
+            "entry_address": "10009c1e4",
+            "symbol": "__ZN25AppleBCMWLANConfigManager19gatherParameterDataEP9IOService"
+          },
+          "arm64e.x1": {
+            "entry_address": "10009a3fc",
+            "symbol": "__ZN25AppleBCMWLANConfigManager19gatherParameterDataEP9IOService"
+          }
+        }
+      },
+      "legacy_profile_table_diagnostic": {
+        "related_labels_or_loads": [
+          "rssiTrigger %d rssiQualDelta %u",
+          "#0x84",
+          "#0x88",
+          "ldrsh"
+        ],
+        "scope": "The logging method uses its own cached fields. The published property is inspected separately.",
+        "slices": {
+          "arm64e": {
+            "entry_address": "10009ea1c",
+            "symbol": "__ZNK25AppleBCMWLANConfigManager15printRoamParamsEPcjj"
+          },
+          "arm64e.x1": {
+            "entry_address": "10009cc34",
+            "symbol": "__ZNK25AppleBCMWLANConfigManager15printRoamParamsEPcjj"
+          }
+        }
+      }
+    },
+    "slot_byte_order": "little-endian"
+  }
+}
