@@ -1,0 +1,133 @@
+{
+  "catalogue_calls": [
+    "_CFArrayGetCount",
+    "_CFArrayGetTypeID",
+    "_CFArrayGetValueAtIndex",
+    "_CFDictionaryGetTypeID",
+    "_CFDictionaryGetValue",
+    "_CFGetTypeID",
+    "_CFRelease",
+    "_CFStringGetTypeID",
+    "_IOObjectGetUserRetainCount",
+    "_IORegistryEntryCreateCFProperty"
+  ],
+  "channel_cca_state_bins": [
+    {
+      "first_integer_percent": 0,
+      "label": "00  25",
+      "last_integer_percent": 24
+    },
+    {
+      "first_integer_percent": 25,
+      "label": "25  50",
+      "last_integer_percent": 49
+    },
+    {
+      "first_integer_percent": 50,
+      "label": "50  75",
+      "last_integer_percent": 74
+    },
+    {
+      "first_integer_percent": 75,
+      "label": "75 100",
+      "last_integer_percent": 100
+    }
+  ],
+  "default_route_after": "en0",
+  "default_route_before": "en0",
+  "host_driver_slice_validation": {
+    "arm64e": {
+      "attached_reporter_virtual_slot_matches_core_update": true,
+      "diagnostics_reaches_conditional_event_counter_control": true,
+      "power_stats_names_confirmed": [
+        "mpc_dur",
+        "pm_dur"
+      ],
+      "workloop_callbacks_before_main_reporters": [
+        "power_statistics",
+        "diagnostics"
+      ]
+    },
+    "arm64e.x1": {
+      "attached_reporter_virtual_slot_matches_core_update": true,
+      "diagnostics_reaches_conditional_event_counter_control": true,
+      "power_stats_names_confirmed": [
+        "mpc_dur",
+        "pm_dur"
+      ],
+      "workloop_callbacks_before_main_reporters": [
+        "power_statistics",
+        "diagnostics"
+      ]
+    }
+  },
+  "io80211_driverkit_uuid": "f0ba88aa-2977-307d-b8c6-ddcec8e76f9e",
+  "libioreport_uuid": "86C58FF9-2446-3C9C-84B9-CF300A7F4108",
+  "on_host_catalogue_tool": "tools/read_ioreport_catalog.c",
+  "on_host_samples_collected": 0,
+  "publisher_catalogue": {
+    "catalogue_available": true,
+    "groups": {
+      "awdl_average": {
+        "histogram": 0,
+        "matches": 1,
+        "other": 0,
+        "simple": 1,
+        "simple_array": 0,
+        "state": 0
+      },
+      "cca_last_reported": {
+        "histogram": 0,
+        "matches": 38,
+        "other": 0,
+        "simple": 38,
+        "simple_array": 0,
+        "state": 0
+      },
+      "cca_state": {
+        "histogram": 0,
+        "matches": 38,
+        "other": 0,
+        "simple": 0,
+        "simple_array": 0,
+        "state": 38
+      },
+      "en0_average": {
+        "histogram": 0,
+        "matches": 1,
+        "other": 0,
+        "simple": 1,
+        "simple_array": 0,
+        "state": 0
+      },
+      "en0_average_state": {
+        "histogram": 0,
+        "matches": 1,
+        "other": 0,
+        "simple": 0,
+        "simple_array": 0,
+        "state": 1
+      },
+      "en0_qbss_values": {
+        "histogram": 0,
+        "matches": 3,
+        "other": 0,
+        "simple": 3,
+        "simple_array": 0,
+        "state": 0
+      }
+    },
+    "publisher_matched_rows": 2761,
+    "rows": 2761,
+    "unprivileged": true
+  },
+  "scope": "Ordinary unprivileged catalogue access, published report types, and installed-code provenance. Subscription, sample values, and effects of sampling on Wi-Fi remain unverified.",
+  "signed_driver_sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+  "static_proxy_path": [
+    "AppleBCMWLANCore",
+    "IO80211ReporterProxy",
+    "UpdateReport request to controller"
+  ],
+  "system_build": "26B131",
+  "user_lib_sample_reaches_kernel_update_call": true
+}

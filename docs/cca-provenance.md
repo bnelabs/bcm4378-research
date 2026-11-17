@@ -10,6 +10,21 @@ The signed macOS driver handles firmware channel-quality events. On its simple p
 
 In the installed IO80211DriverKit image, the controller forwards CCA updates to the channel monitor. The monitor's `setChanCCA` routine registers the `CCA Last Reported` and `CCA State` legends. Separately, the current-link getter delegates to `IO80211BSSBeacon::getCCA`, which returns one cached byte when its validity flag is set. All three distinct BCM4378 firmware files have a decoded Thumb reference to the `cca_stats` literal under the reference load model. These traces establish the event and cache paths and the label registration mechanism. The legend alone leaves the source and time of any particular channel entry unverified. [DriverKit and firmware evidence](../evidence/2026-11-17-cca-provenance.json), [Reference firmware mapping](firmware-layout.md#reference-loading-model)
 
+## IOReport catalog and sample path
+
+On build 26B131, an unprivileged process used `IOReportCopyChannelsForDriver` to read all 2,761 descriptors for the same WLAN publisher. The 38 `CCA Last Reported` descriptors are simple integer reports. The 38 `CCA State` descriptors are state reports. The `en0` average and QBSS fields are also simple reports. The catalog library reads I/O Registry properties and builds channel descriptors. [Live catalog evidence](../evidence/2026-11-17-ioreport-access.json), [IOReport format definitions](https://github.com/apple-oss-distributions/xnu/blob/main/iokit/IOKit/IOReportTypes.h#L75-L106)
+
+The channel monitor creates four states per channel. Its comparisons assign valid integer percentages to the following ranges. The state format accumulates ticks in each state. With a common timebase and continuous counters, differences between two snapshots of the same channel give the time spent in each range over the intervening period. [State labels and boundaries](../evidence/2026-11-17-ioreport-access.json), [State report fields](https://github.com/apple-oss-distributions/xnu/blob/main/iokit/IOKit/IOReportTypes.h#L98-L107)
+
+| State label | CCA input |
+| --- | ---: |
+| `00  25` | 0–24% |
+| `25  50` | 25–49% |
+| `50  75` | 50–74% |
+| `75 100` | 75–100% |
+
+`IOReportCreateSamples` requests a kernel report update. The live reporter proxy belongs to `AppleBCMWLANCore`. Its update dispatch resolves to the core's override in both installed driver slices. When the core accepts commands, its gated path dispatches power statistics and diagnostics before the report collectors. The inspected paths include firmware power-duration reads and conditional event-counter enable and disable calls. The active-Mac test covered catalog access. Sample values and the effects of the full update path remain open for a separately managed device. [Sample path evidence](../evidence/2026-11-17-ioreport-access.json), [DriverKit report update dispatch](https://github.com/apple-oss-distributions/xnu/blob/main/iokit/Kernel/IOUserServer.cpp#L313-L342)
+
 ## Linux survey behavior
 
 The pinned Linux stable and Asahi survey callbacks are byte-identical. Both select the primary interface for the association-state check, return busy while that interface is connecting or connected, and select the requested channel when the survey proceeds. The callback brings the interface up, queries PHY noise, and requests an **80 ms** firmware measurement. It waits **90 ms** before collecting results. The channel-set failure path leaves the result fields empty. The exit path performs power-policy cleanup and leaves subsequent channel selection to other driver operations. [Stable survey callback](https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L8166-L8263), [Asahi survey callback](https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L8380-L8477)
@@ -24,3 +39,12 @@ swift tools/read_wifi_status.swift
 ```
 
 The inventory emits channel numbers, selected labels, and aggregate counts. The existing native status investigation identifies a CCA status field behind the root-gated diagnostic command. A test on a separately managed device can compare actual CCA and QBSS values with a synchronized RF receiver. The Linux survey belongs on that independently managed radio because it changes channels. [Registry reader](../tools/read_cca_legend.py), [Native station status](live-access.md#station-diagnostic-fields)
+
+The catalog reader uses the `libIOReport` signatures verified on this system. It reports publisher-matched count and format metadata. [Catalog reader](../tools/read_ioreport_catalog.c)
+
+```sh
+catalog_dir="$(mktemp -d)"
+xcrun clang -Wall -Wextra -Werror -framework CoreFoundation -framework IOKit \
+  -lIOReport tools/read_ioreport_catalog.c -o "$catalog_dir/read_ioreport_catalog"
+"$catalog_dir/read_ioreport_catalog"
+```
