@@ -23,6 +23,20 @@ The FCC filing and TÜV SÜD exhibits document these channel centers in MHz on A
 | U-NII-2C/3 straddle | 5720 | 5710 | 5690 |
 | U-NII-3 | 5745–5825 in 20 MHz steps | 5755, 5795 | 5775 |
 
+### Match to the stock channel list
+
+The 5 GHz comparison treats each reported channel number as a possible primary 20 MHz channel at `5000 + 5 × channel` MHz. A lab center matches when the stock list contains all of the primaries in its block at that width. This assigns every 5 GHz identifier in the fresh CoreWLAN listing to a tested block. The active channel 40 at 80 MHz falls in the 5,210 MHz block by this calculation. [CoreWLAN channel type](https://developer.apple.com/documentation/corewlan/cwchannel), [Comparison and underlying lists](../evidence/2026-11-17-corewlan-channel-plan.json)
+
+| Width | Matched 5 GHz lab centers | Unmatched lab center | Primaries checked at that width |
+| --- | ---: | ---: | --- |
+| 20 MHz | 24 of 25 | 5,720 MHz | 144 |
+| 40 MHz | 11 of 12 | 5,710 MHz | 140, 144 |
+| 80 MHz | 5 of 6 | 5,690 MHz | 132, 136, 140, 144 |
+
+Each unmatched center is from the A2337 straddle tests. None of its candidate primaries appeared at the corresponding width. Channels 132, 136 and 140 appeared at 20 MHz, and 132 and 136 also appeared in the 40 MHz list. The match compares the host's current advertised channel plan with a lab test plan. It leaves runtime availability under other operating conditions and physical tuning limits open. [A2337 5 GHz exhibit](https://device.report/m/9dbefd8fa57734334f25d9b4c27352a2b1333e4a7384c14f77fb813ec85822d7.pdf#page=5)
+
+### Wi-Fi and Bluetooth lab modes
+
 The lab measured simultaneous dual-band Wi-Fi in HT20 diversity modes. Separate pairings combined one Wi-Fi band with Classic Bluetooth. The single-band HE tests include HE80 MCS 7 with two streams at 5,210 MHz, both in single-user operation and with a 26-tone resource unit. Dual-band HE, triple transmission and dual association under stock macOS remain unverified. [A2337 RF tests and exhibit citations](a2337-rf-tests.md)
 
 Bluetooth is authorized at 2,402–2,480 MHz. The classic Bluetooth test counted 79 hopping channels. The report also measured LE 1M and 2M, and two π/4-DQPSK lab modes called **HDR4** and **HDR8** at 2,404, 2,441 and 2,478 MHz. The reported 99% occupied bandwidths were 2.344 MHz and 4.550–4.560 MHz respectively. A separate Apple Watch report associates the same labels with 4 and 8 Mb/s. Rate and public access on this Mac remain unverified. [Classic Bluetooth test](https://device.report/m/f23d693e4f80d60e381d4984b15fc5007810b0506fba5d24963e328a6cb83c37.pdf#page=18), [A2337 HDR4](https://fccid.io/BCGA2337/Test-Report/Test-report-part1-4983141.pdf#page=8), [A2337 HDR8](https://fccid.io/BCGA2337/Test-Report/Test-report-part1-4983141.pdf#page=20), [A1978 comparison report](https://fccid.io/m/24fafd375904a7455de233e95862c736d9036949653151c13ecf93d0aa116c00.pdf)
@@ -42,7 +56,7 @@ Bluetooth is authorized at 2,402–2,480 MHz. The classic Bluetooth test counted
 
 All three installed BCM4378 images contain the same 19 proximity-related printable strings. The 250 stock NVRAM paths include three proximity assignments across all board variants, including a scalar and two four-entry offset arrays for cores 0 and 1. This establishes board-provisioned proximity data on Shikoku. The units, protocol, firmware use and actual ranging results remain open. Broadcom's published BCM4383 host code checks firmware capabilities separately before advertising Fine Timing Measurement (FTM). [Stock firmware and profile evidence](../evidence/2026-11-17-wifi-timing-capabilities.json), [Broadcom capability check](https://android.googlesource.com/kernel/google-modules/wlan/bcmdhd/bcm4383/+/3b1a081640892e16ac658f66a0b0d026735922fe/dhd_rtt.c#6078)
 
-Both signed Apple host driver slices contain FTM and Target Wake Time (TWT) markers. Asahi sets four TWT bits in its shared HE table after the general HE gate. The reviewed `cfg80211.c` and `core.c` for both pinned `brcmfmac` trees contain no registration for the standard peer measurement path. Live BCM4378 FTM exchanges and TWT scheduling remain unverified. [Scoped source and artifact checks](../evidence/2026-11-17-wifi-timing-capabilities.json), [Asahi HE table](https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L7392-L7410), [Linux peer measurement gate](https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/net/wireless/pmsr.c#L414-L428)
+Both signed Apple host driver slices contain FTM and Target Wake Time (TWT) markers. The TWT strings correspond to diagnostic argument labels. Code references link the proximity support messages to ranging-status diagnostics. Asahi sets four TWT bits in its shared HE table after the general HE gate. The reviewed `cfg80211.c` and `core.c` for both pinned `brcmfmac` trees contain no registration for the standard peer measurement path. Live BCM4378 FTM exchanges and TWT scheduling remain unverified. [Driver diagnostic provenance](driver-timing-provenance.md), [Scoped source and artifact checks](../evidence/2026-11-17-wifi-timing-capabilities.json), [Asahi HE table](https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L7392-L7410), [Linux peer measurement gate](https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/net/wireless/pmsr.c#L414-L428)
 
 Apple documents a 56-bit random starting Timing Synchronization Function (TSF) offset in peer-to-peer and access point modes on late-2020 and newer Macs with macOS 12.0.1 or later. The offset changes when the interface MAC address changes. Align receiver captures against a common observer clock when comparing timing across peer sessions. [Apple Platform Security](https://support.apple.com/en-ca/guide/security/sec31e483abf/web)
 

@@ -1,0 +1,163 @@
+{
+  "default_route_after": "en0",
+  "default_route_before": "en0",
+  "en0_traffic": {
+    "average_mbps": {
+      "rx": 1.7687787525723884,
+      "tx": 19.799393658600987
+    },
+    "initial_counter_nonzero": true,
+    "intervals": {
+      "comparable": 12,
+      "invalid": 0,
+      "missing": 0,
+      "reset": 0
+    },
+    "link_layer_row_samples": 13,
+    "observed_deltas": {
+      "rx_bytes": 2552730,
+      "rx_packets": 24338,
+      "tx_bytes": 28574804,
+      "tx_packets": 24384
+    },
+    "observed_seconds": 11.545728921890259,
+    "positive_delta_intervals": 12
+  },
+  "link_status_counts": {
+    "bulk_after": {
+      "bluetooth": {
+        "0xb012": 13
+      },
+      "bridge": {
+        "0x1011": 13
+      },
+      "wifi": {
+        "0xb012": 13
+      }
+    },
+    "bulk_before": {
+      "bluetooth": {
+        "0xb012": 13
+      },
+      "bridge": {
+        "0x1011": 13
+      },
+      "wifi": {
+        "0xb012": 13
+      }
+    },
+    "individual": {
+      "bluetooth": {
+        "0xb012": 13
+      },
+      "bridge": {
+        "0x1011": 13
+      },
+      "wifi": {
+        "0xb012": 13
+      }
+    }
+  },
+  "method": [
+    "Repeat bulk ioreg plist, individual IORegistryEntryCreateCFProperty reads from tools/read_pcie_link.swift, a second bulk snapshot, and netstat host counters. The steps are sequential.",
+    "Match both radio endpoints by PCI ID and their shared IOService provider. The ioreg command starts at pci-bridge0 with depth 3.",
+    "Take 13 iterations one second apart during ordinary connected use. No traffic was generated for the measurement."
+  ],
+  "per_property_values": [
+    {
+      "properties": {
+        "bluetooth": {
+          "IOPCIExpressDeviceCapabilities2": "0x8081f",
+          "IOPCIExpressLinkCapabilities": "0x46d812",
+          "IOPCIExpressLinkCapabilities2": "0x6",
+          "IOPCIExpressLinkStatus": "0xb012",
+          "IOPowerManagement": {
+            "CurrentPowerState": 2,
+            "DevicePowerState": 2,
+            "MaxPowerState": 3
+          },
+          "name": "bluetooth-pcie",
+          "pci-aspm-default": "0x2",
+          "pci-max-latency": [
+            "0x10081008"
+          ],
+          "pci_id": "14e4:5f69"
+        },
+        "bridge": {
+          "IOPCIExpressDeviceCapabilities2": "0x10c1f",
+          "IOPCIExpressLinkCapabilities": "0x737814",
+          "IOPCIExpressLinkCapabilities2": "0x180001e",
+          "IOPCIExpressLinkStatus": "0x1011",
+          "IOPCIL1PMCapabilities": "0x1f",
+          "IOPowerManagement": {
+            "CurrentPowerState": 2,
+            "DevicePowerState": 0,
+            "MaxPowerState": 3
+          },
+          "name": "pci-bridge0",
+          "pci-aspm-default": "0x2",
+          "pci-l1pm-control": [
+            "0x4055190f",
+            "0x0"
+          ],
+          "pci_id": "106b:100c"
+        },
+        "wifi": {
+          "IOPCIExpressDeviceCapabilities2": "0x8081f",
+          "IOPCIExpressLinkCapabilities": "0x46f812",
+          "IOPCIExpressLinkCapabilities2": "0x6",
+          "IOPCIExpressLinkStatus": "0xb012",
+          "IOPCIL1PMCapabilities": "0x18081f",
+          "IOPowerManagement": {
+            "CurrentPowerState": 2,
+            "DevicePowerState": 2,
+            "MaxPowerState": 3
+          },
+          "name": "wlan",
+          "pci-aspm-default": "0x2",
+          "pci-l1pm-control": [
+            "0x4055000f",
+            "0x0"
+          ],
+          "pci-max-latency": [
+            "0x10081008"
+          ],
+          "pci_id": "14e4:4425"
+        }
+      },
+      "sample_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  ],
+  "sample_span_seconds": 11.555102,
+  "sample_times_unix_seconds": [
+    1794897902.137254,
+    1794897902.690123,
+    1794897903.685329,
+    1794897904.6828032,
+    1794897905.687933,
+    1794897906.688103,
+    1794897907.691331,
+    1794897908.690386,
+    1794897909.6870708,
+    1794897910.692086,
+    1794897911.691942,
+    1794897912.690458,
+    1794897913.692356
+  ],
+  "scope": "Registry-reported standard properties and configuration declarations. No direct configuration-space or device memory mappings. Traffic is a host-interface counter observation.",
+  "system_build": "26B131"
+}

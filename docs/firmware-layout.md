@@ -31,6 +31,8 @@ Both the active CLM request and the TxCap request resolve to Broadcom `BLOB` fil
 
 The checks describe the contents at the three paths named by the driver. The applied per-device calibration and transmit-power limits remain unmeasured.
 
+All 35 CLM names resolve to seven validated payloads across both installed firmware roots. The B1 and B3 Kyushu files share their 104-byte CLM header. Three dataset bytes and their corresponding CRC fields account for all differences. [CLM profile audit](clm-profile-audit.md)
+
 All 35 installed BCM4378 TxCap names resolve to seven whole-file identities. In each distinct first record, `TXCP` precedes a little-endian word with value 4, a 64-byte zero-padded label field and a 20-byte NUL-terminated timestamp field. This places the remaining body at record offset 92. The meaning of the word at offset 4 remains unknown. [TxCap profile inventory](../evidence/2026-11-17-txcap-profiles.json)
 
 The body hashes form four groups. AtlantisB, Capri and Santorini share one 148-byte body. Honshu and Shikoku each have a distinct 541-byte body, and Kyushu B1 and B3 share a third 541-byte body. The two Kyushu files differ in two timestamp characters and eight CRC bytes. All seven carry the same four-byte second record. The body hashes can track changes independently of packaging timestamps. The field meanings and live RF limits still require separate evidence. [Profile and checksum comparison](../evidence/2026-11-17-txcap-profiles.json)

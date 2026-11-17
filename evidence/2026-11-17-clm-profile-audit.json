@@ -1,0 +1,465 @@
+{
+  "comparisons_with_first_directory": [
+    {
+      "candidate_only_names": 0,
+      "common_names": 35,
+      "common_names_with_identical_files": 35,
+      "directory": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware",
+      "reference_only_names": 0
+    }
+  ],
+  "distinct_payloads": [
+    {
+      "bytes": 34061,
+      "dataset_body_sha256": "639ea81f87ed39036387bc4a64a7e3901d31052d845173e0db882f3007efed91",
+      "dataset_header_bytes": 104,
+      "dataset_header_sha256": "2f34d5e5578a06a18d97d24daac83464e34c82441f2f3d8de09cd686d1deb1a5",
+      "header": {
+        "bytes": 60,
+        "crc32": "0xf9e75313"
+      },
+      "metadata": {
+        "api": "Oly.AtlantisB",
+        "clm_import_ver": "ClmImport: 1.74.1",
+        "compiler": "1.72.1",
+        "manufacturer": "v5 Final 251211"
+      },
+      "records": [
+        {
+          "bytes": 33997,
+          "crc32": "0x83de66c0",
+          "sha256": "9fb6677008c57107b7104cfe8590ccaad221d6cfe2e1311e4d8e4e4afea5f9f7"
+        },
+        {
+          "bytes": 4,
+          "crc32": "0xfd1364f6",
+          "sha256": "9868c82997359ce905d013fb67c7358ca8a1d55c91f701d7401ae2236a8fa401"
+        }
+      ],
+      "records_are_contiguous_to_eof": true,
+      "sha256": "ecee6770918bfd6daf3faf67cb8cf549015acd24acf0f3d2a5d5a0d8dea791d5"
+    },
+    {
+      "bytes": 34381,
+      "dataset_body_sha256": "7ceb81567132f8bb9039df1842afa72e900578e694b26aff0866ad9489fc6e9e",
+      "dataset_header_bytes": 104,
+      "dataset_header_sha256": "423a5a1916129a03c2b5f9825c293f8752effebdc99369127a5183eb3e3332b9",
+      "header": {
+        "bytes": 60,
+        "crc32": "0x86b6fa7e"
+      },
+      "metadata": {
+        "api": "Oly.Capri",
+        "clm_import_ver": "ClmImport: 1.74.1",
+        "compiler": "1.72.1",
+        "manufacturer": "v5 EVT 251211"
+      },
+      "records": [
+        {
+          "bytes": 34317,
+          "crc32": "0x7dd7a378",
+          "sha256": "708935e26986e65eaa4fa54193b3b5294a1c6a6c88fe82612ff96866078d10b2"
+        },
+        {
+          "bytes": 4,
+          "crc32": "0xfd1364f6",
+          "sha256": "9868c82997359ce905d013fb67c7358ca8a1d55c91f701d7401ae2236a8fa401"
+        }
+      ],
+      "records_are_contiguous_to_eof": true,
+      "sha256": "daad70044687d0f44a2832073215cea28fa31a767aef88f1d4f0e4f218ec5714"
+    },
+    {
+      "bytes": 36949,
+      "dataset_body_sha256": "94dfed47056791cf3e49d93c3a4d9464941bd2cac5cc5209b3c59aff5c4b7b2e",
+      "dataset_header_bytes": 104,
+      "dataset_header_sha256": "aa0fc8a7533f49b071e3ef5f5c138ac0ec537ab740be69ded65289236cabf287",
+      "header": {
+        "bytes": 60,
+        "crc32": "0xe9a8a920"
+      },
+      "metadata": {
+        "api": "Oly.Honshu",
+        "clm_import_ver": "ClmImport: 1.74.1",
+        "compiler": "1.72.1",
+        "manufacturer": "v4 Final 251211"
+      },
+      "records": [
+        {
+          "bytes": 36885,
+          "crc32": "0x32a9dbc0",
+          "sha256": "ce91bf06967bffa5fcfed6b4a1f97126293deef013ffc63ebc1738ef89448939"
+        },
+        {
+          "bytes": 4,
+          "crc32": "0xfd1364f6",
+          "sha256": "9868c82997359ce905d013fb67c7358ca8a1d55c91f701d7401ae2236a8fa401"
+        }
+      ],
+      "records_are_contiguous_to_eof": true,
+      "sha256": "5591f8cfbf2ee838e9b519fd01a5d7472d3980ccd059e75ebd055a5a72fababf"
+    },
+    {
+      "bytes": 36765,
+      "dataset_body_sha256": "3fbcb5372b6e0477f854c026e7bb6159f085215baf88363eceb1013c8ad54a71",
+      "dataset_header_bytes": 104,
+      "dataset_header_sha256": "197277017a916452a187f644fbe07bd460e9ab855d703745f5230b185a2487c7",
+      "header": {
+        "bytes": 60,
+        "crc32": "0xa867e03d"
+      },
+      "metadata": {
+        "api": "Oly.Kyushu",
+        "clm_import_ver": "ClmImport: 1.74.1",
+        "compiler": "1.72.1",
+        "manufacturer": "v2 Final 260429"
+      },
+      "records": [
+        {
+          "bytes": 36701,
+          "crc32": "0xc4585c78",
+          "sha256": "da067ad9bcc1b2118fbe3f78a3d65a098e5aaa60fea9f7d3e6e435d92ad665f2"
+        },
+        {
+          "bytes": 4,
+          "crc32": "0xfd1364f6",
+          "sha256": "9868c82997359ce905d013fb67c7358ca8a1d55c91f701d7401ae2236a8fa401"
+        }
+      ],
+      "records_are_contiguous_to_eof": true,
+      "sha256": "f0957a5bf040bfb7ae06242886335860b5b0509ddc5a6a07da21b0ed8a543a85"
+    },
+    {
+      "bytes": 34581,
+      "dataset_body_sha256": "c4e1780daa44219e64c99e888325dc9e2699fd7bab37e4d61020285a719ed8c7",
+      "dataset_header_bytes": 104,
+      "dataset_header_sha256": "34676e709060299c9e976129e03b55a36db8cc9541232963a3eaa03875f84aae",
+      "header": {
+        "bytes": 60,
+        "crc32": "0xf74c6e89"
+      },
+      "metadata": {
+        "api": "Oly.Santorini",
+        "clm_import_ver": "ClmImport: 1.74.1",
+        "compiler": "1.72.1",
+        "manufacturer": "v5 EVT 251211"
+      },
+      "records": [
+        {
+          "bytes": 34517,
+          "crc32": "0xea2a7927",
+          "sha256": "30b8809d8b4195d6c80d03595ee608a762c560dd032229ceaf5192bd67f178e5"
+        },
+        {
+          "bytes": 4,
+          "crc32": "0xfd1364f6",
+          "sha256": "9868c82997359ce905d013fb67c7358ca8a1d55c91f701d7401ae2236a8fa401"
+        }
+      ],
+      "records_are_contiguous_to_eof": true,
+      "sha256": "6df987fae5d6b6e7f88ffdb9f71ef0ecff1e70fe711bad610ead060c89c1ef3e"
+    },
+    {
+      "bytes": 35973,
+      "dataset_body_sha256": "a2b2088b70cd9deac721e0ae6babe810d70e9978fac0e47b246f4dbb4c8181d0",
+      "dataset_header_bytes": 104,
+      "dataset_header_sha256": "888ad21223a59ff1aef5297ac38da809dfc878833dc36182721c1f9440f4f54f",
+      "header": {
+        "bytes": 60,
+        "crc32": "0xc3d68636"
+      },
+      "metadata": {
+        "api": "Oly.Shikoku",
+        "clm_import_ver": "ClmImport: 1.74.1",
+        "compiler": "1.72.1",
+        "manufacturer": "v5 Final 251211"
+      },
+      "records": [
+        {
+          "bytes": 35909,
+          "crc32": "0xb525a85f",
+          "sha256": "0e7e326e408b84aa7b338ef03a113eb6c4711a9a1e706f82ab44551b29aca32c"
+        },
+        {
+          "bytes": 4,
+          "crc32": "0xfd1364f6",
+          "sha256": "9868c82997359ce905d013fb67c7358ca8a1d55c91f701d7401ae2236a8fa401"
+        }
+      ],
+      "records_are_contiguous_to_eof": true,
+      "sha256": "3202b0cd073d89b13955762acf42442483873a46ff0d426da618f04ec2184140"
+    },
+    {
+      "bytes": 36765,
+      "dataset_body_sha256": "fbb96756619b6d6a0c54ff1b367c6dac939968e6cee79630b7c3921ab6f7f8e6",
+      "dataset_header_bytes": 104,
+      "dataset_header_sha256": "197277017a916452a187f644fbe07bd460e9ab855d703745f5230b185a2487c7",
+      "header": {
+        "bytes": 60,
+        "crc32": "0x81097d6b"
+      },
+      "metadata": {
+        "api": "Oly.Kyushu",
+        "clm_import_ver": "ClmImport: 1.74.1",
+        "compiler": "1.72.1",
+        "manufacturer": "v2 Final 260429"
+      },
+      "records": [
+        {
+          "bytes": 36701,
+          "crc32": "0x38ad4657",
+          "sha256": "5ebeaa4223e102aa3fcc33817096739371bd111b5daec6f212d42fbfc064df20"
+        },
+        {
+          "bytes": 4,
+          "crc32": "0xfd1364f6",
+          "sha256": "9868c82997359ce905d013fb67c7358ca8a1d55c91f701d7401ae2236a8fa401"
+        }
+      ],
+      "records_are_contiguous_to_eof": true,
+      "sha256": "a4188793ab990c77d665be4633b58d83dc6af606dff3754fc1d01a0aaea247a9"
+    }
+  ],
+  "inventories": [
+    {
+      "alias_groups": [
+        {
+          "regular_names": [
+            "C-4378__s-B1/atlantisb.clmb"
+          ],
+          "sha256": "ecee6770918bfd6daf3faf67cb8cf549015acd24acf0f3d2a5d5a0d8dea791d5",
+          "symlink_targets": {
+            "C-4378__s-B1/atlantisb-ID.clmb": "C-4378__s-B1/atlantisb.clmb",
+            "C-4378__s-B1/atlantisb-X0.clmb": "C-4378__s-B1/atlantisb.clmb",
+            "C-4378__s-B1/atlantisb-X2.clmb": "C-4378__s-B1/atlantisb.clmb",
+            "C-4378__s-B1/atlantisb-X3.clmb": "C-4378__s-B1/atlantisb.clmb"
+          }
+        },
+        {
+          "regular_names": [
+            "C-4378__s-B1/capri.clmb"
+          ],
+          "sha256": "daad70044687d0f44a2832073215cea28fa31a767aef88f1d4f0e4f218ec5714",
+          "symlink_targets": {
+            "C-4378__s-B1/capri-ID.clmb": "C-4378__s-B1/capri.clmb",
+            "C-4378__s-B1/capri-X0.clmb": "C-4378__s-B1/capri.clmb",
+            "C-4378__s-B1/capri-X2.clmb": "C-4378__s-B1/capri.clmb",
+            "C-4378__s-B1/capri-X3.clmb": "C-4378__s-B1/capri.clmb"
+          }
+        },
+        {
+          "regular_names": [
+            "C-4378__s-B1/honshu.clmb"
+          ],
+          "sha256": "5591f8cfbf2ee838e9b519fd01a5d7472d3980ccd059e75ebd055a5a72fababf",
+          "symlink_targets": {
+            "C-4378__s-B1/honshu-ID.clmb": "C-4378__s-B1/honshu.clmb",
+            "C-4378__s-B1/honshu-X0.clmb": "C-4378__s-B1/honshu.clmb",
+            "C-4378__s-B1/honshu-X2.clmb": "C-4378__s-B1/honshu.clmb",
+            "C-4378__s-B1/honshu-X3.clmb": "C-4378__s-B1/honshu.clmb"
+          }
+        },
+        {
+          "regular_names": [
+            "C-4378__s-B1/kyushu.clmb"
+          ],
+          "sha256": "f0957a5bf040bfb7ae06242886335860b5b0509ddc5a6a07da21b0ed8a543a85",
+          "symlink_targets": {
+            "C-4378__s-B1/kyushu-ID.clmb": "C-4378__s-B1/kyushu.clmb",
+            "C-4378__s-B1/kyushu-X0.clmb": "C-4378__s-B1/kyushu.clmb",
+            "C-4378__s-B1/kyushu-X2.clmb": "C-4378__s-B1/kyushu.clmb",
+            "C-4378__s-B1/kyushu-X3.clmb": "C-4378__s-B1/kyushu.clmb"
+          }
+        },
+        {
+          "regular_names": [
+            "C-4378__s-B1/santorini.clmb"
+          ],
+          "sha256": "6df987fae5d6b6e7f88ffdb9f71ef0ecff1e70fe711bad610ead060c89c1ef3e",
+          "symlink_targets": {
+            "C-4378__s-B1/santorini-ID.clmb": "C-4378__s-B1/santorini.clmb",
+            "C-4378__s-B1/santorini-X0.clmb": "C-4378__s-B1/santorini.clmb",
+            "C-4378__s-B1/santorini-X2.clmb": "C-4378__s-B1/santorini.clmb",
+            "C-4378__s-B1/santorini-X3.clmb": "C-4378__s-B1/santorini.clmb"
+          }
+        },
+        {
+          "regular_names": [
+            "C-4378__s-B1/shikoku.clmb"
+          ],
+          "sha256": "3202b0cd073d89b13955762acf42442483873a46ff0d426da618f04ec2184140",
+          "symlink_targets": {
+            "C-4378__s-B1/shikoku-ID.clmb": "C-4378__s-B1/shikoku.clmb",
+            "C-4378__s-B1/shikoku-X0.clmb": "C-4378__s-B1/shikoku.clmb",
+            "C-4378__s-B1/shikoku-X2.clmb": "C-4378__s-B1/shikoku.clmb",
+            "C-4378__s-B1/shikoku-X3.clmb": "C-4378__s-B1/shikoku.clmb"
+          }
+        },
+        {
+          "regular_names": [
+            "C-4378__s-B3/kyushu.clmb"
+          ],
+          "sha256": "a4188793ab990c77d665be4633b58d83dc6af606dff3754fc1d01a0aaea247a9",
+          "symlink_targets": {
+            "C-4378__s-B3/kyushu-ID.clmb": "C-4378__s-B3/kyushu.clmb",
+            "C-4378__s-B3/kyushu-X0.clmb": "C-4378__s-B3/kyushu.clmb",
+            "C-4378__s-B3/kyushu-X2.clmb": "C-4378__s-B3/kyushu.clmb",
+            "C-4378__s-B3/kyushu-X3.clmb": "C-4378__s-B3/kyushu.clmb"
+          }
+        }
+      ],
+      "directory": "/usr/share/firmware/wifi",
+      "kyushu_cross_stepping": {
+        "dataset_bytes_different": 3,
+        "dataset_common_prefix_bytes": 36603,
+        "dataset_header_equal": true,
+        "first_record_crc_bytes_different": 4,
+        "header_crc_bytes_different": 4,
+        "metadata_equal": true,
+        "names": [
+          "C-4378__s-B1/kyushu.clmb",
+          "C-4378__s-B3/kyushu.clmb"
+        ],
+        "same_offset_differences": 11,
+        "sha256": [
+          "f0957a5bf040bfb7ae06242886335860b5b0509ddc5a6a07da21b0ed8a543a85",
+          "a4188793ab990c77d665be4633b58d83dc6af606dff3754fc1d01a0aaea247a9"
+        ],
+        "trailing_record_equal": true,
+        "whole_file_changes_accounted_for_by_dataset_and_its_crcs": true
+      },
+      "steppings": {
+        "B1": {
+          "distinct_payloads": 6,
+          "names": 30,
+          "status": "available"
+        },
+        "B3": {
+          "distinct_payloads": 1,
+          "names": 5,
+          "status": "available"
+        }
+      }
+    },
+    {
+      "alias_groups": [
+        {
+          "regular_names": [
+            "C-4378__s-B1/atlantisb.clmb"
+          ],
+          "sha256": "ecee6770918bfd6daf3faf67cb8cf549015acd24acf0f3d2a5d5a0d8dea791d5",
+          "symlink_targets": {
+            "C-4378__s-B1/atlantisb-ID.clmb": "C-4378__s-B1/atlantisb.clmb",
+            "C-4378__s-B1/atlantisb-X0.clmb": "C-4378__s-B1/atlantisb.clmb",
+            "C-4378__s-B1/atlantisb-X2.clmb": "C-4378__s-B1/atlantisb.clmb",
+            "C-4378__s-B1/atlantisb-X3.clmb": "C-4378__s-B1/atlantisb.clmb"
+          }
+        },
+        {
+          "regular_names": [
+            "C-4378__s-B1/capri.clmb"
+          ],
+          "sha256": "daad70044687d0f44a2832073215cea28fa31a767aef88f1d4f0e4f218ec5714",
+          "symlink_targets": {
+            "C-4378__s-B1/capri-ID.clmb": "C-4378__s-B1/capri.clmb",
+            "C-4378__s-B1/capri-X0.clmb": "C-4378__s-B1/capri.clmb",
+            "C-4378__s-B1/capri-X2.clmb": "C-4378__s-B1/capri.clmb",
+            "C-4378__s-B1/capri-X3.clmb": "C-4378__s-B1/capri.clmb"
+          }
+        },
+        {
+          "regular_names": [
+            "C-4378__s-B1/honshu.clmb"
+          ],
+          "sha256": "5591f8cfbf2ee838e9b519fd01a5d7472d3980ccd059e75ebd055a5a72fababf",
+          "symlink_targets": {
+            "C-4378__s-B1/honshu-ID.clmb": "C-4378__s-B1/honshu.clmb",
+            "C-4378__s-B1/honshu-X0.clmb": "C-4378__s-B1/honshu.clmb",
+            "C-4378__s-B1/honshu-X2.clmb": "C-4378__s-B1/honshu.clmb",
+            "C-4378__s-B1/honshu-X3.clmb": "C-4378__s-B1/honshu.clmb"
+          }
+        },
+        {
+          "regular_names": [
+            "C-4378__s-B1/kyushu.clmb"
+          ],
+          "sha256": "f0957a5bf040bfb7ae06242886335860b5b0509ddc5a6a07da21b0ed8a543a85",
+          "symlink_targets": {
+            "C-4378__s-B1/kyushu-ID.clmb": "C-4378__s-B1/kyushu.clmb",
+            "C-4378__s-B1/kyushu-X0.clmb": "C-4378__s-B1/kyushu.clmb",
+            "C-4378__s-B1/kyushu-X2.clmb": "C-4378__s-B1/kyushu.clmb",
+            "C-4378__s-B1/kyushu-X3.clmb": "C-4378__s-B1/kyushu.clmb"
+          }
+        },
+        {
+          "regular_names": [
+            "C-4378__s-B1/santorini.clmb"
+          ],
+          "sha256": "6df987fae5d6b6e7f88ffdb9f71ef0ecff1e70fe711bad610ead060c89c1ef3e",
+          "symlink_targets": {
+            "C-4378__s-B1/santorini-ID.clmb": "C-4378__s-B1/santorini.clmb",
+            "C-4378__s-B1/santorini-X0.clmb": "C-4378__s-B1/santorini.clmb",
+            "C-4378__s-B1/santorini-X2.clmb": "C-4378__s-B1/santorini.clmb",
+            "C-4378__s-B1/santorini-X3.clmb": "C-4378__s-B1/santorini.clmb"
+          }
+        },
+        {
+          "regular_names": [
+            "C-4378__s-B1/shikoku.clmb"
+          ],
+          "sha256": "3202b0cd073d89b13955762acf42442483873a46ff0d426da618f04ec2184140",
+          "symlink_targets": {
+            "C-4378__s-B1/shikoku-ID.clmb": "C-4378__s-B1/shikoku.clmb",
+            "C-4378__s-B1/shikoku-X0.clmb": "C-4378__s-B1/shikoku.clmb",
+            "C-4378__s-B1/shikoku-X2.clmb": "C-4378__s-B1/shikoku.clmb",
+            "C-4378__s-B1/shikoku-X3.clmb": "C-4378__s-B1/shikoku.clmb"
+          }
+        },
+        {
+          "regular_names": [
+            "C-4378__s-B3/kyushu.clmb"
+          ],
+          "sha256": "a4188793ab990c77d665be4633b58d83dc6af606dff3754fc1d01a0aaea247a9",
+          "symlink_targets": {
+            "C-4378__s-B3/kyushu-ID.clmb": "C-4378__s-B3/kyushu.clmb",
+            "C-4378__s-B3/kyushu-X0.clmb": "C-4378__s-B3/kyushu.clmb",
+            "C-4378__s-B3/kyushu-X2.clmb": "C-4378__s-B3/kyushu.clmb",
+            "C-4378__s-B3/kyushu-X3.clmb": "C-4378__s-B3/kyushu.clmb"
+          }
+        }
+      ],
+      "directory": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware",
+      "kyushu_cross_stepping": {
+        "dataset_bytes_different": 3,
+        "dataset_common_prefix_bytes": 36603,
+        "dataset_header_equal": true,
+        "first_record_crc_bytes_different": 4,
+        "header_crc_bytes_different": 4,
+        "metadata_equal": true,
+        "names": [
+          "C-4378__s-B1/kyushu.clmb",
+          "C-4378__s-B3/kyushu.clmb"
+        ],
+        "same_offset_differences": 11,
+        "sha256": [
+          "f0957a5bf040bfb7ae06242886335860b5b0509ddc5a6a07da21b0ed8a543a85",
+          "a4188793ab990c77d665be4633b58d83dc6af606dff3754fc1d01a0aaea247a9"
+        ],
+        "trailing_record_equal": true,
+        "whole_file_changes_accounted_for_by_dataset_and_its_crcs": true
+      },
+      "steppings": {
+        "B1": {
+          "distinct_payloads": 6,
+          "names": 30,
+          "status": "available"
+        },
+        "B3": {
+          "distinct_payloads": 1,
+          "names": 5,
+          "status": "available"
+        }
+      }
+    }
+  ]
+}

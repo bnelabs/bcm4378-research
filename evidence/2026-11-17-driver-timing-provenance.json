@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-17",
+  "scope": "Static format and reference checks on the installed AppleBCMWLAN DriverKit bundle.",
+  "artifact": {
+    "bundle_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext",
+    "executable_relative_path": "com.apple.DriverKit-AppleBCMWLAN",
+    "executable_sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "macos_build": "26B131",
+    "macos_version": "27.2.1",
+    "strict_codesign_verification_exit_status": 0,
+    "previous_driver_evidence": "2026-11-17-driverkit.json",
+    "previous_timing_evidence": "2026-11-17-wifi-timing-capabilities.json"
+  },
+  "signpost_argument_labels": {
+    "relative_path": "AppleBCMWLANV3Signposts.plist",
+    "sha256": "34b6a8ba206b35ccc18085ffbfaaafceea2595c3c3af060ed47d48c3ffd08a6a",
+    "matching_argument_tables": 1,
+    "table_field": "Arg1",
+    "decimal_keyed_entries_with_distinct_string_values": 189,
+    "selected_label_counts": {"TWT": 2, "PROXD": 1},
+    "method": "Parse the plist and identify argument tables with the selected case-insensitive boundary-delimited markers. Compare the labeled values byte for byte with complete NUL-terminated C strings. Use Apple dyld_info to check constant-data rebase targets in each slice.",
+    "interpretation": "The selected TWT and PROXD labels occur in the same diagnostic argument map and are referenced by compiled constant data."
+  },
+  "driver_slices": [
+    {
+      "architecture": "arm64e",
+      "c_string_marker_counts": {"TWT": 2, "PROXD": 26, "FTM": 8, "ToF": 7, "RTT": 16},
+      "symbol_table_marker_counts": {"TWT": 0, "PROXD": 1, "FTM": 0, "ToF": 0, "RTT": 0},
+      "rtt_marker_runs_in_text_instructions": 0,
+      "exact_signpost_label_matches_in_c_strings": 3,
+      "constant_data_references_to_signpost_labels": {"TWT": 2, "PROXD": 1},
+      "decoded_function_starts_in_text": 14194,
+      "proxd_format_templates_with_status_and_supported": 2,
+      "validated_direct_references_to_these_proxd_templates": 2,
+      "distinct_containing_routines": 1,
+      "containing_routine_extent_in_instructions": 2472,
+      "references_to_ftm_ranging_status_templates_in_same_routine": 2,
+      "references_to_selected_board_strings_in_same_routine": 0,
+      "selected_model_immediate_matches_in_same_routine": 0
+    },
+    {
+      "architecture": "arm64e.x1",
+      "c_string_marker_counts": {"TWT": 2, "PROXD": 26, "FTM": 8, "ToF": 7, "RTT": 16},
+      "symbol_table_marker_counts": {"TWT": 0, "PROXD": 1, "FTM": 0, "ToF": 0, "RTT": 0},
+      "rtt_marker_runs_in_text_instructions": 4,
+      "exact_signpost_label_matches_in_c_strings": 3,
+      "constant_data_references_to_signpost_labels": {"TWT": 2, "PROXD": 1},
+      "decoded_function_starts_in_text": 14194,
+      "proxd_format_templates_with_status_and_supported": 2,
+      "validated_direct_references_to_these_proxd_templates": 2,
+      "distinct_containing_routines": 1,
+      "containing_routine_extent_in_instructions": 2441,
+      "references_to_ftm_ranging_status_templates_in_same_routine": 2,
+      "references_to_selected_board_strings_in_same_routine": 0,
+      "selected_model_immediate_matches_in_same_routine": 0
+    }
+  ],
+  "section_and_reference_method": {
+    "artifact_sections": ["__TEXT,__cstring", "__TEXT,__text", "LC_SYMTAB string table", "LC_FUNCTION_STARTS"],
+    "marker_scope": "Use the printable ASCII run and case-insensitive alphanumeric-boundary rule from the previous timing evidence. For reference matching, use complete NUL-terminated strings in the declared C string section. The four extra RTT matches in arm64e.x1 instruction bytes are printable runs outside the C string section.",
+    "integer_format_fields": ["status", "supported"],
+    "reference_scope": "Check direct ADR string references and ADRP plus ADD string address formation within each function. Stop the paired search before a direct branch or call and within eight following instructions. Confirm the two PROXD references in each slice with LLVM objdump and its literal annotations. Group the references using the Mach-O function start deltas.",
+    "ftm_status_template_selection": "Select C strings with a boundary-delimited FTM marker and at least one of the separate words status, ranging, peer or RTT.",
+    "local_model_scope": "Within the single containing routine per slice, check direct references to C strings containing case-insensitive boundary-delimited 4378, cfg4378, shikoku, honshu, capri or kyushu. Check single low-halfword move-wide forms for chip number 4378 in decimal or hexadecimal and the documented PCI device number 4425 in hexadecimal.",
+    "interpretation": "The PROXD templates have separate integer fields labeled status and supported. Their direct references place them alongside FTM ranging-status diagnostics. The argument producers, other eligibility paths and actual runtime values remain unresolved."
+  },
+  "macos_platform_profile_structure": {
+    "relative_directory": "PlatformConfig/macOS",
+    "profiles": [
+      {"name": "shikoku-PlatformConfig.plist", "integers": 4, "booleans": 2, "data_fields": 25, "data_fields_matching_markers": 0},
+      {"name": "honshu-PlatformConfig.plist", "integers": 4, "booleans": 2, "data_fields": 25, "data_fields_matching_markers": 0},
+      {"name": "capri-PlatformConfig.plist", "integers": 4, "booleans": 2, "data_fields": 25, "data_fields_matching_markers": 0},
+      {"name": "kyushu-PlatformConfig.plist", "integers": 4, "booleans": 2, "data_fields": 26, "data_fields_matching_markers": 0}
+    ],
+    "case_insensitive_key_substrings": ["feature", "capabil", "support", "tsf", "timing", "clock", "rtt", "ftm", "tof", "proxd", "proxim", "rang", "twt", "wake", "sleep", "schedul"],
+    "keys_matching_substrings": 0,
+    "case_insensitive_boundary_delimited_data_markers": ["twt", "proxd", "ftm", "rtt", "tof", "11mc", "11az"],
+    "data_fields_beginning_with_binary_plist_magic": 0,
+    "interpretation": "The parsed keys and the selected ASCII search provide no named feature setting in these profiles. The binary Data layout and any encoded feature bits remain unknown."
+  },
+  "public_source": "https://developer.apple.com/library/archive/documentation/Performance/Conceptual/CodeFootprint/Articles/MachOOverview.html",
+  "runtime_observations": [],
+  "conclusion": "The stock driver includes TWT diagnostic labels and PROXD support-reporting formats associated with ranging code in both architecture slices. BCM4378 eligibility for FTM or TWT remains unverified."
+}
