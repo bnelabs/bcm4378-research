@@ -1,0 +1,255 @@
+{
+  "apple_host_driver": {
+    "binary_sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "codesign_strict_validation": true,
+    "selected_driver_slices": [
+      {
+        "arch": "arm64e",
+        "awdl_cached_result_payload_bytes_copied": 8,
+        "capability_token_word_match": true,
+        "firmware_rsdb_read_count": 4,
+        "read_kinds_in_order": [
+          "version",
+          "capabilities",
+          "bands",
+          "configuration"
+        ],
+        "scoped_platform_tx_modes": {
+          "1": "static",
+          "2": "dynamic",
+          "default_both_clear": true
+        },
+        "separate_chip_check_reads_cached_slice_count_and_fields": true
+      },
+      {
+        "arch": "arm64e.x1",
+        "awdl_cached_result_payload_bytes_copied": 8,
+        "capability_token_word_match": true,
+        "firmware_rsdb_read_count": 4,
+        "read_kinds_in_order": [
+          "version",
+          "capabilities",
+          "bands",
+          "configuration"
+        ],
+        "scoped_platform_tx_modes": {
+          "1": "static",
+          "2": "dynamic",
+          "default_both_clear": true
+        },
+        "separate_chip_check_reads_cached_slice_count_and_fields": true
+      }
+    ],
+    "tools": [
+      "REA",
+      "nm",
+      "Xcode llvm-objdump"
+    ]
+  },
+  "default_route_after": "en0",
+  "default_route_before": "en0",
+  "installed_firmware": {
+    "distinct_nvram_payloads": 10,
+    "images": [
+      {
+        "literals": {
+          "rsdb": {
+            "aligned_pointer_matches": 1,
+            "nul_delimited_matches": 1,
+            "thumb_load_verified_with_rizin": true
+          },
+          "rsdb_mode": {
+            "aligned_pointer_matches": 1,
+            "nul_delimited_matches": 1,
+            "thumb_load_verified_with_rizin": true
+          }
+        },
+        "name": "shikoku.trx",
+        "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06",
+        "stepping": "B1"
+      },
+      {
+        "literals": {
+          "rsdb": {
+            "aligned_pointer_matches": 1,
+            "nul_delimited_matches": 1,
+            "thumb_load_verified_with_rizin": true
+          },
+          "rsdb_mode": {
+            "aligned_pointer_matches": 1,
+            "nul_delimited_matches": 1,
+            "thumb_load_verified_with_rizin": true
+          }
+        },
+        "name": "capri.trx",
+        "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6",
+        "stepping": "B1"
+      },
+      {
+        "literals": {
+          "rsdb": {
+            "aligned_pointer_matches": 1,
+            "nul_delimited_matches": 1,
+            "thumb_load_verified_with_rizin": true
+          },
+          "rsdb_mode": {
+            "aligned_pointer_matches": 1,
+            "nul_delimited_matches": 1,
+            "thumb_load_verified_with_rizin": true
+          }
+        },
+        "name": "kyushu.trx",
+        "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a",
+        "stepping": "B3"
+      }
+    ],
+    "matching_sdb_dbdc_and_mchan_nvram_keys": [],
+    "nvram_names": 250,
+    "ram_base_for_thumb_reference_model": "0x352000"
+  },
+  "linux_policy": {
+    "main_interface_combination_cases": [
+      {
+        "advertised_different_channels": 1,
+        "advertised_station_subtype_limit": 1,
+        "mchan": false,
+        "p2p": false,
+        "rsdb": false
+      },
+      {
+        "advertised_different_channels": 1,
+        "advertised_station_subtype_limit": 1,
+        "mchan": true,
+        "p2p": false,
+        "rsdb": false
+      },
+      {
+        "advertised_different_channels": 1,
+        "advertised_station_subtype_limit": 1,
+        "mchan": false,
+        "p2p": true,
+        "rsdb": false
+      },
+      {
+        "advertised_different_channels": 2,
+        "advertised_station_subtype_limit": 2,
+        "mchan": true,
+        "p2p": true,
+        "rsdb": false
+      },
+      {
+        "advertised_different_channels": 2,
+        "advertised_station_subtype_limit": 1,
+        "mchan": false,
+        "p2p": false,
+        "rsdb": true
+      },
+      {
+        "advertised_different_channels": 2,
+        "advertised_station_subtype_limit": 1,
+        "mchan": true,
+        "p2p": false,
+        "rsdb": true
+      },
+      {
+        "advertised_different_channels": 2,
+        "advertised_station_subtype_limit": 1,
+        "mchan": false,
+        "p2p": true,
+        "rsdb": true
+      },
+      {
+        "advertised_different_channels": 2,
+        "advertised_station_subtype_limit": 2,
+        "mchan": true,
+        "p2p": true,
+        "rsdb": true
+      }
+    ],
+    "mode_value_used_to_detect_feature": false,
+    "pinned_trees": [
+      {
+        "commit": "7595a62d45ee1a2297eafa5f2ef5d0a45142d84d",
+        "matched_probe_and_formulas": true,
+        "name": "upstream",
+        "tag": "v7.3.4"
+      },
+      {
+        "commit": "201be96df5654336bdcbe1da2103f193d7a0b940",
+        "matched_probe_and_formulas": true,
+        "name": "asahi",
+        "tag": "asahi-7.3.4-2"
+      }
+    ],
+    "rsdb_probe_condition": "enable the feature when the integer query return differs from the designated firmware UNSUPPORTED error"
+  },
+  "macos_stock_platform_configs": {
+    "bcm4378_boards": [
+      {
+        "board": "atlantisb",
+        "sdb_profile_bytes": 0,
+        "sha256": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547",
+        "tx_sdb_mode_property_present": false
+      },
+      {
+        "board": "capri",
+        "sdb_profile_bytes": 0,
+        "sha256": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547",
+        "tx_sdb_mode_property_present": false
+      },
+      {
+        "board": "honshu",
+        "sdb_profile_bytes": 0,
+        "sha256": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547",
+        "tx_sdb_mode_property_present": false
+      },
+      {
+        "board": "kyushu",
+        "sdb_profile_bytes": 0,
+        "sha256": "8bfa5070d6c495c32f8574b3315258509dd9569439b8a79387d14f81103288a8",
+        "tx_sdb_mode_property_present": false
+      },
+      {
+        "board": "santorini",
+        "sdb_profile_bytes": 0,
+        "sha256": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547",
+        "tx_sdb_mode_property_present": false
+      },
+      {
+        "board": "shikoku",
+        "sdb_profile_bytes": 0,
+        "sha256": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547",
+        "tx_sdb_mode_property_present": false
+      }
+    ],
+    "empty_sdb_profile_count": 56,
+    "profiles": 56,
+    "tx_mode_count": {
+      "absent": 44,
+      "dynamic_2": 0,
+      "static_1": 12
+    }
+  },
+  "native_observation": {
+    "bounded_boot_log_query": {
+      "exit_status": 0,
+      "matching_events": 0,
+      "queried_seconds_from_boot": [
+        0,
+        240
+      ],
+      "scope": "Retained unified-log events whose sender and message match the compiled SDB capabilities summary"
+    },
+    "full_boot_log_query": "timed out",
+    "published_sdb_profile": {
+      "bytes": 0,
+      "service": "AppleBCMWLANBusInterfacePCIe"
+    },
+    "requested_image_name": "C-4378__s-B1/shikoku.trx",
+    "scoped_wlan_registry_entries": 98,
+    "tx_mode_property_count": 0
+  },
+  "remaining_measurement": "Record the device reply, active interface modes and RF airtime on a separately managed A2337.",
+  "scope": "Shipped artifacts, read-only registry and retained unified-log evidence, and pinned driver sources.",
+  "system_build": "26B131"
+}
