@@ -1,0 +1,279 @@
+{
+  "host": {
+    "default_ipv4_interface": "en0",
+    "macos_build": "26B131",
+    "macos_version": "27.2.1",
+    "model": "MacBookAir10,1"
+  },
+  "installed_firmware_markers": {
+    "capri.trx": {
+      "ascii_literal_counts": {
+        "rte_timesync": 1,
+        "time_sync_opt": 1
+      },
+      "file": {
+        "bytes": 1496769,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6"
+      }
+    },
+    "honshu.trx": {
+      "ascii_literal_counts": {
+        "rte_timesync": 1,
+        "time_sync_opt": 1
+      },
+      "file": {
+        "bytes": 1497470,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+      }
+    },
+    "kyushu.trx": {
+      "ascii_literal_counts": {
+        "rte_timesync": 1,
+        "time_sync_opt": 1
+      },
+      "file": {
+        "bytes": 1226142,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a"
+      }
+    }
+  },
+  "linux_sources": {
+    "asahi_ethtool_ops": "https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.c#L586-L588",
+    "asahi_hardware_header_exceptions": "https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/feature.c#L116-L122",
+    "asahi_monitor_receive": "https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.c#L434-L471",
+    "ethtool_fallback": "https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/net/ethtool/common.c#L1067-L1100",
+    "stable_ethtool_ops": "https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.c#L586-L588",
+    "stable_hardware_header_exceptions": "https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/drivers/net/wireless/broadcom/brcm80211/brcmfmac/feature.c#L100-L106",
+    "stable_monitor_receive": "https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.c#L434-L471"
+  },
+  "public_he80_capture": {
+    "difference_order": "Radiotap TSFT minus Radiotap timestamp, modulo 2^32 with signed interpretation",
+    "radiotap_timestamp_profile": {
+      "accuracy_flag": true,
+      "low_32_bits": true,
+      "reported_accuracy_values_us": {
+        "22": 272634
+      },
+      "sampling_position_code": 1,
+      "unit_code": 1
+    },
+    "records": {
+      "beacon_records": 651,
+      "beacons_with_both_radiotap_timestamps_and_transmitter_timestamp": 546,
+      "beacons_with_transmitter_timestamp": 585,
+      "records": 272634,
+      "with_capture_timestamp": 272634,
+      "with_radiotap_timestamp": 272634,
+      "with_receiver_tsft": 263926
+    },
+    "same_record_signed_low32_receive_field_differences_us": {
+      "-72993": 132,
+      "-72994": 5044,
+      "-72995": 6039,
+      "-72996": 252711
+    },
+    "sha256": "35e78b10524333fad8e22871b35a529868dd0511dcfb5128614f544f3a44aac4",
+    "source": "https://github.com/kfoysalhaque/Wi-BFI/blob/47ca7f842d6efdff2f83b981a7c119327e8dc2d6/traces/11ax_SU_4x2_80.pcapng",
+    "tshark_version": "4.6.9"
+  },
+  "published_metadata": {
+    "AppleBCMWLANCore.PTM_Mode": 1,
+    "en0_and_ipv4_probe": {
+      "interface_enabled_mask": "0x6460",
+      "interface_hardware_timestamp_enabled": false,
+      "interface_hardware_timestamp_supported": false,
+      "interface_software_timestamp_enabled": false,
+      "interface_software_timestamp_supported": false,
+      "interface_supported_mask": "0x6460",
+      "ipv4_loopback_monotonic_timestamp_received": true,
+      "ipv4_loopback_wall_timestamp_received": true
+    },
+    "legacy_FWCap": {
+      "monitor": true,
+      "ptm": false,
+      "rtap": false,
+      "tsync": false
+    }
+  },
+  "running_firmware": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a",
+  "signed_driver": {
+    "core_mode_condition_passed_to_pcie": "Core mode differs from 1",
+    "core_ptm_fallback_value": 1,
+    "legacy_flag_indices": {
+      "ptm": 91,
+      "tsync": 52
+    },
+    "private_infrastructure_stubs_ioreturn": "0xe00002c7",
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "slices": {
+      "arm64e": {
+        "bus_mode_labels": {
+          "1": "PTM Timestamping",
+          "2": "Legacy HW Timestamping",
+          "3": "SW Timestamping"
+        },
+        "pcie_dispatch": {
+          "configureTimeSyncCapability": {
+            "target": "0x1001abbb4",
+            "virtual_offset": "0x210"
+          },
+          "getTimeSyncInfo": {
+            "target": "0x1001ac028",
+            "virtual_offset": "0x208"
+          }
+        },
+        "routines": {
+          "BusInterfacePCIe.configureTimeSyncCapability": {
+            "entry_address": "1001abbb4",
+            "symbol": "__ZN28AppleBCMWLANBusInterfacePCIe27configureTimeSyncCapabilityEbj"
+          },
+          "BusInterfacePCIe.convertPTMToAbsolute": {
+            "entry_address": "1001af568",
+            "symbol": "__ZN28AppleBCMWLANBusInterfacePCIe20convertPTMToAbsoluteEy"
+          },
+          "BusInterfacePCIe.getTimeSyncInfo": {
+            "entry_address": "1001ac028",
+            "symbol": "__ZN28AppleBCMWLANBusInterfacePCIe15getTimeSyncInfoEP24apple80211_timesync_info"
+          },
+          "Core.getTIMESYNC_INFO": {
+            "entry_address": "100171260",
+            "symbol": "__ZN16AppleBCMWLANCore16getTIMESYNC_INFOEP24apple80211_timesync_info"
+          },
+          "Core.isFWTimeSyncCapable": {
+            "entry_address": "1001657b4",
+            "symbol": "__ZN16AppleBCMWLANCore19isFWTimeSyncCapableEv"
+          },
+          "Core.processFwFeatures": {
+            "entry_address": "1000f0144",
+            "symbol": "__ZN16AppleBCMWLANCore17processFwFeaturesER19IO80211BufferCursormm"
+          },
+          "Core.setPTMMode": {
+            "entry_address": "1000ed678",
+            "symbol": "__ZN16AppleBCMWLANCore10setPTMModeEv"
+          },
+          "Core.setupFirmware": {
+            "entry_address": "1000e8e24",
+            "symbol": "__ZN16AppleBCMWLANCore13setupFirmwareEPK21AppleBCMWLANChipImage"
+          },
+          "InfraProtocol.getFW_CLOCK_INFO": {
+            "entry_address": "100019bd0",
+            "symbol": "__ZN25AppleBCMWLANInfraProtocol16getFW_CLOCK_INFOEP24apple80211_fw_clock_info"
+          },
+          "InfraProtocol.getTIMESYNC_INFO": {
+            "entry_address": "10001954c",
+            "symbol": "__ZN25AppleBCMWLANInfraProtocol16getTIMESYNC_INFOEP24apple80211_timesync_info"
+          },
+          "InfraProtocol.getTIMESYNC_STATS": {
+            "entry_address": "100019bf4",
+            "symbol": "__ZN25AppleBCMWLANInfraProtocol17getTIMESYNC_STATSEP25apple80211_timesync_stats"
+          },
+          "InfraProtocol.setTIMESTAMPING_EN": {
+            "entry_address": "10001bf78",
+            "symbol": "__ZN25AppleBCMWLANInfraProtocol18setTIMESTAMPING_ENEP26apple80211_timestamping_en"
+          },
+          "PCIeSkywalk.setRXTimestamp": {
+            "entry_address": "10008eab8",
+            "symbol": "__ZN23AppleBCMWLANPCIeSkywalk14setRXTimestampEPvP29AppleBCMWLANPCIeSkywalkPacketP23IO80211SkywalkInterfaceb"
+          },
+          "PCIeSkywalk.setTXTimestamp": {
+            "entry_address": "10008fb90",
+            "symbol": "__ZN23AppleBCMWLANPCIeSkywalk14setTXTimestampEPviP29AppleBCMWLANPCIeSkywalkPacketP23IO80211SkywalkInterfaceb"
+          },
+          "TimeKeeper.synchronizeTime": {
+            "entry_address": "1001b1c9c",
+            "symbol": "__ZN22AppleBCMWLANTimeKeeper15synchronizeTimeEv"
+          }
+        }
+      },
+      "arm64e.x1": {
+        "bus_mode_labels": {
+          "1": "PTM Timestamping",
+          "2": "Legacy HW Timestamping",
+          "3": "SW Timestamping"
+        },
+        "pcie_dispatch": {
+          "configureTimeSyncCapability": {
+            "target": "0x1001a67b0",
+            "virtual_offset": "0x210"
+          },
+          "getTimeSyncInfo": {
+            "target": "0x1001a6c04",
+            "virtual_offset": "0x208"
+          }
+        },
+        "routines": {
+          "BusInterfacePCIe.configureTimeSyncCapability": {
+            "entry_address": "1001a67b0",
+            "symbol": "__ZN28AppleBCMWLANBusInterfacePCIe27configureTimeSyncCapabilityEbj"
+          },
+          "BusInterfacePCIe.convertPTMToAbsolute": {
+            "entry_address": "1001aa104",
+            "symbol": "__ZN28AppleBCMWLANBusInterfacePCIe20convertPTMToAbsoluteEy"
+          },
+          "BusInterfacePCIe.getTimeSyncInfo": {
+            "entry_address": "1001a6c04",
+            "symbol": "__ZN28AppleBCMWLANBusInterfacePCIe15getTimeSyncInfoEP24apple80211_timesync_info"
+          },
+          "Core.getTIMESYNC_INFO": {
+            "entry_address": "10016d040",
+            "symbol": "__ZN16AppleBCMWLANCore16getTIMESYNC_INFOEP24apple80211_timesync_info"
+          },
+          "Core.isFWTimeSyncCapable": {
+            "entry_address": "1001616d0",
+            "symbol": "__ZN16AppleBCMWLANCore19isFWTimeSyncCapableEv"
+          },
+          "Core.processFwFeatures": {
+            "entry_address": "1000ed2a4",
+            "symbol": "__ZN16AppleBCMWLANCore17processFwFeaturesER19IO80211BufferCursormm"
+          },
+          "Core.setPTMMode": {
+            "entry_address": "1000ea86c",
+            "symbol": "__ZN16AppleBCMWLANCore10setPTMModeEv"
+          },
+          "Core.setupFirmware": {
+            "entry_address": "1000e6108",
+            "symbol": "__ZN16AppleBCMWLANCore13setupFirmwareEPK21AppleBCMWLANChipImage"
+          },
+          "InfraProtocol.getFW_CLOCK_INFO": {
+            "entry_address": "10001997c",
+            "symbol": "__ZN25AppleBCMWLANInfraProtocol16getFW_CLOCK_INFOEP24apple80211_fw_clock_info"
+          },
+          "InfraProtocol.getTIMESYNC_INFO": {
+            "entry_address": "1000192f8",
+            "symbol": "__ZN25AppleBCMWLANInfraProtocol16getTIMESYNC_INFOEP24apple80211_timesync_info"
+          },
+          "InfraProtocol.getTIMESYNC_STATS": {
+            "entry_address": "1000199a0",
+            "symbol": "__ZN25AppleBCMWLANInfraProtocol17getTIMESYNC_STATSEP25apple80211_timesync_stats"
+          },
+          "InfraProtocol.setTIMESTAMPING_EN": {
+            "entry_address": "10001bd0c",
+            "symbol": "__ZN25AppleBCMWLANInfraProtocol18setTIMESTAMPING_ENEP26apple80211_timestamping_en"
+          },
+          "PCIeSkywalk.setRXTimestamp": {
+            "entry_address": "10008d294",
+            "symbol": "__ZN23AppleBCMWLANPCIeSkywalk14setRXTimestampEPvP29AppleBCMWLANPCIeSkywalkPacketP23IO80211SkywalkInterfaceb"
+          },
+          "PCIeSkywalk.setTXTimestamp": {
+            "entry_address": "10008e2e8",
+            "symbol": "__ZN23AppleBCMWLANPCIeSkywalk14setTXTimestampEPviP29AppleBCMWLANPCIeSkywalkPacketP23IO80211SkywalkInterfaceb"
+          },
+          "TimeKeeper.synchronizeTime": {
+            "entry_address": "1001ac770",
+            "symbol": "__ZN22AppleBCMWLANTimeKeeper15synchronizeTimeEv"
+          }
+        }
+      }
+    }
+  },
+  "stock_xnu_sources": {
+    "interface_mask_getter": "https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/bsd/net/if.c#L3907-L3912",
+    "loopback_ipv4_receive_timestamp_creation": "https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/bsd/netinet/ip_input.c#L3387-L3411"
+  }
+}
