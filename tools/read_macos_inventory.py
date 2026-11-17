@@ -15,6 +15,7 @@ DRIVER_BUNDLE = Path("/System/Library/DriverExtensions/com.apple.DriverKit-Apple
 SHARED_FIRMWARE = Path("/usr/share/firmware/wifi")
 FILE_ROLES = ("Firmware", "NVRAM", "Regulatory", "TxCap")
 FIRMWARE_PATH = re.compile(r"C-4378__s-[A-Z0-9]+/[A-Za-z0-9._+-]+\.(trx|txt|clmb|txcb)")
+CAPABILITY_WORD = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}")
 LINK_RATES = {1: 2.5, 2: 5, 3: 8, 4: 16, 5: 32, 6: 64}
 BLUETOOTH_FIELDS = {
     "controller_chipset": "chipset",
@@ -136,6 +137,24 @@ def requested_firmware(core):
     return requests
 
 
+def wifi_capability_inputs(core, bus):
+    pcie = bus.get("WiFiCapability")
+    if not isinstance(pcie, dict):
+        pcie = {}
+    flags = core.get("wlan.hw.feature-flags")
+    raw_capabilities = core.get("FWCap")
+    words = None
+    if isinstance(raw_capabilities, str) and len(raw_capabilities) <= 1024:
+        candidates = raw_capabilities.split()
+        if all(CAPABILITY_WORD.fullmatch(word) for word in candidates):
+            words = candidates
+    return {
+        "pcie": {key: pcie[key] for key in ("awdl", "ranging") if type(pcie.get(key)) is bool},
+        "hardware_feature_flags": flags if type(flags) is int and 0 <= flags <= 0xffffffff else None,
+        "firmware_capability_words": words,
+    }
+
+
 def bluetooth_snapshot():
     report = json.loads(run("/usr/sbin/system_profiler", "SPBluetoothDataType", "-detailLevel", "basic", "-json"))
     snapshot = {}
@@ -185,6 +204,7 @@ def collect():
             "requested_files": requested_firmware(core),
             "running_firmware": core.get("FirmwareVersion"),
             "interface_roles": interface_roles(entries),
+            "capability_inputs": wifi_capability_inputs(core, bus),
             "transport_config_properties": {
                 key: bus[key] for key in TRANSPORT_CONFIG_KEYS if type(bus.get(key)) is int
             },
