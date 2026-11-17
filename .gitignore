@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.trx
+*.clmb
+*.txcb
+*.bin
+*.dump
+*.pcap
+*.pcapng

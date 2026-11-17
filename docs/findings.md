@@ -1,0 +1,37 @@
+# Hardware and capability findings
+
+## Device and driver
+
+The first pass was recorded on an M1 MacBook Air (`MacBookAir10,1`) running macOS 27.2.1 (build `26B131`). I/O Registry identifies `wlan@0` as Broadcom PCIe endpoint `14e4:4425`, compatible with `wlan-pcie,bcm4378`. The device tree publishes module instance `shikoku`. The Linux device tree corroborates the board name and identifies the separate Bluetooth endpoint as `14e4:5f69`. [M1 Air device tree](https://github.com/torvalds/linux/blob/v6.12/arch/arm64/boot/dts/apple/t8103-j313.dts#L14-L36), [Shared device tree](https://github.com/torvalds/linux/blob/v6.12/arch/arm64/boot/dts/apple/t8103-jxxx.dtsi), [Broadcom PCIe IDs](https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/include/brcm_hw_ids.h)
+
+The matching DriverKit personality is `com.apple.DriverKit-AppleBCMWLAN`, with user server `com.apple.bcmwlan`. The running I/O Registry chain is `wlan@0` → `AppleBCMWLANBusInterfacePCIe` → `AppleBCMWLANCore`. The kernel also reports loaded `IO80211Family`, `AppleBCMWLANCore` and `AppleBCMWLANBusInterfacePCIe` components.
+
+| Driver observation | What it establishes |
+| --- | --- |
+| `AppleBCMWLANSkywalkInterface` | The infrastructure network interface is present in the service tree. |
+| `AppleBCMWLANProximityInterface` | The driver publishes an AirLink role under its AWDL configuration. |
+| `AppleBCMWLANIO80211APSTAInterface` | The driver registers a service with a SoftAP role. Concurrent infrastructure and SoftAP operation remains unverified. |
+| `AppleBCMWLANNANInterface` | The driver registers a Wi-Fi Aware Discovery service. It also publishes a Wi-Fi Aware Data personality. The native SDK marks `WACapabilities` unavailable on macOS and the local Swift type checker confirmed it. [Apple Wi-Fi Aware documentation](https://developer.apple.com/documentation/WiFiAware), [Apple Developer Technical Support](https://developer.apple.com/forums/thread/827887) |
+| `AppleBCMWLANLowLatencyInterface` | The driver has separate low-latency personalities associated with AWDL and NAN. Their scheduling and active traffic remain unmeasured. |
+
+The OS-published PCIe Link Status was `0x1012`, which decodes to 5.0 GT/s over one lane. CoreWLAN reported `en0` using 802.11ax with an 80 MHz channel and a transmit PHY rate of 720 Mb/s at the time of the sample. [Apple IOPCIFamily Link Status handling](https://github.com/apple-oss-distributions/IOPCIFamily/blob/main/IOPCIDevice.cpp), [PCIe Link Status field definitions](https://github.com/torvalds/linux/blob/v6.12/include/uapi/linux/pci_regs.h), [CoreWLAN getters](https://developer.apple.com/documentation/corewlan/cwinterface)
+
+## Firmware on disk
+
+- `/usr/share/firmware/wifi/C-4378__s-B1/shikoku.trx` resolves to `honshu.trx`. The file is 1,497,470 bytes, with tag `4378b1-roml/config_pcie_perf_udm`. Its version `18.20.511.0.7.8.207` and firmware ID `01-2606388a` match the running driver's `FirmwareVersion` property. [Reproducible file evidence](../evidence/2026-11-17-firmware.json), [Board firmware selection patch](https://lists.openwall.net/netdev/2022/01/04/80)
+- REA hashed the full image and measured 6.8652 bits per byte of Shannon entropy across it. The first 56 KiB scored at or below 1 bit per byte in 4 KiB blocks. The retained REA evidence is `ev_186a126d3c11596de007eda0924b9618b278e7b5963f1e1c2a5a1f64a7b6062e`.
+- The file starts with two copies of an eight-instruction block that Rizin 0.9.1 decodes as Thumb-2 wide branches. This is a candidate vector block. Its runtime address and the meanings of the entries remain open. The image begins with branch-like bytes and has no `HDR0` header at file offset zero. [Linux router TRX parser](https://github.com/torvalds/linux/blob/v6.12/drivers/mtd/parsers/parser_trx.c)
+- The installed `shikoku` directory entries also include `shikoku.clmb`, `shikoku.txcb` and board-specific NVRAM profiles. The platform plist contains policy parameters for roaming, AWDL, coexistence and wake, along with RX and TX queue-size values. The `wlan.sdb.profile` value is zero-length data in this build. [On-disk plist evidence](../evidence/2026-11-17-firmware.json), [Asahi firmware selection](https://lists.openwall.net/netdev/2022/01/04/80)
+- The installed BCM4378 B1 `capri.trx` and BCM4378 B3 `kyushu.trx` images share the version string but have distinct build tags and firmware IDs. All three have the same positive matches for the initial ten selected capability literals. Those matches are common across the sampled images. [Offline inspection tool](../tools/inspect_firmware.py)
+
+## Capability evidence
+
+| Capability | Evidence and scope |
+| --- | --- |
+| Wi-Fi 6 and Bluetooth | Apple specifies Wi-Fi 6 and Bluetooth 5.0 for the M1 Air. Its deployment table lists 2×2 spatial streams and a maximum 1,200 Mb/s PHY rate at 5 GHz with 80 MHz channels. [Apple technical specifications](https://support.apple.com/en-us/111883), [Apple Wi-Fi specifications](https://support.apple.com/en-au/guide/deployment/-dep268652e6c/web) |
+| Simultaneous dual-band transmission | TÜV SÜD recorded simultaneous 2.4 GHz and 5 GHz WLAN transmission on one A2337 in lab test modes. The same filing includes separate Wi-Fi and Bluetooth combinations. Dual association under the installed macOS build remains unverified. [FCC exhibit 4983630, tables 5–10](https://fccid.io/BCGA2337/Test-Report/Simultaneous-transmission-report-4983630.pdf#page=7) |
+| Beamforming and multi-user radio modes | The A2337 test report describes 802.11n/ac transmit beamforming and space-time block coding, plus 802.11ax 5 GHz HE20/40/80 single-user and multi-user test modes. These are model-level lab observations. [FCC 5 GHz report §1.4.2](https://device.report/m/9dbefd8fa57734334f25d9b4c27352a2b1333e4a7384c14f77fb813ec85822d7.pdf#page=5) |
+| AirDrop and AWDL | Apple describes AirDrop using BLE and peer-to-peer Wi-Fi. This driver publishes an AWDL personality and the local firmware contains `awdl` and related literals. [Apple AirDrop security](https://support.apple.com/en-ie/guide/security/sec2261183f4/web), [Firmware evidence](../evidence/2026-11-17-firmware.json) |
+| Roaming and Bluetooth coexistence | The firmware contains roaming, WNM transition and coexistence literals. Apple documents assisted roaming support for Apple silicon Macs as a product class. Exact policy decisions on this build remain open. [Apple roaming specifications](https://support.apple.com/en-euro/guide/deployment/dep98f116c0f/web), [Firmware evidence](../evidence/2026-11-17-firmware.json) |
+| Low-power filtering and offloads | The image contains `pkt_filter`, `ndoe` and `wowl_gpio`. These are leads for packet filtering, neighbor discovery and wake handling. The Linux driver family queries firmware wake capabilities dynamically. The features enabled on the running Mac remain open. [Linux feature discovery](https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/feature.c), [Firmware evidence](../evidence/2026-11-17-firmware.json) |
+| Target Wake Time | IEEE describes TWT as an 802.11ax power-save scheduling mechanism. This limited literal search found zero exact `twt` or `he_twt` hits. Support on the installed build remains unverified. [IEEE 802.11 working group](https://www.ieee802.org/11/Liaisons/2022-12-20-802-11%20liaison%20to%20802-1%20re%20TSN%20support.pdf), [Firmware evidence](../evidence/2026-11-17-firmware.json) |

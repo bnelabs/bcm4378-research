@@ -1,0 +1,93 @@
+{
+  "firmware": {
+    "build_tags": [
+      {
+        "build": "4378b1-roml/config_pcie_perf_udm",
+        "build_date": "2026-08-11T16:28:45Z",
+        "firmware_id": "01-2606388a",
+        "version": "18.20.511.0.7.8.207"
+      }
+    ],
+    "file": {
+      "bytes": 1497470,
+      "path": "/usr/share/firmware/wifi/C-4378__s-B1/shikoku.trx",
+      "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+      "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+    },
+    "selected_literal_counts": {
+      "arp_ol": 0,
+      "awdl": 1,
+      "awdl_doiovar_patch": 1,
+      "awdl_psf_dwell": 1,
+      "btc_esco_awdl": 1,
+      "btc_wifi_prot": 1,
+      "he_twt": 0,
+      "ndoe": 1,
+      "pkt_filter": 1,
+      "roam_5g_bandboost": 1,
+      "sdb": 0,
+      "twt": 0,
+      "wnm_btm_rssi_thresh": 1,
+      "wowl_gpio": 1
+    },
+    "starts_with_hdr0": false
+  },
+  "platform_config": {
+    "file": {
+      "bytes": 2647,
+      "path": "/usr/share/firmware/wifi/shikoku-PlatformConfig.plist",
+      "resolved_path": "/usr/share/firmware/wifi/shikoku-PlatformConfig.plist",
+      "sha256": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547"
+    },
+    "selected_keys": {
+      "bcom.btc.params": {
+        "bytes": 32,
+        "type": "bytes"
+      },
+      "bcom.roam.default": {
+        "bytes": 20,
+        "type": "bytes"
+      },
+      "bcom.roam.profiles": {
+        "bytes": 528,
+        "type": "bytes"
+      },
+      "bcom.wow.magic-packet": {
+        "type": "bool",
+        "value": false
+      },
+      "wlan.awdl.params": {
+        "bytes": 8,
+        "type": "bytes"
+      },
+      "wlan.llw.tx.ring.size": {
+        "type": "int",
+        "value": 512
+      },
+      "wlan.rx.ring.size": {
+        "type": "int",
+        "value": 512
+      },
+      "wlan.sdb.profile": {
+        "bytes": 0,
+        "type": "bytes"
+      },
+      "wlan.tethering.enabled": {
+        "bytes": 4,
+        "type": "bytes"
+      },
+      "wlan.tx.ring.size": {
+        "type": "int",
+        "value": 768
+      },
+      "wlan.tx.submission-queue.size": {
+        "type": "int",
+        "value": 768
+      },
+      "wlan.wnm.enabled": {
+        "bytes": 4,
+        "type": "bytes"
+      }
+    }
+  }
+}
