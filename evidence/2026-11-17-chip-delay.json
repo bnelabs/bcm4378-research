@@ -1,0 +1,242 @@
+{
+  "sampled_at_utc": "2026-11-17T14:22:09+00:00",
+  "host": {
+    "model": "MacBookAir10,1",
+    "macos_version": "27.2.1",
+    "macos_build": "26B131",
+    "wifi_pci_id": "14e4:4425",
+    "running_firmware": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a",
+    "default_ipv4_interface_before": "en0",
+    "default_ipv4_interface_after": "en0",
+    "en0_link_status": "active"
+  },
+  "published_state": {
+    "PTM_Mode": 1,
+    "interface_and_loopback_probe": {
+      "interface_supported_mask": "0x6460",
+      "interface_enabled_mask": "0x6460",
+      "interface_hardware_timestamp_supported": false,
+      "interface_hardware_timestamp_enabled": false,
+      "interface_software_timestamp_supported": false,
+      "interface_software_timestamp_enabled": false,
+      "ipv4_loopback_wall_timestamp_received": true,
+      "ipv4_loopback_monotonic_timestamp_received": true
+    },
+    "selected_scale_override_names_present": {
+      "wlan.txchipdelay.scale": false,
+      "wlan.rxchipdelay.scale": false
+    },
+    "board_profiles_count": 56,
+    "board_profiles_with_selected_scale_keys": [],
+    "registry_nodes_checked": 92,
+    "registry_property_name_matches": [],
+    "legend_is_marked_public": true,
+    "legend_rows_checked": 602,
+    "has_explicit_chip_delay_label": false,
+    "en0_completion_latency_descriptors": [
+      {
+        "scope": "peer",
+        "labels": [
+          "Completion Latency Vo"
+        ]
+      },
+      {
+        "scope": "interface",
+        "labels": [
+          "Completion Latency Vo"
+        ]
+      },
+      {
+        "scope": "peer",
+        "labels": [
+          "Completion Latency Be"
+        ]
+      },
+      {
+        "scope": "interface",
+        "labels": [
+          "Completion Latency Be"
+        ]
+      },
+      {
+        "scope": "peer",
+        "labels": [
+          "Completion Latency Be"
+        ]
+      },
+      {
+        "scope": "peer",
+        "labels": [
+          "Completion Latency Vo"
+        ]
+      },
+      {
+        "scope": "peer",
+        "labels": [
+          "Completion Latency Bk"
+        ]
+      },
+      {
+        "scope": "interface",
+        "labels": [
+          "Completion Latency Bk"
+        ]
+      },
+      {
+        "scope": "peer",
+        "labels": [
+          "Completion Latency Vi"
+        ]
+      },
+      {
+        "scope": "interface",
+        "labels": [
+          "Completion Latency Vi"
+        ]
+      }
+    ],
+    "negotiated_exponents_and_sample_values": null
+  },
+  "driver": {
+    "executable_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "strict_signature_verified": true,
+    "trace_addresses": {
+      "arm64e": {
+        "read_shared_flags2": "0x100194da4",
+        "tx_timestamp_negotiation_bit_check": "0x100195250",
+        "apply_chip_delay_scale_bit_check": "0x100195410",
+        "default_exponent_setup": "0x100195418",
+        "write_tx_multiplier": "0x1001954d0",
+        "write_rx_multiplier": "0x1001954dc",
+        "write_host_caps2": "0x100195568",
+        "tx_skywalk_ring_submission_us_store": "0x100093700",
+        "tx_pcie_flow_ring_submission_us_store": "0x1001c8d44",
+        "tx_completion_timestamp_gate": "0x100212b4c",
+        "tx_completion_first_timestamp": "0x100212b90",
+        "tx_completion_middle_interval": "0x100212bd0",
+        "tx_completion_third_timestamp": "0x100212be0",
+        "rx_read_continuous_time": "0x10008e9f0",
+        "rx_extended_base_conversion": "0x10008ea60",
+        "rx_add_scaled_count": "0x10008ea80"
+      },
+      "arm64e.x1": {
+        "read_shared_flags2": "0x10018ff84",
+        "tx_timestamp_negotiation_bit_check": "0x100190430",
+        "apply_chip_delay_scale_bit_check": "0x1001905f0",
+        "default_exponent_setup": "0x1001905f8",
+        "write_tx_multiplier": "0x1001906b0",
+        "write_rx_multiplier": "0x1001906bc",
+        "write_host_caps2": "0x100190748",
+        "tx_skywalk_ring_submission_us_store": "0x100091c20",
+        "tx_pcie_flow_ring_submission_us_store": "0x1001c35bc",
+        "tx_completion_timestamp_gate": "0x10020ccb8",
+        "tx_completion_first_timestamp": "0x10020ccfc",
+        "tx_completion_middle_interval": "0x10020cd3c",
+        "tx_completion_third_timestamp": "0x10020cd4c",
+        "rx_read_continuous_time": "0x10008d1cc",
+        "rx_extended_base_conversion": "0x10008d23c",
+        "rx_add_scaled_count": "0x10008d25c"
+      }
+    }
+  },
+  "driverkit_framework": {
+    "cache_path": "/System/Volumes/Preboot/Cryptexes/OS/System/DriverKit/System/Library/dyld/dyld_shared_cache_arm64e",
+    "sha256": "df17a4d4497d9ed2b2e26664df1f1acd58ec7cbf8778fff4a6e3a1071d188391",
+    "cache_uuid": "c10faab0-7ae6-3d4b-aa7c-8a76dbadf107",
+    "trace_addresses": {
+      "peer_completion_host_clock_fallback": "0x18077abb8",
+      "peer_completion_host_time_to_nanoseconds": "0x18077abe8",
+      "peer_completion_saved_packet_timestamp_load": "0x18077abf8",
+      "peer_completion_compute_elapsed_nanoseconds": "0x18077accc",
+      "peer_latency_call": "0x18077ad40",
+      "interface_latency_call": "0x18077ad64",
+      "peer_histogram_addReporterLegend": "0x180860d78",
+      "interface_histogram_addReporterLegend": "0x1807e190c",
+      "peer_histogram_tally_milliseconds": "0x1807fa338",
+      "interface_histogram_tally_milliseconds": "0x1807e172c",
+      "completion_latency_subgroup_string": "0x18092b8a9"
+    }
+  },
+  "static_scale_model": {
+    "shared_flags2_bit_selecting_scale_branch": 20,
+    "default_exponents": {
+      "tx": 2,
+      "rx": 0
+    },
+    "largest_encoded_exponent": 7,
+    "microseconds_per_count": [
+      32,
+      64,
+      128,
+      256,
+      512,
+      1024,
+      2048,
+      4096
+    ],
+    "default_microseconds_per_count": {
+      "tx": 128,
+      "rx": 32
+    },
+    "tx_phase_counter_width_bits": 10,
+    "rx_delay_counter_width_bits": 16,
+    "largest_default_offset_microseconds": {
+      "tx": 130944,
+      "rx": 2097120
+    },
+    "rx_adjusted_timestamp_width_bits": 32,
+    "tx_firmware_timestamp_enable_uses_separate_flags2_bit": 15
+  },
+  "arithmetic_replay": {
+    "synthetic_normalized_counts": true,
+    "tx": [
+      {
+        "base_ns": 1000000,
+        "counts_in_field_order": [
+          2,
+          5,
+          8
+        ],
+        "first_timestamp_ns": 1256000,
+        "middle_minus_first_us": 384,
+        "third_timestamp_ns": 2024000
+      },
+      {
+        "base_ns": 1000000,
+        "counts_in_field_order": [
+          9,
+          5,
+          2
+        ],
+        "first_timestamp_ns": 2152000,
+        "middle_minus_first_us": 0,
+        "third_timestamp_ns": 1640000
+      }
+    ],
+    "rx": [
+      {
+        "base_low_32_bits_us": 999000,
+        "count": 17,
+        "delay_us": 544,
+        "adjusted_low_32_bits_us": 999544
+      },
+      {
+        "base_low_32_bits_us": 4294967280,
+        "count": 10,
+        "delay_us": 320,
+        "adjusted_low_32_bits_us": 304
+      }
+    ]
+  },
+  "linux_source_comparison": {
+    "stable": {
+      "commit": "7595a62d45ee1a2297eafa5f2ef5d0a45142d84d",
+      "msgbuf_c_sha256": "bf8a466a610da7363b32e409536fad9377f4d066b747524134c50a550e0d42bb"
+    },
+    "asahi": {
+      "commit": "201be96df5654336bdcbe1da2103f193d7a0b940",
+      "msgbuf_c_sha256": "470a034e71dd88b5e4f946c220ac08b6af64c398af352221ae6f42f39eb4e65e"
+    }
+  }
+}

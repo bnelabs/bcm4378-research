@@ -1,5 +1,7 @@
 # Packet timestamps and PCIe time measurement on the BCM4378
 
+The signed driver also negotiates chip-delay count scales for PCIe completion records. The scale arithmetic and the host milliseconds used by the `TxCompletion Latency` histogram have their own trace. [Chip-delay and completion latency](chip-delay.md)
+
 The running Shikoku core on macOS 27.2.1 publishes `PTM_Mode = 1`. The `SIOCGIFCAP` query on `en0` returned `0x6460` for both the supported and enabled masks. The hardware and interface software timestamp flags are clear in both masks. An IPv4 loopback UDP socket received wall-clock and monotonic timestamps with the corresponding socket options enabled. XNU constructs those messages in the receive path using `getmicrotime` and `mach_absolute_time`. [Live readouts](../evidence/2026-11-17-packet-timestamps.json), [XNU interface getter](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/bsd/net/if.c#L3907-L3912), [XNU IPv4 timestamp creation](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/bsd/netinet/ip_input.c#L3387-L3411)
 
 ## Clock paths in the signed driver
