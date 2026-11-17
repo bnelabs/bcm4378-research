@@ -1,0 +1,383 @@
+{
+  "images": [
+    {
+      "candidate_overlay_rows_cover_that_entry": 0,
+      "deadman_thread_list": {
+        "head_slot": "0x3522d8",
+        "record_next_offset": 136,
+        "selected_instructions": {
+          "0x3af1bc": {
+            "bytes_hex": "02f070ff",
+            "operation": "bl    0x3b20a0"
+          },
+          "0x3b20a0": {
+            "bytes_hex": "0a4b",
+            "operation": "ldr   r3, [0x003b20cc]"
+          },
+          "0x3b20a2": {
+            "bytes_hex": "1a68",
+            "operation": "ldr   r2, [r3]"
+          },
+          "0x3b20b2": {
+            "bytes_hex": "d3f88830",
+            "operation": "ldr.w r3, [r3, 0x88]"
+          }
+        },
+        "shipped_value_of_head_slot": 0,
+        "walker": "0x3b20a0",
+        "walker_caller": "0x3af1bc"
+      },
+      "idle_thread": {
+        "entry": "0x3b01bc",
+        "loop": "0x3b1f3c",
+        "loop_interrupt_status_helpers": {
+          "0x3b2970": {
+            "bytes_hex": "00000fe1",
+            "operation": "mrs   r0, apsr"
+          },
+          "0x3b2974": {
+            "bytes_hex": "c0000cf1",
+            "operation": "cpsid if"
+          },
+          "0x3b297c": {
+            "bytes_hex": "00f021e1",
+            "operation": "msr   cpsr_c, r0"
+          }
+        },
+        "name_load": "0x3b030e",
+        "named_call": "0x3b0310",
+        "selected_instructions": {
+          "0x3b01ac": {
+            "bytes_hex": "0048",
+            "operation": "ldr   r0, [0x003b01b0]"
+          },
+          "0x3b01bc": {
+            "bytes_hex": "01f0bebe",
+            "operation": "b.w   0x3b1f3c"
+          },
+          "0x3b02fc": {
+            "bytes_hex": "4ff4c072",
+            "operation": "mov.w r2, 0x180"
+          },
+          "0x3b030e": {
+            "bytes_hex": "0c48",
+            "operation": "ldr   r0, [0x003b0340]"
+          },
+          "0x3b0310": {
+            "bytes_hex": "c7f48afb",
+            "operation": "bl    0x77a28"
+          }
+        },
+        "stack_size_argument_bytes": 384,
+        "thumb_entry_pointer": "0x3b01bd"
+      },
+      "image": {
+        "bytes": 1497470,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+      },
+      "main_thread": {
+        "callsite_to_constructor": "0x3b27fc",
+        "constructor": "0x3b038c",
+        "entry": "0x3b0274",
+        "name_load": "0x3b03ba",
+        "named_call": "0x3b03bc",
+        "selected_instructions": {
+          "0x3b01b4": {
+            "bytes_hex": "4ff4ff50",
+            "operation": "mov.w r0, 0x1fe0"
+          },
+          "0x3b0274": {
+            "bytes_hex": "f0b5",
+            "operation": "push  {r4, r5, r6, r7, lr}"
+          },
+          "0x3b03ba": {
+            "bytes_hex": "0348",
+            "operation": "ldr   r0, [0x003b03c8]"
+          },
+          "0x3b03bc": {
+            "bytes_hex": "c7f434fb",
+            "operation": "bl    0x77a28"
+          },
+          "0x3b27fc": {
+            "bytes_hex": "fdf7c6fd",
+            "operation": "bl    0x3b038c"
+          }
+        },
+        "stack_size_argument_bytes": 8160,
+        "thumb_entry_pointer": "0x3b0275"
+      },
+      "named_calls_share_low_address_entry": "0x77a28"
+    },
+    {
+      "candidate_overlay_rows_cover_that_entry": 0,
+      "deadman_thread_list": {
+        "head_slot": "0x3522d8",
+        "record_next_offset": 136,
+        "selected_instructions": {
+          "0x3af1bc": {
+            "bytes_hex": "02f070ff",
+            "operation": "bl    0x3b20a0"
+          },
+          "0x3b20a0": {
+            "bytes_hex": "0a4b",
+            "operation": "ldr   r3, [0x003b20cc]"
+          },
+          "0x3b20a2": {
+            "bytes_hex": "1a68",
+            "operation": "ldr   r2, [r3]"
+          },
+          "0x3b20b2": {
+            "bytes_hex": "d3f88830",
+            "operation": "ldr.w r3, [r3, 0x88]"
+          }
+        },
+        "shipped_value_of_head_slot": 0,
+        "walker": "0x3b20a0",
+        "walker_caller": "0x3af1bc"
+      },
+      "idle_thread": {
+        "entry": "0x3b01bc",
+        "loop": "0x3b1f3c",
+        "loop_interrupt_status_helpers": {
+          "0x3b2970": {
+            "bytes_hex": "00000fe1",
+            "operation": "mrs   r0, apsr"
+          },
+          "0x3b2974": {
+            "bytes_hex": "c0000cf1",
+            "operation": "cpsid if"
+          },
+          "0x3b297c": {
+            "bytes_hex": "00f021e1",
+            "operation": "msr   cpsr_c, r0"
+          }
+        },
+        "name_load": "0x3b030e",
+        "named_call": "0x3b0310",
+        "selected_instructions": {
+          "0x3b01ac": {
+            "bytes_hex": "0048",
+            "operation": "ldr   r0, [0x003b01b0]"
+          },
+          "0x3b01bc": {
+            "bytes_hex": "01f0bebe",
+            "operation": "b.w   0x3b1f3c"
+          },
+          "0x3b02fc": {
+            "bytes_hex": "4ff4c072",
+            "operation": "mov.w r2, 0x180"
+          },
+          "0x3b030e": {
+            "bytes_hex": "0c48",
+            "operation": "ldr   r0, [0x003b0340]"
+          },
+          "0x3b0310": {
+            "bytes_hex": "c7f48afb",
+            "operation": "bl    0x77a28"
+          }
+        },
+        "stack_size_argument_bytes": 384,
+        "thumb_entry_pointer": "0x3b01bd"
+      },
+      "image": {
+        "bytes": 1496769,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6"
+      },
+      "main_thread": {
+        "callsite_to_constructor": "0x3b27fc",
+        "constructor": "0x3b038c",
+        "entry": "0x3b0274",
+        "name_load": "0x3b03ba",
+        "named_call": "0x3b03bc",
+        "selected_instructions": {
+          "0x3b01b4": {
+            "bytes_hex": "4ff4ff50",
+            "operation": "mov.w r0, 0x1fe0"
+          },
+          "0x3b0274": {
+            "bytes_hex": "f0b5",
+            "operation": "push  {r4, r5, r6, r7, lr}"
+          },
+          "0x3b03ba": {
+            "bytes_hex": "0348",
+            "operation": "ldr   r0, [0x003b03c8]"
+          },
+          "0x3b03bc": {
+            "bytes_hex": "c7f434fb",
+            "operation": "bl    0x77a28"
+          },
+          "0x3b27fc": {
+            "bytes_hex": "fdf7c6fd",
+            "operation": "bl    0x3b038c"
+          }
+        },
+        "stack_size_argument_bytes": 8160,
+        "thumb_entry_pointer": "0x3b0275"
+      },
+      "named_calls_share_low_address_entry": "0x77a28"
+    },
+    {
+      "candidate_overlay_rows_cover_that_entry": 0,
+      "deadman_thread_list": {
+        "head_slot": "0x3522e8",
+        "record_next_offset": 136,
+        "selected_instructions": {
+          "0x397a18": {
+            "bytes_hex": "02f0b2fb",
+            "operation": "bl    0x39a180"
+          },
+          "0x39a180": {
+            "bytes_hex": "0a4b",
+            "operation": "ldr   r3, [0x0039a1ac]"
+          },
+          "0x39a182": {
+            "bytes_hex": "1a68",
+            "operation": "ldr   r2, [r3]"
+          },
+          "0x39a192": {
+            "bytes_hex": "d3f88830",
+            "operation": "ldr.w r3, [r3, 0x88]"
+          }
+        },
+        "shipped_value_of_head_slot": 0,
+        "walker": "0x39a180",
+        "walker_caller": "0x397a18"
+      },
+      "idle_thread": {
+        "entry": "0x398a58",
+        "loop": "0x39a01c",
+        "loop_interrupt_status_helpers": {
+          "0x39aa50": {
+            "bytes_hex": "00000fe1",
+            "operation": "mrs   r0, apsr"
+          },
+          "0x39aa54": {
+            "bytes_hex": "c0000cf1",
+            "operation": "cpsid if"
+          },
+          "0x39aa5c": {
+            "bytes_hex": "00f021e1",
+            "operation": "msr   cpsr_c, r0"
+          }
+        },
+        "name_load": "0x398baa",
+        "named_call": "0x398bac",
+        "selected_instructions": {
+          "0x398a48": {
+            "bytes_hex": "0048",
+            "operation": "ldr   r0, [0x00398a4c]"
+          },
+          "0x398a58": {
+            "bytes_hex": "01f0e0ba",
+            "operation": "b.w   0x39a01c"
+          },
+          "0x398b98": {
+            "bytes_hex": "4ff4c072",
+            "operation": "mov.w r2, 0x180"
+          },
+          "0x398baa": {
+            "bytes_hex": "0c48",
+            "operation": "ldr   r0, [0x00398bdc]"
+          },
+          "0x398bac": {
+            "bytes_hex": "def466f9",
+            "operation": "bl    0x76e7c"
+          }
+        },
+        "stack_size_argument_bytes": 384,
+        "thumb_entry_pointer": "0x398a59"
+      },
+      "image": {
+        "bytes": 1226142,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a"
+      },
+      "main_thread": {
+        "callsite_to_constructor": "0x39a8dc",
+        "constructor": "0x398c28",
+        "entry": "0x398b10",
+        "name_load": "0x398c56",
+        "named_call": "0x398c58",
+        "selected_instructions": {
+          "0x398a50": {
+            "bytes_hex": "4ff4ff50",
+            "operation": "mov.w r0, 0x1fe0"
+          },
+          "0x398b10": {
+            "bytes_hex": "f0b5",
+            "operation": "push  {r4, r5, r6, r7, lr}"
+          },
+          "0x398c56": {
+            "bytes_hex": "0348",
+            "operation": "ldr   r0, [0x00398c64]"
+          },
+          "0x398c58": {
+            "bytes_hex": "def410f9",
+            "operation": "bl    0x76e7c"
+          },
+          "0x39a8dc": {
+            "bytes_hex": "fef7a4f9",
+            "operation": "bl    0x398c28"
+          }
+        },
+        "stack_size_argument_bytes": 8160,
+        "thumb_entry_pointer": "0x398b11"
+      },
+      "named_calls_share_low_address_entry": "0x76e7c"
+    }
+  ],
+  "malformed_list_rejections": 9,
+  "reference_ram_base": "0x352000",
+  "scope": "Offline result for the three installed stock images. The shared low-address helper and captured RAM contents remain unobserved.",
+  "synthetic_capture_checks": [
+    {
+      "image": "honshu",
+      "prefix_bytes": 0,
+      "records_decoded": 2
+    },
+    {
+      "image": "honshu",
+      "prefix_bytes": 24,
+      "records_decoded": 2
+    },
+    {
+      "image": "capri",
+      "prefix_bytes": 0,
+      "records_decoded": 2
+    },
+    {
+      "image": "capri",
+      "prefix_bytes": 24,
+      "records_decoded": 2
+    },
+    {
+      "image": "kyushu",
+      "prefix_bytes": 0,
+      "records_decoded": 2
+    },
+    {
+      "image": "kyushu",
+      "prefix_bytes": 24,
+      "records_decoded": 2
+    }
+  ],
+  "upstream_comparison": {
+    "assumption": "32-bit ARM ABI with empty thread port extensions 0 and 1 and empty internal timer extension",
+    "compile_target": "armv7r-none-eabi",
+    "compiled_offsets": {
+      "created_next": 136,
+      "created_previous": 140,
+      "entry": 68,
+      "id": 0,
+      "name": 40,
+      "timer": 76
+    },
+    "header_sha256": "f55d61d15ed1749c0799091e85e6e0128fdef3e767b6dbf2aad57994dce467c5",
+    "release_tag": "v6.5.2.202603b_rel"
+  }
+}

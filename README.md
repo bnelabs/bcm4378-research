@@ -4,6 +4,8 @@ This project examines the Wi-Fi chip in the 2020 M1 MacBook Air (A2337, `MacBook
 
 The [discovery catalog](docs/capability-catalog.md) is the complete list of processes, features, controls, and evidence covered so far. The [firmware feature index](docs/firmware-feature-index.md) lists all 90 words reported by the running firmware and the additional fields decoded in the driver.
 
+The [practical radio applications](docs/practical-radio-applications.md) apply those findings to inspection, on-demand processing, synchronization, and recovery. The inspection prototype sends timely previews while preserving the full archive and verifies traffic markings on connected macOS sockets.
+
 ## What can I use today?
 
 | Question | What the Mac can report or control |
