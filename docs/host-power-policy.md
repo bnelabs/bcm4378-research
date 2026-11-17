@@ -34,3 +34,5 @@ Apple's router guidance describes WMM as traffic prioritization. The IEEE 802.11
 The live PCIe service publishes the low-power associated-sleep permission, and the firmware advertises `lpas`. The driver uses both inputs before requesting the mode. Its beacon-based wake path also calculates an extended DTIM count. [Radio power and wake scheduling](radio-power-scheduling.md)
 
 The PCIe service publishes `bcom.wow.magic-packet=false`. macOS reports `womp=1` on AC. The driver traces for the board setting, TCP keepalive, and Bonjour show their firmware inputs. [Sleep network offloads](sleep-network-offloads.md)
+
+The link sampler can record Foundation's host thermal state. The signed Wi-Fi driver has its own TVPM event path for radio temperature, battery voltage, and transmit limits. [TVPM evidence](tvpm.md)

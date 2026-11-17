@@ -1,0 +1,217 @@
+{
+  "sampled_at_utc": "2026-11-17T12:15:00+00:00",
+  "host": {
+    "model": "MacBookAir10,1",
+    "macos_version": "27.2.1",
+    "macos_build": "26B131",
+    "default_ipv4_interface": "en0",
+    "wifi_firmware": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a"
+  },
+  "public_host_thermal_sample": {
+    "api": "ProcessInfo.processInfo.thermalState",
+    "sample_count": 4,
+    "requested_interval_seconds": 0.5,
+    "state_counts": {
+      "nominal": 4
+    },
+    "link_configurations": [
+      {
+        "band": "5 GHz",
+        "channel": 40,
+        "channel_width_mhz": 80,
+        "interface": "en0",
+        "interface_mode": "station",
+        "phy_mode": "802.11ax",
+        "sample_count": 4
+      }
+    ],
+    "pmset_therm_no_recorded_status_by_field": {
+      "thermal_warning": true,
+      "performance_warning": true,
+      "cpu_power_status": true
+    }
+  },
+  "published_registry": {
+    "legacy_tvpm_word_present": true,
+    "tvpm_reporting_labels": {
+      "legend_marked_public": true,
+      "value_labels_by_slice": {
+        "TVPM Slice 0": [
+          "Tx Duty Cycle (%)",
+          "Tx Power Backoff (1/4dBm)",
+          "Active Chains",
+          "Temperature (C)",
+          "Battery Voltage (10xV)",
+          "PPM",
+          "CTLM Index",
+          "TVPM Updates"
+        ],
+        "TVPM Slice 1": [
+          "Tx Duty Cycle (%)",
+          "Tx Power Backoff (1/4dBm)",
+          "Active Chains",
+          "Temperature (C)",
+          "Battery Voltage (10xV)",
+          "PPM",
+          "CTLM Index",
+          "TVPM Updates"
+        ]
+      }
+    }
+  },
+  "retained_unified_log": {
+    "duration_hours": 2,
+    "checked_templates": [
+      "Configured TVPM",
+      "TVPM Periodicity is =",
+      "TVPM Mitigation slice"
+    ],
+    "excluded_log_query_process": "log",
+    "matching_event_rows": 0
+  },
+  "installed_b1_nvram": {
+    "root": "/usr/share/firmware/wifi/C-4378__s-B1",
+    "named_txt_paths": 240,
+    "symlinks": 192,
+    "canonical_paths": 48,
+    "distinct_file_hashes": 10,
+    "requested_name": "C-4378__s-B1/P-shikoku-X3_M-RASP_V-m__m-6.11.txt",
+    "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.11.txt",
+    "requested_file_sha256": "2e15b8551b3cbf945247a6e25a8efbfb392476d799e81cbc61f659b55dc049b4",
+    "requested_bundle_copy_matches_shared": true,
+    "tvpm_and_temperature_policy_groups": [
+      {
+        "includes_requested_board_profile": true,
+        "canonical_path_count": 30,
+        "distinct_file_hash_count": 6,
+        "canonical_count_by_board_family": {
+          "atlantisb": 10,
+          "honshu": 10,
+          "kyushu": 1,
+          "shikoku": 9
+        },
+        "raw_declarations": {
+          "phycal_tempdelta": "15",
+          "rawtempsense": "0x1ff",
+          "tempoffset": "255",
+          "temps_hysteresis": "0xf",
+          "tvpm_dc_cltm": "100,100,75,80,50,60,30,50,20,40,10,30,1,20",
+          "tvpm_dc_ppm": "100,100,75,75,1,50",
+          "tvpm_dc_temp_threshold": "85",
+          "tvpm_dc_vbat_temp": "50,50,50,100,100,100,100,100,100,100,100,100",
+          "tvpm_dc_vbat_threshold": "0",
+          "tvpm_monitor_period": "1",
+          "tvpm_pwrboff_2g": "2,2,2,0,0,0",
+          "tvpm_pwrboff_5g": "4,4,4,0,0,0",
+          "tvpm_pwrboff_temp_threshold": "60",
+          "tvpm_pwrboff_vbat_threshold": "0",
+          "tvpm_txchain_ppm": "60,2,1,1",
+          "tvpm_txchain_vbat": "0,2"
+        }
+      },
+      {
+        "includes_requested_board_profile": false,
+        "canonical_path_count": 18,
+        "distinct_file_hash_count": 4,
+        "canonical_count_by_board_family": {
+          "capri": 9,
+          "santorini": 9
+        },
+        "raw_declarations": {
+          "phycal_tempdelta": "15",
+          "rawtempsense": "0x1ff",
+          "tempoffset": "255",
+          "temps_hysteresis": "0xf",
+          "tvpm_dc_cltm": "1,100",
+          "tvpm_dc_ppm": "1,100",
+          "tvpm_dc_temp_threshold": "85",
+          "tvpm_dc_vbat_temp": "50,50,50,100,100,100,100,100,100,100,100,100",
+          "tvpm_dc_vbat_threshold": "0",
+          "tvpm_monitor_period": "1",
+          "tvpm_pwrboff_2g": "4,4,4,0,0,0",
+          "tvpm_pwrboff_5g": "4,4,4,0,0,0",
+          "tvpm_pwrboff_temp_threshold": "60",
+          "tvpm_pwrboff_vbat_threshold": "0",
+          "tvpm_txchain_ppm": "1,2",
+          "tvpm_txchain_vbat": "0,2"
+        }
+      }
+    ]
+  },
+  "driverkit": {
+    "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "architectures": [
+      "arm64e",
+      "arm64e.x1"
+    ],
+    "signature_check": "codesign --verify --strict",
+    "legacy_tvpm_feature_bit": 59,
+    "private_input_index_range": {
+      "setTHERMAL_INDEX": [
+        1,
+        100
+      ],
+      "setPOWER_BUDGET": [
+        1,
+        100
+      ]
+    },
+    "initial_tvpm_periodicity_argument": 1,
+    "entry_points": {
+      "AppleBCMWLANCore::checkForTVPMSupport": {
+        "arm64e": "0x10016debc",
+        "arm64e.x1": "0x100169cec"
+      },
+      "AppleBCMWLANCore::getPOWER_BUDGET": {
+        "arm64e": "0x1001325a0",
+        "arm64e.x1": "0x10012e9fc"
+      },
+      "AppleBCMWLANCore::getTHERMAL_INDEX": {
+        "arm64e": "0x100132298",
+        "arm64e.x1": "0x10012e708"
+      },
+      "AppleBCMWLANCore::handleEventPacket": {
+        "arm64e": "0x10022e794",
+        "arm64e.x1": "0x100228424"
+      },
+      "AppleBCMWLANCore::parsePerSliceContainer": {
+        "arm64e": "0x100133488",
+        "arm64e.x1": "0x10012f89c"
+      },
+      "AppleBCMWLANCore::setPOWER_BUDGET": {
+        "arm64e": "0x10014caa0",
+        "arm64e.x1": "0x100148d10"
+      },
+      "AppleBCMWLANCore::setTHERMAL_INDEX": {
+        "arm64e": "0x10014c7e0",
+        "arm64e.x1": "0x100148a50"
+      },
+      "AppleBCMWLANCore::setupFirmware": {
+        "arm64e": "0x1000e8e24",
+        "arm64e.x1": "0x1000e6108"
+      },
+      "AppleBCMWLANIOReportingPerSlice::initTVPMReporter": {
+        "arm64e": "0x10002caf8",
+        "arm64e.x1": "0x10002c64c"
+      },
+      "AppleBCMWLANIOReportingPerSlice::reportTVPM": {
+        "arm64e": "0x1001eeab0",
+        "arm64e.x1": "0x1001e8e24"
+      },
+      "AppleBCMWLANPowerManager::configureTVPM": {
+        "arm64e": "0x1001b7e74",
+        "arm64e.x1": "0x1001b2918"
+      },
+      "AppleBCMWLANPowerManager::configureTVPMPeriodicity": {
+        "arm64e": "0x1001b7fa4",
+        "arm64e.x1": "0x1001b2a48"
+      }
+    }
+  },
+  "measurement_scope": {
+    "live_radio_temperature_or_voltage_sampled": false,
+    "current_mitigation_or_applied_indices_measured": false,
+    "live_ioreport_values_sampled": false
+  }
+}

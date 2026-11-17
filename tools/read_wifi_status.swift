@@ -29,6 +29,7 @@ struct WiFiStatus: Encodable {
     let tx_rate_mbps: Double?
     let corewlan_transmit_power: Int?
     let sampled_at_unix_seconds: Double
+    let host_thermal_state: String?
     let interface_traffic: InterfaceTraffic?
     let reported_channel_widths_mhz_by_band: [String: [Int]]?
     let reported_channel_numbers_by_band_and_width_mhz: [String: [Int: [Int]]]?
@@ -109,8 +110,19 @@ func readInterfaceTraffic(_ interfaceName: String) -> InterfaceTraffic? {
     return parseInterfaceTraffic(text, interfaceName: interfaceName, sampledAt: Date().timeIntervalSince1970)
 }
 
-func readStatus(includeCapabilities: Bool, includeTraffic: Bool) -> WiFiStatus {
+func readHostThermalState() -> String {
+    switch ProcessInfo.processInfo.thermalState {
+    case .nominal: return "nominal"
+    case .fair: return "fair"
+    case .serious: return "serious"
+    case .critical: return "critical"
+    @unknown default: return "unknown"
+    }
+}
+
+func readStatus(includeCapabilities: Bool, includeTraffic: Bool, includeThermal: Bool) -> WiFiStatus {
     let timestamp = Date().timeIntervalSince1970
+    let hostThermalState = includeThermal ? readHostThermalState() : nil
     let interfaceName = wifi.interfaceName
     let channel = wifi.wlanChannel()
     let rssi = wifi.rssiValue()
@@ -133,6 +145,7 @@ func readStatus(includeCapabilities: Bool, includeTraffic: Bool) -> WiFiStatus {
         tx_rate_mbps: rate.isFinite && rate > 0 ? rate : nil,
         corewlan_transmit_power: power > 0 ? power : nil,
         sampled_at_unix_seconds: timestamp,
+        host_thermal_state: hostThermalState,
         interface_traffic: includeTraffic ? interfaceName.flatMap(readInterfaceTraffic) : nil,
         reported_channel_widths_mhz_by_band: channels?.mapValues { $0.keys.sorted() },
         reported_channel_numbers_by_band_and_width_mhz: channels
@@ -141,11 +154,12 @@ func readStatus(includeCapabilities: Bool, includeTraffic: Bool) -> WiFiStatus {
 
 let encoder = JSONEncoder()
 let options = CommandLine.arguments.dropFirst()
-let includeTraffic = options.last == "--traffic"
-let args = Array(includeTraffic ? options.dropLast() : options)
+let includeTraffic = options.contains("--traffic")
+let includeThermal = options.contains("--thermal")
+let args = options.filter { $0 != "--traffic" && $0 != "--thermal" }
 if args.isEmpty {
     encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-    let status = readStatus(includeCapabilities: true, includeTraffic: includeTraffic)
+    let status = readStatus(includeCapabilities: true, includeTraffic: includeTraffic, includeThermal: includeThermal)
     print(String(decoding: try encoder.encode(status), as: UTF8.self))
 } else if args.count == 3, args[0] == "--sample",
           let count = Int(args[1]), count > 0,
@@ -155,11 +169,11 @@ if args.isEmpty {
         if index > 0 {
             Thread.sleep(forTimeInterval: interval)
         }
-        let status = readStatus(includeCapabilities: false, includeTraffic: includeTraffic)
+        let status = readStatus(includeCapabilities: false, includeTraffic: includeTraffic, includeThermal: includeThermal)
         print(String(decoding: try encoder.encode(status), as: UTF8.self))
     }
 } else {
-    let usage = "Usage: swift tools/read_wifi_status.swift [--sample COUNT INTERVAL_SECONDS] [--traffic]\n"
+    let usage = "Usage: swift tools/read_wifi_status.swift [--sample COUNT INTERVAL_SECONDS] [--traffic] [--thermal]\n"
     FileHandle.standardError.write(Data(usage.utf8))
     exit(2)
 }

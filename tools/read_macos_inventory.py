@@ -259,6 +259,25 @@ def he_ru_counter_legend(entries):
     return {"legend_marked_public": public, "counter_groups": counter_groups}
 
 
+def tvpm_reporting(entries):
+    report = reporting_legend(entries)
+    if report is None:
+        return None
+    public, legend = report
+    fields = {
+        "Tx Duty Cycle (%)", "Tx Power Backoff (1/4dBm)", "Active Chains", "Temperature (C)",
+        "Battery Voltage (10xV)", "PPM", "CTLM Index", "TVPM Updates",
+    }
+    return {
+        "legend_marked_public": public,
+        "value_labels_by_slice": {
+            group: [label for label in labels if label in fields]
+            for group, subgroup, labels in report_legend_rows(legend)
+            if group in ("TVPM Slice 0", "TVPM Slice 1") and subgroup == "Temperature Voltage Power Management"
+        },
+    }
+
+
 def dfs_proxy_reporting(entries):
     report = reporting_legend(entries)
     if report is None:
@@ -361,6 +380,7 @@ def collect():
             "radio_chain_reporting": radio_chain_reporting(entries),
             "wme_tid_reporting": wme_tid_reporting(entries),
             "he_ru_counter_legend": he_ru_counter_legend(entries),
+            "tvpm_reporting": tvpm_reporting(entries),
             "transport_config_properties": {
                 key: bus[key] for key in TRANSPORT_CONFIG_KEYS if type(bus.get(key)) is int
             },

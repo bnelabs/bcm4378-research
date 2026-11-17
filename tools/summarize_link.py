@@ -27,6 +27,8 @@ METRIC_FIELDS = {
 }
 TIMESTAMP = "sampled_at_unix_seconds"
 TRAFFIC_FIELD = "interface_traffic"
+THERMAL_FIELD = "host_thermal_state"
+THERMAL_STATES = ("nominal", "fair", "serious", "critical", "unknown")
 COUNTER_FIELDS = ("rx_bytes", "tx_bytes", "rx_packets", "tx_packets")
 MAX_UINT64 = (1 << 64) - 1
 HE_DATA_TONES = {20: 234, 40: 468, 80: 980}
@@ -226,6 +228,11 @@ def summarize(samples, include_he_candidates=False):
     }
     if any(sample.get(TRAFFIC_FIELD) is not None for sample in samples):
         summary[TRAFFIC_FIELD] = summarize_traffic(samples)
+    thermal_states = [sample.get(THERMAL_FIELD) for sample in samples]
+    if any(state is not None for state in thermal_states):
+        summary["host_thermal_state_counts"] = dict(Counter(
+            state if state in THERMAL_STATES else "unavailable" for state in thermal_states
+        ))
     if include_he_candidates:
         summary["he_nominal_rate_candidates"] = summarize_he_candidates(samples)
     return summary
