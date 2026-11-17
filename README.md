@@ -18,6 +18,7 @@ This repository records the Wi-Fi hardware, driver and firmware of the 2020 M1 M
 - [PCIe link and power properties](docs/pcie-link-properties.md) records the shared port, endpoint status fields, and link power capability and policy.
 - [Packet queues and PCIe ring sizing](docs/pcie-queue-sizing.md) traces the live scheduler and Shikoku transport settings through macOS and compares Linux descriptor depths.
 - [macOS host power policy](docs/host-power-policy.md) records network wake and keepalive settings and their scope.
+- [Sleep network offloads](docs/sleep-network-offloads.md) traces Wake-on-WLAN policy, address resolution, Bonjour discovery, and TCP keepalive slots.
 - [Radio power and wake scheduling](docs/radio-power-scheduling.md) traces associated sleep, beacon intervals, and Target Wake Time capability evidence.
 - [Radio-chain and channel-width policy](docs/radio-chain-policy.md) traces MIMO power save, spatial-stream reporting and the Linux antenna fields.
 - [Linux and Asahi controls](docs/asahi-controls.md) records the versioned driver paths and readouts for a separately managed A2337.

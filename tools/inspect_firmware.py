@@ -82,11 +82,12 @@ RADIO_POWER_CONFIG_KEYS = (
 )
 BTC_PARAMETER_KEY = "bcom.btc.params"
 DFS_PROXY_KEY = "wlan.dfsproxy.enabled"
+MAGIC_PACKET_KEY = "bcom.wow.magic-packet"
 CONFIG_KEYS = (
     BTC_PARAMETER_KEY,
     "bcom.roam.default",
     "bcom.roam.profiles",
-    "bcom.wow.magic-packet",
+    MAGIC_PACKET_KEY,
     "wlan.awdl.params",
     DFS_PROXY_KEY,
     "wlan.sdb.profile",
