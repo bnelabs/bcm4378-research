@@ -15,6 +15,7 @@ This repository records the Wi-Fi hardware, driver and firmware of the 2020 M1 M
 - [Wi-Fi 6 resource units and trigger frames](docs/he-ofdma.md) traces the driver's OFDMA catalog and uplink control and shows how to verify allocations in an offline capture.
 - [BSS coloring and spatial reuse](docs/spatial-reuse.md) traces overlapping-network mitigation, Asahi's station capability, and the reuse fields in a saved capture.
 - [Wi-Fi beamforming and sounding](docs/wifi-beamforming.md) traces the firmware roles, A2337 RF tests, and the sounding and feedback fields in saved captures.
+- [Wi-Fi roaming policy](docs/wifi-roaming.md) decodes the Shikoku RSSI policy inputs and verifies a capture method for Fast BSS Transition.
 - [Simultaneous dual-band policy](docs/simultaneous-dual-band.md) maps the macOS firmware and platform gates and the Linux channel and station limits.
 - [Live access and control](docs/live-access.md) records the PCIe apertures, UART metadata, transmit-power readout and conditions for testing deeper controls.
 - [Chip memory and backplane layout](docs/chip-memory-map.md) traces the signed driver's RAM geometry, core and wrapper regions, and normal fault attachment.

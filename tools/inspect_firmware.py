@@ -27,6 +27,7 @@ UCODE_TAG = re.compile(
 BCM4378_RAM_BASE = 0x352000
 WORD_PAIR = Struct("<II")
 THUMB_WORD = Struct("<HH")
+LEGACY_ROAM_PROFILE = Struct("<6HhHhH")
 MARKERS = (
     "arp_ol",
     "awdl",
@@ -83,17 +84,26 @@ RADIO_POWER_CONFIG_KEYS = (
 BTC_PARAMETER_KEY = "bcom.btc.params"
 DFS_PROXY_KEY = "wlan.dfsproxy.enabled"
 MAGIC_PACKET_KEY = "bcom.wow.magic-packet"
+LEGACY_ROAM_PROFILE_KEYS = ("bcom.roam.default", "bcom.roam.enterprise")
+ROAM_CONFIG_KEYS = (
+    *LEGACY_ROAM_PROFILE_KEYS,
+    "bcom.roam.enabledenhanced",
+    "bcom.roam.profiles",
+    "wlan.bss.5GHz-preference",
+    "wlan.bss.6GHz-preference",
+    "wlan.fast_enterprise_nw.enabled",
+    "wlan.voice_enterprise_nw.enabled",
+    "wlan.wnm.enabled",
+)
 CONFIG_KEYS = (
     BTC_PARAMETER_KEY,
-    "bcom.roam.default",
-    "bcom.roam.profiles",
     MAGIC_PACKET_KEY,
     "wlan.awdl.params",
     DFS_PROXY_KEY,
     "wlan.sdb.profile",
     "wlan.tethering.enabled",
     "wlan.txsdb.mode",
-    "wlan.wnm.enabled",
+    *ROAM_CONFIG_KEYS,
     *RADIO_POWER_CONFIG_KEYS,
     *TRANSPORT_CONFIG_KEYS,
 )
@@ -280,6 +290,20 @@ def decode_btc_parameters(data):
     }
 
 
+def decode_legacy_roam_profile(data):
+    """Decode the two band-specific RSSI pairs in the 20-byte macOS board property."""
+    if len(data) != LEGACY_ROAM_PROFILE.size:
+        return None
+    *leading_words, trigger_2g, delta_2g, trigger_5g, delta_5g = LEGACY_ROAM_PROFILE.unpack(data)
+    return {
+        "leading_u16_words": leading_words,
+        "rssi_by_band": {
+            "2.4 GHz": {"trigger_dbm": trigger_2g, "quality_delta_db": delta_2g},
+            "5 GHz": {"trigger_dbm": trigger_5g, "quality_delta_db": delta_5g},
+        },
+    }
+
+
 def summarize_config_keys(config, selected_keys):
     keys = {}
     for key in selected_keys:
@@ -290,6 +314,8 @@ def summarize_config_keys(config, selected_keys):
                 summary.update(decode_btc_parameters(value))
             elif isinstance(value, bytes):
                 summary["bytes"] = len(value)
+                if key in LEGACY_ROAM_PROFILE_KEYS:
+                    summary["legacy_roam_profile"] = decode_legacy_roam_profile(value)
             elif isinstance(value, (bool, int)):
                 summary["value"] = value
             keys[key] = summary
