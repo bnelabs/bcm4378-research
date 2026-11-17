@@ -1,0 +1,342 @@
+{
+  "default_route_after": "en0",
+  "default_route_before": "en0",
+  "firmware_reference_checks": {
+    "images": [
+      {
+        "aligned_little_endian_literals_with_unique_thumb_load": 5,
+        "image": "B1 Shikoku",
+        "names_consumed_by_common_lower_address_helper": [
+          "olpc_thresh2g",
+          "olpc_thresh5g",
+          "olpc_anchor2g",
+          "olpc_anchor5g"
+        ],
+        "observed_callees_inside_uploaded_image": 0,
+        "observed_callees_within_candidate_rom_overlay_row": 0,
+        "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06",
+        "slice_prefix_in_distinct_lower_address_call": "slice/1/"
+      },
+      {
+        "aligned_little_endian_literals_with_unique_thumb_load": 5,
+        "image": "B1 Capri",
+        "names_consumed_by_common_lower_address_helper": [
+          "olpc_thresh2g",
+          "olpc_thresh5g",
+          "olpc_anchor2g",
+          "olpc_anchor5g"
+        ],
+        "observed_callees_inside_uploaded_image": 0,
+        "observed_callees_within_candidate_rom_overlay_row": 0,
+        "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6",
+        "slice_prefix_in_distinct_lower_address_call": "slice/1/"
+      },
+      {
+        "aligned_little_endian_literals_with_unique_thumb_load": 5,
+        "image": "B3 Kyushu",
+        "names_consumed_by_common_lower_address_helper": [
+          "olpc_thresh2g",
+          "olpc_thresh5g",
+          "olpc_anchor2g",
+          "olpc_anchor5g"
+        ],
+        "observed_callees_inside_uploaded_image": 0,
+        "observed_callees_within_candidate_rom_overlay_row": 0,
+        "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a",
+        "slice_prefix_in_distinct_lower_address_call": "slice/1/"
+      }
+    ],
+    "method": "Find NUL-delimited keys, confirm the mapped 32-bit literal appears once, decode its sole PC-relative Thumb load into the name argument register and confirm the subsequent call in Rizin.",
+    "ram_base_hex": "0x352000",
+    "runtime_status": "Lower-address helper implementation, name matching, overlay selection, and applied values remain unverified."
+  },
+  "host_driver": {
+    "absolute_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "conclusion": "A single space inside a record survives normalization. Equals is copied as a regular character. Image validation checks leading and adjacent whitespace, line endings and final separators. Provisioning moves the normalized bytes together and adds device data.",
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "slices": [
+      {
+        "architecture": "arm64e",
+        "documented_instruction_counts": {
+          "checkNormalizedNVRAM": 123,
+          "generateChipImage": 194,
+          "generateProvisionedNVRAMParameters": 216,
+          "getNormalizedNVRam": 195,
+          "normalizeNVRAM": 184,
+          "validateChipImage": 111
+        },
+        "generates_before_provisioning": true,
+        "record_prefixes_removed": [
+          "macaddr",
+          "nocrc",
+          "il0macaddr",
+          "nvramver",
+          "moduleid"
+        ],
+        "uses_normalized_buffer_validator_in_chip_image_checks": true
+      },
+      {
+        "architecture": "arm64e.x1",
+        "documented_instruction_counts": {
+          "checkNormalizedNVRAM": 123,
+          "generateChipImage": 194,
+          "generateProvisionedNVRAMParameters": 216,
+          "getNormalizedNVRam": 195,
+          "normalizeNVRAM": 184,
+          "validateChipImage": 111
+        },
+        "generates_before_provisioning": true,
+        "record_prefixes_removed": [
+          "macaddr",
+          "nocrc",
+          "il0macaddr",
+          "nvramver",
+          "moduleid"
+        ],
+        "uses_normalized_buffer_validator_in_chip_image_checks": true
+      }
+    ],
+    "strict_codesign_ok": true,
+    "tools": [
+      "REA Mach-O target detection",
+      "nm",
+      "Xcode llvm-objdump",
+      "codesign"
+    ]
+  },
+  "macos_build": "26B131",
+  "registry_observation": {
+    "debug_normalization_property_counts": {
+      "NVRAM: normalized": 0,
+      "NVRAM: source": 0
+    },
+    "scoped_wlan_subtree_entries": 98
+  },
+  "scope": "Signed host file instructions, a bounded offline model of stock text, and firmware literal/call checks. Registry observation is restricted to requests and property presence.",
+  "selected_shikoku": {
+    "linux_modeled_records_before_platform_mac": 295,
+    "modeled_records": 296,
+    "normalized_stage_model_bytes": 7691,
+    "profile_sha256": "2e15b8551b3cbf945247a6e25a8efbfb392476d799e81cbc61f659b55dc049b4",
+    "requested_firmware_name": "C-4378__s-B1/shikoku.trx",
+    "requested_nvram_name": "C-4378__s-B1/P-shikoku-X3_M-RASP_V-m__m-6.11.txt"
+  },
+  "stock_profiles": {
+    "name_count": 250,
+    "profiles": [
+      {
+        "modeled_exact_keys": {
+          "olpc_anchor2g": 0,
+          "olpc_anchor5g": 1,
+          "olpc_thresh2g": 0,
+          "olpc_thresh5g": 1,
+          "slice/1/olpc_anchor2g": 1,
+          "slice/1/olpc_thresh2g": 0,
+          "slice/1/olpc_thresh2g ": 1
+        },
+        "modeled_normalized_bytes": 7603,
+        "modeled_normalized_records": 298,
+        "modeled_normalized_sha256": "e03f7206eadf1a100a2f4bbad7d082da17a691a1de627d773acfeb03885c9ba4",
+        "modeled_output_matches_lf_replacement_and_final_nul": true,
+        "name_count_by_stepping": {
+          "B1": 20
+        },
+        "sha256": "28740651d40a9754a2b2b082ab1aa4eb91d0f0ab4bd4e3e8eceff369c977bd36",
+        "stock_bytes": 7602,
+        "stock_records": 298
+      },
+      {
+        "modeled_exact_keys": {
+          "olpc_anchor2g": 0,
+          "olpc_anchor5g": 1,
+          "olpc_thresh2g": 0,
+          "olpc_thresh5g": 1,
+          "slice/1/olpc_anchor2g": 1,
+          "slice/1/olpc_thresh2g": 0,
+          "slice/1/olpc_thresh2g ": 1
+        },
+        "modeled_normalized_bytes": 7691,
+        "modeled_normalized_records": 296,
+        "modeled_normalized_sha256": "c5363f8f3171b5cda87bca9fccc8ccd1359a4c9d2c4138e2166baad817aedd4f",
+        "modeled_output_matches_lf_replacement_and_final_nul": true,
+        "name_count_by_stepping": {
+          "B1": 25
+        },
+        "sha256": "2e15b8551b3cbf945247a6e25a8efbfb392476d799e81cbc61f659b55dc049b4",
+        "stock_bytes": 7690,
+        "stock_records": 296
+      },
+      {
+        "modeled_exact_keys": {
+          "olpc_anchor2g": 0,
+          "olpc_anchor5g": 1,
+          "olpc_thresh2g": 0,
+          "olpc_thresh5g": 1,
+          "slice/1/olpc_anchor2g": 1,
+          "slice/1/olpc_thresh2g": 0,
+          "slice/1/olpc_thresh2g ": 1
+        },
+        "modeled_normalized_bytes": 7607,
+        "modeled_normalized_records": 298,
+        "modeled_normalized_sha256": "cf4c35282a872b1bdd925049399b81ac1400e0cfd3302e27c89f4f21f1e28caa",
+        "modeled_output_matches_lf_replacement_and_final_nul": true,
+        "name_count_by_stepping": {
+          "B1": 20
+        },
+        "sha256": "32d7747549903a2e222030abc75ef5dfd7fcd6879da125b3b41ac7885a8d45f3",
+        "stock_bytes": 7606,
+        "stock_records": 298
+      },
+      {
+        "modeled_exact_keys": {
+          "olpc_anchor2g": 0,
+          "olpc_anchor5g": 1,
+          "olpc_thresh2g": 0,
+          "olpc_thresh5g": 1,
+          "slice/1/olpc_anchor2g": 1,
+          "slice/1/olpc_thresh2g": 0,
+          "slice/1/olpc_thresh2g ": 1
+        },
+        "modeled_normalized_bytes": 7724,
+        "modeled_normalized_records": 297,
+        "modeled_normalized_sha256": "5c8ac2b4cdaae41103111885f2866a1444b98502ae936e6e6025b5b221afff04",
+        "modeled_output_matches_lf_replacement_and_final_nul": true,
+        "name_count_by_stepping": {
+          "B1": 25
+        },
+        "sha256": "417a6014f4dad80d92f160748f43d2c50314ba67eefc15fa5eace378d82d943e",
+        "stock_bytes": 7723,
+        "stock_records": 297
+      },
+      {
+        "modeled_exact_keys": {
+          "olpc_anchor2g": 0,
+          "olpc_anchor5g": 1,
+          "olpc_thresh2g": 0,
+          "olpc_thresh5g": 1,
+          "slice/1/olpc_anchor2g": 1,
+          "slice/1/olpc_thresh2g": 0,
+          "slice/1/olpc_thresh2g ": 1
+        },
+        "modeled_normalized_bytes": 7664,
+        "modeled_normalized_records": 299,
+        "modeled_normalized_sha256": "d8f7e36ef1b885058e217099d7463b07a6b728e2b461ae6fbd75ad29a69ffd78",
+        "modeled_output_matches_lf_replacement_and_final_nul": true,
+        "name_count_by_stepping": {
+          "B1": 25
+        },
+        "sha256": "44bec369f1c81ddd72f9c331e02d54c004dc94ea4171cc5515cf0dcf0baa87fb",
+        "stock_bytes": 7663,
+        "stock_records": 299
+      },
+      {
+        "modeled_exact_keys": {
+          "olpc_anchor2g": 0,
+          "olpc_anchor5g": 1,
+          "olpc_thresh2g": 0,
+          "olpc_thresh5g": 1,
+          "slice/1/olpc_anchor2g": 1,
+          "slice/1/olpc_thresh2g": 0,
+          "slice/1/olpc_thresh2g ": 1
+        },
+        "modeled_normalized_bytes": 7668,
+        "modeled_normalized_records": 299,
+        "modeled_normalized_sha256": "5cb9d1e9fe3fd4839559d241619e175547434d7269c0526bea1b12f49c48bba0",
+        "modeled_output_matches_lf_replacement_and_final_nul": true,
+        "name_count_by_stepping": {
+          "B1": 25
+        },
+        "sha256": "4f280abe427460cba4891522c9e69e02725fa99710fdf024574c87f3cf0ba585",
+        "stock_bytes": 7667,
+        "stock_records": 299
+      },
+      {
+        "modeled_exact_keys": {
+          "olpc_anchor2g": 0,
+          "olpc_anchor5g": 1,
+          "olpc_thresh2g": 0,
+          "olpc_thresh5g": 1,
+          "slice/1/olpc_anchor2g": 1,
+          "slice/1/olpc_thresh2g": 0,
+          "slice/1/olpc_thresh2g ": 1
+        },
+        "modeled_normalized_bytes": 7785,
+        "modeled_normalized_records": 298,
+        "modeled_normalized_sha256": "f15bf0869109c2a6c4be513b8124ed74c61503d456ae90d36242ed18c2ba1097",
+        "modeled_output_matches_lf_replacement_and_final_nul": true,
+        "name_count_by_stepping": {
+          "B1": 25
+        },
+        "sha256": "5e8c0449664fa47d57f220aa75dd04ad6d5558adf157ddf20f447a9f4f5fb19e",
+        "stock_bytes": 7784,
+        "stock_records": 298
+      },
+      {
+        "modeled_exact_keys": {
+          "olpc_anchor2g": 0,
+          "olpc_anchor5g": 1,
+          "olpc_thresh2g": 0,
+          "olpc_thresh5g": 1,
+          "slice/1/olpc_anchor2g": 1,
+          "slice/1/olpc_thresh2g": 0,
+          "slice/1/olpc_thresh2g ": 1
+        },
+        "modeled_normalized_bytes": 7690,
+        "modeled_normalized_records": 296,
+        "modeled_normalized_sha256": "afd55a5ac4e12284ae147e723dc6817627e9b1e7766e62e3564119953f4b297a",
+        "modeled_output_matches_lf_replacement_and_final_nul": true,
+        "name_count_by_stepping": {
+          "B1": 25
+        },
+        "sha256": "82d38093e33abac54c94e5b792efcd4b0fe3dfb794fe8a96b3a1967622e50056",
+        "stock_bytes": 7689,
+        "stock_records": 296
+      },
+      {
+        "modeled_exact_keys": {
+          "olpc_anchor2g": 0,
+          "olpc_anchor5g": 1,
+          "olpc_thresh2g": 0,
+          "olpc_thresh5g": 1,
+          "slice/1/olpc_anchor2g": 1,
+          "slice/1/olpc_thresh2g": 0,
+          "slice/1/olpc_thresh2g ": 1
+        },
+        "modeled_normalized_bytes": 7630,
+        "modeled_normalized_records": 295,
+        "modeled_normalized_sha256": "68bf2f93e21b53fee522912736703ec6c918015b91f2f98019c2a92265753e3f",
+        "modeled_output_matches_lf_replacement_and_final_nul": true,
+        "name_count_by_stepping": {
+          "B1": 20
+        },
+        "sha256": "c1440baec1eb255afcee275dd6f6fd32146830db16db4d2015565bc447fb2fcb",
+        "stock_bytes": 7629,
+        "stock_records": 295
+      },
+      {
+        "modeled_exact_keys": {
+          "olpc_anchor2g": 0,
+          "olpc_anchor5g": 1,
+          "olpc_thresh2g": 0,
+          "olpc_thresh5g": 1,
+          "slice/1/olpc_anchor2g": 1,
+          "slice/1/olpc_thresh2g": 0,
+          "slice/1/olpc_thresh2g ": 1
+        },
+        "modeled_normalized_bytes": 7629,
+        "modeled_normalized_records": 295,
+        "modeled_normalized_sha256": "6a86f8e7befe1cf66a879cc925f869e179609f9b652930d30796396997b31a92",
+        "modeled_output_matches_lf_replacement_and_final_nul": true,
+        "name_count_by_stepping": {
+          "B1": 30,
+          "B3": 10
+        },
+        "sha256": "d921b4241b268694e077c146ffb918ba89e71bd1439a865fda4431deaa23b134",
+        "stock_bytes": 7628,
+        "stock_records": 295
+      }
+    ],
+    "scope": "Static model of the macOS 26B131 normalizer on retained BCM4378 text profiles",
+    "unique_payload_count": 10
+  }
+}
