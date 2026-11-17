@@ -49,20 +49,24 @@ MARKER_PATTERN = re.compile(
     + rb")(?![a-z0-9_])",
     re.IGNORECASE,
 )
+TRANSPORT_CONFIG_KEYS = (
+    "wlan.tx.ring.size",
+    "wlan.rx.ring.size",
+    "wlan.llw.tx.ring.size",
+    "wlan.tx.submission-queue.size",
+    "wlan.skywalk.packetpoolsize",
+)
 CONFIG_KEYS = (
     "bcom.btc.params",
     "bcom.roam.default",
     "bcom.roam.profiles",
     "bcom.wow.magic-packet",
     "wlan.awdl.params",
-    "wlan.llw.tx.ring.size",
-    "wlan.rx.ring.size",
     "wlan.sdb.profile",
     "wlan.tethering.enabled",
-    "wlan.tx.ring.size",
-    "wlan.tx.submission-queue.size",
     "wlan.txsdb.mode",
     "wlan.wnm.enabled",
+    *TRANSPORT_CONFIG_KEYS,
 )
 
 

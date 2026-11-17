@@ -34,6 +34,8 @@ All five roles returned link-layer counters in 46 snapshots over 45 seconds. The
 
 The role-counter tool reports byte and packet deltas and counts intervals with activity on both `en0` and a secondary interface. A positive overlap would establish host activity inside that interval. An owned peer and synchronized radio observations would still be needed to attribute a transfer and identify the exact airtime or channel combination. [Counter tool](../tools/read_link_role_counters.py)
 
+The kernel send scheduler reports packet counts for these same interfaces. The PCIe service separately publishes Shikoku's sizing inputs for the DriverKit queues and firmware-facing descriptor rings. [Queue and ring sizing](pcie-queue-sizing.md)
+
 ## Bluetooth endpoint
 
 Both macOS I/O Registry planes place the Wi-Fi and Bluetooth PCI functions under the same bridge. The J313 Linux device tree independently places the two functions at `01:00.0` and `01:00.1` below `pcie0/port00`. Linux enumerates the internal Broadcom cores from the radio's ROM. The shared host port establishes the board-level attachment and leaves the on-chip D11 count open. [Filtered local topology](../evidence/2026-11-17-pcie-function-topology.json), [J313 device tree](https://github.com/torvalds/linux/blob/v6.12/arch/arm64/boot/dts/apple/t8103-j313.dts#L32-L37), [M1 PCIe functions](https://github.com/torvalds/linux/blob/v6.12/arch/arm64/boot/dts/apple/t8103-jxxx.dtsi#L64-L83), [Linux core discovery](https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c#L849-L893)
