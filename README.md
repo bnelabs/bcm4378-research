@@ -12,6 +12,7 @@ This repository records the Wi-Fi hardware, driver and firmware of the 2020 M1 M
 - [Simultaneous dual-band policy](docs/simultaneous-dual-band.md) maps the macOS firmware and platform gates and the Linux channel and station limits.
 - [Live access and control](docs/live-access.md) records the PCIe apertures, UART metadata, transmit-power readout and conditions for testing deeper controls.
 - [PCIe link and power properties](docs/pcie-link-properties.md) records the shared port, endpoint status fields, and link power capability and policy.
+- [Packet queues and PCIe ring sizing](docs/pcie-queue-sizing.md) traces the live scheduler and Shikoku transport settings through macOS and compares Linux descriptor depths.
 - [macOS host power policy](docs/host-power-policy.md) records network wake and keepalive settings and their scope.
 - [Linux and Asahi controls](docs/asahi-controls.md) records the versioned driver paths and readouts for a separately managed A2337.
 - [Firmware RAM diagnostics](docs/ram-diagnostics.md) maps the Linux capture boundary, boot serialization, and offline comparison.

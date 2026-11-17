@@ -8,7 +8,7 @@ import re
 import subprocess
 import sys
 
-from inspect_firmware import read_artifact
+from inspect_firmware import TRANSPORT_CONFIG_KEYS, read_artifact
 
 
 DRIVER_BUNDLE = Path("/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext")
@@ -163,6 +163,10 @@ def collect():
         raise ValueError("The BCM4378 Wi-Fi PCIe device was not found in I/O Registry")
     entries = list(registry_entries([pci]))
     core = next((entry for entry in entries if entry.get("IOUserClass") == "AppleBCMWLANCore"), {})
+    bus = next(
+        (entry for entry in entries if entry.get("IOUserClass") == "AppleBCMWLANBusInterfacePCIe"),
+        {},
+    )
     route = subprocess.run(
         ("/sbin/route", "-n", "get", "default"), capture_output=True, text=True, timeout=20
     )
@@ -181,6 +185,9 @@ def collect():
             "requested_files": requested_firmware(core),
             "running_firmware": core.get("FirmwareVersion"),
             "interface_roles": interface_roles(entries),
+            "transport_config_properties": {
+                key: bus[key] for key in TRANSPORT_CONFIG_KEYS if type(bus.get(key)) is int
+            },
         },
         "bluetooth": bluetooth_snapshot(),
     }

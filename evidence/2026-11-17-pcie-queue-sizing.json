@@ -1,0 +1,275 @@
+{
+  "sampled_at_utc": "2026-11-17T08:46:59+00:00",
+  "host": {
+    "macos_build": "26B131",
+    "macos_version": "27.2.1",
+    "model": "MacBookAir10,1",
+    "pci_id": "14e4:4425",
+    "default_ipv4_interface": "en0"
+  },
+  "macos": {
+    "driver_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "driver_sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "slices_checked": [
+      "arm64e",
+      "arm64e.x1"
+    ],
+    "signed_platform_config": {
+      "driver_bundle": {
+        "bytes": 2647,
+        "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/PlatformConfig/macOS/shikoku-PlatformConfig.plist",
+        "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/PlatformConfig/macOS/shikoku-PlatformConfig.plist",
+        "sha256": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547"
+      },
+      "matches_shared_copy": true
+    },
+    "bcm4378_profile_sha256": {
+      "atlantisb": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547",
+      "capri": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547",
+      "honshu": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547",
+      "kyushu": "8bfa5070d6c495c32f8574b3315258509dd9569439b8a79387d14f81103288a8",
+      "santorini": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547",
+      "shikoku": "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547"
+    },
+    "macos_profiles_with_byte_identical_copies": 56,
+    "profile_property_order": [
+      "wlan.tx.ring.size",
+      "wlan.rx.ring.size",
+      "wlan.llw.tx.ring.size",
+      "wlan.tx.submission-queue.size",
+      "wlan.skywalk.packetpoolsize"
+    ],
+    "profile_value_counts": [
+      {
+        "values": [
+          1024,
+          768,
+          512,
+          1024,
+          9472
+        ],
+        "profiles": 23
+      },
+      {
+        "values": [
+          512,
+          512,
+          512,
+          null,
+          null
+        ],
+        "profiles": 19
+      },
+      {
+        "values": [
+          768,
+          512,
+          512,
+          768,
+          null
+        ],
+        "profiles": 11
+      },
+      {
+        "values": [
+          768,
+          512,
+          null,
+          768,
+          null
+        ],
+        "profiles": 2
+      },
+      {
+        "values": [
+          512,
+          512,
+          null,
+          null,
+          null
+        ],
+        "profiles": 1
+      }
+    ],
+    "live_pcie_registry": {
+      "entry": "AppleBCMWLANBusInterfacePCIe",
+      "object_class": "IOUserService",
+      "properties": {
+        "wlan.llw.tx.ring.size": 512,
+        "wlan.rx.ring.size": 512,
+        "wlan.tx.ring.size": 768,
+        "wlan.tx.submission-queue.size": 768
+      }
+    },
+    "interface_send_scheduler": {
+      "command": "/usr/sbin/netstat -q -I",
+      "interfaces": {
+        "ap1": {
+          "scheduler": "FQ_CODEL",
+          "queued_packets": 0,
+          "limit_packets": 6720
+        },
+        "awdl0": {
+          "scheduler": "FQ_CODEL",
+          "queued_packets": 0,
+          "limit_packets": 6720
+        },
+        "en0": {
+          "scheduler": "FQ_CODEL",
+          "queued_packets": 0,
+          "limit_packets": 6720
+        },
+        "llw0": {
+          "scheduler": "FQ_CODEL",
+          "queued_packets": 0,
+          "limit_packets": 6720
+        },
+        "nan0": {
+          "scheduler": "FQ_CODEL",
+          "queued_packets": 0,
+          "limit_packets": 6720
+        }
+      }
+    },
+    "static_trace": {
+      "configuration_publication": "AppleBCMWLANCore::setPlatformConfigProperties",
+      "parameter_reader": "AppleBCMWLANCore::fetchAndUpdateRingParameters",
+      "reader_callers": [
+        "AppleBCMWLANConfigManager::gatherParameterData",
+        "AppleBCMWLANCore::driverkitAllocSkywalkBusResources"
+      ],
+      "setter_targets_from_chained_fixups": {
+        "wlan.tx.ring.size": "AppleBCMWLANBusInterfacePCIe::setTxRingSize",
+        "wlan.rx.ring.size": "AppleBCMWLANBusInterfacePCIe::setRxRingSize",
+        "wlan.llw.tx.ring.size": "AppleBCMWLANBusInterfacePCIe::setLlwTxRingSize",
+        "wlan.tx.submission-queue.size": "AppleBCMWLANBusInterfacePCIe::setTxSubmissionQueueSize",
+        "wlan.skywalk.packetpoolsize": "AppleBCMWLANBusInterfacePCIe::setSkywalkPacketPoolSize"
+      },
+      "ring_builders": [
+        "AppleBCMWLANBusInterfacePCIe::createStaticRings",
+        "AppleBCMWLANBusInterfacePCIe::createFlow"
+      ],
+      "skywalk_capacity_builders": [
+        "AppleBCMWLANBusInterfacePCIe::allocateSkywalkBusResource",
+        "AppleBCMWLANPCIeSkywalk::withProviderAndCapacity",
+        "AppleBCMWLANPCIeSkywalk::registerSkywalkInterface"
+      ],
+      "modeled_shikoku_pcie_descriptor_depths": {
+        "receive_posting": 512,
+        "default_receive_completion": 512,
+        "default_transmit_completion": 768,
+        "transmit_flow": 768
+      },
+      "modeled_shikoku_skywalk_arguments": {
+        "ordinary_transmit_packets": 768,
+        "low_latency_transmit_packets": 1536,
+        "receive_packets": 2048,
+        "shared_packet_pool_entries": 8448
+      }
+    }
+  },
+  "linux_source_models": {
+    "stable": {
+      "repository": "gregkh/linux",
+      "release": "v7.3.4",
+      "commit": "7595a62d45ee1a2297eafa5f2ef5d0a45142d84d",
+      "source_sha256": {
+        "msgbuf.h": "982683ed0fe0d984acbac405e1e5a9fe84fe0b1c54a9ab793c5961df8c3c9519",
+        "msgbuf.c": "bf8a466a610da7363b32e409536fad9377f4d066b747524134c50a550e0d42bb",
+        "pcie.c": "2bc4ff2f06eb515b404e08973a39c029ec975155a17a7baaf6f62e76ca181b4c"
+      },
+      "shared_protocol_versions": [
+        5,
+        6,
+        7
+      ],
+      "receive_packet_id_table_entries": 1024,
+      "receive_buffer_post_default_for_zero": 255,
+      "rings": {
+        "control_submission": {
+          "depth_entries": 64,
+          "descriptor_bytes_v5_v6": 40,
+          "descriptor_bytes_v7": 40
+        },
+        "receive_posting": {
+          "depth_entries": 1024,
+          "descriptor_bytes_v5_v6": 32,
+          "descriptor_bytes_v7": 32
+        },
+        "control_completion": {
+          "depth_entries": 64,
+          "descriptor_bytes_v5_v6": 24,
+          "descriptor_bytes_v7": 24
+        },
+        "transmit_completion": {
+          "depth_entries": 1024,
+          "descriptor_bytes_v5_v6": 16,
+          "descriptor_bytes_v7": 24
+        },
+        "receive_completion": {
+          "depth_entries": 1024,
+          "descriptor_bytes_v5_v6": 32,
+          "descriptor_bytes_v7": 40
+        },
+        "transmit_flow": {
+          "depth_entries": 512,
+          "descriptor_bytes_v5_v6": 48,
+          "descriptor_bytes_v7": 48
+        }
+      },
+      "common_descriptor_bytes_v5_v6": 86016,
+      "common_descriptor_bytes_v7": 102400
+    },
+    "asahi": {
+      "repository": "AsahiLinux/linux",
+      "release": "asahi-7.3.4-2",
+      "commit": "201be96df5654336bdcbe1da2103f193d7a0b940",
+      "source_sha256": {
+        "msgbuf.h": "04c8a06add9f61e489538afb0545a57d534b6275760b222b4479df334fa1aecc",
+        "msgbuf.c": "470a034e71dd88b5e4f946c220ac08b6af64c398af352221ae6f42f39eb4e65e",
+        "pcie.c": "e2e7051e8fe58935f26eed3fc086b3faedb544d471a0718b7ef82846577e8079"
+      },
+      "shared_protocol_versions": [
+        5,
+        6,
+        7
+      ],
+      "receive_packet_id_table_entries": 2048,
+      "receive_buffer_post_default_for_zero": 255,
+      "rings": {
+        "control_submission": {
+          "depth_entries": 64,
+          "descriptor_bytes_v5_v6": 40,
+          "descriptor_bytes_v7": 40
+        },
+        "receive_posting": {
+          "depth_entries": 2048,
+          "descriptor_bytes_v5_v6": 32,
+          "descriptor_bytes_v7": 32
+        },
+        "control_completion": {
+          "depth_entries": 64,
+          "descriptor_bytes_v5_v6": 24,
+          "descriptor_bytes_v7": 24
+        },
+        "transmit_completion": {
+          "depth_entries": 1024,
+          "descriptor_bytes_v5_v6": 16,
+          "descriptor_bytes_v7": 24
+        },
+        "receive_completion": {
+          "depth_entries": 2048,
+          "descriptor_bytes_v5_v6": 32,
+          "descriptor_bytes_v7": 40
+        },
+        "transmit_flow": {
+          "depth_entries": 512,
+          "descriptor_bytes_v5_v6": 48,
+          "descriptor_bytes_v7": 48
+        }
+      },
+      "common_descriptor_bytes_v5_v6": 151552,
+      "common_descriptor_bytes_v7": 176128
+    }
+  }
+}

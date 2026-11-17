@@ -10,6 +10,8 @@ Firmware responses and driver policy shape the advertised bands, channels and in
 
 The interface-combination code calculates separate limits for channels and infrastructure stations. [Dual-band policy report](simultaneous-dual-band.md#linux-advertisement-rules)
 
+The pinned Asahi PCIe driver doubles the host-allocated receive ring depths and exposes the same `msgbuf_stats` readout on debug builds. [Queue and ring sizing](pcie-queue-sizing.md#linux-and-asahi)
+
 ## Standard controls and readouts
 
 | Surface | What the pinned driver sources establish | Read-only bench query |
