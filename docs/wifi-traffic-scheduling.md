@@ -2,6 +2,8 @@
 
 On the M1 MacBook Air, an application can request a network service type or a TCP pacing ceiling on its own socket. The host scheduler exposes queue groups and delay targets. The Wi-Fi driver publishes per-traffic-ID frame counter names. [Socket, queue, and firmware evidence](../evidence/2026-11-17-wifi-traffic-scheduling.json)
 
+A connected loopback follow-up verified interactive-video and background service types with an archive pacing ceiling while checking every delivered byte. The inspection prototype measured preview-deadline performance using a replayed link. [Inspection prototype and timing scope](practical-radio-applications.md#see-a-defect-while-the-full-image-is-still-in-transit)
+
 ## Socket controls verified on macOS 27.2.1
 
 All nine SDK `NET_SERVICE_TYPE_*` values passed `SO_NET_SERVICE_TYPE` set and readback on unbound, unconnected IPv4 and IPv6 TCP and UDP sockets. Each fresh socket started at best effort. The six documented `NWParameters.ServiceClass` cases type-checked with the macOS 27.2 SDK. [BSD probe](../tools/probe_socket_qos.c), [Apple Network framework service classes](https://developer.apple.com/documentation/network/nwparameters/serviceclass-swift.enum)

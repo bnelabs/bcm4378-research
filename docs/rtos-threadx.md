@@ -22,6 +22,25 @@ rizin -N -q -a arm -b 16 -m 0x352000 \
 
 The format pointer is loaded into ARM register `r0`, and the startup code puts 5 in `r1` and 6 in `r2`. Those are the first two arguments after the format string. Honshu and Kyushu also load fault formats for the thread name, ID, run count, stack bounds and size, thread entry function, and timer. The addresses above are offline disassembly coordinates under the reference mapping. A live boot or fault capture remains to be collected on a separate target. [Call sites and file hashes](../evidence/2026-11-17-threadx-firmware.json)
 
+## Main and idle tasks in the stock images
+
+Each stock image passes `main_thread` and `idle_thread` to the same name-first helper within that image. The `main_thread` entry reaches the ThreadX 5.6 message and sets up the `idle_thread` call. Their buffer pointers and sizes describe a main stack argument of 8,160 bytes and an idle stack argument of 384 bytes. The idle entry branches to a loop that saves and restores the processor's interrupt status around its work. One helper in that loop branches below the loaded image. The shared thread setup helper also lands below the image and has no matching slot in the candidate overlay table. The code in ROM and the actual running stack sizes remain unobserved. [Three-image disassembly and arguments](../evidence/2026-11-17-threadx-task-map.json)
+
+| Executable | Main entry | Idle entry | Thread list head slot |
+| --- | --- | --- | --- |
+| B1 Honshu and Capri | `0x3b0274` | `0x3b01bc` | `0x3522d8` |
+| B3 Kyushu | `0x398b10` | `0x398a58` | `0x3522e8` |
+
+The firmware's `deadman_state_machine` reaches a routine that loads the head pointer, follows `record + 0x88` and tests for a return to the head. This fits the created-thread list field in the public ThreadX structure. Compiling the upstream declaration for 32-bit ARM with empty port extensions put `tx_thread_created_next` at `0x88`. The static files have a zero in each head slot. The running firmware can populate the slot in RAM. [List instructions and layout check](../evidence/2026-11-17-threadx-task-map.json), [Public thread declaration](https://github.com/eclipse-threadx/threadx/blob/v6.5.2.202603b_rel/common/inc/tx_api.h#L489-L497)
+
+The optional `--threadx-list` argument reads that list from a retained main-RAM capture. It chooses the slot using the reference stock image's SHA-256. A zero head yields no entries and the head value stays visible in the result. A malformed link or a cycle away from the head is reported as an error. The reader decoded both raw and event-prefixed synthetic captures for all three mapped builds. Real firmware captures remain to be checked. [Capture requirements](ram-diagnostics.md#capture-boundaries), [Reader and fixture results](../evidence/2026-11-17-threadx-task-map.json)
+
+```sh
+python3 tools/compare_ram_capture.py "$capture_file" "$firmware_file" \
+  --ram-bytes "$ram_bytes" --save-restore-bytes "$save_restore_bytes" \
+  --prefix-bytes "$prefix_bytes" --threadx-list
+```
+
 ## Use the public source to read a saved thread record
 
 The upstream release list examined has 28 entries, starting at `v6.0_rel`. Its `v6.5.2.202603b_rel` headers expose the thread control-block fields in the order used by the stock fault routine. With 32-bit words and an empty first port extension, the relevant positions agree with the firmware's observed offsets. [Eclipse release list](https://github.com/eclipse-threadx/threadx/releases), [Pinned TX_THREAD definition](https://github.com/eclipse-threadx/threadx/blob/v6.5.2.202603b_rel/common/inc/tx_api.h#L423-L473), [Instruction and release checks](../evidence/2026-11-17-threadx-firmware.json)

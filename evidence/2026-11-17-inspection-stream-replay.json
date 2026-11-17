@@ -1,0 +1,71 @@
+{
+  "default_route_before_and_after": [
+    "en0",
+    "en0"
+  ],
+  "model": {
+    "archive_bytes_per_frame": 40960,
+    "frame_interval_ms": 200.0,
+    "link_segments": [
+      {
+        "bytes_per_second": 125000,
+        "end_ms": 2000.0
+      },
+      {
+        "bytes_per_second": 48000,
+        "end_ms": 3200.0
+      },
+      {
+        "bytes_per_second": 125000,
+        "end_ms": null
+      }
+    ],
+    "maximum_chunk_bytes": 4096,
+    "preview_bytes_per_frame": 2048,
+    "preview_deadline_ms": 160.0
+  },
+  "results": {
+    "arrival_order": {
+      "archive_finished_at_ms": 14501.764,
+      "archive_payload_bytes_delivered": 1638400,
+      "loopback_payload_checked": true,
+      "loopback_socket_settings": {
+        "archive": {
+          "pacing_ceiling_bytes_per_second": null,
+          "service_type": 0
+        },
+        "preview": {
+          "pacing_ceiling_bytes_per_second": null,
+          "service_type": 0
+        }
+      },
+      "preview_by_deadline": 1,
+      "preview_delivered": 40,
+      "preview_delivered_p95_ms": 6085.956,
+      "preview_expired_before_send": 0,
+      "preview_offered": 40
+    },
+    "deadline_first": {
+      "archive_finished_at_ms": 14501.764,
+      "archive_payload_bytes_delivered": 1638400,
+      "loopback_payload_checked": true,
+      "loopback_socket_settings": {
+        "archive": {
+          "pacing_ceiling_bytes_per_second": 125000,
+          "service_type": 1
+        },
+        "preview": {
+          "pacing_ceiling_bytes_per_second": null,
+          "service_type": 3
+        }
+      },
+      "preview_by_deadline": 40,
+      "preview_delivered": 40,
+      "preview_delivered_p95_ms": 93.007,
+      "preview_expired_before_send": 0,
+      "preview_offered": 40
+    }
+  },
+  "scope": "Simulated constrained link time with connected local TCP byte transfer and socket set/readback. No on-air timing measurement.",
+  "system_build": "26B131"
+}
