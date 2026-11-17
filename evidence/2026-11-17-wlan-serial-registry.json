@@ -1,0 +1,81 @@
+{
+  "checked_at_utc": "2026-11-17T05:49:15Z",
+  "host": {
+    "model": "MacBookAir10,1",
+    "macos_version": "27.2.1",
+    "architecture": "arm64"
+  },
+  "method": {
+    "topology": "Filtered ioreg node names and classes in the IOService and IODeviceTree planes",
+    "tty_properties": "IORegistryEntryCreateCFProperty called for four string keys on the IOSerialBSDClient child of the matching AppleSimpleUARTSync service",
+    "default_ipv4_interface": "route -n get -inet default with output restricted to the interface name",
+    "serial_device_opened": false,
+    "serial_data_sampled": false,
+    "diagnostics_or_log_collection_run": false
+  },
+  "observations": {
+    "default_ipv4_interface": "en0",
+    "serial": {
+      "io_service_path": [
+        "AppleARMPE",
+        "arm-io [IOPlatformDevice]",
+        "AppleT810xIO",
+        "uart2 [AppleARMIODevice]",
+        "AppleSamsungSerial",
+        "wlan-debug [AppleSimpleUARTSync]"
+      ],
+      "io_device_tree_path": [
+        "arm-io [IOPlatformDevice]",
+        "uart2 [AppleARMIODevice]",
+        "wlan-debug [AppleSimpleUARTSync]"
+      ],
+      "device_tree_labels": {
+        "device_type": "wlan-debug",
+        "name": "wlan-debug"
+      },
+      "io_service_child_classes": [
+        "AppleOnboardSerialBSDClient",
+        "IOSerialBSDClient"
+      ],
+      "ioserialbsdclient_properties": {
+        "IOTTYBaseName": "wlan-debug",
+        "IOTTYDevice": "wlan-debug",
+        "IOCalloutDevice": "/dev/cu.wlan-debug",
+        "IODialinDevice": "/dev/tty.wlan-debug"
+      }
+    },
+    "wifi_driver_branch": [
+      "AppleT810xIO",
+      "AppleARMIODevice",
+      "AppleT8103PCIe",
+      "IOPCIDevice",
+      "ApplePCIEHostBridge",
+      "wlan [IOPCIDevice]",
+      "IOUserService",
+      "AppleBCMWLANCore [IOUserService]"
+    ]
+  },
+  "interpretation": {
+    "established": "The registered wlan-debug serial endpoint is served by the host SoC's UART2 branch. The Wi-Fi driver attaches under a separate PCIe branch.",
+    "label_inference": "The IODeviceTree name suggests a WLAN debug purpose.",
+    "unverified": [
+      "Board wiring and the device attached to the UART",
+      "Byte delivery and the endpoint's protocol or firmware producer"
+    ]
+  },
+  "documented_host_diagnostics": {
+    "corewlan": "CWInterface exposes public host link getters.",
+    "wdutil": "The bundled wdutil manual documents the info subcommand for the current wireless environment.",
+    "wireless_diagnostics": "Apple describes network analysis and a local support archive. The support page says that the utility does not change network settings.",
+    "console": "Apple documents viewing and filtering existing system log entries. Wi-Fi-specific log contents remain unverified here."
+  },
+  "sources": {
+    "apple_registry_planes": "https://developer.apple.com/library/archive/documentation/DeviceDrivers/Conceptual/IOKitFundamentals/TheRegistry/TheRegistry.html",
+    "apple_registry_property_read": "https://developer.apple.com/documentation/iokit/1514293-ioregistryentrycreatecfproperty/",
+    "apple_serial_bsd_client": "https://github.com/apple-oss-distributions/IOSerialFamily/blob/IOSerialFamily-93.200.2/IOSerialFamily.kmodproj/IOSerialBSDClient.cpp#L610-L725",
+    "asahi_t8103_uart2": "https://github.com/AsahiLinux/linux/blob/asahi-7.3.4-2/arch/arm64/boot/dts/apple/t8103.dtsi#L892-L902",
+    "apple_corewlan": "https://developer.apple.com/documentation/corewlan/cwinterface",
+    "apple_wireless_diagnostics": "https://support.apple.com/guide/mac-help/mchlf4de377f/mac",
+    "apple_console": "https://support.apple.com/guide/console/find-log-messages-and-activities-cnslbf30b61a/mac"
+  }
+}

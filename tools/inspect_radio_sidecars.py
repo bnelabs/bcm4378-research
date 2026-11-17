@@ -2,6 +2,7 @@
 """Inspect local Broadcom radio sidecars and report structural metadata."""
 
 import argparse
+from collections import Counter
 from datetime import datetime
 from hashlib import sha256
 import json
@@ -26,6 +27,10 @@ CLM_HEADER = Struct("<8sI2s20s10sII30s22s")
 # Observed TXCP prefix in all seven stock BCM4378 TxCap payloads.
 TXCP_PROFILE_FIELDS = Struct("<4xI64s20s")
 TXCP_TIMESTAMP = re.compile(rb"([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2})\x00")
+
+CHAIN_MASK_KEYS = ("aa2g", "aa5g", "rxchain", "txchain")
+NVRAM_INTEGER = re.compile(r"[+-]?(?:0[xX][0-9a-fA-F]+|[0-9]+)")
+SLICE_1_PREFIX = "slice/1/"
 
 
 def verify_crc(data, expected, description):
@@ -129,7 +134,45 @@ def inspect_blob(path, role):
     return report
 
 
-def inspect_nvram(path):
+def read_chain_mask(text):
+    if NVRAM_INTEGER.fullmatch(text) is None:
+        return None
+    base = 16 if text.lstrip("+-").lower().startswith("0x") else 10
+    try:
+        value = int(text, base)
+    except ValueError:
+        return None
+    return value if 0 <= value <= 0xff else None
+
+
+def inspect_nvram_topology(assignments, keys):
+    flat = {key for key in keys if "/" not in key}
+    slice_1 = {key for key in keys if key.startswith(SLICE_1_PREFIX)}
+    arrays = Counter()
+    masks = {key: set() for key in CHAIN_MASK_KEYS}
+    for key, value in assignments:
+        text = value.partition("#")[0].strip()
+        if key in masks:
+            masks[key].add(read_chain_mask(text))
+        tokens = text.split(",")
+        if len(tokens) > 1 and all(NVRAM_INTEGER.fullmatch(token.strip()) for token in tokens):
+            arrays[len(tokens)] += 1
+
+    return {
+        "distinct_keys_by_namespace": {
+            "flat": len(flat),
+            "slice/1": len(slice_1),
+            "other": len(keys) - len(flat) - len(slice_1),
+        },
+        "slice_1_keys_with_flat_leaf": sum(key[len(SLICE_1_PREFIX):] in flat for key in slice_1),
+        "numeric_arrays_by_token_count": {str(length): count for length, count in arrays.items()},
+        "chain_masks": {
+            key: next(iter(values)) if len(values) == 1 else None for key, values in masks.items()
+        },
+    }
+
+
+def inspect_nvram(path, include_topology=False):
     data, identity = read_artifact(path)
     assignments = []
     revisions = set()
@@ -141,19 +184,23 @@ def inspect_nvram(path):
         key = key.strip()
         if not separator or not key:
             raise ValueError(f"Invalid NVRAM assignment on line {line_number}")
-        assignments.append(key)
+        assignments.append((key, value))
         if key == "sromrev" and value.strip().isdecimal():
             revisions.add(int(value))
 
-    return {
+    keys = {key for key, _ in assignments}
+    report = {
         "file": identity,
         "encoding": "ASCII",
         "assignments": len(assignments),
-        "distinct_keys": len(set(assignments)),
-        "flat_key_assignments": sum("/" not in key for key in assignments),
-        "slice_1_assignments": sum(key.startswith("slice/1/") for key in assignments),
+        "distinct_keys": len(keys),
+        "flat_key_assignments": sum("/" not in key for key, _ in assignments),
+        "slice_1_assignments": sum(key.startswith(SLICE_1_PREFIX) for key, _ in assignments),
         "srom_revision": next(iter(revisions)) if len(revisions) == 1 else None,
     }
+    if include_topology:
+        report["topology"] = inspect_nvram_topology(assignments, keys)
+    return report
 
 
 def main():
@@ -161,7 +208,14 @@ def main():
     parser.add_argument("--clm", type=Path, help="Local Country Locale Matrix BLOB")
     parser.add_argument("--txcap", type=Path, help="Local TxCap BLOB")
     parser.add_argument("--nvram", type=Path, help="Local NVRAM text sidecar")
+    parser.add_argument(
+        "--nvram-topology",
+        action="store_true",
+        help="Include namespace counts, numeric array lengths and four chain masks with --nvram",
+    )
     args = parser.parse_args()
+    if args.nvram_topology and args.nvram is None:
+        parser.error("--nvram-topology requires --nvram")
     if args.clm is None and args.txcap is None and args.nvram is None:
         parser.error("provide --clm, --txcap or --nvram")
 
@@ -170,7 +224,10 @@ def main():
         if path is None:
             continue
         try:
-            report[role] = inspect_nvram(path) if role == "nvram" else inspect_blob(path, role)
+            if role == "nvram":
+                report[role] = inspect_nvram(path, include_topology=args.nvram_topology)
+            else:
+                report[role] = inspect_blob(path, role)
         except (OSError, ValueError) as error:
             parser.error(f"{role} {path}: {error}")
     print(json.dumps(report, indent=2, sort_keys=True))

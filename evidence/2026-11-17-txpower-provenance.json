@@ -1,0 +1,107 @@
+{
+  "captured_utc": "2026-11-17T05:52:05+00:00",
+  "conversion_comparison": {
+    "converted_mw": 1496,
+    "divisor": 10,
+    "equivalent_lookup_input_dbm": 31.75,
+    "linux_automatic_quarter_dbm": 127,
+    "linux_policy_reference": "https://github.com/gregkh/linux/blob/v7.3.4/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L2659-L2710",
+    "lookup_index": 14,
+    "matching_low_bytes_when_enumerating_0_through_255": [
+      127
+    ],
+    "public_broadcom_reference": "https://android.googlesource.com/platform/hardware/broadcom/wlan/+/b5876d709a5573570d2ee218a3fabce6fc18d0db/bcmdhd/dhdutil/bcmutils.c",
+    "table_value_before_scaling": 14962
+  },
+  "corewifi": {
+    "library": "/System/Library/PrivateFrameworks/CoreWiFi.framework/Versions/A/CoreWiFi",
+    "static_observation": [
+      "CWFInterface txPower sends a query using a synchronous XPC proxy. The reply callback calls doubleValue and stores it.",
+      "The separate Apple80211 transmit-power handler boxes a signed integer taken from the reply structure."
+    ],
+    "uuid": "BD102104-B05E-3CCD-9F26-65C83FDB6BBF"
+  },
+  "driver": {
+    "method": "AppleBCMWLANCore getTXPOWER",
+    "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "rea_table_windows": [
+      {
+        "digest": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+        "id": "ev_59dc33c123600caecc89a4c944a7576f61a15101ee56b5381b777f62f48314fa",
+        "window": {
+          "length": 80,
+          "offset": 3470672
+        }
+      },
+      {
+        "digest": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+        "id": "ev_f5fe3a47f9fed70821e64b06717e2dede805de1839367c90106791b8e41dc7e7",
+        "window": {
+          "length": 80,
+          "offset": 8719904
+        }
+      }
+    ],
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "slices": [
+      {
+        "architecture": "arm64e",
+        "conversion_input_bytes": 1,
+        "conversion_table_entries": 40,
+        "conversion_table_sha256": "8ecdf6bad6e6d29a99cef3b2bd0e3966a6d26ebd9218c62aed8b1a617e93ba3d",
+        "firmware_variable": "qtxpower",
+        "matched_public_table_values": 40,
+        "uuid": "A4468F67-5706-3058-9E27-44A96E806FB5"
+      },
+      {
+        "architecture": "arm64e.x1",
+        "conversion_input_bytes": 1,
+        "conversion_table_entries": 40,
+        "conversion_table_sha256": "8ecdf6bad6e6d29a99cef3b2bd0e3966a6d26ebd9218c62aed8b1a617e93ba3d",
+        "firmware_variable": "qtxpower",
+        "matched_public_table_values": 40,
+        "uuid": "59286A5B-223E-389D-9FC8-0C1F7CA64B02"
+      }
+    ],
+    "static_data_flow": [
+      "Calls the firmware variable getter with qtxpower and no setting payload.",
+      "Reads the first byte of the returned result.",
+      "Converts the quarter-dBm byte with the uint16 milliwatt table and rounded integer division.",
+      "Writes the converted value to the result structure."
+    ]
+  },
+  "limitations": [
+    "The byte value on this Mac is inferred from the host conversion and the matching public readout.",
+    "XPC server dispatch, firmware return bytes and physical RF power were not observed.",
+    "The Linux driver uses 127 for automatic policy. This does not independently establish the active macOS policy flag."
+  ],
+  "method": {
+    "driver": "Disassemble getTXPOWER with the installed dyld_info for each architecture. Resolve the firmware-variable string and the lookup-table reference through the Mach-O segment mappings. Compare the 40 little-endian uint16 entries with the published Broadcom table.",
+    "frameworks": "Inspect the public getter and the relevant CoreWiFi methods with dyld_info. Resolve the direct Objective-C selector stubs through file-backed dyld shared-cache mappings.",
+    "sample": "Run tools/read_wifi_status.swift --sample 6 0.5 and retain only the aggregate configurations and reported power values. Read the default interface before and after."
+  },
+  "public_getter_observation": {
+    "configuration_counts": [
+      {
+        "channel": 40,
+        "channel_width_mhz": 80,
+        "interface": "en0",
+        "mode": "station",
+        "samples": 6
+      }
+    ],
+    "default_route_after": "en0",
+    "default_route_before": "en0",
+    "reported_power_values": {
+      "1496": 6
+    },
+    "sample_count": 6
+  },
+  "public_wrapper": {
+    "library": "/System/Library/Frameworks/CoreWLAN.framework/Versions/A/CoreWLAN",
+    "method": "CWInterface transmitPower",
+    "static_observation": "Gets the CoreWiFi object, calls the txPower selector, and converts the double to an integer toward zero.",
+    "uuid": "98C43729-E734-36E2-BF19-A1AB37C40B9B"
+  },
+  "system_build": "26B131"
+}
