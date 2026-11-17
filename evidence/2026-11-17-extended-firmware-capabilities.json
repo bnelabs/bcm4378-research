@@ -1,0 +1,460 @@
+{
+  "sampled_at_utc": "2026-11-17T13:46:14+00:00",
+  "host": {
+    "model": "MacBookAir10,1",
+    "macos_version": "27.2.1",
+    "macos_build": "26B131",
+    "default_ipv4_interface": "en0",
+    "interface_status": "active",
+    "pci_id": "14e4:4425",
+    "running_firmware": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a"
+  },
+  "published_legacy_reply": {
+    "property": "AppleBCMWLANCore.FWCap",
+    "previous_snapshot": "2026-11-17-live-firmware-capabilities.json",
+    "matches_previous_words_in_order": true,
+    "word_count": 90,
+    "distinct_word_count": 89,
+    "matched_legacy_table_entries": 48,
+    "selected_word_presence": {
+      "proxd": true,
+      "rsdb": true,
+      "nan": true,
+      "csi": false,
+      "tsync": false,
+      "ptm": false,
+      "6g": false,
+      "dtim_miss": true,
+      "ap": true,
+      "hp2p": true,
+      "p2p": false,
+      "awdl": true
+    },
+    "most_recent_parser": null,
+    "legacy_selection_cause": null
+  },
+  "driver": {
+    "executable_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "strict_signature_verified": true,
+    "slices_checked": [
+      "arm64e",
+      "arm64e.x1"
+    ]
+  },
+  "static_trace": {
+    "dispatch": "AppleBCMWLANCore::processChipCaps",
+    "versioned_reader": "AppleBCMWLANCore::IssueFwCapExt",
+    "versioned_parser": "AppleBCMWLANCore::processFwFeatures",
+    "legacy_publisher": "AppleBCMWLANCore::IssueFwCap",
+    "slice_addresses": {
+      "arm64e": {
+        "reset_bitmap": "0x1000f1304",
+        "adjustFeatureFlags_call": "0x1000f130c",
+        "IssueFwCapExt_call": "0x1000f1380",
+        "zero_status_return_path": "0x1000f14b0",
+        "IssueFwCap_call": "0x1000f1444",
+        "FWCap_string_reference": "0x1000ee448",
+        "processFwFeatures_call": "0x1000efeec"
+      },
+      "arm64e.x1": {
+        "reset_bitmap": "0x1000ee450",
+        "adjustFeatureFlags_call": "0x1000ee458",
+        "IssueFwCapExt_call": "0x1000ee4cc",
+        "zero_status_return_path": "0x1000ee5fc",
+        "IssueFwCap_call": "0x1000ee590",
+        "FWCap_string_reference": "0x1000eb5fc",
+        "processFwFeatures_call": "0x1000ed04c"
+      }
+    },
+    "direct_flag_updates": {
+      "arm64e": {
+        "set": {
+          "direct_calls": 77,
+          "indices": [
+            3,
+            4,
+            6,
+            10,
+            11,
+            12,
+            15,
+            16,
+            17,
+            18,
+            21,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            34,
+            36,
+            37,
+            38,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            51,
+            52,
+            53,
+            54,
+            56,
+            57,
+            59,
+            60,
+            61,
+            62,
+            65,
+            66,
+            67,
+            68,
+            69,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            89,
+            90,
+            91,
+            93,
+            96,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            111,
+            112,
+            115,
+            116,
+            117,
+            118,
+            120,
+            121,
+            122,
+            123
+          ],
+          "shared_callsites": [
+            {
+              "address": "0x1000f10d8",
+              "indices": [
+                31,
+                32,
+                74,
+                106,
+                111,
+                115,
+                117,
+                122
+              ]
+            }
+          ]
+        },
+        "clear": {
+          "direct_calls": 21,
+          "indices": [
+            6,
+            11,
+            16,
+            64,
+            65,
+            66,
+            68,
+            75,
+            82,
+            87,
+            93,
+            101,
+            102,
+            105,
+            106,
+            107,
+            108,
+            109,
+            112
+          ],
+          "shared_callsites": []
+        }
+      },
+      "arm64e.x1": {
+        "set": {
+          "direct_calls": 77,
+          "indices": [
+            3,
+            4,
+            6,
+            10,
+            11,
+            12,
+            15,
+            16,
+            17,
+            18,
+            21,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            34,
+            36,
+            37,
+            38,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            51,
+            52,
+            53,
+            54,
+            56,
+            57,
+            59,
+            60,
+            61,
+            62,
+            65,
+            66,
+            67,
+            68,
+            69,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            89,
+            90,
+            91,
+            93,
+            96,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            111,
+            112,
+            115,
+            116,
+            117,
+            118,
+            120,
+            121,
+            122,
+            123
+          ],
+          "shared_callsites": [
+            {
+              "address": "0x1000ee224",
+              "indices": [
+                31,
+                32,
+                74,
+                106,
+                111,
+                115,
+                117,
+                122
+              ]
+            }
+          ]
+        },
+        "clear": {
+          "direct_calls": 21,
+          "indices": [
+            6,
+            11,
+            16,
+            64,
+            65,
+            66,
+            68,
+            75,
+            82,
+            87,
+            93,
+            101,
+            102,
+            105,
+            106,
+            107,
+            108,
+            109,
+            112
+          ],
+          "shared_callsites": []
+        }
+      }
+    },
+    "compared_with_legacy": {
+      "shared_set_bits": 77,
+      "set_by_extended_outside_legacy_table": [
+        11,
+        86,
+        105,
+        106,
+        115,
+        116,
+        121
+      ],
+      "legacy_words_with_no_direct_extended_set": {
+        "35": "awd_data_info",
+        "64": "nanho",
+        "81": "rng_reseed",
+        "92": "sib",
+        "94": "spmi",
+        "95": "qos_mgmt",
+        "98": "oct",
+        "110": "dtim_miss",
+        "113": "lpc"
+      },
+      "set_and_clear_count": 18,
+      "only_cleared_by_extended": [
+        64
+      ],
+      "separate_legacy_csi_bit": 97
+    },
+    "consumer_examples_outside_legacy_table": {
+      "11": {
+        "driver_use": "Tethering blocker checked before requiring AP bit 16",
+        "is_bit_set_calls": {
+          "arm64e": "0x1000edd98",
+          "arm64e.x1": "0x1000eaf78"
+        },
+        "legacy_rule": "Set if \"ap\" is absent. Clear if present."
+      },
+      "86": {
+        "driver_use": "Returned by checkForHP2PSupport",
+        "is_bit_set_calls": {
+          "arm64e": "0x100131970",
+          "arm64e.x1": "0x10012dde0"
+        },
+        "legacy_rule": "Set when \"hp2p\" is present. Clear otherwise."
+      },
+      "105": {
+        "driver_use": "Tested by checkForBeaconProtectionSupport",
+        "is_bit_set_calls": {
+          "arm64e": "0x100129204",
+          "arm64e.x1": "0x10012575c"
+        }
+      },
+      "106": {
+        "driver_use": "Tested after bit 105 before setBeaconProtectionParams in setupFirmware",
+        "is_bit_set_calls": {
+          "arm64e": "0x1000ea9ec",
+          "arm64e.x1": "0x1000e7c58"
+        }
+      },
+      "115": {
+        "driver_use": "Tested by cmdMloStatus and before beAdapter setup in setupFirmware",
+        "is_bit_set_calls_in_cmdMloStatus": {
+          "arm64e": "0x100089628",
+          "arm64e.x1": "0x100087ed0"
+        }
+      },
+      "116": {
+        "driver_use": "Tested after isEhtEnabled in getBssPhyModde",
+        "is_bit_set_calls": {
+          "arm64e": "0x10023299c",
+          "arm64e.x1": "0x10022c564"
+        }
+      },
+      "121": {
+        "driver_use": "Gates byte 22 bit 1 of the getCARD_CAPABILITIES reply",
+        "is_bit_set_calls": {
+          "arm64e": "0x100130f00",
+          "arm64e.x1": "0x10012d37c"
+        },
+        "capability_name": null
+      }
+    },
+    "hp2p": {
+      "legacy_capability_word": "hp2p",
+      "legacy_feature_bit": 86,
+      "legacy_getHP2P_CTRL_calls": {
+        "arm64e": "0x1000eec8c",
+        "arm64e.x1": "0x1000ebe18"
+      },
+      "extended_getHP2P_CTRL_calls": {
+        "arm64e": "0x1000f0424",
+        "arm64e.x1": "0x1000ed584"
+      },
+      "nan_interface_getHP2P_CAPS_tail_calls": {
+        "arm64e": "0x100063194",
+        "arm64e.x1": "0x1000623dc"
+      },
+      "firmware_control_reply_values_captured": false
+    }
+  },
+  "retained_dispatch_logs": {
+    "sampled_at_utc": "2026-11-17T13:46:47+00:00",
+    "window": "24h",
+    "levels": [
+      "default",
+      "info",
+      "debug"
+    ],
+    "method": "macOS retained unified log reader",
+    "status": "timeout"
+  },
+  "offline_p2p_word_match": {
+    "input": "Published macOS FWCap words joined with a single ASCII space",
+    "target_linux_feature": "BRCMF_FEAT_P2P",
+    "matched_word_contains_substring": "hp2p",
+    "linux_stable": {
+      "commit": "7595a62d45ee1a2297eafa5f2ef5d0a45142d84d",
+      "method": "substring search in 768-byte buffer",
+      "matches_on_this_input": true
+    },
+    "asahi": {
+      "commit": "201be96df5654336bdcbe1da2103f193d7a0b940",
+      "method": "whole-word lookup",
+      "matches_on_this_input": false
+    }
+  }
+}
