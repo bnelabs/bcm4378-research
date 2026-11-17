@@ -4,6 +4,8 @@ The running `IO80211ReporterProxy` marked its registry legend public. The sample
 
 The `en0` and `awdl0` groups each have average, IBSS, OBSS, and interference CCA report labels. The legend also lists `CCA (%) excluding own traffic` under link-quality measurements and a QBSS channel-utilization field under `en0`. The DriverKit image associates the QBSS label with its separate `setInterfaceQBSS` updater. [Registry labels and code references](../evidence/2026-11-17-cca-provenance.json)
 
+The signed driver also has a feature-gated hardware mitigation request and can log an available channel specification from its overlapping-network event. The `obss_hw` capability word is absent from the current legacy response. [BSS coloring and spatial reuse](spatial-reuse.md)
+
 ## Native event and cache path
 
 The signed macOS driver handles firmware channel-quality events. On its simple path, the associated-link routine computes an integer percentage from congestion and duration and writes it into the current BSS cache. Both examined driver slices also decode extended reports with self, other, and interference durations across total, wake, and sleep windows. The extended total adds the three categories before dividing by duration. For subsequent host event posting, both paths check an elapsed-time threshold of five seconds. This threshold governs host event posting. Firmware measurement duration and event cadence remain unobserved. [Host instruction trace](../evidence/2026-11-17-cca-provenance.json)

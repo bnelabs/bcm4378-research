@@ -33,6 +33,8 @@ The signed driver also routes the internal `WCL_ULOFDMA_STATE` request to `Apple
 
 Asahi's pinned station rate decoder exposes HE MCS, stream count, dual-carrier modulation, and guard interval. Its bandwidth output uses the width in the firmware ratespec. This decoder leaves the per-user HE RU field unset. For both macOS and Asahi, a rate readout provides useful link context for a capture-based RU test. [Asahi ratespec decoder](https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L2910-L2970)
 
+The capture reader also has a mode for BSS color, the PSR capability bit, and advertised spatial reuse policy. [Spatial reuse capture checks](spatial-reuse.md)
+
 ## Reproduction and bench measurement
 
 ```sh
