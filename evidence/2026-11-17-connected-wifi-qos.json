@@ -1,0 +1,810 @@
+{
+  "comparison_windows": [
+    {
+      "host_queue_deltas": {
+        "en0": {
+          "BE": {
+            "bytes": 4227,
+            "packets": 35
+          },
+          "BK": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VI": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VO": {
+            "bytes": 86,
+            "packets": 1
+          }
+        },
+        "utun0": {
+          "AV": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "BE": {
+            "bytes": 505,
+            "packets": 2
+          },
+          "BK": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "BK_SYS": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "CTL": {
+            "bytes": 672,
+            "packets": 12
+          },
+          "OAM": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "RD": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "RV": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VI": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VO": {
+            "bytes": 0,
+            "packets": 0
+          }
+        }
+      },
+      "per_tid_deltas": {
+        "Rx MPDU WME Slice 0": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "Rx MPDU WME Slice 1": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "Tx MPDU WME Slice 0": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "Tx MPDU WME Slice 1": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        }
+      },
+      "response": null,
+      "seconds": 1.36462,
+      "service": "idle"
+    },
+    {
+      "host_queue_deltas": {
+        "en0": {
+          "BE": {
+            "bytes": 251139,
+            "packets": 479
+          },
+          "BK": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VI": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VO": {
+            "bytes": 1112,
+            "packets": 16
+          }
+        },
+        "utun0": {
+          "AV": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "BE": {
+            "bytes": 166649,
+            "packets": 198
+          },
+          "BK": {
+            "bytes": 30215,
+            "packets": 51
+          },
+          "BK_SYS": {
+            "bytes": 88,
+            "packets": 2
+          },
+          "CTL": {
+            "bytes": 3244,
+            "packets": 54
+          },
+          "OAM": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "RD": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "RV": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VI": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VO": {
+            "bytes": 0,
+            "packets": 0
+          }
+        }
+      },
+      "per_tid_deltas": {
+        "Rx MPDU WME Slice 0": {
+          "0": 719,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "Rx MPDU WME Slice 1": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "Tx MPDU WME Slice 0": {
+          "0": 468,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 19,
+          "7": 0
+        },
+        "Tx MPDU WME Slice 1": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        }
+      },
+      "response": {
+        "error": "HTTPS BE: Timeout was reached",
+        "exit": 1
+      },
+      "seconds": 18.8008,
+      "service": "BE"
+    },
+    {
+      "host_queue_deltas": {
+        "en0": {
+          "BE": {
+            "bytes": 33638,
+            "packets": 170
+          },
+          "BK": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VI": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VO": {
+            "bytes": 1180,
+            "packets": 16
+          }
+        },
+        "utun0": {
+          "AV": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "BE": {
+            "bytes": 11313,
+            "packets": 36
+          },
+          "BK": {
+            "bytes": 656,
+            "packets": 10
+          },
+          "BK_SYS": {
+            "bytes": 132,
+            "packets": 3
+          },
+          "CTL": {
+            "bytes": 2572,
+            "packets": 42
+          },
+          "OAM": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "RD": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "RV": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VI": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VO": {
+            "bytes": 0,
+            "packets": 0
+          }
+        }
+      },
+      "per_tid_deltas": {
+        "Rx MPDU WME Slice 0": {
+          "0": 178,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "Rx MPDU WME Slice 1": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "Tx MPDU WME Slice 0": {
+          "0": 144,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 15,
+          "7": 0
+        },
+        "Tx MPDU WME Slice 1": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        }
+      },
+      "response": {
+        "error": "HTTPS BK: Timeout was reached",
+        "exit": 1
+      },
+      "seconds": 18.5047,
+      "service": "BK"
+    },
+    {
+      "host_queue_deltas": {
+        "en0": {
+          "BE": {
+            "bytes": 4569,
+            "packets": 26
+          },
+          "BK": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VI": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VO": {
+            "bytes": 86,
+            "packets": 1
+          }
+        },
+        "utun0": {
+          "AV": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "BE": {
+            "bytes": 949,
+            "packets": 11
+          },
+          "BK": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "BK_SYS": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "CTL": {
+            "bytes": 112,
+            "packets": 2
+          },
+          "OAM": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "RD": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "RV": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VI": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VO": {
+            "bytes": 0,
+            "packets": 0
+          }
+        }
+      },
+      "per_tid_deltas": {
+        "Rx MPDU WME Slice 0": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "Rx MPDU WME Slice 1": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "Tx MPDU WME Slice 0": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "Tx MPDU WME Slice 1": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        }
+      },
+      "response": null,
+      "seconds": 1.36556,
+      "service": "idle"
+    }
+  ],
+  "configured_ipv4_default_interface": "en0",
+  "connected_cli_validation": {
+    "every_window_reported_all_four_wme_groups": true,
+    "ipv4_default_before_and_after": [
+      "en0",
+      "en0"
+    ],
+    "reported_service_settings": [
+      {
+        "body_bytes": 1408,
+        "body_sha256": "3f6fc8b734706bebddbdb5024abba5ab0a4f0e99917160471d207060491c6330",
+        "marking_level_after_fetch": 1,
+        "pacing_ceiling_bytes_per_second": null,
+        "service": "BE",
+        "service_type": 0
+      },
+      {
+        "body_bytes": 1408,
+        "body_sha256": "3f6fc8b734706bebddbdb5024abba5ab0a4f0e99917160471d207060491c6330",
+        "marking_level_after_fetch": 1,
+        "pacing_ceiling_bytes_per_second": null,
+        "service": "VI",
+        "service_type": 3
+      },
+      {
+        "body_bytes": 1408,
+        "body_sha256": "3f6fc8b734706bebddbdb5024abba5ab0a4f0e99917160471d207060491c6330",
+        "marking_level_after_fetch": 1,
+        "pacing_ceiling_bytes_per_second": 125000,
+        "service": "BK",
+        "service_type": 1
+      },
+      {
+        "body_bytes": 1408,
+        "body_sha256": "3f6fc8b734706bebddbdb5024abba5ab0a4f0e99917160471d207060491c6330",
+        "marking_level_after_fetch": 1,
+        "pacing_ceiling_bytes_per_second": 125000,
+        "service": "BK",
+        "service_type": 1
+      },
+      {
+        "body_bytes": 1408,
+        "body_sha256": "3f6fc8b734706bebddbdb5024abba5ab0a4f0e99917160471d207060491c6330",
+        "marking_level_after_fetch": 1,
+        "pacing_ceiling_bytes_per_second": null,
+        "service": "VI",
+        "service_type": 3
+      },
+      {
+        "body_bytes": 1408,
+        "body_sha256": "3f6fc8b734706bebddbdb5024abba5ab0a4f0e99917160471d207060491c6330",
+        "marking_level_after_fetch": 1,
+        "pacing_ceiling_bytes_per_second": null,
+        "service": "BE",
+        "service_type": 0
+      }
+    ],
+    "same_https_payload_verified": true,
+    "target_route": "lo0",
+    "test_url_origin": "https://127.0.0.1 with an ephemeral local listener and process-level trust",
+    "windows": 9
+  },
+  "physical_link": {
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "primary_channel": 40
+  },
+  "published_reports": {
+    "group_sample_values": {
+      "Rx MPDU WME Slice 0": {
+        "Rx MPDU Tid0": 103977070,
+        "Rx MPDU Tid1": 0,
+        "Rx MPDU Tid2": 0,
+        "Rx MPDU Tid3": 0,
+        "Rx MPDU Tid4": 0,
+        "Rx MPDU Tid5": 0,
+        "Rx MPDU Tid6": 0,
+        "Rx MPDU Tid7": 0
+      },
+      "Rx MPDU WME Slice 1": {
+        "Rx MPDU Tid0": 2950,
+        "Rx MPDU Tid1": 1,
+        "Rx MPDU Tid2": 0,
+        "Rx MPDU Tid3": 0,
+        "Rx MPDU Tid4": 0,
+        "Rx MPDU Tid5": 0,
+        "Rx MPDU Tid6": 0,
+        "Rx MPDU Tid7": 0
+      },
+      "Tx MPDU WME Slice 0": {
+        "Tx MPDU Tid0": 43155855,
+        "Tx MPDU Tid1": 66,
+        "Tx MPDU Tid2": 0,
+        "Tx MPDU Tid3": 0,
+        "Tx MPDU Tid4": 0,
+        "Tx MPDU Tid5": 5,
+        "Tx MPDU Tid6": 33845,
+        "Tx MPDU Tid7": 0
+      },
+      "Tx MPDU WME Slice 1": {
+        "Tx MPDU Tid0": 2504,
+        "Tx MPDU Tid1": 0,
+        "Tx MPDU Tid2": 0,
+        "Tx MPDU Tid3": 0,
+        "Tx MPDU Tid4": 0,
+        "Tx MPDU Tid5": 0,
+        "Tx MPDU Tid6": 8,
+        "Tx MPDU Tid7": 0
+      }
+    },
+    "ordinary_user": true,
+    "request_count": 32
+  },
+  "scope": "One published priority bucket is an aggregate. The HTTPS tests use the existing tunnel and leave per-frame over-the-air attribution open.",
+  "system_build": "26B131",
+  "video_spot_checks": [
+    {
+      "host_queue_deltas": {
+        "en0": {
+          "BE": {
+            "bytes": 43809,
+            "packets": 216
+          },
+          "BK": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VI": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VO": {
+            "bytes": 644,
+            "packets": 8
+          }
+        },
+        "utun0": {
+          "AV": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "BE": {
+            "bytes": 14132,
+            "packets": 43
+          },
+          "BK": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "BK_SYS": {
+            "bytes": 44,
+            "packets": 1
+          },
+          "CTL": {
+            "bytes": 4672,
+            "packets": 80
+          },
+          "OAM": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "RD": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "RV": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VI": {
+            "bytes": 2567,
+            "packets": 13
+          },
+          "VO": {
+            "bytes": 0,
+            "packets": 0
+          }
+        }
+      },
+      "https_client": "Python TLS socket with class set before connect",
+      "per_tid_deltas": {
+        "Rx MPDU WME Slice 0": {
+          "0": 296,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "Rx MPDU WME Slice 1": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "Tx MPDU WME Slice 0": {
+          "0": 204,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 10,
+          "7": 0
+        },
+        "Tx MPDU WME Slice 1": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        }
+      },
+      "request": {
+        "body_bytes": 30190,
+        "body_sha256": "8574d173addf5845b005be576c1ace600547d47d00642d4f4b6587e2c5749da4",
+        "marking_after_transfer": 1,
+        "marking_before_connect": 0,
+        "pacing_ceiling": 18446744073709551615,
+        "readback": 3,
+        "requested": "VI",
+        "resolved_route": "utun0",
+        "status": 200,
+        "tcp": {
+          "retransmit_bytes": 0,
+          "rx_bytes": 34634,
+          "rx_packets": 68,
+          "tx_bytes": 1743,
+          "tx_packets": 4
+        },
+        "wall_duration_ms": 11264.994
+      },
+      "seconds": 11.75602,
+      "url": "https://github.com/robots.txt"
+    },
+    {
+      "host_queue_deltas": {
+        "en0": {
+          "BE": {
+            "bytes": 101770,
+            "packets": 439
+          },
+          "BK": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VI": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VO": {
+            "bytes": 946,
+            "packets": 11
+          }
+        },
+        "utun0": {
+          "AV": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "BE": {
+            "bytes": 22207,
+            "packets": 66
+          },
+          "BK": {
+            "bytes": 29157,
+            "packets": 91
+          },
+          "BK_SYS": {
+            "bytes": 176,
+            "packets": 4
+          },
+          "CTL": {
+            "bytes": 6428,
+            "packets": 111
+          },
+          "OAM": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "RD": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "RV": {
+            "bytes": 0,
+            "packets": 0
+          },
+          "VI": {
+            "bytes": 1420,
+            "packets": 14
+          },
+          "VO": {
+            "bytes": 0,
+            "packets": 0
+          }
+        }
+      },
+      "https_client": "macOS libcurl with class set in the socket callback",
+      "per_tid_deltas": {
+        "Rx MPDU WME Slice 0": {
+          "0": 475,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "Rx MPDU WME Slice 1": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "Tx MPDU WME Slice 0": {
+          "0": 331,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 10,
+          "7": 0
+        },
+        "Tx MPDU WME Slice 1": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        }
+      },
+      "request": {
+        "body_bytes": 68,
+        "cap": 18446744073709551615,
+        "marking_level": 1,
+        "route": "utun0",
+        "rx_packets": 6,
+        "service_type": 3,
+        "status": 200,
+        "tx_packets": 4
+      },
+      "seconds": 17.9769,
+      "url": "https://www.apple.com/library/test/success.html"
+    }
+  ]
+}
