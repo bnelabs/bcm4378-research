@@ -61,6 +61,7 @@ CONFIG_KEYS = (
     "wlan.tethering.enabled",
     "wlan.tx.ring.size",
     "wlan.tx.submission-queue.size",
+    "wlan.txsdb.mode",
     "wlan.wnm.enabled",
 )
 
