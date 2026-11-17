@@ -16,6 +16,20 @@
       "path": "/System/Library/PrivateFrameworks/WiFiVelocity.framework/Versions/A/WiFiVelocity",
       "macho_uuid": "ABFBDA96-92F2-353F-A715-C8B1F9335639"
     },
+    "wifi_velocity_daemon": {
+      "path": "/usr/libexec/wifivelocityd",
+      "macho_uuid": "521C6B93-D4CE-344F-B80A-783380E009C3",
+      "sha256": "558a614fe40378b55f794dd054d9cff859599b03470c4fdae3023da09c75c597"
+    },
+    "corewifi": {
+      "path": "/System/Library/PrivateFrameworks/CoreWiFi.framework/Versions/A/CoreWiFi",
+      "macho_uuid": "BD102104-B05E-3CCD-9F26-65C83FDB6BBF"
+    },
+    "airport_daemon": {
+      "path": "/usr/libexec/airportd",
+      "macho_uuid": "90FEC55D-3A9E-3276-BD3B-14548A4BD8D4",
+      "sha256": "d1a17cedd5fb6b89fa7fa343ee77cb3c25587d418e19c2f410fbaa309ced6e98"
+    },
     "system_profiler": {
       "path": "/usr/sbin/system_profiler",
       "macho_uuid": "558FA2EB-5A80-344E-B98F-570A6CA6C322",
@@ -40,7 +54,8 @@
       "plutil for reporter properties and localized labels",
       "shasum for installed binary identity",
       "strings, nm, otool and llvm-objdump for installed Mach-O inspection",
-      "dyld_info for image UUIDs and static shared-cache sections and instructions"
+      "dyld_info for image UUIDs and static shared-cache sections and instructions",
+      "Read-only parsing of installed dyld cache file mappings to resolve Objective-C selector stubs"
     ],
     "diagnostics_invoked": false,
     "active_scan_invoked": false,
@@ -68,6 +83,14 @@
     ]
   },
   "wdutil_info": {
+    "noninteractive_permission_check": {
+      "date": "2026-11-17",
+      "nonroot_session": true,
+      "diagnostic_command_checked": "/usr/bin/wdutil info",
+      "listing_check_exit_code": 1,
+      "listing_check_result": "A password is required",
+      "diagnostic_executed": false
+    },
     "documented_command": "wdutil info",
     "documented_purpose": "Gather information about the current wireless environment",
     "bundled_manual": "wdutil(8), DESCRIPTION",
@@ -79,7 +102,25 @@
       "Guard Interval": "integer, with no unit in the format string",
       "NSS": "integer"
     },
-    "limits": "The manual describes an information readout. The wrapper dispatch and formatter leave the collector's exact radio behavior and values on this BCM4378 unverified."
+    "collector_trace_checked_at_utc": "2026-11-17T06:26:44Z",
+    "collector_trace": {
+      "local_dispatch": "The info request has no peer argument. W5Engine routes it to the local W5StatusManager query, with Wi-Fi scan-cache inclusion enabled.",
+      "station_fields": "The Wi-Fi status manager populates CCA, MCSIndex, guardInterval and numberOfSpatialStreams from interface getters.",
+      "corewifi_cache_request": "W5WiFiInterface scanCache: uses the CoreWiFi scan request with CWFScanParameters cacheOnly set to true. CoreWiFi represents it as the maximum unsigned acceptableCacheAge value and preserves the value through coding and decoding.",
+      "airportd_dispatch": {
+        "cache_only_branch": "The scan dispatcher tests that age value and selects the queryScanCacheWithChannels route, which queries stored results. The cache response and error handling do not fall through to the active branch.",
+        "active_branch": "Other age values enter the scan-capable performScanWithChannelList route."
+      },
+      "additional_status_queries": [
+        "AWDL status",
+        "Bluetooth status",
+        "Network state",
+        "Diagnostic modes",
+        "Power status",
+        "Last-hour fault, link-test and recovery summaries"
+      ]
+    },
+    "limits": "The inspected local Wi-Fi request reads station status and cached scan results. Runtime field values and timing, service startup, independent background radio activity, and transitive effects of the other status routines remain unverified."
   },
   "system_profiler_wifi": {
     "data_type": "SPAirPortDataType",
@@ -89,6 +130,7 @@
     ],
     "english_label": "MCS Index",
     "field_condition": "The reporter inserts the MCS field when the interface MCS value is present.",
+    "reporter_argument_forwarding": "SPSupport's SPDocument places the process arguments under _SPCommandLineArguments and calls the reporter's updateDictionary method.",
     "scan_path": "SPAirPortReporter updateDictionary checks the _SPCommandLineArguments option for the micro flag and enables doScan in its absence. The AirPort report calls performBroadcastScan when doScan is true. The scanner invokes a CoreWLAN scan method.",
     "documented_detail_levels": [
       "mini",
@@ -98,11 +140,19 @@
     "micro_dispatch": "The stock CLI recognizes the undocumented micro flag separately from detailLevel. That branch takes priority over ordinary data-type selection and JSON output. The micro assembler invokes AirPort, Bluetooth, Network and other hardware reports. Its AirPort serializer extracts card type and firmware version.",
     "limits": "A scoped, scan-free System Profiler station query remains unverified."
   },
+  "documented_non_root_scope": {
+    "corewlan": "The public getters documented above supply partial link telemetry.",
+    "wifi_status_menu": "Apple describes viewing current connection details, including channel, band, security standard and protocol. The documentation does not specify MCS index, NSS, guard interval, CCA, or the menu's scanning behavior.",
+    "legacy_airport_tool": "The airport executable is absent at the checked Apple80211 and IO80211 framework resource paths.",
+    "result": "No documented non-root readout for all four station metrics was established under the reviewed scope."
+  },
   "sources": {
     "apple_corewlan": "https://developer.apple.com/documentation/corewlan/cwinterface",
     "apple_corewlan_channel": "https://developer.apple.com/documentation/corewlan/cwchannel",
     "apple_link_quality_delegate": "https://developer.apple.com/documentation/corewlan/cweventdelegate/linkqualitydidchangeforwifiinterface%28withname%3Arssi%3Atransmitrate%3A%29",
     "apple_system_information": "https://support.apple.com/guide/system-information/welcome/mac",
+    "apple_wifi_status_menu": "https://support.apple.com/en-is/guide/mac-help/mchlfad426fa/mac",
+    "apple_dyld_cache_format": "https://github.com/apple-oss-distributions/dyld/blob/main/include/mach-o/dyld_cache_format.h",
     "apple_dyld_inspection_tool": "https://github.com/apple-oss-distributions/dyld/blob/main/other-tools/dyld_info.cpp"
   }
 }

@@ -1,0 +1,201 @@
+{
+  "date": "2026-11-17",
+  "scope": "Read-only examination of installed macOS files and pinned public sources. The retained results contain aggregate counts and file identities.",
+  "host_artifacts": {
+    "model": "MacBook Air (M1, 2020), A2337",
+    "macos_version": "27.2.1",
+    "macos_build": "26B131",
+    "version_source": "/System/Library/CoreServices/SystemVersion.plist",
+    "driver_metadata_reference": "2026-11-17-driverkit.json",
+    "driver_bundle_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext",
+    "bundle_identifier": "com.apple.DriverKit-AppleBCMWLAN",
+    "bundle_version": "1",
+    "sdk": "driverkit.macosx27.2.internal",
+    "code_signature_check": {
+      "tool": "/usr/bin/codesign",
+      "options": ["--verify", "--strict"],
+      "exit_status": 0
+    },
+    "driver_executable": {
+      "relative_path": "com.apple.DriverKit-AppleBCMWLAN",
+      "bytes": 10564944,
+      "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+      "slices": [
+        {
+          "architecture": "arm64e",
+          "bytes": 5272944,
+          "sha256": "d39f1b62785f794db52a3ee865c417b58deced7a926aa3e2b5d21bf2df3739b9",
+          "marker_counts": {"FTM": 8, "TWT": 2, "ToF": 7, "PROXD": 27, "RTT": 16, "11mc": 0, "11az": 0, "Fine Timing Measurement": 0, "Target Wake Time": 0}
+        },
+        {
+          "architecture": "arm64e.x1",
+          "bytes": 5272912,
+          "sha256": "553f5942f912bd67ce91193387356451b8f0383a324c8e1f5bfa00fd5b93c232",
+          "marker_counts": {"FTM": 8, "TWT": 2, "ToF": 7, "PROXD": 27, "RTT": 20, "11mc": 0, "11az": 0, "Fine Timing Measurement": 0, "Target Wake Time": 0}
+        }
+      ]
+    },
+    "driver_bundle_plists": [
+      {
+        "relative_path": "Info.plist",
+        "bytes": 10760,
+        "sha256": "89c065b4579a4f03450e33561ec6d20758326cfc78d0129a817385352c3ad8a2",
+        "all_selected_marker_counts_zero": true
+      },
+      {
+        "relative_path": "AppleBCMWLANV3Signposts.plist",
+        "bytes": 20004,
+        "sha256": "34b6a8ba206b35ccc18085ffbfaaafceea2595c3c3af060ed47d48c3ffd08a6a",
+        "marker_counts": {"FTM": 0, "TWT": 2, "ToF": 0, "PROXD": 1, "RTT": 0, "11mc": 0, "11az": 0, "Fine Timing Measurement": 0, "Target Wake Time": 0}
+      }
+    ],
+    "driver_platform_profile_scan": {
+      "selection": "All DriverKit bundle .plist files with 4378, shikoku, honshu, capri or kyushu in their relative path, ignoring case.",
+      "relative_paths_by_sha256": {
+        "53ce6102b273424bf99864bdd2afa8f7fb17f8d6f5da5fd624dd793d5d9a1547": [
+          "PlatformConfig/macOS/capri-PlatformConfig.plist",
+          "PlatformConfig/macOS/honshu-PlatformConfig.plist",
+          "PlatformConfig/macOS/shikoku-PlatformConfig.plist"
+        ],
+        "8bfa5070d6c495c32f8574b3315258509dd9569439b8a79387d14f81103288a8": [
+          "PlatformConfig/macOS/kyushu-PlatformConfig.plist"
+        ]
+      },
+      "all_selected_marker_counts_zero": true,
+      "interpretation": "These four profiles expose no exact named timing or proximity marker in their parsed strings. An encoded field or a capability check elsewhere would fall outside this test."
+    }
+  },
+  "marker_method": {
+    "markers": ["FTM", "TWT", "ToF", "PROXD", "RTT", "11mc", "11az", "Fine Timing Measurement", "Target Wake Time"],
+    "binary_and_text": "Split each input into maximal printable ASCII byte runs of length three or longer using [\\x20-\\x7e]{3,}. Test each Mach-O slice separately using the fat header extents and lipo architecture names.",
+    "plist": "Parse with plistlib and recursively visit dictionary keys and string values, including strings in arrays. Each occurrence in the decoded structure counts separately.",
+    "matching": "Test each marker literally with ASCII case-insensitive matching. Require non-alphanumeric boundaries using (?<![A-Za-z0-9]) and (?![A-Za-z0-9]). Underscore is a separator. Count each run or decoded field at most once per marker.",
+    "interpretation": "A match establishes the presence of a marker in the selected bytes or strings. It gives no evidence about code reachability, feature availability or negotiation. Zero matches leave alternate names, packed metadata and behavior unresolved."
+  },
+  "wifi_firmware": {
+    "root": "/usr/share/firmware/wifi",
+    "images": [
+      {
+        "relative_path": "C-4378__s-B1/honshu.trx",
+        "bytes": 1497470,
+        "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06",
+        "proxd_distinct_matching_runs": 19
+      },
+      {
+        "relative_path": "C-4378__s-B1/capri.trx",
+        "bytes": 1496769,
+        "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6",
+        "proxd_distinct_matching_runs": 19
+      },
+      {
+        "relative_path": "C-4378__s-B3/kyushu.trx",
+        "bytes": 1226142,
+        "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a",
+        "proxd_distinct_matching_runs": 19
+      },
+      {
+        "relative_path": "C-4387__s-C2/okinawa.trx",
+        "bytes": 1766717,
+        "sha256": "73736039b202164741942d61bd8ae69d4525c821d30724feecc5edb94ee0d0f3",
+        "proxd_distinct_matching_runs": 18,
+        "proxd_distinct_matching_runs_shared_with_4378": 18
+      },
+      {
+        "relative_path": "C-4364__s-B3/borneo.trx",
+        "bytes": 820013,
+        "sha256": "b562fe64d210a14c92744edfc41bad9ace0d2c0d8809cb538686bfcae14c2fd5",
+        "proxd_distinct_matching_runs": 12,
+        "proxd_distinct_matching_runs_shared_with_4378": 11
+      }
+    ],
+    "all_other_selected_marker_counts_zero": true,
+    "proxd_match_counts_equal_distinct_counts_in_every_image": true,
+    "proxd_run_sets_equal_across_4378_images": true,
+    "board_text_profiles": {
+      "selection": "Recursively enumerate readable .txt paths in the B1 and B3 trees, including file symlinks. Count distinct resolved paths and SHA-256s separately. Shikoku counts use case-insensitive inclusion in each relative path.",
+      "groups": [
+        {
+          "relative_directory": "C-4378__s-B1",
+          "paths": 240,
+          "file_symlinks": 192,
+          "distinct_resolved_paths": 48,
+          "distinct_contents": 10,
+          "paths_naming_shikoku": 45,
+          "proxd_matching_runs": 720,
+          "paths_matching_proxd": 240
+        },
+        {
+          "relative_directory": "C-4378__s-B3",
+          "paths": 10,
+          "file_symlinks": 8,
+          "distinct_resolved_paths": 2,
+          "distinct_contents": 1,
+          "paths_naming_shikoku": 0,
+          "proxd_matching_runs": 30,
+          "paths_matching_proxd": 10
+        }
+      ],
+      "all_other_selected_marker_counts_zero": true,
+      "proxd_assignments_per_path": 3,
+      "distinct_ordered_proxd_key_sets_across_b1_and_b3": 1,
+      "observed_value_shapes": [
+        {"key_role_from_label": "Proximity setting", "numeric_entries": 1},
+        {"key_role_from_label": "Proximity offsets for core 0", "numeric_entries": 4},
+        {"key_role_from_label": "Proximity offsets for core 1", "numeric_entries": 4}
+      ],
+      "interpretation": "The shipped BCM4378 text profiles carry per-core proximity offset data, including the Shikoku paths. The scalar field's purpose, the offset units, profile selection at runtime and the ranging protocol remain unverified."
+    }
+  },
+  "public_source_checks": {
+    "linux_pmsr": {
+      "scope": "Search each pinned brcmfmac cfg80211.c and core.c for the standard start_pmsr, abort_pmsr and pmsr_capa symbols. Check the operation tables and the generic nl80211 dispatch. PMSR means peer measurement.",
+      "trees": [
+        {
+          "tag": "v7.3.4",
+          "commit": "7595a62d45ee1a2297eafa5f2ef5d0a45142d84d",
+          "ops": "https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L6003-L6064",
+          "any_selected_symbol_present": false
+        },
+        {
+          "tag": "asahi-7.3.4-2",
+          "commit": "201be96df5654336bdcbe1da2103f193d7a0b940",
+          "ops": "https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L5906-L5967",
+          "any_selected_symbol_present": false
+        }
+      ],
+      "generic_capability_gate": "https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/net/wireless/pmsr.c#L414-L428",
+      "generic_driver_dispatch": "https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/net/wireless/pmsr.c#L523-L536",
+      "interpretation": "The standard Linux peer measurement start requires a registered capability and calls the driver. The two pinned brcmfmac operation tables have no peer measurement handlers. This bounds the standard ranging interface in those sources."
+    },
+    "asahi_twt": {
+      "tag": "asahi-7.3.4-2",
+      "commit": "201be96df5654336bdcbe1da2103f193d7a0b940",
+      "he_query": "https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L7518-L7536",
+      "he_table_condition": "https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L7595-L7607",
+      "shared_station_capabilities": "https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c#L7392-L7410",
+      "interpretation": "The shared HE station table sets TWT requester, responder, broadcast and flexible scheduling bits directly. The general HE-enable readback gates this table. This path does not read back individual TWT capabilities or apply a BCM4378-specific TWT gate."
+    },
+    "broadcom_ftm_control": {
+      "chip": "BCM4383",
+      "commit": "3b1a081640892e16ac658f66a0b0d026735922fe",
+      "source": "https://android.googlesource.com/kernel/google-modules/wlan/bcmdhd/bcm4383/+/3b1a081640892e16ac658f66a0b0d026735922fe/dhd_rtt.c#6078",
+      "interpretation": "The published Broadcom driver for BCM4383 advertises FTM after a successful compatible firmware interface version response. This demonstrates a distinct capability gate in that driver. It supplies no capability result for BCM4378."
+    },
+    "apple_tsf_offset_randomization": {
+      "source": "https://support.apple.com/en-ca/guide/security/sec31e483abf/web",
+      "section": "Timing synchronization function offset randomization",
+      "model_source": "https://support.apple.com/en-us/111883",
+      "supported_macs": "All Mac computers from late 2020 or later, with macOS 12.0.1 or later",
+      "initial_offset_bits": 56,
+      "modes": ["peer-to-peer", "Access Point"],
+      "rerandomization": "When the interface MAC address changes",
+      "interpretation": "The published support range includes the M1 MacBook Air. Apple describes behavior at the system level, without identifying the split between the host driver and firmware."
+    }
+  },
+  "runtime_evidence": {
+    "ranging_exchange_observed": false,
+    "twt_negotiation_observed": false,
+    "tsf_offset_observed_on_this_host": false,
+    "interpretation": "The signed bundle's vocabulary, installed profiles and reference source qualify different parts of the stack. TWT and FTM execution on the stock BCM4378 remain unverified. The TSF finding is model-covered Apple documentation."
+  }
+}

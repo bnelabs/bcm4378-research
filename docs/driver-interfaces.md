@@ -26,7 +26,13 @@ flowchart LR
 | `llw0` | LowLatency | Up and running flags. Network framework exposes a traffic service class. The reviewed public documentation gives no application binding to this specific driver role. [Network service class](https://developer.apple.com/documentation/network/nwparameters/serviceclass-swift.property) |
 | `nan0` | Wi-Fi Aware Discovery+Data | Registered with neither the up nor running flag. The installed native macOS SDK rejects `WACapabilities` at type-check time. [Apple Developer Technical Support](https://developer.apple.com/forums/thread/827887) |
 
-The mapping uses the driver-published interface-name prefix and unit. State flags and link status come from `ifconfig` and are snapshots. The evidence contains no packet observations. [I/O Registry and interface snapshot](../evidence/2026-11-17-macos-inventory.json)
+The mapping uses the driver-published interface-name prefix and unit. State flags and link status come from `ifconfig` and are snapshots. [I/O Registry and interface snapshot](../evidence/2026-11-17-macos-inventory.json)
+
+### Passive interface activity
+
+All five roles returned link-layer counters in 46 snapshots over 45 seconds. The `en0` byte and packet counters increased in all 45 intervals. The other four stayed flat. `awdl0` started with nonzero counters from earlier host activity. The IPv4 default interface was `en0` before and after the window. [Passive counter evidence](../evidence/2026-11-17-peer-interface-activity.json), [Apple netstat source](https://github.com/apple-oss-distributions/network_cmds/blob/main/netstat.tproj/if.c)
+
+The role-counter tool reports byte and packet deltas and counts intervals with activity on both `en0` and a secondary interface. A positive overlap would establish host activity inside that interval. An owned peer and synchronized radio observations would still be needed to attribute a transfer and identify the exact airtime or channel combination. [Counter tool](../tools/read_link_role_counters.py)
 
 ## Bluetooth endpoint
 

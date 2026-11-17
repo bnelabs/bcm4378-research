@@ -1,0 +1,288 @@
+{
+  "embedded_configuration_framing": {
+    "distinct_prefixes_per_stepping": {
+      "BCM4378B1": 1,
+      "BCM4378B3": 1
+    },
+    "first_marker_to_second_marker_bytes": 66,
+    "identity_length_byte_offset": 91,
+    "identity_offset": 92,
+    "marker_offsets": {
+      "BRCMcfgD": 66,
+      "BRCMcfgS": 0
+    },
+    "prefix_offsets_differing_between_steppings": [
+      29
+    ]
+  },
+  "embedded_configurations": [
+    {
+      "bytes": 14769,
+      "filename": "BCM4378B1_24.2.551.4114_PCIE_macOS_AtlantisB_OS_MUR_20260715.bin",
+      "identity_bytes_including_nul": 77,
+      "image_sha256": "11d6aa02a247de70933abc1fce86e79521dbd32a756f46f375d558e1e32c07a4",
+      "offset": 343836,
+      "sha256": "c6a6bd987a22d0e02075277354742d9e2f8f314339b3332e03b91dc2428712db"
+    },
+    {
+      "bytes": 14769,
+      "filename": "BCM4378B1_24.2.551.4115_PCIE_macOS_AtlantisB_OS_USI_20260715.bin",
+      "identity_bytes_including_nul": 77,
+      "image_sha256": "dc046e4df710f821dc15a713adbea3239f3efa4a38b8fc5be729c34c298a7b81",
+      "offset": 343836,
+      "sha256": "4a5573856736e3d531bedc384da899b8542945e5d856d43746131bfc10b4d139"
+    },
+    {
+      "bytes": 14765,
+      "filename": "BCM4378B1_24.2.551.4116_PCIE_macOS_Capri_OS_MUR_20260715.bin",
+      "identity_bytes_including_nul": 73,
+      "image_sha256": "12b5572a06bd7aa5f42a9e07812caa35890226b1151864344d91a2c4eb17bdb4",
+      "offset": 343812,
+      "sha256": "7501b58ff0faa3c32dc5a14dc6a8b8991453c33f95e4d18636019c081487d5e4"
+    },
+    {
+      "bytes": 14765,
+      "filename": "BCM4378B1_24.2.551.4117_PCIE_macOS_Capri_OS_USI_20260715.bin",
+      "identity_bytes_including_nul": 73,
+      "image_sha256": "d7ccb8b216b82a49af9d123b705606e703342477546b7b2cae16ca18aa9ae137",
+      "offset": 343812,
+      "sha256": "268ece25707923c20f5f0ef1cb783720fab6c2dd58c3ee24e08f7ea03aa99a7b"
+    },
+    {
+      "bytes": 14581,
+      "filename": "BCM4378B1_24.2.551.4118_PCIE_macOS_Honshu_OS_MUR_20260715.bin",
+      "identity_bytes_including_nul": 69,
+      "image_sha256": "f6759c707b9a4de43706afb064119c35ea85a1cf726e3c8394fe9262aba0c064",
+      "offset": 343156,
+      "sha256": "1afe3f734225ce269ac0742041397181d1f0e3fb9bf02af47cfe3811350fcdfa"
+    },
+    {
+      "bytes": 14581,
+      "filename": "BCM4378B1_24.2.551.4119_PCIE_macOS_Honshu_OS_USI_20260715.bin",
+      "identity_bytes_including_nul": 69,
+      "image_sha256": "e35203928d9d7b2c3a2d33cbf09b732d0376e9778de40bdf233e0bc0bfeb2de8",
+      "offset": 343156,
+      "sha256": "c9b26745ac882d8f5de093d9bf8ae5ecf929a476dca065753a77bb1479aa65e2"
+    },
+    {
+      "bytes": 14769,
+      "filename": "BCM4378B1_24.2.551.4120_PCIE_macOS_Santorini_OS_MUR_20260715.bin",
+      "identity_bytes_including_nul": 77,
+      "image_sha256": "df119217db5025b5effd41c3c8071932a6198976e8156cb4416c5a86f116fef6",
+      "offset": 343588,
+      "sha256": "8ea956b810a55848759bdc437440485e705479564750e94196cc014c97288f8a"
+    },
+    {
+      "bytes": 14769,
+      "filename": "BCM4378B1_24.2.551.4121_PCIE_macOS_Santorini_OS_USI_20260715.bin",
+      "identity_bytes_including_nul": 77,
+      "image_sha256": "b02b8079699d76854c1c14cf9218d534e8499badfde57025db7caa1ad4eead21",
+      "offset": 343588,
+      "sha256": "a8dc7ebd48851ccf4adcb090073291dc8e13b96831269c83ab6f2626fd10d114"
+    },
+    {
+      "bytes": 14582,
+      "filename": "BCM4378B1_24.2.551.4122_PCIE_macOS_Shikoku_OS_MUR_20260715.bin",
+      "identity_bytes_including_nul": 70,
+      "image_sha256": "6be86dd5cc72e5cc11eaac80a4dcd92138171138ff174da2751d3e78bd329b60",
+      "offset": 343156,
+      "sha256": "88fde4430307a68fb0c4c325b7e5ea0bc319a6257be043e747905f9c5b80d9f7"
+    },
+    {
+      "bytes": 14582,
+      "filename": "BCM4378B1_24.2.551.4123_PCIE_macOS_Shikoku_OS_USI_20260715.bin",
+      "identity_bytes_including_nul": 70,
+      "image_sha256": "796ee56f4cd32092cca25fd4242c91cfde8e51321a457b6966f015ad6d16403e",
+      "offset": 343156,
+      "sha256": "a56ba59e58a8907680b9b2314f04602bf8bc22d073e52032c2d1620f4941d987"
+    },
+    {
+      "bytes": 12664,
+      "filename": "BCM4378B3_24.2.155.293_PCIE_macOS_Kyushu_OS_USI_20260715.bin",
+      "identity_bytes_including_nul": 69,
+      "image_sha256": "0ceb164544b4a7e38c92f9abf9648dac4ac7ac1ab8116e31f14eec7a6a1753e5",
+      "offset": 218032,
+      "sha256": "db9955e4082cde297f68f3f36c3a3cb87465166a0d1efe0636899d2cfad06641"
+    }
+  ],
+  "exact_substring_comparisons": {
+    "ptb_span_vs_embedded_configuration": {
+      "pairs": 110,
+      "pairs_with_exact_substring_match": 0
+    },
+    "ptb_span_vs_firmware_image": {
+      "pairs": 110,
+      "pairs_with_exact_substring_match": 0
+    },
+    "whole_ptb_vs_embedded_configuration": {
+      "pairs": 55,
+      "pairs_with_exact_substring_match": 0
+    },
+    "whole_ptb_vs_firmware_image": {
+      "pairs": 55,
+      "pairs_with_exact_substring_match": 0
+    }
+  },
+  "limits": [
+    "Span, row and identity framing are observations of these stock artifacts. The cited upstream code does not define their internal field semantics.",
+    "Exact substring checks leave partial matches, transformed representations and relationships between decoded settings open.",
+    "This evidence contains no calibration settings or proprietary row payloads and makes no claim about runtime selection or active controller state."
+  ],
+  "method": [
+    "Read matching installed files and group PTBs by exact file content. SHA-256 identifies each byte sequence.",
+    "Split each PTB at half its file length. Verify the aligned 24-byte prefixes and use the repeated leading byte sequence 0 to 4 to verify fixed-width row locations in both spans. The two zero-byte offsets in the prefix are span-relative.",
+    "Read the three little-endian 32-bit region lengths at image offsets 20, 44 and 68. The configuration region starts after the 256-byte header and the first two regions and extends to end of file.",
+    "Verify both configuration tags and use the byte at region offset 91 to bound a printable ASCII identity beginning at offset 92 and ending in NUL. Compare bytes before the second tag within and across the observed chip steppings.",
+    "For each indicated pair, test exact substring equality at any byte offset using Python bytes containment. Count pairs once even if a match occurs at multiple offsets."
+  ],
+  "observed_on": "2026-11-17",
+  "ptb_framing": {
+    "blocks": [
+      {
+        "following_zero_byte_offset": 259,
+        "profile_file_bytes": [
+          520,
+          786
+        ],
+        "row_count": 5,
+        "row_first_byte_sequence": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "row_width_bytes": 47,
+        "span_relative_offset": 24,
+        "validated_blocks": 10
+      },
+      {
+        "following_zero_byte_offset": 392,
+        "profile_file_bytes": [
+          786
+        ],
+        "row_count": 5,
+        "row_first_byte_sequence": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "row_width_bytes": 24,
+        "span_relative_offset": 272,
+        "validated_blocks": 6
+      }
+    ],
+    "bytes_per_span_by_file_size": {
+      "520": 260,
+      "786": 393
+    },
+    "long_profiles_matching_intervening_bytes_between_spans": {
+      "bytes": 12,
+      "span_relative_offset": 260,
+      "validated_profiles": 3
+    },
+    "prefix_bytes": 24,
+    "prefix_offsets_different_between_spans": [
+      0
+    ],
+    "prefix_zero_byte_offsets": [
+      22,
+      23
+    ],
+    "spans_per_payload": 2
+  },
+  "ptb_profiles": [
+    {
+      "bytes": 786,
+      "equal_bytes_at_aligned_span_offsets": 309,
+      "filenames": [
+        "BCM4378B1_3ANT_PCAP13_TXBF_PCIE_macOS_Capri_OS_MUR_K_R_20201216.ptb",
+        "BCM4378B1_3ANT_PCAP13_TXBF_PCIE_macOS_Capri_OS_USI_K_R_20201216.ptb"
+      ],
+      "sha256": "d6f61e0ccbeaed87345f2e72bb7fdc05cbfd8e03516e60837b54dc75f5406591",
+      "span_offsets": [
+        0,
+        393
+      ]
+    },
+    {
+      "bytes": 786,
+      "equal_bytes_at_aligned_span_offsets": 328,
+      "filenames": [
+        "BCM4378B1_3ANT_PCAP13_TXBF_PCIE_macOS_Santorini_OS_MUR_K_R_20201216.ptb",
+        "BCM4378B1_3ANT_PCAP13_TXBF_PCIE_macOS_Santorini_OS_USI_K_R_20201216.ptb"
+      ],
+      "sha256": "0c19a717f47584bf0bab2ad8947625db0de0411a38c02b3ce0fad21f0fe7e07d",
+      "span_offsets": [
+        0,
+        393
+      ]
+    },
+    {
+      "bytes": 786,
+      "equal_bytes_at_aligned_span_offsets": 329,
+      "filenames": [
+        "BCM4378B1_FinalV0_PCIE_macOS_AtlantisB_OS_MUR_K_R_20200812.ptb",
+        "BCM4378B1_FinalV0_PCIE_macOS_AtlantisB_OS_USI_K_R_20200812.ptb"
+      ],
+      "sha256": "75a2726d210d819d5f34e1ca7042ebcd23e2243337ebb8a1eabb97c28839e0a1",
+      "span_offsets": [
+        0,
+        393
+      ]
+    },
+    {
+      "bytes": 520,
+      "equal_bytes_at_aligned_span_offsets": 201,
+      "filenames": [
+        "BCM4378B1_FinalV0_PCIE_macOS_Honshu_OS_MUR_K_R_2020824.ptb",
+        "BCM4378B1_FinalV0_PCIE_macOS_Honshu_OS_USI_K_R_2020824.ptb",
+        "BCM4378B3_Final_PCIE_macOS_Kyushu_OS_USI_K_R_20220128.ptb"
+      ],
+      "sha256": "d6644d1425c08cbf92d49e5715bcc7a7999c0f00b02413a83df684d5dc2e2e42",
+      "span_offsets": [
+        0,
+        260
+      ]
+    },
+    {
+      "bytes": 520,
+      "equal_bytes_at_aligned_span_offsets": 199,
+      "filenames": [
+        "BCM4378B1_FinalV0_PCIE_macOS_Shikoku_OS_MUR_K_R_20200902.ptb",
+        "BCM4378B1_FinalV0_PCIE_macOS_Shikoku_OS_USI_K_R_20200902.ptb"
+      ],
+      "sha256": "01f059c62863ab3b2a1a85712451e67b2d921864d0f85529c1de664734c11645",
+      "span_offsets": [
+        0,
+        260
+      ]
+    }
+  ],
+  "scope": {
+    "bluetooth_firmware_images": 11,
+    "distinct_ptb_payloads": 5,
+    "matched_firmware_filename_globs": [
+      "BCM4378*.ptb",
+      "BCM4378*.bin"
+    ],
+    "ptb_filenames": 11
+  },
+  "source_directory": "/usr/share/firmware/bluetooth",
+  "sources": [
+    {
+      "scope": "The installer reads and catalogs .ptb payloads alongside .bin images without parsing the .ptb contents.",
+      "url": "https://github.com/AsahiLinux/asahi-installer/blob/main/asahi_firmware/bluetooth.py#L37-L60"
+    },
+    {
+      "scope": "The driver describes the PTB callback as handling regulatory and calibration data separately from its calibration callback.",
+      "url": "https://github.com/torvalds/linux/blob/v6.12/drivers/bluetooth/hci_bcm4377.c#L475-L478"
+    },
+    {
+      "scope": "The BCM4378 driver passes slices of the PTB file through without interpreting its internal row fields.",
+      "url": "https://github.com/torvalds/linux/blob/v6.12/drivers/bluetooth/hci_bcm4377.c#L1199-L1219"
+    }
+  ]
+}

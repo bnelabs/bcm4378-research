@@ -48,7 +48,9 @@ The CoreWLAN link-quality delegate and subscription methods also type-checked. A
 
 The installed CoreWLAN headers expose current PHY mode, channel, transmit rate, RSSI and noise. The installed `wdutil info` path requires root and uses a formatter with fields for MCS index, spatial streams, guard interval and clear channel assessment (CCA). Its formatter labels CCA as a percentage and gives no guard-interval unit. The installed driver has a separate guard-interval getter that decodes a firmware rate specification. [Diagnostic format and access evidence](../evidence/2026-11-17-station-diagnostic-surfaces.json), [Driver rate evidence](../evidence/2026-11-17-tx-rate-provenance.json), [Apple CoreWLAN](https://developer.apple.com/documentation/corewlan/cwinterface)
 
-The System Profiler Wi-Fi reporter has a current-network MCS field. Its standard path can initiate a Wi-Fi scan. The compact CLI mode dispatches multiple hardware and network reporters. Live MCS, stream count, guard interval and CCA on this station remain unmeasured. [Static reporter evidence](../evidence/2026-11-17-station-diagnostic-surfaces.json)
+The traced local W5 status path behind `wdutil info` reads the four metrics and requests cached scan results. CoreWiFi passes the cache-only parameter to `airportd`, where the cache lookup and active scan are separate branches. Other status routines also query AWDL, Bluetooth, network and power state. The installed CLI requires root, and the noninteractive permission check required a password. Live metric values and the effects of the complete status collection remain unverified. [Static status path and access check](../evidence/2026-11-17-station-diagnostic-surfaces.json)
+
+The System Profiler Wi-Fi reporter has a current-network MCS field. Its standard path can initiate a Wi-Fi scan. The compact CLI mode dispatches multiple hardware and network reporters, with compact Wi-Fi output focused on card type and firmware. [Static reporter evidence](../evidence/2026-11-17-station-diagnostic-surfaces.json)
 
 ### Transmit-power readout
 
