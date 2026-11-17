@@ -76,6 +76,8 @@ Asahi transfers the `.trx` bytes unchanged into the files it packages as `.bin`.
 
 Rizin decoded all sixteen opening words in each image as Thumb-2 wide branches. The first branch, interpreted at reset origin zero, reaches a location within the uploaded bytes under Linux's BCM4378 base model. All sixteen destinations fit under the same hypothetical vector placement. The public loader establishes reset use only for the first word. Actual placement of the other entries and macOS runtime mapping remain open. [Linux BCM4378 RAM base](https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c#L738-L747), [Image checks](../evidence/2026-11-17-firmware-loader-evidence.json)
 
+The selected stock NVRAM contains a slice-1 threshold assignment with a space before the equals sign. Replaying the shared Linux and Asahi parser confirmed that boot serialization drops this assignment. The RAM diagnostics report records the encoded sizes and expected capture boundaries. [NVRAM replay](ram-diagnostics.md#stock-text-and-linux-boot-serialization)
+
 ### Byte reuse across images
 
 The B1 pair has 678,203 equal bytes out of 1,496,769 at the same offsets. Searching for unique exact 4 KiB anchors independently of alignment and extending the strongest matches revealed a **201,010-byte** common region in B1 and a **195,250-byte** region in all three. The three-way span starts at file offsets 1,295,710, 1,294,998 and 1,027,534 respectively. Its byte pattern distinguishes it from the common zero run. Its internal role remains unresolved. [Offline comparison method and results](../evidence/2026-11-17-firmware-comparison.json)

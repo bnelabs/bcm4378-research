@@ -12,6 +12,7 @@ This repository records the Wi-Fi hardware, driver and firmware of the 2020 M1 M
 - [PCIe link and power properties](docs/pcie-link-properties.md) records the shared port, endpoint status fields, and link power capability and policy.
 - [macOS host power policy](docs/host-power-policy.md) records network wake and keepalive settings and their scope.
 - [Linux and Asahi controls](docs/asahi-controls.md) records the versioned driver paths and readouts for a separately managed A2337.
+- [Firmware RAM diagnostics](docs/ram-diagnostics.md) maps the Linux capture boundary, boot serialization, and offline comparison.
 
 ## Reproduce the baseline
 
@@ -53,4 +54,4 @@ Reproduce the [microcode and ROM overlay checks](docs/firmware-layout.md#microco
 1. Verify D11 component selection, the destination and transfer count of the shared copy routine, and ROM overlay selection at runtime on a separate test target.
 2. Compare the driver-reported link diary and raw transmit-power field with measurements from a calibrated spectrum receiver or a controlled obstruction test.
 3. Verify simultaneous infrastructure and peer-to-peer transfer, and the runtime availability of the A2337's lab modes, on a separate managed test setup.
-4. Evaluate driver-owned register and RAM diagnostics on a separate, independently managed test Mac.
+4. Pair the [driver-owned RAM capture](docs/ram-diagnostics.md) with measured geometry and connectivity on a separately managed test Mac. Verify register diagnostics separately.

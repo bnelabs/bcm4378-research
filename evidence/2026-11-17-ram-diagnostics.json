@@ -1,0 +1,363 @@
+{
+  "default_route_after": "en0",
+  "default_route_before": "en0",
+  "firmware_paths": {
+    "all_trx_names_and_contents_agree": true,
+    "bcm4378_sig_files_by_root": [
+      0,
+      0
+    ],
+    "bcm4388_sig_files_by_root_as_extension_check": [
+      43,
+      44
+    ],
+    "checked_roots": [
+      "/usr/share/firmware/wifi",
+      "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware"
+    ],
+    "distinct_trx_payloads": 3,
+    "trx_names": 35,
+    "trx_payloads_with_ram_size_override": 0
+  },
+  "nvram_paths": {
+    "all_txt_names_and_contents_agree": true,
+    "difference": "Linux parser discards the single malformed key/value record in each payload",
+    "literal_key_with_trailing_space": "slice/1/olpc_thresh2g ",
+    "method": [
+      "Compile the identical pinned firmware.c NVRAM parsers in a temporary userspace harness with allocation, byte-order, alignment and synthetic platform-MAC helpers.",
+      "Supply each distinct installed text profile twice, with no platform MAC and with a synthetic platform MAC. Check full encoder output against an independent strict assignment/padding/token model.",
+      "Read back only lengths, counts and stock digests. Kernel conditions and macOS parser behavior remain unobserved."
+    ],
+    "names_with_space_before_equals_on_slice_1_threshold": 250,
+    "profiles": [
+      {
+        "byte_comparison_with_independent_model": "exact in both cases",
+        "driver_parser_cases": [
+          {
+            "assignment_count": 297,
+            "nul_separated_assignment_bytes": 7758,
+            "nvram_with_token_bytes": 7764,
+            "padded_block_without_token_bytes": 7760,
+            "platform_mac": false,
+            "slice_1_assignment_count": 46
+          },
+          {
+            "assignment_count": 298,
+            "nul_separated_assignment_bytes": 7784,
+            "nvram_with_token_bytes": 7792,
+            "padded_block_without_token_bytes": 7788,
+            "platform_mac": true,
+            "slice_1_assignment_count": 46
+          }
+        ],
+        "names_available_by_stepping": {
+          "C-4378__s-B1": 25
+        },
+        "sha256": "5e8c0449664fa47d57f220aa75dd04ad6d5558adf157ddf20f447a9f4f5fb19e",
+        "stock_assignments": 298,
+        "stock_file_bytes": 7784,
+        "stock_slice_1_assignments": 47
+      },
+      {
+        "byte_comparison_with_independent_model": "exact in both cases",
+        "driver_parser_cases": [
+          {
+            "assignment_count": 296,
+            "nul_separated_assignment_bytes": 7697,
+            "nvram_with_token_bytes": 7704,
+            "padded_block_without_token_bytes": 7700,
+            "platform_mac": false,
+            "slice_1_assignment_count": 45
+          },
+          {
+            "assignment_count": 297,
+            "nul_separated_assignment_bytes": 7723,
+            "nvram_with_token_bytes": 7728,
+            "padded_block_without_token_bytes": 7724,
+            "platform_mac": true,
+            "slice_1_assignment_count": 45
+          }
+        ],
+        "names_available_by_stepping": {
+          "C-4378__s-B1": 25
+        },
+        "sha256": "417a6014f4dad80d92f160748f43d2c50314ba67eefc15fa5eace378d82d943e",
+        "stock_assignments": 297,
+        "stock_file_bytes": 7723,
+        "stock_slice_1_assignments": 46
+      },
+      {
+        "byte_comparison_with_independent_model": "exact in both cases",
+        "driver_parser_cases": [
+          {
+            "assignment_count": 298,
+            "nul_separated_assignment_bytes": 7637,
+            "nvram_with_token_bytes": 7644,
+            "padded_block_without_token_bytes": 7640,
+            "platform_mac": false,
+            "slice_1_assignment_count": 46
+          },
+          {
+            "assignment_count": 299,
+            "nul_separated_assignment_bytes": 7663,
+            "nvram_with_token_bytes": 7668,
+            "padded_block_without_token_bytes": 7664,
+            "platform_mac": true,
+            "slice_1_assignment_count": 46
+          }
+        ],
+        "names_available_by_stepping": {
+          "C-4378__s-B1": 25
+        },
+        "sha256": "44bec369f1c81ddd72f9c331e02d54c004dc94ea4171cc5515cf0dcf0baa87fb",
+        "stock_assignments": 299,
+        "stock_file_bytes": 7663,
+        "stock_slice_1_assignments": 47
+      },
+      {
+        "byte_comparison_with_independent_model": "exact in both cases",
+        "driver_parser_cases": [
+          {
+            "assignment_count": 297,
+            "nul_separated_assignment_bytes": 7576,
+            "nvram_with_token_bytes": 7584,
+            "padded_block_without_token_bytes": 7580,
+            "platform_mac": false,
+            "slice_1_assignment_count": 45
+          },
+          {
+            "assignment_count": 298,
+            "nul_separated_assignment_bytes": 7602,
+            "nvram_with_token_bytes": 7608,
+            "padded_block_without_token_bytes": 7604,
+            "platform_mac": true,
+            "slice_1_assignment_count": 45
+          }
+        ],
+        "names_available_by_stepping": {
+          "C-4378__s-B1": 20
+        },
+        "sha256": "28740651d40a9754a2b2b082ab1aa4eb91d0f0ab4bd4e3e8eceff369c977bd36",
+        "stock_assignments": 298,
+        "stock_file_bytes": 7602,
+        "stock_slice_1_assignments": 46
+      },
+      {
+        "byte_comparison_with_independent_model": "exact in both cases",
+        "driver_parser_cases": [
+          {
+            "assignment_count": 295,
+            "nul_separated_assignment_bytes": 7663,
+            "nvram_with_token_bytes": 7668,
+            "padded_block_without_token_bytes": 7664,
+            "platform_mac": false,
+            "slice_1_assignment_count": 46
+          },
+          {
+            "assignment_count": 296,
+            "nul_separated_assignment_bytes": 7689,
+            "nvram_with_token_bytes": 7696,
+            "padded_block_without_token_bytes": 7692,
+            "platform_mac": true,
+            "slice_1_assignment_count": 46
+          }
+        ],
+        "names_available_by_stepping": {
+          "C-4378__s-B1": 25
+        },
+        "sha256": "82d38093e33abac54c94e5b792efcd4b0fe3dfb794fe8a96b3a1967622e50056",
+        "stock_assignments": 296,
+        "stock_file_bytes": 7689,
+        "stock_slice_1_assignments": 47
+      },
+      {
+        "byte_comparison_with_independent_model": "exact in both cases",
+        "driver_parser_cases": [
+          {
+            "assignment_count": 294,
+            "nul_separated_assignment_bytes": 7602,
+            "nvram_with_token_bytes": 7608,
+            "padded_block_without_token_bytes": 7604,
+            "platform_mac": false,
+            "slice_1_assignment_count": 45
+          },
+          {
+            "assignment_count": 295,
+            "nul_separated_assignment_bytes": 7628,
+            "nvram_with_token_bytes": 7636,
+            "padded_block_without_token_bytes": 7632,
+            "platform_mac": true,
+            "slice_1_assignment_count": 45
+          }
+        ],
+        "names_available_by_stepping": {
+          "C-4378__s-B1": 30,
+          "C-4378__s-B3": 10
+        },
+        "sha256": "d921b4241b268694e077c146ffb918ba89e71bd1439a865fda4431deaa23b134",
+        "stock_assignments": 295,
+        "stock_file_bytes": 7628,
+        "stock_slice_1_assignments": 46
+      },
+      {
+        "byte_comparison_with_independent_model": "exact in both cases",
+        "driver_parser_cases": [
+          {
+            "assignment_count": 298,
+            "nul_separated_assignment_bytes": 7641,
+            "nvram_with_token_bytes": 7648,
+            "padded_block_without_token_bytes": 7644,
+            "platform_mac": false,
+            "slice_1_assignment_count": 46
+          },
+          {
+            "assignment_count": 299,
+            "nul_separated_assignment_bytes": 7667,
+            "nvram_with_token_bytes": 7672,
+            "padded_block_without_token_bytes": 7668,
+            "platform_mac": true,
+            "slice_1_assignment_count": 46
+          }
+        ],
+        "names_available_by_stepping": {
+          "C-4378__s-B1": 25
+        },
+        "sha256": "4f280abe427460cba4891522c9e69e02725fa99710fdf024574c87f3cf0ba585",
+        "stock_assignments": 299,
+        "stock_file_bytes": 7667,
+        "stock_slice_1_assignments": 47
+      },
+      {
+        "byte_comparison_with_independent_model": "exact in both cases",
+        "driver_parser_cases": [
+          {
+            "assignment_count": 297,
+            "nul_separated_assignment_bytes": 7580,
+            "nvram_with_token_bytes": 7588,
+            "padded_block_without_token_bytes": 7584,
+            "platform_mac": false,
+            "slice_1_assignment_count": 45
+          },
+          {
+            "assignment_count": 298,
+            "nul_separated_assignment_bytes": 7606,
+            "nvram_with_token_bytes": 7612,
+            "padded_block_without_token_bytes": 7608,
+            "platform_mac": true,
+            "slice_1_assignment_count": 45
+          }
+        ],
+        "names_available_by_stepping": {
+          "C-4378__s-B1": 20
+        },
+        "sha256": "32d7747549903a2e222030abc75ef5dfd7fcd6879da125b3b41ac7885a8d45f3",
+        "stock_assignments": 298,
+        "stock_file_bytes": 7606,
+        "stock_slice_1_assignments": 46
+      },
+      {
+        "byte_comparison_with_independent_model": "exact in both cases",
+        "driver_parser_cases": [
+          {
+            "assignment_count": 295,
+            "nul_separated_assignment_bytes": 7664,
+            "nvram_with_token_bytes": 7672,
+            "padded_block_without_token_bytes": 7668,
+            "platform_mac": false,
+            "slice_1_assignment_count": 46
+          },
+          {
+            "assignment_count": 296,
+            "nul_separated_assignment_bytes": 7690,
+            "nvram_with_token_bytes": 7696,
+            "padded_block_without_token_bytes": 7692,
+            "platform_mac": true,
+            "slice_1_assignment_count": 46
+          }
+        ],
+        "names_available_by_stepping": {
+          "C-4378__s-B1": 25
+        },
+        "sha256": "2e15b8551b3cbf945247a6e25a8efbfb392476d799e81cbc61f659b55dc049b4",
+        "stock_assignments": 296,
+        "stock_file_bytes": 7690,
+        "stock_slice_1_assignments": 47
+      },
+      {
+        "byte_comparison_with_independent_model": "exact in both cases",
+        "driver_parser_cases": [
+          {
+            "assignment_count": 294,
+            "nul_separated_assignment_bytes": 7603,
+            "nvram_with_token_bytes": 7608,
+            "padded_block_without_token_bytes": 7604,
+            "platform_mac": false,
+            "slice_1_assignment_count": 45
+          },
+          {
+            "assignment_count": 295,
+            "nul_separated_assignment_bytes": 7629,
+            "nvram_with_token_bytes": 7636,
+            "padded_block_without_token_bytes": 7632,
+            "platform_mac": true,
+            "slice_1_assignment_count": 45
+          }
+        ],
+        "names_available_by_stepping": {
+          "C-4378__s-B1": 20
+        },
+        "sha256": "c1440baec1eb255afcee275dd6f6fd32146830db16db4d2015565bc447fb2fcb",
+        "stock_assignments": 295,
+        "stock_file_bytes": 7629,
+        "stock_slice_1_assignments": 46
+      }
+    ],
+    "txt_names": 250,
+    "unique_payloads": 10,
+    "unique_payloads_with_that_spacing": 10
+  },
+  "ram_diagnostics_source_model": {
+    "bcm4378_ram_base_hex": "0x352000",
+    "capture_bytes": "total RAM minus save/restore, plus any producer-supplied prefix",
+    "capture_publication": "Linux device coredump subsystem when enabled",
+    "direct_driver_callback_prefix_bytes": 0,
+    "fixture_verification": {
+      "device_path": "Direct and symlinked device paths rejected",
+      "direct_capture": "Every firmware byte matched",
+      "event_prefixed_capture": "Known prefix accepted and one mismatch detected",
+      "input": "Synthetic buffers made from the stock Shikoku image and synthetic trailing bytes",
+      "invalid_framing": "Missing prefix and truncated input rejected",
+      "invalid_geometry": "Negative prefix and insufficient declared RAM rejected"
+    },
+    "max_initial_detected_ram_bytes": 4194304,
+    "pcie_crash_recovery_prefix_bytes": 0,
+    "watchdog_event_prefix_bytes": "event payload length"
+  },
+  "runtime_scope": "Stock on-disk files, pinned kernel sources and synthetic RAM captures. No physical RAM reading or driver capture submitted.",
+  "selected_shikoku_inputs": {
+    "asahi_seed_record_bytes_when_allocated": 264,
+    "image_bytes": 1497470,
+    "image_relative_name": "C-4378__s-B1/shikoku.trx",
+    "image_sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06",
+    "model_nvram_bytes_by_platform_mac": [
+      7672,
+      7696
+    ],
+    "nvram_relative_name": "C-4378__s-B1/P-shikoku-X3_M-RASP_V-m__m-6.11.txt",
+    "nvram_sha256": "2e15b8551b3cbf945247a6e25a8efbfb392476d799e81cbc61f659b55dc049b4",
+    "stock_assignments": 296,
+    "stock_text_bytes": 7690
+  },
+  "sources": {
+    "asahi_linux": {
+      "commit": "201be96df5654336bdcbe1da2103f193d7a0b940",
+      "tag": "asahi-7.3.4-2"
+    },
+    "identical_firmware_c_sha256": "f2b6fe570981bf69a81fd5965712f18840df9b97dabcdbd4aa4cf260b4e9760b",
+    "linux_stable": {
+      "commit": "7595a62d45ee1a2297eafa5f2ef5d0a45142d84d",
+      "tag": "v7.3.4"
+    }
+  },
+  "system_build": "26B131"
+}
