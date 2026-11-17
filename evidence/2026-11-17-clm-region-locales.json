@@ -1,0 +1,1048 @@
+{
+  "after_read": {
+    "clm_version": {
+      "API": "21.0",
+      "ClmImport": "1.74.1",
+      "Compiler": "1.72.1",
+      "Creation": "2026-08-11 16:04:17",
+      "Customization": "v5 Final 251211",
+      "Data": "Oly.Shikoku"
+    },
+    "country": "TR",
+    "ipv4_default_interface": "en0",
+    "regulatory_file_requested": "C-4378__s-B1/shikoku-X3.clmb"
+  },
+  "before_read": {
+    "clm_version": {
+      "API": "21.0",
+      "ClmImport": "1.74.1",
+      "Compiler": "1.72.1",
+      "Creation": "2026-08-11 16:04:17",
+      "Customization": "v5 Final 251211",
+      "Data": "Oly.Shikoku"
+    },
+    "country": "TR",
+    "ipv4_default_interface": "en0",
+    "regulatory_file_requested": "C-4378__s-B1/shikoku-X3.clmb"
+  },
+  "channel_block_model": {
+    "active_profile": "C-4378__s-B1/shikoku.clmb",
+    "distinct_modeled_5ghz_block_lists": 21,
+    "lab_edge_center_by_width_mhz": {
+      "20": 144,
+      "40": 142,
+      "80": 138
+    },
+    "region_codes_containing_all_three_lab_edge_blocks": 85,
+    "same_block_lists_by_region_in_all_seven_files": true,
+    "same_region_set_contains_all_three_lab_edge_blocks": true,
+    "selected": {
+      "common_centers_by_band_and_width_mhz": {
+        "2.4 GHz": {
+          "20": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "40": []
+        },
+        "5 GHz": {
+          "20": [
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60,
+            64,
+            100,
+            104,
+            108,
+            112,
+            116,
+            120,
+            124,
+            128,
+            132,
+            136,
+            140
+          ],
+          "40": [
+            38,
+            46,
+            54,
+            62,
+            102,
+            110,
+            118,
+            126,
+            134
+          ],
+          "80": [
+            42,
+            58,
+            106,
+            122
+          ]
+        }
+      },
+      "locale_counts_by_lookup_slot": {
+        "6": 20,
+        "7": 57,
+        "8": 18,
+        "9": 57
+      },
+      "range_counts_by_width_mhz": {
+        "20": 83,
+        "40": 41,
+        "80": 22
+      },
+      "region_rows_checked": 222,
+      "regions": {
+        "JP": {
+          "bands": {
+            "2.4 GHz": {
+              "base_channel_ranges": [
+                [
+                  1,
+                  13
+                ]
+              ],
+              "base_locale_index": 8,
+              "base_locale_offset": 3274,
+              "channel_blocks_by_width_mhz": {
+                "20": {
+                  "centers": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13
+                  ],
+                  "primaries": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13
+                  ]
+                },
+                "40": {
+                  "centers": [],
+                  "primaries": []
+                }
+              },
+              "restricted_channel_ranges": [],
+              "width_locale_index": 7,
+              "width_locale_offset": 4680
+            },
+            "5 GHz": {
+              "base_channel_ranges": [
+                [
+                  36,
+                  64
+                ],
+                [
+                  100,
+                  144
+                ]
+              ],
+              "base_locale_index": 28,
+              "base_locale_offset": 6771,
+              "channel_blocks_by_width_mhz": {
+                "20": {
+                  "centers": [
+                    36,
+                    40,
+                    44,
+                    48,
+                    52,
+                    56,
+                    60,
+                    64,
+                    100,
+                    104,
+                    108,
+                    112,
+                    116,
+                    120,
+                    124,
+                    128,
+                    132,
+                    136,
+                    140,
+                    144
+                  ],
+                  "primaries": [
+                    36,
+                    40,
+                    44,
+                    48,
+                    52,
+                    56,
+                    60,
+                    64,
+                    100,
+                    104,
+                    108,
+                    112,
+                    116,
+                    120,
+                    124,
+                    128,
+                    132,
+                    136,
+                    140,
+                    144
+                  ]
+                },
+                "40": {
+                  "centers": [
+                    38,
+                    46,
+                    54,
+                    62,
+                    102,
+                    110,
+                    118,
+                    126,
+                    134,
+                    142
+                  ],
+                  "primaries": [
+                    36,
+                    40,
+                    44,
+                    48,
+                    52,
+                    56,
+                    60,
+                    64,
+                    100,
+                    104,
+                    108,
+                    112,
+                    116,
+                    120,
+                    124,
+                    128,
+                    132,
+                    136,
+                    140,
+                    144
+                  ]
+                },
+                "80": {
+                  "centers": [
+                    42,
+                    58,
+                    106,
+                    122,
+                    138
+                  ],
+                  "primaries": [
+                    36,
+                    40,
+                    44,
+                    48,
+                    52,
+                    56,
+                    60,
+                    64,
+                    100,
+                    104,
+                    108,
+                    112,
+                    116,
+                    120,
+                    124,
+                    128,
+                    132,
+                    136,
+                    140,
+                    144
+                  ]
+                }
+              },
+              "restricted_channel_ranges": [],
+              "width_locale_index": 28,
+              "width_locale_offset": 19266
+            }
+          },
+          "region_bytes_hex": "4a5000081c071c2e00"
+        },
+        "TR": {
+          "bands": {
+            "2.4 GHz": {
+              "base_channel_ranges": [
+                [
+                  1,
+                  13
+                ]
+              ],
+              "base_locale_index": 0,
+              "base_locale_offset": 2928,
+              "channel_blocks_by_width_mhz": {
+                "20": {
+                  "centers": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13
+                  ],
+                  "primaries": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13
+                  ]
+                },
+                "40": {
+                  "centers": [],
+                  "primaries": []
+                }
+              },
+              "restricted_channel_ranges": [],
+              "width_locale_index": 0,
+              "width_locale_offset": 3739
+            },
+            "5 GHz": {
+              "base_channel_ranges": [
+                [
+                  36,
+                  64
+                ],
+                [
+                  100,
+                  140
+                ],
+                [
+                  149,
+                  165
+                ]
+              ],
+              "base_locale_index": 14,
+              "base_locale_offset": 6390,
+              "channel_blocks_by_width_mhz": {
+                "20": {
+                  "centers": [
+                    36,
+                    40,
+                    44,
+                    48,
+                    52,
+                    56,
+                    60,
+                    64,
+                    100,
+                    104,
+                    108,
+                    112,
+                    116,
+                    120,
+                    124,
+                    128,
+                    132,
+                    136,
+                    140,
+                    149,
+                    153,
+                    157,
+                    161,
+                    165
+                  ],
+                  "primaries": [
+                    36,
+                    40,
+                    44,
+                    48,
+                    52,
+                    56,
+                    60,
+                    64,
+                    100,
+                    104,
+                    108,
+                    112,
+                    116,
+                    120,
+                    124,
+                    128,
+                    132,
+                    136,
+                    140,
+                    149,
+                    153,
+                    157,
+                    161,
+                    165
+                  ]
+                },
+                "40": {
+                  "centers": [
+                    38,
+                    46,
+                    54,
+                    62,
+                    102,
+                    110,
+                    118,
+                    126,
+                    134,
+                    151,
+                    159
+                  ],
+                  "primaries": [
+                    36,
+                    40,
+                    44,
+                    48,
+                    52,
+                    56,
+                    60,
+                    64,
+                    100,
+                    104,
+                    108,
+                    112,
+                    116,
+                    120,
+                    124,
+                    128,
+                    132,
+                    136,
+                    149,
+                    153,
+                    157,
+                    161
+                  ]
+                },
+                "80": {
+                  "centers": [
+                    42,
+                    58,
+                    106,
+                    122,
+                    155
+                  ],
+                  "primaries": [
+                    36,
+                    40,
+                    44,
+                    48,
+                    52,
+                    56,
+                    60,
+                    64,
+                    100,
+                    104,
+                    108,
+                    112,
+                    116,
+                    120,
+                    124,
+                    128,
+                    149,
+                    153,
+                    157,
+                    161
+                  ]
+                }
+              },
+              "restricted_channel_ranges": [],
+              "width_locale_index": 14,
+              "width_locale_offset": 12876
+            }
+          },
+          "region_bytes_hex": "545200000e000eab00"
+        },
+        "US": {
+          "bands": {
+            "2.4 GHz": {
+              "base_channel_ranges": [
+                [
+                  1,
+                  13
+                ]
+              ],
+              "base_locale_index": 14,
+              "base_locale_offset": 3421,
+              "channel_blocks_by_width_mhz": {
+                "20": {
+                  "centers": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13
+                  ],
+                  "primaries": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13
+                  ]
+                },
+                "40": {
+                  "centers": [],
+                  "primaries": []
+                }
+              },
+              "restricted_channel_ranges": [
+                [
+                  12,
+                  13
+                ]
+              ],
+              "width_locale_index": 13,
+              "width_locale_offset": 5151
+            },
+            "5 GHz": {
+              "base_channel_ranges": [
+                [
+                  36,
+                  165
+                ]
+              ],
+              "base_locale_index": 51,
+              "base_locale_offset": 7299,
+              "channel_blocks_by_width_mhz": {
+                "20": {
+                  "centers": [
+                    36,
+                    40,
+                    44,
+                    48,
+                    52,
+                    56,
+                    60,
+                    64,
+                    100,
+                    104,
+                    108,
+                    112,
+                    116,
+                    120,
+                    124,
+                    128,
+                    132,
+                    136,
+                    140,
+                    144,
+                    149,
+                    153,
+                    157,
+                    161,
+                    165
+                  ],
+                  "primaries": [
+                    36,
+                    40,
+                    44,
+                    48,
+                    52,
+                    56,
+                    60,
+                    64,
+                    100,
+                    104,
+                    108,
+                    112,
+                    116,
+                    120,
+                    124,
+                    128,
+                    132,
+                    136,
+                    140,
+                    144,
+                    149,
+                    153,
+                    157,
+                    161,
+                    165
+                  ]
+                },
+                "40": {
+                  "centers": [
+                    38,
+                    46,
+                    54,
+                    62,
+                    102,
+                    110,
+                    118,
+                    126,
+                    134,
+                    142,
+                    151,
+                    159
+                  ],
+                  "primaries": [
+                    36,
+                    40,
+                    44,
+                    48,
+                    52,
+                    56,
+                    60,
+                    64,
+                    100,
+                    104,
+                    108,
+                    112,
+                    116,
+                    120,
+                    124,
+                    128,
+                    132,
+                    136,
+                    140,
+                    144,
+                    149,
+                    153,
+                    157,
+                    161
+                  ]
+                },
+                "80": {
+                  "centers": [
+                    42,
+                    58,
+                    106,
+                    122,
+                    138,
+                    155
+                  ],
+                  "primaries": [
+                    36,
+                    40,
+                    44,
+                    48,
+                    52,
+                    56,
+                    60,
+                    64,
+                    100,
+                    104,
+                    108,
+                    112,
+                    116,
+                    120,
+                    124,
+                    128,
+                    132,
+                    136,
+                    140,
+                    144,
+                    149,
+                    153,
+                    157,
+                    161
+                  ]
+                }
+              },
+              "restricted_channel_ranges": [],
+              "width_locale_index": 51,
+              "width_locale_offset": 29337
+            }
+          },
+          "region_bytes_hex": "5553000e330d332c00"
+        }
+      }
+    }
+  },
+  "corewlan_report": {
+    "2.4 GHz": {
+      "20": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    "5 GHz": {
+      "20": [
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        100,
+        104,
+        108,
+        112,
+        116,
+        120,
+        124,
+        128,
+        132,
+        136,
+        140,
+        149,
+        153,
+        157,
+        161,
+        165
+      ],
+      "40": [
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        100,
+        104,
+        108,
+        112,
+        116,
+        120,
+        124,
+        128,
+        132,
+        136,
+        149,
+        153,
+        157,
+        161
+      ],
+      "80": [
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        100,
+        104,
+        108,
+        112,
+        116,
+        120,
+        124,
+        128,
+        149,
+        153,
+        157,
+        161
+      ]
+    }
+  },
+  "embedded_fallback": [
+    {
+      "active_pointer_load_for_version_report": "0x3dc482",
+      "compiler": "1.72.1",
+      "customization": "v1 160707",
+      "data": "Generic.Min",
+      "dataset_address_at_reference_base": "0x4475f4",
+      "dataset_file_offset": "0xf55f4",
+      "download_call": "0x3dc85e",
+      "embedded_header_pointer_load": "0x3dc87a",
+      "fallback_call": "0x3dc87c",
+      "firmware_sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06",
+      "general_ranges_by_lookup_slot": {
+        "0": 0,
+        "1": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0
+      },
+      "import_label": "ClmImport: 1.33.0",
+      "lookup_table_pointer": "0x447508",
+      "path": "C-4378__s-B1/honshu.trx",
+      "region_row_hex": "236e000000ffff0000",
+      "version_prefix_word": "0x150000"
+    },
+    {
+      "active_pointer_load_for_version_report": "0x3dc45e",
+      "compiler": "1.72.1",
+      "customization": "v1 160707",
+      "data": "Generic.Min",
+      "dataset_address_at_reference_base": "0x4474ec",
+      "dataset_file_offset": "0xf54ec",
+      "download_call": "0x3dc83a",
+      "embedded_header_pointer_load": "0x3dc856",
+      "fallback_call": "0x3dc858",
+      "firmware_sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6",
+      "general_ranges_by_lookup_slot": {
+        "0": 0,
+        "1": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0
+      },
+      "import_label": "ClmImport: 1.33.0",
+      "lookup_table_pointer": "0x447400",
+      "path": "C-4378__s-B1/capri.trx",
+      "region_row_hex": "236e000000ffff0000",
+      "version_prefix_word": "0x150000"
+    },
+    {
+      "active_pointer_load_for_version_report": "0x3b1eb2",
+      "compiler": "1.72.1",
+      "customization": "v1 160707",
+      "data": "Generic.Min",
+      "dataset_address_at_reference_base": "0x406d08",
+      "dataset_file_offset": "0xb4d08",
+      "download_call": "0x3b200a",
+      "embedded_header_pointer_load": "0x3b2026",
+      "fallback_call": "0x3b2028",
+      "firmware_sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a",
+      "general_ranges_by_lookup_slot": {
+        "0": 0,
+        "1": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0
+      },
+      "import_label": "ClmImport: 1.33.0",
+      "lookup_table_pointer": "0x406c1c",
+      "path": "C-4378__s-B3/kyushu.trx",
+      "region_row_hex": "236e000000ffff0000",
+      "version_prefix_word": "0x150000"
+    }
+  ],
+  "firmware_record_walk": {
+    "capri": {
+      "flag_read": "0x3dcdae",
+      "next_group_test_and_advance": [
+        "0x3dcfdc",
+        "0x3dcfe4",
+        "0x3dcfe8"
+      ],
+      "optional_header_byte": "0x3dcdbc",
+      "record_stride_bits": "0x3dcdb2"
+    },
+    "honshu": {
+      "add_three_to_stride": "0x3dcde2",
+      "flag_read": "0x3dcdd2",
+      "next_group_test_and_advance": [
+        "0x3dd000",
+        "0x3dd008",
+        "0x3dd00c"
+      ],
+      "optional_header_byte": "0x3dcde0",
+      "range_index_fetch": "0x3dce8a",
+      "read_record_count": "0x3dcdfe",
+      "record_stride_bits": "0x3dcdd6",
+      "sentinel_check": "0x3dced4"
+    },
+    "ram_base_model": "0x352000"
+  },
+  "macos_build": "26B131",
+  "observed_at_utc": "2026-11-17T17:12:59.553035+00:00",
+  "profile_checks": [
+    {
+      "file_sha256": "3202b0cd073d89b13955762acf42442483873a46ff0d426da618f04ec2184140",
+      "locale_count_by_lookup_slot": {
+        "6": 20,
+        "7": 57,
+        "8": 18,
+        "9": 57
+      },
+      "modeled_TR_equals_sample": true,
+      "path": "C-4378__s-B1/shikoku.clmb",
+      "range_counts_by_width_mhz": {
+        "20": 83,
+        "40": 41,
+        "80": 22
+      },
+      "region_rows_checked": 222
+    },
+    {
+      "file_sha256": "ecee6770918bfd6daf3faf67cb8cf549015acd24acf0f3d2a5d5a0d8dea791d5",
+      "locale_count_by_lookup_slot": {
+        "6": 20,
+        "7": 57,
+        "8": 18,
+        "9": 57
+      },
+      "modeled_TR_equals_sample": true,
+      "path": "C-4378__s-B1/atlantisb.clmb",
+      "range_counts_by_width_mhz": {
+        "20": 79,
+        "40": 41,
+        "80": 20
+      },
+      "region_rows_checked": 222
+    },
+    {
+      "file_sha256": "5591f8cfbf2ee838e9b519fd01a5d7472d3980ccd059e75ebd055a5a72fababf",
+      "locale_count_by_lookup_slot": {
+        "6": 19,
+        "7": 57,
+        "8": 18,
+        "9": 57
+      },
+      "modeled_TR_equals_sample": true,
+      "path": "C-4378__s-B1/honshu.clmb",
+      "range_counts_by_width_mhz": {
+        "20": 86,
+        "40": 42,
+        "80": 21
+      },
+      "region_rows_checked": 222
+    },
+    {
+      "file_sha256": "daad70044687d0f44a2832073215cea28fa31a767aef88f1d4f0e4f218ec5714",
+      "locale_count_by_lookup_slot": {
+        "6": 19,
+        "7": 57,
+        "8": 17,
+        "9": 57
+      },
+      "modeled_TR_equals_sample": true,
+      "path": "C-4378__s-B1/capri.clmb",
+      "range_counts_by_width_mhz": {
+        "20": 80,
+        "40": 38,
+        "80": 18
+      },
+      "region_rows_checked": 222
+    },
+    {
+      "file_sha256": "f0957a5bf040bfb7ae06242886335860b5b0509ddc5a6a07da21b0ed8a543a85",
+      "locale_count_by_lookup_slot": {
+        "6": 19,
+        "7": 57,
+        "8": 17,
+        "9": 57
+      },
+      "modeled_TR_equals_sample": true,
+      "path": "C-4378__s-B1/kyushu.clmb",
+      "range_counts_by_width_mhz": {
+        "20": 85,
+        "40": 42,
+        "80": 21
+      },
+      "region_rows_checked": 222
+    },
+    {
+      "file_sha256": "6df987fae5d6b6e7f88ffdb9f71ef0ecff1e70fe711bad610ead060c89c1ef3e",
+      "locale_count_by_lookup_slot": {
+        "6": 19,
+        "7": 57,
+        "8": 17,
+        "9": 57
+      },
+      "modeled_TR_equals_sample": true,
+      "path": "C-4378__s-B1/santorini.clmb",
+      "range_counts_by_width_mhz": {
+        "20": 80,
+        "40": 39,
+        "80": 18
+      },
+      "region_rows_checked": 222
+    },
+    {
+      "file_sha256": "a4188793ab990c77d665be4633b58d83dc6af606dff3754fc1d01a0aaea247a9",
+      "locale_count_by_lookup_slot": {
+        "6": 19,
+        "7": 57,
+        "8": 17,
+        "9": 57
+      },
+      "modeled_TR_equals_sample": true,
+      "path": "C-4378__s-B3/kyushu.clmb",
+      "range_counts_by_width_mhz": {
+        "20": 85,
+        "40": 42,
+        "80": 21
+      },
+      "region_rows_checked": 222
+    }
+  ],
+  "sampled_link": {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0"
+  },
+  "scope": "The locale mapping and channel block results are derived from stock files. TR was checked against read-only host status. The US and JP rows are offline estimates. Private country selection and final DFS, power and access-point policy were not observed.",
+  "source": {
+    "corewlan": "https://developer.apple.com/documentation/corewlan/cwinterface/supportedwlanchannels()",
+    "infineon_locale_terms": "https://community.infineon.com/gfawx74859/attachments/gfawx74859/cnwifimcu/299/1/Infineon-AN225347_-_Infineon_Wi-Fi_CLM_regulatory_manual-ApplicationNotes-v03_00-EN.pdf#page=65"
+  }
+}

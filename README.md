@@ -25,14 +25,21 @@ For continuous probing or a second router connection while this Mac stays online
 
 ## Which frequencies are available when I travel?
 
-The installed country-rules file contains a general channel table and region records. The active country, firmware reply, and host channel checks determine which entries macOS reports. The stored range is useful for comparing builds. The live list is useful when choosing a channel on a local access point. [Country and channel trace](docs/clm-channel-tables.md)
+The installed country-rules file lists the chip's general channels and groups the channels by region. We decoded the regional tables for 222 codes. The `TR` entry reproduces every channel and width this Mac reports. The offline tool can compare the installed entries for a destination and show which wide channels they share. [Country and channel trace](docs/clm-channel-tables.md#decode-the-country-specific-rules)
 
 | Band | General 20 MHz center frequencies in the installed file | Widths seen on this Mac in `TR` |
 | --- | --- | --- |
 | 2.4 GHz | 2,412–2,472 MHz in 5 MHz steps, channels 1–13 | 20 MHz |
 | 5 GHz | 5,180–5,320, 5,500–5,720, and 5,745–5,825 MHz in 20 MHz steps | 20, 40, and 80 MHz |
 
-The files also encode candidate 40 and 80 MHz center ranges. The 5 GHz lab reports document specific blocks at each width. The file audit found 38 candidate 20 MHz centers and the stock interface exposed 37 under `TR`. The missing center, channel 144, and both absent wider lab blocks end at 5,730 MHz, crossing the published 5,725 MHz edge. Continuous analog tuning range and 6 GHz or 160 MHz operation remain unverified. [Stored centers](docs/clm-channel-tables.md#general-channel-ranges-in-the-stock-files), [Band-edge calculation](docs/clm-channel-tables.md#the-5725-mhz-band-edge), [Lab coverage](docs/spectrum-sensing.md#a2337-lab-spectrum)
+Türkiye's middle 5 GHz group ends at channel 140 in the file. Channel 144 is in the US and Japan file models and was tested in the A2337 lab. That channel is also part of a 40 MHz block and an 80 MHz block, so the `TR` list omits all three together. The US and Japan results are from stored files. Continuous analog tuning range and 6 GHz or 160 MHz operation remain unverified. [Regional examples](docs/clm-channel-tables.md#plan-an-access-point-before-a-field-deployment), [Lab coverage](docs/spectrum-sensing.md#a2337-lab-spectrum)
+
+Compare the installed entries for an owned access point before travel. The tool returns center channels and their constituent primaries, along with the center channels shared by the requested regions.
+
+```sh
+python3 -B tools/audit_clm_channels.py --locale TR --locale US --locale JP \
+  /usr/share/firmware/wifi/C-4378__s-B1/shikoku.clmb
+```
 
 Run these in the place where you will use the Mac. The second command reads the reported country for the active interface. Apple scopes the channel getter to that country and recommends enabling the Networking & Wireless location service to help devices connect under local channel and signal rules. [Apple's supported-channel API](https://developer.apple.com/documentation/corewlan/cwinterface/supportedwlanchannels%28%29?changes=_6), [Apple Wi-Fi settings](https://support.apple.com/en-us/102766)
 

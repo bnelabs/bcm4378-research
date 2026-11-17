@@ -35,7 +35,7 @@ The 5 GHz comparison treats each reported channel number as a possible primary 2
 
 Each unmatched center is from the A2337 straddle tests. None of its candidate primaries appeared at the corresponding width. Channels 132, 136 and 140 appeared at 20 MHz, and 132 and 136 also appeared in the 40 MHz list. The match compares the host's current advertised channel plan with a lab test plan. It leaves runtime availability under other operating conditions and physical tuning limits open. [A2337 5 GHz exhibit](https://device.report/m/9dbefd8fa57734334f25d9b4c27352a2b1333e4a7384c14f77fb813ec85822d7.pdf#page=5)
 
-All seven installed regulatory profiles carry channel 144 in the general 5 GHz range. A read under registry country code `TR` confirmed its absence from the stock interface's 20 MHz list. The CLM comparison also traces the driver requests that depend on country context. [CLM channel tables and the active country plan](clm-channel-tables.md)
+All seven installed regulatory profiles carry channel 144 in the general 5 GHz range. Their decoded `TR` locale stops the middle 5 GHz range at channel 140. Its resulting model matches the stock interface's complete channel list, including the width groups in the table above. [CLM channel tables and the active country plan](clm-channel-tables.md#decode-the-country-specific-rules)
 
 ### Wi-Fi and Bluetooth lab modes
 
