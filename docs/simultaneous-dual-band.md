@@ -46,6 +46,18 @@ In the slice 1 history, the most frequent real channel labels were 6, 1 and 11, 
 
 All 25 link samples reported `en0` on 5 GHz primary 40 at 80 MHz and all default IPv4 route checks returned `en0`. The host interface's packet counters advanced in every interval. The channel-switch and reason counters had zero deltas on both slices, and the `awdl0` packet counters had zero delta. The AWDL schedule accumulated time in the state labeled `InfraPri` with zero new state entries. The separate AWDL `SDB` value was zero with the same snapshot timestamp throughout. The sample verifies a live read of slice 0 traffic and a cumulative history on both slices. Concurrent use of both bands for a peer transfer remains a separate measurement. [Timed observations](../evidence/2026-11-17-channel-switch-reports.json)
 
+### Time on a channel and time to retune
+
+The driver records `Dwell Time` in milliseconds and `Phy Switch Time` in microseconds. Both signed slices tally the dwell field at offset `0x10`. The 28-byte record also has a hardware retune field at `0x18`. The signed driver passes the two fields to separate histograms. An ordinary user process read all four histograms, two per slice. [Instruction and runtime evidence](../evidence/2026-11-17-channel-switch-timing.json), [Apple's unit definitions](https://github.com/apple-oss-distributions/xnu/blob/main/iokit/IOKit/IOReportTypes.h)
+
+The cumulative 5 GHz retune histogram held 172,040 values. All but one were at or below 1.5 ms, with the single value above that threshold at 1.501 ms. The corresponding dwell histogram held 69,496 records between 449 and 475 ms. Dwell records include time accrued before the switch. A benchmark needs the destination and purpose of the switch to relate dwell to a delay in network traffic. [Native histogram buckets](../evidence/2026-11-17-channel-switch-timing.json)
+
+### 2.4 GHz records during 5 GHz traffic
+
+In a separate 90-second passive run, all 31 snapshots reported the 5 GHz association on channel 40 at 80 MHz and the default route on `en0`. In one 3.008-second interval slice 1 added four destination records, one each for channels 1, 6 and 11 on 2.4 GHz and one for channel zero. Two reason records were labeled `Scan` and two `WLC Init`. The same interval saw 19 transmitted and 20 received packets on `en0`, with zero packet change on `awdl0`. The history groups observations inside the window. Pairing reasons with specific destinations and measuring actual airtime overlap still require synchronized observations. [Interval and adjacent snapshots](../evidence/2026-11-17-channel-switch-timing.json)
+
+Three new dwell values totaled 347 ms in the 64–128 ms bucket. The fourth reported 483,079 ms in the open-ended top bucket, longer than the entire sampling window. The two new hardware retune values were both zero. The zero values' meaning remains open. [Per-bucket changes](../evidence/2026-11-17-channel-switch-timing.json), [Summary commands](live-wifi-airtime.md#read-channel-switch-reports)
+
 ## macOS firmware and platform gates
 
 Both signed driver slices search the firmware's capability response for the word `rsdb` and set or clear the bit read by `checkForSDBSupport`. That bit gates `querySDBPolicies`. Its four reads handle version, capabilities, bands, and configuration, with response checks in each path. The capability handler caches fields that the AWDL-facing getter copies to its caller. A separate chip check uses the cached slice count and per-slice bytes. [Host instruction trace](../evidence/2026-11-17-sdb-policy.json)

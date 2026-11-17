@@ -15,6 +15,7 @@ extern uint64_t IOReportChannelGetChannelID(CFDictionaryRef);
 extern uint8_t IOReportChannelGetFormat(CFDictionaryRef);
 extern uint64_t IOReportChannelGetDriverID(CFDictionaryRef);
 extern uint64_t IOReportChannelGetUnit(CFDictionaryRef);
+extern CFStringRef IOReportChannelGetUnitLabel(CFDictionaryRef);
 extern CFTypeRef IOReportCreateSubscription(void *, CFMutableDictionaryRef, CFMutableDictionaryRef *, uint64_t, CFErrorRef *);
 extern CFDictionaryRef IOReportCreateSamples(CFTypeRef, CFMutableDictionaryRef, CFErrorRef *);
 extern int64_t IOReportSimpleGetIntegerValue(CFDictionaryRef, uint64_t *);
@@ -22,6 +23,12 @@ extern int IOReportStateGetCount(CFDictionaryRef);
 extern CFStringRef IOReportStateGetNameForIndex(CFDictionaryRef, int);
 extern int64_t IOReportStateGetResidency(CFDictionaryRef, int);
 extern int64_t IOReportStateGetInTransitions(CFDictionaryRef, int);
+extern int IOReportHistogramGetBucketCount(CFDictionaryRef);
+extern int64_t IOReportHistogramGetBucketHits(CFDictionaryRef, int);
+extern int64_t IOReportHistogramGetBucketMinValue(CFDictionaryRef, int);
+extern int64_t IOReportHistogramGetBucketMaxValue(CFDictionaryRef, int);
+extern int64_t IOReportHistogramGetBucketSum(CFDictionaryRef, int);
+extern IOReturn IOReportHistogramGetBucketBounds(CFDictionaryRef, int, int64_t *, int64_t *);
 
 static NSString *const ChannelList = @"IOReportChannels";
 static NSString *const ExternalCCA = @"CCA (%) excluding own traffic";
@@ -29,6 +36,7 @@ static NSString *const ExternalCCA = @"CCA (%) excluding own traffic";
 enum ReportFormat {
     FormatSimple = 1,
     FormatState = 2,
+    FormatHistogram = 3,
 };
 
 enum SampleMode {
@@ -78,7 +86,8 @@ static BOOL isSelectedChannel(CFDictionaryRef row, uint64_t driverID, enum Sampl
     }
     if (mode == SampleChannelSwitch) {
         BOOL switches = [group hasPrefix:@"Channel Switch: Slice "] &&
-            ([subgroup isEqualToString:@"Channels Visited"] || [subgroup isEqualToString:@"Channel Switch Reasons"]);
+            ([subgroup isEqualToString:@"Channels Visited"] || [subgroup isEqualToString:@"Channel Switch Reasons"] ||
+             [subgroup isEqualToString:@"Dwell Time"] || [subgroup isEqualToString:@"Phy Switch Time"]);
         BOOL sliceBytes = [group hasPrefix:@"Slice "] && [subgroup isEqualToString:@"Bytes Transferred"];
         BOOL awdlSnapshot = [group isEqualToString:@"AWDL Metrics"] && [subgroup isEqualToString:@"AWDL Snapshot"];
         BOOL awdlSchedule = [group isEqualToString:@"Interface awdl0"] && [subgroup isEqualToString:@"AWDL Schedule"];
@@ -96,6 +105,30 @@ static BOOL isSelectedChannel(CFDictionaryRef row, uint64_t driverID, enum Sampl
 static id reportInteger(int64_t value)
 {
     return value == INT64_MIN ? (id)[NSNull null] : @(value);
+}
+
+static NSArray *decodeHistogram(CFDictionaryRef row)
+{
+    NSMutableArray *buckets = [NSMutableArray array];
+    int count = IOReportHistogramGetBucketCount(row);
+    for (int index = 0; index < count; ++index) {
+        NSMutableDictionary *bucket = [@{
+            @"index": @(index),
+            @"hits": reportInteger(IOReportHistogramGetBucketHits(row, index)),
+            @"min": reportInteger(IOReportHistogramGetBucketMinValue(row, index)),
+            @"max": reportInteger(IOReportHistogramGetBucketMaxValue(row, index)),
+            @"sum": reportInteger(IOReportHistogramGetBucketSum(row, index)),
+        } mutableCopy];
+        int64_t lower = 0;
+        int64_t upper = 0;
+        if (IOReportHistogramGetBucketBounds(row, index, &lower, &upper) == KERN_SUCCESS) {
+            // The kernel leaves the first lower and last upper edges unbounded.
+            bucket[@"lower_exclusive"] = index == 0 ? (id)[NSNull null] : reportInteger(lower);
+            bucket[@"upper_inclusive"] = index == count - 1 ? (id)[NSNull null] : reportInteger(upper);
+        }
+        [buckets addObject:bucket];
+    }
+    return buckets;
 }
 
 static NSDictionary *decodeReport(CFDictionaryRef row, enum SampleMode mode)
@@ -133,6 +166,9 @@ static NSDictionary *decodeReport(CFDictionaryRef row, enum SampleMode mode)
             }];
         }
         report[@"states"] = states;
+    } else if (mode == SampleChannelSwitch && format == FormatHistogram) {
+        report[@"unit_label"] = (__bridge NSString *)IOReportChannelGetUnitLabel(row) ?: (id)[NSNull null];
+        report[@"buckets"] = decodeHistogram(row);
     }
     return report;
 }
