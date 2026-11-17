@@ -49,6 +49,8 @@ python3 tools/inspect_radio_sidecars.py \
 
 All ten distinct stock BCM4378 NVRAM payloads declare `sromrev=11` and set `aa2g`, `aa5g`, `rxchain` and `txchain` to 3, a mask with two bits set. Infineon defines those fields as per-band antenna availability and TX/RX path masks on a related Broadcom family. Apple specifies two spatial streams on both bands for the M1 Air. The stock masks give a reference for checking stream use against station telemetry on the bench. [Profile comparisons](../evidence/2026-11-17-nvram-topology.json), [Infineon NVRAM field definitions](https://community.infineon.com/gfawx74859/attachments/gfawx74859/WifiBTcombo/3828/1/Infineon-AN225021_CYW43012_OTP_Programming_and_NVRAM_Development-ApplicationNotes-v01_00-EN.pdf#page=5), [Apple Wi-Fi specifications](https://support.apple.com/en-au/guide/deployment/-dep268652e6c/web)
 
+The macOS firmware getter exposes hardware and configured masks to the link-reporting path. Both types of transmit mask contribute to the reported `NSS State`. [Radio-chain policy trace](radio-chain-policy.md)
+
 Across the payloads, 247 of 253 flat keys and 46 of 47 `slice/1/` keys occur in every profile. All ten have one 52-value `slice/1/` array. On each B1 board, the vendor `m` file adds one four-value `slice/1/` array compared with vendor `u`. The two stock directory roots have 250 matching names that resolve to the same filesystem objects across the roots. Kyushu B3 uses the B1 Honshu `u` payload. The physical mapping of the second namespace and its relation to simultaneous radio operation remain open. [Alias, namespace and array counts](../evidence/2026-11-17-nvram-topology.json)
 
 ## Installed package

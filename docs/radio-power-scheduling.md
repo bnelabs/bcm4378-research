@@ -6,6 +6,8 @@ The M1 Air's live firmware capability reply contains `he`, `lpas` and `dtim_miss
 
 Shikoku's `wlan.lpas-allowed` and `wlan.aoac-allowed` are both present as zero-length Data in the live PCIe service and its installed board profile. The config manager checks their presence and sets the corresponding permissions. It also has a boot-time override path. Both keys occur in 35 of the 56 board profiles in each stock directory. Two related settings, `wlan.mimo_ps.enabled` and `wlan.ocl.enabled`, appear as zero-length Data in all 56 and on the live service. Radio chain use remains unmeasured. [Stock profile and registry comparisons](../evidence/2026-11-17-radio-power-scheduling.json)
 
+Associated-sleep entry and exit can also request a change to the beacon-based receive width when the relevant feature and board settings are available. [Radio-chain and channel-width policy](radio-chain-policy.md#power-saving-and-width-controls)
+
 In both slices, `checkForLPASSupport` requires the host permission and firmware feature bit 26, which corresponds to `lpas` in the legacy capability table. The reported word and provisioned property agree with those inputs. When the associated-sleep state selects LPAS, the entry path requests mode 1 and the exit path requests mode 0 through the firmware's `lpas` setting. The first five minutes of retained boot logs yielded no matching provisioning or mode messages. The active LPAS state, acknowledgment, radio duty cycle, and wake outcome remain unmeasured. [Mode and gate trace](../evidence/2026-11-17-radio-power-scheduling.json), [Host sleep policy](host-power-policy.md)
 
 ## Beacon and DTIM policy

@@ -1,0 +1,242 @@
+{
+  "sampled_at_utc": "2026-11-17T10:21:24+00:00",
+  "host": {
+    "model": "MacBookAir10,1",
+    "macos_version": "27.2.1",
+    "macos_build": "26B131",
+    "default_ipv4_interface": "en0",
+    "associated_phy": "802.11ax",
+    "associated_band": "5 GHz",
+    "reported_channel_width_mhz": 80,
+    "wifi_firmware": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a"
+  },
+  "signed_driver": {
+    "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "bytes": 10564944,
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f"
+  },
+  "strict_signature_verified": true,
+  "matching_slices": [
+    "arm64e",
+    "arm64e.x1"
+  ],
+  "live_chain_platform_properties": {
+    "wlan.mimo_ps.enabled": {
+      "type": "bytes",
+      "bytes": 0
+    },
+    "wlan.ocl.enabled": {
+      "type": "bytes",
+      "bytes": 0
+    }
+  },
+  "stock_platform_roots": {
+    "/usr/share/firmware/wifi": {
+      "wlan.mimo_ps.enabled": {
+        "files_with_key": 56,
+        "empty_data": 56
+      },
+      "wlan.ocl.enabled": {
+        "files_with_key": 56,
+        "empty_data": 56
+      },
+      "wlan.ocl_awdl.enabled": {
+        "files_with_key": 0,
+        "empty_data": 0
+      },
+      "wlan.psbw.enabled": {
+        "files_with_key": 0,
+        "empty_data": 0
+      }
+    },
+    "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/PlatformConfig/macOS": {
+      "wlan.mimo_ps.enabled": {
+        "files_with_key": 56,
+        "empty_data": 56
+      },
+      "wlan.ocl.enabled": {
+        "files_with_key": 56,
+        "empty_data": 56
+      },
+      "wlan.ocl_awdl.enabled": {
+        "files_with_key": 0,
+        "empty_data": 0
+      },
+      "wlan.psbw.enabled": {
+        "files_with_key": 0,
+        "empty_data": 0
+      }
+    }
+  },
+  "profiles_per_root": 56,
+  "nvram_chain_defaults": {
+    "profile_paths": 250,
+    "unique_payloads": 10,
+    "requested_nvram": "C-4378__s-B1/P-shikoku-X3_M-RASP_V-m__m-6.11.txt",
+    "shared_values": {
+      "aa2g": 3,
+      "aa5g": 3,
+      "rxchain": 3,
+      "txchain": 3
+    }
+  },
+  "firmware_search": {
+    "C-4378__s-B1/shikoku.trx": {
+      "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06",
+      "ascii_word_counts": {
+        "txchain": 3,
+        "rxchain": 3,
+        "ocl": 2,
+        "mimo_ps": 0,
+        "mimo_ps_cfg": 0,
+        "pm_bcnrx": 0,
+        "ocl_enable": 0,
+        "psbw_cfg": 0
+      }
+    },
+    "C-4378__s-B1/capri.trx": {
+      "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6",
+      "ascii_word_counts": {
+        "txchain": 3,
+        "rxchain": 3,
+        "ocl": 2,
+        "mimo_ps": 0,
+        "mimo_ps_cfg": 0,
+        "pm_bcnrx": 0,
+        "ocl_enable": 0,
+        "psbw_cfg": 0
+      }
+    },
+    "C-4378__s-B3/kyushu.trx": {
+      "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a",
+      "ascii_word_counts": {
+        "txchain": 3,
+        "rxchain": 3,
+        "ocl": 2,
+        "mimo_ps": 0,
+        "mimo_ps_cfg": 0,
+        "pm_bcnrx": 0,
+        "ocl_enable": 0,
+        "psbw_cfg": 0
+      }
+    }
+  },
+  "capability_trace": {
+    "legacy_words_present": [
+      "he",
+      "single-user-beamformer",
+      "single-user-beamformee",
+      "multi-user-beamformee"
+    ],
+    "legacy_words_absent": [
+      "mimo_ps",
+      "ocl",
+      "psbw"
+    ],
+    "legacy_feature_bits": {
+      "mimo_ps": 44,
+      "ocl": 47,
+      "psbw": 3
+    },
+    "extended_processor": "AppleBCMWLANCore::processFwFeatures",
+    "extended_processor_can_set_bits": [
+      3,
+      44,
+      47
+    ],
+    "extended_reply_sampled": false
+  },
+  "chain_and_width_controls": {
+    "mimo_power_save": {
+      "board_gate": "Presence of wlan.mimo_ps.enabled",
+      "feature_bit": 44,
+      "configuration": "mimo_ps_cfg",
+      "status": "mimo_ps_status",
+      "beacon_receive_chain_setting": "pm_bcnrx",
+      "mrc_threshold": "mrc_rssi_threshold",
+      "chain_context_readback": [
+        "txchain",
+        "rxchain",
+        "chanspec",
+        "mimo_ps_cfg"
+      ]
+    },
+    "ocl": {
+      "board_gate": "Presence of wlan.ocl.enabled",
+      "feature_bit": 47,
+      "configuration": [
+        "ocl_enable",
+        "ocl_rssi_threshold"
+      ],
+      "initial_threshold_argument": -70
+    },
+    "beacon_width_switch": {
+      "board_gate": "OSNumber wlan.psbw.enabled",
+      "feature_bit": 3,
+      "configuration": "psbw_cfg",
+      "associated_sleep_entry_target_mhz": 20,
+      "associated_sleep_exit_target_mhz": 80
+    }
+  },
+  "reporting_trace": {
+    "published_legend_is_public": true,
+    "omi_groups": [
+      "Chip",
+      "Slice 0",
+      "Slice 1"
+    ],
+    "omi_labels_identical_in_all_groups": true,
+    "nss_state_interfaces": [
+      "en0"
+    ],
+    "nss_state": {
+      "shared_driverkit_uuid": "f0ba88aa-2977-307d-b8c6-ddcec8e76f9e",
+      "producer": "IO80211InfraInterface::getInfraLinkProperties",
+      "consumer": "IO80211PeerManager::setMaxNSS",
+      "bcm_fallback": "AppleBCMWLANCore::getTXRX_CHAIN_INFO",
+      "bcm_reply_order": [
+        "hw_rxchain",
+        "hw_txchain",
+        "txchain",
+        "rxchain"
+      ],
+      "derived_state": "min(popcount(reply byte 1), popcount(reply byte 2))"
+    },
+    "omi_per_slice": {
+      "source": "AppleBCMWLANCore::parseV30CntContainer",
+      "reporter": "AppleBCMWLANIOReportingPerSlice::reportOmiCntPerSlice",
+      "record_bytes": 68,
+      "encoding": "uint32 little endian",
+      "offset_to_label": {
+        "4": "Total number of OMIs scheduled",
+        "8": "OMI Tx Success",
+        "12": "OMI retries as TxDone not set",
+        "16": "Accumulated duration of OMI completion time(ms)",
+        "20": "UL MU enable/disable change request",
+        "24": "UL MU enable/disable request txed successfully",
+        "28": "Tx NSTS change request",
+        "32": "Tx NSTS change request txed successfully",
+        "36": "Rx NSS change request",
+        "40": "Rx NSS change request txed successfully",
+        "44": "Channel Width change request",
+        "48": "Channel Width hange request txed successfully",
+        "52": "ER SU enable/disable req",
+        "56": "ER SU enable/disable req txed successfully",
+        "60": "DL MU-MIMO Resound recommendation change req",
+        "64": "DL MU-MIMO Resound recommendation request txed successfully"
+      },
+      "update": "Set each reported field to the received value"
+    },
+    "values_sampled": false
+  },
+  "linux_comparison": {
+    "stable_commit": "7595a62d45ee1a2297eafa5f2ef5d0a45142d84d",
+    "asahi_commit": "201be96df5654336bdcbe1da2103f193d7a0b940",
+    "stable_cfg80211_sha256": "e01771665b45d2c116e4df9af998fed0c7f009d19e65a00584b248e3911770ad",
+    "asahi_cfg80211_sha256": "e2d98f65c1d771a0b262eda27d297787f5612c8ebcf614b36dc8062847534ec0",
+    "shared_nl80211_sha256": "db2e731e96e9572003a449253ca6623a67a0293c48160dcd3d144b60980c5b16",
+    "asahi_avail_antenna_field_for_mask_0x3": 2,
+    "get_or_set_antenna_callbacks": false
+  }
+}

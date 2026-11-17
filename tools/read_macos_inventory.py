@@ -162,6 +162,37 @@ def wifi_capability_inputs(core, bus):
     }
 
 
+def radio_chain_reporting(entries):
+    reporter = next((entry for entry in entries if entry.get("IOUserClass") == "IO80211ReporterProxy"), {})
+    legend = reporter.get("IOReportLegend")
+    if not isinstance(legend, list):
+        return None
+
+    omi = {}
+    nss_state = []
+    for row in legend:
+        if not isinstance(row, dict):
+            continue
+        group = row.get("IOReportGroupName")
+        subgroup = row.get("IOReportSubGroupName")
+        channels = row.get("IOReportChannels")
+        if not isinstance(group, str) or not isinstance(channels, list):
+            continue
+        labels = [
+            item[2] for item in channels
+            if isinstance(item, list) and len(item) > 2 and isinstance(item[2], str)
+        ]
+        if subgroup == "OMI Counters" and group in ("Chip", "Slice 0", "Slice 1"):
+            omi[group] = labels
+        if subgroup == "NSS" and re.fullmatch(r"Interface en[0-9]+", group) and "NSS State" in labels:
+            nss_state.append(group.removeprefix("Interface "))
+    return {
+        "legend_marked_public": reporter.get("IOReportLegendPublic") is True,
+        "omi_counter_labels": omi,
+        "nss_state_interfaces": sorted(set(nss_state)),
+    }
+
+
 def bluetooth_snapshot():
     report = json.loads(run("/usr/sbin/system_profiler", "SPBluetoothDataType", "-detailLevel", "basic", "-json"))
     snapshot = {}
@@ -216,6 +247,7 @@ def collect():
             "capability_inputs": wifi_capability_inputs(core, bus),
             "coexistence_parameters": coexistence,
             "radio_power_config_properties": summarize_config_keys(bus, RADIO_POWER_CONFIG_KEYS),
+            "radio_chain_reporting": radio_chain_reporting(entries),
             "transport_config_properties": {
                 key: bus[key] for key in TRANSPORT_CONFIG_KEYS if type(bus.get(key)) is int
             },
