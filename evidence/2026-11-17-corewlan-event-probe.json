@@ -1,0 +1,11 @@
+{
+  "apple_documented_application_entitlement": "com.apple.wifi.events",
+  "cleanup": "returned_success",
+  "duration_requested_seconds": 8,
+  "duration_seconds": 8.010822041658685,
+  "event": "CWEventType.linkQualityDidChange",
+  "observed_event_count": 0,
+  "probe": "Stock Swift terminal process using CoreWLAN callbacks",
+  "registration": "returned_success",
+  "swift_version": "6.4.2"
+}

@@ -19,6 +19,26 @@ The four selected files each resolve to the same filesystem object through the d
 
 The separate `com.apple.driver.BCMWLANFirmware4378.Hashstore` package declares an `IOImageLoader` personality matching the `com.apple.driver.AppleBCMWLANCore` consumer. Its declared executable is absent from the loose bundle. The runtime verification outcome for the selected files remains unmeasured. [Hashstore metadata](../evidence/2026-11-17-firmware-loader-evidence.json)
 
+## Selected radio sidecars
+
+Both the active CLM request and the TxCap request resolve to Broadcom `BLOB` files with a 60-byte header and two records. The header CRC32 and both record CRC32s agree with the OpenWrt container parser's rules for each file. The identical four-byte trailing records account for the end of both files. Their purpose remains unknown. [Observed headers and checksums](../evidence/2026-11-17-radio-sidecars.json), [OpenWrt BLOB parser](https://github.com/openwrt/firmware-utils/blob/master/src/bcmblob.c)
+
+| Role | First record length | Verified file metadata |
+| --- | ---: | --- |
+| CLM | 35,909 bytes | The `CLM DATA` header identifies API `Oly.Shikoku`, compiler `1.72.1`, import label `ClmImport: 1.74.1` and release label `v5 Final 251211` in the field named manufacturer. [OpenWrt CLM header definition](https://github.com/openwrt/firmware-utils/blob/master/src/bcmclm.c) |
+| TxCap | 633 bytes | The record begins with `TXCP`. Its internal fields and their runtime use remain unverified. |
+| NVRAM | — | The selected 7,690-byte ASCII profile has 296 distinct assignments, including 249 flat keys and 47 `slice/1/` keys. Its `sromrev` field is `11`. [Infineon SROM field description](https://www.infineon.com/assets/row/public/documents/30/42/infineon-an215294-cyw4335-otp-programming-and-nvram-applicationnotes-en.pdf) |
+
+The checks describe the contents at the three paths named by the driver. The applied per-device calibration and transmit-power limits remain unmeasured.
+
+```sh
+bcm_sidecars=/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware/C-4378__s-B1
+python3 tools/inspect_radio_sidecars.py \
+  --clm "$bcm_sidecars/shikoku-X3.clmb" \
+  --txcap "$bcm_sidecars/shikoku-X3.txcb" \
+  --nvram "$bcm_sidecars/P-shikoku-X3_M-RASP_V-m__m-6.11.txt"
+```
+
 ## Installed package
 
 | Stepping | Executable names / unique payloads | CLM | TxCap | NVRAM |
@@ -61,6 +81,19 @@ python3 tools/map_firmware_regions.py \
   /usr/share/firmware/wifi/C-4378__s-B1/honshu.trx \
   /usr/share/firmware/wifi/C-4378__s-B1/capri.trx \
   /usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx
+```
+
+### Microcode build metadata and record structure
+
+The firmware tag is followed by a second tag, `<UCODE-TAG>`, in all three BCM4378 images. It lists `OlympicAXUcode_1447_100`, revision `48542`, major `1447` and minor `100`. The exact 195,250-byte span and all 24 sampled 256-byte anchors occurred in the three BCM4378 files. None of the ten other distinct installed images checked contained the span or a sampled anchor. Those other files were BCM4364, BCM4387 and BCM4388 variants. [Build tags and comparison records](../evidence/2026-11-17-microcode-components.json)
+
+Within that span, two windows contain 11,190 and 10,927 aligned eight-byte records. Each record has a zero in the eighth byte. The fourth byte is zero only 20 and 21 times respectively. The second window has a four-byte alignment shift relative to the first. Published Broadcom FullMAC work describes a separate D11 core handling real-time 802.11 MAC work with an embedded microcode image. The build tag and record patterns make these two windows candidates for D11 microcode. Their exact logical bounds and runtime roles remain open. [Measured record layouts](../evidence/2026-11-17-microcode-components.json), [TU Darmstadt D11 research](https://www.seemoo.tu-darmstadt.de/theses/emulating-broadcoms-d11-core/)
+
+The common span ends inside a separate eight-byte-record table. Each record has two little-endian words. The first increases strictly and the second increments by eight. The table contains 768 rows in each B1 image and 374 in B3. A single newline separates the final record from `<FW-TAG>`. The field meanings remain open. [Table measurements](../evidence/2026-11-17-microcode-components.json)
+
+```sh
+python3 tools/inspect_firmware.py /usr/share/firmware/wifi/C-4378__s-B1/honshu.trx \
+  --embedded-metadata --lane-window 1295724 89520 --lane-window 1385832 87416
 ```
 
 Both B1 images contain the selected literal `wnm_btm_rssi_thresh`. The B3 image contains other WNM labels and has zero exact hits for this one. This corrects the earlier count of ten shared positive markers. Runtime roaming policy remains unmeasured. [Literal counts](../evidence/2026-11-17-firmware-comparison.json)

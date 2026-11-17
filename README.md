@@ -3,7 +3,7 @@
 This repository records the Wi-Fi hardware, driver and firmware of the 2020 M1 MacBook Air (`MacBookAir10,1`). The research started on 17 November 2026. This Mac relies on Wi-Fi for internet access, so on-host measurements use stock macOS readouts and local file analysis.
 
 - [Hardware and capability findings](docs/findings.md) records the M1 Air baseline and model-specific lab observations.
-- [Firmware layout and board selection](docs/firmware-layout.md) covers the exact runtime requests, three image builds and the shared byte regions.
+- [Firmware layout and board selection](docs/firmware-layout.md) records the selected files, CLM and TxCap containers, and the shared microcode candidates.
 - [DriverKit and radio services](docs/driver-interfaces.md) records the shipped host driver, the running Wi-Fi interfaces and the Bluetooth endpoint.
 - [Spectrum coverage and sensing](docs/spectrum-sensing.md) compares the stock channel list, A2337 lab measurements and applicable research.
 - [Live access and control](docs/live-access.md) records the PCIe apertures, documented controls and conditions for testing deeper controls.
@@ -37,9 +37,11 @@ python3 tools/compare_firmware.py \
   /usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx
 ```
 
+Reproduce the [microcode and sidecar checks](docs/firmware-layout.md#microcode-build-metadata-and-record-structure) with the local stock files.
+
 ## Next research questions
 
-1. Establish the roles of the firmware's shared regions and confirm the runtime layout on a separate test target.
+1. Confirm the logical boundaries of the candidate D11 streams, the trailing table's purpose, and runtime component selection on a separate test target.
 2. Compare the driver-reported link diary and raw transmit-power field with measurements from a calibrated spectrum receiver or a controlled obstruction test.
 3. Verify simultaneous infrastructure and peer-to-peer transfer, and the runtime availability of the A2337's lab modes, on a separate managed test setup.
 4. Evaluate driver-owned register and RAM diagnostics on a separate, independently managed test Mac.
