@@ -40,8 +40,14 @@ bcm_sidecars=/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.d
 python3 tools/inspect_radio_sidecars.py \
   --clm "$bcm_sidecars/shikoku-X3.clmb" \
   --txcap "$bcm_sidecars/shikoku-X3.txcb" \
-  --nvram "$bcm_sidecars/P-shikoku-X3_M-RASP_V-m__m-6.11.txt"
+  --nvram "$bcm_sidecars/P-shikoku-X3_M-RASP_V-m__m-6.11.txt" --nvram-topology
 ```
+
+### NVRAM chain declarations
+
+All ten distinct stock BCM4378 NVRAM payloads declare `sromrev=11` and set `aa2g`, `aa5g`, `rxchain` and `txchain` to 3, a mask with two bits set. Infineon defines those fields as per-band antenna availability and TX/RX path masks on a related Broadcom family. Apple specifies two spatial streams on both bands for the M1 Air. The stock masks give a reference for checking stream use against station telemetry on the bench. [Profile comparisons](../evidence/2026-11-17-nvram-topology.json), [Infineon NVRAM field definitions](https://community.infineon.com/gfawx74859/attachments/gfawx74859/WifiBTcombo/3828/1/Infineon-AN225021_CYW43012_OTP_Programming_and_NVRAM_Development-ApplicationNotes-v01_00-EN.pdf#page=5), [Apple Wi-Fi specifications](https://support.apple.com/en-au/guide/deployment/-dep268652e6c/web)
+
+Across the payloads, 247 of 253 flat keys and 46 of 47 `slice/1/` keys occur in every profile. All ten have one 52-value `slice/1/` array. On each B1 board, the vendor `m` file adds one four-value `slice/1/` array compared with vendor `u`. The two stock directory roots have 250 matching names that resolve to the same filesystem objects across the roots. Kyushu B3 uses the B1 Honshu `u` payload. The physical mapping of the second namespace and its relation to simultaneous radio operation remain open. [Alias, namespace and array counts](../evidence/2026-11-17-nvram-topology.json)
 
 ## Installed package
 
@@ -93,7 +99,7 @@ The firmware tag is followed by a second tag, `<UCODE-TAG>`, in all three BCM437
 
 Within that span, two windows contain 11,190 and 10,927 aligned eight-byte records. Each record has a zero in the eighth byte. The fourth byte is zero only 20 and 21 times respectively. The second window has a four-byte alignment shift relative to the first. Published Broadcom FullMAC work describes a separate D11 core handling real-time 802.11 MAC work with an embedded microcode image. The build tag and record patterns make these two windows candidates for D11 microcode. Their exact logical bounds and runtime roles remain open. [Measured record layouts](../evidence/2026-11-17-microcode-components.json), [TU Darmstadt D11 research](https://www.seemoo.tu-darmstadt.de/theses/emulating-broadcoms-d11-core/)
 
-Both windows use up to 53 bits per little-endian eight-byte record. The first and second windows contain 5,941 and 5,742 records that exceed the legacy b43 decoder's 51-bit limit. A full-file scan across 13 distinct stock images found comparable zero-byte lanes only at window phases 0 and 4 modulo 8. The longest qualifying runs in both BCM4364 files used up to 50 bits. The runs in all eight BCM4387 and BCM4388 files reached 53 bits. The zero lane is a family-wide structural clue. The matched bytes and the microcode build tag identify the BCM4378 windows more narrowly. Their modern instruction fields and logical endpoints remain open. [Width and alignment measurements](../evidence/2026-11-17-d11-window-profile.json), [Legacy b43 decoder](https://github.com/mbuesch/b43-tools/blob/master/disassembler/main.c#L913-L936)
+Both windows use up to 53 bits per little-endian eight-byte record. The first and second windows contain 5,941 and 5,742 records that exceed the legacy b43 decoder's 51-bit limit. A full-file scan across 13 distinct stock images found comparable zero-byte lanes only at window phases 0 and 4 modulo 8. The longest qualifying runs in both BCM4364 files used up to 50 bits. The runs in all eight BCM4387 and BCM4388 files reached 53 bits. The zero lane is a family-wide structural clue. The matched bytes and the microcode build tag identify the BCM4378 windows more narrowly. The modern instruction fields remain open. [Width and alignment measurements](../evidence/2026-11-17-d11-window-profile.json), [Legacy b43 decoder](https://github.com/mbuesch/b43-tools/blob/master/disassembler/main.c#L913-L936)
 
 ```sh
 python3 tools/inspect_firmware.py /usr/share/firmware/wifi/C-4378__s-B1/honshu.trx \
@@ -104,6 +110,12 @@ python3 tools/inspect_firmware.py /usr/share/firmware/wifi/C-4378__s-B1/honshu.t
 Both B1 images contain the selected literal `wnm_btm_rssi_thresh`. The B3 image contains other WNM labels and has zero exact hits for this one. This corrects the earlier count of ten shared positive markers. Runtime roaming policy remains unmeasured. [Literal counts](../evidence/2026-11-17-firmware-comparison.json)
 
 REA retained whole-file measurements for Honshu (`ev_186a126d3c11596de007eda0924b9618b278e7b5963f1e1c2a5a1f64a7b6062e`), Capri (`ev_65bf19f00ba99813c057b23b1ef5bcdb244074dbb6ddee977e238e0bcbddd7af`) and Kyushu (`ev_ea0e5065f3b137c51198a9183340e123b41f8209e92808a21337ba7b02db1dc6`). The entropy values characterize byte distributions. Code and data boundaries require independent evidence.
+
+### Stored D11 candidate boundaries
+
+Four adjacent ARM literal slots delimit two stored regions of 90,112 bytes (88 KiB) each under the Linux BCM4378 RAM model. A four-byte size field between the regions also contains 90,112. In each image, Rizin corroborated a sequence that loads the size-field pointer, loads the first component pointer and dereferences the size pointer before branching. It decoded a separate pair of references to the second component start and the following boundary. [Static pointer and size evidence](../evidence/2026-11-17-d11-static-references.json), [Linux BCM4378 RAM model](https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c#L738-L747)
+
+The first region has 11,190 nonzero eight-byte records followed by 74 zero records. The second starts one record after the earlier lane window and has 10,926 nonzero records followed by 338 zero records. Each region's digest is identical across the two B1 files and the B3 file. The boundaries and size field characterize the stored components. Which bytes transfer to D11 at runtime and how it treats the zero records remain open. [Region digests and record counts](../evidence/2026-11-17-d11-static-references.json)
 
 ### ARM ROM overlay map
 

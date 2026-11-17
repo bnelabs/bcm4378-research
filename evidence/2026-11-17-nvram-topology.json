@@ -1,0 +1,537 @@
+{
+  "b1_vendor_pair_shape": {
+    "boards": [
+      "atlantisb",
+      "capri",
+      "honshu",
+      "santorini",
+      "shikoku"
+    ],
+    "common_keys_with_changed_token_count_per_board": 0,
+    "m_only_array_token_count": 4,
+    "m_only_slice_1_keys_per_board": 1,
+    "u_only_keys_per_board": 0
+  },
+  "namespace_key_counts_across_distinct_profiles": {
+    "flat": {
+      "common": 247,
+      "union": 253
+    },
+    "other": {
+      "common": 0,
+      "union": 0
+    },
+    "slice/1": {
+      "common": 46,
+      "union": 47
+    }
+  },
+  "profiles": [
+    {
+      "bytes": 7784,
+      "names_per_root": 25,
+      "representative": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.1.txt",
+      "selectors": [
+        {
+          "board": "atlantisb",
+          "module": "RASP",
+          "module_revisions": [
+            "6.1",
+            "6.3",
+            "6.9",
+            "6.11",
+            "7.1"
+          ],
+          "stepping": "B1",
+          "vendor": "m"
+        }
+      ],
+      "sha256": "5e8c0449664fa47d57f220aa75dd04ad6d5558adf157ddf20f447a9f4f5fb19e",
+      "topology": {
+        "chain_masks": {
+          "aa2g": 3,
+          "aa5g": 3,
+          "rxchain": 3,
+          "txchain": 3
+        },
+        "distinct_keys_by_namespace": {
+          "flat": 251,
+          "other": 0,
+          "slice/1": 47
+        },
+        "numeric_arrays_by_token_count": {
+          "10": 2,
+          "12": 16,
+          "14": 1,
+          "2": 23,
+          "3": 2,
+          "4": 7,
+          "5": 5,
+          "52": 1,
+          "6": 3,
+          "7": 1
+        },
+        "slice_1_keys_with_flat_leaf": 20
+      }
+    },
+    {
+      "bytes": 7723,
+      "names_per_root": 25,
+      "representative": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-3.7.txt",
+      "selectors": [
+        {
+          "board": "atlantisb",
+          "module": "RASP",
+          "module_revisions": [
+            "3.7",
+            "4.1",
+            "6.1",
+            "6.3",
+            "6.5"
+          ],
+          "stepping": "B1",
+          "vendor": "u"
+        }
+      ],
+      "sha256": "417a6014f4dad80d92f160748f43d2c50314ba67eefc15fa5eace378d82d943e",
+      "topology": {
+        "chain_masks": {
+          "aa2g": 3,
+          "aa5g": 3,
+          "rxchain": 3,
+          "txchain": 3
+        },
+        "distinct_keys_by_namespace": {
+          "flat": 251,
+          "other": 0,
+          "slice/1": 46
+        },
+        "numeric_arrays_by_token_count": {
+          "10": 2,
+          "12": 16,
+          "14": 1,
+          "2": 23,
+          "3": 2,
+          "4": 6,
+          "5": 5,
+          "52": 1,
+          "6": 3,
+          "7": 1
+        },
+        "slice_1_keys_with_flat_leaf": 20
+      }
+    },
+    {
+      "bytes": 7663,
+      "names_per_root": 25,
+      "representative": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.1.txt",
+      "selectors": [
+        {
+          "board": "capri",
+          "module": "RASP",
+          "module_revisions": [
+            "6.1",
+            "6.3",
+            "6.9",
+            "6.11",
+            "7.1"
+          ],
+          "stepping": "B1",
+          "vendor": "m"
+        }
+      ],
+      "sha256": "44bec369f1c81ddd72f9c331e02d54c004dc94ea4171cc5515cf0dcf0baa87fb",
+      "topology": {
+        "chain_masks": {
+          "aa2g": 3,
+          "aa5g": 3,
+          "rxchain": 3,
+          "txchain": 3
+        },
+        "distinct_keys_by_namespace": {
+          "flat": 252,
+          "other": 0,
+          "slice/1": 47
+        },
+        "numeric_arrays_by_token_count": {
+          "10": 2,
+          "12": 16,
+          "2": 26,
+          "3": 2,
+          "4": 6,
+          "5": 5,
+          "52": 1,
+          "6": 2,
+          "7": 1
+        },
+        "slice_1_keys_with_flat_leaf": 20
+      }
+    },
+    {
+      "bytes": 7602,
+      "names_per_root": 20,
+      "representative": "C-4378__s-B1/P-capri_M-RASP_V-u__m-3.7.txt",
+      "selectors": [
+        {
+          "board": "capri",
+          "module": "RASP",
+          "module_revisions": [
+            "3.7",
+            "6.1",
+            "6.3",
+            "6.5"
+          ],
+          "stepping": "B1",
+          "vendor": "u"
+        }
+      ],
+      "sha256": "28740651d40a9754a2b2b082ab1aa4eb91d0f0ab4bd4e3e8eceff369c977bd36",
+      "topology": {
+        "chain_masks": {
+          "aa2g": 3,
+          "aa5g": 3,
+          "rxchain": 3,
+          "txchain": 3
+        },
+        "distinct_keys_by_namespace": {
+          "flat": 252,
+          "other": 0,
+          "slice/1": 46
+        },
+        "numeric_arrays_by_token_count": {
+          "10": 2,
+          "12": 16,
+          "2": 26,
+          "3": 2,
+          "4": 5,
+          "5": 5,
+          "52": 1,
+          "6": 2,
+          "7": 1
+        },
+        "slice_1_keys_with_flat_leaf": 20
+      }
+    },
+    {
+      "bytes": 7689,
+      "names_per_root": 25,
+      "representative": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.1.txt",
+      "selectors": [
+        {
+          "board": "honshu",
+          "module": "RASP",
+          "module_revisions": [
+            "6.1",
+            "6.3",
+            "6.9",
+            "6.11",
+            "7.1"
+          ],
+          "stepping": "B1",
+          "vendor": "m"
+        }
+      ],
+      "sha256": "82d38093e33abac54c94e5b792efcd4b0fe3dfb794fe8a96b3a1967622e50056",
+      "topology": {
+        "chain_masks": {
+          "aa2g": 3,
+          "aa5g": 3,
+          "rxchain": 3,
+          "txchain": 3
+        },
+        "distinct_keys_by_namespace": {
+          "flat": 249,
+          "other": 0,
+          "slice/1": 47
+        },
+        "numeric_arrays_by_token_count": {
+          "10": 2,
+          "12": 16,
+          "14": 1,
+          "2": 23,
+          "3": 2,
+          "4": 7,
+          "5": 5,
+          "52": 1,
+          "6": 3,
+          "7": 1
+        },
+        "slice_1_keys_with_flat_leaf": 20
+      }
+    },
+    {
+      "bytes": 7628,
+      "names_per_root": 40,
+      "representative": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-3.7.txt",
+      "selectors": [
+        {
+          "board": "honshu",
+          "module": "RASP",
+          "module_revisions": [
+            "3.7",
+            "4.1",
+            "6.1",
+            "6.3",
+            "6.5"
+          ],
+          "stepping": "B1",
+          "vendor": "u"
+        },
+        {
+          "board": "kyushu",
+          "module": "RASP",
+          "module_revisions": [
+            "6.5"
+          ],
+          "stepping": "B1",
+          "vendor": "u"
+        },
+        {
+          "board": "kyushu",
+          "module": "RASP",
+          "module_revisions": [
+            "6.7",
+            "6.9"
+          ],
+          "stepping": "B3",
+          "vendor": "u"
+        }
+      ],
+      "sha256": "d921b4241b268694e077c146ffb918ba89e71bd1439a865fda4431deaa23b134",
+      "topology": {
+        "chain_masks": {
+          "aa2g": 3,
+          "aa5g": 3,
+          "rxchain": 3,
+          "txchain": 3
+        },
+        "distinct_keys_by_namespace": {
+          "flat": 249,
+          "other": 0,
+          "slice/1": 46
+        },
+        "numeric_arrays_by_token_count": {
+          "10": 2,
+          "12": 16,
+          "14": 1,
+          "2": 23,
+          "3": 2,
+          "4": 6,
+          "5": 5,
+          "52": 1,
+          "6": 3,
+          "7": 1
+        },
+        "slice_1_keys_with_flat_leaf": 20
+      }
+    },
+    {
+      "bytes": 7667,
+      "names_per_root": 25,
+      "representative": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.1.txt",
+      "selectors": [
+        {
+          "board": "santorini",
+          "module": "RASP",
+          "module_revisions": [
+            "6.1",
+            "6.3",
+            "6.9",
+            "6.11",
+            "7.1"
+          ],
+          "stepping": "B1",
+          "vendor": "m"
+        }
+      ],
+      "sha256": "4f280abe427460cba4891522c9e69e02725fa99710fdf024574c87f3cf0ba585",
+      "topology": {
+        "chain_masks": {
+          "aa2g": 3,
+          "aa5g": 3,
+          "rxchain": 3,
+          "txchain": 3
+        },
+        "distinct_keys_by_namespace": {
+          "flat": 252,
+          "other": 0,
+          "slice/1": 47
+        },
+        "numeric_arrays_by_token_count": {
+          "10": 2,
+          "12": 16,
+          "2": 26,
+          "3": 2,
+          "4": 6,
+          "5": 5,
+          "52": 1,
+          "6": 2,
+          "7": 1
+        },
+        "slice_1_keys_with_flat_leaf": 20
+      }
+    },
+    {
+      "bytes": 7606,
+      "names_per_root": 20,
+      "representative": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-3.7.txt",
+      "selectors": [
+        {
+          "board": "santorini",
+          "module": "RASP",
+          "module_revisions": [
+            "3.7",
+            "6.1",
+            "6.3",
+            "6.5"
+          ],
+          "stepping": "B1",
+          "vendor": "u"
+        }
+      ],
+      "sha256": "32d7747549903a2e222030abc75ef5dfd7fcd6879da125b3b41ac7885a8d45f3",
+      "topology": {
+        "chain_masks": {
+          "aa2g": 3,
+          "aa5g": 3,
+          "rxchain": 3,
+          "txchain": 3
+        },
+        "distinct_keys_by_namespace": {
+          "flat": 252,
+          "other": 0,
+          "slice/1": 46
+        },
+        "numeric_arrays_by_token_count": {
+          "10": 2,
+          "12": 16,
+          "2": 26,
+          "3": 2,
+          "4": 5,
+          "5": 5,
+          "52": 1,
+          "6": 2,
+          "7": 1
+        },
+        "slice_1_keys_with_flat_leaf": 20
+      }
+    },
+    {
+      "bytes": 7690,
+      "names_per_root": 25,
+      "representative": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.1.txt",
+      "selectors": [
+        {
+          "board": "shikoku",
+          "module": "RASP",
+          "module_revisions": [
+            "6.1",
+            "6.3",
+            "6.9",
+            "6.11",
+            "7.1"
+          ],
+          "stepping": "B1",
+          "vendor": "m"
+        }
+      ],
+      "sha256": "2e15b8551b3cbf945247a6e25a8efbfb392476d799e81cbc61f659b55dc049b4",
+      "topology": {
+        "chain_masks": {
+          "aa2g": 3,
+          "aa5g": 3,
+          "rxchain": 3,
+          "txchain": 3
+        },
+        "distinct_keys_by_namespace": {
+          "flat": 249,
+          "other": 0,
+          "slice/1": 47
+        },
+        "numeric_arrays_by_token_count": {
+          "10": 2,
+          "12": 16,
+          "14": 1,
+          "2": 23,
+          "3": 2,
+          "4": 7,
+          "5": 5,
+          "52": 1,
+          "6": 3,
+          "7": 1
+        },
+        "slice_1_keys_with_flat_leaf": 20
+      }
+    },
+    {
+      "bytes": 7629,
+      "names_per_root": 20,
+      "representative": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-3.7.txt",
+      "selectors": [
+        {
+          "board": "shikoku",
+          "module": "RASP",
+          "module_revisions": [
+            "3.7",
+            "6.1",
+            "6.3",
+            "6.5"
+          ],
+          "stepping": "B1",
+          "vendor": "u"
+        }
+      ],
+      "sha256": "c1440baec1eb255afcee275dd6f6fd32146830db16db4d2015565bc447fb2fcb",
+      "topology": {
+        "chain_masks": {
+          "aa2g": 3,
+          "aa5g": 3,
+          "rxchain": 3,
+          "txchain": 3
+        },
+        "distinct_keys_by_namespace": {
+          "flat": 249,
+          "other": 0,
+          "slice/1": 46
+        },
+        "numeric_arrays_by_token_count": {
+          "10": 2,
+          "12": 16,
+          "14": 1,
+          "2": 23,
+          "3": 2,
+          "4": 6,
+          "5": 5,
+          "52": 1,
+          "6": 3,
+          "7": 1
+        },
+        "slice_1_keys_with_flat_leaf": 20
+      }
+    }
+  ],
+  "scope": {
+    "antenna_suffixes_per_selector": [
+      "ID",
+      "X0",
+      "X2",
+      "X3"
+    ],
+    "antenna_symlinks_per_root": 200,
+    "base_selector_names_per_root": 50,
+    "distinct_payloads": 10,
+    "names_per_root_by_stepping": {
+      "B1": 240,
+      "B3": 10
+    },
+    "roots": [
+      "/usr/share/firmware/wifi",
+      "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/Firmware"
+    ],
+    "same_filesystem_object_pairs": 250
+  },
+  "selected_shikoku_profile": {
+    "requested_name": "C-4378__s-B1/P-shikoku-X3_M-RASP_V-m__m-6.11.txt",
+    "sha256": "2e15b8551b3cbf945247a6e25a8efbfb392476d799e81cbc61f659b55dc049b4"
+  }
+}

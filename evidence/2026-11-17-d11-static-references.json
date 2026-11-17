@@ -1,0 +1,246 @@
+{
+  "images": [
+    {
+      "file": {
+        "bytes": 1496769,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6"
+      },
+      "first_component": {
+        "bytes": 90112,
+        "end_exclusive": 1385124,
+        "file_offset": 1295012,
+        "nonzero_prefix_end_exclusive": 1384532,
+        "nonzero_prefix_records": 11190,
+        "record_bytes": 8,
+        "records": 11264,
+        "sha256": "1ab6713282f34e873dc98f48cf1489f8bafd82fd76d3811d3e078f8bb5e65813",
+        "zero_suffix_records": 74
+      },
+      "intervening_size_field": {
+        "bytes": 4,
+        "equals_both_stored_region_lengths": true,
+        "file_offset": 1385124,
+        "first_component_reference_and_size_read_in_same_thumb_block": true,
+        "value_le32": 90112
+      },
+      "literal_pool": [
+        {
+          "literal_slot_file_offset": 1187028,
+          "modeled_target_file_offset": 1475240,
+          "region": "after_second_component",
+          "rizin_pc_relative_load": true,
+          "t1_candidates": 1,
+          "t2_candidates": 0,
+          "thumb_reader_file_offset": 1186960
+        },
+        {
+          "literal_slot_file_offset": 1187032,
+          "modeled_target_file_offset": 1385128,
+          "region": "second_component_start",
+          "rizin_pc_relative_load": true,
+          "t1_candidates": 1,
+          "t2_candidates": 0,
+          "thumb_reader_file_offset": 1186962
+        },
+        {
+          "literal_slot_file_offset": 1187036,
+          "modeled_target_file_offset": 1385124,
+          "region": "size_field",
+          "rizin_pc_relative_load": true,
+          "t1_candidates": 1,
+          "t2_candidates": 0,
+          "thumb_reader_file_offset": 1186996
+        },
+        {
+          "literal_slot_file_offset": 1187040,
+          "modeled_target_file_offset": 1295012,
+          "region": "first_component_start",
+          "rizin_pc_relative_load": true,
+          "t1_candidates": 1,
+          "t2_candidates": 0,
+          "thumb_reader_file_offset": 1186998
+        }
+      ],
+      "second_component": {
+        "bytes": 90112,
+        "end_exclusive": 1475240,
+        "file_offset": 1385128,
+        "nonzero_prefix_end_exclusive": 1472536,
+        "nonzero_prefix_records": 10926,
+        "record_bytes": 8,
+        "records": 11264,
+        "sha256": "1e4f3621f53a3782535c4444761099583bbef98bd53bf9e5cbe145ef34b07991",
+        "zero_suffix_records": 338
+      },
+      "second_start_and_following_boundary_read_in_same_thumb_block": true
+    },
+    {
+      "file": {
+        "bytes": 1497470,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+      },
+      "first_component": {
+        "bytes": 90112,
+        "end_exclusive": 1385836,
+        "file_offset": 1295724,
+        "nonzero_prefix_end_exclusive": 1385244,
+        "nonzero_prefix_records": 11190,
+        "record_bytes": 8,
+        "records": 11264,
+        "sha256": "1ab6713282f34e873dc98f48cf1489f8bafd82fd76d3811d3e078f8bb5e65813",
+        "zero_suffix_records": 74
+      },
+      "intervening_size_field": {
+        "bytes": 4,
+        "equals_both_stored_region_lengths": true,
+        "file_offset": 1385836,
+        "first_component_reference_and_size_read_in_same_thumb_block": true,
+        "value_le32": 90112
+      },
+      "literal_pool": [
+        {
+          "literal_slot_file_offset": 1187048,
+          "modeled_target_file_offset": 1475952,
+          "region": "after_second_component",
+          "rizin_pc_relative_load": true,
+          "t1_candidates": 1,
+          "t2_candidates": 0,
+          "thumb_reader_file_offset": 1186980
+        },
+        {
+          "literal_slot_file_offset": 1187052,
+          "modeled_target_file_offset": 1385840,
+          "region": "second_component_start",
+          "rizin_pc_relative_load": true,
+          "t1_candidates": 1,
+          "t2_candidates": 0,
+          "thumb_reader_file_offset": 1186982
+        },
+        {
+          "literal_slot_file_offset": 1187056,
+          "modeled_target_file_offset": 1385836,
+          "region": "size_field",
+          "rizin_pc_relative_load": true,
+          "t1_candidates": 1,
+          "t2_candidates": 0,
+          "thumb_reader_file_offset": 1187016
+        },
+        {
+          "literal_slot_file_offset": 1187060,
+          "modeled_target_file_offset": 1295724,
+          "region": "first_component_start",
+          "rizin_pc_relative_load": true,
+          "t1_candidates": 1,
+          "t2_candidates": 0,
+          "thumb_reader_file_offset": 1187018
+        }
+      ],
+      "second_component": {
+        "bytes": 90112,
+        "end_exclusive": 1475952,
+        "file_offset": 1385840,
+        "nonzero_prefix_end_exclusive": 1473248,
+        "nonzero_prefix_records": 10926,
+        "record_bytes": 8,
+        "records": 11264,
+        "sha256": "1e4f3621f53a3782535c4444761099583bbef98bd53bf9e5cbe145ef34b07991",
+        "zero_suffix_records": 338
+      },
+      "second_start_and_following_boundary_read_in_same_thumb_block": true
+    },
+    {
+      "file": {
+        "bytes": 1226142,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a"
+      },
+      "first_component": {
+        "bytes": 90112,
+        "end_exclusive": 1117660,
+        "file_offset": 1027548,
+        "nonzero_prefix_end_exclusive": 1117068,
+        "nonzero_prefix_records": 11190,
+        "record_bytes": 8,
+        "records": 11264,
+        "sha256": "1ab6713282f34e873dc98f48cf1489f8bafd82fd76d3811d3e078f8bb5e65813",
+        "zero_suffix_records": 74
+      },
+      "intervening_size_field": {
+        "bytes": 4,
+        "equals_both_stored_region_lengths": true,
+        "file_offset": 1117660,
+        "first_component_reference_and_size_read_in_same_thumb_block": true,
+        "value_le32": 90112
+      },
+      "literal_pool": [
+        {
+          "literal_slot_file_offset": 918592,
+          "modeled_target_file_offset": 1207776,
+          "region": "after_second_component",
+          "rizin_pc_relative_load": true,
+          "t1_candidates": 1,
+          "t2_candidates": 0,
+          "thumb_reader_file_offset": 918524
+        },
+        {
+          "literal_slot_file_offset": 918596,
+          "modeled_target_file_offset": 1117664,
+          "region": "second_component_start",
+          "rizin_pc_relative_load": true,
+          "t1_candidates": 1,
+          "t2_candidates": 0,
+          "thumb_reader_file_offset": 918526
+        },
+        {
+          "literal_slot_file_offset": 918600,
+          "modeled_target_file_offset": 1117660,
+          "region": "size_field",
+          "rizin_pc_relative_load": true,
+          "t1_candidates": 1,
+          "t2_candidates": 0,
+          "thumb_reader_file_offset": 918560
+        },
+        {
+          "literal_slot_file_offset": 918604,
+          "modeled_target_file_offset": 1027548,
+          "region": "first_component_start",
+          "rizin_pc_relative_load": true,
+          "t1_candidates": 1,
+          "t2_candidates": 0,
+          "thumb_reader_file_offset": 918562
+        }
+      ],
+      "second_component": {
+        "bytes": 90112,
+        "end_exclusive": 1207776,
+        "file_offset": 1117664,
+        "nonzero_prefix_end_exclusive": 1205072,
+        "nonzero_prefix_records": 10926,
+        "record_bytes": 8,
+        "records": 11264,
+        "sha256": "1e4f3621f53a3782535c4444761099583bbef98bd53bf9e5cbe145ef34b07991",
+        "zero_suffix_records": 338
+      },
+      "second_start_and_following_boundary_read_in_same_thumb_block": true
+    }
+  ],
+  "limits": [
+    "The four targets and both stored regions are file-relative measurements under the reference mapping.",
+    "This establishes stored extents and a size-valued field read by ARM code. The executed path, D11 destination, and exact transfer count remain unobserved.",
+    "The nonzero-prefix and all-zero-suffix counts are structural. Logical treatment of zero records and the contemporary D11 instruction fields remain open."
+  ],
+  "method": {
+    "anchor_and_pool": "Use the Linux BCM4378 RAM-origin model to form the modeled first-window start and search aligned LE32 words before the first window. Require a unique occurrence and compare the preceding three consecutive four-byte slots. Translate all resulting values back to file offsets under the same model.",
+    "component_bounds": "Measure the two intervals between the first start and the intervening field, and between the second start and the following boundary. Count leading nonzero LE64 records then trailing all-zero records and verify byte 7 of each complete record is zero.",
+    "input": "The three stock BCM4378 files and their original record windows from 2026-11-17-d11-window-profile.json, verified by whole-file SHA-256",
+    "reader_check": "Scan two-byte boundaries within 4096 bytes of each literal slot for Thumb LDR (literal) T1 and T2 encodings that resolve to the slot. Confirm instruction kind and PC-relative addressing by individually decoding the matching T1 candidate with Rizin 0.9.1 in Thumb mode.",
+    "size_read_check": "In the four-instruction block beginning at the size-field reference, verify the first-component literal read is next, then a word load dereferences the size-field pointer before a branch. Separately verify the following-boundary and second-component references are decoded as consecutive instructions.",
+    "sources": {
+      "linux_bcm4378_ram_model": "https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c",
+      "thumb_literal_load": "https://support.arm.com/documentation/ddi0597/2021-03/Base-Instructions/LDR--literal---Load-Register--literal--"
+    }
+  },
+  "observed_date": "2026-11-17"
+}
