@@ -1,0 +1,100 @@
+{
+  "bundle_identifier": "com.apple.DriverKit-AppleBCMWLAN",
+  "bundle_version": "1",
+  "executable": {
+    "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f",
+    "bytes": 10564944
+  },
+  "sdk": "driverkit.macosx27.2.internal",
+  "minimum_driverkit": "27.2",
+  "architectures": [
+    {
+      "name": "arm64e",
+      "hidden": false,
+      "cpu_type": "CPU_TYPE_ARM64",
+      "cpu_subtype": "CPU_SUBTYPE_ARM64E",
+      "file_offset": 16384,
+      "size": 5272944,
+      "alignment": 16384
+    },
+    {
+      "name": "arm64e.x1",
+      "hidden": false,
+      "cpu_type": "CPU_TYPE_ARM64",
+      "cpu_subtype": "unknown arm64 cpusubtype",
+      "file_offset": 5292032,
+      "size": 5272912,
+      "alignment": 16384
+    }
+  ],
+  "inspected_slice": "arm64e",
+  "load_dependencies": [
+    {
+      "path": "/System/DriverKit/System/Library/PrivateFrameworks/BroadcomWLANDriverKit.framework/BroadcomWLANDriverKit",
+      "kind": "LC_LOAD_DYLIB",
+      "current_version": "1.0.0",
+      "compatibility_version": "1.0.0"
+    },
+    {
+      "path": "/System/DriverKit/System/Library/PrivateFrameworks/CoreCaptureDriverKit.framework/CoreCaptureDriverKit",
+      "kind": "LC_LOAD_DYLIB",
+      "current_version": "1.0.0",
+      "compatibility_version": "1.0.0"
+    },
+    {
+      "path": "/System/DriverKit/System/Library/Frameworks/DriverKit.framework/DriverKit",
+      "kind": "LC_LOAD_DYLIB",
+      "current_version": "1.0.0",
+      "compatibility_version": "1.0.0"
+    },
+    {
+      "path": "/System/DriverKit/System/Library/PrivateFrameworks/IO80211DriverKit.framework/IO80211DriverKit",
+      "kind": "LC_LOAD_DYLIB",
+      "current_version": "1.0.0",
+      "compatibility_version": "1.0.0"
+    },
+    {
+      "path": "/System/DriverKit/System/Library/Frameworks/NetworkingDriverKit.framework/NetworkingDriverKit",
+      "kind": "LC_LOAD_DYLIB",
+      "current_version": "1.0.0",
+      "compatibility_version": "1.0.0"
+    },
+    {
+      "path": "/System/DriverKit/System/Library/PrivateFrameworks/OLYHALDriverKit.framework/OLYHALDriverKit",
+      "kind": "LC_LOAD_DYLIB",
+      "current_version": "1.0.0",
+      "compatibility_version": "1.0.0"
+    },
+    {
+      "path": "/System/DriverKit/System/Library/Frameworks/PCIDriverKit.framework/PCIDriverKit",
+      "kind": "LC_LOAD_DYLIB",
+      "current_version": "1.0.0",
+      "compatibility_version": "1.0.0"
+    },
+    {
+      "path": "/System/DriverKit/System/Library/PrivateFrameworks/IOFileValidation.framework/IOFileValidation",
+      "kind": "LC_LOAD_DYLIB",
+      "current_version": "1.0.0",
+      "compatibility_version": "1.0.0"
+    },
+    {
+      "path": "/System/DriverKit/usr/lib/libc++.dylib",
+      "kind": "LC_LOAD_DYLIB",
+      "current_version": "2200.32.0",
+      "compatibility_version": "1.0.0"
+    }
+  ],
+  "code_signature_display_authorities": [
+    "macOS Software Signing",
+    "Apple Code Signing Certification Authority",
+    "Apple Root CA"
+  ],
+  "rea_parent_evidence": "ev_d8853c9a8307138fa57d1749fd310bcc9a67973d04a6751be3ca90af09ed3081",
+  "limitations": [
+    "Imports and exports combine dyld_info and nm; stripped or toolchain-hidden symbols may be absent.",
+    "Merged nm/dyld_info results may be incomplete for stripped binaries.",
+    "dyld_info textual imports may omit chained or toolchain-unsupported metadata.",
+    "vtool output is retained as provenance but only otool build metadata is normalized."
+  ]
+}

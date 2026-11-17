@@ -1,0 +1,697 @@
+{
+  "comparisons": [
+    {
+      "common_prefix_bytes": 341,
+      "common_suffix_bytes": 13,
+      "left_blocks_in_right": {
+        "extended_longest_match": {
+          "bytes": 201010,
+          "source_file_offset": 1295710,
+          "target_file_offset": 1294998
+        },
+        "longest_contiguous_matched_runs": [
+          {
+            "bytes": 196608,
+            "source_file_offset": 1298432,
+            "target_file_offset": 1297720
+          },
+          {
+            "bytes": 16384,
+            "source_file_offset": 1265664,
+            "target_file_offset": 1265056
+          },
+          {
+            "bytes": 12288,
+            "source_file_offset": 978944,
+            "target_file_offset": 978688
+          },
+          {
+            "bytes": 8192,
+            "source_file_offset": 278528,
+            "target_file_offset": 278528
+          },
+          {
+            "bytes": 8192,
+            "source_file_offset": 1241088,
+            "target_file_offset": 1240480
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 102400,
+            "target_file_offset": 102400
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 110592,
+            "target_file_offset": 110592
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 135168,
+            "target_file_offset": 135168
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 151552,
+            "target_file_offset": 151552
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 172032,
+            "target_file_offset": 172032
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 180224,
+            "target_file_offset": 180224
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 241664,
+            "target_file_offset": 241664
+          }
+        ],
+        "matched_at_same_offset": 15,
+        "matched_at_shifted_offset": 57,
+        "matched_multiple_target_offsets": 0,
+        "shifted_match_counts_by_delta_bytes": [
+          {
+            "blocks": 48,
+            "target_minus_source_bytes": -712
+          },
+          {
+            "blocks": 6,
+            "target_minus_source_bytes": -608
+          },
+          {
+            "blocks": 3,
+            "target_minus_source_bytes": -256
+          }
+        ],
+        "skipped_low_diversity": 16,
+        "skipped_multiple_source_offsets": 0,
+        "source_complete_blocks": 365,
+        "source_sample_stride_blocks": 1,
+        "source_sampled_blocks": 365,
+        "unmatched": 277
+      },
+      "left_path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+      "literal_count_differences": {},
+      "overlapping_bytes": 1496769,
+      "right_blocks_in_left": {
+        "extended_longest_match": {
+          "bytes": 201010,
+          "source_file_offset": 1294998,
+          "target_file_offset": 1295710
+        },
+        "longest_contiguous_matched_runs": [
+          {
+            "bytes": 196608,
+            "source_file_offset": 1298432,
+            "target_file_offset": 1299144
+          },
+          {
+            "bytes": 16384,
+            "source_file_offset": 1265664,
+            "target_file_offset": 1266272
+          },
+          {
+            "bytes": 8192,
+            "source_file_offset": 278528,
+            "target_file_offset": 278528
+          },
+          {
+            "bytes": 8192,
+            "source_file_offset": 978944,
+            "target_file_offset": 979200
+          },
+          {
+            "bytes": 8192,
+            "source_file_offset": 1241088,
+            "target_file_offset": 1241696
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 102400,
+            "target_file_offset": 102400
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 110592,
+            "target_file_offset": 110592
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 135168,
+            "target_file_offset": 135168
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 151552,
+            "target_file_offset": 151552
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 172032,
+            "target_file_offset": 172032
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 180224,
+            "target_file_offset": 180224
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 241664,
+            "target_file_offset": 241664
+          }
+        ],
+        "matched_at_same_offset": 15,
+        "matched_at_shifted_offset": 57,
+        "matched_multiple_target_offsets": 0,
+        "shifted_match_counts_by_delta_bytes": [
+          {
+            "blocks": 48,
+            "target_minus_source_bytes": 712
+          },
+          {
+            "blocks": 7,
+            "target_minus_source_bytes": 608
+          },
+          {
+            "blocks": 2,
+            "target_minus_source_bytes": 256
+          }
+        ],
+        "skipped_low_diversity": 15,
+        "skipped_multiple_source_offsets": 0,
+        "source_complete_blocks": 365,
+        "source_sample_stride_blocks": 1,
+        "source_sampled_blocks": 365,
+        "unmatched": 278
+      },
+      "right_path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+      "same_offset_equal_bytes": 678203
+    },
+    {
+      "common_prefix_bytes": 0,
+      "common_suffix_bytes": 39,
+      "left_blocks_in_right": {
+        "extended_longest_match": {
+          "bytes": 195250,
+          "source_file_offset": 1295710,
+          "target_file_offset": 1027534
+        },
+        "longest_contiguous_matched_runs": [
+          {
+            "bytes": 192512,
+            "source_file_offset": 1298432,
+            "target_file_offset": 1030256
+          },
+          {
+            "bytes": 8192,
+            "source_file_offset": 978944,
+            "target_file_offset": 716780
+          },
+          {
+            "bytes": 8192,
+            "source_file_offset": 1241088,
+            "target_file_offset": 973008
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 1273856,
+            "target_file_offset": 1005776
+          }
+        ],
+        "matched_at_same_offset": 0,
+        "matched_at_shifted_offset": 52,
+        "matched_multiple_target_offsets": 0,
+        "shifted_match_counts_by_delta_bytes": [
+          {
+            "blocks": 47,
+            "target_minus_source_bytes": -268176
+          },
+          {
+            "blocks": 3,
+            "target_minus_source_bytes": -268080
+          },
+          {
+            "blocks": 2,
+            "target_minus_source_bytes": -262164
+          }
+        ],
+        "skipped_low_diversity": 16,
+        "skipped_multiple_source_offsets": 0,
+        "source_complete_blocks": 365,
+        "source_sample_stride_blocks": 1,
+        "source_sampled_blocks": 365,
+        "unmatched": 297
+      },
+      "left_path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+      "literal_count_differences": {
+        "wnm_btm_rssi_thresh": {
+          "left": 1,
+          "right": 0
+        }
+      },
+      "overlapping_bytes": 1226142,
+      "right_blocks_in_left": {
+        "extended_longest_match": {
+          "bytes": 195250,
+          "source_file_offset": 1027534,
+          "target_file_offset": 1295710
+        },
+        "longest_contiguous_matched_runs": [
+          {
+            "bytes": 192512,
+            "source_file_offset": 1028096,
+            "target_file_offset": 1296272
+          },
+          {
+            "bytes": 8192,
+            "source_file_offset": 716800,
+            "target_file_offset": 978964
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 974848,
+            "target_file_offset": 1242928
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 1003520,
+            "target_file_offset": 1271600
+          }
+        ],
+        "matched_at_same_offset": 0,
+        "matched_at_shifted_offset": 51,
+        "matched_multiple_target_offsets": 0,
+        "shifted_match_counts_by_delta_bytes": [
+          {
+            "blocks": 47,
+            "target_minus_source_bytes": 268176
+          },
+          {
+            "blocks": 2,
+            "target_minus_source_bytes": 262164
+          },
+          {
+            "blocks": 2,
+            "target_minus_source_bytes": 268080
+          }
+        ],
+        "skipped_low_diversity": 16,
+        "skipped_multiple_source_offsets": 0,
+        "source_complete_blocks": 299,
+        "source_sample_stride_blocks": 1,
+        "source_sampled_blocks": 299,
+        "unmatched": 232
+      },
+      "right_path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+      "same_offset_equal_bytes": 93315
+    },
+    {
+      "common_prefix_bytes": 0,
+      "common_suffix_bytes": 13,
+      "left_blocks_in_right": {
+        "extended_longest_match": {
+          "bytes": 195250,
+          "source_file_offset": 1294998,
+          "target_file_offset": 1027534
+        },
+        "longest_contiguous_matched_runs": [
+          {
+            "bytes": 188416,
+            "source_file_offset": 1298432,
+            "target_file_offset": 1030968
+          },
+          {
+            "bytes": 8192,
+            "source_file_offset": 978944,
+            "target_file_offset": 717036
+          },
+          {
+            "bytes": 8192,
+            "source_file_offset": 1241088,
+            "target_file_offset": 973616
+          },
+          {
+            "bytes": 8192,
+            "source_file_offset": 1269760,
+            "target_file_offset": 1002288
+          }
+        ],
+        "matched_at_same_offset": 0,
+        "matched_at_shifted_offset": 52,
+        "matched_multiple_target_offsets": 0,
+        "shifted_match_counts_by_delta_bytes": [
+          {
+            "blocks": 46,
+            "target_minus_source_bytes": -267464
+          },
+          {
+            "blocks": 4,
+            "target_minus_source_bytes": -267472
+          },
+          {
+            "blocks": 2,
+            "target_minus_source_bytes": -261908
+          }
+        ],
+        "skipped_low_diversity": 15,
+        "skipped_multiple_source_offsets": 0,
+        "source_complete_blocks": 365,
+        "source_sample_stride_blocks": 1,
+        "source_sampled_blocks": 365,
+        "unmatched": 298
+      },
+      "left_path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+      "literal_count_differences": {
+        "wnm_btm_rssi_thresh": {
+          "left": 1,
+          "right": 0
+        }
+      },
+      "overlapping_bytes": 1226142,
+      "right_blocks_in_left": {
+        "extended_longest_match": {
+          "bytes": 195250,
+          "source_file_offset": 1027534,
+          "target_file_offset": 1294998
+        },
+        "longest_contiguous_matched_runs": [
+          {
+            "bytes": 192512,
+            "source_file_offset": 1028096,
+            "target_file_offset": 1295560
+          },
+          {
+            "bytes": 8192,
+            "source_file_offset": 716800,
+            "target_file_offset": 978708
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 974848,
+            "target_file_offset": 1242320
+          },
+          {
+            "bytes": 4096,
+            "source_file_offset": 1003520,
+            "target_file_offset": 1270992
+          }
+        ],
+        "matched_at_same_offset": 0,
+        "matched_at_shifted_offset": 51,
+        "matched_multiple_target_offsets": 0,
+        "shifted_match_counts_by_delta_bytes": [
+          {
+            "blocks": 47,
+            "target_minus_source_bytes": 267464
+          },
+          {
+            "blocks": 2,
+            "target_minus_source_bytes": 261908
+          },
+          {
+            "blocks": 2,
+            "target_minus_source_bytes": 267472
+          }
+        ],
+        "skipped_low_diversity": 16,
+        "skipped_multiple_source_offsets": 0,
+        "source_complete_blocks": 299,
+        "source_sample_stride_blocks": 1,
+        "source_sampled_blocks": 299,
+        "unmatched": 232
+      },
+      "right_path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+      "same_offset_equal_bytes": 93463
+    }
+  ],
+  "images": [
+    {
+      "build_tags": [
+        {
+          "build": "4378b1-roml/config_pcie_perf_udm",
+          "build_date": "2026-08-11T16:28:45Z",
+          "firmware_id": "01-2606388a",
+          "version": "18.20.511.0.7.8.207"
+        }
+      ],
+      "file": {
+        "bytes": 1497470,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/honshu.trx",
+        "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+      },
+      "longest_uniform_runs": [
+        {
+          "byte_hex": "00",
+          "bytes": 56941,
+          "file_offset": 403
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 11281,
+          "file_offset": 1279223
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 6694,
+          "file_offset": 1030858
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 4108,
+          "file_offset": 1247012
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 2707,
+          "file_offset": 1473246
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 2058,
+          "file_offset": 1239026
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 595,
+          "file_offset": 1385242
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 527,
+          "file_offset": 1278677
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 311,
+          "file_offset": 1018569
+        }
+      ],
+      "opening_32_byte_block_repeated": true,
+      "selected_literal_counts": {
+        "arp_ol": 0,
+        "awdl": 1,
+        "awdl_doiovar_patch": 1,
+        "awdl_psf_dwell": 1,
+        "btc_esco_awdl": 1,
+        "btc_wifi_prot": 1,
+        "he_twt": 0,
+        "ndoe": 1,
+        "pkt_filter": 1,
+        "roam_5g_bandboost": 1,
+        "sdb": 0,
+        "twt": 0,
+        "wnm_btm_rssi_thresh": 1,
+        "wowl_gpio": 1
+      },
+      "starts_with_hdr0": false,
+      "uniform_run_bytes": 85222,
+      "uniform_run_count": 9
+    },
+    {
+      "build_tags": [
+        {
+          "build": "4378b1-roml/config_pcie_perf_udm_nosar",
+          "build_date": "2026-08-11T16:28:28Z",
+          "firmware_id": "01-8acd757c",
+          "version": "18.20.511.0.7.8.207"
+        }
+      ],
+      "file": {
+        "bytes": 1496769,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B1/capri.trx",
+        "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6"
+      },
+      "longest_uniform_runs": [
+        {
+          "byte_hex": "00",
+          "bytes": 56941,
+          "file_offset": 403
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 11281,
+          "file_offset": 1278615
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 6694,
+          "file_offset": 1030858
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 4108,
+          "file_offset": 1246404
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 2707,
+          "file_offset": 1472534
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 2058,
+          "file_offset": 1238418
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 595,
+          "file_offset": 1384530
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 575,
+          "file_offset": 1018305
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 527,
+          "file_offset": 1278069
+        }
+      ],
+      "opening_32_byte_block_repeated": true,
+      "selected_literal_counts": {
+        "arp_ol": 0,
+        "awdl": 1,
+        "awdl_doiovar_patch": 1,
+        "awdl_psf_dwell": 1,
+        "btc_esco_awdl": 1,
+        "btc_wifi_prot": 1,
+        "he_twt": 0,
+        "ndoe": 1,
+        "pkt_filter": 1,
+        "roam_5g_bandboost": 1,
+        "sdb": 0,
+        "twt": 0,
+        "wnm_btm_rssi_thresh": 1,
+        "wowl_gpio": 1
+      },
+      "starts_with_hdr0": false,
+      "uniform_run_bytes": 85486,
+      "uniform_run_count": 9
+    },
+    {
+      "build_tags": [
+        {
+          "build": "4378b3-roml/config_pcie_perf_udm",
+          "build_date": "2026-08-11T16:28:18Z",
+          "firmware_id": "01-f2cc5189",
+          "version": "18.20.511.0.7.8.207"
+        }
+      ],
+      "file": {
+        "bytes": 1226142,
+        "path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "resolved_path": "/usr/share/firmware/wifi/C-4378__s-B3/kyushu.trx",
+        "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a"
+      },
+      "longest_uniform_runs": [
+        {
+          "byte_hex": "00",
+          "bytes": 56941,
+          "file_offset": 403
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 11281,
+          "file_offset": 1011143
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 7250,
+          "file_offset": 762574
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 4108,
+          "file_offset": 978932
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 3152,
+          "file_offset": 60336
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 2707,
+          "file_offset": 1205070
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 2058,
+          "file_offset": 970946
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 595,
+          "file_offset": 1117066
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 527,
+          "file_offset": 1010597
+        },
+        {
+          "byte_hex": "00",
+          "bytes": 371,
+          "file_offset": 750221
+        }
+      ],
+      "opening_32_byte_block_repeated": true,
+      "selected_literal_counts": {
+        "arp_ol": 0,
+        "awdl": 1,
+        "awdl_doiovar_patch": 1,
+        "awdl_psf_dwell": 1,
+        "btc_esco_awdl": 1,
+        "btc_wifi_prot": 1,
+        "he_twt": 0,
+        "ndoe": 1,
+        "pkt_filter": 1,
+        "roam_5g_bandboost": 1,
+        "sdb": 0,
+        "twt": 0,
+        "wnm_btm_rssi_thresh": 0,
+        "wowl_gpio": 1
+      },
+      "starts_with_hdr0": false,
+      "uniform_run_bytes": 88990,
+      "uniform_run_count": 10
+    }
+  ],
+  "method": {
+    "block_search": "Exact source-aligned blocks, sought at every target byte offset. A matched block contributes one mapping when each image contains it once. The longest coalesced match is extended byte by byte in both directions.",
+    "maximum_listed_runs_per_region_type": 12,
+    "maximum_source_sampled_blocks": 512,
+    "minimum_distinct_byte_values_per_block": 12,
+    "minimum_reported_uniform_run_bytes": 256,
+    "source_block_bytes": 4096
+  }
+}

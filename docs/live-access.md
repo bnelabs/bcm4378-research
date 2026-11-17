@@ -6,6 +6,8 @@ The IPv4 default route uses `en0`, which macOS lists as Wi-Fi. The Ethernet adap
 
 I/O Registry exposes a live-access path for specific standard PCIe properties. Its `IOPCIExpressLinkStatus` value on `wlan@0` was `0x1012`. Apple's published IOPCIFamily source reads or refreshes the underlying link-status register on behalf of the registry using the system driver. This establishes access to the reported standard PCIe value. The public CoreWLAN API provides a separate driver-reported view of current PHY, channel, signal and transmit rate. [Apple IOPCIFamily implementation](https://github.com/apple-oss-distributions/IOPCIFamily/blob/main/IOPCIDevice.cpp), [CoreWLAN CWInterface](https://developer.apple.com/documentation/corewlan/cwinterface)
 
+Two `IODeviceMemory` descriptors report **64 KiB and 8 MiB** of mapped aperture length. The upstream Linux driver uses separate mappings for registers and device memory. The aperture sizes leave actual on-chip RAM capacity and contents unmeasured. macOS also published numeric current, device and maximum power states of 2, 2 and 3 at the time of sampling. [Local inventory](../evidence/2026-11-17-macos-inventory.json), [Linux PCIe driver](https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c)
+
 These queries reproduce the host view using system commands.
 
 ```sh
@@ -24,6 +26,15 @@ swift tools/read_wifi_status.swift
 | Stock macOS support surfaces | CoreWLAN and I/O Registry expose telemetry. Wireless Diagnostics produces a support archive. The public interfaces reviewed provide no documented access to arbitrary BCM4378 registers or RAM. [CoreWLAN](https://developer.apple.com/documentation/corewlan/cwinterface), [Wireless Diagnostics](https://support.apple.com/guide/mac-help/mchlf4de377f/mac) |
 | PCIDriverKit | A matched, entitled PCI driver can use PCI configuration and device-memory APIs. Apple's public documentation gives no supported way to share the internal endpoint with the existing Apple BCM4378 driver for arbitrary reads. [PCIDriverKit](https://developer.apple.com/documentation/pcidriverkit), [DriverKit entitlements](https://developer.apple.com/documentation/driverkit/requesting-entitlements-for-driverkit-development) |
 | Linux `brcmfmac` | The upstream driver matches the BCM4378, maps register and device-memory regions and includes an internal RAM-copy operation for diagnostics. Some core reads use a shared window selector, so out-of-band access could interfere with the driver even when the intended operation only reads data. [Linux PCIe driver](https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c), [Linux diagnostic core](https://github.com/torvalds/linux/blob/v6.12/drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.c) |
+
+## Supported tuning controls
+
+| Surface | Verified scope |
+| --- | --- |
+| Channel selection | The native CoreWLAN SDK documents `setWLANChannel` and requires a disassociated interface. On the current uplink, the AP and driver negotiate the channel and width. The readout uses `supportedWLANChannels` and `wlanChannel`. [CoreWLAN channel command](https://developer.apple.com/documentation/corewlan/cwinterface/setwlanchannel%28_%3A%29), [CoreWLAN interface](https://developer.apple.com/documentation/corewlan/cwinterface) |
+| Radio power and association | CoreWLAN documents power and association controls. Those operations can interrupt service and remain untested on the active uplink. [CoreWLAN interface](https://developer.apple.com/documentation/corewlan/cwinterface) |
+| Transmit power and regulatory limits | The native SDK includes a transmit-power getter. The running driver requests a country locale matrix and a separate board TxCap file. The documented APIs reviewed exposed no application control for arbitrary transmit power or regulatory policy. [CoreWLAN interface](https://developer.apple.com/documentation/corewlan/cwinterface), [Firmware selection](firmware-layout.md) |
+| Peer link and traffic class | Network framework supports opt-in Apple peer-to-peer Wi-Fi and app-level service classes. A public API for choosing the `llw0` driver role or forcing a specific peer radio channel remains unverified. [Apple peer-to-peer documentation](https://developer.apple.com/documentation/technotes/tn3213-moving-from-multipeer-connectivity-to-network-framework), [Network service class](https://developer.apple.com/documentation/network/nwparameters/serviceclass-swift.property) |
 
 ## Separate test target
 

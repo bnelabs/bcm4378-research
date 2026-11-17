@@ -1,0 +1,659 @@
+{
+  "revisions": {
+    "B1": {
+      "directory": "C-4378__s-B1",
+      "extensions": {
+        ".clmb": {
+          "discovered_name_count": 30,
+          "name_count": 30,
+          "payloads": [
+            {
+              "aliases": {
+                "atlantisb-ID.clmb": "C-4378__s-B1/atlantisb.clmb",
+                "atlantisb-X0.clmb": "C-4378__s-B1/atlantisb.clmb",
+                "atlantisb-X2.clmb": "C-4378__s-B1/atlantisb.clmb",
+                "atlantisb-X3.clmb": "C-4378__s-B1/atlantisb.clmb"
+              },
+              "bytes": 34061,
+              "regular_names": [
+                "atlantisb.clmb"
+              ],
+              "sha256": "ecee6770918bfd6daf3faf67cb8cf549015acd24acf0f3d2a5d5a0d8dea791d5"
+            },
+            {
+              "aliases": {
+                "capri-ID.clmb": "C-4378__s-B1/capri.clmb",
+                "capri-X0.clmb": "C-4378__s-B1/capri.clmb",
+                "capri-X2.clmb": "C-4378__s-B1/capri.clmb",
+                "capri-X3.clmb": "C-4378__s-B1/capri.clmb"
+              },
+              "bytes": 34381,
+              "regular_names": [
+                "capri.clmb"
+              ],
+              "sha256": "daad70044687d0f44a2832073215cea28fa31a767aef88f1d4f0e4f218ec5714"
+            },
+            {
+              "aliases": {
+                "honshu-ID.clmb": "C-4378__s-B1/honshu.clmb",
+                "honshu-X0.clmb": "C-4378__s-B1/honshu.clmb",
+                "honshu-X2.clmb": "C-4378__s-B1/honshu.clmb",
+                "honshu-X3.clmb": "C-4378__s-B1/honshu.clmb"
+              },
+              "bytes": 36949,
+              "regular_names": [
+                "honshu.clmb"
+              ],
+              "sha256": "5591f8cfbf2ee838e9b519fd01a5d7472d3980ccd059e75ebd055a5a72fababf"
+            },
+            {
+              "aliases": {
+                "kyushu-ID.clmb": "C-4378__s-B1/kyushu.clmb",
+                "kyushu-X0.clmb": "C-4378__s-B1/kyushu.clmb",
+                "kyushu-X2.clmb": "C-4378__s-B1/kyushu.clmb",
+                "kyushu-X3.clmb": "C-4378__s-B1/kyushu.clmb"
+              },
+              "bytes": 36765,
+              "regular_names": [
+                "kyushu.clmb"
+              ],
+              "sha256": "f0957a5bf040bfb7ae06242886335860b5b0509ddc5a6a07da21b0ed8a543a85"
+            },
+            {
+              "aliases": {
+                "santorini-ID.clmb": "C-4378__s-B1/santorini.clmb",
+                "santorini-X0.clmb": "C-4378__s-B1/santorini.clmb",
+                "santorini-X2.clmb": "C-4378__s-B1/santorini.clmb",
+                "santorini-X3.clmb": "C-4378__s-B1/santorini.clmb"
+              },
+              "bytes": 34581,
+              "regular_names": [
+                "santorini.clmb"
+              ],
+              "sha256": "6df987fae5d6b6e7f88ffdb9f71ef0ecff1e70fe711bad610ead060c89c1ef3e"
+            },
+            {
+              "aliases": {
+                "shikoku-ID.clmb": "C-4378__s-B1/shikoku.clmb",
+                "shikoku-X0.clmb": "C-4378__s-B1/shikoku.clmb",
+                "shikoku-X2.clmb": "C-4378__s-B1/shikoku.clmb",
+                "shikoku-X3.clmb": "C-4378__s-B1/shikoku.clmb"
+              },
+              "bytes": 35973,
+              "regular_names": [
+                "shikoku.clmb"
+              ],
+              "sha256": "3202b0cd073d89b13955762acf42442483873a46ff0d426da618f04ec2184140"
+            }
+          ],
+          "skipped": {},
+          "unique_payload_count": 6
+        },
+        ".trx": {
+          "discovered_name_count": 30,
+          "name_count": 30,
+          "payloads": [
+            {
+              "aliases": {
+                "atlantisb-ID.trx": "C-4378__s-B1/honshu.trx",
+                "atlantisb-X0.trx": "C-4378__s-B1/honshu.trx",
+                "atlantisb-X2.trx": "C-4378__s-B1/honshu.trx",
+                "atlantisb-X3.trx": "C-4378__s-B1/honshu.trx",
+                "atlantisb.trx": "C-4378__s-B1/honshu.trx",
+                "honshu-ID.trx": "C-4378__s-B1/honshu.trx",
+                "honshu-X0.trx": "C-4378__s-B1/honshu.trx",
+                "honshu-X2.trx": "C-4378__s-B1/honshu.trx",
+                "honshu-X3.trx": "C-4378__s-B1/honshu.trx",
+                "kyushu-ID.trx": "C-4378__s-B1/honshu.trx",
+                "kyushu-X0.trx": "C-4378__s-B1/honshu.trx",
+                "kyushu-X2.trx": "C-4378__s-B1/honshu.trx",
+                "kyushu-X3.trx": "C-4378__s-B1/honshu.trx",
+                "kyushu.trx": "C-4378__s-B1/honshu.trx",
+                "shikoku-ID.trx": "C-4378__s-B1/honshu.trx",
+                "shikoku-X0.trx": "C-4378__s-B1/honshu.trx",
+                "shikoku-X2.trx": "C-4378__s-B1/honshu.trx",
+                "shikoku-X3.trx": "C-4378__s-B1/honshu.trx",
+                "shikoku.trx": "C-4378__s-B1/honshu.trx"
+              },
+              "bytes": 1497470,
+              "regular_names": [
+                "honshu.trx"
+              ],
+              "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06"
+            },
+            {
+              "aliases": {
+                "capri-ID.trx": "C-4378__s-B1/capri.trx",
+                "capri-X0.trx": "C-4378__s-B1/capri.trx",
+                "capri-X2.trx": "C-4378__s-B1/capri.trx",
+                "capri-X3.trx": "C-4378__s-B1/capri.trx",
+                "santorini-ID.trx": "C-4378__s-B1/capri.trx",
+                "santorini-X0.trx": "C-4378__s-B1/capri.trx",
+                "santorini-X2.trx": "C-4378__s-B1/capri.trx",
+                "santorini-X3.trx": "C-4378__s-B1/capri.trx",
+                "santorini.trx": "C-4378__s-B1/capri.trx"
+              },
+              "bytes": 1496769,
+              "regular_names": [
+                "capri.trx"
+              ],
+              "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6"
+            }
+          ],
+          "skipped": {},
+          "unique_payload_count": 2
+        },
+        ".txcb": {
+          "discovered_name_count": 30,
+          "name_count": 30,
+          "payloads": [
+            {
+              "aliases": {
+                "atlantisb-ID.txcb": "C-4378__s-B1/atlantisb.txcb",
+                "atlantisb-X0.txcb": "C-4378__s-B1/atlantisb.txcb",
+                "atlantisb-X2.txcb": "C-4378__s-B1/atlantisb.txcb",
+                "atlantisb-X3.txcb": "C-4378__s-B1/atlantisb.txcb"
+              },
+              "bytes": 304,
+              "regular_names": [
+                "atlantisb.txcb"
+              ],
+              "sha256": "61c650d5481c69fe03ec80bad0419d372cd007d4aef1850c2d3f17db45bd48ec"
+            },
+            {
+              "aliases": {
+                "capri-ID.txcb": "C-4378__s-B1/capri.txcb",
+                "capri-X0.txcb": "C-4378__s-B1/capri.txcb",
+                "capri-X2.txcb": "C-4378__s-B1/capri.txcb",
+                "capri-X3.txcb": "C-4378__s-B1/capri.txcb"
+              },
+              "bytes": 304,
+              "regular_names": [
+                "capri.txcb"
+              ],
+              "sha256": "3ba1ed3b0b6dfb2cfcb51621bd347a8168d704e745c72047024718e47cbb4ff4"
+            },
+            {
+              "aliases": {
+                "honshu-ID.txcb": "C-4378__s-B1/honshu.txcb",
+                "honshu-X0.txcb": "C-4378__s-B1/honshu.txcb",
+                "honshu-X2.txcb": "C-4378__s-B1/honshu.txcb",
+                "honshu-X3.txcb": "C-4378__s-B1/honshu.txcb"
+              },
+              "bytes": 697,
+              "regular_names": [
+                "honshu.txcb"
+              ],
+              "sha256": "576f322a05f586b3fb279ff1da4ecff69aa08a8ba0da67a023506b45e8138abd"
+            },
+            {
+              "aliases": {
+                "kyushu-ID.txcb": "C-4378__s-B1/kyushu.txcb",
+                "kyushu-X0.txcb": "C-4378__s-B1/kyushu.txcb",
+                "kyushu-X2.txcb": "C-4378__s-B1/kyushu.txcb",
+                "kyushu-X3.txcb": "C-4378__s-B1/kyushu.txcb"
+              },
+              "bytes": 697,
+              "regular_names": [
+                "kyushu.txcb"
+              ],
+              "sha256": "cfee6b73a2467d2574a17b0b18da5b6cb04cfe545264e66b2341ee49b18dfae5"
+            },
+            {
+              "aliases": {
+                "santorini-ID.txcb": "C-4378__s-B1/santorini.txcb",
+                "santorini-X0.txcb": "C-4378__s-B1/santorini.txcb",
+                "santorini-X2.txcb": "C-4378__s-B1/santorini.txcb",
+                "santorini-X3.txcb": "C-4378__s-B1/santorini.txcb"
+              },
+              "bytes": 304,
+              "regular_names": [
+                "santorini.txcb"
+              ],
+              "sha256": "dbbab4532ec6174836341937ea04e08ae46c8288741c099114565a7749aaff31"
+            },
+            {
+              "aliases": {
+                "shikoku-ID.txcb": "C-4378__s-B1/shikoku.txcb",
+                "shikoku-X0.txcb": "C-4378__s-B1/shikoku.txcb",
+                "shikoku-X2.txcb": "C-4378__s-B1/shikoku.txcb",
+                "shikoku-X3.txcb": "C-4378__s-B1/shikoku.txcb"
+              },
+              "bytes": 697,
+              "regular_names": [
+                "shikoku.txcb"
+              ],
+              "sha256": "43d76d167e3fb833535e7e43ff28b77d1c07fa5d7ec730eaae8bce549cd9b059"
+            }
+          ],
+          "skipped": {},
+          "unique_payload_count": 6
+        },
+        ".txt": {
+          "discovered_name_count": 240,
+          "name_count": 240,
+          "payloads": [
+            {
+              "aliases": {
+                "P-atlantisb-ID_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.1.txt",
+                "P-atlantisb-ID_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.11.txt",
+                "P-atlantisb-ID_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.3.txt",
+                "P-atlantisb-ID_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.9.txt",
+                "P-atlantisb-ID_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-7.1.txt",
+                "P-atlantisb-X0_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.1.txt",
+                "P-atlantisb-X0_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.11.txt",
+                "P-atlantisb-X0_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.3.txt",
+                "P-atlantisb-X0_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.9.txt",
+                "P-atlantisb-X0_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-7.1.txt",
+                "P-atlantisb-X2_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.1.txt",
+                "P-atlantisb-X2_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.11.txt",
+                "P-atlantisb-X2_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.3.txt",
+                "P-atlantisb-X2_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.9.txt",
+                "P-atlantisb-X2_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-7.1.txt",
+                "P-atlantisb-X3_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.1.txt",
+                "P-atlantisb-X3_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.11.txt",
+                "P-atlantisb-X3_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.3.txt",
+                "P-atlantisb-X3_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-6.9.txt",
+                "P-atlantisb-X3_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-m__m-7.1.txt"
+              },
+              "bytes": 7784,
+              "regular_names": [
+                "P-atlantisb_M-RASP_V-m__m-6.1.txt",
+                "P-atlantisb_M-RASP_V-m__m-6.11.txt",
+                "P-atlantisb_M-RASP_V-m__m-6.3.txt",
+                "P-atlantisb_M-RASP_V-m__m-6.9.txt",
+                "P-atlantisb_M-RASP_V-m__m-7.1.txt"
+              ],
+              "sha256": "5e8c0449664fa47d57f220aa75dd04ad6d5558adf157ddf20f447a9f4f5fb19e"
+            },
+            {
+              "aliases": {
+                "P-atlantisb-ID_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-3.7.txt",
+                "P-atlantisb-ID_M-RASP_V-u__m-4.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-4.1.txt",
+                "P-atlantisb-ID_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-6.1.txt",
+                "P-atlantisb-ID_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-6.3.txt",
+                "P-atlantisb-ID_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-6.5.txt",
+                "P-atlantisb-X0_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-3.7.txt",
+                "P-atlantisb-X0_M-RASP_V-u__m-4.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-4.1.txt",
+                "P-atlantisb-X0_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-6.1.txt",
+                "P-atlantisb-X0_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-6.3.txt",
+                "P-atlantisb-X0_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-6.5.txt",
+                "P-atlantisb-X2_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-3.7.txt",
+                "P-atlantisb-X2_M-RASP_V-u__m-4.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-4.1.txt",
+                "P-atlantisb-X2_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-6.1.txt",
+                "P-atlantisb-X2_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-6.3.txt",
+                "P-atlantisb-X2_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-6.5.txt",
+                "P-atlantisb-X3_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-3.7.txt",
+                "P-atlantisb-X3_M-RASP_V-u__m-4.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-4.1.txt",
+                "P-atlantisb-X3_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-6.1.txt",
+                "P-atlantisb-X3_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-6.3.txt",
+                "P-atlantisb-X3_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-atlantisb_M-RASP_V-u__m-6.5.txt"
+              },
+              "bytes": 7723,
+              "regular_names": [
+                "P-atlantisb_M-RASP_V-u__m-3.7.txt",
+                "P-atlantisb_M-RASP_V-u__m-4.1.txt",
+                "P-atlantisb_M-RASP_V-u__m-6.1.txt",
+                "P-atlantisb_M-RASP_V-u__m-6.3.txt",
+                "P-atlantisb_M-RASP_V-u__m-6.5.txt"
+              ],
+              "sha256": "417a6014f4dad80d92f160748f43d2c50314ba67eefc15fa5eace378d82d943e"
+            },
+            {
+              "aliases": {
+                "P-capri-ID_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.1.txt",
+                "P-capri-ID_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.11.txt",
+                "P-capri-ID_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.3.txt",
+                "P-capri-ID_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.9.txt",
+                "P-capri-ID_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-7.1.txt",
+                "P-capri-X0_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.1.txt",
+                "P-capri-X0_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.11.txt",
+                "P-capri-X0_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.3.txt",
+                "P-capri-X0_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.9.txt",
+                "P-capri-X0_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-7.1.txt",
+                "P-capri-X2_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.1.txt",
+                "P-capri-X2_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.11.txt",
+                "P-capri-X2_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.3.txt",
+                "P-capri-X2_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.9.txt",
+                "P-capri-X2_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-7.1.txt",
+                "P-capri-X3_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.1.txt",
+                "P-capri-X3_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.11.txt",
+                "P-capri-X3_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.3.txt",
+                "P-capri-X3_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-6.9.txt",
+                "P-capri-X3_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-capri_M-RASP_V-m__m-7.1.txt"
+              },
+              "bytes": 7663,
+              "regular_names": [
+                "P-capri_M-RASP_V-m__m-6.1.txt",
+                "P-capri_M-RASP_V-m__m-6.11.txt",
+                "P-capri_M-RASP_V-m__m-6.3.txt",
+                "P-capri_M-RASP_V-m__m-6.9.txt",
+                "P-capri_M-RASP_V-m__m-7.1.txt"
+              ],
+              "sha256": "44bec369f1c81ddd72f9c331e02d54c004dc94ea4171cc5515cf0dcf0baa87fb"
+            },
+            {
+              "aliases": {
+                "P-capri-ID_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-3.7.txt",
+                "P-capri-ID_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-6.1.txt",
+                "P-capri-ID_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-6.3.txt",
+                "P-capri-ID_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-6.5.txt",
+                "P-capri-X0_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-3.7.txt",
+                "P-capri-X0_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-6.1.txt",
+                "P-capri-X0_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-6.3.txt",
+                "P-capri-X0_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-6.5.txt",
+                "P-capri-X2_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-3.7.txt",
+                "P-capri-X2_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-6.1.txt",
+                "P-capri-X2_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-6.3.txt",
+                "P-capri-X2_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-6.5.txt",
+                "P-capri-X3_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-3.7.txt",
+                "P-capri-X3_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-6.1.txt",
+                "P-capri-X3_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-6.3.txt",
+                "P-capri-X3_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-capri_M-RASP_V-u__m-6.5.txt"
+              },
+              "bytes": 7602,
+              "regular_names": [
+                "P-capri_M-RASP_V-u__m-3.7.txt",
+                "P-capri_M-RASP_V-u__m-6.1.txt",
+                "P-capri_M-RASP_V-u__m-6.3.txt",
+                "P-capri_M-RASP_V-u__m-6.5.txt"
+              ],
+              "sha256": "28740651d40a9754a2b2b082ab1aa4eb91d0f0ab4bd4e3e8eceff369c977bd36"
+            },
+            {
+              "aliases": {
+                "P-honshu-ID_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.1.txt",
+                "P-honshu-ID_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.11.txt",
+                "P-honshu-ID_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.3.txt",
+                "P-honshu-ID_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.9.txt",
+                "P-honshu-ID_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-7.1.txt",
+                "P-honshu-X0_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.1.txt",
+                "P-honshu-X0_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.11.txt",
+                "P-honshu-X0_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.3.txt",
+                "P-honshu-X0_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.9.txt",
+                "P-honshu-X0_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-7.1.txt",
+                "P-honshu-X2_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.1.txt",
+                "P-honshu-X2_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.11.txt",
+                "P-honshu-X2_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.3.txt",
+                "P-honshu-X2_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.9.txt",
+                "P-honshu-X2_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-7.1.txt",
+                "P-honshu-X3_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.1.txt",
+                "P-honshu-X3_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.11.txt",
+                "P-honshu-X3_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.3.txt",
+                "P-honshu-X3_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-6.9.txt",
+                "P-honshu-X3_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-m__m-7.1.txt"
+              },
+              "bytes": 7689,
+              "regular_names": [
+                "P-honshu_M-RASP_V-m__m-6.1.txt",
+                "P-honshu_M-RASP_V-m__m-6.11.txt",
+                "P-honshu_M-RASP_V-m__m-6.3.txt",
+                "P-honshu_M-RASP_V-m__m-6.9.txt",
+                "P-honshu_M-RASP_V-m__m-7.1.txt"
+              ],
+              "sha256": "82d38093e33abac54c94e5b792efcd4b0fe3dfb794fe8a96b3a1967622e50056"
+            },
+            {
+              "aliases": {
+                "P-honshu-ID_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-3.7.txt",
+                "P-honshu-ID_M-RASP_V-u__m-4.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-4.1.txt",
+                "P-honshu-ID_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-6.1.txt",
+                "P-honshu-ID_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-6.3.txt",
+                "P-honshu-ID_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-6.5.txt",
+                "P-honshu-X0_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-3.7.txt",
+                "P-honshu-X0_M-RASP_V-u__m-4.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-4.1.txt",
+                "P-honshu-X0_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-6.1.txt",
+                "P-honshu-X0_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-6.3.txt",
+                "P-honshu-X0_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-6.5.txt",
+                "P-honshu-X2_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-3.7.txt",
+                "P-honshu-X2_M-RASP_V-u__m-4.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-4.1.txt",
+                "P-honshu-X2_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-6.1.txt",
+                "P-honshu-X2_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-6.3.txt",
+                "P-honshu-X2_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-6.5.txt",
+                "P-honshu-X3_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-3.7.txt",
+                "P-honshu-X3_M-RASP_V-u__m-4.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-4.1.txt",
+                "P-honshu-X3_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-6.1.txt",
+                "P-honshu-X3_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-6.3.txt",
+                "P-honshu-X3_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-honshu_M-RASP_V-u__m-6.5.txt",
+                "P-kyushu-ID_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-kyushu_M-RASP_V-u__m-6.5.txt",
+                "P-kyushu-X0_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-kyushu_M-RASP_V-u__m-6.5.txt",
+                "P-kyushu-X2_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-kyushu_M-RASP_V-u__m-6.5.txt",
+                "P-kyushu-X3_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-kyushu_M-RASP_V-u__m-6.5.txt"
+              },
+              "bytes": 7628,
+              "regular_names": [
+                "P-honshu_M-RASP_V-u__m-3.7.txt",
+                "P-honshu_M-RASP_V-u__m-4.1.txt",
+                "P-honshu_M-RASP_V-u__m-6.1.txt",
+                "P-honshu_M-RASP_V-u__m-6.3.txt",
+                "P-honshu_M-RASP_V-u__m-6.5.txt",
+                "P-kyushu_M-RASP_V-u__m-6.5.txt"
+              ],
+              "sha256": "d921b4241b268694e077c146ffb918ba89e71bd1439a865fda4431deaa23b134"
+            },
+            {
+              "aliases": {
+                "P-santorini-ID_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.1.txt",
+                "P-santorini-ID_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.11.txt",
+                "P-santorini-ID_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.3.txt",
+                "P-santorini-ID_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.9.txt",
+                "P-santorini-ID_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-7.1.txt",
+                "P-santorini-X0_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.1.txt",
+                "P-santorini-X0_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.11.txt",
+                "P-santorini-X0_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.3.txt",
+                "P-santorini-X0_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.9.txt",
+                "P-santorini-X0_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-7.1.txt",
+                "P-santorini-X2_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.1.txt",
+                "P-santorini-X2_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.11.txt",
+                "P-santorini-X2_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.3.txt",
+                "P-santorini-X2_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.9.txt",
+                "P-santorini-X2_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-7.1.txt",
+                "P-santorini-X3_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.1.txt",
+                "P-santorini-X3_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.11.txt",
+                "P-santorini-X3_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.3.txt",
+                "P-santorini-X3_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-6.9.txt",
+                "P-santorini-X3_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-santorini_M-RASP_V-m__m-7.1.txt"
+              },
+              "bytes": 7667,
+              "regular_names": [
+                "P-santorini_M-RASP_V-m__m-6.1.txt",
+                "P-santorini_M-RASP_V-m__m-6.11.txt",
+                "P-santorini_M-RASP_V-m__m-6.3.txt",
+                "P-santorini_M-RASP_V-m__m-6.9.txt",
+                "P-santorini_M-RASP_V-m__m-7.1.txt"
+              ],
+              "sha256": "4f280abe427460cba4891522c9e69e02725fa99710fdf024574c87f3cf0ba585"
+            },
+            {
+              "aliases": {
+                "P-santorini-ID_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-3.7.txt",
+                "P-santorini-ID_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-6.1.txt",
+                "P-santorini-ID_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-6.3.txt",
+                "P-santorini-ID_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-6.5.txt",
+                "P-santorini-X0_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-3.7.txt",
+                "P-santorini-X0_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-6.1.txt",
+                "P-santorini-X0_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-6.3.txt",
+                "P-santorini-X0_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-6.5.txt",
+                "P-santorini-X2_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-3.7.txt",
+                "P-santorini-X2_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-6.1.txt",
+                "P-santorini-X2_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-6.3.txt",
+                "P-santorini-X2_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-6.5.txt",
+                "P-santorini-X3_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-3.7.txt",
+                "P-santorini-X3_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-6.1.txt",
+                "P-santorini-X3_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-6.3.txt",
+                "P-santorini-X3_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-santorini_M-RASP_V-u__m-6.5.txt"
+              },
+              "bytes": 7606,
+              "regular_names": [
+                "P-santorini_M-RASP_V-u__m-3.7.txt",
+                "P-santorini_M-RASP_V-u__m-6.1.txt",
+                "P-santorini_M-RASP_V-u__m-6.3.txt",
+                "P-santorini_M-RASP_V-u__m-6.5.txt"
+              ],
+              "sha256": "32d7747549903a2e222030abc75ef5dfd7fcd6879da125b3b41ac7885a8d45f3"
+            },
+            {
+              "aliases": {
+                "P-shikoku-ID_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.1.txt",
+                "P-shikoku-ID_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.11.txt",
+                "P-shikoku-ID_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.3.txt",
+                "P-shikoku-ID_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.9.txt",
+                "P-shikoku-ID_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-7.1.txt",
+                "P-shikoku-X0_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.1.txt",
+                "P-shikoku-X0_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.11.txt",
+                "P-shikoku-X0_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.3.txt",
+                "P-shikoku-X0_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.9.txt",
+                "P-shikoku-X0_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-7.1.txt",
+                "P-shikoku-X2_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.1.txt",
+                "P-shikoku-X2_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.11.txt",
+                "P-shikoku-X2_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.3.txt",
+                "P-shikoku-X2_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.9.txt",
+                "P-shikoku-X2_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-7.1.txt",
+                "P-shikoku-X3_M-RASP_V-m__m-6.1.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.1.txt",
+                "P-shikoku-X3_M-RASP_V-m__m-6.11.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.11.txt",
+                "P-shikoku-X3_M-RASP_V-m__m-6.3.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.3.txt",
+                "P-shikoku-X3_M-RASP_V-m__m-6.9.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-6.9.txt",
+                "P-shikoku-X3_M-RASP_V-m__m-7.1.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-m__m-7.1.txt"
+              },
+              "bytes": 7690,
+              "regular_names": [
+                "P-shikoku_M-RASP_V-m__m-6.1.txt",
+                "P-shikoku_M-RASP_V-m__m-6.11.txt",
+                "P-shikoku_M-RASP_V-m__m-6.3.txt",
+                "P-shikoku_M-RASP_V-m__m-6.9.txt",
+                "P-shikoku_M-RASP_V-m__m-7.1.txt"
+              ],
+              "sha256": "2e15b8551b3cbf945247a6e25a8efbfb392476d799e81cbc61f659b55dc049b4"
+            },
+            {
+              "aliases": {
+                "P-shikoku-ID_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-3.7.txt",
+                "P-shikoku-ID_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-6.1.txt",
+                "P-shikoku-ID_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-6.3.txt",
+                "P-shikoku-ID_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-6.5.txt",
+                "P-shikoku-X0_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-3.7.txt",
+                "P-shikoku-X0_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-6.1.txt",
+                "P-shikoku-X0_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-6.3.txt",
+                "P-shikoku-X0_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-6.5.txt",
+                "P-shikoku-X2_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-3.7.txt",
+                "P-shikoku-X2_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-6.1.txt",
+                "P-shikoku-X2_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-6.3.txt",
+                "P-shikoku-X2_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-6.5.txt",
+                "P-shikoku-X3_M-RASP_V-u__m-3.7.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-3.7.txt",
+                "P-shikoku-X3_M-RASP_V-u__m-6.1.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-6.1.txt",
+                "P-shikoku-X3_M-RASP_V-u__m-6.3.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-6.3.txt",
+                "P-shikoku-X3_M-RASP_V-u__m-6.5.txt": "C-4378__s-B1/P-shikoku_M-RASP_V-u__m-6.5.txt"
+              },
+              "bytes": 7629,
+              "regular_names": [
+                "P-shikoku_M-RASP_V-u__m-3.7.txt",
+                "P-shikoku_M-RASP_V-u__m-6.1.txt",
+                "P-shikoku_M-RASP_V-u__m-6.3.txt",
+                "P-shikoku_M-RASP_V-u__m-6.5.txt"
+              ],
+              "sha256": "c1440baec1eb255afcee275dd6f6fd32146830db16db4d2015565bc447fb2fcb"
+            }
+          ],
+          "skipped": {},
+          "unique_payload_count": 10
+        }
+      },
+      "status": "available"
+    },
+    "B3": {
+      "directory": "C-4378__s-B3",
+      "extensions": {
+        ".clmb": {
+          "discovered_name_count": 5,
+          "name_count": 5,
+          "payloads": [
+            {
+              "aliases": {
+                "kyushu-ID.clmb": "C-4378__s-B3/kyushu.clmb",
+                "kyushu-X0.clmb": "C-4378__s-B3/kyushu.clmb",
+                "kyushu-X2.clmb": "C-4378__s-B3/kyushu.clmb",
+                "kyushu-X3.clmb": "C-4378__s-B3/kyushu.clmb"
+              },
+              "bytes": 36765,
+              "regular_names": [
+                "kyushu.clmb"
+              ],
+              "sha256": "a4188793ab990c77d665be4633b58d83dc6af606dff3754fc1d01a0aaea247a9"
+            }
+          ],
+          "skipped": {},
+          "unique_payload_count": 1
+        },
+        ".trx": {
+          "discovered_name_count": 5,
+          "name_count": 5,
+          "payloads": [
+            {
+              "aliases": {
+                "kyushu-ID.trx": "C-4378__s-B3/kyushu.trx",
+                "kyushu-X0.trx": "C-4378__s-B3/kyushu.trx",
+                "kyushu-X2.trx": "C-4378__s-B3/kyushu.trx",
+                "kyushu-X3.trx": "C-4378__s-B3/kyushu.trx"
+              },
+              "bytes": 1226142,
+              "regular_names": [
+                "kyushu.trx"
+              ],
+              "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a"
+            }
+          ],
+          "skipped": {},
+          "unique_payload_count": 1
+        },
+        ".txcb": {
+          "discovered_name_count": 5,
+          "name_count": 5,
+          "payloads": [
+            {
+              "aliases": {
+                "kyushu-ID.txcb": "C-4378__s-B3/kyushu.txcb",
+                "kyushu-X0.txcb": "C-4378__s-B3/kyushu.txcb",
+                "kyushu-X2.txcb": "C-4378__s-B3/kyushu.txcb",
+                "kyushu-X3.txcb": "C-4378__s-B3/kyushu.txcb"
+              },
+              "bytes": 697,
+              "regular_names": [
+                "kyushu.txcb"
+              ],
+              "sha256": "39a83b0df7dd23a5adff3f8697e77889d5586e26a104c97567238a23b81e34d1"
+            }
+          ],
+          "skipped": {},
+          "unique_payload_count": 1
+        },
+        ".txt": {
+          "discovered_name_count": 10,
+          "name_count": 10,
+          "payloads": [
+            {
+              "aliases": {
+                "P-kyushu-ID_M-RASP_V-u__m-6.7.txt": "C-4378__s-B3/P-kyushu_M-RASP_V-u__m-6.7.txt",
+                "P-kyushu-ID_M-RASP_V-u__m-6.9.txt": "C-4378__s-B3/P-kyushu_M-RASP_V-u__m-6.9.txt",
+                "P-kyushu-X0_M-RASP_V-u__m-6.7.txt": "C-4378__s-B3/P-kyushu_M-RASP_V-u__m-6.7.txt",
+                "P-kyushu-X0_M-RASP_V-u__m-6.9.txt": "C-4378__s-B3/P-kyushu_M-RASP_V-u__m-6.9.txt",
+                "P-kyushu-X2_M-RASP_V-u__m-6.7.txt": "C-4378__s-B3/P-kyushu_M-RASP_V-u__m-6.7.txt",
+                "P-kyushu-X2_M-RASP_V-u__m-6.9.txt": "C-4378__s-B3/P-kyushu_M-RASP_V-u__m-6.9.txt",
+                "P-kyushu-X3_M-RASP_V-u__m-6.7.txt": "C-4378__s-B3/P-kyushu_M-RASP_V-u__m-6.7.txt",
+                "P-kyushu-X3_M-RASP_V-u__m-6.9.txt": "C-4378__s-B3/P-kyushu_M-RASP_V-u__m-6.9.txt"
+              },
+              "bytes": 7628,
+              "regular_names": [
+                "P-kyushu_M-RASP_V-u__m-6.7.txt",
+                "P-kyushu_M-RASP_V-u__m-6.9.txt"
+              ],
+              "sha256": "d921b4241b268694e077c146ffb918ba89e71bd1439a865fda4431deaa23b134"
+            }
+          ],
+          "skipped": {},
+          "unique_payload_count": 1
+        }
+      },
+      "status": "available"
+    }
+  }
+}
