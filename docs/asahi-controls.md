@@ -24,6 +24,8 @@ The pinned Asahi PCIe driver doubles the host-allocated receive ring depths and 
 
 Both trees register a survey callback behind the OBSS measurement capability. The callback rejects a connecting or connected primary interface and retunes the test radio for an 80 ms measurement. Busy and receive durations use different sums, and a failed PHY-noise query produces a fallback value. [Survey field definitions and effects](cca-provenance.md#linux-survey-behavior), [Upstream survey][up-survey], [Asahi survey][asahi-survey], [Asahi registration gate][survey-gate]
 
+The pinned Asahi driver stores antenna counts in the Linux availability bitmap fields. A two-chain firmware mask of `0x3` becomes `0x2` in those fields. The two driver operation tables have no antenna selection callback. [Antenna fields and test scope](radio-chain-policy.md#interpreting-linux-antenna-fields)
+
 ## Wi-Fi 6 capability evidence
 
 Upstream stable `v7.3.4` builds HT and VHT band capability data. Asahi also queries whether HE (802.11ax) is enabled and constructs HE data for station mode. Its shared HE table sets some bits directly, including the 5 GHz 160 MHz, target wake time (TWT), and beamforming flags. The driver's per-channel permissions come from a separate firmware channel list. A 6 GHz band is added only if the firmware returns that band. Asahi's HE flags and generic decoder coverage alone leave BCM4378 support for individual features unverified. The A2337's [model-specific spectrum evidence](spectrum-sensing.md) covers 2.4 GHz HE20 and 5 GHz through HE80. [Upstream band setup][up-bands], [Asahi HE query][he-query], [Asahi HE table][he-table], [Channel flags][channel-flags], [Asahi band list][asahi-bands]

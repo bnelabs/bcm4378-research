@@ -74,9 +74,11 @@ RADIO_POWER_CONFIG_KEYS = (
     "wlan.lpas-allowed",
     "wlan.mimo_ps.enabled",
     "wlan.ocl.enabled",
+    "wlan.ocl_awdl.enabled",
     "wlan.ops.enabled",
     "wlan.pm-thresholds.lpas",
     "wlan.pm-thresholds.wow",
+    "wlan.psbw.enabled",
 )
 BTC_PARAMETER_KEY = "bcom.btc.params"
 CONFIG_KEYS = (
