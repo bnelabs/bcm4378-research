@@ -1,0 +1,221 @@
+{
+  "compiler": "swift-driver version: 1.168.6 Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)",
+  "compiler_target": "arm64-apple-macosx27.2.0",
+  "macos_build": "26B131",
+  "observed_utc": "2026-11-17T17:37:00.981949+00:00",
+  "samples": [
+    {
+      "archive": {
+        "finished_ms": 5787.210042,
+        "paths": [
+          {
+            "interface": "lo0",
+            "received_application_bytes": 1,
+            "received_ip_packets": 1,
+            "retransmitted_transport_bytes": 0,
+            "sent_application_bytes": 1048578,
+            "sent_ip_packets": 258
+          }
+        ],
+        "payload_bytes_verified": 1048576,
+        "started_ms": 0.060083
+      },
+      "archive_chunk_interval_ms": 16,
+      "archive_service_class": "background",
+      "mismatched_key_tls_status": -9820,
+      "mode": "loopback",
+      "preview": {
+        "acknowledged_by_deadline": 20,
+        "finished_ms": 1906.933625,
+        "offered": 20,
+        "paths": [
+          {
+            "interface": "lo0",
+            "received_application_bytes": 60,
+            "received_ip_packets": 21,
+            "retransmitted_transport_bytes": 0,
+            "sent_application_bytes": 40962,
+            "sent_ip_packets": 22
+          }
+        ],
+        "payload_bytes_verified": 40960,
+        "release_to_ack_ms": [
+          1.720542,
+          8.00325,
+          10.570292,
+          3.710083,
+          2.134542,
+          7.127583,
+          10.515792,
+          10.502708,
+          10.475167,
+          10.535833,
+          10.48925,
+          10.583875,
+          0.560208,
+          2.568542,
+          3.950333,
+          6.777,
+          7.847125,
+          8.29525,
+          10.513167,
+          6.930292
+        ],
+        "round_trip_median_ms": 0.4735625,
+        "round_trip_p95_ms": 0.627167,
+        "started_ms": 0.038333
+      },
+      "preview_deadline_ms": 160,
+      "preview_interval_ms": 100,
+      "preview_service_class": "interactiveVideo",
+      "tls_cipher": "TLS_PSK_WITH_AES_128_GCM_SHA256"
+    },
+    {
+      "archive": {
+        "finished_ms": 5832.033292,
+        "paths": [
+          {
+            "interface": "lo0",
+            "received_application_bytes": 1,
+            "received_ip_packets": 1,
+            "retransmitted_transport_bytes": 0,
+            "sent_application_bytes": 1048578,
+            "sent_ip_packets": 258
+          }
+        ],
+        "payload_bytes_verified": 1048576,
+        "started_ms": 0.057875
+      },
+      "archive_chunk_interval_ms": 16,
+      "archive_service_class": "background",
+      "mismatched_key_tls_status": -9820,
+      "mode": "loopback",
+      "preview": {
+        "acknowledged_by_deadline": 20,
+        "finished_ms": 1910.503959,
+        "offered": 20,
+        "paths": [
+          {
+            "interface": "lo0",
+            "received_application_bytes": 60,
+            "received_ip_packets": 21,
+            "retransmitted_transport_bytes": 0,
+            "sent_application_bytes": 40962,
+            "sent_ip_packets": 22
+          }
+        ],
+        "payload_bytes_verified": 40960,
+        "release_to_ack_ms": [
+          1.725209,
+          10.481125,
+          3.762875,
+          1.901375,
+          10.528125,
+          10.571792,
+          10.503417,
+          10.504334,
+          8.993125,
+          10.507875,
+          9.651625,
+          5.084625,
+          10.744375,
+          8.728959,
+          1.947125,
+          10.5915,
+          10.154917,
+          7.876667,
+          10.523125,
+          10.502834
+        ],
+        "round_trip_median_ms": 0.4886665,
+        "round_trip_p95_ms": 0.703083,
+        "started_ms": 0.036042
+      },
+      "preview_deadline_ms": 160,
+      "preview_interval_ms": 100,
+      "preview_service_class": "interactiveVideo",
+      "tls_cipher": "TLS_PSK_WITH_AES_128_GCM_SHA256"
+    },
+    {
+      "archive": {
+        "finished_ms": 5808.10975,
+        "paths": [
+          {
+            "interface": "lo0",
+            "received_application_bytes": 1,
+            "received_ip_packets": 1,
+            "retransmitted_transport_bytes": 0,
+            "sent_application_bytes": 1048578,
+            "sent_ip_packets": 258
+          }
+        ],
+        "payload_bytes_verified": 1048576,
+        "started_ms": 0.059
+      },
+      "archive_chunk_interval_ms": 16,
+      "archive_service_class": "background",
+      "mismatched_key_tls_status": -9820,
+      "mode": "loopback",
+      "preview": {
+        "acknowledged_by_deadline": 20,
+        "finished_ms": 1910.775708,
+        "offered": 20,
+        "paths": [
+          {
+            "interface": "lo0",
+            "received_application_bytes": 60,
+            "received_ip_packets": 21,
+            "retransmitted_transport_bytes": 0,
+            "sent_application_bytes": 40962,
+            "sent_ip_packets": 22
+          }
+        ],
+        "payload_bytes_verified": 40960,
+        "release_to_ack_ms": [
+          1.761208,
+          2.290083,
+          5.985416,
+          10.451458,
+          8.746291,
+          9.246791,
+          8.652791,
+          7.225833,
+          10.586625,
+          7.799541,
+          10.440458,
+          8.593875,
+          8.269875,
+          6.380291,
+          6.728166,
+          8.543291,
+          10.621291,
+          10.614,
+          10.36125,
+          10.7745
+        ],
+        "round_trip_median_ms": 0.53125,
+        "round_trip_p95_ms": 0.741334,
+        "started_ms": 0.036
+      },
+      "preview_deadline_ms": 160,
+      "preview_interval_ms": 100,
+      "preview_service_class": "interactiveVideo",
+      "tls_cipher": "TLS_PSK_WITH_AES_128_GCM_SHA256"
+    }
+  ],
+  "scope": "Three loopback-only Bonjour and TLS runs. Both workloads used lo0. The two-device LAN and AWDL tests remain open.",
+  "wifi_after": {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "ipv4_default_interface": "en0"
+  },
+  "wifi_before": {
+    "band": "5 GHz",
+    "channel": 40,
+    "channel_width_mhz": 80,
+    "interface": "en0",
+    "ipv4_default_interface": "en0"
+  }
+}
