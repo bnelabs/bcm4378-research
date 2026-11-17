@@ -25,10 +25,11 @@ On macOS with Swift installed, query the current connection using CoreWLAN gette
 swift tools/read_wifi_status.swift
 swift tools/read_wifi_status.swift --sample 16 0.5
 swift tools/read_wifi_status.swift --sample 36 1 | python3 tools/summarize_link.py
+swift tools/read_wifi_status.swift --sample 21 0.5 --traffic | python3 tools/summarize_link.py
 python3 tools/read_macos_inventory.py
 ```
 
-The sampler emits timestamped JSON lines from the current association's status getters. The summary reports missing and repeated readings, operating context, PHY rate and paired RSSI-minus-noise. The inventory records I/O Registry role names, PCIe aperture sizes and hashes of the selected firmware files.
+The sampler emits timestamped JSON lines from the current association's status getters. The summary reports missing and repeated readings, operating context, PHY rate and paired RSSI-minus-noise. The optional `--traffic` flag adds aggregate interface byte and packet counts. The inventory records I/O Registry role names, PCIe aperture sizes and hashes of the selected firmware files.
 
 ```sh
 python3 tools/inventory_board_profiles.py /usr/share/firmware/wifi

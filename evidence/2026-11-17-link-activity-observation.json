@@ -1,0 +1,109 @@
+{
+  "default_interface_after": "en0",
+  "default_interface_before": "en0",
+  "http_read": {
+    "elapsed_seconds": 0.420222,
+    "ended_at_unix_seconds": 1794892931.447671,
+    "http_status": 200,
+    "response_body_bytes": 67838,
+    "started_at_unix_seconds": 1794892930.99976,
+    "url": "https://raw.githubusercontent.com/apple-oss-distributions/network_cmds/main/netstat.tproj/if.c"
+  },
+  "nearest_counter_samples_bracketing_http_read": {
+    "ended_at_unix_seconds": 1794892931.7540112,
+    "observed_deltas": {
+      "rx_bytes": 7491093,
+      "rx_packets": 6533,
+      "tx_bytes": 175494,
+      "tx_packets": 953
+    },
+    "started_at_unix_seconds": 1794892930.5736918
+  },
+  "summary": {
+    "duration_seconds": 11.866681,
+    "interface_traffic": {
+      "average_mbps": {
+        "rx": 17.514783540370694,
+        "tx": 0.8472935851891151
+      },
+      "intervals": {
+        "comparable": 20,
+        "invalid": 0,
+        "missing": 0,
+        "reset": 0
+      },
+      "observed_deltas": {
+        "rx_bytes": 25981651,
+        "rx_packets": 23498,
+        "tx_bytes": 1256886,
+        "tx_packets": 4075
+      },
+      "observed_seconds": 11.867300987243652
+    },
+    "metrics": {
+      "corewlan_transmit_power": {
+        "adjacent_measured_pairs": 20,
+        "distinct_values": 1,
+        "equal_adjacent_pairs": 20,
+        "maximum": 1496,
+        "measured_samples": 21,
+        "median": 1496,
+        "minimum": 1496,
+        "unavailable_samples": 0
+      },
+      "noise_dbm": {
+        "adjacent_measured_pairs": 20,
+        "distinct_values": 1,
+        "equal_adjacent_pairs": 20,
+        "maximum": -88,
+        "measured_samples": 21,
+        "median": -88,
+        "minimum": -88,
+        "unavailable_samples": 0
+      },
+      "reported_rssi_minus_noise_db": {
+        "adjacent_measured_pairs": 20,
+        "distinct_values": 1,
+        "equal_adjacent_pairs": 20,
+        "maximum": 21,
+        "measured_samples": 21,
+        "median": 21,
+        "minimum": 21,
+        "unavailable_samples": 0
+      },
+      "rssi_dbm": {
+        "adjacent_measured_pairs": 20,
+        "distinct_values": 1,
+        "equal_adjacent_pairs": 20,
+        "maximum": -67,
+        "measured_samples": 21,
+        "median": -67,
+        "minimum": -67,
+        "unavailable_samples": 0
+      },
+      "tx_phy_rate_mbps": {
+        "adjacent_measured_pairs": 20,
+        "distinct_values": 1,
+        "equal_adjacent_pairs": 20,
+        "maximum": 432,
+        "measured_samples": 21,
+        "median": 432,
+        "minimum": 432,
+        "unavailable_samples": 0
+      }
+    },
+    "observed_configurations": [
+      {
+        "band": "5 GHz",
+        "channel": 40,
+        "channel_width_mhz": 80,
+        "interface": "en0",
+        "interface_mode": "station",
+        "phy_mode": "802.11ax",
+        "sample_count": 21
+      }
+    ],
+    "sample_count": 21,
+    "timestamped_samples": 21
+  }
+}

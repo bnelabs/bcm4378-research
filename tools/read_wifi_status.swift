@@ -7,6 +7,14 @@ guard let wifi = client.interface() else {
     exit(1)
 }
 
+struct InterfaceTraffic: Encodable {
+    let sampled_at_unix_seconds: Double
+    let rx_bytes: UInt64
+    let tx_bytes: UInt64
+    let rx_packets: UInt64
+    let tx_packets: UInt64
+}
+
 struct WiFiStatus: Encodable {
     let interface: String?
     let api_visible_interfaces: [String]?
@@ -21,6 +29,7 @@ struct WiFiStatus: Encodable {
     let tx_rate_mbps: Double?
     let corewlan_transmit_power: Int?
     let sampled_at_unix_seconds: Double
+    let interface_traffic: InterfaceTraffic?
     let reported_channel_widths_mhz_by_band: [String: [Int]]?
     let reported_channel_numbers_by_band_and_width_mhz: [String: [Int: [Int]]]?
 }
@@ -50,8 +59,59 @@ func channelsByBandAndWidth(_ channels: Set<CWChannel>) -> [String: [Int: [Int]]
     return channelsByBand.mapValues { $0.mapValues { $0.sorted() } }
 }
 
-func readStatus(includeCapabilities: Bool) -> WiFiStatus {
+func parseInterfaceTraffic(_ output: String, interfaceName: String, sampledAt: Double) -> InterfaceTraffic? {
+    let lines = output.split(whereSeparator: \.isNewline)
+    guard let header = lines.first?.split(whereSeparator: \.isWhitespace),
+          let name = header.firstIndex(of: "Name"),
+          let network = header.firstIndex(of: "Network"),
+          let receivedBytes = header.firstIndex(of: "Ibytes"),
+          let sentBytes = header.firstIndex(of: "Obytes"),
+          let receivedPackets = header.firstIndex(of: "Ipkts"),
+          let sentPackets = header.firstIndex(of: "Opkts") else { return nil }
+
+    for line in lines.dropFirst() {
+        let row = line.split(whereSeparator: \.isWhitespace)
+        guard row.count == header.count,
+              row[name] == interfaceName || row[name] == "\(interfaceName)*",
+              row[network].hasPrefix("<Link#"), row[network].hasSuffix(">"),
+              let rxBytes = UInt64(row[receivedBytes]), let txBytes = UInt64(row[sentBytes]),
+              let rxPackets = UInt64(row[receivedPackets]), let txPackets = UInt64(row[sentPackets]) else {
+            continue
+        }
+        return InterfaceTraffic(
+            sampled_at_unix_seconds: sampledAt,
+            rx_bytes: rxBytes,
+            tx_bytes: txBytes,
+            rx_packets: rxPackets,
+            tx_packets: txPackets
+        )
+    }
+    return nil
+}
+
+func readInterfaceTraffic(_ interfaceName: String) -> InterfaceTraffic? {
+    let netstat = Process()
+    let output = Pipe()
+    netstat.executableURL = URL(fileURLWithPath: "/usr/sbin/netstat")
+    netstat.arguments = ["-ibn", "-I", interfaceName]
+    netstat.standardOutput = output
+    netstat.standardError = FileHandle.nullDevice
+    do {
+        try netstat.run()
+    } catch {
+        return nil
+    }
+    let data = output.fileHandleForReading.readDataToEndOfFile()
+    netstat.waitUntilExit()
+    guard netstat.terminationStatus == 0, let text = String(data: data, encoding: .utf8) else {
+        return nil
+    }
+    return parseInterfaceTraffic(text, interfaceName: interfaceName, sampledAt: Date().timeIntervalSince1970)
+}
+
+func readStatus(includeCapabilities: Bool, includeTraffic: Bool) -> WiFiStatus {
     let timestamp = Date().timeIntervalSince1970
+    let interfaceName = wifi.interfaceName
     let channel = wifi.wlanChannel()
     let rssi = wifi.rssiValue()
     let noise = wifi.noiseMeasurement()
@@ -60,7 +120,7 @@ func readStatus(includeCapabilities: Bool) -> WiFiStatus {
     let channels = includeCapabilities ? wifi.supportedWLANChannels().map(channelsByBandAndWidth) : nil
     let apiInterfaces = includeCapabilities ? (client.interfaces() ?? []).compactMap { $0.interfaceName }.sorted() : nil
     return WiFiStatus(
-        interface: wifi.interfaceName,
+        interface: interfaceName,
         api_visible_interfaces: apiInterfaces,
         interface_mode: modeNames[wifi.interfaceMode()] ?? "unknown",
         radio_power_on: wifi.powerOn(),
@@ -73,16 +133,20 @@ func readStatus(includeCapabilities: Bool) -> WiFiStatus {
         tx_rate_mbps: rate.isFinite && rate > 0 ? rate : nil,
         corewlan_transmit_power: power > 0 ? power : nil,
         sampled_at_unix_seconds: timestamp,
+        interface_traffic: includeTraffic ? interfaceName.flatMap(readInterfaceTraffic) : nil,
         reported_channel_widths_mhz_by_band: channels?.mapValues { $0.keys.sorted() },
         reported_channel_numbers_by_band_and_width_mhz: channels
     )
 }
 
 let encoder = JSONEncoder()
-let args = Array(CommandLine.arguments.dropFirst())
+let options = CommandLine.arguments.dropFirst()
+let includeTraffic = options.last == "--traffic"
+let args = Array(includeTraffic ? options.dropLast() : options)
 if args.isEmpty {
     encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-    print(String(decoding: try encoder.encode(readStatus(includeCapabilities: true)), as: UTF8.self))
+    let status = readStatus(includeCapabilities: true, includeTraffic: includeTraffic)
+    print(String(decoding: try encoder.encode(status), as: UTF8.self))
 } else if args.count == 3, args[0] == "--sample",
           let count = Int(args[1]), count > 0,
           let interval = TimeInterval(args[2]), interval.isFinite, interval > 0 {
@@ -91,10 +155,11 @@ if args.isEmpty {
         if index > 0 {
             Thread.sleep(forTimeInterval: interval)
         }
-        print(String(decoding: try encoder.encode(readStatus(includeCapabilities: false)), as: UTF8.self))
+        let status = readStatus(includeCapabilities: false, includeTraffic: includeTraffic)
+        print(String(decoding: try encoder.encode(status), as: UTF8.self))
     }
 } else {
-    let usage = "Usage: swift tools/read_wifi_status.swift [--sample COUNT INTERVAL_SECONDS]\n"
+    let usage = "Usage: swift tools/read_wifi_status.swift [--sample COUNT INTERVAL_SECONDS] [--traffic]\n"
     FileHandle.standardError.write(Data(usage.utf8))
     exit(2)
 }
