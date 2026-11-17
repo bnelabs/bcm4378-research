@@ -41,6 +41,8 @@ A byte-for-byte search returned zero matches for the five whole PTBs or their te
 
 ## Coexistence experiment
 
+The Wi-Fi driver publishes a four-record coexistence table and exposes reporter metadata for antenna arbitration and audio counters. The signed driver trace records where these values enter the firmware and how the host calculates its coexistence snapshot. [Wi-Fi and Bluetooth coexistence policy](bluetooth-coexistence-policy.md)
+
 The A2337 lab exhibits measured conducted transmit power on both Bluetooth outputs in beamforming configurations for Classic Bluetooth, LE 1M and 2M, HDR4 and HDR8. The antenna diagram shows two physically separated Wi-Fi/Bluetooth antenna locations. The beam pattern, link benefit and macOS access remain open. [Bluetooth beamforming exhibits](a2337-rf-tests.md#bluetooth-transmit-beamforming)
 
 A separately managed test Mac and an owned BLE sensor can establish whether the documented GATT notification path remains responsive while Wi-Fi carries ordinary data. Record the notification intervals and lost messages, then align them with CoreWLAN snapshots and a fixed application workload. Hold the Wi-Fi band and width fixed for each trial and run a matching trial with the sensor idle. An independent connection for managing the test target preserves this Mac's uplink. The current host observation identifies both functions and the Bluetooth service flags. A simultaneous workload has yet to be measured. [CoreWLAN sampling](../README.md#reproduce-the-baseline), [A2337 radio test evidence](spectrum-sensing.md#a2337-lab-spectrum)

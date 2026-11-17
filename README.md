@@ -7,6 +7,7 @@ This repository records the Wi-Fi hardware, driver and firmware of the 2020 M1 M
 - [Running firmware capabilities](docs/firmware-capabilities.md) records the live firmware words and traces the macOS ranging and CSI gates.
 - [DriverKit and radio services](docs/driver-interfaces.md) records the shipped host driver, the running Wi-Fi interfaces and the Bluetooth endpoint.
 - [Bluetooth companion firmware](docs/bluetooth-firmware.md) maps the controller version to installed artifacts and records the native macOS application controls.
+- [Wi-Fi and Bluetooth coexistence](docs/bluetooth-coexistence-policy.md) traces board defaults, association protection and antenna-sharing telemetry.
 - [Spectrum coverage and sensing](docs/spectrum-sensing.md) compares the stock channel list, A2337 lab measurements and applicable research.
 - [Clear-channel assessment reporting](docs/cca-provenance.md) traces the live legend, native cache, and Linux survey measurement.
 - [A2337 RF tests](docs/a2337-rf-tests.md) records simultaneous Wi-Fi and Bluetooth tests, HE waveforms and Bluetooth transmit beamforming measurements.
@@ -43,7 +44,7 @@ python3 tools/read_macos_inventory.py
 swift tools/read_pcie_link.swift
 ```
 
-The sampler emits timestamped JSON lines from the current association's status getters. The summary reports missing and repeated readings, operating context, PHY rate and paired RSSI-minus-noise. The optional `--traffic` flag adds aggregate interface byte and packet counts. The offline `--he-candidates` option lists compatible nominal HE modes for each reported whole-Mb/s rate under a full-channel model. The role-counter tool compares host counter changes across five Wi-Fi interfaces in the same time windows. The inventory records I/O Registry role names, PCIe aperture sizes, the published firmware capability words and hashes of the selected firmware files.
+The sampler emits timestamped JSON lines from the current association's status getters. The summary reports missing and repeated readings, operating context, PHY rate and paired RSSI-minus-noise. The optional `--traffic` flag adds aggregate interface byte and packet counts. The offline `--he-candidates` option lists compatible nominal HE modes for each reported whole-Mb/s rate under a full-channel model. The role-counter tool compares host counter changes across five Wi-Fi interfaces in the same time windows. The inventory records I/O Registry role names, PCIe aperture sizes, published firmware capability words and coexistence parameters, and hashes of the selected firmware files.
 
 ```sh
 python3 tools/inventory_board_profiles.py /usr/share/firmware/wifi

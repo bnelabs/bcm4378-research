@@ -56,8 +56,9 @@ TRANSPORT_CONFIG_KEYS = (
     "wlan.tx.submission-queue.size",
     "wlan.skywalk.packetpoolsize",
 )
+BTC_PARAMETER_KEY = "bcom.btc.params"
 CONFIG_KEYS = (
-    "bcom.btc.params",
+    BTC_PARAMETER_KEY,
     "bcom.roam.default",
     "bcom.roam.profiles",
     "bcom.wow.magic-packet",
@@ -238,6 +239,19 @@ def inspect_image(path, include_embedded_metadata=False, lane_windows=(), includ
     return report
 
 
+def decode_btc_parameters(data):
+    """Decode the complete little-endian ID/value pairs consumed by macOS."""
+    trailing_bytes = len(data) % WORD_PAIR.size
+    pairs = memoryview(data)[: len(data) - trailing_bytes]
+    return {
+        "bytes": len(data),
+        "parameters": [
+            {"id": parameter, "value": value} for parameter, value in WORD_PAIR.iter_unpack(pairs)
+        ],
+        "trailing_bytes": trailing_bytes,
+    }
+
+
 def inspect_platform_config(path):
     data, identity = read_artifact(path)
     config = plistlib.loads(data)
@@ -248,7 +262,9 @@ def inspect_platform_config(path):
         if key in config:
             value = config[key]
             summary = {"type": type(value).__name__}
-            if isinstance(value, bytes):
+            if key == BTC_PARAMETER_KEY and isinstance(value, bytes):
+                summary.update(decode_btc_parameters(value))
+            elif isinstance(value, bytes):
                 summary["bytes"] = len(value)
             elif isinstance(value, (bool, int)):
                 summary["value"] = value

@@ -1,0 +1,340 @@
+{
+  "sampled_at_utc": "2026-11-17T09:40:56+00:00",
+  "host": {
+    "model": "MacBookAir10,1",
+    "macos_version": "27.2.1",
+    "macos_build": "26B131",
+    "default_ipv4_interface": "en0",
+    "wifi_firmware_version": "wl0: Aug 11 2026 16:24:13 version 18.20.511.0.7.8.207 FWID 01-2606388a"
+  },
+  "signed_driver_file": {
+    "path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "resolved_path": "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN",
+    "bytes": 10564944,
+    "sha256": "6b004d2054933d4176e1589c09e07964b836ece0365a0aef4d9e0be77e61845f"
+  },
+  "strict_signature_verified": true,
+  "slices_traced": [
+    "arm64e",
+    "arm64e.x1"
+  ],
+  "host_platform_parameter_table": {
+    "registry_service": "AppleBCMWLANBusInterfacePCIe",
+    "property_key": "bcom.btc.params",
+    "sha256": "19a03feaadf12349e0e8b944e6dff0fda71e4f70a44c464733f481868884cb56",
+    "bytes": 32,
+    "parameters": [
+      {
+        "id": 6,
+        "value": 15
+      },
+      {
+        "id": 8,
+        "value": 45000
+      },
+      {
+        "id": 9,
+        "value": 15000
+      },
+      {
+        "id": 10,
+        "value": 20000
+      }
+    ],
+    "trailing_bytes": 0,
+    "installed_profile_roots": {
+      "/usr/share/firmware/wifi": {
+        "profile_paths": 56,
+        "matches_live_data": 56
+      },
+      "/System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/PlatformConfig/macOS": {
+        "profile_paths": 56,
+        "matches_live_data": 56
+      }
+    },
+    "static_consumer_chain": [
+      "AppleBCMWLANCore::setupFirmware",
+      "AppleBCMWLANConfigManager::setupFirmwareWithDTDefaults",
+      "AppleBCMWLANConfigManager::setBTCParameters",
+      "AppleBCMWLANCommander::runIOVarSet"
+    ],
+    "firmware_variable": "btc_params",
+    "failed_record_stops_iteration": false,
+    "firmware_acknowledgment_sampled": false
+  },
+  "nvram": {
+    "profile_paths": 250,
+    "unique_profile_payloads": 10,
+    "per_board": [
+      {
+        "stepping": "B1",
+        "board": "atlantisb",
+        "profile_paths": 50,
+        "settings": {
+          "btc_alt_ant_config": "0x2",
+          "btc_mode": "1",
+          "btc_prisel_ant_mask": "0"
+        }
+      },
+      {
+        "stepping": "B1",
+        "board": "capri",
+        "profile_paths": 45,
+        "settings": {
+          "btc_ant_share": "0x11",
+          "btc_mode": "1",
+          "btc_prisel_ant_mask": "0"
+        }
+      },
+      {
+        "stepping": "B1",
+        "board": "honshu",
+        "profile_paths": 50,
+        "settings": {
+          "btc_ant_share": "0x2",
+          "btc_mode": "1",
+          "btc_prisel_ant_mask": "0"
+        }
+      },
+      {
+        "stepping": "B1",
+        "board": "kyushu",
+        "profile_paths": 5,
+        "settings": {
+          "btc_ant_share": "0x2",
+          "btc_mode": "1",
+          "btc_prisel_ant_mask": "0"
+        }
+      },
+      {
+        "stepping": "B1",
+        "board": "santorini",
+        "profile_paths": 45,
+        "settings": {
+          "btc_ant_share": "0x11",
+          "btc_mode": "1",
+          "btc_prisel_ant_mask": "0"
+        }
+      },
+      {
+        "stepping": "B1",
+        "board": "shikoku",
+        "profile_paths": 45,
+        "settings": {
+          "btc_ant_share": "0x2",
+          "btc_mode": "1",
+          "btc_prisel_ant_mask": "0"
+        }
+      },
+      {
+        "stepping": "B3",
+        "board": "kyushu",
+        "profile_paths": 10,
+        "settings": {
+          "btc_ant_share": "0x2",
+          "btc_mode": "1",
+          "btc_prisel_ant_mask": "0"
+        }
+      }
+    ],
+    "requested_profile": {
+      "requested_name": "C-4378__s-B1/P-shikoku-X3_M-RASP_V-m__m-6.11.txt",
+      "sha256": "2e15b8551b3cbf945247a6e25a8efbfb392476d799e81cbc61f659b55dc049b4",
+      "settings": {
+        "btc_ant_share": "0x2",
+        "btc_mode": "1",
+        "btc_prisel_ant_mask": "0"
+      }
+    }
+  },
+  "stored_trx_literal_search": {
+    "C-4378__s-B1/shikoku.trx": {
+      "sha256": "7230e9ea5a3ac10c9ba5ea9093f678ae813b0423bbf1f37f7c38ca12eebb1e06",
+      "matching_trx_paths": 20,
+      "ascii_substring_counts": {
+        "btc_mode": 1,
+        "btc_params": 2,
+        "btc_wifi_prot": 2,
+        "btc_profile": 0,
+        "btc_2g_shchain_disable": 0,
+        "btc_nss": 0
+      }
+    },
+    "C-4378__s-B1/capri.trx": {
+      "sha256": "c06572025af27c6dbd465dad5bdc0a26ca1b2b01a7a06d9899d5a947642dc8a6",
+      "matching_trx_paths": 10,
+      "ascii_substring_counts": {
+        "btc_mode": 1,
+        "btc_params": 2,
+        "btc_wifi_prot": 2,
+        "btc_profile": 0,
+        "btc_2g_shchain_disable": 0,
+        "btc_nss": 0
+      }
+    },
+    "C-4378__s-B3/kyushu.trx": {
+      "sha256": "ce0ffa9df958a589a8de93374e71034dc6572ef9e292e032eefa93ba45a6bb3a",
+      "matching_trx_paths": 5,
+      "ascii_substring_counts": {
+        "btc_mode": 1,
+        "btc_params": 2,
+        "btc_wifi_prot": 2,
+        "btc_profile": 0,
+        "btc_2g_shchain_disable": 0,
+        "btc_nss": 0
+      }
+    }
+  },
+  "published_firmware_words": [
+    "ucm",
+    "btc_wifi_prot"
+  ],
+  "host_driver_policy": {
+    "5ghz_coexistence": {
+      "capability_word": "bt5gcx",
+      "legacy_driver_feature_bit": 120,
+      "word_in_published_firmware_reply": false,
+      "shared_driver_event_version": 12,
+      "event_log_fields": [
+        "bt5g_status",
+        "bt5g_defer_cnt",
+        "bt5g_no_defer_cnt",
+        "bt5g_defer_max_switch_dur",
+        "bt5g_no_defer_max_switch_dur"
+      ]
+    },
+    "join_protection": {
+      "capability_word": "btc_wifi_prot",
+      "driver_feature_bit": 15,
+      "caller": "AppleBCMWLANJoinAdapter::performJoin",
+      "gate": "AppleBCMWLANCore::checkFor4WayHSProtectionSupport",
+      "consumer": "AppleBCMWLANJoinAdapter::set4WayHandshakeProtection",
+      "firmware_report_versions_handled": [
+        1,
+        2
+      ]
+    },
+    "coexistence_profile_reply_versions_handled": [
+      1,
+      2,
+      3
+    ],
+    "related_firmware_variables_in_shared_driver": [
+      "btc_profile",
+      "btc_profile_active",
+      "btc_2g_shchain_disable",
+      "btc_nss"
+    ]
+  },
+  "published_ioreport_metadata": {
+    "reporter": "IO80211ReporterProxy",
+    "legend_marked_public": true,
+    "group": "BT Coex",
+    "channel_count": 56,
+    "channel_labels": {
+      "Coex Snapshot": [
+        "BTDuration(s)",
+        "BTUse(%)",
+        "TS(ms)"
+      ],
+      "Counters": [
+        "Antenna Requests",
+        "Antenna Grants",
+        "WLAN Preempted",
+        "PSNULL exceeded",
+        "High UCode Latency"
+      ],
+      "Enabled State": [
+        "Enabled"
+      ],
+      "TDM State": [
+        "TDM"
+      ],
+      "Hybrid State": [
+        "Hybrid"
+      ],
+      "Antenna Ownership": [
+        "Antenna Ownership while on 2GHz"
+      ],
+      "Antenna Request Reason": [
+        "ACL",
+        "SCO",
+        "eSCO",
+        "A2DP",
+        "Sniff",
+        "Page Scan",
+        "Inquity Scan",
+        "Page",
+        "Inquiry",
+        "MSS",
+        "PARK",
+        "BLE",
+        "BLE Scan",
+        "Other"
+      ],
+      "Extra Counters": [
+        "PM Protection Attempt",
+        "PM Protection Success",
+        "CTS2A Protection Success",
+        "WLAN Tx Preemption",
+        "WLAN Rx Preemption",
+        "AP Tx after PM Protection",
+        "Periodic Audio Grant Count",
+        "Periodic Audio Deny Count",
+        "A2DP Grant Count",
+        "A2DP Deny Count",
+        "Sniff Grant Count",
+        "Sniff Deny Count",
+        "Decision Map",
+        "Decision Count",
+        "A2DP High Watermark Count",
+        "Data Delay Count",
+        "Ant Grant By Critical BT Task",
+        "Ant Grant By High BT Task",
+        "A2DP Buffer1 Ant Grant",
+        "A2DP Buffer2 Ant Grant",
+        "A2DP Buffer3 Ant Grant",
+        "A2DP Buffer4 Ant Grant",
+        "A2DP Buffer5 Ant Grant",
+        "A2DP Buffer6 Ant Grant",
+        "A2DP Buffer7 Ant Grant",
+        "A2DP Buffer8 Ant Grant",
+        "Ant Grant LT 10ms",
+        "Ant Grant LT 30ms",
+        "Ant Grant LT 60ms",
+        "Ant Grant GT 10ms"
+      ]
+    },
+    "snapshot_channel_ids_as_ascii": {
+      "BTDuration(s)": "BtDur   ",
+      "BTUse(%)": "BtUse(%)",
+      "TS(ms)": "BtTS    "
+    },
+    "firmware_event_versions_with_controller_consumer": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      9,
+      11,
+      12
+    ],
+    "shared_cache_monitor_trace": {
+      "image_path": "/System/DriverKit/System/Library/PrivateFrameworks/IO80211DriverKit.framework/IO80211DriverKit",
+      "image_uuid": "f0ba88aa-2977-307d-b8c6-ddcec8e76f9e",
+      "monitor": "IO80211ControllerMonitor::setBTCoexstat",
+      "snapshot_minimum_elapsed_window_ms": 4501,
+      "BTDuration(s)": "Difference between the host window endpoints after truncating each endpoint to whole seconds",
+      "BTUse(%)": "Integer ratio of accumulated event duration in milliseconds times 100 to elapsed window milliseconds",
+      "TS(ms)": "Host calendar time in milliseconds"
+    },
+    "scope": "I/O Registry legend properties and static consumers",
+    "metric_values_sampled": false
+  },
+  "brcmfmac_reference": {
+    "linux_stable_commit": "7595a62d45ee1a2297eafa5f2ef5d0a45142d84d",
+    "asahi_commit": "201be96df5654336bdcbe1da2103f193d7a0b940",
+    "shared_btcoex_c_sha256": "bce337ad63ef4cccc5ec2bba0b64fe58f122e6b3e79111160c6d4877697028b0"
+  }
+}
