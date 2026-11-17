@@ -21,6 +21,8 @@ With an owned camera or phone, the next version would carry the preview on a sep
 
 The receiver's deadline misses can drive the sender to lower archive pacing or use smaller previews. The published same-network, other-network, and interference readings can help explain the circumstances after the fact. In one 22-second run the connected Mac returned 18% average and 7% other-network CCA at every read. Decisions about immediate rate need the receiver's delivery times because the CCA values can persist across snapshots. [Live airtime values](live-wifi-airtime.md)
 
+Two small HTTPS transfers on this Mac showed that the inspection socket setting can be visible at only part of the path. The video class advanced the tunnel queue while the Wi-Fi video queue and radio's video counters stayed flat. Keep the preview deadline in the sender and receiver, and check physical queue behavior wherever the inspection system is deployed. [Measured tunnel and Wi-Fi queues](wifi-traffic-scheduling.md#where-interactive-priority-showed-up-on-the-connected-mac)
+
 ## Wake the Mac when inspection work actually arrives
 
 An owned sensor can hold a small work queue while the Mac sleeps, discover the service over the local network, and submit an analysis job when new evidence arrives. The chip's firmware can be provisioned with address-resolution replies, Bonjour service records, filters, and keepalives. Those pieces let the system preserve enough network presence for an on-demand workstation. The heavy work still runs on the Mac after wake. The path is useful when inputs are sparse and the workstation would otherwise stay awake waiting. [ThreadX roles](rtos-threadx.md), [Sleep offload paths](sleep-network-offloads.md)

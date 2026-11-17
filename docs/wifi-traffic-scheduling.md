@@ -21,6 +21,19 @@ Published XNU maps the BSD service type to socket traffic metadata and sets a se
 
 On a connected test flow, `SO_NETSVC_MARKING_LEVEL` can read the socket's marking policy for its last outgoing interface. Managed Wi-Fi profiles can apply an app allowlist through `QoSMarkingPolicy`. IP DSCP and 802.11 user priority are distinct fields. The AP's mapping affects the downstream result. [XNU marking getter](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/bsd/netinet/in_tclass.c#L872-L911), [Apple Wi-Fi marking policy](https://developer.apple.com/documentation/devicemanagement/wifi/qosmarkingpolicy-data.dictionary), [RFC 8325](https://www.rfc-editor.org/rfc/rfc8325.html)
 
+## Where interactive priority showed up on the connected Mac
+
+The IPv4 default interface was `en0` before and after. The two successful HTTPS targets both used the existing `utun0` route. One read used a Python TLS socket and the other used macOS libcurl. Each requested interactive video and read the requested value back after the transfer. The marking getter returned 1 in each case, the SDK's default link-layer marking level for the socket's reported outgoing interface. [Live observations](../evidence/2026-11-17-connected-wifi-qos.json), [SDK option values](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/bsd/sys/socket.h#L299-L305)
+
+| HTTPS read | Body | New video-queue packets on `utun0` | New video-queue packets on `en0` | New video TID 4 or 5 frames across both Tx reports |
+| --- | ---: | ---: | ---: | ---: |
+| GitHub robots file | 30,190 bytes | 13 | 0 | 0 |
+| Apple connection check | 68 bytes | 14 | 0 | 0 |
+
+Both windows showed more best-effort activity on the Wi-Fi host queue and an increase in the radio's TID 0 count. The video increases were visible in the tunnel queue while the observed Wi-Fi video buckets stayed flat. The counters include concurrent traffic. Individual frame attribution and the tunnel provider's outer marking policy remain unverified. The two idle windows had zero video-queue increments. The best-effort and background comparison requests timed out. [Counters and comparison windows](../evidence/2026-11-17-connected-wifi-qos.json)
+
+For an application such as the inspection prototype, send deadline-sensitive data first at the application layer. Measure queue behavior on the actual transport path before relying on a requested socket priority to change radio scheduling. [Inspection scheduler](practical-radio-applications.md#see-a-defect-while-the-full-image-is-still-in-transit)
+
 ## Live scheduler and firmware reporting
 
 | Interface | Kernel send queue groups from `netstat -q` | Dequeued packets in the sample |
@@ -35,6 +48,8 @@ Each scheduler reported a 6,720-packet limit, a **10 ms** classic queue-delay ta
 The signed driver's `getTxSubQueue` selects a Skywalk submission queue using a WME access-category index. The PCIe flow path passes an access category through `requestFlowId` before `createFlow`. The live `FWCap` string includes `wme`. The report legend names transmit and receive MPDU counters for traffic IDs 0–7 on each of two published slices. It also lists per-TID receive-loss counters for Block Ack and non-Block Ack traffic. Firmware event record parsers feed the per-slice report writers. The inventory key `wifi.wme_tid_reporting` reads the published label catalog. Actual counter deltas and the TIDs used by individual flows remain unmeasured. [Driver and legend evidence](../evidence/2026-11-17-wifi-traffic-scheduling.json), [PCIe queue sizing](pcie-queue-sizing.md)
 
 Stable Linux 7.3.4 and Asahi 7.3.4-2 contain identical `flowring.c` files. The unicast priority map assigns priorities 0–7 to flow-ring FIFOs `0, 1, 1, 0, 2, 2, 3, 3`. The ring-creation message uses that FIFO in its TID field and the transmit descriptor retains the original three-bit packet priority. [Linux FIFO mapping](https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.c#L28-L37), [FIFO getter](https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.c#L168-L175), [Linux ring creation](https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/drivers/net/wireless/broadcom/brcm80211/brcmfmac/msgbuf.c#L644-L650), [Linux transmit priority](https://github.com/gregkh/linux/blob/7595a62d45ee1a2297eafa5f2ef5d0a45142d84d/drivers/net/wireless/broadcom/brcm80211/brcmfmac/msgbuf.c#L764-L774), [Asahi FIFO mapping](https://github.com/AsahiLinux/linux/blob/201be96df5654336bdcbe1da2103f193d7a0b940/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.c#L28-L37)
+
+The numeric reader returned all 32 Tx and Rx MPDU counters on this build without elevated privileges. Each record counts frames in one direction and traffic ID for one radio slice. The types and grouping come from the live report itself. [Numeric WME reader](live-wifi-airtime.md#read-wi-fi-priority-counters), [Sample values](../evidence/2026-11-17-connected-wifi-qos.json)
 
 ## Additional firmware policy paths
 
@@ -54,6 +69,17 @@ python3 tools/read_macos_inventory.py
 ```
 
 The socket probe sets options on its own unconnected descriptors and closes them. The other commands read the host scheduler and registry. The evidence lists both signed driver slices and the method addresses for a static reproduction. [Evidence](../evidence/2026-11-17-wifi-traffic-scheduling.json)
+
+The connected probe changes the service type on one certificate-checked HTTPS connection and measures logical queue, Wi-Fi queue, and radio counter deltas around each request. Supply a small object of at most 64 KiB on a server that keeps the connection open. A local HTTPS listener verified six marked reads and three idle windows. The two external spot checks above used separate connections. [Probe source](../tools/probe_connected_wifi_qos.py), [Local verification](../evidence/2026-11-17-connected-wifi-qos.json)
+
+```sh
+bcm4378_report_dir=$(mktemp -d)
+xcrun clang -O2 -fobjc-arc -Wall -Wextra -Werror -framework Foundation \
+  -framework CoreWLAN -framework IOKit -lIOReport tools/read_wifi_airtime.m \
+  -o "$bcm4378_report_dir/read_wifi_airtime"
+python3 -B tools/probe_connected_wifi_qos.py "$small_https_url" \
+  --wme-reader "$bcm4378_report_dir/read_wifi_airtime"
+```
 
 1. **Protect interactive traffic during bulk transfers.** On a second A2337 with console access, a separate AP, and a wired peer, run a voice-like flow alongside a file transfer. Compare default settings with a voice service class and a background bulk class. Correlate host queue deltas, AP-observed TIDs, throughput, and 95th-percentile delay.
 2. **Measure burst reduction.** Set a finite pacing rate on the test TCP transfer and compare peer arrival bursts and queue delay with the default over equal intervals. Observe each direction before attributing a change to the radio.

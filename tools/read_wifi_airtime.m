@@ -3,6 +3,7 @@
 #import <IOKit/IOKitLib.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 #include <unistd.h>
 
 // These libIOReport signatures were checked on macOS build 26B131.
@@ -54,7 +55,7 @@ static NSDictionary *readWLANReportCatalogue(uint64_t *driverID)
     return [catalogue[ChannelList] isKindOfClass:[NSArray class]] ? catalogue : nil;
 }
 
-static BOOL isAirtimeChannel(CFDictionaryRef row, uint64_t driverID)
+static BOOL isSelectedChannel(CFDictionaryRef row, uint64_t driverID, BOOL wmeOnly)
 {
     if (IOReportChannelGetDriverID(row) != driverID) {
         return NO;
@@ -62,6 +63,12 @@ static BOOL isAirtimeChannel(CFDictionaryRef row, uint64_t driverID)
     NSString *group = (__bridge NSString *)IOReportChannelGetGroup(row);
     NSString *subgroup = (__bridge NSString *)IOReportChannelGetSubGroup(row);
     NSString *name = (__bridge NSString *)IOReportChannelGetChannelName(row);
+    if (wmeOnly) {
+        NSString *label = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        return [subgroup isEqualToString:@"Counters"] &&
+            (([group hasPrefix:@"Tx MPDU WME Slice "] && [label hasPrefix:@"Tx MPDU Tid"]) ||
+             ([group hasPrefix:@"Rx MPDU WME Slice "] && [label hasPrefix:@"Rx MPDU Tid"]));
+    }
     if ([group isEqualToString:@"Channel"]) {
         return [subgroup isEqualToString:@"CCA State"] || [subgroup isEqualToString:@"CCA Last Reported"];
     }
@@ -76,10 +83,13 @@ static id reportInteger(int64_t value)
     return value == INT64_MIN ? (id)[NSNull null] : @(value);
 }
 
-static NSDictionary *decodeReport(CFDictionaryRef row)
+static NSDictionary *decodeReport(CFDictionaryRef row, BOOL wmeOnly)
 {
     NSString *group = (__bridge NSString *)IOReportChannelGetGroup(row);
     NSString *name = (__bridge NSString *)IOReportChannelGetChannelName(row);
+    if (wmeOnly) {
+        name = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    }
     uint8_t format = IOReportChannelGetFormat(row);
     NSMutableDictionary *report = [@{
         @"group": [name isEqualToString:ExternalCCA] ? @"Interface en0" : group ?: @"",
@@ -122,20 +132,26 @@ static NSDictionary *currentLink(void)
     };
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
+    BOOL wmeOnly = argc == 2 && strcmp(argv[1], "--wme") == 0;
+    if (argc != 1 && !wmeOnly) {
+        fputs("Usage: read_wifi_airtime [--wme]\n", stderr);
+        return 2;
+    }
     @autoreleasepool {
         uint64_t driverID = 0;
         NSDictionary *catalogue = readWLANReportCatalogue(&driverID);
         NSMutableArray *requested = [NSMutableArray array];
         for (id channel in catalogue[ChannelList]) {
             if ([channel isKindOfClass:[NSDictionary class]] &&
-                isAirtimeChannel((__bridge CFDictionaryRef)channel, driverID)) {
+                isSelectedChannel((__bridge CFDictionaryRef)channel, driverID, wmeOnly)) {
                 [requested addObject:channel];
             }
         }
         if (requested.count == 0) {
-            fputs("No matching WLAN airtime channels in the IOReport catalogue.\n", stderr);
+            fprintf(stderr, "No matching WLAN %s channels in the IOReport catalogue.\n",
+                wmeOnly ? "WME" : "airtime");
             return 1;
         }
 
@@ -169,8 +185,8 @@ int main(void)
         NSMutableArray *reports = [NSMutableArray array];
         for (id channel in sample[ChannelList]) {
             if ([channel isKindOfClass:[NSDictionary class]] &&
-                isAirtimeChannel((__bridge CFDictionaryRef)channel, driverID)) {
-                [reports addObject:decodeReport((__bridge CFDictionaryRef)channel)];
+                isSelectedChannel((__bridge CFDictionaryRef)channel, driverID, wmeOnly)) {
+                [reports addObject:decodeReport((__bridge CFDictionaryRef)channel, wmeOnly)];
             }
         }
         CFRelease(channelSet);

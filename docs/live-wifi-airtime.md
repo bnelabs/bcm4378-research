@@ -35,3 +35,7 @@ xcrun clang -fobjc-arc -Wall -Wextra -Werror \
 One run prints JSON with the current CoreWLAN association, 38 channel values and state records, the interface CCA records, and the QBSS fields. The code uses private libIOReport signatures verified on this build. A sample requests the driver's normal telemetry update, whose code can read firmware power statistics and manage event counters. The active channel and route were checked around the series. [Report update path](cca-provenance.md#ioreport-catalog-and-sample-path)
 
 The separate CoreWiFi client created with its default service returned empty values for current CCA, cached link quality, MCS, guard interval, and spatial streams in the unprivileged test. IOReport supplied the airtime values above. [Service probe results](../evidence/2026-11-17-live-wifi-airtime.json)
+
+## Read Wi-Fi priority counters
+
+Run `"$build_dir/read_wifi_airtime" --wme` after the same build. This mode requests 32 simple counters from the WLAN reporter. Each of the two slices has eight transmit and eight receive MPDU counters, one per traffic ID. The values are cumulative. Compare snapshots of the same interface and channel context around known traffic. Use the host queue and route alongside the radio counters when packets pass through a tunnel. [Connected measurement](wifi-traffic-scheduling.md#where-interactive-priority-showed-up-on-the-connected-mac)
