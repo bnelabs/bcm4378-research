@@ -48,4 +48,13 @@ Use the same build to read the channel-switch counters, slice byte counters and 
 "$build_dir/read_wifi_airtime" --channel-switch
 ```
 
-This reader returned 66 records on build 26B131. In `Channels Visited`, `name` gives the driver's display label and `channel_id_hex` preserves the identifier with the slice and raw channel specification. Take before-and-after snapshots of the same run. Compare both slices' byte deltas with the host path report and compare switch counters only where both snapshots contain the same channel ID. A counter can persist across many reads and channel-switch history has no event timestamp. [Reporter implementation](../tools/read_wifi_airtime.m), [Trace and observed deltas](simultaneous-dual-band.md#read-the-channel-history-of-each-slice)
+This reader returned 70 records on build 26B131, including four histograms for dwell and hardware retune time. In `Channels Visited`, `name` gives the driver's display label and `channel_id_hex` preserves the identifier with the slice and raw channel specification. Compare both slices' byte deltas with the host path report. Switch counts apply to records with the same channel ID across both snapshots. [Reporter implementation](../tools/read_wifi_airtime.m), [Trace and observed deltas](simultaneous-dual-band.md#read-the-channel-history-of-each-slice)
+
+The timing histograms give the count, minimum, maximum and sum per bucket. The first lower bound and last upper bound are open. A single snapshot summarizes the cumulative numbers. To measure one test run, save its start and end JSON from the same running driver. The summary uses changes in counts and sums and reports ranges for percentiles and the number of events above a supplied time budget. [Apple's histogram implementation](https://github.com/apple-oss-distributions/xnu/blob/main/iokit/Kernel/IOHistogramReporter.cpp), [Summary tool](../tools/summarize_switch_timing.py)
+
+```sh
+"$build_dir/read_wifi_airtime" --channel-switch > before.json
+# Run the workload on the separate test device.
+"$build_dir/read_wifi_airtime" --channel-switch > after.json
+python3 -B tools/summarize_switch_timing.py after.json --before before.json --budget-ms 160
+```
