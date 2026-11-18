@@ -44,6 +44,7 @@ case "$platform" in
         cp "$bin" "$app/Contents/MacOS/kyw"
         cp "$app_dir/Info.plist" "$app/Contents/"
         cp "$app_dir/Resources/AppIcon.icns" "$app/Contents/Resources/"
+        cp "$app_dir/Resources/Inter-LICENSE.txt" "$app/Contents/Resources/"
         cp "$app_dir/THIRD-PARTY-LICENSES.txt" "$app/Contents/Resources/"
         plutil -lint "$app/Contents/Info.plist"
         codesign --force --sign - "$app"
@@ -70,6 +71,7 @@ case "$platform" in
         cp "$bin" "$stage/$folder/kyw"
         cp "$app_dir/README.md" "$stage/$folder/README.md"
         cp "$app_dir/THIRD-PARTY-LICENSES.txt" "$stage/$folder/"
+        cp "$app_dir/Resources/Inter-LICENSE.txt" "$stage/$folder/"
         archive="$folder.tar.gz"
         tar -czf "$stage/$archive" -C "$stage" "$folder"
         ;;

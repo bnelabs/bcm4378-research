@@ -9,19 +9,24 @@ use std::sync::mpsc::{self, Receiver, Sender};
 use std::thread;
 use std::time::{Duration, Instant};
 
-const BACKGROUND: Color32 = Color32::from_rgb(12, 19, 27);
-const SIDEBAR: Color32 = Color32::from_rgb(17, 27, 38);
-const PANEL: Color32 = Color32::from_rgb(22, 33, 46);
-const BORDER: Color32 = Color32::from_rgb(44, 61, 78);
-const PAPER: Color32 = Color32::from_rgb(232, 239, 246);
-const MUTED: Color32 = Color32::from_rgb(167, 183, 200);
-const MINT: Color32 = Color32::from_rgb(110, 232, 199);
-const AMBER: Color32 = Color32::from_rgb(246, 199, 117);
+const BACKGROUND: Color32 = Color32::from_rgb(242, 246, 244);
+const SIDEBAR: Color32 = Color32::from_rgb(19, 34, 36);
+const SIDEBAR_ACTIVE: Color32 = Color32::from_rgb(37, 62, 60);
+const SIDEBAR_TEXT: Color32 = Color32::from_rgb(203, 220, 218);
+const SIDEBAR_ACCENT: Color32 = Color32::from_rgb(148, 224, 204);
+const PANEL: Color32 = Color32::WHITE;
+const BORDER: Color32 = Color32::from_rgb(215, 225, 221);
+const PAPER: Color32 = Color32::from_rgb(21, 43, 40);
+const MUTED: Color32 = Color32::from_rgb(77, 102, 96);
+const MINT: Color32 = Color32::from_rgb(18, 113, 89);
+const TINT: Color32 = Color32::from_rgb(228, 241, 235);
+const AMBER: Color32 = Color32::from_rgb(136, 72, 28);
+const HEADING: &str = "Inter Semibold";
 
 pub fn run(file: Option<PathBuf>, smoke: bool) -> eframe::Result {
     let mut viewport = egui::ViewportBuilder::default()
         .with_title("Know Your Wifi")
-        .with_inner_size([1050.0, 735.0])
+        .with_inner_size([1090.0, 740.0])
         .with_min_inner_size([775.0, 565.0]);
     if let Ok(icon) = eframe::icon_data::from_png_bytes(include_bytes!("../Resources/icon.png")) {
         viewport = viewport.with_icon(icon);
@@ -79,25 +84,70 @@ struct Kyw {
     transfer_state: Option<transfer::Progress>,
     transfer_id: u32,
     sending: bool,
+    copied_at: Option<Instant>,
+    icon: Option<egui::TextureHandle>,
     smoke: Option<Instant>,
 }
 
 impl Kyw {
     fn new(ctx: Context, file: Option<PathBuf>, smoke: bool) -> Self {
         let (output, input) = mpsc::channel();
-        let mut visual = egui::Visuals::dark();
+        let mut visual = egui::Visuals::light();
         visual.panel_fill = BACKGROUND;
-        visual.extreme_bg_color = BACKGROUND;
+        visual.extreme_bg_color = PANEL;
         visual.override_text_color = Some(PAPER);
         visual.hyperlink_color = MINT;
-        visual.selection.bg_fill = Color32::from_rgb(30, 76, 70);
-        visual.widgets.inactive.bg_fill = Color32::from_rgb(33, 50, 65);
-        visual.widgets.hovered.bg_fill = Color32::from_rgb(47, 65, 81);
-        ctx.set_visuals(visual);
+        visual.selection.bg_fill = TINT;
+        visual.selection.stroke = Stroke::new(1.0_f32, MINT);
+        for (widget, fill) in [
+            (&mut visual.widgets.inactive, BACKGROUND),
+            (&mut visual.widgets.hovered, TINT),
+            (&mut visual.widgets.active, TINT),
+        ] {
+            widget.bg_fill = fill;
+            widget.weak_bg_fill = fill;
+            widget.bg_stroke = Stroke::new(1.0_f32, BORDER);
+            widget.fg_stroke = Stroke::new(1.0_f32, PAPER);
+            widget.corner_radius = egui::CornerRadius::same(8);
+        }
+        ctx.set_theme(egui::Theme::Light);
+        ctx.set_visuals_of(egui::Theme::Light, visual);
+        let mut fonts = egui::FontDefinitions::default();
+        fonts.font_data.insert(
+            "Inter".into(),
+            egui::FontData::from_static(include_bytes!("../Resources/Inter-Regular.ttf")).into(),
+        );
+        fonts.font_data.insert(
+            HEADING.into(),
+            egui::FontData::from_static(include_bytes!("../Resources/Inter-SemiBold.ttf")).into(),
+        );
+        fonts
+            .families
+            .entry(egui::FontFamily::Proportional)
+            .or_default()
+            .insert(0, "Inter".into());
+        fonts.families.insert(
+            egui::FontFamily::Name(HEADING.into()),
+            vec![HEADING.into(), "Inter".into()],
+        );
+        ctx.set_fonts(fonts);
         ctx.style_mut(|style| {
-            style.spacing.item_spacing = Vec2::new(10.0, 10.0);
-            style.spacing.button_padding = Vec2::new(12.0, 7.0);
+            style.spacing.item_spacing = Vec2::new(10.0, 13.0);
+            style.spacing.button_padding = Vec2::new(14.0, 8.0);
+            style.spacing.interact_size.y = 34.0;
         });
+        let icon = eframe::icon_data::from_png_bytes(include_bytes!("../Resources/icon.png"))
+            .ok()
+            .map(|image| {
+                ctx.load_texture(
+                    "KYW icon",
+                    egui::ColorImage::from_rgba_unmultiplied(
+                        [image.width as usize, image.height as usize],
+                        &image.rgba,
+                    ),
+                    egui::TextureOptions::LINEAR,
+                )
+            });
         let mut app = Self {
             input,
             output,
@@ -123,6 +173,8 @@ impl Kyw {
             transfer_state: None,
             transfer_id: 0,
             sending: false,
+            copied_at: None,
+            icon,
             smoke: smoke.then(Instant::now),
         };
         app.refresh(&ctx);
@@ -210,210 +262,227 @@ impl Kyw {
         header(
             ui,
             "File handoff",
-            "Send a file straight to another computer on your local network.",
+            "Send a file over your local network, even when the internet is down.",
         );
-        ui.horizontal(|ui| {
-            ui.selectable_value(&mut self.receiving, false, "Send a file");
-            ui.selectable_value(&mut self.receiving, true, "Receive a file");
-        });
         let ctx = ui.ctx().clone();
+        ui.horizontal(|ui| {
+            ui.add_enabled_ui(!self.sending && self.receipt.is_none(), |ui| {
+                ui.selectable_value(&mut self.receiving, false, "Send");
+                ui.selectable_value(&mut self.receiving, true, "Receive");
+            });
+        });
+        ui.add_space(6.0);
+        let pairing = transfer::Pairing::parse(&self.code);
+        let paths = if self.receiving {
+            self.receipt
+                .as_ref()
+                .map(|receiver| receiver.pairing.path_count())
+        } else {
+            pairing.as_ref().map(transfer::Pairing::path_count)
+        };
+        let available = ui.available_width();
+        if available >= 720.0 {
+            let detail_width = 250.0;
+            let gap = 24.0;
+            let form_width = available - detail_width - gap;
+            ui.horizontal_top(|ui| {
+                ui.spacing_mut().item_spacing.x = gap;
+                ui.allocate_ui_with_layout(
+                    Vec2::new(form_width, 0.0),
+                    Layout::top_down(Align::Min),
+                    |ui| {
+                        ui.set_max_width(form_width);
+                        self.transfer_form(ui, &ctx, pairing);
+                    },
+                );
+                ui.allocate_ui_with_layout(
+                    Vec2::new(detail_width, 0.0),
+                    Layout::top_down(Align::Min),
+                    |ui| {
+                        ui.set_max_width(detail_width);
+                        local_path(ui, paths);
+                    },
+                );
+            });
+        } else {
+            self.transfer_form(ui, &ctx, pairing);
+            local_path(ui, paths);
+        }
+    }
+
+    fn transfer_form(&mut self, ui: &mut Ui, ctx: &Context, pairing: Option<transfer::Pairing>) {
         card(ui, |ui| {
             if self.receiving {
-                section(
-                    ui,
-                    "Open a receiving window",
-                    "Share the pairing code with the sender. Keep KYW open while the file arrives.",
-                );
-                if let Some(receiver) = &self.receipt {
-                    let stop = ui
-                        .horizontal(|ui| {
-                            if primary(ui, "Copy pairing code").clicked() {
-                                ctx.copy_text(receiver.pairing.to_string());
-                            }
-                            ui.button("Stop receiving").clicked()
-                        })
-                        .inner;
-                    if stop {
-                        self.receipt = None;
-                        self.transfer_id = self.transfer_id.wrapping_add(1);
-                        self.transfer_state = None;
-                    }
-                    if let Some(receiver) = &self.receipt {
-                        body(
-                            ui,
-                            format!(
-                                "Ready for 10 minutes · {} local connection{}",
-                                receiver.pairing.path_count(),
-                                if receiver.pairing.path_count() == 1 {
-                                    ""
-                                } else {
-                                    "s"
-                                }
-                            ),
-                        );
-                    }
-                } else if ui
-                    .add_enabled(!self.sending, Button::new("Start receiving"))
-                    .clicked()
-                {
-                    self.transfer_id = self.transfer_id.wrapping_add(1);
-                    self.transfer_state = None;
-                    let addresses = transfer::local_addresses();
-                    let result = transfer::inbox()
-                        .ok_or("KYW couldn’t find a folder for received files.")
-                        .and_then(|folder| {
-                            transfer::start_receiver(&addresses, folder, self.emit(&ctx))
-                        });
-                    match result {
-                        Ok(receiver) => self.receipt = Some(receiver),
-                        Err(error) => self.transfer_state = Some(transfer::Progress::Error(error)),
-                    }
-                }
-                body(
-                    ui,
-                    "Completed files go into the KYW transfers folder in Downloads or your home folder.",
-                );
+                self.receive_form(ui, ctx);
             } else {
-                section(
-                    ui,
-                    "Pick a file and enter the pairing code",
-                    "Ask the recipient to open KYW and start receiving.",
-                );
-                let picked = self
-                    .file
-                    .as_ref()
-                    .and_then(|path| path.file_name()?.to_str())
-                    .unwrap_or("Drop a file here")
-                    .to_string();
-                ui.horizontal_wrapped(|ui| {
-                    ui.label(RichText::new(picked).strong());
-                    #[cfg(target_os = "macos")]
-                    if ui
-                        .add_enabled(!self.sending, Button::new("Choose file…"))
-                        .clicked()
-                        && let Some(path) = platform::choose_file()
-                    {
-                        self.file = Some(path);
-                    }
-                    #[cfg(not(target_os = "macos"))]
-                    if let Some(chooser) = platform::chooser()
-                        && ui
-                            .add_enabled(!self.sending, Button::new("Choose file…"))
-                            .clicked()
-                    {
-                        self.worker(&ctx, move || {
-                            let path = network::command(
-                                chooser,
-                                &["--file-selection", "--title=Choose a file for KYW"],
-                                Duration::from_secs(120),
-                            )
-                            .filter(|result| result.success)
-                            .map(|result| PathBuf::from(result.text.trim_end_matches('\n')));
-                            Event::Chosen(path)
-                        });
-                    }
-                });
-                ui.add_enabled(
-                    !self.sending,
-                    egui::TextEdit::singleline(&mut self.code)
-                        .desired_width(ui.available_width())
-                        .hint_text("Paste the recipient’s pairing code"),
-                );
-                let pairing = transfer::Pairing::parse(&self.code);
-                let can_send = !self.sending
-                    && self.receipt.is_none()
-                    && self.file.is_some()
-                    && pairing.is_some();
-                if ui
-                    .add_enabled(can_send, Button::new(RichText::new("Send file").strong()))
-                    .clicked()
-                    && let (Some(file), Some(pairing)) = (self.file.clone(), pairing)
-                {
-                    self.sending = true;
-                    self.transfer_id = self.transfer_id.wrapping_add(1);
-                    self.transfer_state = Some(transfer::Progress::Sending {
-                        done: 0,
-                        total: 0,
-                        resumed: false,
-                    });
-                    let emit = self.emit(&ctx);
-                    thread::spawn(move || {
-                        if let Err(error) = transfer::send_file(&file, pairing, &emit) {
-                            emit(transfer::Progress::Error(error));
-                        }
-                    });
-                }
-                if self.receipt.is_some() {
-                    body(ui, "Stop your receiving window before sending a file.");
-                } else if !self.code.is_empty() && transfer::Pairing::parse(&self.code).is_none() {
-                    body(ui, "Paste the complete code copied by the recipient.");
-                }
+                self.send_form(ui, ctx, pairing);
+            }
+            if let Some(progress) = &self.transfer_state {
+                ui.add_space(3.0);
+                ui.separator();
+                transfer_status(ui, progress);
             }
         });
-        if let Some(result) = &self.transfer_state {
-            card(ui, |ui| match result {
-                transfer::Progress::Sending {
-                    done,
-                    total,
-                    resumed,
-                } => progress_bar(
-                    ui,
-                    *done,
-                    *total,
-                    if *resumed {
-                        "Sending from where it stopped"
-                    } else {
-                        "Sending"
-                    },
-                ),
-                transfer::Progress::Receiving { done, total } => {
-                    progress_bar(ui, *done, *total, "Receiving")
+    }
+
+    fn send_form(&mut self, ui: &mut Ui, ctx: &Context, pairing: Option<transfer::Pairing>) {
+        let picked = self
+            .file
+            .as_ref()
+            .and_then(|path| path.file_name()?.to_str())
+            .map(str::to_string);
+        ui.label(emphasis("File to send", 16.0));
+        Frame::new()
+            .fill(BACKGROUND)
+            .stroke(Stroke::new(1.0_f32, BORDER))
+            .corner_radius(10.0)
+            .inner_margin(Margin::same(18))
+            .show(ui, |ui| {
+                ui.set_min_width(ui.available_width());
+                ui.set_min_height(84.0);
+                if let Some(name) = picked {
+                    ui.label(emphasis(name, 16.0));
+                    if ui
+                        .add_enabled(!self.sending, Button::new("Remove file"))
+                        .clicked()
+                    {
+                        self.file = None;
+                    }
+                } else {
+                    ui.label(emphasis("Drop a file here", 17.0));
+                    body(ui, "One file up to 2 GiB");
+                    self.file_picker(ui, ctx);
                 }
-                transfer::Progress::Sent {
-                    name,
-                    bytes,
-                    resumed,
-                    changed_address,
-                } => {
-                    section(
-                        ui,
-                        if *resumed && *changed_address {
-                            "File delivered on another connection"
-                        } else if *resumed {
-                            "Sent after reconnecting"
-                        } else {
-                            "File delivered"
-                        },
-                        &format!("{name} · {}", byte_count(*bytes)),
-                    );
-                }
-                transfer::Progress::Saved { name, bytes } => section(
-                    ui,
-                    "File saved",
-                    &format!("{name} · {}", byte_count(*bytes)),
-                ),
-                transfer::Progress::Error(error) => {
-                    ui.colored_label(AMBER, *error);
-                }
-                transfer::Progress::Expired => {
-                    ui.colored_label(
-                        AMBER,
-                        "The pairing code expired. Start a new receiving window.",
-                    );
+            });
+        ui.add_space(4.0);
+        ui.label(emphasis("Recipient’s pairing code", 16.0));
+        ui.add_enabled(
+            !self.sending,
+            egui::TextEdit::singleline(&mut self.code)
+                .desired_width(ui.available_width())
+                .char_limit(320)
+                .margin(Margin::symmetric(11, 9))
+                .hint_text("Paste code")
+                .password(true),
+        );
+        if !self.code.is_empty() && pairing.is_none() {
+            ui.colored_label(AMBER, "Paste the full code copied by the recipient.");
+        } else if pairing.is_none() {
+            body(ui, "On the other computer, open KYW and choose Receive.");
+        }
+        ui.add_space(6.0);
+        let can_send =
+            !self.sending && self.receipt.is_none() && self.file.is_some() && pairing.is_some();
+        if ui
+            .add_enabled(can_send, action_button("Send file", true))
+            .clicked()
+            && let (Some(file), Some(pairing)) = (self.file.clone(), pairing)
+        {
+            self.sending = true;
+            self.transfer_id = self.transfer_id.wrapping_add(1);
+            self.transfer_state = Some(transfer::Progress::Sending {
+                done: 0,
+                total: 0,
+                resumed: false,
+            });
+            let emit = self.emit(ctx);
+            thread::spawn(move || {
+                if let Err(error) = transfer::send_file(&file, pairing, &emit) {
+                    emit(transfer::Progress::Error(error));
                 }
             });
         }
-        card(ui, |ui| {
+    }
+
+    fn file_picker(&mut self, ui: &mut Ui, _ctx: &Context) {
+        #[cfg(target_os = "macos")]
+        if ui
+            .add_enabled(!self.sending, action_button("Choose file…", false))
+            .clicked()
+            && let Some(path) = platform::choose_file()
+        {
+            self.file = Some(path);
+        }
+        #[cfg(not(target_os = "macos"))]
+        if let Some(chooser) = platform::chooser()
+            && ui
+                .add_enabled(!self.sending, action_button("Choose file…", false))
+                .clicked()
+        {
+            self.worker(_ctx, move || {
+                let path = network::command(
+                    chooser,
+                    &["--file-selection", "--title=Choose a file for KYW"],
+                    Duration::from_secs(120),
+                )
+                .filter(|result| result.success)
+                .map(|result| PathBuf::from(result.text.trim_end_matches('\n')));
+                Event::Chosen(path)
+            });
+        }
+    }
+
+    fn receive_form(&mut self, ui: &mut Ui, ctx: &Context) {
+        if let Some(receiver) = &self.receipt {
             section(
                 ui,
-                "If a connection drops",
-                "KYW can resume from the last saved part while the recipient’s window stays open.",
+                "Ready to receive",
+                "Copy the pairing code and share it with the sender. It lasts ten minutes.",
             );
-            body(
+            let copy_label = if self
+                .copied_at
+                .is_some_and(|time| time.elapsed() < Duration::from_secs(2))
+            {
+                "Code copied"
+            } else {
+                "Copy pairing code"
+            };
+            let stop = ui
+                .horizontal_wrapped(|ui| {
+                    if primary(ui, copy_label).clicked() {
+                        ctx.copy_text(receiver.pairing.to_string());
+                        self.copied_at = Some(Instant::now());
+                        ctx.request_repaint_after(Duration::from_secs(2));
+                    }
+                    ui.button("Stop receiving").clicked()
+                })
+                .inner;
+            if stop {
+                self.receipt = None;
+                self.copied_at = None;
+                self.transfer_id = self.transfer_id.wrapping_add(1);
+                self.transfer_state = None;
+            }
+        } else {
+            section(
                 ui,
-                "When the recipient has more than one reachable local address, KYW can try another. The devices must already share a working local network.",
+                "Receive a file",
+                "Open a receiving window to get a pairing code. Keep the window open until the sender sees that the file arrived.",
             );
-        });
+            if ui
+                .add_enabled(!self.sending, action_button("Start receiving", true))
+                .clicked()
+            {
+                self.transfer_id = self.transfer_id.wrapping_add(1);
+                self.transfer_state = None;
+                let addresses = transfer::local_addresses();
+                let result = transfer::inbox()
+                    .ok_or("KYW couldn’t open a folder for received files.")
+                    .and_then(|folder| {
+                        transfer::start_receiver(&addresses, folder, self.emit(ctx))
+                    });
+                match result {
+                    Ok(receiver) => self.receipt = Some(receiver),
+                    Err(error) => self.transfer_state = Some(transfer::Progress::Error(error)),
+                }
+            }
+        }
+        ui.add_space(6.0);
+        ui.label(emphasis("Where it goes", 15.0));
+        body(
+            ui,
+            "The KYW transfers folder in Downloads, or in your home folder if Downloads is unavailable.",
+        );
     }
 
     fn connection(&mut self, ui: &mut Ui) {
@@ -861,30 +930,37 @@ impl eframe::App for Kyw {
             self.file = Some(path);
         }
         egui::SidePanel::left("navigation")
-            .exact_width(185.0)
+            .exact_width(206.0)
             .resizable(false)
-            .frame(Frame::new().fill(SIDEBAR).inner_margin(Margin::same(15)))
+            .frame(Frame::new().fill(SIDEBAR).inner_margin(Margin::same(17)))
             .show(ctx, |ui| {
-                ui.add_space(14.0);
-                ui.label(
-                    RichText::new("Know Your Wifi")
-                        .size(17.0)
-                        .strong()
-                        .color(MINT),
-                );
-                ui.add_space(26.0);
+                ui.add_space(16.0);
+                ui.horizontal(|ui| {
+                    if let Some(icon) = &self.icon {
+                        ui.image((icon.id(), Vec2::splat(39.0)));
+                    }
+                    ui.label(emphasis("Know Your Wifi", 15.5).color(Color32::WHITE));
+                });
+                ui.add_space(27.0);
+                ui.spacing_mut().item_spacing.y = 5.0;
                 for (page, title) in [
                     (Page::Files, "File handoff"),
                     (Page::Connection, "Connection check"),
                     (Page::Channels, "Channel planner"),
                     (Page::Controls, "Geek’s Corner"),
                 ] {
-                    let text =
-                        RichText::new(title).color(if self.page == page { MINT } else { PAPER });
+                    let selected = self.page == page;
+                    let text = emphasis(title, 13.0).color(if selected {
+                        SIDEBAR_ACCENT
+                    } else {
+                        SIDEBAR_TEXT
+                    });
                     if ui
                         .add_sized(
-                            [ui.available_width(), 34.0],
-                            Button::new(text).selected(self.page == page),
+                            [ui.available_width(), 39.0],
+                            Button::new(text)
+                                .fill(if selected { SIDEBAR_ACTIVE } else { SIDEBAR })
+                                .stroke(Stroke::NONE),
                         )
                         .clicked()
                     {
@@ -892,19 +968,25 @@ impl eframe::App for Kyw {
                     }
                 }
                 ui.with_layout(Layout::bottom_up(Align::Min), |ui| {
-                    body(
-                        ui,
-                        format!("{} · {}", platform::name(), env!("CARGO_PKG_VERSION")),
+                    ui.add_space(13.0);
+                    ui.label(
+                        RichText::new(format!(
+                            "{}  /  {}",
+                            platform::name(),
+                            env!("CARGO_PKG_VERSION")
+                        ))
+                        .size(12.0)
+                        .color(SIDEBAR_TEXT),
                     );
                 });
             });
         egui::CentralPanel::default()
-            .frame(Frame::new().fill(BACKGROUND).inner_margin(Margin::same(28)))
+            .frame(Frame::new().fill(BACKGROUND).inner_margin(Margin::same(35)))
             .show(ctx, |ui| {
                 egui::ScrollArea::vertical()
                     .auto_shrink([false, false])
                     .show(ui, |ui| {
-                        ui.set_max_width(940.0);
+                        ui.set_max_width(ui.available_width().min(940.0));
                         match self.page {
                             Page::Files => self.files(ui),
                             Page::Connection => self.connection(ui),
@@ -917,7 +999,8 @@ impl eframe::App for Kyw {
 }
 
 fn header(ui: &mut Ui, title: &str, subtitle: &str) {
-    ui.label(RichText::new(title).size(35.0).strong());
+    ui.add_space(3.0);
+    ui.label(emphasis(title, 35.0));
     body(ui, subtitle);
     ui.add_space(10.0);
 }
@@ -926,8 +1009,8 @@ fn card(ui: &mut Ui, render: impl FnOnce(&mut Ui)) {
     Frame::new()
         .fill(PANEL)
         .stroke(Stroke::new(1.0_f32, BORDER))
-        .corner_radius(12.0)
-        .inner_margin(Margin::same(17))
+        .corner_radius(14.0)
+        .inner_margin(Margin::same(23))
         .show(ui, |ui| {
             ui.set_min_width(ui.available_width());
             render(ui);
@@ -935,18 +1018,115 @@ fn card(ui: &mut Ui, render: impl FnOnce(&mut Ui)) {
 }
 
 fn section(ui: &mut Ui, title: &str, detail: &str) {
-    ui.label(RichText::new(title).size(19.0).strong());
+    ui.label(emphasis(title, 19.0));
     if !detail.is_empty() {
         body(ui, detail);
     }
 }
 
+fn emphasis(text: impl Into<String>, size: f32) -> RichText {
+    RichText::new(text.into()).font(egui::FontId::new(
+        size,
+        egui::FontFamily::Name(HEADING.into()),
+    ))
+}
+
+fn action_button(title: &str, primary: bool) -> Button<'_> {
+    Button::new(emphasis(title, 14.0).color(if primary { Color32::WHITE } else { PAPER }))
+        .fill(if primary { MINT } else { PANEL })
+        .stroke(Stroke::new(1.0_f32, if primary { MINT } else { BORDER }))
+        .min_size(Vec2::new(110.0, 39.0))
+}
+
 fn primary(ui: &mut Ui, title: &str) -> egui::Response {
-    ui.add(Button::new(RichText::new(title).strong().color(BACKGROUND)).fill(MINT))
+    ui.add(action_button(title, true))
 }
 
 fn body(ui: &mut Ui, text: impl Into<String>) {
-    ui.label(RichText::new(text.into()).color(MUTED).size(14.0));
+    ui.add(egui::Label::new(RichText::new(text.into()).color(MUTED).size(14.0)).wrap());
+}
+
+fn local_path(ui: &mut Ui, paths: Option<usize>) {
+    Frame::new().fill(TINT).corner_radius(14.0).inner_margin(Margin::same(19)).show(ui, |ui| {
+        ui.set_min_width(ui.available_width());
+        ui.label(emphasis("If the link drops", 18.0));
+        let available = ui.available_width();
+        let (area, _) = ui.allocate_exact_size(Vec2::new(available, 52.0), egui::Sense::hover());
+        let start = egui::pos2(area.left() + 25.0, area.center().y);
+        let end = egui::pos2(area.right() - 25.0, area.center().y);
+        let painter = ui.painter_at(area);
+        let line = Stroke::new(1.5_f32, if paths.is_some() { MINT } else { MUTED });
+        if paths.unwrap_or_default() > 1 {
+            for lift in [-9.0, 9.0] {
+                painter.add(egui::Shape::line(
+                    vec![start, egui::pos2(start.x + 28.0, start.y + lift),
+                         egui::pos2(end.x - 28.0, end.y + lift), end], line
+                ));
+            }
+        } else {
+            painter.line_segment([start, end], line);
+        }
+        for point in [start, end] {
+            let screen = egui::Rect::from_center_size(point, Vec2::new(34.0, 24.0));
+            painter.rect(screen, 5.0, TINT, line, egui::StrokeKind::Inside);
+            painter.line_segment([point + Vec2::new(-9.0, 16.0), point + Vec2::new(9.0, 16.0)], line);
+        }
+        if let Some(count) = paths {
+            let text = if count == 1 { "1 address to try".into() } else { format!("{count} addresses to try") };
+            ui.label(emphasis(text, 13.0).color(MINT));
+        }
+        body(ui, "KYW keeps what arrived and picks up from there when it reconnects.");
+        body(ui, "A second reachable address can keep the transfer going if the first connection fails.");
+    });
+}
+
+fn transfer_status(ui: &mut Ui, status: &transfer::Progress) {
+    match status {
+        transfer::Progress::Sending {
+            done,
+            total,
+            resumed,
+        } => progress_bar(
+            ui,
+            *done,
+            *total,
+            if *resumed {
+                "Sending from where it stopped"
+            } else {
+                "Sending"
+            },
+        ),
+        transfer::Progress::Receiving { done, total } => {
+            progress_bar(ui, *done, *total, "Receiving")
+        }
+        transfer::Progress::Sent {
+            name,
+            bytes,
+            resumed,
+            changed_address,
+        } => {
+            let title = match (*resumed, *changed_address) {
+                (true, true) => "File delivered over another connection",
+                (true, false) => "Sent after reconnecting",
+                _ => "File delivered",
+            };
+            ui.label(emphasis(title, 16.0).color(MINT));
+            body(ui, format!("{name} · {}", byte_count(*bytes)));
+        }
+        transfer::Progress::Saved { name, bytes } => {
+            ui.label(emphasis("File saved", 16.0).color(MINT));
+            body(ui, format!("{name} · {}", byte_count(*bytes)));
+        }
+        transfer::Progress::Error(error) => {
+            ui.colored_label(AMBER, *error);
+        }
+        transfer::Progress::Expired => {
+            ui.colored_label(
+                AMBER,
+                "The pairing code expired. Start a new receiving window.",
+            );
+        }
+    }
 }
 
 fn metric(ui: &mut Ui, title: &str, value: Option<String>) {
@@ -959,7 +1139,10 @@ fn metric(ui: &mut Ui, title: &str, value: Option<String>) {
 }
 
 fn property(ui: &mut Ui, name: &str, value: Option<&str>, detail: &str) {
-    ui.label(RichText::new(format!("{name}   {}", value.unwrap_or("Unavailable"))).strong());
+    ui.label(emphasis(
+        format!("{name}   {}", value.unwrap_or("Unavailable")),
+        15.0,
+    ));
     body(ui, detail);
 }
 
@@ -981,11 +1164,7 @@ fn channel_row(ui: &mut Ui, title: &str, channels: &[u16], band: Band, active: O
             for &channel in channels {
                 let high = active == Some(channel);
                 Frame::new()
-                    .fill(if high {
-                        Color32::from_rgb(26, 64, 61)
-                    } else {
-                        BACKGROUND
-                    })
+                    .fill(if high { TINT } else { BACKGROUND })
                     .corner_radius(6.0)
                     .inner_margin(Margin::symmetric(8, 4))
                     .show(ui, |ui| {
@@ -1022,15 +1201,15 @@ fn progress_bar(ui: &mut Ui, done: u64, total: u64, label: &str) {
             body(ui, "Preparing the file…");
         });
     } else {
+        ui.label(emphasis(
+            format!("{label} · {} of {}", byte_count(done), byte_count(total)),
+            14.0,
+        ));
         ui.add(
             egui::ProgressBar::new((done as f64 / total as f64) as f32)
                 .fill(MINT)
                 .desired_width(ui.available_width())
-                .text(format!(
-                    "{label} · {} of {}",
-                    byte_count(done),
-                    byte_count(total)
-                )),
+                .desired_height(8.0),
         );
     }
 }
