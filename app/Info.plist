@@ -7,7 +7,7 @@
     <key>CFBundleDisplayName</key>
     <string>Know Your Wifi</string>
     <key>CFBundleExecutable</key>
-    <string>KYW</string>
+    <string>kyw</string>
     <key>CFBundleIdentifier</key>
     <string>org.bnelabs.know-your-wifi</string>
     <key>CFBundleName</key>
@@ -17,9 +17,9 @@
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
-    <string>1.0.0</string>
+    <string>2.0.0</string>
     <key>CFBundleVersion</key>
-    <string>1</string>
+    <string>2</string>
     <key>LSMinimumSystemVersion</key>
     <string>14.0</string>
     <key>LSApplicationCategoryType</key>
@@ -27,10 +27,6 @@
     <key>NSHighResolutionCapable</key>
     <true/>
     <key>NSLocalNetworkUsageDescription</key>
-    <string>KYW uses the local network when you run an experiment with a Mac that has the same pairing key.</string>
-    <key>NSBonjourServices</key>
-    <array>
-        <string>_bcm-inspection._tcp</string>
-    </array>
+    <string>KYW uses your local network to share files with a computer you pair and to check replies from your router.</string>
 </dict>
 </plist>

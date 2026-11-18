@@ -4,7 +4,7 @@ This project examines the Wi-Fi chip in the 2020 M1 MacBook Air (A2337, `MacBook
 
 ## Know Your Wifi
 
-**KYW** is the native Mac app for this research. See what the radio hears, compare channel plans before travel, and measure whether fast updates meet their deadlines alongside a bulk transfer. **Geek’s Corner** shows the chip, firmware, operating system inside it, upstream security advisories, and what changing each available setting would do. [Build and use KYW](app/README.md)
+**KYW** lets two computers share a file on a local network and resume after a connection drops. The Rust desktop app also checks the router, compares channel plans, and explains the Wi-Fi hardware and settings your system exposes. [Use and build KYW](app/README.md), [Releases](https://github.com/bnelabs/bcm4378-research/releases)
 
 ```sh
 ./app/build.sh
