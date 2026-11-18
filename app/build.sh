@@ -4,12 +4,14 @@ set -eu
 app_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 repo_dir=$(dirname -- "$app_dir")
 dist="$app_dir/dist"
-version=2.0.0
+version=$(awk -F '"' '/^version = "/ { print $2; exit }' "$app_dir/Cargo.toml")
 platform=$(uname -s)
-arch=$(uname -m)
-case "$arch" in
-    amd64) arch=x86_64 ;;
-    arm64|aarch64) arch=aarch64 ;;
+case "$(uname -m)" in
+    arm64|aarch64) ;;
+    *)
+        printf '%s\n' 'KYW release packages must be built on ARM64.' >&2
+        exit 2
+        ;;
 esac
 
 if [ "$platform" = Darwin ]; then
@@ -28,6 +30,18 @@ elif [ "$#" != 0 ]; then
 fi
 cargo build --quiet --release --locked --manifest-path "$app_dir/Cargo.toml"
 bin="$CARGO_TARGET_DIR/release/kyw"
+if [ "$platform" = Darwin ]; then
+    binary_arch=$(/usr/bin/lipo -archs "$bin")
+else
+    elf_format=$(od -An -tx1 -N 6 "$bin" | tr -d '[:space:]')
+    elf_machine=$(od -An -tx1 -j 18 -N 2 "$bin" | tr -d '[:space:]')
+    binary_arch=unknown
+    if [ "$elf_format/$elf_machine" = "7f454c460201/b700" ]; then binary_arch=arm64; fi
+fi
+if [ "$binary_arch" != arm64 ]; then
+    printf '%s\n' 'The built executable is not ARM64.' >&2
+    exit 1
+fi
 if [ "${1-}" = --verify ]; then
     "$bin" --self-test
     "$bin" --check
@@ -38,7 +52,6 @@ trap 'rm -r -- "$stage"' EXIT
 
 case "$platform" in
     Darwin)
-        [ "$arch" != aarch64 ] || arch=arm64
         app="$stage/Know Your Wifi.app"
         mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"
         cp "$bin" "$app/Contents/MacOS/kyw"
@@ -49,22 +62,20 @@ case "$platform" in
         plutil -lint "$app/Contents/Info.plist"
         codesign --force --sign - "$app"
         codesign --verify --strict "$app"
-        ditto -c -k --keepParent "$app" "$stage/kyw-$version-macos-$arch.zip"
+        ditto -c -k --keepParent "$app" "$stage/kyw-$version-macos-arm64.zip"
         output="$dist/Know Your Wifi.app"
         if [ -d "$output" ]; then mv "$output" "$stage/previous.app"; fi
         if ! mv "$app" "$output"; then
             if [ -d "$stage/previous.app" ]; then mv "$stage/previous.app" "$output"; fi
             exit 1
         fi
-        archive="kyw-$version-macos-$arch.zip"
+        archive="kyw-$version-macos-arm64.zip"
         ;;
     Linux|FreeBSD|OpenBSD)
-        case "$platform:$arch" in
-            Linux:x86_64) target=linux-omarchy-x86_64 ;;
-            Linux:aarch64) target=linux-asahi-aarch64 ;;
-            Linux:*) target="linux-$arch" ;;
-            FreeBSD:*) target="freebsd-$(uname -r | cut -d - -f 1)-$arch" ;;
-            OpenBSD:*) target="openbsd-$(uname -r)-$arch" ;;
+        case "$platform" in
+            Linux) target=linux-arm64 ;;
+            FreeBSD) target="freebsd-$(uname -r | cut -d - -f 1)-arm64" ;;
+            OpenBSD) target="openbsd-$(uname -r)-arm64" ;;
         esac
         folder="kyw-$version-$target"
         mkdir "$stage/$folder"
