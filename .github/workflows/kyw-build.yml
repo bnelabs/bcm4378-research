@@ -1,0 +1,107 @@
+name: Build Know Your Wifi
+
+on:
+  pull_request:
+    paths:
+      - "app/**"
+      - ".github/workflows/kyw-build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kyw-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  native:
+    name: ${{ matrix.label }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { label: "macOS Apple Silicon", runner: macos-15, artifact: macos-arm64 }
+          - { label: "macOS Intel", runner: macos-15-intel, artifact: macos-x86_64 }
+          - { label: "Omarchy Linux x86-64", runner: ubuntu-24.04, artifact: linux-omarchy-x86_64 }
+          - { label: "Asahi Linux Arm64", runner: ubuntu-24.04-arm, artifact: linux-asahi-aarch64 }
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Install Linux desktop libraries
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y libwayland-dev libxkbcommon-dev libxkbcommon-x11-0 libx11-dev libxi-dev libgl1-mesa-dev libegl1-mesa-dev libgl1-mesa-dri xvfb xauth
+      - name: Build and test the release
+        run: ./app/build.sh --verify
+      - name: Check the Linux desktop window
+        if: runner.os == 'Linux'
+        run: xvfb-run -a -s "-screen 0 1152x850x24 +extension GLX" ./app/target/release/kyw --ui-smoke
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: |
+            app/dist/*.zip
+            app/dist/*.tar.gz
+          if-no-files-found: error
+
+  freebsd:
+    name: FreeBSD 15.1 x86-64
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: vmactions/freebsd-vm@811efaaac0668df8bfb8308c3ec997b5ab50037b # v1.6.0
+        with:
+          release: "15.1"
+          usesh: true
+          prepare: |
+            pkg install -y rust pkgconf libX11 libXcursor libXi libXrandr libxkbcommon mesa-libs mesa-dri xorg-vfbserver
+          run: |
+            set -eu
+            ./app/build.sh --verify
+            Xvfb :91 -screen 0 1152x850x24 +extension GLX &
+            xserver=$!
+            trap 'kill "$xserver" 2>/dev/null || true' EXIT
+            sleep 2
+            DISPLAY=:91 LIBGL_ALWAYS_SOFTWARE=1 ./app/target/release/kyw --ui-smoke
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: freebsd-15.1-x86_64
+          path: app/dist/*.tar.gz
+          if-no-files-found: error
+
+  openbsd:
+    name: OpenBSD 8.0 x86-64
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: vmactions/openbsd-vm@f1ca8bc8ecc5b6ef7218e5b914836e067e1546d3 # v1.4.9
+        with:
+          release: "8.0"
+          usesh: true
+          prepare: |
+            pkg_add rust libxkbcommon
+          run: |
+            set -eu
+            export PATH="/usr/local/bin:/usr/X11R6/bin:$PATH"
+            ./app/build.sh --verify
+            Xvfb :91 -screen 0 1152x850x24 +extension GLX &
+            xserver=$!
+            trap 'kill "$xserver" 2>/dev/null || true' EXIT
+            sleep 2
+            DISPLAY=:91 LIBGL_ALWAYS_SOFTWARE=1 ./app/target/release/kyw --ui-smoke
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: openbsd-8.0-x86_64
+          path: app/dist/*.tar.gz
+          if-no-files-found: error

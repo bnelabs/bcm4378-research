@@ -1,50 +1,85 @@
-#!/bin/bash
-set -euo pipefail
+#!/bin/sh
+set -eu
 
-app_root=$(cd -- "$(dirname -- "$0")" && pwd)
-repo_root=$(dirname -- "$app_root")
-dist="$app_root/dist"
-output="$dist/Know Your Wifi.app"
+app_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+repo_dir=$(dirname -- "$app_dir")
+dist="$app_dir/dist"
+version=2.0.0
+platform=$(uname -s)
+arch=$(uname -m)
+case "$arch" in
+    amd64) arch=x86_64 ;;
+    arm64|aarch64) arch=aarch64 ;;
+esac
+
+if [ "$platform" = Darwin ]; then
+    export MACOSX_DEPLOYMENT_TARGET="${MACOSX_DEPLOYMENT_TARGET:-14.0}"
+fi
+export CARGO_TARGET_DIR="$app_dir/target"
+cargo_dir=${CARGO_HOME:-"$HOME/.cargo"}
+rust_flags=$(printf '%s\037%s' "--remap-path-prefix=$repo_dir=." "--remap-path-prefix=$cargo_dir=/cargo")
+export CARGO_ENCODED_RUSTFLAGS="$rust_flags"
+
+if [ "${1-}" = --verify ]; then
+    cargo test --quiet --release --locked --manifest-path "$app_dir/Cargo.toml"
+elif [ "$#" != 0 ]; then
+    printf '%s\n' 'Usage: app/build.sh [--verify]' >&2
+    exit 2
+fi
+cargo build --quiet --release --locked --manifest-path "$app_dir/Cargo.toml"
+bin="$CARGO_TARGET_DIR/release/kyw"
+if [ "${1-}" = --verify ]; then
+    "$bin" --self-test
+    "$bin" --check
+fi
 mkdir -p "$dist"
-stage=$(mktemp -d "$dist/.kyw-build.XXXXXXXX")
-previous="$stage/Previous.app"
-cleanup() {
-    if [[ -e "$previous" && ! -e "$output" ]]; then
-        mv "$previous" "$output" || return
-    fi
-    rm -r -- "$stage"
-}
-trap cleanup EXIT
+stage=$(mktemp -d "$dist/.build.XXXXXXXX")
+trap 'rm -r -- "$stage"' EXIT
 
-swift build --package-path "$app_root" -c release >&2
-products=$(swift build --package-path "$app_root" -c release --show-bin-path)
-bundle="$stage/Know Your Wifi.app"
-contents="$bundle/Contents"
-resources="$contents/Resources"
-helpers="$contents/Helpers"
-mkdir -p "$contents/MacOS" "$helpers" "$resources/Tools" "$resources/Docs" "$resources/Evidence"
-cp "$products/KYW" "$contents/MacOS/KYW"
-cp "$app_root/Info.plist" "$contents/Info.plist"
-cp "$app_root/Resources/"* "$resources/"
-cp "$repo_root/docs/"*.md "$resources/Docs/"
-cp "$repo_root/evidence/"*.json "$resources/Evidence/"
-for name in audit_clm_channels audit_clm_profiles compare_ram_capture inspect_d11_microcode \
-    inspect_firmware inspect_hp2p_firmware inspect_radio_sidecars inspect_ranging_result inspect_sleep_wake \
-    inventory_board_profiles summarize_switch_timing; do
-    cp "$repo_root/tools/$name.py" "$resources/Tools/"
-done
+case "$platform" in
+    Darwin)
+        [ "$arch" != aarch64 ] || arch=arm64
+        app="$stage/Know Your Wifi.app"
+        mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"
+        cp "$bin" "$app/Contents/MacOS/kyw"
+        cp "$app_dir/Info.plist" "$app/Contents/"
+        cp "$app_dir/Resources/AppIcon.icns" "$app/Contents/Resources/"
+        cp "$app_dir/Resources/Inter-LICENSE.txt" "$app/Contents/Resources/"
+        cp "$app_dir/THIRD-PARTY-LICENSES.txt" "$app/Contents/Resources/"
+        plutil -lint "$app/Contents/Info.plist"
+        codesign --force --sign - "$app"
+        codesign --verify --strict "$app"
+        ditto -c -k --keepParent "$app" "$stage/kyw-$version-macos-$arch.zip"
+        output="$dist/Know Your Wifi.app"
+        if [ -d "$output" ]; then mv "$output" "$stage/previous.app"; fi
+        if ! mv "$app" "$output"; then
+            if [ -d "$stage/previous.app" ]; then mv "$stage/previous.app" "$output"; fi
+            exit 1
+        fi
+        archive="kyw-$version-macos-$arch.zip"
+        ;;
+    Linux|FreeBSD|OpenBSD)
+        case "$platform:$arch" in
+            Linux:x86_64) target=linux-omarchy-x86_64 ;;
+            Linux:aarch64) target=linux-asahi-aarch64 ;;
+            Linux:*) target="linux-$arch" ;;
+            FreeBSD:*) target="freebsd-$(uname -r | cut -d - -f 1)-$arch" ;;
+            OpenBSD:*) target="openbsd-$(uname -r)-$arch" ;;
+        esac
+        folder="kyw-$version-$target"
+        mkdir "$stage/$folder"
+        cp "$bin" "$stage/$folder/kyw"
+        cp "$app_dir/README.md" "$stage/$folder/README.md"
+        cp "$app_dir/THIRD-PARTY-LICENSES.txt" "$stage/$folder/"
+        cp "$app_dir/Resources/Inter-LICENSE.txt" "$stage/$folder/"
+        archive="$folder.tar.gz"
+        tar -czf "$stage/$archive" -C "$stage" "$folder"
+        ;;
+    *)
+        printf '%s\n' "This system has no KYW release target: $platform" >&2
+        exit 2
+        ;;
+esac
 
-target="$(uname -m)-apple-macosx14.0"
-xcrun clang -target "$target" -O2 -fobjc-arc -Wall -Wextra -Werror \
-    -framework Foundation -framework CoreWLAN -framework IOKit -lIOReport \
-    "$repo_root/tools/read_wifi_airtime.m" -o "$helpers/read_wifi_airtime"
-xcrun swiftc -target "$target" -swift-version 6 -warnings-as-errors -O \
-    "$repo_root/tools/probe_inspection_peer.swift" -o "$helpers/probe_inspection_peer"
-
-plutil -lint "$contents/Info.plist" >&2
-codesign --force --sign - "$helpers/read_wifi_airtime" "$helpers/probe_inspection_peer"
-codesign --force --sign - "$bundle"
-codesign --verify --deep --strict "$bundle"
-if [[ -e "$output" ]]; then mv "$output" "$previous"; fi
-mv "$bundle" "$output"
-printf '%s\n' "$output"
+mv "$stage/$archive" "$dist/$archive"
+printf '%s\n' "$dist/$archive"
