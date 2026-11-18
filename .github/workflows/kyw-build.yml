@@ -1,4 +1,4 @@
-name: Build Know Your Wifi
+name: Build Know Your Wifi for ARM64
 
 on:
   pull_request:
@@ -23,10 +23,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { label: "macOS Apple Silicon", runner: macos-15, artifact: macos-arm64 }
-          - { label: "macOS Intel", runner: macos-15-intel, artifact: macos-x86_64 }
-          - { label: "Omarchy Linux x86-64", runner: ubuntu-24.04, artifact: linux-omarchy-x86_64 }
-          - { label: "Asahi Linux Arm64", runner: ubuntu-24.04-arm, artifact: linux-asahi-aarch64 }
+          - { label: "macOS ARM64", runner: macos-15, artifact: macos-arm64 }
+          - { label: "Linux ARM64 (Omarchy and Asahi)", runner: ubuntu-24.04-arm, artifact: linux-arm64 }
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -45,14 +43,14 @@ jobs:
         with:
           name: ${{ matrix.artifact }}
           path: |
-            app/dist/*.zip
-            app/dist/*.tar.gz
+            app/dist/*-arm64.zip
+            app/dist/*-arm64.tar.gz
           if-no-files-found: error
 
   freebsd:
-    name: FreeBSD 15.1 x86-64
+    name: FreeBSD 15.1 ARM64
     runs-on: ubuntu-24.04
-    timeout-minutes: 35
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -60,11 +58,13 @@ jobs:
       - uses: vmactions/freebsd-vm@811efaaac0668df8bfb8308c3ec997b5ab50037b # v1.6.0
         with:
           release: "15.1"
+          arch: aarch64
           usesh: true
           prepare: |
             pkg install -y rust pkgconf libX11 libXcursor libXi libXrandr libxkbcommon mesa-libs mesa-dri xorg-vfbserver
           run: |
             set -eu
+            export CARGO_PROFILE_RELEASE_LTO=false
             ./app/build.sh --verify
             Xvfb :91 -screen 0 1152x850x24 +extension GLX &
             xserver=$!
@@ -73,14 +73,14 @@ jobs:
             DISPLAY=:91 LIBGL_ALWAYS_SOFTWARE=1 ./app/target/release/kyw --ui-smoke
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: freebsd-15.1-x86_64
-          path: app/dist/*.tar.gz
+          name: freebsd-15.1-arm64
+          path: app/dist/*-freebsd-15.1-arm64.tar.gz
           if-no-files-found: error
 
   openbsd:
-    name: OpenBSD 8.0 x86-64
+    name: OpenBSD 8.0 ARM64
     runs-on: ubuntu-24.04
-    timeout-minutes: 35
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -88,12 +88,14 @@ jobs:
       - uses: vmactions/openbsd-vm@f1ca8bc8ecc5b6ef7218e5b914836e067e1546d3 # v1.4.9
         with:
           release: "8.0"
+          arch: aarch64
           usesh: true
           prepare: |
             pkg_add rust libxkbcommon
           run: |
             set -eu
             export PATH="/usr/local/bin:/usr/X11R6/bin:$PATH"
+            export CARGO_PROFILE_RELEASE_LTO=false
             ./app/build.sh --verify
             Xvfb :91 -screen 0 1152x850x24 +extension GLX &
             xserver=$!
@@ -102,6 +104,6 @@ jobs:
             DISPLAY=:91 LIBGL_ALWAYS_SOFTWARE=1 ./app/target/release/kyw --ui-smoke
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: openbsd-8.0-x86_64
-          path: app/dist/*.tar.gz
+          name: openbsd-8.0-arm64
+          path: app/dist/*-openbsd-8.0-arm64.tar.gz
           if-no-files-found: error

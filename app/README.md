@@ -21,21 +21,20 @@ KYW uses the network paths already available between the computers. It can conti
 
 ## Run the app
 
-Download the package for your operating system from the project’s releases. On macOS, unzip and open **Know Your Wifi.app**. The macOS build is ad hoc signed. On Linux or BSD, extract the archive and run `./kyw` in a graphical session.
+Download the ARM64 package for your operating system from the project’s releases. ARM64 is also called AArch64 on Linux and BSD. On macOS, unzip and open **Know Your Wifi.app**. The macOS build is ad hoc signed. On Linux or BSD, extract the archive and run `./kyw` in a graphical session.
 
 | System | Package |
 | --- | --- |
-| macOS 14 or later | Apple Silicon or Intel zip |
-| Omarchy | Linux x86-64 |
-| Asahi Linux | Linux AArch64 |
-| FreeBSD 15.1 | x86-64 |
-| OpenBSD 8.0 | x86-64 |
+| macOS 14 or later on Apple Silicon | macOS ARM64 |
+| Omarchy ARM64 or Asahi Linux | Linux ARM64 |
+| FreeBSD 15.1 | FreeBSD ARM64 |
+| OpenBSD 8.0 | OpenBSD ARM64 |
 
-Linux needs a Wayland or X11 session with OpenGL. Install `iw` and `iproute2` for live Wi-Fi details and `ethtool` for firmware versions. FreeBSD and OpenBSD need an X11 session with OpenGL support. On Linux or BSD, install `zenity` for a file picker, drop a file onto the window if the desktop supports it, or launch `./kyw FILE`.
+Linux needs glibc 2.39 or later and a Wayland or X11 session with OpenGL. Install `iw` and `iproute2` for live Wi-Fi details and `ethtool` for firmware versions. FreeBSD and OpenBSD need an X11 session with OpenGL support. On Linux or BSD, install `zenity` for a file picker, drop a file onto the window if the desktop supports it, or launch `./kyw FILE`.
 
 ## Build and check
 
-Build with Rust 1.88 or newer and the platform’s desktop libraries. macOS also requires the Xcode command-line tools.
+Build on ARM64 with Rust 1.88 or newer and the platform’s desktop libraries. macOS also requires the Xcode command-line tools.
 
 ```sh
 ./app/build.sh --verify
